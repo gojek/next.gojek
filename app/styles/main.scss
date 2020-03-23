@@ -6,9 +6,31 @@ $pink: #df1995;
 $blue: #00aed6;
 $purple: #93328e;
 
+// Font family
+@font-face {
+  font-family: "Maison Nueue";
+  src: url("../fonts/MaisonNeueMono-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Maison Nueue";
+  font-weight: 600;
+  src: url("../fonts/MaisonNeue-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Maison Nueue";
+  font-weight: 800;
+  src: url("../fonts/MaisonNeueExtended-ExtraBold.otf") format("opentype");
+}
+
 // Font sizes
 $display: 3rem;
 $headers: 2.5rem;
+
+body {
+  font-family: "Maison Nueue";
+}
 
 .browserupgrade {
   margin: 0.2em 0;
