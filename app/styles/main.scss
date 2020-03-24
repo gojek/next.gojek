@@ -100,3 +100,18 @@ body {
     }
   }
 }
+
+.locations {
+  .card {
+    border-radius: 3rem;
+    min-height: 196px;
+
+    .illustration {
+      max-width: 175px;
+    }
+
+    .highlight {
+      text-align: center;
+    }
+  }
+}
