@@ -2,6 +2,7 @@
 $green-light: #00aa13;
 $green-base: #008c15;
 $red: #ee2737;
+$orange-lightest: #ffa000;
 $orange-base: #e35205;
 $orange-light: #ff7f32;
 $pink-base: #d0006f;
@@ -51,7 +52,8 @@ $colors: (
   ),
   orange: (
     base: $orange-base,
-    light: $orange-light
+    light: $orange-light,
+    lightest: $orange-lightest
   ),
   pink: (
     base: $pink-base,
@@ -116,4 +118,23 @@ body {
 .header {
   font-size: $font-l;
   font-weight: 800;
+}
+
+#vision {
+  .card {
+    border-radius: 2rem;
+    border: none;
+
+    .illustration {
+      margin-top: -1.5rem;
+      z-index: 1;
+    }
+
+    .highlight {
+      border-radius: 2rem;
+      color: #fff;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
 }
