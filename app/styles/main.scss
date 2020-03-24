@@ -1,10 +1,14 @@
 // Brand Colors
-$green: #00aa13;
+$green-light: #00aa13;
+$green-base: #008c15;
 $red: #ee2737;
-$orange: #f06400;
-$pink: #df1995;
+$orange-base: #e35205;
+$orange-light: #ff7f32;
+$pink-base: #d0006f;
+$pink-light: #df1995;
 $blue: #00aed6;
 $purple: #93328e;
+$black: #2f2f2f;
 
 // Font family
 @font-face {
@@ -25,11 +29,66 @@ $purple: #93328e;
 }
 
 // Font sizes
-$display: 3rem;
-$headers: 2.5rem;
+$font-xl: 3rem;
+$font-l: 2.5rem;
+
+// $colors: (
+//   green: $green,
+//   red: $red,
+//   orange: $orange,
+//   pink: $pink,
+//   blue: $blue,
+//   purple: $purple
+// );
+
+$colors: (
+  green: (
+    base: $green-base,
+    light: $green-light
+  ),
+  red: (
+    base: $red
+  ),
+  orange: (
+    base: $orange-base,
+    light: $orange-light
+  ),
+  pink: (
+    base: $pink-base,
+    light: $pink-light
+  ),
+  blue: (
+    base: $blue
+  ),
+  purple: (
+    base: $purple
+  )
+);
+
+@mixin color-modifiers(
+  $attribute: "background-color",
+  $prefix: "-",
+  $separator: "-",
+  $base: "base"
+) {
+  @each $name, $color in $colors {
+    &#{$prefix}#{$name} {
+      @each $tone, $hex in $color {
+        &#{if($tone != $base, #{$separator}#{$tone}, '')} {
+          #{$attribute}: $hex;
+        }
+      }
+    }
+  }
+}
+
+.bg {
+  @include color-modifiers;
+}
 
 body {
   font-family: "Maison Nueue";
+  font-weight: 800;
 }
 
 .browserupgrade {
@@ -40,26 +99,21 @@ body {
 }
 
 .full-height {
-  height: 100vh;
+  min-height: 100vh;
 }
 
-$colors: (
-  green: $green,
-  red: $red,
-  orange: $orange,
-  pink: $pink,
-  blue: $blue,
-  purple: $purple
-);
+.banner {
+  &-head {
+    font-size: $font-xl;
+    font-weight: 800;
+  }
 
-@mixin color-modifiers {
-  @each $name, $hex in $colors {
-    &-#{$name} {
-      background-color: $hex;
-    }
+  &-img {
+    max-height: 500px;
   }
 }
 
-.bg {
-  @include color-modifiers;
+.header {
+  font-size: $font-l;
+  font-weight: 800;
 }
