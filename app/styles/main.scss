@@ -10,6 +10,7 @@ $pink-light: #df1995;
 $blue: #00aed6;
 $purple: #93328e;
 $black: #2f2f2f;
+$gray: #eee;
 
 // Font family
 @font-face {
@@ -33,15 +34,6 @@ $black: #2f2f2f;
 $font-xl: 3rem;
 $font-l: 2.5rem;
 
-// $colors: (
-//   green: $green,
-//   red: $red,
-//   orange: $orange,
-//   pink: $pink,
-//   blue: $blue,
-//   purple: $purple
-// );
-
 $colors: (
   green: (
     base: $green-base,
@@ -64,6 +56,9 @@ $colors: (
   ),
   purple: (
     base: $purple
+  ),
+  gray: (
+    base: $gray
   )
 );
 
@@ -86,6 +81,10 @@ $colors: (
 
 .bg {
   @include color-modifiers;
+}
+
+.text {
+  @include color-modifiers("color");
 }
 
 body {
@@ -137,4 +136,15 @@ body {
       text-align: center;
     }
   }
+}
+
+#products {
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #fff 60%,
+    #fff 60%,
+    #00aed6 60%,
+    #00aed6 100%
+  );
 }

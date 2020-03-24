@@ -18,6 +18,28 @@
   <!-- build:js scripts/modernizr.js -->
   <script src="scripts/modernizr.js"></script>
   <!-- endbuild -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+  <style>
+    .slick-prev,
+    .slick-next {
+      color: black;
+      background-color: black;
+    }
+
+    .slick-prev::before {
+      font-family: FontAwesome;
+      content: "\f0d9";
+      font-size: 22px;
+    }
+
+    .slick-next::before {
+      font-family: FontAwesome;
+      content: "\f0da";
+      font-size: 22px;
+    }
+  </style>
 </head>
 
 <body>
@@ -65,14 +87,62 @@
     </div>
   </section>
 
-  <section id="products" class="bg-blue">
+  <section id="products" class="bg-blue py-5">
     <div class="container full-height">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis quidem magnam sed dolore nemo laudantium ex
-      repudiandae blanditiis! Sapiente aperiam obcaecati veritatis vitae amet illo distinctio ea saepe voluptates non.
+      <h1 class="banner-head mt-5 text-center">
+        Build products that build nations
+      </h1>
+      <p class="text-center"> A one-stop solution for life’s daily frictions. An ecosystem of 20+ products that does
+        over 7 million orders a
+        month.
+        <strong> within a single app — a SuperApp.</strong></p>
+
+      <!-- Slider -->
+      <div class="row justify-content-center">
+        <div class="col-md-6 px-0">
+          <div id="products-carousel">
+            <div class="card py-2" style="border-radius: 70px;">
+              <div class="card-body">
+                <h5 class="card-title text-center my-4 text-blue">Payments</h5>
+                <div class="row justify-content-center">
+                  <div class="col-6 text-center">
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card py-2" style="border-radius: 70px;">
+              <div class="card-body">
+                <h5 class="card-title text-center my-4 text-blue">Payments</h5>
+                <div class="row justify-content-center">
+                  <div class="col-6 text-center">
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                    <span class="badge bg-gray py-2 mb-2 mr-1 rounded-pill">partner Logo</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Slider -->
     </div>
   </section>
 
-  <section id="vision" class="full-height d-flex align-items-center">
+  <section id="vision" class="full-height d-flex align-items-center my-5">
     <div class="container">
       <div class="row align-items-end">
         <div class="col-md-6">
@@ -199,6 +269,13 @@
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script>
+    $('#products-carousel').slick({
+      arrows: true,
+    });
+
+  </script>
 </body>
 
 </html>
