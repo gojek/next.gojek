@@ -8,6 +8,7 @@ $orange-light: #ff7f32;
 $pink-base: #d0006f;
 $pink-light: #df1995;
 $blue: #00aed6;
+$blue-light: #96d1df;
 $purple: #93328e;
 $black: #2f2f2f;
 
@@ -60,7 +61,8 @@ $colors: (
     light: $pink-light
   ),
   blue: (
-    base: $blue
+    base: $blue,
+    light: $blue-light
   ),
   purple: (
     base: $purple
@@ -151,5 +153,12 @@ body {
     .highlight {
       text-align: center;
     }
+  }
+}
+
+.investors {
+  .logo {
+    max-width: 124px;
+    margin-right: 4rem;
   }
 }
