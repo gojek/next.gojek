@@ -81,3 +81,22 @@ body {
   font-size: $font-l;
   font-weight: 800;
 }
+
+#vision {
+  .card {
+    border-radius: 2rem;
+    border: none;
+
+    .illustration {
+      margin-top: -1.5rem;
+      z-index: 1;
+    }
+
+    .highlight {
+      border-radius: 2rem;
+      color: #fff;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+}
