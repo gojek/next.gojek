@@ -11,6 +11,8 @@ $blue: #00aed6;
 $purple: #93328e;
 $black: #2f2f2f;
 $gray: #eee;
+$teal: #004758;
+$yellow: #e8ce11;
 
 // Font family
 @font-face {
@@ -59,6 +61,12 @@ $colors: (
   ),
   gray: (
     base: $gray
+  ),
+  teal: (
+    base: $teal
+  ),
+  yellow: (
+    base: $yellow
   )
 );
 
@@ -119,7 +127,8 @@ body {
   font-weight: 800;
 }
 
-#vision {
+#vision,
+#scale {
   .card {
     border-radius: 2rem;
     border: none;
@@ -127,6 +136,10 @@ body {
     .illustration {
       margin-top: -1.5rem;
       z-index: 1;
+    }
+
+    .location {
+      border-radius: 2rem 2rem 0 0;
     }
 
     .highlight {
