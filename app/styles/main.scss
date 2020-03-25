@@ -11,6 +11,9 @@ $blue: #00aed6;
 $blue-light: #96d1df;
 $purple: #93328e;
 $black: #2f2f2f;
+$gray: #eee;
+$teal: #004758;
+$yellow: #e8ce11;
 
 // Font family
 @font-face {
@@ -33,15 +36,6 @@ $black: #2f2f2f;
 // Font sizes
 $font-xl: 3rem;
 $font-l: 2.5rem;
-
-// $colors: (
-//   green: $green,
-//   red: $red,
-//   orange: $orange,
-//   pink: $pink,
-//   blue: $blue,
-//   purple: $purple
-// );
 
 $colors: (
   green: (
@@ -66,6 +60,15 @@ $colors: (
   ),
   purple: (
     base: $purple
+  ),
+  gray: (
+    base: $gray
+  ),
+  teal: (
+    base: $teal
+  ),
+  yellow: (
+    base: $yellow
   )
 );
 
@@ -88,6 +91,10 @@ $colors: (
 
 .bg {
   @include color-modifiers;
+}
+
+.text {
+  @include color-modifiers("color");
 }
 
 body {
@@ -122,7 +129,8 @@ body {
   font-weight: 800;
 }
 
-#vision {
+#vision,
+#scale {
   .card {
     border-radius: 2rem;
     border: none;
@@ -130,6 +138,10 @@ body {
     .illustration {
       margin-top: -1.5rem;
       z-index: 1;
+    }
+
+    .location {
+      border-radius: 2rem 2rem 0 0;
     }
 
     .highlight {
@@ -161,4 +173,15 @@ body {
     max-width: 124px;
     margin-right: 4rem;
   }
+}
+
+#products {
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #fff 60%,
+    #fff 60%,
+    #00aed6 60%,
+    #00aed6 100%
+  );
 }
