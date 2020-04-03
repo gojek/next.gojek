@@ -17,25 +17,35 @@ $yellow: #e8ce11;
 
 // Font family
 @font-face {
-  font-family: "Maison Nueue";
-  src: url("../fonts/MaisonNeueMono-Regular.otf") format("opentype");
+  font-family: "Maison Nueue Book";
+  src: url("../fonts/MaisonNeueAPP-Book.otf") format("opentype");
 }
 
 @font-face {
-  font-family: "Maison Nueue";
-  font-weight: 600;
-  src: url("../fonts/MaisonNeue-Bold.otf") format("opentype");
+  font-family: "Maison Nueue Extended Book";
+  src: url("../fonts/MaisonNeueExtended-Book.otf") format("opentype");
 }
 
 @font-face {
-  font-family: "Maison Nueue";
-  font-weight: 800;
-  src: url("../fonts/MaisonNeueExtended-ExtraBold.otf") format("opentype");
+  font-family: "Maison Nueue Demi";
+  src: url("../fonts/MaisonNeueAPP-Demi.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Maison Nueue Bold";
+  src: url("../fonts/MaisonNeueExtended-Bold.otf") format("opentype");
 }
 
 // Font sizes
-$font-xl: 3rem;
-$font-l: 2.5rem;
+$font-xxl: 3rem;
+$font-xl: 2.5rem;
+$font-l: 2rem;
+$font-m: 1.25rem;
+
+$header-font: "Maison Nueue Bold";
+$title-font: "Maison Nueue Demi";
+$body-font: "Maison Nueue Book";
+$navbar-font: "Maison Nueue Extended Book";
 
 $colors: (
   green: (
@@ -98,8 +108,7 @@ $colors: (
 }
 
 body {
-  font-family: "Maison Nueue";
-  font-weight: 800;
+  font-family: $body-font;
 }
 
 .browserupgrade {
@@ -115,8 +124,8 @@ body {
 
 .banner {
   &-head {
-    font-size: $font-xl;
-    font-weight: 800;
+    font-size: $font-xxl;
+    font-family: $header-font;
   }
 
   &-img {
@@ -125,8 +134,38 @@ body {
 }
 
 .header {
+  font-size: $font-xl;
+  font-family: $header-font;
+}
+
+.sub-head {
   font-size: $font-l;
-  font-weight: 800;
+  font-family: $title-font;
+}
+
+.link {
+  font-size: $font-m;
+  font-family: $title-font;
+}
+
+.nav-item {
+  font-family: $navbar-font;
+
+  &.active {
+    font-family: $header-font;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 50%;
+      margin: 0 auto;
+      border-top: 2px solid #000;
+    }
+  }
+
+  .nav-link {
+    color: #000;
+  }
 }
 
 #vision,
