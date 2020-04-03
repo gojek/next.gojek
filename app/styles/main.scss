@@ -179,9 +179,33 @@ body {
   background: linear-gradient(
     to bottom,
     #fff 0%,
-    #fff 60%,
-    #fff 60%,
-    #00aed6 60%,
-    #00aed6 100%
+    #fff 70%,
+    #fff 70%,
+    $blue 70%,
+    $blue 100%
+  );
+
+  .card {
+    border-radius: 4rem;
+    border: none;
+  }
+
+  .partner-logos {
+    max-width: 384px;
+
+    .logo {
+      width: 128px;
+    }
+  }
+}
+
+#open-source {
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #fff 70%,
+    #fff 70%,
+    $green-light 70%,
+    $green-light 100%
   );
 }
