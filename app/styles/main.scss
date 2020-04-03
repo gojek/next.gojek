@@ -8,6 +8,7 @@ $orange-light: #ff7f32;
 $pink-base: #d0006f;
 $pink-light: #df1995;
 $blue: #00aed6;
+$blue-light: #96d1df;
 $purple: #93328e;
 $black: #2f2f2f;
 $gray: #eee;
@@ -54,7 +55,8 @@ $colors: (
     light: $pink-light
   ),
   blue: (
-    base: $blue
+    base: $blue,
+    light: $blue-light
   ),
   purple: (
     base: $purple
@@ -151,13 +153,59 @@ body {
   }
 }
 
+.locations {
+  .card {
+    border-radius: 3rem;
+    min-height: 196px;
+
+    .illustration {
+      max-width: 175px;
+    }
+
+    .highlight {
+      text-align: center;
+    }
+  }
+}
+
+.investors {
+  .logo {
+    max-width: 124px;
+    margin-right: 4rem;
+  }
+}
+
 #products {
   background: linear-gradient(
     to bottom,
     #fff 0%,
-    #fff 60%,
-    #fff 60%,
-    #00aed6 60%,
-    #00aed6 100%
+    #fff 70%,
+    #fff 70%,
+    $blue 70%,
+    $blue 100%
+  );
+
+  .card {
+    border-radius: 4rem;
+    border: none;
+  }
+
+  .partner-logos {
+    max-width: 384px;
+
+    .logo {
+      width: 128px;
+    }
+  }
+}
+
+#open-source {
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #fff 70%,
+    #fff 70%,
+    $green-light 70%,
+    $green-light 100%
   );
 }
