@@ -155,24 +155,40 @@ body {
   font-family: $title-font;
 }
 
-.nav-item {
-  font-family: $navbar-font;
-  font-size: $font-s;
+.navbar {
+  .nav-item {
+    font-family: $navbar-font;
+    font-size: $font-s;
 
-  &.active {
-    font-family: $header-font;
+    &.active {
+      font-family: $header-font;
 
-    &:after {
-      content: "";
-      display: block;
-      width: 50%;
-      margin: 0 auto;
-      border-top: 2px solid #000;
+      &:after {
+        content: "";
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-top: 2px solid #000;
+      }
+    }
+
+    .nav-link {
+      color: #000;
     }
   }
 
-  .nav-link {
-    color: #000;
+  &.dark {
+    .nav-item {
+      &.active {
+        &:after {
+          border-color: #fff;
+        }
+      }
+
+      .nav-link {
+        color: #fff;
+      }
+    }
   }
 }
 
@@ -318,5 +334,22 @@ body {
     background-color: #dcdada;
     border: none;
     border-radius: 3rem;
+  }
+}
+
+.teams-banner {
+  background-image: linear-gradient(to bottom, #101820 0% 50%, #ffffff 50%);
+}
+
+#blogs {
+  .card {
+    border: none;
+
+    .placeholder {
+      min-height: 16rem;
+      background-color: #dcdada;
+      border: none;
+      border-radius: 3rem;
+    }
   }
 }
