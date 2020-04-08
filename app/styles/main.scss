@@ -13,7 +13,9 @@ $purple: #93328e;
 $black: #2f2f2f;
 $gray: #eee;
 $teal: #004758;
-$yellow: #e8ce11;
+$yellow-base: #e8ce11;
+$yellow-light: #f7ce55;
+$black: #101820;
 
 // Font family
 @font-face {
@@ -41,6 +43,7 @@ $font-xxl: 3rem;
 $font-xl: 2.5rem;
 $font-l: 2rem;
 $font-m: 1.25rem;
+$font-s: 0.875rem;
 
 $header-font: "Maison Nueue Bold";
 $title-font: "Maison Nueue Demi";
@@ -78,7 +81,11 @@ $colors: (
     base: $teal
   ),
   yellow: (
-    base: $yellow
+    base: $yellow-base,
+    light: $yellow-light
+  ),
+  black: (
+    base: $black
   )
 );
 
@@ -148,23 +155,40 @@ body {
   font-family: $title-font;
 }
 
-.nav-item {
-  font-family: $navbar-font;
+.navbar {
+  .nav-item {
+    font-family: $navbar-font;
+    font-size: $font-s;
 
-  &.active {
-    font-family: $header-font;
+    &.active {
+      font-family: $header-font;
 
-    &:after {
-      content: "";
-      display: block;
-      width: 50%;
-      margin: 0 auto;
-      border-top: 2px solid #000;
+      &:after {
+        content: "";
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-top: 2px solid #000;
+      }
+    }
+
+    .nav-link {
+      color: #000;
     }
   }
 
-  .nav-link {
-    color: #000;
+  &.dark {
+    .nav-item {
+      &.active {
+        &:after {
+          border-color: #fff;
+        }
+      }
+
+      .nav-link {
+        color: #fff;
+      }
+    }
   }
 }
 
@@ -247,4 +271,85 @@ body {
     $green-light 70%,
     $green-light 100%
   );
+}
+
+.yellow-bg-gradient {
+  background: $yellow-light
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #e18700);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 120vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.form-control {
+  padding: 1rem 1.5rem;
+  height: inherit;
+  border: none;
+  font-family: $navbar-font;
+  font-size: 0.875rem;
+  line-height: normal;
+}
+
+#departments {
+  .card-columns {
+    column-count: 2;
+
+    .card {
+      border: none;
+      border-radius: 3rem;
+      padding: 1.5rem 2rem;
+      height: 15rem;
+      margin-bottom: 1.875rem;
+      position: relative;
+
+      &.highlight {
+        height: 32rem;
+        // margin-bottom: 1.25rem;
+
+        .card-body {
+          position: absolute;
+          bottom: 0;
+        }
+      }
+
+      .header {
+        max-width: 384px;
+      }
+
+      .sub-head {
+        font-family: $navbar-font;
+        font-size: $font-m;
+      }
+    }
+  }
+}
+
+#locations {
+  .card {
+    min-height: 20rem;
+    background-color: #dcdada;
+    border: none;
+    border-radius: 3rem;
+  }
+}
+
+.teams-banner {
+  background-image: linear-gradient(to bottom, #101820 0% 50%, #ffffff 50%);
+}
+
+#blogs {
+  .card {
+    border: none;
+
+    .placeholder {
+      min-height: 16rem;
+      background-color: #dcdada;
+      border: none;
+      border-radius: 3rem;
+    }
+  }
 }
