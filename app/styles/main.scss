@@ -476,3 +476,18 @@ body {
     background: #fff;
   }
 }
+
+#open-source {
+  .card {
+    height: 8rem;
+    background-color: #dcdada;
+    border: 1px solid #dcdada;
+  }
+  .slick-slide.slick-active {
+    margin-top: 1rem;
+  }
+  .slick-slide.slick-active.slick-center {
+    height: 10rem !important;
+    margin-top: 0;
+  }
+}
