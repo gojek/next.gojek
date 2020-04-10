@@ -21,16 +21,6 @@
   <!-- build:js scripts/modernizr.js -->
   <script src="scripts/modernizr.js"></script>
   <!-- endbuild -->
-
-  <style>
-    .slick-slide.slick-active.slick-center {
-      /* width: 200px !important; */
-    }
-
-    .slick-slide.slick-active {
-      /* width: 150px !important; */
-    }
-  </style>
 </head>
 
 <body>
@@ -71,9 +61,9 @@
         <h1 class="banner-head text-white mt-5">
           Build products that build nations
         </h1>
-        <a href="" class="text-pink link">
+        <a href="#" class="text-pink link">
           Check out Jobs
-          <i class="fas fa-arrow-right ml-1"></i>
+          <i class="fas fa-arrow-right ml-1" style="font-size: 16px; line-height: normal;"></i>
         </a>
       </div>
       <img src="./img/banner.png" class="img-fluid banner-img" alt="Gojek Banner">
@@ -365,7 +355,7 @@
   <section id="social-impact" class="bg-pink full-height d-flex align-items-center py-5">
     <div class="container text-white">
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 pr-5">
           <h1 class="header">Social Impact</h1>
           <p>
             The Gojek story is not just about helping customers book rides and buy things. We strive to better the lives
@@ -380,29 +370,36 @@
           </p>
           <a href="#" class="text-yellow link">See more stories</a>
         </div>
-        <div class="offset-md-1 col-md-6">
+        <div class=" col-md-7">
           <div id="impact-stories-carousel" class="carousel slide">
             <ol class="carousel-indicators">
               <li data-target="#impact-stories-carousel" data-slide-to="0" class="active"></li>
               <li data-target="#impact-stories-carousel" data-slide-to="1"></li>
               <li data-target="#impact-stories-carousel" data-slide-to="2"></li>
+              <li data-target="#impact-stories-carousel" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active card" style="border-radius: 2rem;">
+              <div class="carousel-item active card border-0" style="border-radius: 2rem;">
                 <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RQ0FzwaqLow"
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bdHfntRaAoo"
                     style="border-radius: 2rem;"></iframe>
                 </div>
               </div>
-              <div class="carousel-item card" style="border-radius: 2rem;">
+              <div class="carousel-item card border-0" style="border-radius: 2rem;">
                 <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zmr2I8caF0c"
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1kPYaBfgawI"
                     style="border-radius: 2rem;"></iframe>
                 </div>
               </div>
-              <div class="carousel-item card" style="border-radius: 2rem;">
+              <div class="carousel-item card border-0" style="border-radius: 2rem;">
                 <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RQ0FzwaqLow"
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/77YDzTh-_EA"
+                    style="border-radius: 2rem;"></iframe>
+                </div>
+              </div>
+              <div class="carousel-item card border-0" style="border-radius: 2rem;">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/EKQxX5XZrr4"
                     style="border-radius: 2rem;"></iframe>
                 </div>
               </div>
@@ -422,21 +419,43 @@
   </section>
 
 
-  <footer class="bg-dark py-5">
+  <footer class="bg-black py-5">
     <div class="container text-white">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h4 class="h6">Connect with us</h4>
           <div class="btn-toolbar social-media" role="toolbar" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary rounded-circle mr-2">L</button>
-            <button type="button" class="btn btn-secondary rounded-circle mr-2">M</button>
-            <button type="button" class="btn btn-secondary rounded-circle mr-2">R</button>
+            <a href="#" class="btn btn-secondary rounded-circle mr-2">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="btn btn-secondary rounded-circle mr-2">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="btn btn-secondary rounded-circle mr-2">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="btn btn-secondary rounded-circle mr-2">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="btn btn-secondary rounded-circle mr-2">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="btn btn-secondary rounded-circle mr-2">
+              <i class="fab fa-youtube"></i>
+            </a>
           </div>
-          <ul class="mt-5 list-unstyled">
-            <li class="py-1">Home</li>
-            <li class="py-1">About Us</li>
-            <li class="py-1">Contact</li>
-          </ul>
+          <div class="d-flex justify-content-between">
+            <ul class="mt-5 list-unstyled">
+              <li class="py-2">Home</li>
+              <li class="py-2">About Us</li>
+              <li class="py-2">Contact</li>
+            </ul>
+            <ul class="mt-5 list-unstyled">
+              <li class="py-2">Home</li>
+              <li class="py-2">About Us</li>
+              <li class="py-2">Contact</li>
+            </ul>
+          </div>
         </div>
         <div class="ml-auto col-md-6">
           <p>Slider placeholder </p>
