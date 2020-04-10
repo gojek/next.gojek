@@ -11,6 +11,9 @@
   <!-- Place favicon.ico in the root directory -->
   <!-- build:css styles/vendor.css -->
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="/node_modules/slick-carousel/slick/slick.css" type="text/css" />
+  <link rel="stylesheet" href="/node_modules/slick-carousel/slick/slick-theme.css" type="text/css" />
+  <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css" type="text/css" />
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
@@ -19,29 +22,13 @@
   <script src="scripts/modernizr.js"></script>
   <!-- endbuild -->
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
   <style>
-    .slick-slide {
-      padding: 15px;
+    .slick-slide.slick-active.slick-center {
+      /* width: 200px !important; */
     }
 
-    .slick-prev,
-    .slick-next {
-      color: black;
-      background-color: black;
-    }
-
-    .slick-prev::before {
-      font-family: FontAwesome;
-      content: "\f0d9";
-      font-size: 22px;
-    }
-
-    .slick-next::before {
-      font-family: FontAwesome;
-      content: "\f0da";
-      font-size: 22px;
+    .slick-slide.slick-active {
+      /* width: 150px !important; */
     }
   </style>
 </head>
@@ -51,7 +38,7 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-  <nav class="navbar fixed-top navbar-expand-lg bg-transparent">
+  <nav class="navbar navbar-expand-lg bg-orange-lightest">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
       aria-controls="main-navbar" aria-expanded="false" aria-label="Expand menu">
@@ -103,8 +90,21 @@
       </p>
 
       <!-- Slider -->
-      <div class="row justify-content-center">
-        <div id="products-carousel" class="col-md-8">
+      <div class="row justify-content-center pb-5">
+        <div id="products-carousel" class="col-md-8  pb-5">
+          <div class="card shadow">
+            <h5 class="card-title sub-head text-blue mt-4">Transport</h5>
+            <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+            </div>
+          </div>
           <div class="card shadow">
             <h5 class="card-title sub-head text-blue mt-4">Payments</h5>
             <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
@@ -131,6 +131,49 @@
               <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
             </div>
           </div>
+
+          <div class="card shadow">
+            <h5 class="card-title sub-head text-blue mt-4">Logistics</h5>
+            <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+            </div>
+          </div>
+
+          <div class="card shadow">
+            <h5 class="card-title sub-head text-blue mt-4">Entertainment</h5>
+            <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+            </div>
+          </div>
+
+          <div class="card shadow">
+            <h5 class="card-title sub-head text-blue mt-4">Lifestyle Services</h5>
+            <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+              <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+            </div>
+          </div>
+
         </div>
       </div>
       <!-- End Slider -->
@@ -227,29 +270,27 @@
     </div>
   </section>
 
-  <section id="funding" class="bg-blue-light full-height d-flex align-items-center">
+  <section id="funding" class="full-height d-flex align-items-center bg-blue-light py-5 funding-bg">
     <div class="container">
-      <div class="row">
-        <div class="col-md-8">
+      <div class="row justify-content-center">
+        <div class="col-md-8 offset-md-4">
           <h1 class="header">Funding</h1>
           <p>We’ve also raised a fair amount of capital along the way, including our recently concluded Series F round.
             Gojek is fortunate to count Sequoia Capital, Google, Tencent Holdings, JD.com, and Visa, among its
             investors.
           </p>
+          <div class="mt-4 investors d-flex justify-content-between flex-wrap">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+          </div>
         </div>
-      </div>
-
-      <div class="mt-4 investors d-flex justify-content-between flex-wrap">
-        <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
-        <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
-        <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
-        <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
-        <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
-        <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
-        <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
-        <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
-        <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
-        <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
       </div>
     </div>
   </section>
@@ -264,6 +305,58 @@
         As firm believers in the pursuit of a collective quest for excellence, the tools we build are diligently
         open-sourced.
       </p>
+      <!-- Slider -->
+      <div id="opensource-carousel">
+        <div class="card mx-3">
+          <h5 class="card-title text-blue mt-4">Transport</h5>
+          <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+          </div>
+        </div>
+        <div class="card mx-3">
+          <h5 class="card-title text-blue mt-4">Transport</h5>
+          <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+          </div>
+        </div>
+
+        <div class="card mx-3">
+          <h5 class="card-title text-blue mt-4">Transport</h5>
+          <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+          </div>
+        </div>
+
+        <div class="card mx-3">
+          <h5 class="card-title text-blue mt-4">Transport</h5>
+          <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+          </div>
+        </div>
+
+        <div class="card mx-3">
+          <h5 class="card-title text-blue mt-4">Transport</h5>
+          <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+          </div>
+        </div>
+
+        <div class="card mx-3">
+          <h5 class="card-title text-blue mt-4">Transport</h5>
+          <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+          </div>
+        </div>
+
+        <div class="card mx-3">
+          <h5 class="card-title text-blue mt-4">Transport</h5>
+          <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+            <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
+          </div>
+        </div>
+      </div>
+
+      <!-- End Slider -->
     </div>
   </section>
 
@@ -329,16 +422,32 @@
   <!-- build:js scripts/vendor.js -->
   <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/node_modules/slick-carousel/slick/slick.min.js"></script>
   <!-- endbuild -->
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
   <script>
+    var departmens = ['Transport', 'Payments', 'Food Delivery', 'Logistics', 'Entertainment', 'Lifestyle Services']
     $('#products-carousel').slick({
       arrows: true,
+      dots: true,
+      customPaging: function (slider, i) {
+        var thumb = $(slider.$slides[i]).data();
+        return '<a class="dot">' + departmens[i] + '</a>';
+      }
     });
 
+    $('#opensource-carousel').slick({
+      arrows: true,
+      slidesToScroll: 1,
+      accessibility: true,
+      adaptiveHeight: true,
+      centerMode: true,
+      centerPadding: '0px',
+      slidesPerRow: 5,
+      slidesToShow: 5
+    });
   </script>
 </body>
 

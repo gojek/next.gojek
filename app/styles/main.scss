@@ -53,40 +53,40 @@ $navbar-font: "Maison Nueue Extended Book";
 $colors: (
   green: (
     base: $green-base,
-    light: $green-light
+    light: $green-light,
   ),
   red: (
-    base: $red
+    base: $red,
   ),
   orange: (
     base: $orange-base,
     light: $orange-light,
-    lightest: $orange-lightest
+    lightest: $orange-lightest,
   ),
   pink: (
     base: $pink-base,
-    light: $pink-light
+    light: $pink-light,
   ),
   blue: (
     base: $blue,
-    light: $blue-light
+    light: $blue-light,
   ),
   purple: (
-    base: $purple
+    base: $purple,
   ),
   gray: (
-    base: $gray
+    base: $gray,
   ),
   teal: (
-    base: $teal
+    base: $teal,
   ),
   yellow: (
     base: $yellow-base,
-    light: $yellow-light
+    light: $yellow-light,
   ),
   black: (
-    base: $black
-  )
+    base: $black,
+  ),
 );
 
 @mixin color-modifiers(
@@ -242,15 +242,15 @@ body {
   background: linear-gradient(
     to bottom,
     #fff 0%,
-    #fff 70%,
-    #fff 70%,
-    $blue 70%,
+    #fff 65%,
+    #fff 65%,
+    $blue 65%,
     $blue 100%
   );
 
   .card {
     border-radius: 4rem;
-    border: none;
+    border: 1px solid #eee;
   }
 
   .partner-logos {
@@ -271,6 +271,9 @@ body {
     $green-light 70%,
     $green-light 100%
   );
+  .card {
+    border-radius: 1rem;
+  }
 }
 
 .yellow-bg-gradient {
@@ -350,6 +353,50 @@ body {
       background-color: #dcdada;
       border: none;
       border-radius: 3rem;
+    }
+  }
+}
+
+.funding-bg {
+  background-image: url("../img/fundin-bg.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+// Slick Slider
+.slick-next:before,
+.slick-prev:before {
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: #404040;
+}
+
+.slick-prev:before {
+  content: "\f053";
+}
+
+.slick-next:before {
+  content: "\f054";
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: space-around;
+  li {
+    min-width: 15%;
+    color: #fff;
+    opacity: 0.7;
+    font-size: 14px;
+  }
+  .slick-active {
+    opacity: 1;
+    &:after {
+      content: "";
+      display: block;
+      width: 25%;
+      margin: 0.5rem auto;
+      border-bottom: 1px solid #fff;
     }
   }
 }

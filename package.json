@@ -8,7 +8,8 @@
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "modernizr": "^3.7.1",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.15.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
