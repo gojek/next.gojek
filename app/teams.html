@@ -11,6 +11,7 @@
   <!-- Place favicon.ico in the root directory -->
   <!-- build:css styles/vendor.css -->
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css" type="text/css" />
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
@@ -25,8 +26,10 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-  <nav class="navbar fixed-top navbar-expand-lg dark bg-transparent">
-    <a class="navbar-brand" href="#">Navbar</a>
+  <nav class="navbar navbar-expand-lg" style="background-color: #101820;">
+    <a class="navbar-brand" href="/">
+      <img src="./img/gojek-white-logo.png" width="120" alt="Gojek ">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
       aria-controls="main-navbar" aria-expanded="false" aria-label="Expand menu">
       <span class="navbar-toggler-icon"></span>
@@ -35,13 +38,13 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item px-4 active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link text-white" href="#">Home</a>
         </li>
         <li class="nav-item px-4">
-          <a class="nav-link" href="#">Life@Gojek</a>
+          <a class="nav-link text-white" href="#">Life@Gojek</a>
         </li>
         <li class="nav-item px-4">
-          <a class="nav-link" href="#">Blogs & News</a>
+          <a class="nav-link text-white" href="#">Blogs & News</a>
         </li>
         <li class="nav-item px-4 my-auto">
           <a class="btn rounded-pill text-white bg-green btn-sm px-4" href="#">Join Us</a>
@@ -85,7 +88,87 @@
       <div class="listings bg-white shadow p-5" style="height: 48rem; border-radius: 3rem;">
         <h1 class="header" style="font-size: 2rem;">Current Open Positions</h1>
         <div class="job">
-
+          <table class="table table-borderless">
+            <thead>
+              <tr class="text-green-light">
+                <th scope="col">Job Title</th>
+                <th scope="col">Department</th>
+                <th scope="col">Location</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Associate Program Manager: Information Security</td>
+                <td>Program Management</td>
+                <td>Jakarta</td>
+                <td><a href="#" class="text-secondary"><i class="fas fa-chevron-right"></i></a></td>
+              </tr>
+              <tr>
+                <td>Associate Program Manager: Information Security</td>
+                <td>Program Management</td>
+                <td>Jakarta</td>
+                <td><a href="#" class="text-secondary"><i class="fas fa-chevron-right"></i></a></td>
+                </td>
+              </tr>
+              <tr>
+                <td>Associate Program Manager: Information Security</td>
+                <td>Program Management</td>
+                <td>Jakarta</td>
+                <td><a href="#" class="text-secondary"><i class="fas fa-chevron-right"></i></a></td>
+              </tr>
+              <tr>
+                <td>Associate Program Manager: Information Security</td>
+                <td>Program Management</td>
+                <td>Jakarta</td>
+                <td><a href="#" class="text-secondary"><i class="fas fa-chevron-right"></i></a></td>
+              </tr>
+              <tr>
+                <td>Associate Program Manager: Information Security</td>
+                <td>Program Management</td>
+                <td>Jakarta</td>
+                <td><a href="#" class="text-secondary"><i class="fas fa-chevron-right"></i></a></td>
+              </tr>
+              <tr>
+                <td>Associate Program Manager: Information Security</td>
+                <td>Program Management</td>
+                <td>Jakarta</td>
+                <td><a href="#" class="text-secondary"><i class="fas fa-chevron-right"></i></a></td>
+                </td>
+              </tr>
+              <tr>
+                <td>Associate Program Manager: Information Security</td>
+                <td>Program Management</td>
+                <td>Jakarta</td>
+                <td><a href="#" class="text-secondary"><i class="fas fa-chevron-right"></i></a></td>
+              </tr>
+              <tr>
+                <td>Associate Program Manager: Information Security</td>
+                <td>Program Management</td>
+                <td>Jakarta</td>
+                <td><a href="#" class="text-secondary"><i class="fas fa-chevron-right"></i></a></td>
+              </tr>
+              <tr>
+                <td>Associate Program Manager: Information Security</td>
+                <td>Program Management</td>
+                <td>Jakarta</td>
+                <td><a href="#" class="text-secondary"><i class="fas fa-chevron-right"></i></a></td>
+              </tr>
+              <tr>
+                <td>Associate Program Manager: Information Security</td>
+                <td>Program Management</td>
+                <td>Jakarta</td>
+                <td><a href="#" class="text-secondary"><i class="fas fa-chevron-right"></i></a></td>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center mt-5">
+            <a href="#" class="text-green-light font-weight-bold mx-auto view-jobs">
+              View all jobs
+              <i class="fas fa-long-arrow-alt-right align-middle"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -168,7 +251,10 @@
 
       </div>
 
-      <a class="link text-green pl-4" href="#">Read more blogs</a>
+      <a class="link text-green-light pl-4" href="#">
+        Read more blogs
+        <i class="fas fa-long-arrow-alt-right align-middle"></i>
+      </a>
     </div>
   </section>
 
