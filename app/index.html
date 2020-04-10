@@ -80,7 +80,7 @@
     </div>
   </section>
 
-  <section id="products" class="full-height d-flex align-items-center py-5">
+  <section id="products" class="full-height d-flex align-items-center py-5 transport">
     <div class="container text-center">
       <h1 class="header">
         Build products that build nations
@@ -95,7 +95,7 @@
       <div class="row justify-content-center pb-5">
         <div id="products-carousel" class="col-md-8  pb-5">
           <div class="card shadow">
-            <h5 class="card-title sub-head text-blue mt-4">Transport</h5>
+            <h5 class="card-title sub-head text-green-light mt-4">Transport</h5>
             <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
               <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
               <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
@@ -121,7 +121,7 @@
             </div>
           </div>
           <div class="card shadow">
-            <h5 class="card-title sub-head text-blue mt-4">Food Delivery</h5>
+            <h5 class="card-title sub-head text-orange-light mt-4">Food Delivery</h5>
             <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
               <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
               <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
@@ -135,7 +135,7 @@
           </div>
 
           <div class="card shadow">
-            <h5 class="card-title sub-head text-blue mt-4">Logistics</h5>
+            <h5 class="card-title sub-head text-red mt-4">Logistics</h5>
             <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
               <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
               <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
@@ -149,7 +149,7 @@
           </div>
 
           <div class="card shadow">
-            <h5 class="card-title sub-head text-blue mt-4">Entertainment</h5>
+            <h5 class="card-title sub-head text-pink-light mt-4">Entertainment</h5>
             <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
               <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
               <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
@@ -163,7 +163,7 @@
           </div>
 
           <div class="card shadow">
-            <h5 class="card-title sub-head text-blue mt-4">Lifestyle Services</h5>
+            <h5 class="card-title sub-head text-yellow-light mt-4">Lifestyle Services</h5>
             <div class="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
               <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
               <img src="./img/Gojek_Logo_Horizondal.svg" alt="Logo placeholder" class="img-fluid logo">
@@ -464,13 +464,13 @@
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
   <script>
-    var departmens = ['Transport', 'Payments', 'Food Delivery', 'Logistics', 'Entertainment', 'Lifestyle Services']
+    var departments = ['Transport', 'Payments', 'Food Delivery', 'Logistics', 'Entertainment', 'Lifestyle Services']
     $('#products-carousel').slick({
       arrows: true,
       dots: true,
       customPaging: function (slider, i) {
         var thumb = $(slider.$slides[i]).data();
-        return '<a class="dot">' + departmens[i] + '</a>';
+        return '<a class="dot">' + departments[i] + '</a>';
       }
     });
 
@@ -483,6 +483,11 @@
       centerPadding: '0px',
       slidesPerRow: 5,
       slidesToShow: 5
+    });
+    $('#products-carousel').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      className = departments[nextSlide].replace(/\s+/g, '-').toLowerCase();
+
+      $("#products").removeClass().addClass('full-height d-flex align-items-center py-5 ' + className)
     });
 
   </script>

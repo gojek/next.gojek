@@ -239,14 +239,66 @@ body {
 }
 
 #products {
-  background: linear-gradient(
-    to bottom,
-    #fff 0%,
-    #fff 65%,
-    #fff 65%,
-    $blue 65%,
-    $blue 100%
-  );
+  &.transport {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $green-light 65%,
+      $green-light 100%
+    );
+  }
+  &.payments {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $blue 65%,
+      $blue 100%
+    );
+  }
+  &.food-delivery {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $orange-light 65%,
+      $orange-light 100%
+    );
+  }
+  &.logistics {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $red 65%,
+      $red 100%
+    );
+  }
+  &.entertainment {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $pink-light 65%,
+      $pink-light 100%
+    );
+  }
+  &.lifestyle-services {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $yellow-light 65%,
+      $yellow-light 100%
+    );
+  }
 
   .card {
     border-radius: 4rem;
