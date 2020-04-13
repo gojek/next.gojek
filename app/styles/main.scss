@@ -1,0 +1,516 @@
+// Brand Colors
+$green-light: #00aa13;
+$green-base: #008c15;
+$red: #ee2737;
+$orange-lightest: #ffa000;
+$orange-base: #e35205;
+$orange-light: #ff7f32;
+$pink-base: #d0006f;
+$pink-light: #df1995;
+$blue: #00aed6;
+$blue-light: #96d1df;
+$purple: #93328e;
+$black: #2f2f2f;
+$gray: #eee;
+$teal: #004758;
+$yellow-base: #e8ce11;
+$yellow-light: #f7ce55;
+$black: #101820;
+
+// Font family
+@font-face {
+  font-family: "Maison Nueue Book";
+  src: url("../fonts/MaisonNeueAPP-Book.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Maison Nueue Extended Book";
+  src: url("../fonts/MaisonNeueExtended-Book.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Maison Nueue Demi";
+  src: url("../fonts/MaisonNeueAPP-Demi.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Maison Nueue Bold";
+  src: url("../fonts/MaisonNeueExtended-Bold.otf") format("opentype");
+}
+
+// Font sizes
+$font-xxl: 3rem;
+$font-xl: 2.5rem;
+$font-l: 2rem;
+$font-m: 1.25rem;
+$font-s: 0.875rem;
+
+$header-font: "Maison Nueue Bold";
+$title-font: "Maison Nueue Demi";
+$body-font: "Maison Nueue Book";
+$navbar-font: "Maison Nueue Extended Book";
+
+$colors: (
+  green: (
+    base: $green-base,
+    light: $green-light,
+  ),
+  red: (
+    base: $red,
+  ),
+  orange: (
+    base: $orange-base,
+    light: $orange-light,
+    lightest: $orange-lightest,
+  ),
+  pink: (
+    base: $pink-base,
+    light: $pink-light,
+  ),
+  blue: (
+    base: $blue,
+    light: $blue-light,
+  ),
+  purple: (
+    base: $purple,
+  ),
+  gray: (
+    base: $gray,
+  ),
+  teal: (
+    base: $teal,
+  ),
+  yellow: (
+    base: $yellow-base,
+    light: $yellow-light,
+  ),
+  black: (
+    base: $black,
+  ),
+);
+
+@mixin color-modifiers(
+  $attribute: "background-color",
+  $prefix: "-",
+  $separator: "-",
+  $base: "base"
+) {
+  @each $name, $color in $colors {
+    &#{$prefix}#{$name} {
+      @each $tone, $hex in $color {
+        &#{if($tone != $base, #{$separator}#{$tone}, '')} {
+          #{$attribute}: $hex;
+        }
+      }
+    }
+  }
+}
+
+.bg {
+  @include color-modifiers;
+}
+
+.text {
+  @include color-modifiers("color");
+}
+
+body {
+  font-family: $body-font;
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.banner {
+  &-head {
+    font-size: $font-xxl;
+    font-family: $header-font;
+  }
+
+  &-img {
+    max-height: 500px;
+  }
+}
+
+.header {
+  font-size: $font-xl;
+  font-family: $header-font;
+}
+
+.sub-head {
+  font-size: $font-l;
+  font-family: $title-font;
+}
+
+.link {
+  font-size: $font-m;
+  font-family: $title-font;
+}
+
+.navbar {
+  .nav-item {
+    font-family: $navbar-font;
+    font-size: $font-s;
+
+    &.active {
+      font-family: $header-font;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-top: 2px solid #000;
+      }
+    }
+
+    .nav-link {
+      color: #000;
+    }
+  }
+
+  &.dark {
+    .nav-item {
+      &.active {
+        &:after {
+          border-color: #fff;
+        }
+      }
+
+      .nav-link {
+        color: #fff;
+      }
+    }
+  }
+}
+
+#vision,
+#scale {
+  .card {
+    border-radius: 2rem;
+    border: none;
+
+    .illustration {
+      margin-top: -1.5rem;
+      z-index: 1;
+    }
+
+    .location {
+      border-radius: 2rem 2rem 0 0;
+    }
+
+    .highlight {
+      border-radius: 2rem;
+      color: #fff;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+}
+
+.locations {
+  .card {
+    border-radius: 3rem;
+    min-height: 196px;
+
+    .illustration {
+      max-width: 175px;
+    }
+
+    .highlight {
+      text-align: center;
+    }
+  }
+}
+
+.investors {
+  .logo {
+    max-width: 124px;
+    margin-right: 4rem;
+  }
+}
+
+#products {
+  &.transport {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $green-light 65%,
+      $green-light 100%
+    );
+  }
+  &.payments {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $blue 65%,
+      $blue 100%
+    );
+  }
+  &.food-delivery {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $orange-light 65%,
+      $orange-light 100%
+    );
+  }
+  &.logistics {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $red 65%,
+      $red 100%
+    );
+  }
+  &.entertainment {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $pink-light 65%,
+      $pink-light 100%
+    );
+  }
+  &.lifestyle-services {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $yellow-light 65%,
+      $yellow-light 100%
+    );
+  }
+
+  .card {
+    border-radius: 4rem;
+    border: 1px solid #eee;
+    margin: 25px;
+  }
+
+  .partner-logos {
+    max-width: 384px;
+
+    .logo {
+      width: 128px;
+    }
+  }
+}
+
+#open-source {
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #fff 70%,
+    #fff 70%,
+    $green-light 70%,
+    $green-light 100%
+  );
+  .card {
+    border-radius: 1rem;
+  }
+}
+
+.yellow-bg-gradient {
+  background: $yellow-light
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #e18700);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 140vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.form-control {
+  padding: 1rem 1.5rem;
+  height: inherit;
+  border: none;
+  font-family: $navbar-font;
+  font-size: 0.875rem;
+  line-height: normal;
+}
+
+#departments {
+  .card-columns {
+    column-count: 2;
+
+    .card {
+      border: none;
+      border-radius: 3rem;
+      padding: 1.5rem 2rem;
+      height: 15rem;
+      margin-bottom: 1.875rem;
+      position: relative;
+
+      &.highlight {
+        height: 32rem;
+        // margin-bottom: 1.25rem;
+
+        .card-body {
+          position: absolute;
+          bottom: 0;
+        }
+      }
+
+      .header {
+        max-width: 384px;
+      }
+
+      .sub-head {
+        font-family: $navbar-font;
+        font-size: $font-m;
+      }
+    }
+  }
+}
+
+#locations {
+  .card {
+    min-height: 20rem;
+    background-color: #dcdada;
+    border: none;
+    border-radius: 3rem;
+  }
+}
+
+.teams-banner {
+  background-image: linear-gradient(to bottom, #101820 0% 50%, #ffffff 50%);
+}
+
+#blogs {
+  .card {
+    border: none;
+
+    .placeholder {
+      min-height: 16rem;
+      background-color: #dcdada;
+      border: none;
+      border-radius: 3rem;
+    }
+  }
+}
+
+.funding-bg {
+  background-image: url("../img/fundin-bg.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+// Slick Slider
+.slick-next:before,
+.slick-prev:before {
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: #404040;
+}
+
+.slick-prev:before {
+  content: "\f053";
+}
+
+.slick-next:before {
+  content: "\f054";
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: space-around;
+
+  li {
+    min-width: 12rem;
+    color: #fff;
+    opacity: 0.8;
+    font-weight: normal;
+  }
+  .slick-active {
+    opacity: 1;
+    font-family: $title-font;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 25%;
+      margin: 0.5rem auto;
+      border-bottom: 1px solid #fff;
+    }
+  }
+}
+
+#impact-stories-carousel {
+  .carousel-indicators {
+    margin: 0;
+    bottom: -4rem;
+
+    li {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+// Jobs Css
+.job {
+  thead {
+    border-bottom: 1px solid #979797;
+  }
+  th,
+  .view-jobs {
+    font-family: $header-font;
+  }
+  tr:nth-child(even) {
+    background: #f2f2f2;
+  }
+
+  tr:nth-child(odd) {
+    background: #fff;
+  }
+}
+
+.social-media {
+  .btn {
+    width: 2rem;
+    height: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+
+    .fab {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+#open-source {
+  .card {
+    height: 8rem;
+    background-color: #dcdada;
+    border: 1px solid #dcdada;
+  }
+  .slick-slide.slick-active {
+    margin-top: 1rem;
+  }
+  .slick-slide.slick-active.slick-center {
+    height: 10rem !important;
+    margin-top: 0;
+  }
+}
