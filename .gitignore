@@ -3,7 +3,7 @@ node_modules
 bower_components
 
 # compiled output
-/dist
+/public
 /.tmp
 
 # System Files
