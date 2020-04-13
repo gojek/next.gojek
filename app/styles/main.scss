@@ -1,3 +1,6 @@
+@import './node_modules/slick-carousel/slick/slick.scss';
+@import './node_modules/slick-carousel/slick/slick-theme.scss';
+
 // Brand Colors
 $green-light: #00aa13;
 $green-base: #008c15;
@@ -19,23 +22,23 @@ $black: #101820;
 
 // Font family
 @font-face {
-  font-family: "Maison Nueue Book";
-  src: url("../fonts/MaisonNeueAPP-Book.otf") format("opentype");
+  font-family: 'Maison Nueue Book';
+  src: url('../fonts/MaisonNeueAPP-Book.otf') format('opentype');
 }
 
 @font-face {
-  font-family: "Maison Nueue Extended Book";
-  src: url("../fonts/MaisonNeueExtended-Book.otf") format("opentype");
+  font-family: 'Maison Nueue Extended Book';
+  src: url('../fonts/MaisonNeueExtended-Book.otf') format('opentype');
 }
 
 @font-face {
-  font-family: "Maison Nueue Demi";
-  src: url("../fonts/MaisonNeueAPP-Demi.otf") format("opentype");
+  font-family: 'Maison Nueue Demi';
+  src: url('../fonts/MaisonNeueAPP-Demi.otf') format('opentype');
 }
 
 @font-face {
-  font-family: "Maison Nueue Bold";
-  src: url("../fonts/MaisonNeueExtended-Bold.otf") format("opentype");
+  font-family: 'Maison Nueue Bold';
+  src: url('../fonts/MaisonNeueExtended-Bold.otf') format('opentype');
 }
 
 // Font sizes
@@ -45,10 +48,10 @@ $font-l: 2rem;
 $font-m: 1.25rem;
 $font-s: 0.875rem;
 
-$header-font: "Maison Nueue Bold";
-$title-font: "Maison Nueue Demi";
-$body-font: "Maison Nueue Book";
-$navbar-font: "Maison Nueue Extended Book";
+$header-font: 'Maison Nueue Bold';
+$title-font: 'Maison Nueue Demi';
+$body-font: 'Maison Nueue Book';
+$navbar-font: 'Maison Nueue Extended Book';
 
 $colors: (
   green: (
@@ -90,10 +93,10 @@ $colors: (
 );
 
 @mixin color-modifiers(
-  $attribute: "background-color",
-  $prefix: "-",
-  $separator: "-",
-  $base: "base"
+  $attribute: 'background-color',
+  $prefix: '-',
+  $separator: '-',
+  $base: 'base'
 ) {
   @each $name, $color in $colors {
     &#{$prefix}#{$name} {
@@ -111,7 +114,7 @@ $colors: (
 }
 
 .text {
-  @include color-modifiers("color");
+  @include color-modifiers('color');
 }
 
 body {
@@ -164,7 +167,7 @@ body {
       font-family: $header-font;
 
       &:after {
-        content: "";
+        content: '';
         display: block;
         width: 50%;
         margin: 0 auto;
@@ -316,14 +319,7 @@ body {
 }
 
 #open-source {
-  background: linear-gradient(
-    to bottom,
-    #fff 0%,
-    #fff 70%,
-    #fff 70%,
-    $green-light 70%,
-    $green-light 100%
-  );
+  background: linear-gradient(to bottom, #fff 0%, #fff 65%, $green-light 65%);
   .card {
     border-radius: 1rem;
   }
@@ -411,7 +407,7 @@ body {
 }
 
 .funding-bg {
-  background-image: url("../img/fundin-bg.png");
+  background-image: url('../img/fundin-bg.png');
   background-size: cover;
   background-position: center center;
 }
@@ -419,18 +415,18 @@ body {
 // Slick Slider
 .slick-next:before,
 .slick-prev:before {
-  font-family: "Font Awesome\ 5 Free";
+  font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
   font-size: 1.25rem;
   color: #404040;
 }
 
 .slick-prev:before {
-  content: "\f053";
+  content: '\f053';
 }
 
 .slick-next:before {
-  content: "\f054";
+  content: '\f054';
 }
 
 .slick-dots {
@@ -440,7 +436,6 @@ body {
   li {
     min-width: 12rem;
     color: #fff;
-    opacity: 0.8;
     font-weight: normal;
   }
   .slick-active {
@@ -448,7 +443,7 @@ body {
     font-family: $title-font;
 
     &:after {
-      content: "";
+      content: '';
       display: block;
       width: 25%;
       margin: 0.5rem auto;

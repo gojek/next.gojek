@@ -6,13 +6,11 @@
   <meta name="description" content="">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>gojek yoeman</title>
+  <title>Go</title>
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
   <!-- build:css styles/vendor.css -->
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
-  <link rel="stylesheet" href="/node_modules/slick-carousel/slick/slick.css" type="text/css" />
-  <link rel="stylesheet" href="/node_modules/slick-carousel/slick/slick-theme.css" type="text/css" />
   <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css" type="text/css" />
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
@@ -446,42 +444,20 @@
     }(window, document, 'script', 'ga'));
     ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
   </script>
+
   <!-- build:js scripts/vendor.js -->
   <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="/node_modules/slick-carousel/slick/slick.min.js"></script>
   <!-- endbuild -->
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
-  <script>
-    var departments = ['Transport', 'Payments', 'Food Delivery', 'Logistics', 'Entertainment', 'Lifestyle Services']
-    $('#products-carousel').slick({
-      arrows: true,
-      dots: true,
-      customPaging: function (slider, i) {
-        var thumb = $(slider.$slides[i]).data();
-        return '<a class="dot">' + departments[i] + '</a>';
-      }
-    });
 
-    $('#opensource-carousel').slick({
-      arrows: true,
-      slidesToScroll: 1,
-      accessibility: true,
-      adaptiveHeight: true,
-      centerMode: true,
-      centerPadding: '0px',
-      slidesPerRow: 5,
-      slidesToShow: 5
-    });
-    $('#products-carousel').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-      className = departments[nextSlide].replace(/\s+/g, '-').toLowerCase();
 
-      $("#products").removeClass().addClass('full-height d-flex align-items-center py-5 ' + className)
-    });
 
-  </script>
 </body>
 
 </html>
