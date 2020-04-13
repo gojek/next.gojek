@@ -10,10 +10,9 @@ cache:
 pages:
   script:
     - npm install
-    - ./node_modules/.bin/gulp build
-    - ls dist/
+    - npm run build
   artifacts:
     paths:
-      - dist
+      - public
   only:
     - master
