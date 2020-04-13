@@ -11,8 +11,9 @@ pages:
   script:
     - npm install
     - ./node_modules/.bin/gulp build
+    - ls dist/
   artifacts:
     paths:
-      - public
+      - dist
   only:
     - master
