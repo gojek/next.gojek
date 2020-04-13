@@ -13,6 +13,6 @@ pages:
     - ./node_modules/.bin/gulp build
   artifacts:
     paths:
-      - dist
+      - public
   only:
     - master
