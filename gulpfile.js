@@ -117,39 +117,39 @@ function html() {
         })
       )
     )
-    .pipe(dest('dist'))
+    .pipe(dest('public'))
 }
 
 function images() {
   return src('app/img/**/*', { since: lastRun(images) })
     .pipe($.imagemin())
-    .pipe(dest('dist/img'))
+    .pipe(dest('public/img'))
 }
 
 function fonts() {
   return src('app/fonts/**/*.{otf,eot,svg,ttf,woff,woff2}').pipe(
-    $.if(!isProd, dest('.tmp/fonts'), dest('dist/fonts'))
+    $.if(!isProd, dest('.tmp/fonts'), dest('public/fonts'))
   )
 }
 
 function icons() {
   return src('node_modules/@fortawesome/fontawesome-free/webfonts/*').pipe(
-    dest('dist/webfonts/')
+    dest('public/webfonts/')
   )
 }
 
 function extras() {
   return src(['app/*', '!app/*.html'], {
     dot: true,
-  }).pipe(dest('dist'))
+  }).pipe(dest('public'))
 }
 
 function clean() {
-  return del(['.tmp', 'dist'])
+  return del(['.tmp', 'public'])
 }
 
 function measureSize() {
-  return src('dist/**/*').pipe($.size({ title: 'build', gzip: true }))
+  return src('public/**/*').pipe($.size({ title: 'build', gzip: true }))
 }
 
 const build = series(
@@ -212,7 +212,7 @@ function startDistServer() {
     notify: true,
     port,
     server: {
-      baseDir: 'dist',
+      baseDir: 'public',
       routes: {
         '/node_modules': 'node_modules',
       },
