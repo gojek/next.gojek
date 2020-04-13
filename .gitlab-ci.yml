@@ -1,3 +1,4 @@
+# This file is a template, and might need editing before it works on your project.
 image: node:latest
 
 # This folder is cached between builds
@@ -5,15 +6,11 @@ image: node:latest
 cache:
   paths:
     - node_modules/
-    # Enables git-lab CI caching. Both .cache and public must be cached, otherwise builds will fail.
-    - .cache/
-    - dist/
 
 pages:
   script:
     - npm install
-    - npm run build
-
+    - ./node_modules/.bin/gulp build
   artifacts:
     paths:
       - dist
