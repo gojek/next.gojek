@@ -4,6 +4,7 @@
 // Brand Colors
 $green-light: #00aa13;
 $green-base: #008c15;
+$green-lightest: #e2f2d0;
 $red: #ee2737;
 $orange-lightest: #ffa000;
 $orange-base: #e35205;
@@ -13,6 +14,7 @@ $pink-light: #df1995;
 $blue: #00aed6;
 $blue-light: #96d1df;
 $purple: #93328e;
+$purple-base: #720062;
 $black: #2f2f2f;
 $gray: #eee;
 $teal: #004758;
@@ -52,6 +54,10 @@ $header-font: 'Maison Nueue Bold';
 $title-font: 'Maison Nueue Demi';
 $body-font: 'Maison Nueue Book';
 $navbar-font: 'Maison Nueue Extended Book';
+
+// Border radius
+$border-xxl: 4rem;
+$border-xl: 3rem;
 
 $colors: (
   green: (
@@ -221,7 +227,7 @@ body {
 
 .locations {
   .card {
-    border-radius: 3rem;
+    border-radius: $border-xl;
     min-height: 196px;
 
     .illustration {
@@ -352,7 +358,7 @@ body {
 
     .card {
       border: none;
-      border-radius: 3rem;
+      border-radius: $border-xl;
       padding: 1.5rem 2rem;
       height: 15rem;
       margin-bottom: 1.875rem;
@@ -385,7 +391,7 @@ body {
     min-height: 20rem;
     background-color: #dcdada;
     border: none;
-    border-radius: 3rem;
+    border-radius: $border-xl;
   }
 }
 
@@ -401,7 +407,7 @@ body {
       min-height: 16rem;
       background-color: #dcdada;
       border: none;
-      border-radius: 3rem;
+      border-radius: $border-xl;
     }
   }
 }
@@ -508,4 +514,63 @@ body {
     height: 10rem !important;
     margin-top: 0;
   }
+}
+
+// Blog
+.articles {
+  color: #191919;
+  .main {
+    h1 {
+      font-size: $font-l;
+    }
+    .description {
+      color: #707070;
+      font-size: 1rem;
+    }
+  }
+  .title {
+    font-family: $header-font;
+  }
+  .description,
+  .meta {
+    font-size: $font-s;
+  }
+  .date-time {
+    color: #929292;
+  }
+  .card {
+    &,
+    .card-img-top {
+      border-radius: $border-xl;
+    }
+  }
+  .badge {
+    background-color: $green-lightest;
+    padding: 0.875rem 2.5rem;
+    color: $green-light;
+  }
+}
+
+#categories {
+  .card {
+    border-radius: $border-xl;
+    margin-bottom: 2rem;
+    font-family: $header-font;
+    min-height: 200px;
+  }
+  .name {
+    font-size: $font-m;
+  }
+}
+
+.tag {
+  position: absolute;
+  background-color: $green-light;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem 1rem 1rem 0;
+  margin-left: -5px;
+}
+.featured-article {
+  border-radius: $border-xl;
 }
