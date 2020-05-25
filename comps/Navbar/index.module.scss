@@ -1,0 +1,64 @@
+@import '~/../../utils/styles/constants.scss';
+
+.menu {
+  .menuItem {
+    font-family: $navbar-font;
+    font-size: $font-s;
+
+    &.menuActive {
+      font-family: $header-font;
+      @media screen and (min-width: $lg-break) {
+        &:after {
+          content: '';
+          display: block;
+          width: 50%;
+          margin: 0 0.5rem;
+          border-top: 2px solid #000;
+        }
+      }
+    }
+
+    .menuLink {
+      color: #000;
+    }
+
+    &:hover {
+      @media screen and (min-width: $lg-break) {
+        &:after {
+          content: '';
+          display: block;
+          width: 50%;
+          margin: 0 0.5rem;
+          border-top: 2px solid #000;
+        }
+      }
+    }
+  }
+
+  &.light {
+    .menuItem {
+      &.menuActive {
+        &:after {
+          border-color: #fff;
+        }
+      }
+
+      &:hover {
+        @media screen and (min-width: $lg-break) {
+          &:after {
+            border-color: #fff;
+          }
+        }
+      }
+
+      .menuLink {
+        color: #fff;
+      }
+    }
+  }
+
+  .joinUs {
+    font-family: $header-font;
+    // font-size: $font-s;
+  }
+}

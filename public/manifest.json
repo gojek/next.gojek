@@ -1,0 +1,18 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "name": "Gojek",
+  "scope": "/",
+  "display": "standalone",
+  "start_url": ".",
+  "short_name": "Gojek",
+  "theme_color": "#f7ce55",
+  "description": "Gojek is a Super App. It's one app for ordering food, commuting, digital payments, shopping, hyper-local delivery, getting a massage and two dozen services. It is Indonesia's first and fastest growing unicorn building an on-demand empire.",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "url": "",
+  "screenshots": [],
+  "generated": "true"
+}

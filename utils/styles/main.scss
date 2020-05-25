@@ -1,0 +1,411 @@
+@import '~/../../node_modules/slick-carousel/slick/slick.scss';
+@import '~/../../node_modules/slick-carousel/slick/slick-theme.scss';
+@import '~/../../utils/styles/constants.scss';
+
+.bg {
+  @include color-modifiers;
+}
+
+.text {
+  @include color-modifiers('color');
+}
+
+body {
+  font-family: $body-font;
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.banner {
+  &-head {
+    font-size: $font-xxl;
+    font-family: $header-font;
+  }
+
+  &-img {
+    max-height: 500px;
+  }
+}
+
+.header {
+  font-size: $font-xl;
+  font-family: $header-font;
+}
+
+.sub-head {
+  font-size: $font-l;
+  font-family: $title-font;
+}
+
+.link {
+  font-size: $font-m;
+  font-family: $title-font;
+}
+
+#vision,
+#scale {
+  .card {
+    border-radius: 2rem;
+    border: none;
+
+    .illustration {
+      margin-top: -1.5rem;
+      z-index: 1;
+    }
+
+    .location {
+      border-radius: 2rem 2rem 0 0;
+    }
+
+    .highlight {
+      border-radius: 2rem;
+      color: #fff;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+}
+
+.locations {
+  .card {
+    border-radius: $border-xl;
+    min-height: 196px;
+
+    .illustration {
+      max-width: 175px;
+    }
+
+    .highlight {
+      text-align: center;
+    }
+  }
+}
+
+.investors {
+  .logo {
+    max-width: 124px;
+    margin-right: 4rem;
+  }
+}
+
+#products {
+  &.transport {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $green-light 65%,
+      $green-light 100%
+    );
+  }
+  &.payments {
+    background: linear-gradient(to bottom, #fff 0%, #fff 65%, #fff 65%, $blue 65%, $blue 100%);
+  }
+  &.food-delivery {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $orange-light 65%,
+      $orange-light 100%
+    );
+  }
+  &.logistics {
+    background: linear-gradient(to bottom, #fff 0%, #fff 65%, #fff 65%, $red 65%, $red 100%);
+  }
+  &.entertainment {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $pink-light 65%,
+      $pink-light 100%
+    );
+  }
+  &.lifestyle-services {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $yellow-light 65%,
+      $yellow-light 100%
+    );
+  }
+
+  .card {
+    border-radius: 4rem;
+    border: 1px solid #eee;
+    margin: 25px;
+  }
+
+  .partner-logos {
+    max-width: 384px;
+
+    .logo {
+      width: 128px;
+    }
+  }
+}
+
+#open-source {
+  background: linear-gradient(to bottom, #fff 0%, #fff 65%, $green-light 65%);
+  .card {
+    border-radius: 1rem;
+  }
+}
+
+.yellow-bg-gradient {
+  background: $yellow-light linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #e18700);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 140vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.form-control {
+  padding: 1rem 1.5rem;
+  height: inherit;
+  border: none;
+  font-family: $navbar-font;
+  font-size: 0.875rem;
+  line-height: normal;
+}
+
+#departments {
+  .card-columns {
+    column-count: 2;
+
+    .card {
+      border: none;
+      border-radius: $border-xl;
+      padding: 1.5rem 2rem;
+      height: 15rem;
+      margin-bottom: 1.875rem;
+      position: relative;
+
+      &.highlight {
+        height: 32rem;
+        // margin-bottom: 1.25rem;
+
+        .card-body {
+          position: absolute;
+          bottom: 0;
+        }
+      }
+
+      .header {
+        max-width: 384px;
+      }
+
+      .sub-head {
+        font-family: $navbar-font;
+        font-size: $font-m;
+      }
+    }
+  }
+}
+
+#locations {
+  .card {
+    min-height: 20rem;
+    background-color: #dcdada;
+    border: none;
+    border-radius: $border-xl;
+  }
+}
+
+.teams-banner {
+  background-image: linear-gradient(to bottom, #101820 0% 50%, #ffffff 50%);
+}
+
+#blogs {
+  .card {
+    border: none;
+
+    .placeholder {
+      min-height: 16rem;
+      background-color: #dcdada;
+      border: none;
+      border-radius: $border-xl;
+    }
+  }
+}
+
+.funding-bg {
+  // background-image: url('../img/fundin-bg.png');
+  background-size: cover;
+  background-position: center center;
+}
+
+// Slick Slider
+.slick-next:before,
+.slick-prev:before {
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: #404040;
+}
+
+.slick-prev:before {
+  content: '\f053';
+}
+
+.slick-next:before {
+  content: '\f054';
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: space-around;
+
+  li {
+    min-width: 12rem;
+    color: #fff;
+    font-weight: normal;
+  }
+  .slick-active {
+    opacity: 1;
+    font-family: $title-font;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 25%;
+      margin: 0.5rem auto;
+      border-bottom: 1px solid #fff;
+    }
+  }
+}
+
+#impact-stories-carousel {
+  .carousel-indicators {
+    margin: 0;
+    bottom: -4rem;
+
+    li {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+// Jobs Css
+.job {
+  thead {
+    border-bottom: 1px solid #979797;
+  }
+  th,
+  .view-jobs {
+    font-family: $header-font;
+  }
+  tr:nth-child(even) {
+    background: #f2f2f2;
+  }
+
+  tr:nth-child(odd) {
+    background: #fff;
+  }
+}
+
+.social-media {
+  .btn {
+    width: 2rem;
+    height: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+
+    .fab {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+#open-source {
+  .card {
+    height: 8rem;
+    background-color: #dcdada;
+    border: 1px solid #dcdada;
+  }
+  .slick-slide.slick-active {
+    margin-top: 1rem;
+  }
+  .slick-slide.slick-active.slick-center {
+    height: 10rem !important;
+    margin-top: 0;
+  }
+}
+
+// Blog
+.articles {
+  color: #191919;
+  .main {
+    h1 {
+      font-size: $font-l;
+    }
+    .description {
+      color: #707070;
+      font-size: 1rem;
+    }
+  }
+  .title {
+    font-family: $header-font;
+  }
+  .description,
+  .meta {
+    font-size: $font-s;
+  }
+  .date-time {
+    color: #929292;
+  }
+  .card {
+    &,
+    .card-img-top {
+      border-radius: $border-xl;
+    }
+  }
+  .badge {
+    background-color: $green-lightest;
+    padding: 0.875rem 2.5rem;
+    color: $green-light;
+  }
+}
+
+#categories {
+  .card {
+    border-radius: $border-xl;
+    margin-bottom: 2rem;
+    font-family: $header-font;
+    min-height: 200px;
+  }
+  .name {
+    font-size: $font-m;
+  }
+}
+
+.tag {
+  position: absolute;
+  background-color: $green-light;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem 1rem 1rem 0;
+  margin-left: -5px;
+}
+.featured-article {
+  border-radius: $border-xl;
+}
