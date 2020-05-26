@@ -1,5 +1,5 @@
-@import '~/../../node_modules/slick-carousel/slick/slick.scss';
-@import '~/../../node_modules/slick-carousel/slick/slick-theme.scss';
+@import './node_modules/slick-carousel/slick/slick.scss';
+@import './node_modules/slick-carousel/slick/slick-theme.scss';
 @import '~/../../utils/styles/constants.scss';
 
 .bg {
@@ -25,6 +25,12 @@ body {
   min-height: 100vh;
 }
 
+.homeBannerImage {
+  @media screen and (min-width: $lg-break) {
+    margin-left: -25rem;
+  }
+}
+
 .banner {
   &-head {
     font-size: $font-xxl;
@@ -37,7 +43,7 @@ body {
 }
 
 .header {
-  font-size: $font-xl;
+  font-size: $font-xxl;
   font-family: $header-font;
 }
 
@@ -49,12 +55,16 @@ body {
 .link {
   font-size: $font-m;
   font-family: $title-font;
+  &:hover {
+    color: inherit;
+  }
 }
 
 #vision,
 #scale {
+  padding: 10rem 0;
   .card {
-    border-radius: 2rem;
+    border-radius: 2.75rem;
     border: none;
 
     .illustration {
@@ -65,35 +75,39 @@ body {
     .location {
       border-radius: 2rem 2rem 0 0;
     }
-
-    .highlight {
-      border-radius: 2rem;
-      color: #fff;
-      margin-bottom: 0;
-      text-align: center;
-    }
+  }
+  .highlight {
+    // border-radius: 2.75rem;
+    border-bottom-left-radius: 2.75rem;
+    border-bottom-right-radius: 2.75rem;
+    color: #fff;
+    margin-bottom: 0;
+    text-align: center;
   }
 }
 
 .locations {
   .card {
-    border-radius: $border-xl;
+    border-radius: 2.75rem;
     min-height: 196px;
 
     .illustration {
       max-width: 175px;
     }
-
-    .highlight {
-      text-align: center;
-    }
+  }
+  .highlight {
+    border-radius: 0;
   }
 }
 
 .investors {
   .logo {
     max-width: 124px;
-    margin-right: 4rem;
+  }
+  @media screen and (min-width: $md-break) {
+    .logo {
+      margin-right: 4rem;
+    }
   }
 }
 
@@ -157,13 +171,6 @@ body {
     .logo {
       width: 128px;
     }
-  }
-}
-
-#open-source {
-  background: linear-gradient(to bottom, #fff 0%, #fff 65%, $green-light 65%);
-  .card {
-    border-radius: 1rem;
   }
 }
 
@@ -247,10 +254,14 @@ body {
   }
 }
 
-.funding-bg {
-  // background-image: url('../img/fundin-bg.png');
-  background-size: cover;
-  background-position: center center;
+#funding {
+  background-repeat: no-repeat;
+  background-position: left;
+  @media screen and (min-width: $xl-break) {
+    .desc {
+      margin-right: 10rem;
+    }
+  }
 }
 
 // Slick Slider
@@ -270,12 +281,20 @@ body {
   content: '\f054';
 }
 
+// .slick-slide {
+//   padding-left: 3rem;
+// }
+
 .slick-dots {
-  display: flex;
+  display: flex !important;
   justify-content: space-around;
+  @media screen and (max-width: $lg-break) {
+    flex-wrap: wrap;
+    margin-bottom: -2rem;
+  }
 
   li {
-    min-width: 12rem;
+    min-width: 10rem;
     color: #fff;
     font-weight: normal;
   }
@@ -337,17 +356,31 @@ body {
 }
 
 #open-source {
+  background: linear-gradient(to bottom, #fff 0%, #fff 60%, $green-light 40%);
   .card {
-    height: 8rem;
+    height: 15rem;
     background-color: #dcdada;
     border: 1px solid #dcdada;
+    border-radius: 2.25rem;
   }
-  .slick-slide.slick-active {
-    margin-top: 1rem;
+  .highlight {
+    color: #fff;
+    text-align: center;
+  }
+  .slick-slide {
+    margin-top: 3rem;
   }
   .slick-slide.slick-active.slick-center {
-    height: 10rem !important;
     margin-top: 0;
+    .card {
+      height: 20rem;
+    }
+    // height: 20rem !important;
+    // margin-top: 0;
+  }
+
+  .cta {
+    padding-top: 7rem;
   }
 }
 

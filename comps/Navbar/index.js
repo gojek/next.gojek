@@ -15,7 +15,7 @@ function Navbar(props) {
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
-      if (window.scrollY > 150) {
+      if (window.scrollY > 350) {
         !navbarScrolled && setnavbarScrolled(true);
       } else {
         navbarScrolled && setnavbarScrolled(false);
@@ -59,6 +59,7 @@ function Navbar(props) {
                   className={`nav-item px-3 active ${styles.menuItem} ${
                     router.pathname == page.routeTo ? `active ${styles.menuActive}` : ''
                   }`}
+                  key={i}
                 >
                   <Link href={page.routeTo}>
                     <a className={`nav-link ${styles.menuLink}`}>

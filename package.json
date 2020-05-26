@@ -15,6 +15,7 @@
     "next-images": "^1.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-slick": "^0.26.1",
     "sass": "^1.26.5",
     "scss": "^0.2.4",
     "slick-carousel": "^1.8.1"
