@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 import logo from '~/../../static/Gojek_Logo_Horizondal.svg';
 import whiteLogo from '~/../../static/gojek-white-logo.png';
@@ -15,7 +13,7 @@ function Navbar(props) {
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
-      if (window.scrollY > 350) {
+      if (window.scrollY > 150) {
         !navbarScrolled && setnavbarScrolled(true);
       } else {
         navbarScrolled && setnavbarScrolled(false);
@@ -48,7 +46,7 @@ function Navbar(props) {
           aria-expanded="false"
           aria-label="Expand menu"
         >
-          <FontAwesomeIcon icon={faBars} style={{ color: props.light ? '#fff' : '#000' }} />
+          <i className="fa fa-bars" style={{ color: props.light ? '#fff' : '#000' }} />
         </button>
 
         <div className="collapse navbar-collapse" id="main-navbar">
@@ -72,15 +70,15 @@ function Navbar(props) {
                 </li>
               );
             })}
-            {props.joinUs ? (
+            {props.careers ? (
               <li className={`nav-item px-4 active ${styles.menuActive} ${styles.menuItem}`}>
-                <Link href="/jobs">
+                <Link href="/careers">
                   <a className={`nav-link ${styles.menuLink}`}>Join Us</a>
                 </Link>
               </li>
             ) : (
               <li className={`nav-item pr-4 pl-3 pl-lg-4 ${styles.joinUs}`}>
-                <Link href="/jobs">
+                <Link href="/careers">
                   <a className="btn rounded-pill text-success bg-white btn-sm px-3">Join Us</a>
                 </Link>
               </li>

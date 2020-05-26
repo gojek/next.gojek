@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Slider from 'react-slick';
 
 import Navbar from '~/../../comps/Navbar';
@@ -36,10 +34,9 @@ function HomePage(props) {
               <h1 className="banner-head text-white mt-5">Build products that build nations</h1>
               <a href="#" className="text-pink link">
                 Check out Jobs
-                <FontAwesomeIcon
-                  icon={faArrowRight}
-                  style="font-size: 16px; line-height: normal;"
-                  className="ml-2"
+                <i
+                  className="fa fa-arrow-right ml-2"
+                  style={{ fontSize: '16px', lineHeight: 'normal' }}
                 />
               </a>
             </div>
@@ -378,10 +375,9 @@ function HomePage(props) {
           <div className="cta">
             <a href="#" className="text-yellow link">
               Check them out
-              <FontAwesomeIcon
-                icon={faArrowRight}
-                style="font-size: 16px; line-height: normal;"
-                className="ml-2"
+              <i
+                className="fa fa-arrow-right ml-2"
+                style={{ fontSize: '16px', lineHeight: 'normal' }}
               />
             </a>
           </div>
@@ -410,10 +406,9 @@ function HomePage(props) {
               </p>
               <a href="#" className="text-yellow link">
                 See more stories{' '}
-                <FontAwesomeIcon
-                  icon={faArrowRight}
-                  style="font-size: 16px; line-height: normal;"
-                  className="ml-2"
+                <i
+                  className="fa fa-arrow-right ml-2"
+                  style={{ fontSize: '16px', lineHeight: 'normal' }}
                 />
               </a>
             </div>

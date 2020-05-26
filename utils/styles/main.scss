@@ -174,6 +174,17 @@ body {
   }
 }
 
+.blackBackground {
+  background-color: #000;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 140vh;
+  width: 100%;
+  z-index: -1;
+}
+
 .yellow-bg-gradient {
   background: $yellow-light linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #e18700);
   background-repeat: no-repeat;
@@ -194,10 +205,27 @@ body {
   line-height: normal;
 }
 
+.select__control {
+  border: none !important;
+  &:hover {
+    border: none !important;
+  }
+
+  &:focus {
+    border: none !important;
+  }
+}
+
 #departments {
+  .departments {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
   .card-columns {
     column-count: 2;
-
+    @media screen and (max-width: $sm-break) {
+      column-count: 1;
+    }
     .card {
       border: none;
       border-radius: $border-xl;
@@ -218,6 +246,12 @@ body {
 
       .header {
         max-width: 384px;
+        // font-size: 2.6rem;
+      }
+      @media screen and (max-width: $md-break) {
+        .header {
+          font-size: $font-m;
+        }
       }
 
       .sub-head {
@@ -235,13 +269,23 @@ body {
     border: none;
     border-radius: $border-xl;
   }
+
+  .locationPadding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 }
 
 .teams-banner {
-  background-image: linear-gradient(to bottom, #101820 0% 50%, #ffffff 50%);
+  .heading {
+    font-size: 30px;
+  }
 }
 
 #blogs {
+  .list {
+    padding-top: 7rem;
+  }
   .card {
     border: none;
 
@@ -324,6 +368,10 @@ body {
 }
 
 // Jobs Css
+
+.bg-careers {
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), #e18700);
+}
 .job {
   thead {
     border-bottom: 1px solid #979797;
@@ -338,6 +386,11 @@ body {
 
   tr:nth-child(odd) {
     background: #fff;
+  }
+  @media screen and (max-width: $md-break) {
+    .tableHeading {
+      display: none;
+    }
   }
 }
 
