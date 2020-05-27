@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 function JobCard(props) {
   const [mobile, setMobile] = useState(null);
@@ -11,26 +12,30 @@ function JobCard(props) {
   if (mobile) {
     return (
       <div className="my-2 p-2">
-        <p>Associate Program Manager: Information Security</p>
+        <p>{props.data.title}</p>
         <p>
-          Program Management - Jakarta{' '}
-          <a href="#" className="text-secondary">
-            <i className="fas fa-chevron-right"></i>
-          </a>
+          {props.data.department} - {props.data.location}{' '}
+          <Link href={`/careers/description/${props.data.id}`}>
+            <a className="text-secondary">
+              <i className="fas fa-chevron-right"></i>
+            </a>
+          </Link>
         </p>
         <hr />
       </div>
     );
   } else {
     return (
-      <tr>
-        <td>Associate Program Manager: Information Security</td>
-        <td>Program Management</td>
-        <td>Jakarta</td>
+      <tr className="jobCard">
+        <td>{props.data.title}</td>
+        <td>{props.data.department}</td>
+        <td>{props.data.location}</td>
         <td>
-          <a href="#" className="text-secondary">
-            <i className="fas fa-chevron-right"></i>
-          </a>
+          <Link href={`/careers/description/${props.data.id}`}>
+            <a className="text-secondary">
+              <i className="fas fa-chevron-right"></i>
+            </a>
+          </Link>
         </td>
       </tr>
     );

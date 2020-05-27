@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import Navbar from '~/../../comps/Navbar';
 import JobCard from '~/../../comps/Careers/jobCard';
 
 function CareersPage(props) {
+  console.log('props', props);
+  const [maxJobs, setMaxJobs] = useState(10);
+
   return (
     <div className="text-center text-md-left">
       <Navbar light bg="#000" />
@@ -63,30 +67,33 @@ function CareersPage(props) {
                   </tr>
                 </thead>
                 <tbody>
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
+                  {props.data.map((job, i) => {
+                    console.log('job obj', job);
+                    if (i < maxJobs - 2)
+                      return (
+                        <JobCard
+                          data={{
+                            title: job.text,
+                            department: job.categories.department,
+                            location: job.categories.location,
+                            id: job.id,
+                          }}
+                          key={i}
+                        />
+                      );
+                  })}
                 </tbody>
               </table>
               <div className="text-center mt-5">
-                <a href="#" className="text-green-light font-weight-bold mx-auto view-jobs">
-                  View all jobs
-                  <i className="fas fa-long-arrow-alt-right align-middle"></i>
-                </a>
+                {props.data.length > maxJobs && (
+                  <span
+                    className="text-green-light font-weight-bold mx-auto view-jobs clearIcon"
+                    onClick={() => setMaxJobs(maxJobs + 10)}
+                  >
+                    View all jobs
+                    <i className="fas fa-long-arrow-alt-right align-middle"></i>
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -176,6 +183,25 @@ function CareersPage(props) {
       </section>
     </div>
   );
+}
+
+// to fetch the jobs json
+export async function getServerSideProps(ctx) {
+  const apiUrl = 'https://api.lever.co/v0/postings/gojek?mode=json';
+
+  try {
+    const response = await fetch(apiUrl);
+
+    if (response.ok) {
+      const data = await response.json();
+      return { props: { data } };
+    } else {
+      return await { props: { data: [] } };
+    }
+  } catch (error) {
+    // Network error
+    return { props: { data: [] } };
+  }
 }
 
 export default CareersPage;

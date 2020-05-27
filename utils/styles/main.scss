@@ -160,9 +160,12 @@ body {
   }
 
   .card {
-    border-radius: 4rem;
+    border-radius: 5.3rem;
     border: 1px solid #eee;
     margin: 25px;
+    .sub-head {
+      font-family: $header-font;
+    }
   }
 
   .partner-logos {
@@ -196,23 +199,64 @@ body {
   z-index: -1;
 }
 
+.filter-badge {
+  font-size: $font-s;
+  border-radius: 8px;
+  background-color: #fbf0d7;
+  &:hover {
+    background-color: #cdc3ad;
+  }
+}
+
+.clearIcon {
+  cursor: pointer;
+}
+
+.jobCard {
+  &:hover {
+    background-color: #eee !important;
+  }
+}
 .form-control {
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   height: inherit;
   border: none;
-  font-family: $navbar-font;
+  font-family: $navbar-font, 'Font Awesome 5 Free';
   font-size: 0.875rem;
   line-height: normal;
 }
 
 .select__control {
   border: none !important;
+  border-radius: 50rem !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  padding: 0.6rem;
   &:hover {
     border: none !important;
   }
 
   &:focus {
     border: none !important;
+  }
+}
+
+.select__menu {
+  scrollbar-width: 1px;
+  margin-top: 0;
+  padding: 1rem 0.3rem;
+  border-radius: 2rem !important;
+  border-bottom-left-radius: 2rem !important;
+  border-bottom-right-radius: 2rem !important;
+
+  .select__menu-list {
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #9e9e9e;
+      border-radius: 10px;
+    }
   }
 }
 
@@ -494,4 +538,32 @@ body {
 }
 .featured-article {
   border-radius: $border-xl;
+}
+
+.jobDescription {
+  .banner {
+    height: 75vh;
+  }
+  .description {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+
+    .title {
+      font-family: $header-font;
+    }
+    .apply {
+      @media screen and (min-width: $xl-break) {
+        padding-left: 10rem;
+      }
+      .applyText {
+        margin-top: 5rem;
+      }
+      .card {
+        min-height: 10rem;
+        background-color: #dcdada;
+        border: none;
+        border-radius: $border-xl;
+      }
+    }
+  }
 }

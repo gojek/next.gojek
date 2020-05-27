@@ -1,10 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
+import Router from 'next/router';
+import BarLoader from 'react-spinners/BarLoader';
+
 import '~/../../utils/styles/main.scss';
 // import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
 
 function MyApp({ Component, pageProps }) {
+  const [loading, setLoading] = useState(false);
+  const [offline, setOffline] = useState(false);
+
   useEffect(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
@@ -15,12 +21,27 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
 
+  // To display loader on routing b/w pages
+  Router.events.on('routeChangeStart', (url) => {
+    console.log(`Loading: ${url}`);
+    setLoading(true);
+  });
+  Router.events.on('routeChangeComplete', () => setLoading(false));
+  Router.events.on('routeChangeError', () => setLoading(false));
+
+  // to handle app going offline
+  typeof window !== 'undefined' &&
+    window.addEventListener('offline', function(e) {
+      setOffline(true);
+    });
+
   return (
     <div>
       <Head>
         {/* default title */}
         <title>Gojeck</title>
       </Head>
+      <BarLoader size={150} color={'#004758'} loading={loading} width={'100%'} />
       <Component {...pageProps} />
     </div>
   );

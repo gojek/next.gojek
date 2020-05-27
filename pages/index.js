@@ -63,6 +63,7 @@ function HomePage(props) {
                 slidesToShow={1}
                 arrows
                 dots
+                centerMode
                 customPaging={(i) => {
                   return <a className="dot">{departments[i]}</a>;
                 }}
@@ -84,7 +85,7 @@ function HomePage(props) {
                 <div>
                   <div className="card pt-5 shadow">
                     <h5 className="card-title sub-head text-green-light mt-4">Transport</h5>
-                    <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+                    <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -99,7 +100,7 @@ function HomePage(props) {
                 <div>
                   <div className="card pt-5 shadow">
                     <h5 className="card-title sub-head text-blue mt-4">Payments</h5>
-                    <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+                    <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -114,7 +115,7 @@ function HomePage(props) {
                 <div>
                   <div className="card pt-5 shadow">
                     <h5 className="card-title sub-head text-orange-light mt-4">Food Delivery</h5>
-                    <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+                    <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -129,7 +130,7 @@ function HomePage(props) {
                 <div>
                   <div className="card pt-5 shadow">
                     <h5 className="card-title sub-head text-red mt-4">Logistics</h5>
-                    <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+                    <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -144,7 +145,7 @@ function HomePage(props) {
                 <div>
                   <div className="card pt-5 shadow">
                     <h5 className="card-title sub-head text-pink-light mt-4">Entertainment</h5>
-                    <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+                    <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -161,7 +162,7 @@ function HomePage(props) {
                     <h5 className="card-title sub-head text-yellow-light mt-4">
                       Lifestyle Services
                     </h5>
-                    <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-around flex-wrap">
+                    <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />

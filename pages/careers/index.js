@@ -1,27 +1,142 @@
-import { useState } from 'react';
-import Select from 'react-select';
+import { useState, useEffect } from 'react';
+import Select, { components } from 'react-select';
+import fetch from 'isomorphic-unfetch';
 
 import Navbar from '~/../../comps/Navbar';
 import bannerImage from '~/../../static/banner.png';
 import JobCard from '~/../../comps/Careers/jobCard';
 
 function CareersPage(props) {
-  const [departmentList, setDepartmentList] = useState([
-    { label: 'department1', value: 1 },
-    { label: 'department2', value: 2 },
-    { label: 'department3', value: 3 },
-    { label: 'department4', value: 4 },
-    { label: 'department5', value: 5 },
-  ]);
+  const [departmentList, setDepartmentList] = useState([]);
   const [department, setDepartment] = useState(null);
-  const [locationList, setLocationList] = useState([
-    { label: 'location1', value: 1 },
-    { label: 'location2', value: 2 },
-    { label: 'location3', value: 3 },
-    { label: 'location4', value: 4 },
-    { label: 'location5', value: 5 },
-  ]);
+  const [locationList, setLocationList] = useState([]);
   const [location, setLocation] = useState(null);
+  const [parentJobList, setParentJobList] = useState([]);
+  const [filteredJobList, setFilteredJobList] = useState([]);
+  const [searchText, setSearchText] = useState('');
+  const [changed, setChanged] = useState(false);
+  const [maxJobs, setMaxJobs] = useState(10);
+
+  useEffect(() => {
+    console.log('careers props', props);
+    let departmentJson = [],
+      departmentArray = [],
+      locationJson = [],
+      locationArray = [],
+      parentArray = [];
+
+    props.data.map((job, i) => {
+      let { department } = job.categories;
+      let { location } = job.categories;
+      //   to add unique department to dropdown
+      if (departmentArray.indexOf(department) == -1 && department != null) {
+        departmentArray.push(department);
+        departmentJson.push({ label: department, value: department });
+      }
+      //   to add unique location to dropdown
+      if (locationArray.indexOf(location) == -1 && location != null) {
+        locationArray.push(location);
+        locationJson.push({ label: location, value: location });
+      }
+      parentArray.push({
+        title: job.text,
+        department: department,
+        location: location,
+        id: job.id,
+      });
+    });
+
+    setDepartmentList(departmentJson);
+    setLocationList(locationJson);
+    setParentJobList(parentArray);
+    setFilteredJobList(parentArray);
+    setChanged(true);
+  }, []);
+
+  //   filtering data
+  useEffect(() => {
+    console.log('fitering', searchText);
+    let keyword = searchText.trim();
+    if (department == null && location == null && keyword == '' && changed) {
+      setFilteredJobList(parentJobList);
+    } else if (changed) {
+      let departmentFilters = [],
+        locationFilters = [],
+        filteredArray = [];
+      department != null
+        ? department.map((filter) => {
+            departmentFilters.push(filter.value);
+          })
+        : departmentList.map((filter) => {
+            departmentFilters.push(filter.value);
+          });
+      location != null
+        ? location.map((filter) => {
+            locationFilters.push(filter.value);
+          })
+        : locationList.map((filter) => {
+            locationFilters.push(filter.value);
+          });
+      parentJobList.map((job) => {
+        let { department } = job,
+          { location } = job,
+          { title } = job;
+        if (
+          departmentFilters.indexOf(department) !== -1 &&
+          locationFilters.indexOf(location) !== -1
+        ) {
+          if (keyword == '' || title.toUpperCase().indexOf(keyword.toUpperCase()) !== -1) {
+            filteredArray.push({
+              title: title,
+              department: department,
+              location: location,
+              id: job.id,
+            });
+          }
+        }
+      });
+      setFilteredJobList(filteredArray);
+    }
+  }, [location, department, searchText]);
+
+  //   function to remove the filter
+  const removeFilter = (type, value) => {
+    let changedValue = [];
+    if (type == 'department') {
+      department.map((dep) => {
+        dep.value != value && changedValue.push(dep);
+      });
+      setDepartment(changedValue.length > 0 ? changedValue : null);
+    } else if (type == 'location') {
+      location.map((loc) => {
+        loc.value != value && changedValue.push(loc);
+      });
+      setLocation(changedValue.length > 0 ? changedValue : null);
+    } else if (type == 'reset') {
+      setDepartment(null);
+      setLocation(null);
+      setSearchText('');
+    }
+  };
+
+  const Option = (props) => {
+    return (
+      <div>
+        {' '}
+        <components.Option {...props}>
+          {' '}
+          <input
+            type="checkbox"
+            checked={props.isSelected}
+            onChange={() => null}
+            style={{ display: 'inline' }}
+          />{' '}
+          <label style={{ display: 'inline' }}>{props.value}</label>{' '}
+        </components.Option>{' '}
+      </div>
+    );
+  };
+
   return (
     <div className="text-center text-md-left">
       <Navbar bg="#f7ce55" careers />
@@ -47,47 +162,105 @@ function CareersPage(props) {
 
           <form className="pt-0 pt-md-5">
             <div className="row">
-              <div className="col-md-6 py-3 py-md-0">
+              <div className="col-lg-6 py-3 py-md-0">
                 <input
                   type="text"
-                  className="form-control rounded-pill shadow"
-                  placeholder="Keyword Search"
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
+                  placeholder="&#xF002;  Keyword Search"
+                  className="form-control rounded-pill shadow fa"
                 />
               </div>
-              <div className="col-md-3 py-3 py-md-0">
+              <div className="col-md-6 col-lg-3 py-3 py-lg-0">
                 <Select
+                  components={{ Option }}
+                  closeMenuOnSelect={false}
                   classNamePrefix="select"
                   value={department}
                   isSearchable={true}
                   name="Department"
-                  className="form-control rounded-pill shadow"
                   placeholder="Department"
                   options={departmentList}
                   isMulti
+                  isClearable={false}
                   onChange={(value) => {
                     setDepartment(value);
                     console.log('department value', value);
                   }}
                 />
               </div>
-              <div className="col-md-3 py-3 py-md-0">
+              <div className="col-md-6 col-lg-3 py-3 py-lg-0">
                 <Select
+                  components={{ Option }}
+                  closeMenuOnSelect={false}
                   classNamePrefix="select"
                   value={location}
                   isSearchable={true}
                   name="Location"
                   isMulti
-                  className="form-control rounded-pill shadow"
+                  isClearable={false}
                   placeholder="Location"
                   options={locationList}
                   onChange={(value) => {
+                    setLocation(value);
                     console.log('location value', value);
                   }}
                 />
               </div>
 
-              <div className="col pt-5 d-flex justify-content-between">
-                <p>288 Opportunities found across 20 Departments and 8 Locations </p>
+              {/* to display filters applied */}
+              {(department !== null || location !== null) && (
+                <div className="col-12 pt-5 d-flex justify-content-start align-items-center flex-wrap">
+                  <span className="mt-1">Filters : </span>
+                  {department &&
+                    department.map((department, i) => {
+                      return (
+                        <span className="filter-badge badge p-3 mx-2 mt-1" key={i}>
+                          {department.value}
+                          <i
+                            className="fa fa-times ml-2 clearIcon"
+                            style={{ lineHeight: 'normal' }}
+                            onClick={() => {
+                              removeFilter('department', department.value);
+                            }}
+                          />
+                        </span>
+                      );
+                    })}
+                  {location &&
+                    location.map((location, i) => {
+                      return (
+                        <span className="filter-badge badge p-3 mx-2" key={1}>
+                          {location.value}
+                          <i
+                            className="fa fa-times ml-2 clearIcon"
+                            style={{ lineHeight: 'normal' }}
+                            onClick={() => {
+                              removeFilter('location', location.value);
+                            }}
+                          />
+                        </span>
+                      );
+                    })}
+                  <span
+                    onClick={() => {
+                      removeFilter('reset', 0);
+                    }}
+                    className="clearIcon"
+                  >
+                    <u>Clear all filters</u>
+                  </span>
+                </div>
+              )}
+
+              <div className="col-12 pt-5 d-flex justify-content-between">
+                <p>
+                  <strong>{filteredJobList.length} Opportunities</strong> found across{' '}
+                  <strong>
+                    {department ? department.length : departmentList.length} Departments
+                  </strong>{' '}
+                  and <strong>{location ? location.length : locationList.length} Locations</strong>
+                </p>
                 <a href="#" className="text-green link">
                   View all jobs
                   <i
@@ -109,7 +282,9 @@ function CareersPage(props) {
             style={{ borderRadius: '3rem' }}
           >
             <h1 className="header mb-4" style={{ fontSize: '2rem' }}>
-              Recent Open Positions
+              {location == null && department == null && searchText == ''
+                ? 'Recent Open Positions'
+                : 'Search results...'}
             </h1>
             <div className="job">
               <table className="table table-borderless">
@@ -122,30 +297,21 @@ function CareersPage(props) {
                   </tr>
                 </thead>
                 <tbody>
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
-                  <JobCard />
+                  {filteredJobList.map((job, i) => {
+                    if (i < maxJobs - 2) return <JobCard data={job} key={i} />;
+                  })}
                 </tbody>
               </table>
               <div className="text-center mt-5">
-                <a href="#" className="text-green-light font-weight-bold mx-auto view-jobs">
-                  View all jobs
-                  <i className="fas fa-long-arrow-alt-right align-middle"></i>
-                </a>
+                {filteredJobList.length > maxJobs && (
+                  <span
+                    className="text-green-light font-weight-bold mx-auto view-jobs clearIcon"
+                    onClick={() => setMaxJobs(maxJobs + 10)}
+                  >
+                    View all jobs
+                    <i className="fas fa-long-arrow-alt-right align-middle"></i>
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -233,6 +399,25 @@ function CareersPage(props) {
       </section>
     </div>
   );
+}
+
+// to fetch the jobs json
+export async function getServerSideProps(ctx) {
+  const apiUrl = 'https://api.lever.co/v0/postings/gojek?mode=json';
+
+  try {
+    const response = await fetch(apiUrl);
+
+    if (response.ok) {
+      const data = await response.json();
+      return { props: { data } };
+    } else {
+      return await { props: { data: [] } };
+    }
+  } catch (error) {
+    // Network error
+    return { props: { data: [] } };
+  }
 }
 
 export default CareersPage;

@@ -29,14 +29,16 @@ function Navbar(props) {
         } ${navbarScrolled ? 'shadow-sm' : 'shadow-none'}`}
         style={{ backgroundColor: navbarScrolled ? props.bg : 'transparent' }}
       >
-        <a className="navbar-brand" href="/">
-          <img
-            src={props.light ? whiteLogo : whiteLogo}
-            width="200"
-            alt="Gojek"
-            className="img-fluid p-0"
-          />
-        </a>
+        <Link href="/">
+          <a className="navbar-brand">
+            <img
+              src={props.light ? whiteLogo : whiteLogo}
+              width="200"
+              alt="Gojek"
+              className="img-fluid p-0"
+            />
+          </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
