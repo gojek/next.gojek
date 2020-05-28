@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }) {
     <div>
       <Head>
         {/* default title */}
-        <title>Gojeck</title>
+        <title>Gojek</title>
       </Head>
       <BarLoader size={150} color={'#004758'} loading={loading} width={'100%'} />
       <Component {...pageProps} />

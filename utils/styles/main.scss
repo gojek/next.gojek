@@ -2,12 +2,25 @@
 @import './node_modules/slick-carousel/slick/slick-theme.scss';
 @import '~/../../utils/styles/constants.scss';
 
+@function selectAllFrom($n, $selector) {
+  $classes: ();
+  @for $i from 1 through $n {
+    $className: if($i == 1, #{$selector}, #{'~ ' + $selector});
+    $classes: join($classes, unquote($className), space);
+  }
+  @return $classes;
+}
+
 .bg {
   @include color-modifiers;
 }
 
 .text {
   @include color-modifiers('color');
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -168,6 +181,16 @@ body {
     }
   }
 
+  .shadowCard {
+    background-color: #eee;
+    position: absolute;
+    left: -10%;
+    top: 4%;
+    width: 112%;
+    height: 80%;
+    z-index: -1;
+  }
+
   .partner-logos {
     max-width: 384px;
 
@@ -274,7 +297,7 @@ body {
       border: none;
       border-radius: $border-xl;
       padding: 1.5rem 2rem;
-      height: 15rem;
+      min-height: 15rem;
       margin-bottom: 1.875rem;
       position: relative;
 
@@ -302,6 +325,25 @@ body {
         font-family: $navbar-font;
         font-size: $font-m;
       }
+    }
+
+    .department0 {
+      background-color: #00aa13;
+    }
+    .department1 {
+      background-color: #ff7f32;
+    }
+    .department2 {
+      background-color: #ff808b;
+    }
+    .department3 {
+      background-color: #7ccc6c;
+    }
+    .department4 {
+      background-color: #d48bc8;
+    }
+    .department5 {
+      background-color: #32ebe1;
     }
   }
 }
@@ -345,11 +387,6 @@ body {
 #funding {
   background-repeat: no-repeat;
   background-position: left;
-  @media screen and (min-width: $xl-break) {
-    .desc {
-      margin-right: 10rem;
-    }
-  }
 }
 
 // Slick Slider
@@ -467,13 +504,33 @@ body {
   .slick-slide {
     margin-top: 3rem;
   }
-  .slick-slide.slick-active.slick-center {
+
+  #{selectAllFrom(2, '.slick-active')} {
     margin-top: 0;
     .card {
       height: 20rem;
     }
-    // height: 20rem !important;
-    // margin-top: 0;
+    .highlight {
+      &:after {
+        content: '';
+        display: block;
+        width: 10%;
+        margin: 0 auto;
+        border-top: 2px solid #fff;
+      }
+    }
+  }
+
+  #{selectAllFrom(3, '.slick-active')} {
+    margin-top: 3rem;
+    .card {
+      height: 15rem;
+    }
+    .highlight {
+      &:after {
+        display: none;
+      }
+    }
   }
 
   .cta {

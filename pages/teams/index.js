@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Head from 'next/head';
 import Navbar from '~/../../comps/Navbar';
 import JobCard from '~/../../comps/Careers/jobCard';
 
@@ -8,6 +9,9 @@ function CareersPage(props) {
 
   return (
     <div className="text-center text-md-left">
+      <Head>
+        <title>Gojek | Teams</title>
+      </Head>
       <Navbar light bg="#000" />
       {/* banner */}
       <div className="blackBackground"></div>

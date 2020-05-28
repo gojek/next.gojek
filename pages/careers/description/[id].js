@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Navbar from '~/../../comps/Navbar';
 import {
   FacebookShareButton,
@@ -22,6 +23,9 @@ function DescriptionPage(props) {
 
   return (
     <div className="text-center text-md-left jobDescription">
+      <Head>
+        <title>Gojek | Opening | {props.data.text}</title>
+      </Head>
       <Navbar light bg="#924e8c" careers />
 
       {/* banner section */}

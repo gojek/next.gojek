@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Select, { components } from 'react-select';
 import fetch from 'isomorphic-unfetch';
 
@@ -13,6 +14,7 @@ function CareersPage(props) {
   const [location, setLocation] = useState(null);
   const [parentJobList, setParentJobList] = useState([]);
   const [filteredJobList, setFilteredJobList] = useState([]);
+  const [departmentCountArray, setDepartmentCountArray] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [changed, setChanged] = useState(false);
   const [maxJobs, setMaxJobs] = useState(10);
@@ -21,6 +23,8 @@ function CareersPage(props) {
     console.log('careers props', props);
     let departmentJson = [],
       departmentArray = [],
+      departmentCountArray = [],
+      departmentCount = [],
       locationJson = [],
       locationArray = [],
       parentArray = [];
@@ -31,8 +35,9 @@ function CareersPage(props) {
       //   to add unique department to dropdown
       if (departmentArray.indexOf(department) == -1 && department != null) {
         departmentArray.push(department);
-        departmentJson.push({ label: department, value: department });
       }
+      department != null && departmentCountArray.push(department);
+
       //   to add unique location to dropdown
       if (locationArray.indexOf(location) == -1 && location != null) {
         locationArray.push(location);
@@ -45,11 +50,27 @@ function CareersPage(props) {
         id: job.id,
       });
     });
-
+    // to calculate openings in each department
+    departmentArray.map((dep) => {
+      let openings = departmentCountArray.filter(function(value) {
+        return value === dep;
+      }).length;
+      departmentJson.push({ label: dep, value: `${dep} (${openings})` });
+      departmentCount.push({
+        department: dep,
+        count: openings,
+      });
+    });
+    departmentCount.sort(function(a, b) {
+      return a.count - b.count;
+    });
+    departmentCount.reverse();
+    console.log('count depart', departmentCount);
     setDepartmentList(departmentJson);
     setLocationList(locationJson);
     setParentJobList(parentArray);
     setFilteredJobList(parentArray);
+    setDepartmentCountArray(departmentCount);
     setChanged(true);
   }, []);
 
@@ -65,17 +86,17 @@ function CareersPage(props) {
         filteredArray = [];
       department != null
         ? department.map((filter) => {
-            departmentFilters.push(filter.value);
+            departmentFilters.push(filter.label);
           })
         : departmentList.map((filter) => {
-            departmentFilters.push(filter.value);
+            departmentFilters.push(filter.label);
           });
       location != null
         ? location.map((filter) => {
-            locationFilters.push(filter.value);
+            locationFilters.push(filter.label);
           })
         : locationList.map((filter) => {
-            locationFilters.push(filter.value);
+            locationFilters.push(filter.label);
           });
       parentJobList.map((job) => {
         let { department } = job,
@@ -119,6 +140,20 @@ function CareersPage(props) {
     }
   };
 
+  // function to apply department filter
+  const selectDepartment = (index) => {
+    setLocation(null);
+    setSearchText('');
+    setDepartment([
+      {
+        label: departmentCountArray[index].department,
+        value: `${departmentCountArray[index].department} (${departmentCountArray[index].count})`,
+      },
+    ]);
+    var elmnt = document.getElementById('filters');
+    elmnt.scrollIntoView();
+  };
+
   const Option = (props) => {
     return (
       <div>
@@ -139,6 +174,9 @@ function CareersPage(props) {
 
   return (
     <div className="text-center text-md-left">
+      <Head>
+        <title>Gojek | Careers</title>
+      </Head>
       <Navbar bg="#f7ce55" careers />
 
       <div className="yellow-bg-gradient"></div>
@@ -153,7 +191,7 @@ function CareersPage(props) {
               <h1 className="banner-head">
                 We give you <br /> leverage to create <br /> impact at scale.
               </h1>
-              <p className="py-4">
+              <p className="py-4" id="filters">
                 Join a company that strives to support you. Not just 'your best work', but all of
                 you.
               </p>
@@ -327,47 +365,36 @@ function CareersPage(props) {
             is simply dummy text of the printing and typesetting industry.
           </p>
           <div className="card-columns text-left pt-5">
-            <div className="card highlight bg-green-light">
-              <div className="card-body">
-                <h2 className="header">Engineering</h2>
-                <p className="sub-head">114 Openings</p>
+            {departmentCountArray.map((department, i) => {
+              if (i < 6 && i != 1)
+                return (
+                  <div
+                    className={`card ${i == 0 ? 'highlight ' : ''}${`department${i}`}`}
+                    onClick={() => {
+                      selectDepartment(i);
+                    }}
+                  >
+                    <div className="card-body">
+                      <h2 className="header">{departmentCountArray[i].department}</h2>
+                      <p className="sub-head">{departmentCountArray[i].count} Openings</p>
+                    </div>
+                  </div>
+                );
+            })}
+            {departmentCountArray.length > 1 && (
+              <div
+                className="card highlight"
+                style={{ backgroundColor: '#32ebe1' }}
+                onClick={() => {
+                  selectDepartment(1);
+                }}
+              >
+                <div className="card-body">
+                  <h2 className="header">{departmentCountArray[1].department}</h2>
+                  <p className="sub-head">{departmentCountArray[1].count} Openings</p>
+                </div>
               </div>
-            </div>
-
-            <div className="card " style={{ backgroundColor: '#ff7f32' }}>
-              <div className="card-body">
-                <h2 className="header">Program Management</h2>
-                <p className="sub-head">9 Openings</p>
-              </div>
-            </div>
-
-            <div className="card" style={{ backgroundColor: '#ff808b' }}>
-              <div className="card-body">
-                <h2 className="header">Product</h2>
-                <p className="sub-head">23 Openings</p>
-              </div>
-            </div>
-
-            <div className="card" style={{ backgroundColor: '#7ccc6c' }}>
-              <div className="card-body">
-                <h2 className="header">Design</h2>
-                <p className="sub-head">7 Openings</p>
-              </div>
-            </div>
-
-            <div className="card" style={{ backgroundColor: '#d48bc8' }}>
-              <div className="card-body">
-                <h2 className="header">People and Culture</h2>
-                <p className="sub-head">9 Openings</p>
-              </div>
-            </div>
-
-            <div className="card highlight" style={{ backgroundColor: '#32ebe1' }}>
-              <div className="card-body">
-                <h2 className="header">Science</h2>
-                <p className="sub-head">41 Openings</p>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

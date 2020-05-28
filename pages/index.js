@@ -63,7 +63,6 @@ function HomePage(props) {
                 slidesToShow={1}
                 arrows
                 dots
-                centerMode
                 customPaging={(i) => {
                   return <a className="dot">{departments[i]}</a>;
                 }}
@@ -83,7 +82,9 @@ function HomePage(props) {
                 }}
               >
                 <div>
-                  <div className="card pt-5 shadow">
+                  <div className="card pt-5 shadow mx-5">
+                    <div className="card shadowCard" />
+                    <div className="card shadowCard" />
                     <h5 className="card-title sub-head text-green-light mt-4">Transport</h5>
                     <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -98,7 +99,8 @@ function HomePage(props) {
                   </div>
                 </div>
                 <div>
-                  <div className="card pt-5 shadow">
+                  <div className="card pt-5 shadow mx-5">
+                    <div className="card shadowCard" />
                     <h5 className="card-title sub-head text-blue mt-4">Payments</h5>
                     <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -113,7 +115,8 @@ function HomePage(props) {
                   </div>
                 </div>
                 <div>
-                  <div className="card pt-5 shadow">
+                  <div className="card pt-5 shadow mx-5">
+                    <div className="card shadowCard" />
                     <h5 className="card-title sub-head text-orange-light mt-4">Food Delivery</h5>
                     <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -128,7 +131,8 @@ function HomePage(props) {
                   </div>
                 </div>
                 <div>
-                  <div className="card pt-5 shadow">
+                  <div className="card pt-5 shadow mx-5">
+                    <div className="card shadowCard" />
                     <h5 className="card-title sub-head text-red mt-4">Logistics</h5>
                     <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -143,7 +147,8 @@ function HomePage(props) {
                   </div>
                 </div>
                 <div>
-                  <div className="card pt-5 shadow">
+                  <div className="card pt-5 shadow mx-5">
+                    <div className="card shadowCard" />
                     <h5 className="card-title sub-head text-pink-light mt-4">Entertainment</h5>
                     <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -158,7 +163,8 @@ function HomePage(props) {
                   </div>
                 </div>
                 <div>
-                  <div className="card pt-5 shadow">
+                  <div className="card pt-5 shadow mx-5">
+                    <div className="card shadowCard" />
                     <h5 className="card-title sub-head text-yellow-light mt-4">
                       Lifestyle Services
                     </h5>
@@ -277,9 +283,9 @@ function HomePage(props) {
       >
         <div className="container">
           <div className="row justify-content-end">
-            <div className="col-12 col-lg-4 col-xl-6 px-4">
+            <div className="col-12 col-lg-4 col-xl-7 px-4">
               <h1 className="header">Funding</h1>
-              <p className="desc">
+              <p>
                 We’ve also raised a fair amount of capital along the way, including our recently
                 concluded Series F round. Gojek is fortunate to count Sequoia Capital, Google,
                 Tencent Holdings, JD.com, and Visa, among its investors.
@@ -313,63 +319,59 @@ function HomePage(props) {
           <div id="opensource-carousel">
             <Slider
               slidesToShow={3}
-              centerMode
               responsive={[
                 {
                   breakpoint: 992,
                   settings: {
                     slidesToShow: 3,
-                    centerMode: true,
                   },
                 },
                 {
                   breakpoint: 768,
                   settings: {
-                    slidesToShow: 2,
-                    centerMode: true,
+                    slidesToShow: 3,
                   },
                 },
                 {
                   breakpoint: 576,
                   settings: {
                     slidesToShow: 1,
-                    centerMode: false,
                   },
                 },
               ]}
             >
               <div>
                 <div className="card mx-3"></div>
-                {/* <p className="highlight py-3">Singapore</p> */}
+                <p className="highlight py-3">Singapore</p>
               </div>
               <div>
                 <div className="card mx-3"></div>
-                {/* <p className="highlight py-3">Singapore</p> */}
-              </div>
-
-              <div>
-                <div className="card mx-3"></div>
-                {/* <p className="highlight py-3">Singapore</p> */}
+                <p className="highlight py-3">Singapore</p>
               </div>
 
               <div>
                 <div className="card mx-3"></div>
-                {/* <p className="highlight py-3">Singapore</p> */}
+                <p className="highlight py-3">Singapore</p>
               </div>
 
               <div>
                 <div className="card mx-3"></div>
-                {/* <p className="highlight py-3">Singapore</p> */}
+                <p className="highlight py-3">Singapore</p>
               </div>
 
               <div>
                 <div className="card mx-3"></div>
-                {/* <p className="highlight py-3">Singapore</p> */}
+                <p className="highlight py-3">Singapore</p>
               </div>
 
               <div>
                 <div className="card mx-3"></div>
-                {/* <p className="highlight py-3">Singapore</p> */}
+                <p className="highlight py-3">Singapore</p>
+              </div>
+
+              <div>
+                <div className="card mx-3"></div>
+                <p className="highlight py-3">Singapore</p>
               </div>
             </Slider>
           </div>
