@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react';
 import Head from 'next/head';
 
 import Navbar from '~/../../comps/Navbar';
 import bannerImage from '~/../../static/banner.png';
-import JobCard from '~/../../comps/Careers/jobCard';
 
 function LifeAtGojek(props) {
   return (
@@ -266,7 +264,7 @@ function LifeAtGojek(props) {
       {/* openings and blog section */}
       <section id="openingsBlogs">
         <div className="container">
-          <div className="banner" style={{ backgroundColor: 'rgba(116, 210, 231, 0.3)' }}>
+          <div className="banner mt-0" style={{ backgroundColor: '#ace7f3' }}>
             <div className="row py-5">
               <div className="col-12 col-md-7">
                 <h1 className="heading">
@@ -277,6 +275,107 @@ function LifeAtGojek(props) {
                   View open positions
                   <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
                 </a>
+              </div>
+            </div>
+          </div>
+          <div className="row pt-5">
+            <div className="col-md-4 pr-4">
+              <div className="card my-4">
+                <div className="placeholder"></div>
+                <div className="card-body">
+                  <p className="card-name blogHeading">
+                    How We Pushed a Million Keys to Redis in Seconds{' '}
+                  </p>
+                  <p className="card-text blogDescription mb-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  </p>
+                  <p className="mb-0">Lorem Ipsum</p>
+                  <p className="blogDescription">Apr 01 | 5 min read</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-4 pr-4">
+              <div className="card my-4">
+                <div className="placeholder"></div>
+                <div className="card-body">
+                  <p className="card-name blogHeading">
+                    Code Coverage: From Failing the Build To Publishing The Report With Gitlab Pages{' '}
+                  </p>
+                  <p className="card-text blogDescription mb-3">
+                    Introducing Trip Advisor, our new feature to help driver partners communicate
+                    with customers and cut down cancellations.
+                  </p>
+                  <p className="mb-0">Lorem Ipsum</p>
+                  <p className="blogDescription">Apr 01 | 5 min read</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-4 pr-4">
+              <div className="card my-4">
+                <div className="placeholder"></div>
+                <div className="card-body">
+                  <p className="card-name blogHeading">
+                    How One Feature Helps Gojek Reduce Booking Cancellations{' '}
+                  </p>
+                  <p className="card-text blogDescription mb-3">
+                    A product perspective on the recently-introduced Pickup feature for our food
+                    delivery service — GoFood
+                  </p>
+                  <p className="mb-0">Lorem Ipsum</p>
+                  <p className="blogDescription">Apr 01 | 5 min read</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-4 pr-4">
+              <div className="card my-4">
+                <div className="placeholder"></div>
+                <div className="card-body">
+                  <p className="card-name blogHeading">
+                    How We Pushed a Million Keys to Redis in Seconds{' '}
+                  </p>
+                  <p className="card-text blogDescription mb-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  </p>
+                  <p className="mb-0">Lorem Ipsum</p>
+                  <p className="blogDescription">Apr 01 | 5 min read</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-4 pr-4">
+              <div className="card my-4">
+                <div className="placeholder"></div>
+                <div className="card-body">
+                  <p className="card-name blogHeading">
+                    Code Coverage: From Failing the Build To Publishing The Report With Gitlab Pages{' '}
+                  </p>
+                  <p className="card-text blogDescription mb-3">
+                    Introducing Trip Advisor, our new feature to help driver partners communicate
+                    with customers and cut down cancellations.
+                  </p>
+                  <p className="mb-0">Lorem Ipsum</p>
+                  <p className="blogDescription">Apr 01 | 5 min read</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-4 pr-4">
+              <div className="card my-4">
+                <div className="placeholder"></div>
+                <div className="card-body">
+                  <p className="card-name blogHeading">
+                    How One Feature Helps Gojek Reduce Booking Cancellations{' '}
+                  </p>
+                  <p className="card-text blogDescription mb-3">
+                    A product perspective on the recently-introduced Pickup feature for our food
+                    delivery service — GoFood
+                  </p>
+                  <p className="mb-0">Lorem Ipsum</p>
+                  <p className="blogDescription">Apr 01 | 5 min read</p>
+                </div>
               </div>
             </div>
           </div>

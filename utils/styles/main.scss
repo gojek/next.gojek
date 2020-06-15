@@ -198,14 +198,6 @@ body {
     }
   }
 
-  .slick-prev {
-    left: -50px;
-  }
-
-  .slick-next {
-    right: -50px;
-  }
-
   .slick-dots {
     bottom: -50px;
     opacity: 0.8;
@@ -392,7 +384,8 @@ body {
 }
 
 #blogs,
-#stories {
+#stories,
+#openingsBlogs {
   .list {
     padding-top: 7rem;
   }
@@ -415,9 +408,11 @@ body {
 }
 
 #funding {
-  background-repeat: no-repeat;
-  background-position: left;
-  background: linear-gradient(to right, #f7ce55 40%, #f7ce55 40%, #fff 0%, #fff 65%, #fff 65%);
+  @media screen and (min-width: $lg-break) {
+    background-repeat: no-repeat;
+    background-position: left;
+    background: linear-gradient(to right, #f7ce55 40%, #f7ce55 40%, #fff 0%, #fff 65%, #fff 65%);
+  }
 }
 
 // Slick Slider
@@ -435,6 +430,24 @@ body {
 
 .slick-next:before {
   content: '\f054';
+}
+
+.slick-prev {
+  left: -10px;
+}
+
+.slick-next {
+  right: -10px;
+}
+
+@media screen and (min-width: $sm-break) {
+  .slick-prev {
+    left: -50px;
+  }
+
+  .slick-next {
+    right: -50px;
+  }
 }
 
 // .slick-slide {
@@ -735,12 +748,12 @@ body {
 }
 
 #openingsBlogs {
-  background: linear-gradient(
-    to bottom,
-    #101820 0%,
-    #101820 65%,
-    #101820 65%,
-    transparent 65%,
-    transparent 100%
-  );
+  background: linear-gradient(to bottom, #101820 13%, #fff 13%);
+  .blogHeading {
+    font-size: 1.25rem;
+  }
+  .blogDescription {
+    font-size: 14px;
+    color: #575757;
+  }
 }

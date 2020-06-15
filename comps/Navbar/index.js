@@ -51,7 +51,7 @@ function Navbar(props) {
           <i className="fa fa-bars" style={{ color: props.light ? '#fff' : '#000' }} />
         </button>
 
-        <div className="collapse navbar-collapse" id="main-navbar">
+        <div className="collapse navbar-collapse text-left" id="main-navbar">
           <ul className="navbar-nav ml-auto">
             {data.map((page, i) => {
               return (

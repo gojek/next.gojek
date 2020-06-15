@@ -1,5 +1,5 @@
 import Slider from 'react-slick';
-import Stories from 'react-insta-stories';
+// import Stories from 'react-insta-stories';
 
 import Navbar from '~/../../comps/Navbar';
 import bannerImage from '~/../../static/banner.png';
@@ -302,7 +302,7 @@ function HomePage(props) {
       >
         <div className="container">
           <div className="row justify-content-end">
-            <div className="col-12 col-md-7 px-4 pb-5">
+            <div className="col-12 col-lg-7 px-4 pb-5">
               <h1 className="header mb-3">Funding</h1>
               <p>
                 We’ve also raised a fair amount of capital along the way, including our recently
@@ -435,8 +435,8 @@ function HomePage(props) {
               </a>
             </div>
             <div className="col-lg-7 pl-2 pt-4 pt-lg-0">
-              <Stories stories={stories} defaultInterval={1500} />
-              {/* <div id="impact-stories-carousel" className="carousel slide">
+              {/* <Stories stories={stories} defaultInterval={1500} /> */}
+              <div id="impact-stories-carousel" className="carousel slide">
                 <ol className="carousel-indicators">
                   <li
                     data-target="#impact-stories-carousel"
@@ -499,7 +499,7 @@ function HomePage(props) {
                   <span className="carousel-control-next-icon" aria-hidden="true"></span>
                   <span className="sr-only">Next</span>
                 </a>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
