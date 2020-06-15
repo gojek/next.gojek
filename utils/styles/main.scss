@@ -96,6 +96,7 @@ body {
     color: #fff;
     margin-bottom: 0;
     text-align: center;
+    opacity: 0.8;
   }
 }
 
@@ -184,11 +185,33 @@ body {
   .shadowCard {
     background-color: #eee;
     position: absolute;
-    left: -10%;
-    top: 4%;
-    width: 112%;
-    height: 80%;
+    left: -13%;
+    top: 0;
+    width: 108%;
+    height: 88%;
     z-index: -1;
+    @media screen and (min-width: $md-break) {
+      left: -11%;
+    }
+    @media screen and (min-width: $lg-break) {
+      left: -8%;
+    }
+  }
+
+  .slick-prev {
+    left: -50px;
+  }
+
+  .slick-next {
+    right: -50px;
+  }
+
+  .slick-dots {
+    bottom: -50px;
+    opacity: 0.8;
+    .slick-active {
+      opacity: 1;
+    }
   }
 
   .partner-logos {
@@ -206,7 +229,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 140vh;
+  height: 100vh;
   width: 100%;
   z-index: -1;
 }
@@ -368,7 +391,8 @@ body {
   }
 }
 
-#blogs {
+#blogs,
+#stories {
   .list {
     padding-top: 7rem;
   }
@@ -381,12 +405,19 @@ body {
       border: none;
       border-radius: $border-xl;
     }
+
+    .card-name {
+      font-family: $title-font;
+      font-size: 1.125rem;
+      line-height: 28px;
+    }
   }
 }
 
 #funding {
   background-repeat: no-repeat;
   background-position: left;
+  background: linear-gradient(to right, #f7ce55 40%, #f7ce55 40%, #fff 0%, #fff 65%, #fff 65%);
 }
 
 // Slick Slider
@@ -394,7 +425,7 @@ body {
 .slick-prev:before {
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   color: #404040;
 }
 
@@ -475,6 +506,10 @@ body {
   }
 }
 
+.listings {
+  box-shadow: 0 0 82px 0 rgba(0, 0, 0, 0.12);
+}
+
 .social-media {
   .btn {
     width: 2rem;
@@ -490,7 +525,7 @@ body {
 }
 
 #open-source {
-  background: linear-gradient(to bottom, #fff 0%, #fff 60%, $green-light 40%);
+  background: linear-gradient(to bottom, #fff 0%, #fff 58%, $green-light 42%);
   .card {
     height: 15rem;
     background-color: #dcdada;
@@ -500,9 +535,15 @@ body {
   .highlight {
     color: #fff;
     text-align: center;
+    position: relative;
+    bottom: -62px;
   }
   .slick-slide {
     margin-top: 3rem;
+  }
+  .slick-prev,
+  .slick-next {
+    top: 150px;
   }
 
   #{selectAllFrom(2, '.slick-active')} {
@@ -511,6 +552,7 @@ body {
       height: 20rem;
     }
     .highlight {
+      bottom: -30px;
       &:after {
         content: '';
         display: block;
@@ -527,6 +569,7 @@ body {
       height: 15rem;
     }
     .highlight {
+      bottom: -62px;
       &:after {
         display: none;
       }
@@ -623,4 +666,81 @@ body {
       }
     }
   }
+}
+
+// life&gojek page
+.bannerBold {
+  font-family: $title-font;
+}
+
+#stories,
+#systems,
+#openingsBlogs {
+  .heading {
+    font-family: $header-font;
+    font-size: 1.875rem;
+    line-height: 42px;
+  }
+}
+
+#stories {
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+
+  .description {
+    font-size: 1.875rem;
+  }
+}
+
+#systems,
+#openingsBlogs {
+  .banner {
+    background-color: rgba(116, 210, 231, 0.3);
+    border-radius: 2rem;
+    padding: 4.5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
+#cards,
+#feedback {
+  .cards {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .card-columns {
+    column-count: 3;
+    @media screen and (max-width: $sm-break) {
+      column-count: 1;
+    }
+    .card {
+      border: none;
+      min-height: 15rem;
+      margin-bottom: 2rem;
+      position: relative;
+      background-color: transparent;
+
+      .card-content {
+        border-radius: 2.5rem;
+        background-color: #fff;
+        height: 100%;
+      }
+
+      .feedback {
+        background-color: #000;
+      }
+    }
+  }
+}
+
+#openingsBlogs {
+  background: linear-gradient(
+    to bottom,
+    #101820 0%,
+    #101820 65%,
+    #101820 65%,
+    transparent 65%,
+    transparent 100%
+  );
 }

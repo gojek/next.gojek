@@ -1,4 +1,5 @@
 import Slider from 'react-slick';
+import Stories from 'react-insta-stories';
 
 import Navbar from '~/../../comps/Navbar';
 import bannerImage from '~/../../static/banner.png';
@@ -17,6 +18,25 @@ function HomePage(props) {
     'Logistics',
     'Entertainment',
     'Lifestyle Services',
+  ];
+
+  const stories = [
+    {
+      url: 'https://www.youtube.com/embed/bdHfntRaAoo',
+      type: 'video',
+    },
+    {
+      url: 'https://www.youtube.com/embed/1kPYaBfgawI',
+      type: 'video',
+    },
+    {
+      url: 'https://www.youtube.com/embed/77YDzTh-_EA',
+      type: 'video',
+    },
+    {
+      url: 'https://www.youtube.com/embed/EKQxX5XZrr4',
+      type: 'video',
+    },
   ];
 
   return (
@@ -82,10 +102,9 @@ function HomePage(props) {
                 }}
               >
                 <div>
-                  <div className="card pt-5 shadow mx-5">
+                  <div className="card py-5 shadow mx-5">
                     <div className="card shadowCard" />
-                    <div className="card shadowCard" />
-                    <h5 className="card-title sub-head text-green-light mt-4">Transport</h5>
+                    <h5 className="card-title sub-head text-green-light my-4">Transport</h5>
                     <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -99,9 +118,9 @@ function HomePage(props) {
                   </div>
                 </div>
                 <div>
-                  <div className="card pt-5 shadow mx-5">
+                  <div className="card py-5 shadow mx-5">
                     <div className="card shadowCard" />
-                    <h5 className="card-title sub-head text-blue mt-4">Payments</h5>
+                    <h5 className="card-title sub-head text-blue my-4">Payments</h5>
                     <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -115,9 +134,9 @@ function HomePage(props) {
                   </div>
                 </div>
                 <div>
-                  <div className="card pt-5 shadow mx-5">
+                  <div className="card py-5 shadow mx-5">
                     <div className="card shadowCard" />
-                    <h5 className="card-title sub-head text-orange-light mt-4">Food Delivery</h5>
+                    <h5 className="card-title sub-head text-orange-light my-4">Food Delivery</h5>
                     <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -131,9 +150,9 @@ function HomePage(props) {
                   </div>
                 </div>
                 <div>
-                  <div className="card pt-5 shadow mx-5">
+                  <div className="card py-5 shadow mx-5">
                     <div className="card shadowCard" />
-                    <h5 className="card-title sub-head text-red mt-4">Logistics</h5>
+                    <h5 className="card-title sub-head text-red my-4">Logistics</h5>
                     <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -147,9 +166,9 @@ function HomePage(props) {
                   </div>
                 </div>
                 <div>
-                  <div className="card pt-5 shadow mx-5">
+                  <div className="card py-5 shadow mx-5">
                     <div className="card shadowCard" />
-                    <h5 className="card-title sub-head text-pink-light mt-4">Entertainment</h5>
+                    <h5 className="card-title sub-head text-pink-light my-4">Entertainment</h5>
                     <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
                       <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
@@ -163,9 +182,9 @@ function HomePage(props) {
                   </div>
                 </div>
                 <div>
-                  <div className="card pt-5 shadow mx-5">
+                  <div className="card py-5 shadow mx-5">
                     <div className="card shadowCard" />
-                    <h5 className="card-title sub-head text-yellow-light mt-4">
+                    <h5 className="card-title sub-head text-yellow-light my-4">
                       Lifestyle Services
                     </h5>
                     <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
@@ -193,7 +212,7 @@ function HomePage(props) {
             <div className="col-md-6">
               <div className="mx-4">
                 <h1 className="header">Gojek Vision & Mission</h1>
-                <p className="mb-0">
+                <p className="mb-0 pr-0 pr-md-2">
                   We harness cutting edge technology to solve problems that matter to our users. On
                   a larger scale, we’re dedicated to creating (and scaling) positive socio-economic
                   impact on our ecosystem of users.
@@ -279,12 +298,12 @@ function HomePage(props) {
       <section
         id="funding"
         className="full-height d-flex align-items-center py-5"
-        style={{ backgroundImage: `url(${fundingBg})` }}
+        // style={{ backgroundImage: `url(${fundingBg})` }}
       >
         <div className="container">
           <div className="row justify-content-end">
-            <div className="col-12 col-lg-4 col-xl-7 px-4">
-              <h1 className="header">Funding</h1>
+            <div className="col-12 col-md-7 px-4 pb-5">
+              <h1 className="header mb-3">Funding</h1>
               <p>
                 We’ve also raised a fair amount of capital along the way, including our recently
                 concluded Series F round. Gojek is fortunate to count Sequoia Capital, Google,
@@ -416,7 +435,8 @@ function HomePage(props) {
               </a>
             </div>
             <div className="col-lg-7 pl-2 pt-4 pt-lg-0">
-              <div id="impact-stories-carousel" className="carousel slide">
+              <Stories stories={stories} defaultInterval={1500} />
+              {/* <div id="impact-stories-carousel" className="carousel slide">
                 <ol className="carousel-indicators">
                   <li
                     data-target="#impact-stories-carousel"
@@ -479,7 +499,7 @@ function HomePage(props) {
                   <span className="carousel-control-next-icon" aria-hidden="true"></span>
                   <span className="sr-only">Next</span>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

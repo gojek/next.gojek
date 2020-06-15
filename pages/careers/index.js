@@ -315,10 +315,7 @@ function CareersPage(props) {
       {/* jobs list section */}
       <section className="test">
         <div className="container mb-5">
-          <div
-            className="listings bg-white shadow py-5 px-2 px-md-5"
-            style={{ borderRadius: '3rem' }}
-          >
+          <div className="listings bg-white py-5 px-2 px-md-5" style={{ borderRadius: '3rem' }}>
             <h1 className="header mb-4" style={{ fontSize: '2rem' }}>
               {location == null && department == null && searchText == ''
                 ? 'Recent Open Positions'

@@ -35,7 +35,7 @@ function Navbar(props) {
               src={props.light ? whiteLogo : whiteLogo}
               width="200"
               alt="Gojek"
-              className="img-fluid p-0"
+              className="img-fluid p-0 ml-0 ml-md-4"
             />
           </a>
         </Link>
