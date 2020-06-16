@@ -24,8 +24,9 @@ function Navbar(props) {
   return (
     <div>
       <nav
-        className={`navbar navbar-expand-lg fixed-top w-100 py-4 px-3 ${styles.menu} ${
-          props.light ? styles.light : ''
+        id="navbar"
+        className={`navbar navbar-expand-lg fixed-top w-100 py-4 px-3 menu ${
+          props.light ? 'light ' : ''
         } ${navbarScrolled ? 'shadow-sm' : 'shadow-none'}`}
         style={{ backgroundColor: navbarScrolled ? props.bg : 'transparent' }}
       >
@@ -56,13 +57,13 @@ function Navbar(props) {
             {data.map((page, i) => {
               return (
                 <li
-                  className={`nav-item px-3 active ${styles.menuItem} ${
-                    router.pathname == page.routeTo ? `active ${styles.menuActive}` : ''
+                  className={`nav-item px-3 active menuItem ${
+                    router.pathname == page.routeTo ? `active menuActive` : ''
                   }`}
                   key={i}
                 >
                   <Link href={page.routeTo}>
-                    <a className={`nav-link ${styles.menuLink}`}>
+                    <a className={`nav-link menuLink`}>
                       {page.name}
                       {router.pathname == page.routeTo && (
                         <span className="sr-only">(current)</span>
@@ -73,13 +74,13 @@ function Navbar(props) {
               );
             })}
             {props.careers ? (
-              <li className={`nav-item px-4 active ${styles.menuActive} ${styles.menuItem}`}>
+              <li className={`nav-item px-4 active menuActive menuItem`}>
                 <Link href="/careers">
-                  <a className={`nav-link ${styles.menuLink}`}>Join Us</a>
+                  <a className={`nav-link menuLink`}>Join Us</a>
                 </Link>
               </li>
             ) : (
-              <li className={`nav-item pr-4 pl-3 pl-lg-4 ${styles.joinUs}`}>
+              <li className={`nav-item pr-4 pl-3 pl-lg-4 joinUs`}>
                 <Link href="/careers">
                   <a className="btn rounded-pill text-success bg-white btn-sm px-3">Join Us</a>
                 </Link>
