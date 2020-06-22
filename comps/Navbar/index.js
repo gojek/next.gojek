@@ -24,9 +24,8 @@ function Navbar(props) {
   return (
     <div>
       <nav
-        id="navbar"
-        className={`navbar navbar-expand-lg fixed-top w-100 py-4 px-3 menu ${
-          props.light ? 'light ' : ''
+        className={`navbar navbar-expand-lg fixed-top w-100 py-4 px-3 ${styles.menu} ${
+          props.light ? styles.light : ''
         } ${navbarScrolled ? 'shadow-sm' : 'shadow-none'}`}
         style={{ backgroundColor: navbarScrolled ? props.bg : 'transparent' }}
       >
@@ -36,7 +35,7 @@ function Navbar(props) {
               src={props.light ? whiteLogo : whiteLogo}
               width="200"
               alt="Gojek"
-              className="img-fluid p-0 ml-0 ml-md-4"
+              className="img-fluid p-0"
             />
           </a>
         </Link>
@@ -52,18 +51,18 @@ function Navbar(props) {
           <i className="fa fa-bars" style={{ color: props.light ? '#fff' : '#000' }} />
         </button>
 
-        <div className="collapse navbar-collapse text-left" id="main-navbar">
+        <div className="collapse navbar-collapse" id="main-navbar">
           <ul className="navbar-nav ml-auto">
             {data.map((page, i) => {
               return (
                 <li
-                  className={`nav-item px-3 active menuItem ${
-                    router.pathname == page.routeTo ? `active menuActive` : ''
+                  className={`nav-item px-3 active ${styles.menuItem} ${
+                    router.pathname == page.routeTo ? `active ${styles.menuActive}` : ''
                   }`}
                   key={i}
                 >
                   <Link href={page.routeTo}>
-                    <a className={`nav-link menuLink`}>
+                    <a className={`nav-link ${styles.menuLink}`}>
                       {page.name}
                       {router.pathname == page.routeTo && (
                         <span className="sr-only">(current)</span>
@@ -74,13 +73,13 @@ function Navbar(props) {
               );
             })}
             {props.careers ? (
-              <li className={`nav-item px-4 active menuActive menuItem`}>
+              <li className={`nav-item px-4 active ${styles.menuActive} ${styles.menuItem}`}>
                 <Link href="/careers">
-                  <a className={`nav-link menuLink`}>Join Us</a>
+                  <a className={`nav-link ${styles.menuLink}`}>Join Us</a>
                 </Link>
               </li>
             ) : (
-              <li className={`nav-item pr-4 pl-3 pl-lg-4 joinUs`}>
+              <li className={`nav-item pr-4 pl-3 pl-lg-4 ${styles.joinUs}`}>
                 <Link href="/careers">
                   <a className="btn rounded-pill text-success bg-white btn-sm px-3">Join Us</a>
                 </Link>

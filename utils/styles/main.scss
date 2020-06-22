@@ -27,70 +27,9 @@ body {
   font-family: $body-font;
 }
 
-// navbar styles
-.menu {
-  .menuItem {
-    font-family: $navbar-font;
-    font-size: $font-s;
-    opacity: 0.8;
-
-    &.menuActive {
-      opacity: 1;
-      // font-family: $header-font;
-      @media screen and (min-width: $lg-break) {
-        &:after {
-          content: '';
-          display: block;
-          width: 50%;
-          margin: 0 0.5rem;
-          border-top: 2px solid #000;
-        }
-      }
-    }
-
-    .menuLink {
-      color: #000;
-    }
-
-    &:hover {
-      @media screen and (min-width: $lg-break) {
-        &:after {
-          content: '';
-          display: block;
-          width: 50%;
-          margin: 0 0.5rem;
-          border-top: 2px solid #000;
-        }
-      }
-    }
-  }
-
-  &.light {
-    .menuItem {
-      &.menuActive {
-        &:after {
-          border-color: #fff;
-        }
-      }
-
-      &:hover {
-        @media screen and (min-width: $lg-break) {
-          &:after {
-            border-color: #fff;
-          }
-        }
-      }
-
-      .menuLink {
-        color: #fff;
-      }
-    }
-  }
-
-  .joinUs {
-    font-family: $header-font;
-    // font-size: $font-s;
-  }
+a,
+a:hover {
+  text-decoration: none;
 }
 
 .browserupgrade {
@@ -162,7 +101,6 @@ body {
     color: #fff;
     margin-bottom: 0;
     text-align: center;
-    opacity: 0.8;
   }
 }
 
@@ -251,25 +189,11 @@ body {
   .shadowCard {
     background-color: #eee;
     position: absolute;
-    left: -13%;
-    top: 0;
-    width: 108%;
-    height: 88%;
+    left: -10%;
+    top: 4%;
+    width: 112%;
+    height: 80%;
     z-index: -1;
-    @media screen and (min-width: $md-break) {
-      left: -11%;
-    }
-    @media screen and (min-width: $lg-break) {
-      left: -8%;
-    }
-  }
-
-  .slick-dots {
-    bottom: -50px;
-    opacity: 0.8;
-    .slick-active {
-      opacity: 1;
-    }
   }
 
   .partner-logos {
@@ -287,7 +211,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 140vh;
   width: 100%;
   z-index: -1;
 }
@@ -449,9 +373,7 @@ body {
   }
 }
 
-#blogs,
-#stories,
-#openingsBlogs {
+#blogs {
   .list {
     padding-top: 7rem;
   }
@@ -464,21 +386,12 @@ body {
       border: none;
       border-radius: $border-xl;
     }
-
-    .card-name {
-      font-family: $title-font;
-      font-size: 1.125rem;
-      line-height: 28px;
-    }
   }
 }
 
 #funding {
-  @media screen and (min-width: $lg-break) {
-    background-repeat: no-repeat;
-    background-position: left;
-    background: linear-gradient(to right, #f7ce55 40%, #f7ce55 40%, #fff 0%, #fff 65%, #fff 65%);
-  }
+  background-repeat: no-repeat;
+  background-position: left;
 }
 
 // Slick Slider
@@ -486,7 +399,7 @@ body {
 .slick-prev:before {
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
-  font-size: 2.5rem;
+  font-size: 1.25rem;
   color: #404040;
 }
 
@@ -496,24 +409,6 @@ body {
 
 .slick-next:before {
   content: '\f054';
-}
-
-.slick-prev {
-  left: -10px;
-}
-
-.slick-next {
-  right: -10px;
-}
-
-@media screen and (min-width: $sm-break) {
-  .slick-prev {
-    left: -50px;
-  }
-
-  .slick-next {
-    right: -50px;
-  }
 }
 
 // .slick-slide {
@@ -585,10 +480,6 @@ body {
   }
 }
 
-.listings {
-  box-shadow: 0 0 82px 0 rgba(0, 0, 0, 0.12);
-}
-
 .social-media {
   .btn {
     width: 2rem;
@@ -604,7 +495,7 @@ body {
 }
 
 #open-source {
-  background: linear-gradient(to bottom, #fff 0%, #fff 58%, $green-light 42%);
+  background: linear-gradient(to bottom, #fff 0%, #fff 60%, $green-light 40%);
   .card {
     height: 15rem;
     background-color: #dcdada;
@@ -614,15 +505,9 @@ body {
   .highlight {
     color: #fff;
     text-align: center;
-    position: relative;
-    bottom: -62px;
   }
   .slick-slide {
     margin-top: 3rem;
-  }
-  .slick-prev,
-  .slick-next {
-    top: 150px;
   }
 
   #{selectAllFrom(2, '.slick-active')} {
@@ -631,7 +516,6 @@ body {
       height: 20rem;
     }
     .highlight {
-      bottom: -30px;
       &:after {
         content: '';
         display: block;
@@ -648,7 +532,6 @@ body {
       height: 15rem;
     }
     .highlight {
-      bottom: -62px;
       &:after {
         display: none;
       }
@@ -744,82 +627,5 @@ body {
         border-radius: $border-xl;
       }
     }
-  }
-}
-
-// life&gojek page
-.bannerBold {
-  font-family: $title-font;
-}
-
-#stories,
-#systems,
-#openingsBlogs {
-  .heading {
-    font-family: $header-font;
-    font-size: 1.875rem;
-    line-height: 42px;
-  }
-}
-
-#stories {
-  padding-top: 7rem;
-  padding-bottom: 5rem;
-
-  .description {
-    font-size: 1.875rem;
-  }
-}
-
-#systems,
-#openingsBlogs {
-  .banner {
-    background-color: rgba(116, 210, 231, 0.3);
-    border-radius: 2rem;
-    padding: 4.5rem;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-  }
-}
-
-#cards,
-#feedback {
-  .cards {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-  .card-columns {
-    column-count: 3;
-    @media screen and (max-width: $sm-break) {
-      column-count: 1;
-    }
-    .card {
-      border: none;
-      min-height: 15rem;
-      margin-bottom: 2rem;
-      position: relative;
-      background-color: transparent;
-
-      .card-content {
-        border-radius: 2.5rem;
-        background-color: #fff;
-        height: 100%;
-      }
-
-      .feedback {
-        background-color: #000;
-      }
-    }
-  }
-}
-
-#openingsBlogs {
-  background: linear-gradient(to bottom, #101820 13%, #fff 13%);
-  .blogHeading {
-    font-size: 1.25rem;
-  }
-  .blogDescription {
-    font-size: 14px;
-    color: #575757;
   }
 }

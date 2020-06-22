@@ -15,8 +15,8 @@ function CareersPage(props) {
       <Navbar light bg="#000" />
       {/* banner */}
       <div className="blackBackground"></div>
-      <section id="banner" className="teams-banner py-5 d-flex" style={{ minHeight: '90vh' }}>
-        <div className="container pt-5 align-self-center">
+      <section id="banner" className="teams-banner py-5 d-flex">
+        <div className="container pt-5">
           <div className="row justify-content-center pt-5">
             <div className="col-md-12 col-lg-6 text-white">
               <h1 className="banner-head my-5" style={{ color: '#ffd25c' }}>
@@ -54,7 +54,7 @@ function CareersPage(props) {
       <section className="teamsJobs">
         <div className="container">
           <div
-            className="listings bg-white py-5 px-2 px-md-5 "
+            className="listings bg-white shadow py-5 px-2 px-md-5 "
             style={{ borderRadius: '3rem', paddingTop: '5rem' }}
           >
             <h1 className="header mb-4" style={{ fontSize: '2rem' }}>
@@ -104,9 +104,9 @@ function CareersPage(props) {
         </div>
       </section>
       {/* blogs section */}
-      <section id="blogs" className="d-flex align-items-center py-5">
+      <section id="blogs" className="full-height d-flex align-items-center py-5">
         <div className="container list">
-          <p style={{ maxWidth: '48rem' }} className="mt-4 mb-5 px-0 px-md-4">
+          <p style={{ maxWidth: '48rem' }} className="mt-4 mb-5">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
             is simply dummy text of the printing and typesetting industry.
           </p>
@@ -117,8 +117,7 @@ function CareersPage(props) {
                 <div className="placeholder"></div>
                 <div className="card-body">
                   <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    <br />0 min read | DD Month, YYYY
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis voluptatem, modi
                   </p>
                 </div>
               </div>
@@ -129,8 +128,7 @@ function CareersPage(props) {
                 <div className="placeholder"></div>
                 <div className="card-body">
                   <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    <br />0 min read | DD Month, YYYY
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis voluptatem, modi
                   </p>
                 </div>
               </div>
@@ -141,8 +139,7 @@ function CareersPage(props) {
                 <div className="placeholder"></div>
                 <div className="card-body">
                   <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    <br />0 min read | DD Month, YYYY
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis voluptatem, modi
                   </p>
                 </div>
               </div>
@@ -153,8 +150,7 @@ function CareersPage(props) {
                 <div className="placeholder"></div>
                 <div className="card-body">
                   <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    <br />0 min read | DD Month, YYYY
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis voluptatem, modi
                   </p>
                 </div>
               </div>
@@ -165,8 +161,7 @@ function CareersPage(props) {
                 <div className="placeholder"></div>
                 <div className="card-body">
                   <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    <br />0 min read | DD Month, YYYY
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis voluptatem, modi
                   </p>
                 </div>
               </div>
@@ -177,8 +172,7 @@ function CareersPage(props) {
                 <div className="placeholder"></div>
                 <div className="card-body">
                   <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    <br />0 min read | DD Month, YYYY
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis voluptatem, modi
                   </p>
                 </div>
               </div>
@@ -189,20 +183,6 @@ function CareersPage(props) {
             Read more blogs
             <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
           </a>
-        </div>
-      </section>
-
-      {/* works with us section */}
-      <section id="team-workWithUs" className="container my-5">
-        <div className="row" style={{ backgroundColor: '#904790', borderRadius: '48px' }}>
-          <div className="col-12 col-md-5"></div>
-          <div className="col-12 col-md-5 py-5">
-            <h2 className="heading text-white">Wondering what it's like to work with us?</h2>
-            <a className="link text-green-light" href="#">
-              Find out
-              <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
-            </a>
-          </div>
         </div>
       </section>
     </div>

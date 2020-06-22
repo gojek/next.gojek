@@ -4,11 +4,9 @@
   .menuItem {
     font-family: $navbar-font;
     font-size: $font-s;
-    opacity: 0.8;
 
     &.menuActive {
-      opacity: 1;
-      // font-family: $header-font;
+      font-family: $header-font;
       @media screen and (min-width: $lg-break) {
         &:after {
           content: '';

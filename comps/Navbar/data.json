@@ -5,10 +5,10 @@
   },
   {
     "name": "Life@Gojek",
-    "routeTo": "/lifeatgojek"
+    "routeTo": "#"
   },
   {
     "name": "Blogs & News",
-    "routeTo": "/blogs"
+    "routeTo": "/blog"
   }
 ]
