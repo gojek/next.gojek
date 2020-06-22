@@ -1,0 +1,120 @@
+// Brand Colors
+$green-light: #00aa13;
+$green-base: #008c15;
+$green-lightest: #e2f2d0;
+$red: #ee2737;
+$orange-lightest: #ffa000;
+$orange-base: #e35205;
+$orange-light: #ff7f32;
+$pink-base: #d0006f;
+$pink-light: #df1995;
+$blue: #00aed6;
+$blue-light: #96d1df;
+$purple: #93328e;
+$purple-base: #720062;
+$black: #2f2f2f;
+$gray: #eee;
+$teal: #004758;
+$yellow-base: #e8ce11;
+$yellow-light: #f7ce55;
+$black: #101820;
+
+// Font family
+@font-face {
+  font-family: 'Maison Nueue Book';
+  src: url(/fonts/MaisonNeueAPP-Book.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Maison Nueue Extended Book';
+  src: url(/fonts/MaisonNeueExtended-Book.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Maison Nueue Demi';
+  src: url(/fonts/MaisonNeueAPP-Demi.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Maison Nueue Bold';
+  src: url(/fonts/MaisonNeueExtended-Bold.otf) format('opentype');
+}
+
+// Font sizes
+$font-xxl: 3rem;
+$font-xl: 2.5rem;
+$font-l: 2rem;
+$font-m: 1.25rem;
+$font-s: 0.875rem;
+
+$header-font: 'Maison Nueue Bold';
+$title-font: 'Maison Nueue Demi';
+$body-font: 'Maison Nueue Book';
+$navbar-font: 'Maison Nueue Extended Book';
+
+// Border radius
+$border-xxl: 5.25rem;
+$border-xxl: 4rem;
+$border-xl: 3rem;
+
+//break points (taken from bootstrap)
+$sm-break: 576px;
+$md-break: 768px;
+$lg-break: 992px;
+$xl-break: 1200px;
+
+$colors: (
+  green: (
+    base: $green-base,
+    light: $green-light,
+  ),
+  red: (
+    base: $red,
+  ),
+  orange: (
+    base: $orange-base,
+    light: $orange-light,
+    lightest: $orange-lightest,
+  ),
+  pink: (
+    base: $pink-base,
+    light: $pink-light,
+  ),
+  blue: (
+    base: $blue,
+    light: $blue-light,
+  ),
+  purple: (
+    base: $purple,
+  ),
+  gray: (
+    base: $gray,
+  ),
+  teal: (
+    base: $teal,
+  ),
+  yellow: (
+    base: $yellow-base,
+    light: $yellow-light,
+  ),
+  black: (
+    base: $black,
+  ),
+);
+
+@mixin color-modifiers(
+  $attribute: 'background-color',
+  $prefix: '-',
+  $separator: '-',
+  $base: 'base'
+) {
+  @each $name, $color in $colors {
+    &#{$prefix}#{$name} {
+      @each $tone, $hex in $color {
+        &#{if($tone != $base, #{$separator}#{$tone}, '')} {
+          #{$attribute}: $hex;
+        }
+      }
+    }
+  }
+}

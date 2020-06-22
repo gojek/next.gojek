@@ -1,0 +1,825 @@
+@import './node_modules/slick-carousel/slick/slick.scss';
+@import './node_modules/slick-carousel/slick/slick-theme.scss';
+@import '~/../../utils/styles/constants.scss';
+
+@function selectAllFrom($n, $selector) {
+  $classes: ();
+  @for $i from 1 through $n {
+    $className: if($i == 1, #{$selector}, #{'~ ' + $selector});
+    $classes: join($classes, unquote($className), space);
+  }
+  @return $classes;
+}
+
+.bg {
+  @include color-modifiers;
+}
+
+.text {
+  @include color-modifiers('color');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $body-font;
+}
+
+// navbar styles
+.menu {
+  .menuItem {
+    font-family: $navbar-font;
+    font-size: $font-s;
+    opacity: 0.8;
+
+    &.menuActive {
+      opacity: 1;
+      // font-family: $header-font;
+      @media screen and (min-width: $lg-break) {
+        &:after {
+          content: '';
+          display: block;
+          width: 50%;
+          margin: 0 0.5rem;
+          border-top: 2px solid #000;
+        }
+      }
+    }
+
+    .menuLink {
+      color: #000;
+    }
+
+    &:hover {
+      @media screen and (min-width: $lg-break) {
+        &:after {
+          content: '';
+          display: block;
+          width: 50%;
+          margin: 0 0.5rem;
+          border-top: 2px solid #000;
+        }
+      }
+    }
+  }
+
+  &.light {
+    .menuItem {
+      &.menuActive {
+        &:after {
+          border-color: #fff;
+        }
+      }
+
+      &:hover {
+        @media screen and (min-width: $lg-break) {
+          &:after {
+            border-color: #fff;
+          }
+        }
+      }
+
+      .menuLink {
+        color: #fff;
+      }
+    }
+  }
+
+  .joinUs {
+    font-family: $header-font;
+    // font-size: $font-s;
+  }
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.homeBannerImage {
+  @media screen and (min-width: $lg-break) {
+    margin-left: -25rem;
+  }
+}
+
+.banner {
+  &-head {
+    font-size: $font-xxl;
+    font-family: $header-font;
+  }
+
+  &-img {
+    max-height: 500px;
+  }
+}
+
+.header {
+  font-size: $font-xxl;
+  font-family: $header-font;
+}
+
+.sub-head {
+  font-size: $font-l;
+  font-family: $title-font;
+}
+
+.link {
+  font-size: $font-m;
+  font-family: $title-font;
+  &:hover {
+    color: inherit;
+  }
+}
+
+#vision,
+#scale {
+  padding: 10rem 0;
+  .card {
+    border-radius: 2.75rem;
+    border: none;
+
+    .illustration {
+      margin-top: -1.5rem;
+      z-index: 1;
+    }
+
+    .location {
+      border-radius: 2rem 2rem 0 0;
+    }
+  }
+  .highlight {
+    // border-radius: 2.75rem;
+    border-bottom-left-radius: 2.75rem;
+    border-bottom-right-radius: 2.75rem;
+    color: #fff;
+    margin-bottom: 0;
+    text-align: center;
+    opacity: 0.8;
+  }
+}
+
+.locations {
+  .card {
+    border-radius: 2.75rem;
+    min-height: 196px;
+
+    .illustration {
+      max-width: 175px;
+    }
+  }
+  .highlight {
+    border-radius: 0;
+  }
+}
+
+.investors {
+  .logo {
+    max-width: 124px;
+  }
+  @media screen and (min-width: $md-break) {
+    .logo {
+      margin-right: 4rem;
+    }
+  }
+}
+
+#products {
+  &.transport {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $green-light 65%,
+      $green-light 100%
+    );
+  }
+  &.payments {
+    background: linear-gradient(to bottom, #fff 0%, #fff 65%, #fff 65%, $blue 65%, $blue 100%);
+  }
+  &.food-delivery {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $orange-light 65%,
+      $orange-light 100%
+    );
+  }
+  &.logistics {
+    background: linear-gradient(to bottom, #fff 0%, #fff 65%, #fff 65%, $red 65%, $red 100%);
+  }
+  &.entertainment {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $pink-light 65%,
+      $pink-light 100%
+    );
+  }
+  &.lifestyle-services {
+    background: linear-gradient(
+      to bottom,
+      #fff 0%,
+      #fff 65%,
+      #fff 65%,
+      $yellow-light 65%,
+      $yellow-light 100%
+    );
+  }
+
+  .card {
+    border-radius: 5.3rem;
+    border: 1px solid #eee;
+    margin: 25px;
+    .sub-head {
+      font-family: $header-font;
+    }
+  }
+
+  .shadowCard {
+    background-color: #eee;
+    position: absolute;
+    left: -13%;
+    top: 0;
+    width: 108%;
+    height: 88%;
+    z-index: -1;
+    @media screen and (min-width: $md-break) {
+      left: -11%;
+    }
+    @media screen and (min-width: $lg-break) {
+      left: -8%;
+    }
+  }
+
+  .slick-dots {
+    bottom: -50px;
+    opacity: 0.8;
+    .slick-active {
+      opacity: 1;
+    }
+  }
+
+  .partner-logos {
+    max-width: 384px;
+
+    .logo {
+      width: 128px;
+    }
+  }
+}
+
+.blackBackground {
+  background-color: #000;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.yellow-bg-gradient {
+  background: $yellow-light linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #e18700);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 140vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.filter-badge {
+  font-size: $font-s;
+  border-radius: 8px;
+  background-color: #fbf0d7;
+  &:hover {
+    background-color: #cdc3ad;
+  }
+}
+
+.clearIcon {
+  cursor: pointer;
+}
+
+.jobCard {
+  &:hover {
+    background-color: #eee !important;
+  }
+}
+.form-control {
+  padding: 1rem;
+  height: inherit;
+  border: none;
+  font-family: $navbar-font, 'Font Awesome 5 Free';
+  font-size: 0.875rem;
+  line-height: normal;
+}
+
+.select__control {
+  border: none !important;
+  border-radius: 50rem !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  padding: 0.6rem;
+  &:hover {
+    border: none !important;
+  }
+
+  &:focus {
+    border: none !important;
+  }
+}
+
+.select__menu {
+  scrollbar-width: 1px;
+  margin-top: 0;
+  padding: 1rem 0.3rem;
+  border-radius: 2rem !important;
+  border-bottom-left-radius: 2rem !important;
+  border-bottom-right-radius: 2rem !important;
+
+  .select__menu-list {
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #9e9e9e;
+      border-radius: 10px;
+    }
+  }
+}
+
+#departments {
+  .departments {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .card-columns {
+    column-count: 2;
+    @media screen and (max-width: $sm-break) {
+      column-count: 1;
+    }
+    .card {
+      border: none;
+      border-radius: $border-xl;
+      padding: 1.5rem 2rem;
+      min-height: 15rem;
+      margin-bottom: 1.875rem;
+      position: relative;
+
+      &.highlight {
+        height: 32rem;
+        // margin-bottom: 1.25rem;
+
+        .card-body {
+          position: absolute;
+          bottom: 0;
+        }
+      }
+
+      .header {
+        max-width: 384px;
+        // font-size: 2.6rem;
+      }
+      @media screen and (max-width: $md-break) {
+        .header {
+          font-size: $font-m;
+        }
+      }
+
+      .sub-head {
+        font-family: $navbar-font;
+        font-size: $font-m;
+      }
+    }
+
+    .department0 {
+      background-color: #00aa13;
+    }
+    .department1 {
+      background-color: #ff7f32;
+    }
+    .department2 {
+      background-color: #ff808b;
+    }
+    .department3 {
+      background-color: #7ccc6c;
+    }
+    .department4 {
+      background-color: #d48bc8;
+    }
+    .department5 {
+      background-color: #32ebe1;
+    }
+  }
+}
+
+#locations {
+  .card {
+    min-height: 20rem;
+    background-color: #dcdada;
+    border: none;
+    border-radius: $border-xl;
+  }
+
+  .locationPadding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.teams-banner {
+  .heading {
+    font-size: 30px;
+  }
+}
+
+#blogs,
+#stories,
+#openingsBlogs {
+  .list {
+    padding-top: 7rem;
+  }
+  .card {
+    border: none;
+
+    .placeholder {
+      min-height: 16rem;
+      background-color: #dcdada;
+      border: none;
+      border-radius: $border-xl;
+    }
+
+    .card-name {
+      font-family: $title-font;
+      font-size: 1.125rem;
+      line-height: 28px;
+    }
+  }
+}
+
+#funding {
+  @media screen and (min-width: $lg-break) {
+    background-repeat: no-repeat;
+    background-position: left;
+    background: linear-gradient(to right, #f7ce55 40%, #f7ce55 40%, #fff 0%, #fff 65%, #fff 65%);
+  }
+}
+
+// Slick Slider
+.slick-next:before,
+.slick-prev:before {
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: #404040;
+}
+
+.slick-prev:before {
+  content: '\f053';
+}
+
+.slick-next:before {
+  content: '\f054';
+}
+
+.slick-prev {
+  left: -10px;
+}
+
+.slick-next {
+  right: -10px;
+}
+
+@media screen and (min-width: $sm-break) {
+  .slick-prev {
+    left: -50px;
+  }
+
+  .slick-next {
+    right: -50px;
+  }
+}
+
+// .slick-slide {
+//   padding-left: 3rem;
+// }
+
+.slick-dots {
+  display: flex !important;
+  justify-content: space-around;
+  @media screen and (max-width: $lg-break) {
+    flex-wrap: wrap;
+    margin-bottom: -2rem;
+  }
+
+  li {
+    min-width: 10rem;
+    color: #fff;
+    font-weight: normal;
+  }
+  .slick-active {
+    opacity: 1;
+    font-family: $title-font;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 25%;
+      margin: 0.5rem auto;
+      border-bottom: 1px solid #fff;
+    }
+  }
+}
+
+#impact-stories-carousel {
+  .carousel-indicators {
+    margin: 0;
+    bottom: -4rem;
+
+    li {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+// Jobs Css
+
+.bg-careers {
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), #e18700);
+}
+.job {
+  thead {
+    border-bottom: 1px solid #979797;
+  }
+  th,
+  .view-jobs {
+    font-family: $header-font;
+  }
+  tr:nth-child(even) {
+    background: #f2f2f2;
+  }
+
+  tr:nth-child(odd) {
+    background: #fff;
+  }
+  @media screen and (max-width: $md-break) {
+    .tableHeading {
+      display: none;
+    }
+  }
+}
+
+.listings {
+  box-shadow: 0 0 82px 0 rgba(0, 0, 0, 0.12);
+}
+
+.social-media {
+  .btn {
+    width: 2rem;
+    height: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+
+    .fab {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+#open-source {
+  background: linear-gradient(to bottom, #fff 0%, #fff 58%, $green-light 42%);
+  .card {
+    height: 15rem;
+    background-color: #dcdada;
+    border: 1px solid #dcdada;
+    border-radius: 2.25rem;
+  }
+  .highlight {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    bottom: -62px;
+  }
+  .slick-slide {
+    margin-top: 3rem;
+  }
+  .slick-prev,
+  .slick-next {
+    top: 150px;
+  }
+
+  #{selectAllFrom(2, '.slick-active')} {
+    margin-top: 0;
+    .card {
+      height: 20rem;
+    }
+    .highlight {
+      bottom: -30px;
+      &:after {
+        content: '';
+        display: block;
+        width: 10%;
+        margin: 0 auto;
+        border-top: 2px solid #fff;
+      }
+    }
+  }
+
+  #{selectAllFrom(3, '.slick-active')} {
+    margin-top: 3rem;
+    .card {
+      height: 15rem;
+    }
+    .highlight {
+      bottom: -62px;
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .cta {
+    padding-top: 7rem;
+  }
+}
+
+// Blog
+.articles {
+  color: #191919;
+  .main {
+    h1 {
+      font-size: $font-l;
+    }
+    .description {
+      color: #707070;
+      font-size: 1rem;
+    }
+  }
+  .title {
+    font-family: $header-font;
+  }
+  .description,
+  .meta {
+    font-size: $font-s;
+  }
+  .date-time {
+    color: #929292;
+  }
+  .card {
+    &,
+    .card-img-top {
+      border-radius: $border-xl;
+    }
+  }
+  .badge {
+    background-color: $green-lightest;
+    padding: 0.875rem 2.5rem;
+    color: $green-light;
+  }
+}
+
+#categories {
+  .card {
+    border-radius: $border-xl;
+    margin-bottom: 2rem;
+    font-family: $header-font;
+    min-height: 200px;
+  }
+  .name {
+    font-size: $font-m;
+  }
+}
+
+.tag {
+  position: absolute;
+  background-color: $green-light;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem 1rem 1rem 0;
+  margin-left: -5px;
+}
+.featured-article {
+  border-radius: $border-xl;
+}
+
+.jobDescription {
+  .banner {
+    height: 75vh;
+  }
+  .description {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+
+    .title {
+      font-family: $header-font;
+    }
+    .apply {
+      @media screen and (min-width: $xl-break) {
+        padding-left: 10rem;
+      }
+      .applyText {
+        margin-top: 5rem;
+      }
+      .card {
+        min-height: 10rem;
+        background-color: #dcdada;
+        border: none;
+        border-radius: $border-xl;
+      }
+    }
+  }
+}
+
+// life&gojek page
+.bannerBold {
+  font-family: $title-font;
+}
+
+#stories,
+#systems,
+#openingsBlogs {
+  .heading {
+    font-family: $header-font;
+    font-size: 1.875rem;
+    line-height: 42px;
+  }
+}
+
+#stories {
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+
+  .description {
+    font-size: 1.875rem;
+  }
+}
+
+#systems,
+#openingsBlogs {
+  .banner {
+    background-color: rgba(116, 210, 231, 0.3);
+    border-radius: 2rem;
+    padding: 4.5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
+#cards,
+#feedback {
+  .cards {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .card-columns {
+    column-count: 3;
+    @media screen and (max-width: $sm-break) {
+      column-count: 1;
+    }
+    .card {
+      border: none;
+      min-height: 15rem;
+      margin-bottom: 2rem;
+      position: relative;
+      background-color: transparent;
+
+      .card-content {
+        border-radius: 2.5rem;
+        background-color: #fff;
+        height: 100%;
+      }
+
+      .feedback {
+        background-color: #000;
+      }
+    }
+  }
+}
+
+#openingsBlogs {
+  background: linear-gradient(to bottom, #101820 13%, #fff 13%);
+  .blogHeading {
+    font-size: 1.25rem;
+  }
+  .blogDescription {
+    font-size: 14px;
+    color: #575757;
+  }
+}

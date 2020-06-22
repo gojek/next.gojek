@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Home",
+    "routeTo": "/"
+  },
+  {
+    "name": "Life@Gojek",
+    "routeTo": "/lifeatgojek"
+  },
+  {
+    "name": "Blogs & News",
+    "routeTo": "/blogs"
+  }
+]

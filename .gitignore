@@ -1,11 +1,30 @@
-# dependencies
+# Don't check auto-generated stuff into git
+coverage
+build
 node_modules
-bower_components
+stats.json
 
-# compiled output
-/public
-/.tmp
+.idea/
+.next/
+config.js
+.env
+public.env
+coverage/
+out/
 
-# System Files
+**/public/precache.*.*.js
+**/public/sw.js
+**/public/workbox-*.js
+**/public/worker-*.js
+**/public/precache.*.*.js.map
+**/public/sw.js.map
+**/public/workbox-*.js.map
+**/public/worker-*.js.map
+
+# Cruft
 .DS_Store
+npm-debug.log
+.idea
 Thumbs.db
+
+
