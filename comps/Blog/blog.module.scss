@@ -1,0 +1,19 @@
+@import '../../utils/styles/constants.scss';
+
+.category {
+  font-family: $navbar-font;
+  background-color: $green-lightest;
+  color: $green-light;
+  font-size: 1rem;
+  line-height: 1.875rem;
+  &:hover {
+    color: $green-light;
+  }
+  &.active {
+    background-color: $green-light;
+    color: #fff;
+  }
+}
+.search {
+  font-size: 1rem;
+}
