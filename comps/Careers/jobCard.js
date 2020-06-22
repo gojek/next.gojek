@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Router from 'next/router';
 
 function JobCard(props) {
   const [mobile, setMobile] = useState(null);
@@ -9,33 +10,43 @@ function JobCard(props) {
     setMobile(screen.width < 768 ? true : false);
   }, []);
 
+  const openJob = (id) => {
+    Router.push(`/careers/${id}`);
+  };
+
   if (mobile) {
     return (
-      <div className="my-2 p-2">
+      <div
+        className="my-2 p-2"
+        onClick={() => {
+          openJob(props.data.id);
+        }}
+      >
         <p>{props.data.title}</p>
         <p>
           {props.data.department} - {props.data.location}{' '}
-          <Link href={`/careers/description/${props.data.id}`}>
-            <a className="text-secondary">
-              <i className="fas fa-chevron-right"></i>
-            </a>
-          </Link>
+          <a className="text-secondary">
+            <i className="fas fa-chevron-right"></i>
+          </a>
         </p>
         <hr />
       </div>
     );
   } else {
     return (
-      <tr className="jobCard">
+      <tr
+        className="jobCard"
+        onClick={() => {
+          openJob(props.data.id);
+        }}
+      >
         <td>{props.data.title}</td>
         <td>{props.data.department}</td>
         <td>{props.data.location}</td>
         <td>
-          <Link href={`/careers/description/${props.data.id}`}>
-            <a className="text-secondary">
-              <i className="fas fa-chevron-right"></i>
-            </a>
-          </Link>
+          <a className="text-secondary">
+            <i className="fas fa-chevron-right"></i>
+          </a>
         </td>
       </tr>
     );

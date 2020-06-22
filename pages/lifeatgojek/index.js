@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Navbar from '~/../../comps/Navbar';
+import Navbar from './comps/Navbar';
 import bannerImage from '~/../../static/banner.png';
 
 function LifeAtGojek(props) {
