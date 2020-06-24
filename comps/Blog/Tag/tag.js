@@ -7,7 +7,7 @@ function Tag(props) {
     <Link href={slug}>
       <a
         className={
-          `badge rounded-pill px-5 ${styles.category}  ` +
+          `badge rounded-pill px-5 mb-3 mr-3 ${styles.category}  ` +
           (1 === 0 ? `active ${styles.active}` : '')
         }
       >

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
+import BarLoader from 'react-spinners/BarLoader';
+import { css } from '@emotion/core';
 
 import logo from '~/../../static/Gojek_Logo_Horizondal.svg';
 import whiteLogo from '~/../../static/gojek-white-logo.png';
@@ -10,6 +12,7 @@ import data from './data.json';
 function Navbar(props) {
   const router = useRouter();
   const [navbarScrolled, setnavbarScrolled] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
@@ -21,15 +24,32 @@ function Navbar(props) {
     });
   });
 
+  // To display loader on routing b/w pages
+  Router.events.on('routeChangeStart', (url) => {
+    console.log(`Loading: ${url}`);
+    setLoading(true);
+  });
+  Router.events.on('routeChangeComplete', () => setLoading(false));
+  Router.events.on('routeChangeError', () => setLoading(false));
+
+  const override = css`
+    position: fixed;
+    top: 0;
+    left: 0;
+  `;
+
   return (
     <div>
       <nav
         id="navbar"
         className={`navbar navbar-expand-lg fixed-top w-100 py-4 px-3 menu ${
           props.light ? 'light ' : ''
-        } ${navbarScrolled ? 'shadow-sm' : 'shadow-none'}`}
+        } ${navbarScrolled ? 'navbarShadow' : 'shadow-none'}`}
         style={{ backgroundColor: navbarScrolled ? props.bg : 'transparent' }}
       >
+        <div className={loading ? 'd-block' : 'd-none'}>
+          <BarLoader size={150} color={'#004758'} loading={loading} width={'100%'} css={override} />
+        </div>
         <Link href="/">
           <a className="navbar-brand">
             <img

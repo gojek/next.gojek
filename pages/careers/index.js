@@ -313,48 +313,66 @@ function CareersPage(props) {
       </section>
 
       {/* jobs list section */}
-      <section className="test">
+      <section id="job-list">
         <div className="container mb-5">
           <div className="listings bg-white py-5 px-2 px-md-5" style={{ borderRadius: '3rem' }}>
-            <h1 className="header mb-4" style={{ fontSize: '2rem' }}>
-              {location == null && department == null && searchText == ''
-                ? 'Recent Open Positions'
-                : 'Search results...'}
-            </h1>
-            <div className="job">
-              <table className="table table-borderless">
-                <thead>
-                  <tr className="text-green-light tableHeading">
-                    <th scope="col">Job Title</th>
-                    <th scope="col">Department</th>
-                    <th scope="col">Location</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredJobList.map((job, i) => {
-                    if (i < maxJobs - 2) return <JobCard data={job} key={i} />;
-                  })}
-                </tbody>
-              </table>
-              <div className="text-center mt-5">
-                {filteredJobList.length > maxJobs && (
-                  <span
-                    className="text-green-light font-weight-bold mx-auto view-jobs clearIcon"
-                    onClick={() => setMaxJobs(maxJobs + 10)}
-                  >
-                    View all jobs
-                    <i className="fas fa-long-arrow-alt-right align-middle"></i>
-                  </span>
-                )}
+            {parentJobList.length == 0 ? (
+              <p>
+                We are currently not hiring, please check back later <br />
+                Thank you
+              </p>
+            ) : filteredJobList.length == 0 ? (
+              <p>
+                No results found <br /> Try changing the filter or reset all filters
+              </p>
+            ) : (
+              <div>
+                <h1 className="header mb-4" style={{ fontSize: '2rem' }}>
+                  {location == null && department == null && searchText == ''
+                    ? 'Recent Open Positions'
+                    : 'Search results...'}
+                </h1>
+                <div className="job">
+                  <table className="table table-borderless">
+                    <thead>
+                      <tr className="text-green-light tableHeading">
+                        <th scope="col">Job Title</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Location</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {filteredJobList.map((job, i) => {
+                        if (i < maxJobs - 2) return <JobCard data={job} key={i} />;
+                      })}
+                    </tbody>
+                  </table>
+                  <div className="text-center mt-5">
+                    {filteredJobList.length > maxJobs && (
+                      <span
+                        className="text-green-light font-weight-bold mx-auto view-jobs clearIcon"
+                        onClick={() => setMaxJobs(maxJobs + 10)}
+                      >
+                        View all jobs
+                        <i className="fas fa-long-arrow-alt-right align-middle"></i>
+                      </span>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
 
       {/* category section */}
-      <section id="departments" className="bg-black text-white full-height py-0 py-md-5">
+      <section
+        id="departments"
+        className={`bg-black text-white full-height py-0 py-md-5 ${
+          parentJobList.length == 0 ? 'd-none' : ''
+        }`}
+      >
         <div className="container departments">
           <h1 className="header">Choose where you belong</h1>
           <p style={{ maxWidth: '48rem' }} className="mt-4 mb-5">
@@ -407,16 +425,16 @@ function CareersPage(props) {
 
           <div className="row">
             <div className="col-md-6">
-              <div className="card my-4"></div>
+              <div className="card my-4 mx-1"></div>
             </div>
             <div className="col-md-6">
-              <div className="card my-4"></div>
+              <div className="card my-4 mx-1"></div>
             </div>
             <div className="col-md-6">
-              <div className="card my-4"></div>
+              <div className="card my-4 mx-1"></div>
             </div>
             <div className="col-md-6">
-              <div className="card my-4"></div>
+              <div className="card my-4 mx-1"></div>
             </div>
           </div>
         </div>

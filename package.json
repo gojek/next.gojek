@@ -5,7 +5,10 @@
   },
   "dependencies": {
     "@babel/core": "^7.9.6",
+    "@tryghost/content-api": "^1.4.1",
+    "@tryghost/helpers": "^1.1.27",
     "isomorphic-unfetch": "^3.0.0",
+    "moment": "^2.26.0",
     "next": "^9.3.6",
     "next-compose-plugins": "^2.2.0",
     "next-cookies": "^2.0.3",
@@ -13,7 +16,9 @@
     "next-images": "^1.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-insta-stories": "^1.1.0",
     "react-intersection-observer": "^8.26.2",
+    "react-moment": "^0.9.7",
     "react-select": "^3.1.0",
     "react-share": "^4.1.0",
     "react-slick": "^0.26.1",
@@ -39,7 +44,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/zysk/gojek-yo"
+    "url": "git+https://github.com/zysk/gojek-yo.git"
   },
   "keywords": [],
   "husky": {

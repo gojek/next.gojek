@@ -25,6 +25,9 @@ function JobCard(props) {
         <p>{props.data.title}</p>
         <p>
           {props.data.department} - {props.data.location}{' '}
+        </p>
+        <p className="text-green-light font-weight-bold mx-auto">
+          More{' '}
           <a className="text-secondary">
             <i className="fas fa-chevron-right"></i>
           </a>
@@ -35,7 +38,7 @@ function JobCard(props) {
   } else {
     return (
       <tr
-        className="jobCard"
+        className="jobCard pointer"
         onClick={() => {
           openJob(props.data.id);
         }}

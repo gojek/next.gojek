@@ -9,6 +9,6 @@
   },
   {
     "name": "Blogs & News",
-    "routeTo": "/blogs"
+    "routeTo": "/blog"
   }
 ]

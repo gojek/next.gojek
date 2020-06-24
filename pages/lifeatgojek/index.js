@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Navbar from './comps/Navbar';
+import Navbar from '~/../../comps/Navbar';
 import bannerImage from '~/../../static/banner.png';
 
 function LifeAtGojek(props) {
@@ -50,7 +50,7 @@ function LifeAtGojek(props) {
             We push boundaries, encounter tough technical problems, solve them, and ask for more.{' '}
           </h1>
           <div className="row">
-            <div className="col-md-4 pr-4">
+            <div className="col-md-6 col-lg-4 pr-4">
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
@@ -67,7 +67,7 @@ function LifeAtGojek(props) {
               </div>
             </div>
 
-            <div className="col-md-4 px-4">
+            <div className="col-md-6 col-lg-4 pr-4">
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
@@ -84,7 +84,7 @@ function LifeAtGojek(props) {
               </div>
             </div>
 
-            <div className="col-md-4 pl-4">
+            <div className="col-md-6 col-lg-4">
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
@@ -152,10 +152,10 @@ function LifeAtGojek(props) {
       <section id="systems" className="py-5">
         <div className="container py-5">
           <div className="row justify-content-between">
-            <div className="col-12 col-md-6 col-lg-4">
+            <div className="col-12 col-lg-4">
               <h1 className="banner-head">Build compassionate systems</h1>
             </div>
-            <div className="col-12 col-md-6 align-self-end">
+            <div className="col-12 col-lg-5 align-self-end">
               <p className="pr-0 pr-md-5 description">
                 At Gojek, leadership is not a spot at the top of a ladder, it is an earned trait
                 anyone can inherit. Everyone codes, irrespective of experience, and everyone rolls
@@ -182,14 +182,14 @@ function LifeAtGojek(props) {
             When there is potential for genuine impact, it’s never about you.{' '}
           </h2>
           <div className="row justify-content-between py-4">
-            <div className="col-12 col-md-5">
+            <div className="col-12 col-md-6 pr-0 pr-md-5">
               <p>
                 Just ask Gojek founder <strong>Nadiem Makarim</strong>, who left the company he
                 helped build to become Indonesia’s Minister for Education and Culture, and help
                 future generations achieve their fullest potential.
               </p>
             </div>
-            <div className="col-12 col-md-5">
+            <div className="col-12 col-md-6 pl-0 pl-md-5">
               <p>
                 In order to continue creating impact at scale, we believe it is important to build a
                 company with strong values, one that can endure long beyond the lifetimes of those
@@ -207,11 +207,11 @@ function LifeAtGojek(props) {
         style={{ backgroundColor: '#ffa000' }}
       >
         <div className="container py-5">
-          <div className="row align-items-end pb-0 pb-md-5">
+          <div className="row align-items-end pb-0 pb-md-5 justify-content-between">
             <div className="col-md-6">
               <img src={bannerImage} className="img-fluid banner-img" alt="Gojek Banner" />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-5">
               <h1 className="banner-head">Build startups within a startup</h1>
               <p className="pt-4 pb-4">
                 As a company, Gojek has grown far beyond a scrappy startup. However, with three
@@ -236,7 +236,14 @@ function LifeAtGojek(props) {
         style={{ backgroundColor: '#101820' }}
       >
         <div className="container cards">
-          <h1 className="header">Build better lives</h1>
+          <div className="col-12 col-lg-7">
+            <h1 className="header mb-5">Work with us. Work with the best in the business.</h1>
+            <p>
+              It doesn’t matter to us if you lead teams in the biggest companies in tech or live
+              among the mountains and code for sheer pleasure. If you’ve got what it takes to help
+              build a SuperApp, we’d love to work with you.{' '}
+            </p>
+          </div>
           <div className="card-columns text-left pt-5">
             <div className="card" style={{ height: '23.1rem' }}>
               <div className="card-content feedback mr-1"></div>
@@ -279,7 +286,7 @@ function LifeAtGojek(props) {
             </div>
           </div>
           <div className="row pt-5">
-            <div className="col-md-4 pr-4">
+            <div className="col-md-6 col-lg-4 pr-4">
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
@@ -295,7 +302,7 @@ function LifeAtGojek(props) {
               </div>
             </div>
 
-            <div className="col-md-4 pr-4">
+            <div className="col-md-6 col-lg-4 pr-4">
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
@@ -312,7 +319,7 @@ function LifeAtGojek(props) {
               </div>
             </div>
 
-            <div className="col-md-4 pr-4">
+            <div className="col-md-6 col-lg-4 pr-4">
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
@@ -329,7 +336,7 @@ function LifeAtGojek(props) {
               </div>
             </div>
 
-            <div className="col-md-4 pr-4">
+            <div className="col-md-6 col-lg-4 pr-4">
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
@@ -345,7 +352,7 @@ function LifeAtGojek(props) {
               </div>
             </div>
 
-            <div className="col-md-4 pr-4">
+            <div className="col-md-6 col-lg-4 pr-4">
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
@@ -362,7 +369,7 @@ function LifeAtGojek(props) {
               </div>
             </div>
 
-            <div className="col-md-4 pr-4">
+            <div className="col-md-6 col-lg-4 pr-4">
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">

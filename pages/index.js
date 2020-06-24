@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import { InView } from 'react-intersection-observer';
-// import Stories from 'react-insta-stories';
+import DynamicComponentWithNoSSR from '~/../../comps/Stories/export';
 
 import Navbar from '~/../../comps/Navbar';
 import bannerImage from '~/../../static/banner.png';
@@ -25,30 +25,8 @@ function HomePage(props) {
     'Lifestyle Services',
   ];
 
-  const stories = [
-    {
-      url: 'https://www.youtube.com/embed/bdHfntRaAoo',
-      type: 'video',
-    },
-    {
-      url: 'https://www.youtube.com/embed/1kPYaBfgawI',
-      type: 'video',
-    },
-    {
-      url: 'https://www.youtube.com/embed/77YDzTh-_EA',
-      type: 'video',
-    },
-    {
-      url: 'https://www.youtube.com/embed/EKQxX5XZrr4',
-      type: 'video',
-    },
-  ];
-
   const changeBg = (color, light, entry) => {
-    entry.intersectionRatio >= 0.9 && console.log('0.9');
-    entry.intersectionRatio < 0.8 && console.log('0.1 entry', entry);
     if (entry.intersectionRatio >= 0.9 && entry.intersectionRatio != 0) {
-      // document.getElementById('navbar').style.backgroundColor = color;
       setNavbarBG(color);
       setNavbarLight(light);
     } else if (
@@ -56,7 +34,6 @@ function HomePage(props) {
       entry.intersectionRect.bottom < 500 &&
       entry.intersectionRatio != 0
     ) {
-      // document.getElementById('navbar').style.backgroundColor = color;
       setNavbarBG(color);
       setNavbarLight(light);
     }
@@ -271,7 +248,7 @@ function HomePage(props) {
                 </div>
               </div>
               <div className="col-md-6 mt-5 mt-md-0">
-                <div className="card bg-green-light mx-3">
+                <div className="card bg-green-light mx-1">
                   <img
                     src={homePage1}
                     alt=""
@@ -284,14 +261,14 @@ function HomePage(props) {
 
             <div className="row align-items-end py-4">
               <div className="col-md-6">
-                <div className="card bg-orange-light mt-5 pb-0 mx-3">
+                <div className="card bg-orange-light mt-5 pb-0 mx-1">
                   <img src={homePage2} alt="" className="illustration img-fluid mx-auto d-block" />
                   <p className="highlight py-4 bg-orange">400k+ Merchant Partners</p>
                 </div>
               </div>
 
               <div className="col-md-6">
-                <div className="card bg-pink-light mt-5 mx-3">
+                <div className="card bg-pink-light mt-5 mx-1">
                   <img src={homePage3} alt="" className="illustration img-fluid mx-auto d-block" />
                   <p className="highlight py-4 bg-pink">50k+ Service Providers</p>
                 </div>
@@ -508,13 +485,18 @@ function HomePage(props) {
         >
           <div className="container text-white">
             <div className="row">
-              <div className="col-lg-5 pr-5">
-                <h1 className="header">Social Impact</h1>
-                <p>
+              <div className="col-lg-5 pr-5 pt-4">
+                <h1
+                  className="header pt-1"
+                  onClick={() => document.getElementById('insta-stories').focus()}
+                >
+                  Social Impact
+                </h1>
+                <p className="mb-3">
                   The Gojek story is not just about helping customers book rides and buy things. We
                   strive to better the lives of our partners in measurable ways.
                 </p>
-                <p>
+                <p className="mb-3">
                   The average Gojek driver partner is able to generate revenue of xxx, while
                   merchants who sign up for GoFood have reported order volumes increasing by as much
                   as 345%.
@@ -531,86 +513,13 @@ function HomePage(props) {
                   />
                 </a>
               </div>
-              <div className="col-lg-7 pl-2 pt-4 pt-lg-0">
-                {/* <Stories stories={stories} defaultInterval={1500} /> */}
-                <div id="impact-stories-carousel" className="carousel slide">
-                  <ol className="carousel-indicators">
-                    <li
-                      data-target="#impact-stories-carousel"
-                      data-slide-to="0"
-                      className="active"
-                    ></li>
-                    <li data-target="#impact-stories-carousel" data-slide-to="1"></li>
-                    <li data-target="#impact-stories-carousel" data-slide-to="2"></li>
-                    <li data-target="#impact-stories-carousel" data-slide-to="3"></li>
-                  </ol>
-                  <div className="carousel-inner" style={{ borderRadius: '3rem' }}>
-                    <div className="carousel-item active card border-0">
-                      <div className="embed-responsive embed-responsive-16by9">
-                        <iframe
-                          className="embed-responsive-item"
-                          src="https://www.youtube.com/embed/bdHfntRaAoo"
-                        ></iframe>
-                      </div>
-                    </div>
-                    <div className="carousel-item card border-0">
-                      <div className="embed-responsive embed-responsive-16by9">
-                        <iframe
-                          className="embed-responsive-item"
-                          src="https://www.youtube.com/embed/1kPYaBfgawI"
-                        ></iframe>
-                      </div>
-                    </div>
-                    <div className="carousel-item card border-0">
-                      <div className="embed-responsive embed-responsive-16by9">
-                        <iframe
-                          className="embed-responsive-item"
-                          src="https://www.youtube.com/embed/77YDzTh-_EA"
-                        ></iframe>
-                      </div>
-                    </div>
-                    <div className="carousel-item card border-0">
-                      <div className="embed-responsive embed-responsive-16by9">
-                        <iframe
-                          className="embed-responsive-item"
-                          src="https://www.youtube.com/embed/EKQxX5XZrr4"
-                        ></iframe>
-                      </div>
-                    </div>
-                  </div>
-                  <a
-                    className="carousel-control-prev"
-                    href="#impact-stories-carousel"
-                    role="button"
-                    data-slide="prev"
-                  >
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Previous</span>
-                  </a>
-                  <a
-                    className="carousel-control-next"
-                    href="#impact-stories-carousel"
-                    role="button"
-                    data-slide="next"
-                  >
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Next</span>
-                  </a>
-                </div>
+              <div className="col-lg-7 pl-2 pt-4 pt-lg-0" id="insta-stories">
+                <DynamicComponentWithNoSSR />
               </div>
             </div>
           </div>
         </section>
       </InView>
-
-      {/* <InView
-        as="div"
-        threshold={[0.9, 0.1]}
-        onChange={(inView, entry) => {
-          changeBg('#ffa000', true, entry);
-        }}
-        style={{ display: 'none' }}
-      ></InView> */}
     </div>
   );
 }
