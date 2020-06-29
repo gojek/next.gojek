@@ -179,7 +179,10 @@ function CareersPage(props) {
       </Head>
       <Navbar bg="#f7ce55" careers />
 
-      <div className="yellow-bg-gradient"></div>
+      <div
+        className="yellow-bg-gradient"
+        style={{ minHeight: parentJobList.length != 0 ? '140vh' : '100vh' }}
+      ></div>
       {/* banner and jobs section */}
       <section id="banner" className=" full-height py-5 d-flex align-items-end">
         <div className="container">
@@ -198,132 +201,136 @@ function CareersPage(props) {
             </div>
           </div>
 
-          <form className="pt-0 pt-md-5">
-            <div className="row">
-              <div className="col-lg-6 py-3 py-md-0">
-                <input
-                  type="text"
-                  value={searchText}
-                  onChange={(e) => setSearchText(e.target.value)}
-                  placeholder="&#xF002;  Keyword Search"
-                  className="form-control rounded-pill shadow fa"
-                />
-              </div>
-              <div className="col-md-6 col-lg-3 py-3 py-lg-0">
-                <Select
-                  components={{ Option }}
-                  closeMenuOnSelect={false}
-                  classNamePrefix="select"
-                  value={department}
-                  isSearchable={true}
-                  name="Department"
-                  placeholder="Department"
-                  options={departmentList}
-                  isMulti
-                  isClearable={false}
-                  onChange={(value) => {
-                    setDepartment(value);
-                    console.log('department value', value);
-                  }}
-                />
-              </div>
-              <div className="col-md-6 col-lg-3 py-3 py-lg-0">
-                <Select
-                  components={{ Option }}
-                  closeMenuOnSelect={false}
-                  classNamePrefix="select"
-                  value={location}
-                  isSearchable={true}
-                  name="Location"
-                  isMulti
-                  isClearable={false}
-                  placeholder="Location"
-                  options={locationList}
-                  onChange={(value) => {
-                    setLocation(value);
-                    console.log('location value', value);
-                  }}
-                />
-              </div>
-
-              {/* to display filters applied */}
-              {(department !== null || location !== null) && (
-                <div className="col-12 pt-5 d-flex justify-content-start align-items-center flex-wrap">
-                  <span className="mt-1">Filters : </span>
-                  {department &&
-                    department.map((department, i) => {
-                      return (
-                        <span className="filter-badge badge p-3 mx-2 mt-1" key={i}>
-                          {department.value}
-                          <i
-                            className="fa fa-times ml-2 clearIcon"
-                            style={{ lineHeight: 'normal' }}
-                            onClick={() => {
-                              removeFilter('department', department.value);
-                            }}
-                          />
-                        </span>
-                      );
-                    })}
-                  {location &&
-                    location.map((location, i) => {
-                      return (
-                        <span className="filter-badge badge p-3 mx-2" key={1}>
-                          {location.value}
-                          <i
-                            className="fa fa-times ml-2 clearIcon"
-                            style={{ lineHeight: 'normal' }}
-                            onClick={() => {
-                              removeFilter('location', location.value);
-                            }}
-                          />
-                        </span>
-                      );
-                    })}
-                  <span
-                    onClick={() => {
-                      removeFilter('reset', 0);
-                    }}
-                    className="clearIcon"
-                  >
-                    <u>Clear all filters</u>
-                  </span>
-                </div>
-              )}
-
-              <div className="col-12 pt-5 d-flex justify-content-between">
-                <p>
-                  <strong>{filteredJobList.length} Opportunities</strong> found across{' '}
-                  <strong>
-                    {department ? department.length : departmentList.length} Departments
-                  </strong>{' '}
-                  and <strong>{location ? location.length : locationList.length} Locations</strong>
-                </p>
-                <a href="#" className="text-green link">
-                  View all jobs
-                  <i
-                    className="fa fa-arrow-right ml-2"
-                    style={{ fontSize: '16px', lineHeight: 'normal' }}
+          {parentJobList.length != 0 ? (
+            <form className="pt-0 pt-md-5">
+              <div className="row">
+                <div className="col-lg-6 py-3 py-md-0">
+                  <input
+                    type="text"
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value)}
+                    placeholder="&#xF002;  Keyword Search"
+                    className="form-control rounded-pill shadow fa"
                   />
-                </a>
+                </div>
+                <div className="col-md-6 col-lg-3 py-3 py-lg-0">
+                  <Select
+                    components={{ Option }}
+                    closeMenuOnSelect={false}
+                    classNamePrefix="select"
+                    value={department}
+                    isSearchable={true}
+                    name="Department"
+                    placeholder="Department"
+                    options={departmentList}
+                    isMulti
+                    isClearable={false}
+                    onChange={(value) => {
+                      setDepartment(value);
+                      console.log('department value', value);
+                    }}
+                  />
+                </div>
+                <div className="col-md-6 col-lg-3 py-3 py-lg-0">
+                  <Select
+                    components={{ Option }}
+                    closeMenuOnSelect={false}
+                    classNamePrefix="select"
+                    value={location}
+                    isSearchable={true}
+                    name="Location"
+                    isMulti
+                    isClearable={false}
+                    placeholder="Location"
+                    options={locationList}
+                    onChange={(value) => {
+                      setLocation(value);
+                      console.log('location value', value);
+                    }}
+                  />
+                </div>
+
+                {/* to display filters applied */}
+                {(department !== null || location !== null) && (
+                  <div className="col-12 pt-5 d-flex justify-content-start align-items-center flex-wrap">
+                    <span className="mt-1">Filters : </span>
+                    {department &&
+                      department.map((department, i) => {
+                        return (
+                          <span className="filter-badge badge p-3 mx-2 mt-1" key={i}>
+                            {department.value}
+                            <i
+                              className="fa fa-times ml-2 clearIcon"
+                              style={{ lineHeight: 'normal' }}
+                              onClick={() => {
+                                removeFilter('department', department.value);
+                              }}
+                            />
+                          </span>
+                        );
+                      })}
+                    {location &&
+                      location.map((location, i) => {
+                        return (
+                          <span className="filter-badge badge p-3 mx-2" key={1}>
+                            {location.value}
+                            <i
+                              className="fa fa-times ml-2 clearIcon"
+                              style={{ lineHeight: 'normal' }}
+                              onClick={() => {
+                                removeFilter('location', location.value);
+                              }}
+                            />
+                          </span>
+                        );
+                      })}
+                    <span
+                      onClick={() => {
+                        removeFilter('reset', 0);
+                      }}
+                      className="clearIcon"
+                    >
+                      <u>Clear all filters</u>
+                    </span>
+                  </div>
+                )}
+
+                <div className="col-12 pt-5 d-flex justify-content-between">
+                  <p>
+                    <strong>{filteredJobList.length} Opportunities</strong> found across{' '}
+                    <strong>
+                      {department ? department.length : departmentList.length} Departments
+                    </strong>{' '}
+                    and{' '}
+                    <strong>{location ? location.length : locationList.length} Locations</strong>
+                  </p>
+                  <a href="#" className="text-green link">
+                    View all jobs
+                    <i
+                      className="fa fa-arrow-right ml-2"
+                      style={{ fontSize: '16px', lineHeight: 'normal' }}
+                    />
+                  </a>
+                </div>
               </div>
+            </form>
+          ) : (
+            <div className="listings bg-white py-5 px-2 px-md-5" style={{ borderRadius: '3rem' }}>
+              <p className="text-center" style={{ fontSize: '1.5rem' }}>
+                We are currently not hiring, please check back later. Thank you
+              </p>
             </div>
-          </form>
+          )}
         </div>
       </section>
 
       {/* jobs list section */}
-      <section id="job-list">
+      <section id="job-list" className={parentJobList.length == 0 ? 'd-none' : ''}>
         <div className="container mb-5">
           <div className="listings bg-white py-5 px-2 px-md-5" style={{ borderRadius: '3rem' }}>
-            {parentJobList.length == 0 ? (
-              <p>
-                We are currently not hiring, please check back later <br />
-                Thank you
-              </p>
-            ) : filteredJobList.length == 0 ? (
-              <p>
-                No results found <br /> Try changing the filter or reset all filters
+            {filteredJobList.length == 0 ? (
+              <p className="text-center" style={{ fontSize: '1.5rem' }}>
+                No results found. Try changing the filter or reset all filters
               </p>
             ) : (
               <div>
@@ -346,6 +353,15 @@ function CareersPage(props) {
                       {filteredJobList.map((job, i) => {
                         if (i < maxJobs - 2) return <JobCard data={job} key={i} />;
                       })}
+                      {/* <JobCard
+                        data={{
+                          id: 1,
+                          title: 'full stack web developer',
+                          location: 'Bangalore',
+                          department: 'Engineering',
+                        }}
+                        key={1}
+                      /> */}
                     </tbody>
                   </table>
                   <div className="text-center mt-5">
@@ -415,7 +431,12 @@ function CareersPage(props) {
       </section>
 
       {/* Location section */}
-      <section id="locations" className="full-height d-flex align-items-center py-5">
+      <section
+        id="locations"
+        className={`full-height align-items-center py-5 ${
+          parentJobList.length == 0 ? 'd-none' : 'd-flex'
+        }`}
+      >
         <div className="container locationPadding">
           <h1 className="header">Our Locations</h1>
           <p className="mt-4 mb-5" style={{ maxWidth: '48rem' }}>
