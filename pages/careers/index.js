@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Slider from 'react-slick';
 import Select, { components } from 'react-select';
 import fetch from 'isomorphic-unfetch';
+import { InView } from 'react-intersection-observer';
 
 import Navbar from '~/../../comps/Navbar';
 import bannerImage from '~/../../static/banner.png';
 import JobCard from '~/../../comps/Careers/jobCard';
 
 function CareersPage(props) {
+  const [navbarLight, setNavbarLight] = useState(true);
+  const [navbarBG, setNavbarBG] = useState('#f7ce55');
   const [departmentList, setDepartmentList] = useState([]);
   const [department, setDepartment] = useState(null);
   const [locationList, setLocationList] = useState([]);
@@ -21,15 +25,181 @@ function CareersPage(props) {
 
   useEffect(() => {
     console.log('careers props', props);
+
+    const CareersData = [
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Engineering', location: 'Gurugram' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Design', location: 'Bangalore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Engineering', location: 'Bangalore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Product', location: 'Jakarta' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Engineering', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'ful stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+    ];
+    // const CareersData = props.data;
     let departmentJson = [],
-      departmentArray = [],
+      departmentArray = [
+        'Engineering',
+        'Design',
+        'People and Culture',
+        'Programm Management',
+        'Product',
+        'Science',
+      ],
       departmentCountArray = [],
       departmentCount = [],
       locationJson = [],
-      locationArray = [],
+      locationArray = ['Bangalore', 'Gurugram', 'Jakarta', 'Singapore', 'Bangkok', 'Vietnam'],
       parentArray = [];
 
-    props.data.map((job, i) => {
+    CareersData.map((job, i) => {
       let { department } = job.categories;
       let { location } = job.categories;
       //   to add unique department to dropdown
@@ -41,7 +211,6 @@ function CareersPage(props) {
       //   to add unique location to dropdown
       if (locationArray.indexOf(location) == -1 && location != null) {
         locationArray.push(location);
-        locationJson.push({ label: location, value: location });
       }
       parentArray.push({
         title: job.text,
@@ -50,6 +219,12 @@ function CareersPage(props) {
         id: job.id,
       });
     });
+
+    // convert location array to dropdown data
+    locationArray.map((location, i) => {
+      locationJson.push({ label: location, value: location });
+    });
+
     // to calculate openings in each department
     departmentArray.map((dep) => {
       let openings = departmentCountArray.filter(function(value) {
@@ -61,11 +236,13 @@ function CareersPage(props) {
         count: openings,
       });
     });
+    // to sort department according to number of openings
     departmentCount.sort(function(a, b) {
       return a.count - b.count;
     });
     departmentCount.reverse();
     console.log('count depart', departmentCount);
+
     setDepartmentList(departmentJson);
     setLocationList(locationJson);
     setParentJobList(parentArray);
@@ -172,17 +349,30 @@ function CareersPage(props) {
     );
   };
 
+  // function to chnage the navbar color on scroll
+  const changeBg = (color, light, entry) => {
+    console.log('section', color, entry);
+    if (entry.intersectionRatio >= 0.9 && entry.intersectionRatio != 0) {
+      setNavbarBG(color);
+      setNavbarLight(light);
+    } else if (
+      entry.intersectionRatio < 0.8 &&
+      entry.intersectionRect.bottom < 500 &&
+      entry.intersectionRatio != 0
+    ) {
+      setNavbarBG(color);
+      setNavbarLight(light);
+    }
+  };
+
   return (
     <div className="text-center text-md-left">
       <Head>
         <title>Gojek | Careers</title>
       </Head>
-      <Navbar bg="#f7ce55" careers />
+      <Navbar light={navbarLight} bg={navbarBG} careers />
 
-      <div
-        className="yellow-bg-gradient"
-        style={{ minHeight: parentJobList.length != 0 ? '140vh' : '100vh' }}
-      ></div>
+      <div className="yellow-bg-gradient"></div>
       {/* banner and jobs section */}
       <section id="banner" className=" full-height py-5 d-flex align-items-end">
         <div className="container">
@@ -201,134 +391,137 @@ function CareersPage(props) {
             </div>
           </div>
 
-          {parentJobList.length != 0 ? (
-            <form className="pt-0 pt-md-5">
-              <div className="row">
-                <div className="col-lg-6 py-3 py-md-0">
-                  <input
-                    type="text"
-                    value={searchText}
-                    onChange={(e) => setSearchText(e.target.value)}
-                    placeholder="&#xF002;  Keyword Search"
-                    className="form-control rounded-pill shadow fa"
-                  />
-                </div>
-                <div className="col-md-6 col-lg-3 py-3 py-lg-0">
-                  <Select
-                    components={{ Option }}
-                    closeMenuOnSelect={false}
-                    classNamePrefix="select"
-                    value={department}
-                    isSearchable={true}
-                    name="Department"
-                    placeholder="Department"
-                    options={departmentList}
-                    isMulti
-                    isClearable={false}
-                    onChange={(value) => {
-                      setDepartment(value);
-                      console.log('department value', value);
-                    }}
-                  />
-                </div>
-                <div className="col-md-6 col-lg-3 py-3 py-lg-0">
-                  <Select
-                    components={{ Option }}
-                    closeMenuOnSelect={false}
-                    classNamePrefix="select"
-                    value={location}
-                    isSearchable={true}
-                    name="Location"
-                    isMulti
-                    isClearable={false}
-                    placeholder="Location"
-                    options={locationList}
-                    onChange={(value) => {
-                      setLocation(value);
-                      console.log('location value', value);
-                    }}
-                  />
-                </div>
-
-                {/* to display filters applied */}
-                {(department !== null || location !== null) && (
-                  <div className="col-12 pt-5 d-flex justify-content-start align-items-center flex-wrap">
-                    <span className="mt-1">Filters : </span>
-                    {department &&
-                      department.map((department, i) => {
-                        return (
-                          <span className="filter-badge badge p-3 mx-2 mt-1" key={i}>
-                            {department.value}
-                            <i
-                              className="fa fa-times ml-2 clearIcon"
-                              style={{ lineHeight: 'normal' }}
-                              onClick={() => {
-                                removeFilter('department', department.value);
-                              }}
-                            />
-                          </span>
-                        );
-                      })}
-                    {location &&
-                      location.map((location, i) => {
-                        return (
-                          <span className="filter-badge badge p-3 mx-2" key={1}>
-                            {location.value}
-                            <i
-                              className="fa fa-times ml-2 clearIcon"
-                              style={{ lineHeight: 'normal' }}
-                              onClick={() => {
-                                removeFilter('location', location.value);
-                              }}
-                            />
-                          </span>
-                        );
-                      })}
-                    <span
-                      onClick={() => {
-                        removeFilter('reset', 0);
-                      }}
-                      className="clearIcon"
-                    >
-                      <u>Clear all filters</u>
-                    </span>
-                  </div>
-                )}
-
-                <div className="col-12 pt-5 d-flex justify-content-between">
-                  <p>
-                    <strong>{filteredJobList.length} Opportunities</strong> found across{' '}
-                    <strong>
-                      {department ? department.length : departmentList.length} Departments
-                    </strong>{' '}
-                    and{' '}
-                    <strong>{location ? location.length : locationList.length} Locations</strong>
-                  </p>
-                  <a href="#" className="text-green link">
-                    View all jobs
-                    <i
-                      className="fa fa-arrow-right ml-2"
-                      style={{ fontSize: '16px', lineHeight: 'normal' }}
-                    />
-                  </a>
-                </div>
+          <form className="pt-0 pt-md-5">
+            <div className="row">
+              <div className="col-lg-6 py-3 py-md-0">
+                <input
+                  type="text"
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
+                  placeholder="&#xF002;  Keyword Search"
+                  className="form-control rounded-pill shadow fa"
+                />
               </div>
-            </form>
-          ) : (
-            <div className="listings bg-white py-5 px-2 px-md-5" style={{ borderRadius: '3rem' }}>
-              <p className="text-center" style={{ fontSize: '1.5rem' }}>
-                We are currently not hiring, please check back later. Thank you
+              <div className="col-md-6 col-lg-3 py-3 py-lg-0">
+                <Select
+                  components={{ Option }}
+                  closeMenuOnSelect={false}
+                  classNamePrefix="select"
+                  value={department}
+                  isSearchable={true}
+                  name="Department"
+                  placeholder="Department"
+                  options={departmentList}
+                  isMulti
+                  isClearable={false}
+                  onChange={(value) => {
+                    setDepartment(value);
+                    console.log('department value', value);
+                  }}
+                />
+              </div>
+              <div className="col-md-6 col-lg-3 py-3 py-lg-0">
+                <Select
+                  components={{ Option }}
+                  closeMenuOnSelect={false}
+                  classNamePrefix="select"
+                  value={location}
+                  isSearchable={true}
+                  name="Location"
+                  isMulti
+                  isClearable={false}
+                  placeholder="Location"
+                  options={locationList}
+                  onChange={(value) => {
+                    setLocation(value);
+                    console.log('location value', value);
+                  }}
+                />
+              </div>
+
+              {/* to display filters applied */}
+              {(department !== null || location !== null) && (
+                <div className="col-12 pt-5 d-flex justify-content-start align-items-center flex-wrap">
+                  <span className="mt-1">Filters : </span>
+                  {department &&
+                    department.map((department, i) => {
+                      return (
+                        <span className="filter-badge badge p-3 mx-2 mt-1" key={i}>
+                          {department.value}
+                          <i
+                            className="fa fa-times ml-2 clearIcon"
+                            style={{ lineHeight: 'normal' }}
+                            onClick={() => {
+                              removeFilter('department', department.value);
+                            }}
+                          />
+                        </span>
+                      );
+                    })}
+                  {location &&
+                    location.map((location, i) => {
+                      return (
+                        <span className="filter-badge badge p-3 mx-2" key={1}>
+                          {location.value}
+                          <i
+                            className="fa fa-times ml-2 clearIcon"
+                            style={{ lineHeight: 'normal' }}
+                            onClick={() => {
+                              removeFilter('location', location.value);
+                            }}
+                          />
+                        </span>
+                      );
+                    })}
+                  <span
+                    onClick={() => {
+                      removeFilter('reset', 0);
+                    }}
+                    className="clearIcon"
+                  >
+                    <u>Clear all filters</u>
+                  </span>
+                </div>
+              )}
+
+              <p className="pt-5">
+                <strong>{filteredJobList.length} Opportunities</strong> found across{' '}
+                <strong>
+                  {department ? department.length : departmentList.length} Departments
+                </strong>{' '}
+                and <strong>{location ? location.length : locationList.length} Locations</strong>
               </p>
+
+              {/* <div className="col-12 pt-5 d-flex justify-content-between">
+                <a href="#" className="text-green link">
+                  View all jobs
+                  <i
+                    className="fa fa-arrow-right ml-2"
+                    style={{ fontSize: '16px', lineHeight: 'normal' }}
+                  />
+                </a>
+              </div> */}
             </div>
-          )}
+          </form>
         </div>
       </section>
 
       {/* jobs list section */}
-      <section id="job-list" className={parentJobList.length == 0 ? 'd-none' : ''}>
+      {/* <InView
+        as="div"
+        threshold={[0.9, 0.1]}
+        onChange={(inView, entry) => {
+          changeBg('#f7ce55', false, entry);
+        }}
+      > */}
+      <section id="job-list">
         <div className="container mb-5">
           <div className="listings bg-white py-5 px-2 px-md-5" style={{ borderRadius: '3rem' }}>
-            {filteredJobList.length == 0 ? (
+            {parentJobList.length == 0 ? (
+              <p className="text-center" style={{ fontSize: '1.5rem' }}>
+                Currently we don't have any openings for you, please check back later. Thanks
+              </p>
+            ) : filteredJobList.length == 0 ? (
               <p className="text-center" style={{ fontSize: '1.5rem' }}>
                 No results found. Try changing the filter or reset all filters
               </p>
@@ -351,29 +544,29 @@ function CareersPage(props) {
                     </thead>
                     <tbody>
                       {filteredJobList.map((job, i) => {
-                        if (i < maxJobs - 2) return <JobCard data={job} key={i} />;
+                        if (i < maxJobs) return <JobCard data={job} key={i} />;
                       })}
-                      {/* <JobCard
-                        data={{
-                          id: 1,
-                          title: 'full stack web developer',
-                          location: 'Bangalore',
-                          department: 'Engineering',
-                        }}
-                        key={1}
-                      /> */}
                     </tbody>
                   </table>
                   <div className="text-center mt-5">
-                    {filteredJobList.length > maxJobs && (
-                      <span
-                        className="text-green-light font-weight-bold mx-auto view-jobs clearIcon"
-                        onClick={() => setMaxJobs(maxJobs + 10)}
-                      >
-                        View all jobs
-                        <i className="fas fa-long-arrow-alt-right align-middle"></i>
-                      </span>
-                    )}
+                    {filteredJobList.length > maxJobs &&
+                      (maxJobs < 20 ? (
+                        <span
+                          className="text-green-light font-weight-bold mx-auto view-jobs clearIcon"
+                          onClick={() => setMaxJobs(maxJobs + 10)}
+                        >
+                          View 10 more jobs
+                          <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
+                        </span>
+                      ) : (
+                        <span className="text-green-light font-weight-bold mx-auto view-jobs clearIcon">
+                          <a href="#departments">
+                            view according to department
+                            <br />
+                            <i className="fas fa-long-arrow-alt-down align-middle ml-2"></i>
+                          </a>
+                        </span>
+                      ))}
                   </div>
                 </div>
               </div>
@@ -381,14 +574,17 @@ function CareersPage(props) {
           </div>
         </div>
       </section>
+      {/* </InView> */}
 
       {/* category section */}
-      <section
-        id="departments"
-        className={`bg-black text-white full-height py-0 py-md-5 ${
-          parentJobList.length == 0 ? 'd-none' : ''
-        }`}
-      >
+      {/* <InView
+        as="div"
+        threshold={[0.9, 0.1]}
+        onChange={(inView, entry) => {
+          changeBg('#000', true, entry);
+        }}
+      > */}
+      <section id="departments" className="bg-black text-white full-height py-0 py-md-5">
         <div className="container departments">
           <h1 className="header">Choose where you belong</h1>
           <p style={{ maxWidth: '48rem' }} className="mt-4 mb-5">
@@ -414,8 +610,7 @@ function CareersPage(props) {
             })}
             {departmentCountArray.length > 1 && (
               <div
-                className="card highlight"
-                style={{ backgroundColor: '#32ebe1' }}
+                className="card highlight department1"
                 onClick={() => {
                   selectDepartment(1);
                 }}
@@ -429,37 +624,81 @@ function CareersPage(props) {
           </div>
         </div>
       </section>
+      {/* </InView> */}
 
-      {/* Location section */}
-      <section
-        id="locations"
-        className={`full-height align-items-center py-5 ${
-          parentJobList.length == 0 ? 'd-none' : 'd-flex'
-        }`}
-      >
-        <div className="container locationPadding">
-          <h1 className="header">Our Locations</h1>
+      {/* Teams section */}
+      {/* <InView
+        as="div"
+        threshold={[0.9, 0.1]}
+        onChange={(inView, entry) => {
+          changeBg('#fff', false, entry);
+        }}
+      > */}
+      <section id="teams" className="full-height align-items-center py-5">
+        <div className="container locationPadding pt-5">
+          <h1 className="header pt-4">Teams</h1>
           <p className="mt-4 mb-5" style={{ maxWidth: '48rem' }}>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
             is simply dummy text of the printing and typesetting industry.
           </p>
-
-          <div className="row">
-            <div className="col-md-6">
-              <div className="card my-4 mx-1"></div>
-            </div>
-            <div className="col-md-6">
-              <div className="card my-4 mx-1"></div>
-            </div>
-            <div className="col-md-6">
-              <div className="card my-4 mx-1"></div>
-            </div>
-            <div className="col-md-6">
-              <div className="card my-4 mx-1"></div>
-            </div>
-          </div>
         </div>
+        <Slider
+          slidesToShow={3}
+          // infinite={false}
+          centerMode
+          responsive={[
+            {
+              breakpoint: 1300,
+              settings: {
+                slidesToShow: 2,
+                centerMode: false,
+              },
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                // centerMode: false,
+              },
+            },
+            {
+              breakpoint: 576,
+              settings: {
+                slidesToShow: 1,
+                centerMode: false,
+              },
+            },
+          ]}
+        >
+          <div>
+            <div className="card mx-1"></div>
+          </div>
+          <div>
+            <div className="card mx-1"></div>
+          </div>
+
+          <div>
+            <div className="card mx-1"></div>
+          </div>
+
+          <div>
+            <div className="card mx-1"></div>
+          </div>
+
+          <div>
+            <div className="card mx-1"></div>
+          </div>
+
+          <div>
+            <div className="card mx-1"></div>
+          </div>
+
+          <div>
+            <div className="card mx-1"></div>
+          </div>
+        </Slider>
       </section>
+      {/* </InView> */}
     </div>
   );
 }

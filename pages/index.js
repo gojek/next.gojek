@@ -25,6 +25,7 @@ function HomePage(props) {
     'Lifestyle Services',
   ];
 
+  // function to chnage the navbar color on scroll
   const changeBg = (color, light, entry) => {
     if (entry.intersectionRatio >= 0.9 && entry.intersectionRatio != 0) {
       setNavbarBG(color);
