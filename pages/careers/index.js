@@ -1,353 +1,49 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
+import Router, { useRouter } from 'next/router';
 import Slider from 'react-slick';
-import Select, { components } from 'react-select';
 import fetch from 'isomorphic-unfetch';
 import { InView } from 'react-intersection-observer';
 
 import Navbar from '~/../../comps/Navbar';
 import bannerImage from '~/../../static/banner.png';
-import JobCard from '~/../../comps/Careers/jobCard';
+import JobList from '~/../../comps/Careers/jobsList';
 
 function CareersPage(props) {
-  const [navbarLight, setNavbarLight] = useState(true);
+  const router = useRouter();
+  const params = router.query;
+  const [navbarLight, setNavbarLight] = useState(false);
   const [navbarBG, setNavbarBG] = useState('#f7ce55');
-  const [departmentList, setDepartmentList] = useState([]);
-  const [department, setDepartment] = useState(null);
-  const [locationList, setLocationList] = useState([]);
-  const [location, setLocation] = useState(null);
-  const [parentJobList, setParentJobList] = useState([]);
-  const [filteredJobList, setFilteredJobList] = useState([]);
-  const [departmentCountArray, setDepartmentCountArray] = useState([]);
-  const [searchText, setSearchText] = useState('');
-  const [changed, setChanged] = useState(false);
-  const [maxJobs, setMaxJobs] = useState(10);
+  const [departmentCountArray, setDepartmentCountArray] = useState([
+    {
+      department: 'Engineering',
+      count: 0,
+    },
+    {
+      department: 'Design',
+      count: 0,
+    },
+    {
+      department: 'People and Culture',
+      count: 0,
+    },
+    {
+      department: 'Programm Management',
+      count: 0,
+    },
+    {
+      department: 'Product',
+      count: 0,
+    },
+    {
+      department: 'Science',
+      count: 0,
+    },
+  ]);
 
-  useEffect(() => {
-    console.log('careers props', props);
-
-    const CareersData = [
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Engineering', location: 'Gurugram' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Design', location: 'Bangalore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Engineering', location: 'Bangalore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Product', location: 'Jakarta' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Engineering', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'ful stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-    ];
-    // const CareersData = props.data;
-    let departmentJson = [],
-      departmentArray = [
-        'Engineering',
-        'Design',
-        'People and Culture',
-        'Programm Management',
-        'Product',
-        'Science',
-      ],
-      departmentCountArray = [],
-      departmentCount = [],
-      locationJson = [],
-      locationArray = ['Bangalore', 'Gurugram', 'Jakarta', 'Singapore', 'Bangkok', 'Vietnam'],
-      parentArray = [];
-
-    CareersData.map((job, i) => {
-      let { department } = job.categories;
-      let { location } = job.categories;
-      //   to add unique department to dropdown
-      if (departmentArray.indexOf(department) == -1 && department != null) {
-        departmentArray.push(department);
-      }
-      department != null && departmentCountArray.push(department);
-
-      //   to add unique location to dropdown
-      if (locationArray.indexOf(location) == -1 && location != null) {
-        locationArray.push(location);
-      }
-      parentArray.push({
-        title: job.text,
-        department: department,
-        location: location,
-        id: job.id,
-      });
-    });
-
-    // convert location array to dropdown data
-    locationArray.map((location, i) => {
-      locationJson.push({ label: location, value: location });
-    });
-
-    // to calculate openings in each department
-    departmentArray.map((dep) => {
-      let openings = departmentCountArray.filter(function(value) {
-        return value === dep;
-      }).length;
-      departmentJson.push({ label: dep, value: `${dep} (${openings})` });
-      departmentCount.push({
-        department: dep,
-        count: openings,
-      });
-    });
-    // to sort department according to number of openings
-    departmentCount.sort(function(a, b) {
-      return a.count - b.count;
-    });
-    departmentCount.reverse();
-    console.log('count depart', departmentCount);
-
-    setDepartmentList(departmentJson);
-    setLocationList(locationJson);
-    setParentJobList(parentArray);
-    setFilteredJobList(parentArray);
-    setDepartmentCountArray(departmentCount);
-    setChanged(true);
-  }, []);
-
-  //   filtering data
-  useEffect(() => {
-    console.log('fitering', searchText);
-    let keyword = searchText.trim();
-    if (department == null && location == null && keyword == '' && changed) {
-      setFilteredJobList(parentJobList);
-    } else if (changed) {
-      let departmentFilters = [],
-        locationFilters = [],
-        filteredArray = [];
-      department != null
-        ? department.map((filter) => {
-            departmentFilters.push(filter.label);
-          })
-        : departmentList.map((filter) => {
-            departmentFilters.push(filter.label);
-          });
-      location != null
-        ? location.map((filter) => {
-            locationFilters.push(filter.label);
-          })
-        : locationList.map((filter) => {
-            locationFilters.push(filter.label);
-          });
-      parentJobList.map((job) => {
-        let { department } = job,
-          { location } = job,
-          { title } = job;
-        if (
-          departmentFilters.indexOf(department) !== -1 &&
-          locationFilters.indexOf(location) !== -1
-        ) {
-          if (keyword == '' || title.toUpperCase().indexOf(keyword.toUpperCase()) !== -1) {
-            filteredArray.push({
-              title: title,
-              department: department,
-              location: location,
-              id: job.id,
-            });
-          }
-        }
-      });
-      setFilteredJobList(filteredArray);
-    }
-  }, [location, department, searchText]);
-
-  //   function to remove the filter
-  const removeFilter = (type, value) => {
-    let changedValue = [];
-    if (type == 'department') {
-      department.map((dep) => {
-        dep.value != value && changedValue.push(dep);
-      });
-      setDepartment(changedValue.length > 0 ? changedValue : null);
-    } else if (type == 'location') {
-      location.map((loc) => {
-        loc.value != value && changedValue.push(loc);
-      });
-      setLocation(changedValue.length > 0 ? changedValue : null);
-    } else if (type == 'reset') {
-      setDepartment(null);
-      setLocation(null);
-      setSearchText('');
-    }
-  };
-
-  // function to apply department filter
-  const selectDepartment = (index) => {
-    setLocation(null);
-    setSearchText('');
-    setDepartment([
-      {
-        label: departmentCountArray[index].department,
-        value: `${departmentCountArray[index].department} (${departmentCountArray[index].count})`,
-      },
-    ]);
-    var elmnt = document.getElementById('filters');
-    elmnt.scrollIntoView();
-  };
-
-  const Option = (props) => {
-    return (
-      <div>
-        {' '}
-        <components.Option {...props}>
-          {' '}
-          <input
-            type="checkbox"
-            checked={props.isSelected}
-            onChange={() => null}
-            style={{ display: 'inline' }}
-          />{' '}
-          <label style={{ display: 'inline' }}>{props.value}</label>{' '}
-        </components.Option>{' '}
-      </div>
-    );
-  };
+  const queryDepartments = typeof params.d == 'string' ? [params.d] : params.d;
+  const querylocations = typeof params.l == 'string' ? [params.l] : params.l;
 
   // function to chnage the navbar color on scroll
   const changeBg = (color, light, entry) => {
@@ -390,193 +86,18 @@ function CareersPage(props) {
               </p>
             </div>
           </div>
-
-          <form className="pt-0 pt-md-5">
-            <div className="row">
-              <div className="col-lg-6 py-3 py-md-0">
-                <input
-                  type="text"
-                  value={searchText}
-                  onChange={(e) => setSearchText(e.target.value)}
-                  placeholder="&#xF002;  Keyword Search"
-                  className="form-control rounded-pill shadow fa"
-                />
-              </div>
-              <div className="col-md-6 col-lg-3 py-3 py-lg-0">
-                <Select
-                  components={{ Option }}
-                  closeMenuOnSelect={false}
-                  classNamePrefix="select"
-                  value={department}
-                  isSearchable={true}
-                  name="Department"
-                  placeholder="Department"
-                  options={departmentList}
-                  isMulti
-                  isClearable={false}
-                  onChange={(value) => {
-                    setDepartment(value);
-                    console.log('department value', value);
-                  }}
-                />
-              </div>
-              <div className="col-md-6 col-lg-3 py-3 py-lg-0">
-                <Select
-                  components={{ Option }}
-                  closeMenuOnSelect={false}
-                  classNamePrefix="select"
-                  value={location}
-                  isSearchable={true}
-                  name="Location"
-                  isMulti
-                  isClearable={false}
-                  placeholder="Location"
-                  options={locationList}
-                  onChange={(value) => {
-                    setLocation(value);
-                    console.log('location value', value);
-                  }}
-                />
-              </div>
-
-              {/* to display filters applied */}
-              {(department !== null || location !== null) && (
-                <div className="col-12 pt-5 d-flex justify-content-start align-items-center flex-wrap">
-                  <span className="mt-1">Filters : </span>
-                  {department &&
-                    department.map((department, i) => {
-                      return (
-                        <span className="filter-badge badge p-3 mx-2 mt-1" key={i}>
-                          {department.value}
-                          <i
-                            className="fa fa-times ml-2 clearIcon"
-                            style={{ lineHeight: 'normal' }}
-                            onClick={() => {
-                              removeFilter('department', department.value);
-                            }}
-                          />
-                        </span>
-                      );
-                    })}
-                  {location &&
-                    location.map((location, i) => {
-                      return (
-                        <span className="filter-badge badge p-3 mx-2" key={1}>
-                          {location.value}
-                          <i
-                            className="fa fa-times ml-2 clearIcon"
-                            style={{ lineHeight: 'normal' }}
-                            onClick={() => {
-                              removeFilter('location', location.value);
-                            }}
-                          />
-                        </span>
-                      );
-                    })}
-                  <span
-                    onClick={() => {
-                      removeFilter('reset', 0);
-                    }}
-                    className="clearIcon"
-                  >
-                    <u>Clear all filters</u>
-                  </span>
-                </div>
-              )}
-
-              <p className="pt-5">
-                <strong>{filteredJobList.length} Opportunities</strong> found across{' '}
-                <strong>
-                  {department ? department.length : departmentList.length} Departments
-                </strong>{' '}
-                and <strong>{location ? location.length : locationList.length} Locations</strong>
-              </p>
-
-              {/* <div className="col-12 pt-5 d-flex justify-content-between">
-                <a href="#" className="text-green link">
-                  View all jobs
-                  <i
-                    className="fa fa-arrow-right ml-2"
-                    style={{ fontSize: '16px', lineHeight: 'normal' }}
-                  />
-                </a>
-              </div> */}
-            </div>
-          </form>
+          <JobList
+            data={props.data}
+            department={queryDepartments}
+            location={querylocations}
+            text={params.q}
+            careers
+            setDepartmentCount={(list) => setDepartmentCountArray(list)}
+          />
         </div>
       </section>
 
-      {/* jobs list section */}
-      {/* <InView
-        as="div"
-        threshold={[0.9, 0.1]}
-        onChange={(inView, entry) => {
-          changeBg('#f7ce55', false, entry);
-        }}
-      > */}
-      <section id="job-list">
-        <div className="container mb-5">
-          <div className="listings bg-white py-5 px-2 px-md-5" style={{ borderRadius: '3rem' }}>
-            {parentJobList.length == 0 ? (
-              <p className="text-center" style={{ fontSize: '1.5rem' }}>
-                Currently we don't have any openings for you, please check back later. Thanks
-              </p>
-            ) : filteredJobList.length == 0 ? (
-              <p className="text-center" style={{ fontSize: '1.5rem' }}>
-                No results found. Try changing the filter or reset all filters
-              </p>
-            ) : (
-              <div>
-                <h1 className="header mb-4" style={{ fontSize: '2rem' }}>
-                  {location == null && department == null && searchText == ''
-                    ? 'Recent Open Positions'
-                    : 'Search results...'}
-                </h1>
-                <div className="job">
-                  <table className="table table-borderless">
-                    <thead>
-                      <tr className="text-green-light tableHeading">
-                        <th scope="col">Job Title</th>
-                        <th scope="col">Department</th>
-                        <th scope="col">Location</th>
-                        <th scope="col"></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {filteredJobList.map((job, i) => {
-                        if (i < maxJobs) return <JobCard data={job} key={i} />;
-                      })}
-                    </tbody>
-                  </table>
-                  <div className="text-center mt-5">
-                    {filteredJobList.length > maxJobs &&
-                      (maxJobs < 20 ? (
-                        <span
-                          className="text-green-light font-weight-bold mx-auto view-jobs clearIcon"
-                          onClick={() => setMaxJobs(maxJobs + 10)}
-                        >
-                          View 10 more jobs
-                          <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
-                        </span>
-                      ) : (
-                        <span className="text-green-light font-weight-bold mx-auto view-jobs clearIcon">
-                          <a href="#departments">
-                            view according to department
-                            <br />
-                            <i className="fas fa-long-arrow-alt-down align-middle ml-2"></i>
-                          </a>
-                        </span>
-                      ))}
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-      {/* </InView> */}
-
-      {/* category section */}
+      {/* Departments section */}
       {/* <InView
         as="div"
         threshold={[0.9, 0.1]}
@@ -595,31 +116,31 @@ function CareersPage(props) {
             {departmentCountArray.map((department, i) => {
               if (i < 6 && i != 1)
                 return (
-                  <div
-                    className={`card ${i == 0 ? 'highlight ' : ''}${`department${i}`}`}
-                    onClick={() => {
-                      selectDepartment(i);
-                    }}
+                  <Link
+                    href="/department/[id]"
+                    as={`/department/${departmentCountArray[i].department}`}
                   >
-                    <div className="card-body">
-                      <h2 className="header">{departmentCountArray[i].department}</h2>
-                      <p className="sub-head">{departmentCountArray[i].count} Openings</p>
+                    <div className={`card ${i == 0 ? 'highlight ' : ''}${`department${i}`}`}>
+                      <div className="card-body">
+                        <h2 className="header">{departmentCountArray[i].department}</h2>
+                        <p className="sub-head">{departmentCountArray[i].count} Openings</p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 );
             })}
             {departmentCountArray.length > 1 && (
-              <div
-                className="card highlight department1"
-                onClick={() => {
-                  selectDepartment(1);
-                }}
+              <Link
+                href="/department/[id]"
+                as={`/department/${departmentCountArray[1].department}`}
               >
-                <div className="card-body">
-                  <h2 className="header">{departmentCountArray[1].department}</h2>
-                  <p className="sub-head">{departmentCountArray[1].count} Openings</p>
+                <div className="card highlight department1">
+                  <div className="card-body">
+                    <h2 className="header">{departmentCountArray[1].department}</h2>
+                    <p className="sub-head">{departmentCountArray[1].count} Openings</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             )}
           </div>
         </div>
