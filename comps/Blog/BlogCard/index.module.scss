@@ -1,0 +1,47 @@
+@import '~/../../utils/styles/constants.scss';
+
+.card {
+  border: none;
+}
+
+.cardImgTop {
+  border-radius: $border-xl;
+}
+
+.mainArticle {
+  .title {
+    font-size: 1.9rem;
+    font-family: $header-font;
+  }
+}
+
+.main {
+  .description {
+    color: #707070;
+    font-size: 1rem;
+  }
+}
+
+.description,
+.date_time {
+  color: #707070;
+}
+
+.meta {
+  font-size: $font-s;
+}
+
+#featured-articles {
+  .header {
+    font-size: 2.2rem;
+  }
+}
+
+.tag {
+  position: absolute;
+  background-color: $green-light;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem 1rem 1rem 0;
+  margin-left: -5px;
+}

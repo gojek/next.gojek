@@ -321,7 +321,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 140vh;
+  // height: 140vh;
   width: 100%;
   z-index: -1;
 }
@@ -404,9 +404,8 @@ body {
       border: none;
       border-radius: $border-xl;
       padding: 1.5rem 2rem;
-      height: 15rem;
-      margin-bottom: 0.94rem;
-      margin-top: 0.94rem;
+      min-height: 15rem;
+      margin-bottom: 1.875rem;
       position: relative;
 
       &.highlight {
@@ -439,66 +438,35 @@ body {
       background-color: #00aa13;
     }
     .department1 {
-      background-color: #32ebe1;
-    }
-    .department2 {
       background-color: #ff7f32;
     }
-    .department3 {
+    .department2 {
       background-color: #ff808b;
     }
-    .department4 {
+    .department3 {
       background-color: #7ccc6c;
     }
-    .department5 {
+    .department4 {
       background-color: #d48bc8;
     }
-    .department6 {
+    .department5 {
       background-color: #32ebe1;
     }
   }
 }
 
-#teams {
-  .header {
-    font-size: $font-xl;
-  }
+#locations {
   .card {
-    min-height: 27rem;
-    width: 21rem;
+    min-height: 20rem;
     background-color: #dcdada;
     border: none;
     border-radius: $border-xl;
   }
 
-  @media screen and (min-width: $md-break) {
-    .slick-slider {
-      margin-left: 4rem;
-    }
-    .slick-prev {
-      display: none !important;
-    }
-  }
-
-  @media screen and (min-width: $lg-break) {
-    .slick-slider {
-      margin-left: 10rem;
-    }
-    .slick-list {
-      padding-right: 100px !important;
-      padding-left: 0px !important;
-    }
-  }
-
-  @media screen and (min-width: 2000px) {
-    .slick-slider {
-      width: 1140px;
-      margin: auto;
-    }
-  }
-
-  .slick-next {
-    right: 3.2rem;
+  .locationPadding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    color: #515151;
   }
 }
 
