@@ -321,7 +321,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  // height: 140vh;
+  height: 140vh;
   width: 100%;
   z-index: -1;
 }
@@ -455,12 +455,41 @@ body {
   }
 }
 
-#locations {
+#teams {
   .card {
     min-height: 20rem;
     background-color: #dcdada;
     border: none;
     border-radius: $border-xl;
+  }
+  @media screen and (min-width: $md-break) {
+    .slick-slider {
+      margin-left: 4rem;
+    }
+    .slick-prev {
+      display: none !important;
+    }
+  }
+
+  @media screen and (min-width: $lg-break) {
+    .slick-slider {
+      margin-left: 10rem;
+    }
+    .slick-list {
+      padding-right: 100px !important;
+      padding-left: 0px !important;
+    }
+  }
+
+  @media screen and (min-width: 2000px) {
+    .slick-slider {
+      width: 1140px;
+      margin: auto;
+    }
+  }
+
+  .slick-next {
+    right: 3.2rem;
   }
 
   .locationPadding {
