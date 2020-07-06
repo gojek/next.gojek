@@ -4,7 +4,7 @@ import homePage1 from '~/../../static/Homepage-05.png';
 import Navbar from '~/../../comps/Navbar';
 import Tags from '~/../../comps/Blog/Tag';
 import BlogCard from '~/../../comps/Blog/BlogCard';
-import TagCounts from '~/../../comps/Blog/Tag/TagCounts';
+import TagCounts from '~/../../comps/Blog/Tag/tagCounts';
 import OpenMedium from '~/../../comps/Common/openMedium';
 
 function Blog(props) {
@@ -68,7 +68,7 @@ function Blog(props) {
                 />
                 <span className="text-white text-uppercase tag">Culture</span>
                 <div className="card-body px-0">
-                  <h5 className="title py-3">
+                  <h5 className="title py-3 pointer">
                     Code Coverage: From Failing the Build To Publishing The Report…
                   </h5>
                 </div>
@@ -84,7 +84,7 @@ function Blog(props) {
                 />
                 <span className="text-white text-uppercase tag">Tech</span>
                 <div className="card-body px-0">
-                  <h5 className="title py-3">
+                  <h5 className="title py-3 pointer">
                     Gojek appoints ex-NASA engineer George Do as Chief Information…{' '}
                   </h5>
                 </div>
@@ -100,7 +100,7 @@ function Blog(props) {
                 />
                 <span className="text-white text-uppercase tag">Design</span>
                 <div className="card-body px-0">
-                  <h5 className="title py-3">
+                  <h5 className="title py-3 pointer">
                     Ho py-3w We Pushed a Million Keys to Redis in Seconds{' '}
                   </h5>
                 </div>
@@ -134,7 +134,10 @@ function Blog(props) {
               <h2 className="article-title text-white pr-5">
                 Code Coverage: From Failing the Build To Publishing
               </h2>
-              <span className="font-weight-bold mx-auto view-jobs clearIcon mt-4">
+              <span
+                className="font-weight-bold mx-auto view-jobs clearIcon mt-4"
+                style={{ color: '#a1d884' }}
+              >
                 Read the article
                 <i className="fas fa-long-arrow-alt-right align-middle ml-3"></i>
               </span>

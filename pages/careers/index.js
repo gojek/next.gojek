@@ -29,7 +29,7 @@ function CareersPage(props) {
       count: 0,
     },
     {
-      department: 'Programm Management',
+      department: 'Program Management',
       count: 0,
     },
     {
@@ -120,12 +120,14 @@ function CareersPage(props) {
                     href="/department/[id]"
                     as={`/department/${departmentCountArray[i].department}`}
                   >
-                    <div className={`card ${i == 0 ? 'highlight ' : ''}${`department${i}`}`}>
+                    <a
+                      className={`card text-white ${i == 0 ? 'highlight ' : ''}${`department${i}`}`}
+                    >
                       <div className="card-body">
                         <h2 className="header">{departmentCountArray[i].department}</h2>
                         <p className="sub-head">{departmentCountArray[i].count} Openings</p>
                       </div>
-                    </div>
+                    </a>
                   </Link>
                 );
             })}
@@ -134,12 +136,12 @@ function CareersPage(props) {
                 href="/department/[id]"
                 as={`/department/${departmentCountArray[1].department}`}
               >
-                <div className="card highlight department1">
+                <a className="card highlight department1 text-white">
                   <div className="card-body">
                     <h2 className="header">{departmentCountArray[1].department}</h2>
                     <p className="sub-head">{departmentCountArray[1].count} Openings</p>
                   </div>
-                </div>
+                </a>
               </Link>
             )}
           </div>

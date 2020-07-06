@@ -49,7 +49,9 @@ function TagCounts(props) {
           {tagsCount.map((tag, i) => {
             return (
               <div
-                className={`p-5 my-2 ${i == 0 || i == 5 ? 'col-md-5' : 'col-md-3'} ${styles.tile}`}
+                className={`p-5 my-2 pointer ${i == 0 || i == 5 ? 'col-md-5' : 'col-md-3'} ${
+                  styles.tile
+                }`}
                 onClick={() => openMediumTag(tag.URL)}
               >
                 <h5 className="mb-0">{tag.name}</h5>

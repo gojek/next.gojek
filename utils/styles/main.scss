@@ -41,7 +41,7 @@ body {
         &:after {
           content: '';
           display: block;
-          width: 50%;
+          width: 2rem;
           margin: 0 0.5rem;
           border-top: 2px solid #000;
         }
@@ -57,7 +57,7 @@ body {
         &:after {
           content: '';
           display: block;
-          width: 50%;
+          width: 2rem;
           margin: 0 0.5rem;
           border-top: 2px solid #000;
         }
@@ -141,6 +141,18 @@ body {
   font-family: $title-font;
   &:hover {
     color: inherit;
+  }
+}
+
+// to avoid outline to slick slides
+.slick-slide {
+  div:nth-child(1) {
+    div:nth-child(1) {
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
   }
 }
 
@@ -307,12 +319,13 @@ body {
 .blackBackground {
   background-color: #000;
   background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   z-index: -1;
+}
+
+.teamsJobs {
+  background: linear-gradient(to bottom, #000 10rem, #fff 10rem);
 }
 
 .yellow-bg-gradient {
@@ -321,7 +334,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 140vh;
+  height: 107vh;
   width: 100%;
   z-index: -1;
 }
@@ -407,6 +420,7 @@ body {
       min-height: 15rem;
       margin-bottom: 1.875rem;
       position: relative;
+      text-decoration: none;
 
       &.highlight {
         height: 32rem;
@@ -460,6 +474,7 @@ body {
     min-height: 20rem;
     background-color: #dcdada;
     border: none;
+    outline: none !important;
     border-radius: $border-xl;
   }
   @media screen and (min-width: $md-break) {
@@ -640,9 +655,9 @@ body {
     }
   }
 }
-#job-list {
-  min-height: 40vh;
-}
+// #job-list {
+//   min-height: 40vh;
+// }
 
 .listings {
   box-shadow: 0 0 82px 0 rgba(0, 0, 0, 0.12);

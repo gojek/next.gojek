@@ -1,11 +1,214 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Navbar from '~/../../comps/Navbar';
-import JobCard from '~/../../comps/Careers/jobCard';
+import JobsTable from '~/../../comps/Careers/jobsTable';
+import Router from 'next/router';
 
 function CareersPage(props) {
   console.log('props', props);
-  const [maxJobs, setMaxJobs] = useState(10);
+  const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    console.log('careers props', props);
+
+    const CareeersData = [
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Engineering', location: 'Gurugram' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Design', location: 'Bangalore' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Engineering', location: 'Bangalore' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Product', location: 'Jakarta' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Engineering', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'full stack developer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'Quality Engineer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'Quality Engineer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'Quality Engineer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'Quality Engineer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'Quality Engineer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'Quality Engineer',
+        categories: { department: 'Programm Management', location: 'Singapore' },
+      },
+      {
+        id: 1,
+        text: 'Quality Engineer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'Quality Engineer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'Quality Engineer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'Quality Engineer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+      {
+        id: 1,
+        text: 'Quality Engineer',
+        categories: { department: 'Science', location: 'Bangkok' },
+      },
+    ];
+    const CareersData = props.data;
+    let jobs = [];
+
+    CareersData.map((job, i) => {
+      let { team } = job.categories;
+      let { department } = job.categories;
+      let { location } = job.categories;
+
+      // to check the department name for department page
+      if (team == 'Kernel') {
+        jobs.push({
+          title: job.text,
+          department: department,
+          location: location,
+          id: job.id,
+        });
+      }
+    });
+
+    setJobs(jobs);
+  }, []);
 
   return (
     <div className="text-center text-md-left">
@@ -14,8 +217,8 @@ function CareersPage(props) {
       </Head>
       <Navbar light bg="#000" />
       {/* banner */}
-      <div className="blackBackground"></div>
-      <section id="banner" className="teams-banner py-5 d-flex" style={{ minHeight: '90vh' }}>
+      {/* <div className="blackBackground"></div> */}
+      <section id="banner" className="teams-banner py-5 d-flex blackBackground">
         <div className="container pt-5 align-self-center">
           <div className="row justify-content-center pt-5">
             <div className="col-md-12 col-lg-6 text-white">
@@ -57,66 +260,35 @@ function CareersPage(props) {
             className="listings bg-white py-5 px-2 px-md-5 "
             style={{ borderRadius: '3rem', paddingTop: '5rem' }}
           >
-            <h1 className="header mb-4" style={{ fontSize: '2rem' }}>
-              Recent Open Positions
-            </h1>
-            <div className="job">
-              <table className="table table-borderless">
-                <thead>
-                  <tr className="text-green-light tableHeading">
-                    <th scope="col">Job Title</th>
-                    <th scope="col">Department</th>
-                    <th scope="col">Location</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {props.data.map((job, i) => {
-                    console.log('job obj', job);
-                    if (i < maxJobs - 2)
-                      return (
-                        <JobCard
-                          data={{
-                            title: job.text,
-                            department: job.categories.department,
-                            location: job.categories.location,
-                            id: job.id,
-                          }}
-                          key={i}
-                        />
-                      );
-                  })}
-                </tbody>
-              </table>
-              <div className="text-center mt-5">
-                {props.data.length > maxJobs && (
-                  <span
-                    className="text-green-light font-weight-bold mx-auto view-jobs clearIcon"
-                    onClick={() => setMaxJobs(maxJobs + 10)}
-                  >
-                    View all jobs
-                    <i className="fas fa-long-arrow-alt-right align-middle"></i>
-                  </span>
-                )}
-              </div>
-            </div>
+            {jobs.length > 0 ? (
+              <JobsTable
+                jobs={jobs}
+                careers
+                routeToAllJobs={() => Router.push('/careers/all-open-positions')}
+              />
+            ) : (
+              <p className="text-center py-5" style={{ fontSize: '1.5rem' }}>
+                Currently we don't have any openings under Kernel, please check back later. Thanks
+              </p>
+            )}
           </div>
         </div>
       </section>
+
       {/* blogs section */}
-      <section id="blogs" className="d-flex align-items-center py-5">
+      <section id="blogs" className="d-flex align-items-center py-3">
         <div className="container list">
-          <p style={{ maxWidth: '48rem' }} className="mt-4 mb-5 px-0 px-md-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            is simply dummy text of the printing and typesetting industry.
+          <p className="mb-5 px-0 px-md-4">
+            (blog section) Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
 
           <div className="row">
-            <div className="col-md-4 px-4">
-              <div className="card my-4">
+            <div className="col-md-4 px-3">
+              <div className="card my-4 mx-1">
                 <div className="placeholder"></div>
-                <div className="card-body">
-                  <p className="card-text">
+                <div className="card-body pb-0">
+                  <p className="card-text pointer">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     <br />0 min read | DD Month, YYYY
                   </p>
@@ -124,11 +296,11 @@ function CareersPage(props) {
               </div>
             </div>
 
-            <div className="col-md-4 px-4">
-              <div className="card my-4">
+            <div className="col-md-4 px-3">
+              <div className="card my-4 mx-1">
                 <div className="placeholder"></div>
-                <div className="card-body">
-                  <p className="card-text">
+                <div className="card-body pb-0">
+                  <p className="card-text pointer">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     <br />0 min read | DD Month, YYYY
                   </p>
@@ -136,11 +308,11 @@ function CareersPage(props) {
               </div>
             </div>
 
-            <div className="col-md-4 px-4">
-              <div className="card my-4">
+            <div className="col-md-4 px-3">
+              <div className="card my-4 mx-1">
                 <div className="placeholder"></div>
-                <div className="card-body">
-                  <p className="card-text">
+                <div className="card-body pb-0">
+                  <p className="card-text pointer">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     <br />0 min read | DD Month, YYYY
                   </p>
@@ -148,11 +320,11 @@ function CareersPage(props) {
               </div>
             </div>
 
-            <div className="col-md-4 px-4">
-              <div className="card my-4">
+            <div className="col-md-4 px-3">
+              <div className="card my-4 mx-1">
                 <div className="placeholder"></div>
-                <div className="card-body">
-                  <p className="card-text">
+                <div className="card-body pb-0">
+                  <p className="card-text pointer">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     <br />0 min read | DD Month, YYYY
                   </p>
@@ -160,11 +332,11 @@ function CareersPage(props) {
               </div>
             </div>
 
-            <div className="col-md-4 px-4">
-              <div className="card my-4">
+            <div className="col-md-4 px-3">
+              <div className="card my-4 mx-1">
                 <div className="placeholder"></div>
-                <div className="card-body">
-                  <p className="card-text">
+                <div className="card-body pb-0">
+                  <p className="card-text pointer">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     <br />0 min read | DD Month, YYYY
                   </p>
@@ -172,11 +344,11 @@ function CareersPage(props) {
               </div>
             </div>
 
-            <div className="col-md-4 px-4">
-              <div className="card my-4">
+            <div className="col-md-4 px-3">
+              <div className="card my-4 mx-1">
                 <div className="placeholder"></div>
-                <div className="card-body">
-                  <p className="card-text">
+                <div className="card-body pb-0">
+                  <p className="card-text pointer">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     <br />0 min read | DD Month, YYYY
                   </p>
@@ -184,16 +356,17 @@ function CareersPage(props) {
               </div>
             </div>
           </div>
-
-          <a className="link text-green-light pl-4" href="#">
-            Read more blogs
-            <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
-          </a>
+          <div className="py-4 mt-3">
+            <a className="link text-green-light pl-4" href="#">
+              Read more blogs
+              <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* works with us section */}
-      <section id="team-workWithUs" className="container my-5">
+      <section id="team-workWithUs" className="container my-5 px-5 pt-4">
         <div className="row" style={{ backgroundColor: '#904790', borderRadius: '48px' }}>
           <div className="col-12 col-md-5"></div>
           <div className="col-12 col-md-5 py-5">

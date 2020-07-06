@@ -32,9 +32,13 @@ function Tags(props) {
 
   return (
     <div id="tags">
-      <div className={`pt-5 d-flex ${styles.tagList}`}>
+      <div className={`pt-5 d-flex flex-wrap ${styles.tagList}`}>
         {props.tags.map((tag) => (
-          <Tag tag={tag} changeTag={(tag) => setSelectedTag(tag)} />
+          <Tag
+            tag={tag}
+            changeTag={(tag) => setSelectedTag(tag)}
+            active={tag.name == selectedTag.name}
+          />
         ))}
         <Tag tag={{ name: 'All' }} changeTag={(tag) => scrollToAll()} />
       </div>

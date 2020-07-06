@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 import Select, { components } from 'react-select';
 
-import JobCard from '~/../../comps/Careers/jobCard';
+import JobsTable from '~/../../comps/Careers/jobsTable';
 
 function JobsList(props) {
   const router = useRouter();
@@ -540,54 +540,61 @@ function JobsList(props) {
                 No results found. Try changing the filter or reset all filters
               </p>
             ) : (
-              <div>
-                <h1 className="header mb-4" style={{ fontSize: '2rem' }}>
-                  {location == null && department == null && searchText == ''
-                    ? 'Recent Open Positions'
-                    : 'Search results...'}
-                </h1>
-                <div className="job">
-                  <table className="table table-borderless">
-                    <thead>
-                      <tr className="text-green-light tableHeading">
-                        <th scope="col">Job Title</th>
-                        <th scope="col">Department</th>
-                        <th scope="col">Location</th>
-                        <th scope="col"></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {filteredJobList.map((job, i) => {
-                        if (i < maxJobs) return <JobCard data={job} key={i} />;
-                      })}
-                    </tbody>
-                  </table>
-                  <div className="text-center mt-5">
-                    {filteredJobList.length > maxJobs &&
-                      (!props.careers ? (
-                        <span
-                          className="text-green-light font-weight-bold mx-auto view-jobs clearIcon"
-                          onClick={() => setMaxJobs(maxJobs + 10)}
-                        >
-                          View{' '}
-                          {filteredJobList.length - maxJobs > 10
-                            ? '10'
-                            : filteredJobList.length - maxJobs}{' '}
-                          more jobs
-                          <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
-                        </span>
-                      ) : (
-                        <p className="text-green link pointer" onClick={() => routeToAllJobs()}>
-                          View all jobs
-                          <i
-                            className="fa fa-arrow-right ml-2"
-                            style={{ fontSize: '16px', lineHeight: 'normal' }}
-                          />
-                        </p>
-                      ))}
-                  </div>
-                </div>
-              </div>
+              <JobsTable
+                jobs={filteredJobList}
+                filterApplied={location != null || department != null || searchText != ''}
+                careers={props.careers}
+                routeToAllJobs={() => routeToAllJobs()}
+              />
+              // <div>
+              //   <h1 className="header mb-4" style={{ fontSize: '2rem' }}>
+              //     {location == null && department == null && searchText == ''
+              //       ? 'Recent Open Positions'
+              //       : 'Search results...'}
+              //   </h1>
+              //   <div className="job">
+              //     <table className="table table-borderless">
+              //       <thead>
+              //         <tr className="text-green-light tableHeading">
+              //           <th scope="col">Job Title</th>
+              //           <th scope="col">Department</th>
+              //           <th scope="col">Location</th>
+              //           <th scope="col"></th>
+              //         </tr>
+              //       </thead>
+              //       <tbody style={{ minHeight: '40vh' }}>
+              //         {filteredJobList.map((job, i) => {
+              //           if (i < maxJobs) return <JobCard data={job} key={i} />;
+              //         })}
+              //       </tbody>
+              //     </table>
+              //     <div className="text-center mt-5">
+              //       {props.careers ? (
+              //         <p className="text-green link pointer" onClick={() => routeToAllJobs()}>
+              //           View all jobs
+              //           <i
+              //             className="fa fa-arrow-right ml-2"
+              //             style={{ fontSize: '16px', lineHeight: 'normal' }}
+              //           />
+              //         </p>
+              //       ) : filteredJobList.length > maxJobs ? (
+              //         <span
+              //           className="text-green-light font-weight-bold mx-auto view-jobs clearIcon"
+              //           onClick={() => setMaxJobs(maxJobs + 10)}
+              //         >
+              //           View{' '}
+              //           {filteredJobList.length - maxJobs > 10
+              //             ? '10'
+              //             : filteredJobList.length - maxJobs}{' '}
+              //           more jobs
+              //           <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
+              //         </span>
+              //       ) : (
+              //         ''
+              //       )}
+              //     </div>
+              //   </div>
+              // </div>
             )}
           </div>
         </div>

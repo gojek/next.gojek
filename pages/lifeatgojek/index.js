@@ -54,7 +54,7 @@ function LifeAtGojek(props) {
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
-                  <p className="card-name">Why We Swear by the RCA</p>
+                  <p className="card-name pointer">Why We Swear by the RCA</p>
                   <p className="card-text">
                     An account of how Gojek responds to production issues, and why the RCA is a
                     critical part of the process.
@@ -71,7 +71,7 @@ function LifeAtGojek(props) {
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
-                  <p className="card-name">Why We Swear by the RCA</p>
+                  <p className="card-name pointer">Why We Swear by the RCA</p>
                   <p className="card-text">
                     An account of how Gojek responds to production issues, and why the RCA is a
                     critical part of the process. RCA is a critical part of the process.
@@ -88,7 +88,9 @@ function LifeAtGojek(props) {
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
-                  <p className="card-name">Why We Swear by the RCA, Why We Swear by the RCA</p>
+                  <p className="card-name pointer">
+                    Why We Swear by the RCA, Why We Swear by the RCA
+                  </p>
                   <p className="card-text">
                     An account of how Gojek responds to production issues, and why the RCA is a
                     critical part of the process.
@@ -290,7 +292,7 @@ function LifeAtGojek(props) {
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
-                  <p className="card-name blogHeading">
+                  <p className="card-name blogHeading pointer">
                     How We Pushed a Million Keys to Redis in Seconds{' '}
                   </p>
                   <p className="card-text blogDescription mb-3">
@@ -306,7 +308,7 @@ function LifeAtGojek(props) {
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
-                  <p className="card-name blogHeading">
+                  <p className="card-name blogHeading pointer">
                     Code Coverage: From Failing the Build To Publishing The Report With Gitlab Pages{' '}
                   </p>
                   <p className="card-text blogDescription mb-3">
@@ -323,7 +325,7 @@ function LifeAtGojek(props) {
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
-                  <p className="card-name blogHeading">
+                  <p className="card-name blogHeading pointer">
                     How One Feature Helps Gojek Reduce Booking Cancellations{' '}
                   </p>
                   <p className="card-text blogDescription mb-3">
@@ -340,7 +342,7 @@ function LifeAtGojek(props) {
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
-                  <p className="card-name blogHeading">
+                  <p className="card-name blogHeading pointer">
                     How We Pushed a Million Keys to Redis in Seconds{' '}
                   </p>
                   <p className="card-text blogDescription mb-3">
@@ -356,7 +358,7 @@ function LifeAtGojek(props) {
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
-                  <p className="card-name blogHeading">
+                  <p className="card-name blogHeading pointer">
                     Code Coverage: From Failing the Build To Publishing The Report With Gitlab Pages{' '}
                   </p>
                   <p className="card-text blogDescription mb-3">
@@ -373,7 +375,7 @@ function LifeAtGojek(props) {
               <div className="card my-4">
                 <div className="placeholder"></div>
                 <div className="card-body">
-                  <p className="card-name blogHeading">
+                  <p className="card-name blogHeading pointer">
                     How One Feature Helps Gojek Reduce Booking Cancellations{' '}
                   </p>
                   <p className="card-text blogDescription mb-3">
