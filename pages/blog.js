@@ -89,7 +89,7 @@ function Blog(props) {
         {/* End Culture posts */}
 
         {/* Blog tags */}
-        <section>
+        <section class="medium-tags">
           <div className="row">
             <div className="col-md-5">
               <a target="_blank" href={`https://blog.gojekengineering.com/tech/home`}>
