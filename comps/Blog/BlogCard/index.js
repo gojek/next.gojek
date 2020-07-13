@@ -7,8 +7,8 @@ function BlogCard(props) {
   const { data: blog } = props;
 
   return (
-    <div className="col-md-6 col-lg-4">
-      <div className={`card bg-transparent px-1 ${styles.card} ${styles.article}`}>
+    <div className="col-md-6 col-lg-4 mb-5">
+      <div className={`card bg-transparent px-md-0 px-1 ${styles.card} ${styles.article}`}>
         <img
           src={blog.thumbnail}
           className={`bg-orange pointer img-fluid ${styles.cardImgTop}`}
@@ -26,7 +26,7 @@ function BlogCard(props) {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor{' '}
           </p>
           <div className={`mt-3 ${styles.meta}`}>
-            <p className="mb-0">{blog.author}</p>
+            <p className={`mb-0 ${styles.author}`}>{blog.author}</p>
             <p className={styles.date_time}>
               <Moment format="MMM DD">{blog.pubDate}</Moment> | 5 min read
             </p>

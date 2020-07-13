@@ -1,0 +1,33 @@
+@import '../../utils/styles/constants.scss';
+
+.blogImg {
+  min-height: 370px;
+}
+
+.heading {
+  font-family: $header-font;
+  font-size: $font-xxl;
+}
+
+.featuredHeading {
+  font-size: 1.875rem;
+  font-family: $header-font;
+}
+
+.ctaPurple {
+  background-color: #904790;
+  border-radius: $border-xl;
+}
+.ctaTitle {
+  font-size: 1.75rem;
+  font-family: $header-font;
+}
+.ctaLink {
+  font-size: 1.25rem;
+  font-family: $title-font;
+  color: #a1d884;
+}
+.readMore {
+  font-size: 1.125rem;
+  font-family: $title-font;
+}

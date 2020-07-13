@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 import Select, { components } from 'react-select';
+import Search from './search';
 
 import JobsTable from '~/../../comps/Careers/jobsTable';
 
@@ -17,8 +18,6 @@ function JobsList(props) {
   const [maxJobs, setMaxJobs] = useState(10);
 
   useEffect(() => {
-    console.log('careers props', props);
-
     const CareersData = [
       {
         id: 1,
@@ -196,6 +195,7 @@ function JobsList(props) {
         categories: { department: 'Science', location: 'Bangkok' },
       },
     ];
+
     const CarseersData = props.data;
     let departmentJson = [],
       departmentArray = [
@@ -274,10 +274,8 @@ function JobsList(props) {
 
     // analyse query params
     if (props.department) {
-      console.log('department enter');
       let filterDepartments = [];
       departmentCount.map((dep, i) => {
-        console.log('department map', dep);
         props.department.indexOf(dep.department) > -1 &&
           filterDepartments.push({
             label: dep.department,
@@ -403,6 +401,11 @@ function JobsList(props) {
     });
   };
 
+  const handleChange = (value) => {
+    console.log('val', value);
+    setDepartment(value);
+  };
+
   return (
     <div>
       <form className="pt-0 pt-md-5">
@@ -418,7 +421,7 @@ function JobsList(props) {
           </div>
           {!props.hideDepartments && ( // to avoid displaying department filter in department page
             <div className="col-md-6 col-lg-3 py-3 py-lg-0">
-              <Select
+              {/* <Select
                 components={{ Option }}
                 closeMenuOnSelect={false}
                 classNamePrefix="select"
@@ -433,7 +436,9 @@ function JobsList(props) {
                   setDepartment(value);
                   console.log('department value', value);
                 }}
-              />
+              /> */}
+
+              <Search onChange={handleChange} />
             </div>
           )}
           <div

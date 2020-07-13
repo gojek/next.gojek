@@ -212,47 +212,47 @@ body {
   &.transport {
     background: linear-gradient(
       to bottom,
-      #fff 0%,
-      #fff 65%,
-      #fff 65%,
-      $green-light 65%,
-      $green-light 100%
+      $green-light 0%,
+      $green-light 50%,
+      $green-light 50%,
+      #fff 50%,
+      #fff 100%
     );
   }
   &.payments {
-    background: linear-gradient(to bottom, #fff 0%, #fff 65%, #fff 65%, $blue 65%, $blue 100%);
+    background: linear-gradient(to bottom, $blue 0%, $blue 50%, $blue 50%, #fff 50%, #fff 100%);
   }
   &.food-delivery {
     background: linear-gradient(
       to bottom,
-      #fff 0%,
-      #fff 65%,
-      #fff 65%,
-      $orange-light 65%,
-      $orange-light 100%
+      $orange-light 0%,
+      $orange-light 50%,
+      $orange-light 50%,
+      #fff 50%,
+      #fff 100%
     );
   }
   &.logistics {
-    background: linear-gradient(to bottom, #fff 0%, #fff 65%, #fff 65%, $red 65%, $red 100%);
+    background: linear-gradient(to bottom, $red 0%, $red 50%, $red 50%, #fff 50%, #fff 100%);
   }
   &.entertainment {
     background: linear-gradient(
       to bottom,
-      #fff 0%,
-      #fff 65%,
-      #fff 65%,
-      $pink-light 65%,
-      $pink-light 100%
+      $pink-light 0%,
+      $pink-light 50%,
+      $pink-light 50%,
+      #fff 50%,
+      #fff 100%
     );
   }
   &.lifestyle-services {
     background: linear-gradient(
       to bottom,
-      #fff 0%,
-      #fff 65%,
-      #fff 65%,
-      $yellow-light 65%,
-      $yellow-light 100%
+      $yellow-light 0%,
+      $yellow-light 50%,
+      $yellow-light 50%,
+      #fff 50%,
+      #fff 100%
     );
   }
 
@@ -734,65 +734,6 @@ body {
   }
 }
 
-// Blog
-.articles {
-  color: #191919;
-  .main {
-    h1 {
-      font-size: $font-l;
-    }
-    .description {
-      color: #707070;
-      font-size: 1rem;
-    }
-  }
-  .title {
-    font-family: $header-font;
-  }
-  .description,
-  .meta {
-    font-size: $font-s;
-  }
-  .date-time {
-    color: #929292;
-  }
-  .card {
-    &,
-    .card-img-top {
-      border-radius: $border-xl;
-    }
-  }
-  .badge {
-    background-color: $green-lightest;
-    padding: 0.875rem 2.5rem;
-    color: $green-light;
-  }
-}
-
-#categories {
-  .card {
-    border-radius: $border-xl;
-    margin-bottom: 2.5rem;
-    font-family: $header-font;
-    min-height: 200px;
-  }
-  .name {
-    font-size: $font-m;
-  }
-}
-
-.tag {
-  position: absolute;
-  background-color: $green-light;
-  padding: 0.5rem 1rem;
-  margin-top: 2rem;
-  border-radius: 0.5rem 1rem 1rem 0;
-  margin-left: -5px;
-}
-.featured-article {
-  border-radius: $border-xl;
-}
-
 .jobDescription {
   .banner {
     height: 75vh;
@@ -942,4 +883,17 @@ body {
       border-radius: $border-xl;
     }
   }
+}
+
+.main-article {
+  .read-more {
+    color: #a1d884;
+  }
+  .article-title {
+    font-family: $header-font;
+    line-height: 42px;
+  }
+}
+a:hover {
+  text-decoration: none;
 }

@@ -17,27 +17,27 @@ function CareersPage(props) {
   const [navbarBG, setNavbarBG] = useState('#f7ce55');
   const [departmentCountArray, setDepartmentCountArray] = useState([
     {
-      department: 'Engineering',
+      name: 'Engineering',
       count: 0,
     },
     {
-      department: 'Design',
+      name: 'Design',
       count: 0,
     },
     {
-      department: 'People and Culture',
+      name: 'People and Culture',
       count: 0,
     },
     {
-      department: 'Program Management',
+      name: 'Program Management',
       count: 0,
     },
     {
-      department: 'Product',
+      name: 'Product',
       count: 0,
     },
     {
-      department: 'Science',
+      name: 'Science',
       count: 0,
     },
   ]);
@@ -116,15 +116,12 @@ function CareersPage(props) {
             {departmentCountArray.map((department, i) => {
               if (i < 6 && i != 1)
                 return (
-                  <Link
-                    href="/department/[id]"
-                    as={`/department/${departmentCountArray[i].department}`}
-                  >
+                  <Link href="/department/[id]" as={`/department/${departmentCountArray[i].name}`}>
                     <a
                       className={`card text-white ${i == 0 ? 'highlight ' : ''}${`department${i}`}`}
                     >
                       <div className="card-body">
-                        <h2 className="header">{departmentCountArray[i].department}</h2>
+                        <h2 className="header">{departmentCountArray[i].name}</h2>
                         <p className="sub-head">{departmentCountArray[i].count} Openings</p>
                       </div>
                     </a>
@@ -138,7 +135,7 @@ function CareersPage(props) {
               >
                 <a className="card highlight department1 text-white">
                   <div className="card-body">
-                    <h2 className="header">{departmentCountArray[1].department}</h2>
+                    <h2 className="header">{departmentCountArray[1].name}</h2>
                     <p className="sub-head">{departmentCountArray[1].count} Openings</p>
                   </div>
                 </a>

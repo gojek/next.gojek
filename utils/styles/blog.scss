@@ -1,0 +1,65 @@
+@import './constants.scss';
+.posts {
+  .title {
+    color: #191919;
+    font-family: $header-font;
+    &.featured {
+      font-size: 1.875rem;
+    }
+  }
+  .description {
+    color: #707070;
+    font-size: 0.875rem;
+    &.featured {
+      font-size: 1rem;
+    }
+  }
+  .meta {
+    font-size: 0.875rem;
+    .date-time {
+      color: #929292;
+    }
+    .author {
+      color: #191919;
+    }
+  }
+  .thumbnail {
+    &.large {
+      min-height: 28rem;
+    }
+    &.small {
+      min-height: 12.25rem;
+    }
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: #fdfdfd;
+    border-radius: $border-xl;
+  }
+  .read-more {
+    font-size: 1.125rem;
+    font-family: $title-font;
+  }
+}
+
+.category-box {
+  min-height: 195px;
+  border-radius: $border-xl;
+  .title {
+    font-size: 1.25rem;
+    font-family: $header-font;
+  }
+}
+
+.tag {
+  position: absolute;
+  background-color: $green-light;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem 1rem 1rem 0;
+  top: 0;
+}
+.blog-banner {
+  min-height: 70vh;
+}

@@ -91,21 +91,21 @@ function HomePage(props) {
           watch="#fff"
         >
           <div className="container text-center pt-5">
-            <h1 className="header pt-5">Gojek is Indonesia’s first decacorn.</h1>
-            <p className="mt-3 mb-5">
+            <h1 className="header pt-5 text-white">Gojek is Indonesia’s first decacorn.</h1>
+            <p className="mt-3 mb-5 text-white">
               A one-stop solution for life’s daily frictions. An ecosystem of 20+ products that does
               over 7 million orders a month. <br />
               <strong>All within a single app — a SuperApp.</strong>
             </p>
 
             <div className="row justify-content-center pb-5">
-              <div id="products-carousel" className="col-md-8 pb-5">
+              <div id="products-carousel" className="col-md-8 pb-5 text-dark">
                 <Slider
                   slidesToShow={1}
                   arrows
                   dots
                   customPaging={(i) => {
-                    return <a className="dot">{departments[i]}</a>;
+                    return <a className="dot text-dark">{departments[i]}</a>;
                   }}
                   responsive={[
                     {

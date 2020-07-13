@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 import OpenMedium from '~/../../comps/Common/openMedium';
 import styles from '../blog.module.scss';
@@ -49,13 +50,16 @@ function TagCounts(props) {
           {tagsCount.map((tag, i) => {
             return (
               <div
-                className={`p-5 my-2 pointer ${i == 0 || i == 5 ? 'col-md-5' : 'col-md-3'} ${
+                className={`p-5 mt-2 mb-4 pointer ${i == 0 || i == 5 ? 'col-md-5' : 'col-md-3'} ${
                   styles.tile
                 }`}
-                onClick={() => openMediumTag(tag.URL)}
               >
-                <h5 className="mb-0">{tag.name}</h5>
-                <p>{tag.count} Articles</p>
+                <Link href={`//blog.gojekengineering.com/${tag.URL}/home`} passHref={true}>
+                  <a target="_blank" className="text-white">
+                    <h5 className="mb-0">{tag.name}</h5>
+                    <p>{tag.count} Articles</p>
+                  </a>
+                </Link>
               </div>
             );
           })}

@@ -23,7 +23,7 @@ function MainBlog(props) {
         </p>
 
         <div className={`mt-5 ${styles.meta}`}>
-          <p className="mb-0">{blog.author}</p>
+          <p className={`mb-0 ${styles.author}`}>{blog.author}</p>
           <p className={styles.date_time}>
             <Moment format="MMM DD">{blog.pubDate}</Moment> | 5 min read
           </p>
