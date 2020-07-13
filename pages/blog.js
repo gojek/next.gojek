@@ -88,7 +88,7 @@ function Blog(props) {
         <BlogNew heading="Culture" posts={props.culturePosts.items} link="culture" />
         {/* End Culture posts */}
 
-        {/* Blog tags - TBC*/}
+        {/* Blog tags */}
         <section>
           <div className="row">
             <div className="col-md-5">
