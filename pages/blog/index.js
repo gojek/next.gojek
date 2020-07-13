@@ -5,29 +5,30 @@ import Head from 'next/head';
 import homePage1 from '~/../../static/Homepage-05.png';
 import Navbar from '~/../../comps/Navbar';
 import Tags from '~/../../comps/Blog/Tag';
-import BlogNew from '~/../../comps/BlogNew';
+import BlogNew from '../../comps/BlogNew';
 import FeaturedPosts from '~/../../comps/BlogNew/featured';
-import { CTA } from '../comps/BlogNew/cta';
+import { CTA } from '../../comps/BlogNew/cta';
 
 function Blog(props) {
   const [tag, setTag] = useState('tech');
 
   const changeTag = (tagName) => {
     setTag(tagName);
-    console.log('Tag name', tagName);
     scroller.scrollTo(tagName, {
       offset: -125,
-      smooth: true,
+      smooth: 'easeOutCubic',
+      duration: 500,
+      delay: 0,
     });
   };
 
   const tags = [
-    { name: 'tech', slug: 'tech' },
-    { name: 'data', slug: 'data-science' },
-    { name: 'culture', slug: 'culture' },
-    { name: 'news', slug: 'news' },
-    { name: 'design', slug: 'design' },
-    { name: 'stories', slug: 'gojek-stories' },
+    { name: 'Tech', slug: 'tech' },
+    { name: 'Data', slug: 'data-science' },
+    { name: 'Culture', slug: 'culture' },
+    { name: 'News', slug: 'news' },
+    { name: 'Design', slug: 'design' },
+    { name: 'Stories', slug: 'gojek-stories' },
   ];
 
   return (

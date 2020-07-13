@@ -22,12 +22,18 @@
   color: $green-light;
   font-size: 1rem;
   line-height: 1.875rem;
+  a {
+    color: $green-light;
+  }
   &:hover {
     color: $green-light;
   }
   &.active {
     background-color: $green-light;
     color: #fff;
+    a {
+      color: #fff;
+    }
   }
 }
 .search {
