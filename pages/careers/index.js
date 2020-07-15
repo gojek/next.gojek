@@ -97,14 +97,6 @@ function CareersPage(props) {
         </div>
       </section>
 
-      {/* Departments section */}
-      {/* <InView
-        as="div"
-        threshold={[0.9, 0.1]}
-        onChange={(inView, entry) => {
-          changeBg('#000', true, entry);
-        }}
-      > */}
       <section id="departments" className="bg-black text-white full-height py-0 py-md-5">
         <div className="container departments">
           <h1 className="header">Choose where you belong</h1>

@@ -245,7 +245,7 @@ body {
       #fff 100%
     );
   }
-  &.lifestyle-services {
+  &.lifestyle-service {
     background: linear-gradient(
       to bottom,
       $yellow-light 0%,
@@ -284,8 +284,18 @@ body {
   .slick-dots {
     bottom: -50px;
     opacity: 0.8;
+    a {
+      padding: 10px;
+      font-family: $body-font;
+      border-radius: 20px;
+      font-size: 14px;
+    }
     .slick-active {
       opacity: 1;
+      a {
+        border: 1px solid;
+        font-family: $header-font;
+      }
     }
   }
 
@@ -600,7 +610,7 @@ body {
   }
 
   li {
-    min-width: 10rem;
+    min-width: 9rem;
     color: #fff;
     font-weight: normal;
   }
@@ -678,7 +688,7 @@ body {
 }
 
 #open-source {
-  background: linear-gradient(to bottom, #fff 0%, #fff 58%, $green-light 42%);
+  background: linear-gradient(to bottom, #fff 0%, #fff 58%, $blue 42%);
   .card {
     height: 15rem;
     background-color: #dcdada;
@@ -896,4 +906,58 @@ body {
 }
 a:hover {
   text-decoration: none;
+}
+
+.test {
+  .test1 {
+    max-width: 7%;
+    background: #38434d;
+    float: left;
+    padding: 0.2em;
+    margin: 0.1em 0 0 3em;
+    position: relative;
+  }
+  nav > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    /* styling the border of the pseudo-element the same as the nav element: */
+    border: 1px solid darkred;
+    /* 'removing' the top-border */
+    border-top-width: 0;
+  }
+}
+.scale,
+#vision {
+  .goal-title {
+    font-family: $header-font;
+    font-size: 2.815rem;
+  }
+  .goal-description {
+    font-family: $body-font;
+  }
+  .title {
+    font-size: 30px;
+    font-family: $header-font;
+  }
+  .subtitle {
+    font-family: $navbar-font;
+  }
+}
+.scale {
+  img {
+    border-radius: 44px;
+  }
+}
+
+.title {
+  font-family: $header-font;
+  font-size: 2.815rem;
+}
+
+.description {
+  font-family: $body-font;
 }

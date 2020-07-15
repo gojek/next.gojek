@@ -1,29 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Slider from 'react-slick';
+import HomeSlider from '~/../../comps/Home/slider';
+import Goals from '~/../../comps/Home/Goals';
 import { InView } from 'react-intersection-observer';
 import DynamicComponentWithNoSSR from '~/../../comps/Stories/export';
 
 import Navbar from '~/../../comps/Navbar';
-import bannerImage from '~/../../static/banner.png';
-import logo from '~/../../static/Gojek_Logo_Horizondal.svg';
-import homePage1 from '~/../../static/Homepage-04.png';
-import homePage2 from '~/../../static/Homepage-05.png';
-import homePage3 from '~/../../static/Homepage-06.png';
-import ordersNew from '~/../../static/orders-new.jpg';
-import fundingBg from '~/../../static/funding-bg.png';
 
 function HomePage(props) {
   const [navbarLight, setNavbarLight] = useState(true);
   const [navbarBG, setNavbarBG] = useState(true);
-
-  var departments = [
-    'Transport',
-    'Payments',
-    'Food Delivery',
-    'Logistics',
-    'Entertainment',
-    'Lifestyle Services',
-  ];
 
   // function to chnage the navbar color on scroll
   const changeBg = (color, light, entry) => {
@@ -70,7 +56,7 @@ function HomePage(props) {
                 </a>
               </div>
               <div className="col-12 col-lg-5 homeBannerImage">
-                <img src={bannerImage} className="img-fluid banner-img" alt="Gojek Banner" />
+                <img src="/img/banner.png" className="img-fluid banner-img" alt="Gojek Banner" />
               </div>
             </div>
           </div>
@@ -100,127 +86,7 @@ function HomePage(props) {
 
             <div className="row justify-content-center pb-5">
               <div id="products-carousel" className="col-md-8 pb-5 text-dark">
-                <Slider
-                  slidesToShow={1}
-                  arrows
-                  dots
-                  customPaging={(i) => {
-                    return <a className="dot text-dark">{departments[i]}</a>;
-                  }}
-                  responsive={[
-                    {
-                      breakpoint: 576,
-                      settings: {
-                        dots: false,
-                      },
-                    },
-                  ]}
-                  beforeChange={(oldSlide, nextSlide) => {
-                    const className = departments[nextSlide].replace(/\s+/g, '-').toLowerCase();
-                    $('#products')
-                      .removeClass()
-                      .addClass('full-height d-flex align-items-center py-5 ' + className);
-                  }}
-                >
-                  <div>
-                    <div className="card py-5 shadow mx-5">
-                      <div className="card shadowCard" />
-                      <h5 className="card-title sub-head text-green-light my-4">Transport</h5>
-                      <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="card py-5 shadow mx-5">
-                      <div className="card shadowCard" />
-                      <h5 className="card-title sub-head text-blue my-4">Payments</h5>
-                      <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="card py-5 shadow mx-5">
-                      <div className="card shadowCard" />
-                      <h5 className="card-title sub-head text-orange-light my-4">Food Delivery</h5>
-                      <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="card py-5 shadow mx-5">
-                      <div className="card shadowCard" />
-                      <h5 className="card-title sub-head text-red my-4">Logistics</h5>
-                      <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="card py-5 shadow mx-5">
-                      <div className="card shadowCard" />
-                      <h5 className="card-title sub-head text-pink-light my-4">Entertainment</h5>
-                      <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="card py-5 shadow mx-5">
-                      <div className="card shadowCard" />
-                      <h5 className="card-title sub-head text-yellow-light my-4">
-                        Lifestyle Services
-                      </h5>
-                      <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                        <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                      </div>
-                    </div>
-                  </div>
-                </Slider>
+                <HomeSlider />
               </div>
             </div>
           </div>
@@ -237,7 +103,8 @@ function HomePage(props) {
       >
         <section id="vision" className="full-height d-flex align-items-center watch" watch="#fff">
           <div className="container py-0 ">
-            <div className="row align-items-end py-0 py-md-4">
+            <Goals />
+            {/* <div className="row align-items-end py-0 py-md-4">
               <div className="col-md-6">
                 <div className="mx-4">
                   <h1 className="header">Gojek Vision & Mission</h1>
@@ -251,7 +118,7 @@ function HomePage(props) {
               <div className="col-md-6 mt-5 mt-md-0">
                 <div className="card bg-green-light mx-1">
                   <img
-                    src={homePage1}
+                    src="/img/banner-4.png"
                     alt=""
                     className="illustration img-fluid mx-auto mb-n3 d-block"
                   />
@@ -263,24 +130,67 @@ function HomePage(props) {
             <div className="row align-items-end py-4">
               <div className="col-md-6">
                 <div className="card bg-orange-light mt-5 pb-0 mx-1">
-                  <img src={homePage2} alt="" className="illustration img-fluid mx-auto d-block" />
+                  <img
+                    src="/img/banner-5.png"
+                    alt=""
+                    className="illustration img-fluid mx-auto d-block"
+                  />
                   <p className="highlight py-4 bg-orange">400k+ Merchant Partners</p>
                 </div>
               </div>
 
               <div className="col-md-6">
                 <div className="card bg-pink-light mt-5 mx-1">
-                  <img src={homePage3} alt="" className="illustration img-fluid mx-auto d-block" />
+                  <img
+                    src="/img/banner-6.png"
+                    alt=""
+                    className="illustration img-fluid mx-auto d-block"
+                  />
                   <p className="highlight py-4 bg-pink">50k+ Service Providers</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
       </InView>
 
+      {/* Scale - New*/}
+      <section className="bg-black scale py-5">
+        <div className="container">
+          <div className="row align-items-center full-height ">
+            <div className="col-md-4 text-white">
+              <h1 className="title">Scale</h1>
+              <p className="description">
+                Once a call-centre operation trying to make a dent in Jakarta’s traffic by
+                organising bike taxi (ojek) services, Gojek is now Southeast Asia’s answer to the
+                trials of daily life. Since the launch of our SuperApp in 2015, we’ve contributed
+                over $3 billion in added value to the Indonesian economy, scaled order volumes 1100x
+                and expanded to Vietnam, Thailand, and Singapore.{' '}
+              </p>
+            </div>
+            <div className="col-md-8">
+              <div className="row justify-content-around">
+                <div className="col-md-6 mt-5 text-center">
+                  <img src="./img/one.png" className="w-100 img-fluid border-0 mx-auto d-block" />
+                </div>
+                <div className="col-md-6 mt-5">
+                  <img src="./img/one.png" className="w-100 img-fluid border-0 mx-auto d-block" />
+                </div>
+                <div className="col-md-6 mt-5">
+                  <img src="./img/one.png" className="w-100 img-fluid border-0 mx-auto d-block" />
+                </div>
+                <div className="col-md-6 mt-5">
+                  <img src="./img/one.png" className="w-100 img-fluid border-0 mx-auto d-block" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* End Scale - New */}
+
       {/* scale section */}
-      <InView
+      {/* <InView
         as="div"
         threshold={[0.9, 0.1]}
         onChange={(inView, entry) => {
@@ -309,32 +219,32 @@ function HomePage(props) {
             <div className="row mt-4 locations justify-content-center">
               <div className="col-md-3 col-10">
                 <div className="card bg-yellow">
-                  <img src={ordersNew} alt="" className="img-fluid d-block location" />
+                  <img src="/img/orders-new.jpg" alt="" className="img-fluid d-block location" />
                 </div>
                 <p className="highlight py-3">Indonesia</p>
               </div>
               <div className="col-md-3 col-10">
                 <div className="card bg-teal">
-                  <img src={ordersNew} alt="" className="img-fluid d-block location" />
+                  <img src="/img/orders-new.jpg" alt="" className="img-fluid d-block location" />
                 </div>
                 <p className="highlight py-3">Singapore</p>
               </div>
               <div className="col-md-3 col-10">
                 <div className="card bg-teal">
-                  <img src={ordersNew} alt="" className="img-fluid d-block location" />
+                  <img src="/img/orders-new.jpg" alt="" className="img-fluid d-block location" />
                 </div>
                 <p className="highlight py-3">Singapore</p>
               </div>
               <div className="col-md-3 col-10">
                 <div className="card bg-teal">
-                  <img src={ordersNew} alt="" className="img-fluid d-block location" />
+                  <img src="/img/orders-new.jpg" alt="" className="img-fluid d-block location" />
                 </div>
                 <p className="highlight py-3">Singapore</p>
               </div>
             </div>
           </div>
         </section>
-      </InView>
+      </InView> */}
 
       {/* funding section */}
       <InView
@@ -360,15 +270,51 @@ function HomePage(props) {
                   Tencent Holdings, JD.com, and Visa, among its investors.
                 </p>
                 <div className="mt-4 investors d-flex justify-content-between flex-wrap">
-                  <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                  <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                  <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                  <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                  <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                  <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                  <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                  <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
-                  <img src={logo} alt="Logo placeholder" className="img-fluid logo" />
+                  <img
+                    src="/img/logo-horizontal.svg"
+                    alt="Logo placeholder"
+                    className="img-fluid logo"
+                  />
+                  <img
+                    src="/img/logo-horizontal.svg"
+                    alt="Logo placeholder"
+                    className="img-fluid logo"
+                  />
+                  <img
+                    src="/img/logo-horizontal.svg"
+                    alt="Logo placeholder"
+                    className="img-fluid logo"
+                  />
+                  <img
+                    src="/img/logo-horizontal.svg"
+                    alt="Logo placeholder"
+                    className="img-fluid logo"
+                  />
+                  <img
+                    src="/img/logo-horizontal.svg"
+                    alt="Logo placeholder"
+                    className="img-fluid logo"
+                  />
+                  <img
+                    src="/img/logo-horizontal.svg"
+                    alt="Logo placeholder"
+                    className="img-fluid logo"
+                  />
+                  <img
+                    src="/img/logo-horizontal.svg"
+                    alt="Logo placeholder"
+                    className="img-fluid logo"
+                  />
+                  <img
+                    src="/img/logo-horizontal.svg"
+                    alt="Logo placeholder"
+                    className="img-fluid logo"
+                  />
+                  <img
+                    src="/img/logo-horizontal.svg"
+                    alt="Logo placeholder"
+                    className="img-fluid logo"
+                  />
                 </div>
               </div>
             </div>
@@ -390,11 +336,12 @@ function HomePage(props) {
           watch="#fff"
         >
           <div className="container text-center pt-5">
-            <h1 className="header pt-5">We encounter tough problems every day</h1>
+            <h1 className="header pt-5">Open Source</h1>
             <p className="mt-3 mb-5">
-              and figure out how to tackle them by doing what we do best — building stuff. <br />
-              As firm believers in the pursuit of a collective quest for excellence, the tools we
-              build are diligently open-sourced.
+              We encounter tough problems every day, and figure out how to tackle them by doing what
+              we do best — building stuff. As firm believers in the pursuit of a collective quest
+              for excellence, the tools we build are diligently open-sourced so others can learn
+              from us, just as we have from the community.
             </p>
             {/* Slider  */}
             <div id="opensource-carousel">
@@ -423,36 +370,50 @@ function HomePage(props) {
               >
                 <div>
                   <div className="card mx-3"></div>
-                  <p className="highlight py-3">Singapore</p>
+                  <p className="highlight">
+                    Kingsly <br /> <span>Your own x.509 cert manager</span>
+                  </p>
                 </div>
                 <div>
                   <div className="card mx-3"></div>
-                  <p className="highlight py-3">Singapore</p>
-                </div>
-
-                <div>
-                  <div className="card mx-3"></div>
-                  <p className="highlight py-3">Singapore</p>
-                </div>
-
-                <div>
-                  <div className="card mx-3"></div>
-                  <p className="highlight py-3">Singapore</p>
+                  <p className="highlight">
+                    Kingsly <br /> <span>Your own x.509 cert manager</span>
+                  </p>
                 </div>
 
                 <div>
                   <div className="card mx-3"></div>
-                  <p className="highlight py-3">Singapore</p>
+                  <p className="highlight">
+                    Kingsly <br /> <span>Your own x.509 cert manager</span>
+                  </p>
                 </div>
 
                 <div>
                   <div className="card mx-3"></div>
-                  <p className="highlight py-3">Singapore</p>
+                  <p className="highlight">
+                    Kingsly <br /> <span>Your own x.509 cert manager</span>
+                  </p>
                 </div>
 
                 <div>
                   <div className="card mx-3"></div>
-                  <p className="highlight py-3">Singapore</p>
+                  <p className="highlight">
+                    Kingsly <br /> <span>Your own x.509 cert manager</span>
+                  </p>
+                </div>
+
+                <div>
+                  <div className="card mx-3"></div>
+                  <p className="highlight">
+                    Kingsly <br /> <span>Your own x.509 cert manager</span>
+                  </p>
+                </div>
+
+                <div>
+                  <div className="card mx-3"></div>
+                  <p className="highlight">
+                    Kingsly <br /> <span>Your own x.509 cert manager</span>
+                  </p>
                 </div>
               </Slider>
             </div>
@@ -481,7 +442,7 @@ function HomePage(props) {
       >
         <section
           id="social-impact"
-          className="bg-pink full-height d-flex align-items-center py-5 watch"
+          className="bg-black full-height d-flex align-items-center py-5 watch"
           watch="#d0006f"
         >
           <div className="container text-white">
