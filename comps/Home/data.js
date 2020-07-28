@@ -131,3 +131,41 @@ export const goal = {
     },
   ],
 };
+
+export const opensourceProjects = [
+  {
+    id: '1',
+    name: 'Kingsly',
+    description: 'Your own x.509 cert manager',
+    link: '#',
+    image: '',
+  },
+  {
+    id: '2',
+    name: 'Kingsly2',
+    description: 'Your own x.509 cert manager',
+    link: '#',
+    image: '',
+  },
+  {
+    id: '3',
+    name: 'Kingsly3',
+    description: 'Your own x.509 cert manager',
+    link: '#',
+    image: '',
+  },
+  {
+    id: '4',
+    name: 'Kingsly4',
+    description: 'Your own x.509 cert manager',
+    link: '#',
+    image: '',
+  },
+  {
+    id: '5',
+    name: 'Kingsly5',
+    description: 'Your own x.509 cert manager',
+    link: '#',
+    image: '',
+  },
+];

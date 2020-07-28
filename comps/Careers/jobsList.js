@@ -4,6 +4,14 @@ import Select, { components } from 'react-select';
 import Search from './search';
 
 import JobsTable from '~/../../comps/Careers/jobsTable';
+const searchData = [
+  { value: 'engineering', label: 'Engineering' },
+  { value: 'design', label: 'Design' },
+  { value: 'people-and-culture', label: 'People and Culture' },
+  { value: 'program-management', label: 'Program Management' },
+  { value: 'product', label: 'Product' },
+  { value: 'science', label: 'Science' },
+];
 
 function JobsList(props) {
   const router = useRouter();
@@ -276,6 +284,7 @@ function JobsList(props) {
     if (props.department) {
       let filterDepartments = [];
       departmentCount.map((dep, i) => {
+        console.log('Dep', dep);
         props.department.indexOf(dep.department) > -1 &&
           filterDepartments.push({
             label: dep.department,
@@ -306,9 +315,8 @@ function JobsList(props) {
     if (department == null && location == null && keyword == '' && changed) {
       setFilteredJobList(parentJobList);
       !props.noParams && Router.replace(router.route);
-      console.log('fitering', searchText);
     } else if (changed) {
-      console.log('fitering', searchText);
+      console.log('changed', departmentFilters);
       department != null
         ? department.map((filter) => {
             departmentFilters.push(filter.label);
@@ -375,24 +383,6 @@ function JobsList(props) {
     }
   };
 
-  const Option = (props) => {
-    return (
-      <div>
-        {' '}
-        <components.Option {...props}>
-          {' '}
-          <input
-            type="checkbox"
-            checked={props.isSelected}
-            onChange={() => null}
-            style={{ display: 'inline' }}
-          />{' '}
-          <label style={{ display: 'inline' }}>{props.value}</label>{' '}
-        </components.Option>{' '}
-      </div>
-    );
-  };
-
   const routeToAllJobs = () => {
     let query = router.query;
     Router.push({
@@ -402,7 +392,6 @@ function JobsList(props) {
   };
 
   const handleChange = (value) => {
-    console.log('val', value);
     setDepartment(value);
   };
 
@@ -421,24 +410,7 @@ function JobsList(props) {
           </div>
           {!props.hideDepartments && ( // to avoid displaying department filter in department page
             <div className="col-md-6 col-lg-3 py-3 py-lg-0">
-              {/* <Select
-                components={{ Option }}
-                closeMenuOnSelect={false}
-                classNamePrefix="select"
-                value={department}
-                isSearchable={true}
-                name="Department"
-                placeholder="Department"
-                options={departmentList}
-                isMulti
-                isClearable={false}
-                onChange={(value) => {
-                  setDepartment(value);
-                  console.log('department value', value);
-                }}
-              /> */}
-
-              <Search onChange={handleChange} />
+              <Search onChange={handleChange} options={searchData} />
             </div>
           )}
           <div

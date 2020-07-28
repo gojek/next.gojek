@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import '~/../../utils/styles/main.scss';
 import '../utils/styles/blog.scss';
+import '../utils/styles/style.scss';
 // import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
 

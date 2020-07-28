@@ -1,72 +1,91 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Select, { components } from 'react-select';
-
-// import Select from 'react-select';
 import { departments } from './data';
 
-const groupStyles = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-};
-
-const formatGroupLabel = (data) => (
-  <div style={groupStyles}>
-    <span>fff</span>
-    <span>{data.options.length}</span>
+const Option = (props) => (
+  <div>
+    <components.Option {...props}>
+      <input type="checkbox" checked={props.isSelected} onChange={() => null} />{' '}
+      <label>{props.label}</label>
+    </components.Option>
   </div>
 );
 
-function handleChange(event) {
-  console.log('froms');
-  props.onChange(event.target.value);
-}
+const MultiValue = (props) => (
+  <components.MultiValue {...props}>
+    <span className="d-none">{props.data.label}</span>
+  </components.MultiValue>
+);
 
-// export default () => (
-//   <Select
-//     defaultValue={colourOptions[1]}
-//     options={groupedOptions}
-//     formatGroupLabel={formatGroupLabel}
-//   />
-// );
+class MySelect extends Component {
+  static defaultProps = {
+    options: [],
+  };
 
-class Option extends Component {
   render() {
-    console.log('rr', this.props);
+    const { options, locations, onChange, onChangeCallback, ...otherProps } = this.props;
+
     return (
-      <div>
-        <components.Option {...this.props}>
-          <input type="checkbox" checked={this.props.isSelected} onChange={handleChange} />{' '}
-          <label>{this.props.data.name} </label>
-        </components.Option>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-7 px-0">
+            <label htmlFor="keyword" className="sr-only">
+              Keyword
+            </label>
+            <input
+              type="text"
+              onChange={(e) => onChange(e.target.value, e.target.name)}
+              className="form-control rounded-pill"
+              id="keyword"
+              placeholder="Keyword Search"
+              name="keyword"
+            />
+          </div>
+          <div className="col-md-5">
+            <div className="row">
+              <div className="col-md-6 pr-0">
+                <label htmlFor="department" className="sr-only">
+                  Department
+                </label>
+                <Select
+                  closeMenuOnSelect={false}
+                  isMulti
+                  components={{ Option, MultiValue }}
+                  options={options}
+                  hideSelectedOptions={false}
+                  backspaceRemovesValue={false}
+                  onChange={(e, meta) => {
+                    onChangeCallback(e, meta.name);
+                  }}
+                  {...otherProps}
+                  name="selectedDepartments"
+                  placeholder="Department"
+                />
+              </div>
+              <div className="col-md-6 pr-0">
+                <label htmlFor="location" className="sr-only">
+                  Location
+                </label>
+                <Select
+                  closeMenuOnSelect={false}
+                  isMulti
+                  components={{ Option, MultiValue }}
+                  options={locations}
+                  hideSelectedOptions={false}
+                  backspaceRemovesValue={false}
+                  onChange={(e, meta) => onChangeCallback(e, meta.name)}
+                  {...otherProps}
+                  name="selectedLocations"
+                  placeholder="Location"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-export default class extends Component {
-  render() {
-    return (
-      <Select
-        closeMenuOnSelect={false}
-        isMulti
-        components={{ Option, MultiValue }}
-        options={departments}
-        hideSelectedOptions={false}
-        menuIsOpen
-        backspaceRemovesValue={false}
-        onChange={(e) => console.log(e)}
-      />
-    );
-  }
-}
-
-const MultiValue = (props) => {
-  return (
-    <div className="d-none">
-      <components.MultiValue {...props}>
-        <span>{props.data.name}</span>
-      </components.MultiValue>
-    </div>
-  );
-};
+export default MySelect;
