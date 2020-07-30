@@ -7,7 +7,13 @@ import Navbar from '~/../../comps/Navbar';
 import bannerImage from '~/../../static/banner.png';
 import JobCard from '~/../../comps/Careers/jobCard';
 
+import text from '../../utils/text.json';
+import { getServerSideProps } from '../__shared/getServerSideProps.js';
+import CommonSelect from '../__shared/CommonSelect.js';
+
 function CareersPage(props) {
+  const { careers } = text;
+
   const [departmentList, setDepartmentList] = useState([]);
   const [department, setDepartment] = useState(null);
   const [locationList, setLocationList] = useState([]);
@@ -172,10 +178,148 @@ function CareersPage(props) {
     );
   };
 
+  const renderLocations = () => (
+    <section id="locations" className="full-height d-flex align-items-center py-5">
+      <div className="container locationPadding">
+        <h1 className="header">{careers.ourLocations}</h1>
+        <p className="mt-4 mb-5" style={{ maxWidth: '48rem' }}>
+          {careers.loremIpsum}
+        </p>
+
+        <div className="row">
+          <div className="col-md-6">
+            <div className="card my-4"></div>
+          </div>
+          <div className="col-md-6">
+            <div className="card my-4"></div>
+          </div>
+          <div className="col-md-6">
+            <div className="card my-4"></div>
+          </div>
+          <div className="col-md-6">
+            <div className="card my-4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+
+  const renderDepartments = () => (
+    <section id="departments" className="bg-black text-white full-height py-0 py-md-5">
+      <div className="container departments">
+        <h1 className="header">{careers.chooseWhereYouBelong}</h1>
+        <p style={{ maxWidth: '48rem' }} className="mt-4 mb-5">
+          {careers.loremIpsum}
+        </p>
+        <div className="card-columns text-left pt-5">
+          {departmentCountArray.map((department, i) => {
+            if (i < 6 && i != 1)
+              return (
+                <div
+                  className={`card ${i == 0 ? 'highlight ' : ''}${`department${i}`}`}
+                  onClick={() => {
+                    selectDepartment(i);
+                  }}
+                >
+                  <div className="card-body">
+                    <h2 className="header">{departmentCountArray[i].department}</h2>
+                    <p className="sub-head">
+                      {departmentCountArray[i].count} {careers.openings}
+                    </p>
+                  </div>
+                </div>
+              );
+          })}
+          {departmentCountArray.length > 1 && (
+            <div
+              className="card highlight"
+              style={{ backgroundColor: '#32ebe1' }}
+              onClick={() => {
+                selectDepartment(1);
+              }}
+            >
+              <div className="card-body">
+                <h2 className="header">{departmentCountArray[1].department}</h2>
+                <p className="sub-head">
+                  {departmentCountArray[1].count} {careers.openings}
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+
+  const renderJobsList = () => (
+    <section className="test">
+      <div className="container mb-5">
+        <div className="listings bg-white py-5 px-2 px-md-5" style={{ borderRadius: '3rem' }}>
+          <h1 className="header mb-4" style={{ fontSize: '2rem' }}>
+            {location == null && department == null && searchText == ''
+              ? 'Recent Open Positions'
+              : 'Search results...'}
+          </h1>
+          <div className="job">
+            <table className="table table-borderless">
+              <thead>
+                <tr className="text-green-light tableHeading">
+                  <th scope="col">{careers.jobTitle}</th>
+                  <th scope="col">{careers.department}</th>
+                  <th scope="col">{careers.location}</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredJobList.map((job, i) => {
+                  if (i < maxJobs - 2) return <JobCard data={job} key={i} />;
+                })}
+              </tbody>
+            </table>
+            <div className="text-center mt-5">
+              {filteredJobList.length > maxJobs && (
+                <span
+                  className="text-green-light font-weight-bold mx-auto view-jobs clearIcon"
+                  onClick={() => setMaxJobs(maxJobs + 10)}
+                >
+                  {careers.viewAllJobs}
+                  <i className="fas fa-long-arrow-alt-right align-middle"></i>
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+
+  const renderSubContainer = () => (
+    <div className="row align-items-end pb-0 pb-md-5">
+      <div className="col-md-5">
+        <img src={bannerImage} className="img-fluid banner-img" alt="Gojek Banner" />
+      </div>
+      <div className="col-md-7">
+        <h1 className="banner-head">
+          {careers.weGiveYou}
+          <br /> {careers.leverageToCreate} <br /> {careers.impactAtScale}
+        </h1>
+        <p className="py-4" id="filters">
+          {careers.joinACompany}
+        </p>
+      </div>
+    </div>
+  );
+
+  const onChangeSearchText = (e) => {
+    setSearchText(e.target.value);
+    console.log('departmentList', departmentList);
+    //  const filtered=departmentList.filter(list=>list)
+  };
+
   return (
     <div className="text-center text-md-left">
       <Head>
-        <title>Gojek | Careers</title>
+        <title>{careers.heading}</title>
       </Head>
       <Navbar bg="#f7ce55" careers />
 
@@ -183,20 +327,7 @@ function CareersPage(props) {
       {/* banner and jobs section */}
       <section id="banner" className=" full-height py-5 d-flex align-items-end">
         <div className="container">
-          <div className="row align-items-end pb-0 pb-md-5">
-            <div className="col-md-5">
-              <img src={bannerImage} className="img-fluid banner-img" alt="Gojek Banner" />
-            </div>
-            <div className="col-md-7">
-              <h1 className="banner-head">
-                We give you <br /> leverage to create <br /> impact at scale.
-              </h1>
-              <p className="py-4" id="filters">
-                Join a company that strives to support you. Not just 'your best work', but all of
-                you.
-              </p>
-            </div>
-          </div>
+          {renderSubContainer()}
 
           <form className="pt-0 pt-md-5">
             <div className="row">
@@ -204,47 +335,43 @@ function CareersPage(props) {
                 <input
                   type="text"
                   value={searchText}
-                  onChange={(e) => setSearchText(e.target.value)}
+                  onChange={onChangeSearchText}
                   placeholder="&#xF002;  Keyword Search"
                   className="form-control rounded-pill shadow fa"
                 />
               </div>
-              <div className="col-md-6 col-lg-3 py-3 py-lg-0">
-                <Select
-                  components={{ Option }}
-                  closeMenuOnSelect={false}
-                  classNamePrefix="select"
-                  value={department}
-                  isSearchable={true}
-                  name="Department"
-                  placeholder="Department"
-                  options={departmentList}
-                  isMulti
-                  isClearable={false}
-                  onChange={(value) => {
-                    setDepartment(value);
-                    console.log('department value', value);
-                  }}
-                />
-              </div>
-              <div className="col-md-6 col-lg-3 py-3 py-lg-0">
-                <Select
-                  components={{ Option }}
-                  closeMenuOnSelect={false}
-                  classNamePrefix="select"
-                  value={location}
-                  isSearchable={true}
-                  name="Location"
-                  isMulti
-                  isClearable={false}
-                  placeholder="Location"
-                  options={locationList}
-                  onChange={(value) => {
-                    setLocation(value);
-                    console.log('location value', value);
-                  }}
-                />
-              </div>
+              <CommonSelect
+                components={{ Option }}
+                closeMenuOnSelect={false}
+                classNamePrefix="select"
+                value={department}
+                isSearchable={true}
+                name="Department"
+                placeholder="Department"
+                options={departmentList}
+                isMulti
+                isClearable={false}
+                onChange={(value) => {
+                  setDepartment(value);
+                  console.log('department value', value);
+                }}
+              />
+              <CommonSelect
+                components={{ Option }}
+                closeMenuOnSelect={false}
+                classNamePrefix="select"
+                value={location}
+                isSearchable={true}
+                name="Location"
+                isMulti
+                isClearable={false}
+                placeholder="Location"
+                options={locationList}
+                onChange={(value) => {
+                  setLocation(value);
+                  console.log('location value', value);
+                }}
+              />
 
               {/* to display filters applied */}
               {(department !== null || location !== null) && (
@@ -286,21 +413,28 @@ function CareersPage(props) {
                     }}
                     className="clearIcon"
                   >
-                    <u>Clear all filters</u>
+                    <u>{careers.clearAllFilters}</u>
                   </span>
                 </div>
               )}
 
               <div className="col-12 pt-5 d-flex justify-content-between">
                 <p>
-                  <strong>{filteredJobList.length} Opportunities</strong> found across{' '}
                   <strong>
-                    {department ? department.length : departmentList.length} Departments
+                    {filteredJobList.length}
+                    {careers.opportunities}
                   </strong>{' '}
-                  and <strong>{location ? location.length : locationList.length} Locations</strong>
+                  {careers.foundAcross}{' '}
+                  <strong>
+                    {department ? department.length : departmentList.length} {careers.departments}
+                  </strong>{' '}
+                  and{' '}
+                  <strong>
+                    {location ? location.length : locationList.length} {careers.locations}
+                  </strong>
                 </p>
                 <a href="#" className="text-green link">
-                  View all jobs
+                  {careers.viewAllJobs}
                   <i
                     className="fa fa-arrow-right ml-2"
                     style={{ fontSize: '16px', lineHeight: 'normal' }}
@@ -313,135 +447,18 @@ function CareersPage(props) {
       </section>
 
       {/* jobs list section */}
-      <section className="test">
-        <div className="container mb-5">
-          <div className="listings bg-white py-5 px-2 px-md-5" style={{ borderRadius: '3rem' }}>
-            <h1 className="header mb-4" style={{ fontSize: '2rem' }}>
-              {location == null && department == null && searchText == ''
-                ? 'Recent Open Positions'
-                : 'Search results...'}
-            </h1>
-            <div className="job">
-              <table className="table table-borderless">
-                <thead>
-                  <tr className="text-green-light tableHeading">
-                    <th scope="col">Job Title</th>
-                    <th scope="col">Department</th>
-                    <th scope="col">Location</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredJobList.map((job, i) => {
-                    if (i < maxJobs - 2) return <JobCard data={job} key={i} />;
-                  })}
-                </tbody>
-              </table>
-              <div className="text-center mt-5">
-                {filteredJobList.length > maxJobs && (
-                  <span
-                    className="text-green-light font-weight-bold mx-auto view-jobs clearIcon"
-                    onClick={() => setMaxJobs(maxJobs + 10)}
-                  >
-                    View all jobs
-                    <i className="fas fa-long-arrow-alt-right align-middle"></i>
-                  </span>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {renderJobsList()}
 
       {/* category section */}
-      <section id="departments" className="bg-black text-white full-height py-0 py-md-5">
-        <div className="container departments">
-          <h1 className="header">Choose where you belong</h1>
-          <p style={{ maxWidth: '48rem' }} className="mt-4 mb-5">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            is simply dummy text of the printing and typesetting industry.
-          </p>
-          <div className="card-columns text-left pt-5">
-            {departmentCountArray.map((department, i) => {
-              if (i < 6 && i != 1)
-                return (
-                  <div
-                    className={`card ${i == 0 ? 'highlight ' : ''}${`department${i}`}`}
-                    onClick={() => {
-                      selectDepartment(i);
-                    }}
-                  >
-                    <div className="card-body">
-                      <h2 className="header">{departmentCountArray[i].department}</h2>
-                      <p className="sub-head">{departmentCountArray[i].count} Openings</p>
-                    </div>
-                  </div>
-                );
-            })}
-            {departmentCountArray.length > 1 && (
-              <div
-                className="card highlight"
-                style={{ backgroundColor: '#32ebe1' }}
-                onClick={() => {
-                  selectDepartment(1);
-                }}
-              >
-                <div className="card-body">
-                  <h2 className="header">{departmentCountArray[1].department}</h2>
-                  <p className="sub-head">{departmentCountArray[1].count} Openings</p>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      {renderDepartments()}
 
       {/* Location section */}
-      <section id="locations" className="full-height d-flex align-items-center py-5">
-        <div className="container locationPadding">
-          <h1 className="header">Our Locations</h1>
-          <p className="mt-4 mb-5" style={{ maxWidth: '48rem' }}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            is simply dummy text of the printing and typesetting industry.
-          </p>
-
-          <div className="row">
-            <div className="col-md-6">
-              <div className="card my-4"></div>
-            </div>
-            <div className="col-md-6">
-              <div className="card my-4"></div>
-            </div>
-            <div className="col-md-6">
-              <div className="card my-4"></div>
-            </div>
-            <div className="col-md-6">
-              <div className="card my-4"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {renderLocations()}
     </div>
   );
 }
 
 // to fetch the jobs json
-export async function getServerSideProps(ctx) {
-  const apiUrl = 'https://api.lever.co/v0/postings/gojek?mode=json';
-
-  try {
-    const response = await fetch(apiUrl);
-
-    if (response.ok) {
-      const data = await response.json();
-      return { props: { data } };
-    } else {
-      return await { props: { data: [] } };
-    }
-  } catch (error) {
-    // Network error
-    return { props: { data: [] } };
-  }
-}
+getServerSideProps({})('https://api.lever.co/v0/postings/gojek?mode=json');
 
 export default CareersPage;

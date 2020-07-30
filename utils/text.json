@@ -1,0 +1,28 @@
+{
+  "opening": {
+    "applyNow": "Apply Now",
+    "shareRole": "Share role:",
+    "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+    "heading": "Gojek | Opening |"
+  },
+  "careers": {
+    "heading": "Gojek | Careers",
+    "weGiveYou": "We give you ",
+    "leverageToCreate": "leverage to create",
+    "impactAtScale": "impact at scale.",
+    "joinACompany": "Join a company that strives to support you. Not just 'your best work', but all of you.",
+    "clearAllFilters": "Clear all filters",
+    "opportunities": " Opportunities",
+    "foundAcross": "found across",
+    "departments": "Departments",
+    "locations": "Locations",
+    "viewAllJobs": "View all jobs",
+    "jobTitle":"Job Title",
+    "department":"Department",
+    "location":"Location",
+    "loremIpsum":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "chooseWhereYouBelong":"Choose where you belong",
+    "openings":"Openings",
+    "ourLocations":"Our Locations"
+  }
+}
