@@ -24,7 +24,7 @@ html {
 }
 
 body {
-  font-family: $body-font;
+  font-family: $body-font !important;
 }
 
 // navbar styles
@@ -41,7 +41,7 @@ body {
         &:after {
           content: '';
           display: block;
-          width: 50%;
+          width: 2rem;
           margin: 0 0.5rem;
           border-top: 2px solid #000;
         }
@@ -57,7 +57,7 @@ body {
         &:after {
           content: '';
           display: block;
-          width: 50%;
+          width: 2rem;
           margin: 0 0.5rem;
           border-top: 2px solid #000;
         }
@@ -91,6 +91,11 @@ body {
     font-family: $header-font;
     // font-size: $font-s;
   }
+}
+.navbarShadow {
+  -webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.075);
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.075);
 }
 
 .browserupgrade {
@@ -139,9 +144,19 @@ body {
   }
 }
 
-#vision,
-#scale {
-  padding: 10rem 0;
+// to avoid outline to slick slides
+.slick-slide {
+  div:nth-child(1) {
+    div:nth-child(1) {
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
+
+.vision {
   .card {
     border-radius: 2.75rem;
     border: none;
@@ -195,47 +210,47 @@ body {
   &.transport {
     background: linear-gradient(
       to bottom,
-      #fff 0%,
-      #fff 65%,
-      #fff 65%,
-      $green-light 65%,
-      $green-light 100%
+      $green-light 0%,
+      $green-light 50%,
+      $green-light 50%,
+      #fff 50%,
+      #fff 100%
     );
   }
   &.payments {
-    background: linear-gradient(to bottom, #fff 0%, #fff 65%, #fff 65%, $blue 65%, $blue 100%);
+    background: linear-gradient(to bottom, $blue 0%, $blue 50%, $blue 50%, #fff 50%, #fff 100%);
   }
   &.food-delivery {
     background: linear-gradient(
       to bottom,
-      #fff 0%,
-      #fff 65%,
-      #fff 65%,
-      $orange-light 65%,
-      $orange-light 100%
+      $orange-light 0%,
+      $orange-light 50%,
+      $orange-light 50%,
+      #fff 50%,
+      #fff 100%
     );
   }
   &.logistics {
-    background: linear-gradient(to bottom, #fff 0%, #fff 65%, #fff 65%, $red 65%, $red 100%);
+    background: linear-gradient(to bottom, $red 0%, $red 50%, $red 50%, #fff 50%, #fff 100%);
   }
   &.entertainment {
     background: linear-gradient(
       to bottom,
-      #fff 0%,
-      #fff 65%,
-      #fff 65%,
-      $pink-light 65%,
-      $pink-light 100%
+      $pink-light 0%,
+      $pink-light 50%,
+      $pink-light 50%,
+      #fff 50%,
+      #fff 100%
     );
   }
-  &.lifestyle-services {
+  &.lifestyle-service {
     background: linear-gradient(
       to bottom,
-      #fff 0%,
-      #fff 65%,
-      #fff 65%,
-      $yellow-light 65%,
-      $yellow-light 100%
+      $yellow-light 0%,
+      $yellow-light 50%,
+      $yellow-light 50%,
+      #fff 50%,
+      #fff 100%
     );
   }
 
@@ -267,8 +282,18 @@ body {
   .slick-dots {
     bottom: -50px;
     opacity: 0.8;
+    a {
+      padding: 10px;
+      font-family: $body-font;
+      border-radius: 20px;
+      font-size: 14px;
+    }
     .slick-active {
       opacity: 1;
+      a {
+        border: 1px solid;
+        font-family: $header-font;
+      }
     }
   }
 
@@ -281,24 +306,47 @@ body {
   }
 }
 
+#insta-stories {
+  > :first-child {
+    > :first-child {
+      border-radius: 52px;
+      height: 360px !important;
+      background: none !important;
+      > :first-child {
+        bottom: -7.3rem;
+        filter: none;
+        div {
+          height: 4px !important;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+
+  img {
+    border-radius: 52px;
+  }
+}
+
 .blackBackground {
   background-color: #000;
   background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   z-index: -1;
 }
 
+.teamsJobs {
+  background: linear-gradient(to bottom, #000 10rem, #fff 10rem);
+}
+
 .yellow-bg-gradient {
-  background: $yellow-light linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #e18700);
+  background: $yellow-light linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, #e18700);
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
-  height: 140vh;
+  height: 107vh;
   width: 100%;
   z-index: -1;
 }
@@ -312,13 +360,16 @@ body {
   }
 }
 
-.clearIcon {
+.clearIcon,
+.pointer {
   cursor: pointer;
 }
 
 .jobCard {
+  color: #696969;
   &:hover {
     background-color: #eee !important;
+    color: #242424;
   }
 }
 .form-control {
@@ -381,6 +432,7 @@ body {
       min-height: 15rem;
       margin-bottom: 1.875rem;
       position: relative;
+      text-decoration: none;
 
       &.highlight {
         height: 32rem;
@@ -429,17 +481,48 @@ body {
   }
 }
 
-#locations {
+#teams {
   .card {
     min-height: 20rem;
     background-color: #dcdada;
     border: none;
+    outline: none !important;
     border-radius: $border-xl;
+  }
+  @media screen and (min-width: $md-break) {
+    .slick-slider {
+      margin-left: 4rem;
+    }
+    .slick-prev {
+      display: none !important;
+    }
+  }
+
+  @media screen and (min-width: $lg-break) {
+    .slick-slider {
+      margin-left: 10rem;
+    }
+    .slick-list {
+      padding-right: 100px !important;
+      padding-left: 0px !important;
+    }
+  }
+
+  @media screen and (min-width: 2000px) {
+    .slick-slider {
+      width: 1140px;
+      margin: auto;
+    }
+  }
+
+  .slick-next {
+    right: 3.2rem;
   }
 
   .locationPadding {
     padding-top: 5rem;
     padding-bottom: 5rem;
+    color: #515151;
   }
 }
 
@@ -529,7 +612,7 @@ body {
   }
 
   li {
-    min-width: 10rem;
+    min-width: 9rem;
     color: #fff;
     font-weight: normal;
   }
@@ -584,6 +667,9 @@ body {
     }
   }
 }
+// #job-list {
+//   min-height: 40vh;
+// }
 
 .listings {
   box-shadow: 0 0 82px 0 rgba(0, 0, 0, 0.12);
@@ -604,7 +690,12 @@ body {
 }
 
 #open-source {
-  background: linear-gradient(to bottom, #fff 0%, #fff 58%, $green-light 42%);
+  hr {
+    width: 10%;
+    height: 2px;
+    background-color: #fff;
+  }
+  background: linear-gradient(to bottom, #fff 0%, #fff 55%, $blue 45%);
   .card {
     height: 15rem;
     background-color: #dcdada;
@@ -636,7 +727,7 @@ body {
         content: '';
         display: block;
         width: 10%;
-        margin: 0 auto;
+        margin: 12px auto;
         border-top: 2px solid #fff;
       }
     }
@@ -658,65 +749,6 @@ body {
   .cta {
     padding-top: 7rem;
   }
-}
-
-// Blog
-.articles {
-  color: #191919;
-  .main {
-    h1 {
-      font-size: $font-l;
-    }
-    .description {
-      color: #707070;
-      font-size: 1rem;
-    }
-  }
-  .title {
-    font-family: $header-font;
-  }
-  .description,
-  .meta {
-    font-size: $font-s;
-  }
-  .date-time {
-    color: #929292;
-  }
-  .card {
-    &,
-    .card-img-top {
-      border-radius: $border-xl;
-    }
-  }
-  .badge {
-    background-color: $green-lightest;
-    padding: 0.875rem 2.5rem;
-    color: $green-light;
-  }
-}
-
-#categories {
-  .card {
-    border-radius: $border-xl;
-    margin-bottom: 2rem;
-    font-family: $header-font;
-    min-height: 200px;
-  }
-  .name {
-    font-size: $font-m;
-  }
-}
-
-.tag {
-  position: absolute;
-  background-color: $green-light;
-  padding: 0.5rem 1rem;
-  margin-top: 2rem;
-  border-radius: 0.5rem 1rem 1rem 0;
-  margin-left: -5px;
-}
-.featured-article {
-  border-radius: $border-xl;
 }
 
 .jobDescription {
@@ -796,7 +828,7 @@ body {
     .card {
       border: none;
       min-height: 15rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
       position: relative;
       background-color: transparent;
 
@@ -822,4 +854,106 @@ body {
     font-size: 14px;
     color: #575757;
   }
+}
+
+#blogs {
+  #banner {
+    min-height: 70vh;
+  }
+
+  .card-img-top {
+    border-radius: $border-xl;
+  }
+
+  .main-article {
+    .title {
+      font-size: 2.2rem;
+      font-family: $header-font;
+    }
+  }
+
+  .article {
+    .title {
+      font-size: $font-m;
+      font-family: $header-font;
+    }
+  }
+
+  .description,
+  .date-time {
+    color: #707070;
+  }
+
+  .meta {
+    font-size: $font-s;
+  }
+
+  #featured-articles {
+    .header {
+      font-size: 2.2rem;
+    }
+  }
+
+  #first-article {
+    .firstArticleBg {
+      background-color: #904790;
+      border-radius: $border-xl;
+    }
+  }
+}
+
+.main-article {
+  .read-more {
+    color: #a1d884;
+  }
+  .article-title {
+    font-family: $header-font;
+    line-height: 42px;
+  }
+}
+a:hover {
+  text-decoration: none;
+}
+
+.test {
+  .test1 {
+    max-width: 7%;
+    background: #38434d;
+    float: left;
+    padding: 0.2em;
+    margin: 0.1em 0 0 3em;
+    position: relative;
+  }
+  nav > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    /* styling the border of the pseudo-element the same as the nav element: */
+    border: 1px solid darkred;
+    /* 'removing' the top-border */
+    border-top-width: 0;
+  }
+}
+.scale {
+  img {
+    border-radius: 44px;
+  }
+}
+.funding {
+  .logo {
+    max-height: 60px;
+    border-radius: 2.875rem;
+    border-color: #979797;
+  }
+}
+
+.slick-slide .project .details {
+  display: none;
+}
+
+.slick-center .project .details {
+  display: block;
 }

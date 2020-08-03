@@ -1,0 +1,78 @@
+@import '../../utils/styles/constants.scss';
+
+.tagList {
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    height: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #9e9e9e;
+    border-radius: 10px;
+  }
+}
+
+.tagHeading {
+  text-transform: capitalize;
+}
+
+.category {
+  font-family: $navbar-font;
+  background-color: $green-lightest;
+  color: $green-light;
+  font-size: 1rem;
+  line-height: 1.875rem;
+  a {
+    color: $green-light;
+  }
+  &:hover {
+    color: $green-light;
+  }
+  &.active {
+    background-color: $green-light;
+    color: #fff;
+    a {
+      color: #fff;
+    }
+  }
+}
+.search {
+  font-size: 1.3rem;
+}
+
+.tile {
+  border-radius: $border-xl;
+  color: #fff;
+  min-height: 12.2rem;
+  background-color: #00aed6;
+
+  h5 {
+    text-transform: capitalize;
+    font-family: $header-font;
+  }
+
+  p {
+    opacity: 0.8;
+  }
+}
+
+.tiles {
+  .tile:nth-child(1) {
+    background-color: #00aed6;
+  }
+  .tile:nth-child(2) {
+    background-color: #f06400;
+  }
+  .tile:nth-child(3) {
+    background-color: #df1995;
+  }
+  .tile:nth-child(4) {
+    background-color: #93328e;
+  }
+  .tile:nth-child(5) {
+    background-color: #f4364c;
+  }
+  .tile:nth-child(6) {
+    background-color: #00aa13;
+  }
+}

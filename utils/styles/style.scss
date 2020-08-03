@@ -1,0 +1,58 @@
+@import './constants.scss';
+
+.head {
+  font-size: 2.8125rem;
+  font-family: $header-font;
+  margin-bottom: 1.5rem;
+}
+.subhead {
+  font-size: 1.875rem;
+  font-family: $header-font;
+}
+
+.link {
+  font-family: $title-font;
+  font-size: 1.25rem;
+}
+
+.home-banner {
+  background-image: url('/img/home/banner-new.png');
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.font-demi {
+  font-family: $title-font;
+}
+
+.goal {
+  font-family: $body-font;
+  color: #000;
+}
+.font-extended-book {
+  font-family: $navbar-font;
+}
+.vision {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+.scale {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+// Styles for Careers dropdown
+.css-1rhbuit-multiValue {
+  display: none !important;
+}
+.css-1hb7zxy-IndicatorsContainer div:first-child {
+  display: none !important;
+}
+
+.css-yk16xz-control {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 1.5rem !important;
+}
