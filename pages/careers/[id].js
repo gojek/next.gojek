@@ -12,6 +12,7 @@ import {
   LinkedinIcon,
 } from 'react-share';
 import text from '../../utils/text.json';
+// import { getServerSideProps } from '../__shared/getServerSideProps';
 
 function DescriptionPage(props) {
   const [url, setUrl] = useState(null);
@@ -136,6 +137,21 @@ function DescriptionPage(props) {
 
 // to fetch the jobs description
 
-getServerSideProps({})(`https://api.lever.co/v0/postings/gojek/${ctx.query.id}/`);
+// getServerSideProps(`https://api.lever.co/v0/postings/gojek/${ctx.query.id}/`);
+export const getServerSideProps = async (apiUrl) => {
+  try {
+    const response = await fetch(apiUrl);
+
+    if (response.ok) {
+      const data = await response.json();
+      return { props: { data } };
+    } else {
+      return await { props: { data: [] } };
+    }
+  } catch (error) {
+    // Network error
+    return { props: { data: [] } };
+  }
+};
 
 export default DescriptionPage;

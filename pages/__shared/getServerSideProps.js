@@ -1,4 +1,4 @@
-export const getServerSideProps = async (ctx) => async (apiUrl) => {
+export const getServerSideProps = async (apiUrl) => {
   try {
     const response = await fetch(apiUrl);
 
