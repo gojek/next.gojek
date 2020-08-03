@@ -193,3 +193,19 @@ export const locations = [
   { label: 'Bangkok', value: 'bangkok' },
   { label: 'Vietnam', value: 'vietnam' },
 ];
+
+// Careers landing page text
+export const banner = {
+  title: 'We give you leverage to create impact at scale.',
+  subHead: "Join a company that strives to support you. Not just 'your best work', but all of you.",
+  departmentData: {
+    title: 'Choose where you belong…',
+    description:
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+  },
+  teamData: {
+    title: 'Teams',
+    description:
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+  },
+};

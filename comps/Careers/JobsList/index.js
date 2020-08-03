@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Search from './search';
-import { openPosisitions, departments, locations } from './data';
+import { departments, locations } from '../data.js';
 
-class Jobs extends Component {
+class JobsList extends Component {
   state = {
-    data: openPosisitions,
-    filteredData: openPosisitions,
+    data: this.props.data,
+    filteredData: this.props.data,
     selectedDepartments: ['All'],
     selectedLocations: ['All'],
     keyword: '',
@@ -102,4 +102,4 @@ class Jobs extends Component {
   }
 }
 
-export default Jobs;
+export default JobsList;

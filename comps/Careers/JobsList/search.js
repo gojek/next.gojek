@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Select, { components } from 'react-select';
-import { departments } from './data';
+import { departments } from '../data';
 
 const Option = (props) => (
   <div>
