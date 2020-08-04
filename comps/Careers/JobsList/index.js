@@ -12,16 +12,23 @@ class JobsList extends Component {
   };
 
   handleSearchChange = (value, name) => {
-    this.setState({ [name]: value }, () => {
-      const { selectedDepartments, data } = this.state;
-      const filteredData = data.filter(function(array_el) {
-        return (
-          selectedDepartments.filter(function(anotherOne_el) {
-            return anotherOne_el.label == array_el.categories.department;
-          }).length > 0
-        );
-      });
-      this.setState({ filteredData: filteredData });
+    const { data } = this.props;
+    const { filteredData } = this.state;
+    const filteredDataResults = (filteredData.length > 0 ? filteredData : data).filter(
+      (array_el) => {
+        switch (name) {
+          case 'selectedDepartments':
+            return value.length > 0 && array_el.categories.department === value[0].label;
+          case 'keyword':
+            return array_el.text.includes(value);
+
+          case 'selectedLocations':
+            return value.length > 0 && array_el.categories.location === value[0].label;
+        }
+      },
+    );
+    this.setState({
+      filteredData: filteredDataResults,
     });
   };
 
@@ -61,7 +68,7 @@ class JobsList extends Component {
                 <p className="">{data.categories.department}</p>
               </div>
               <div className="col-md-2">
-                <p className="">Bangalore</p>
+                <p className="">{data.categories.location}</p>
               </div>
               <div className="col-md-1">
                 <p className="">{'>'}</p>
