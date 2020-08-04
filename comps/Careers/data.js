@@ -266,6 +266,7 @@ export const locations = [
 
 // Careers landing page text
 export const banner = {
+  bannerImg: '/img/careers/banner.png',
   title: 'We give you leverage to create impact at scale.',
   subHead: "Join a company that strives to support you. Not just 'your best work', but all of you.",
   departmentData: {
