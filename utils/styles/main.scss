@@ -484,10 +484,10 @@ body {
 #teams {
   .card {
     min-height: 20rem;
-    background-color: #dcdada;
     border: none;
     outline: none !important;
     border-radius: $border-xl;
+    min-height: 430px;
   }
   @media screen and (min-width: $md-break) {
     .slick-slider {

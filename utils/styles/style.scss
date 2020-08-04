@@ -56,3 +56,40 @@
   padding-bottom: 5px;
   border-radius: 1.5rem !important;
 }
+.department {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.openings {
+  font-size: 1.3125rem;
+}
+
+.teams {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 439px;
+  max-width: 330px;
+  border-radius: 44px;
+  .head {
+    font-size: 30px;
+  }
+  .openings {
+    font-size: 1rem;
+  }
+}
+.operations-platform {
+  background-image: url('/img/careers/operations.png');
+}
+.kernel {
+  background-image: url('/img/careers/kernel.png');
+}
+.identity-and-communication-platform {
+  background-image: url('/img/careers/identity-and-communication.png');
+}
+#teams {
+  .slick-next:before {
+    color: #fff !important;
+    opacity: 1;
+  }
+}

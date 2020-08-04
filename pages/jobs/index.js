@@ -28,7 +28,7 @@ function Jobs(props) {
           <div className="row align-items-end pb-0 pb-md-5">
             <div className="col-md-7">
               <img
-                src="./img/careers/banner.png"
+                src="/img/careers/banner.png"
                 className="img-fluid banner-img"
                 alt="Gojek Banner"
               />
@@ -46,6 +46,18 @@ function Jobs(props) {
           <JobsList data={openPosisitions} />
         </div>
       </section>
+
+      {/* Departments */}
+      <section className="bg-black full-height py-5" id="departments">
+        <Departments data={openPosisitions} />
+      </section>
+      {/* End Departments */}
+
+      {/* Teams */}
+      <section id="teams" className="full-height align-items-center py-5">
+        <Teams data={openPosisitions} />
+      </section>
+      {/* End Teams */}
     </div>
   );
 }

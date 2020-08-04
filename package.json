@@ -27,7 +27,8 @@
     "react-spinners": "^0.8.3",
     "sass": "^1.26.5",
     "scss": "^0.2.4",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "underscore": "^1.10.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
