@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
 import _ from 'underscore';
 
-import { teams, temsSliderSettings } from '../data.js';
+import { teams, temsSliderSettings, banner } from '../data.js';
 
 function Teams(props) {
   const openPositionCount = _.countBy(props.data, function(currentObject) {
@@ -15,10 +15,9 @@ function Teams(props) {
   return (
     <div>
       <div className="container locationPadding pt-5">
-        <h1 className="header pt-4">Teams</h1>
+        <h1 className="header pt-4">{banner.teamData.title}</h1>
         <p className="mt-4 mb-5" style={{ maxWidth: '48rem' }}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is
-          simply dummy text of the printing and typesetting industry.
+          {banner.teamData.description}
         </p>
       </div>
       <Slider {...temsSliderSettings}>

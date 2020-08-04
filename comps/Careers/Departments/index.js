@@ -1,18 +1,25 @@
-import Link from 'next/link';
 import _ from 'underscore';
 
+import Card from './card';
 import { departments, banner } from '../data.js';
 
 function Departments(props) {
+  // Get departmetnwise job count
   const openPositionCount = _.countBy(props.data, function(currentObject) {
     return currentObject.categories.department;
   });
 
+  // Sort departments in desc order to get the highest openin gpositions
+  // 1st and second highest open positions to be displayed in 1st and
+  // last position in the grid. So sort the array and place the second
+  // object at the end of the array
   departments.map((department) => {
     department['count'] = openPositionCount[department.label] || 0;
   });
 
   const sortedDepartments = _.sortBy(departments, 'count').reverse();
+
+  sortedDepartments.push(sortedDepartments.splice(1, 1)[0]);
 
   return (
     <div className="container departments text-white">
@@ -21,48 +28,29 @@ function Departments(props) {
         {banner.departmentData.description}
       </p>
       <div className="card-columns text-left pt-5">
-        <Link href="#">
-          <a
-            className={`card text-white highlight department ${sortedDepartments[0].value}`}
-            style={{
-              backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.77)), url(${sortedDepartments[0].bgImg})`,
-            }}
-          >
-            <div className="card-body">
-              <h2 className="head mb-0">{sortedDepartments[0].label}</h2>
-              <p className="openings">{sortedDepartments[0].count} Openings</p>
-            </div>
-          </a>
-        </Link>
         {sortedDepartments.map((department, i) => {
-          if (i > 1)
+          if (i !== 1)
             return (
-              <Link href="#">
-                <a
-                  className={`card text-white`}
-                  style={{ backgroundColor: `${department.bgColor}` }}
-                >
-                  <div className="card-body">
-                    <h2 className="head mb-0">{department.label}</h2>
-                    <p className="openings">{department.count} Openings</p>
-                  </div>
-                </a>
-              </Link>
+              <Card
+                slug={department.value}
+                bg={i > 1 ? department.bgColor : department.bgImg}
+                bgType={i > 1 ? 'color' : 'img'}
+                label={department.label}
+                openings={department.count}
+                index={i}
+              />
             );
         })}
-        <Link href="#">
-          <a
-            className={`card text-white highlight department ${sortedDepartments[1].value}`}
-            style={{
-              backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.77)), url(${sortedDepartments[0].bgImg})`,
-            }}
-          >
-            <div className="card-body">
-              <h2 className="head mb-0">{sortedDepartments[1].label}</h2>
-              <p className="openings">{sortedDepartments[1].count} Openings</p>
-            </div>
-          </a>
-        </Link>
+
+        {/* NEEDS OPTIMIZATION */}
+        <Card
+          slug={sortedDepartments[1].value}
+          bg={sortedDepartments[1].bgImg}
+          bgType="img"
+          label={sortedDepartments[1].label}
+          openings={sortedDepartments[1].count}
+          index={1}
+        />
       </div>
     </div>
   );

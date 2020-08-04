@@ -26,7 +26,7 @@ export const departments = [
   {
     value: 'product',
     label: 'Product',
-    bgColor: '#ff7f32',
+    bgColor: '#ff808b',
     bgImg: 'img/careers/department-bitmap1.png',
   },
   {
