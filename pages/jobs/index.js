@@ -23,29 +23,19 @@ function Jobs(props) {
 
       <div className="yellow-bg-gradient"></div>
       {/* banner and jobs section */}
-      <section id="banner" className=" full-height py-5 d-flex align-items-end">
-        <div className="container">
-          <div className="row align-items-end pb-0 pb-md-5">
-            <div className="col-md-7">
-              <img
-                src="./img/careers/banner.png"
-                className="img-fluid banner-img"
-                alt="Gojek Banner"
-              />
-            </div>
-            <div className="col-md-5">
-              <h1 className="head">
-                We give you <br /> leverage to create <br /> impact at scale.
-              </h1>
-              <p className="py-4" id="filters">
-                Join a company that strives to support you. Not just 'your best work', but all of
-                you.
-              </p>
-            </div>
-          </div>
-          <JobsList data={openPosisitions} />
-        </div>
+      <JobsList data={openPosisitions} />
+
+      {/* Departments */}
+      <section className="bg-black full-height py-5" id="departments">
+        <Departments data={openPosisitions} />
       </section>
+      {/* End Departments */}
+
+      {/* Teams */}
+      <section id="teams" className="full-height align-items-center py-5">
+        <Teams data={openPosisitions} />
+      </section>
+      {/* End Teams */}
     </div>
   );
 }

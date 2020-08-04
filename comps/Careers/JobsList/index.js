@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Search from './search';
+import List from './list';
+import Banner from '../banner';
 import { departments, locations } from '../data.js';
 
 class JobsList extends Component {
@@ -12,16 +14,24 @@ class JobsList extends Component {
   };
 
   handleSearchChange = (value, name) => {
-    this.setState({ [name]: value }, () => {
-      const { selectedDepartments, data } = this.state;
-      const filteredData = data.filter(function(array_el) {
-        return (
-          selectedDepartments.filter(function(anotherOne_el) {
-            return anotherOne_el.label == array_el.categories.department;
-          }).length > 0
-        );
-      });
-      this.setState({ filteredData: filteredData });
+    const { data } = this.props;
+    const { filteredData } = this.state;
+    const filteredDataResults = (filteredData.length > 0 ? filteredData : data).filter(
+      (array_el) => {
+        switch (name) {
+          case 'selectedDepartments':
+            return value.length > 0 && array_el.categories.department === value[0].label;
+          case 'keyword':
+            return array_el.text.includes(value);
+
+          case 'selectedLocations':
+            return value.length > 0 && array_el.categories.location === value[0].label;
+        }
+      },
+    );
+    console.log('here', filteredDataResults);
+    this.setState({
+      filteredData: filteredDataResults,
     });
   };
 
@@ -30,46 +40,31 @@ class JobsList extends Component {
     const openPositions = filteredData.length > 10 ? filteredData.slice(0, 10) : filteredData;
     return (
       <div>
-        <Search
-          options={departments}
-          locations={locations}
-          onChange={this.handleSearchChange}
-          onChangeCallback={this.handleSearchChange}
-        />
-
-        {/* Jobs */}
-        <div className="h-100 bg-white mt-5">
-          <h1 className="subhead">Recent Open Positions</h1>
-
-          <div className="table-head row" style={{ fontSize: '20px' }}>
-            <div className="col-md-6">
-              <p className="text-green-light">Job Title</p>
-            </div>
-            <div className="col-md-3">
-              <p className="text-green-light">Department</p>
-            </div>
-            <div className="col-md-3">
-              <p className="text-green-light">Location</p>
+        <section id="banner" className=" full-height py-5 d-flex align-items-end">
+          <div className="container">
+            <Banner />
+            <div className="pt-5">
+              <Search
+                options={departments}
+                locations={locations}
+                onChange={this.handleSearchChange}
+                onChangeCallback={this.handleSearchChange}
+              />
+              <div class="col pt-5 d-flex justify-content-between">
+                <p>
+                  <strong>288 Opportunities</strong> found across <strong>20 Departments</strong>{' '}
+                  and <strong>8 Locations</strong>{' '}
+                </p>
+                <a href="#" class="text-green link">
+                  View all jobs
+                  <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+                </a>
+              </div>
             </div>
           </div>
-          {openPositions.map((data) => (
-            <div className="table-body row">
-              <div className="col-md-6">
-                <p className="">{data.text}</p>
-              </div>
-              <div className="col-md-3">
-                <p className="">{data.categories.department}</p>
-              </div>
-              <div className="col-md-2">
-                <p className="">Bangalore</p>
-              </div>
-              <div className="col-md-1">
-                <p className="">{'>'}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        {/* End Jobs */}
+        </section>
+
+        <List openPositions={openPositions} />
       </div>
     );
   }
