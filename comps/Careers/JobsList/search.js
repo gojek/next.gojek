@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Select, { components } from 'react-select';
-import { departments } from '../data';
+import { components } from 'react-select';
+import MeraSelect from 'react-select';
+import makeAnimated from 'react-select/animated';
+// import { departments } from '../data';
+import Select from 'react-multi-select-component';
+// import 'react-select/dist/react-select.cjs';
+
+const animatedComponents = makeAnimated();
 
 const Option = (props) => (
   <div>
@@ -14,7 +20,8 @@ const Option = (props) => (
 
 const MultiValue = (props) => (
   <components.MultiValue {...props}>
-    <span className="d-none">{props.data.label}</span>
+    {console.log('props', props)}
+    <div style={{ width: '100%' }}>{props.data.label}</div>
   </components.MultiValue>
 );
 
@@ -24,7 +31,15 @@ class MySelect extends Component {
   };
 
   render() {
-    const { options, locations, onChange, onChangeCallback, ...otherProps } = this.props;
+    const {
+      departmentValue,
+      locationValue,
+      departments,
+      locations,
+      onChange,
+      onChangeCallback,
+      ...otherProps
+    } = this.props;
 
     return (
       <div className="container">
@@ -48,35 +63,69 @@ class MySelect extends Component {
                 <label htmlFor="department" className="sr-only">
                   Department
                 </label>
+
                 <Select
+                  // closeMenuOnSelect={false}
+                  // isMulti
+                  className="form-control rounded-pill"
+                  // components={{ Option, MultiValue }}
+                  options={departments}
+                  hasSelectAll={false}
+                  value={departmentValue}
+                  // hideSelectedOptions={false}
+                  // backspaceRemovesValue={false}
+                  onChange={(e, meta) => onChangeCallback(e, 'selectedDepartments')}
+                  // {...otherProps}
+                  // name="selectedLocations"
+                  placeholder="Department"
+                />
+                {/* <Select
                   closeMenuOnSelect={false}
+                  getOptionLabel={(option) => option.label}
+                  getOptionValue={(option) => option.value}
                   isMulti
-                  components={{ Option, MultiValue }}
-                  options={options}
-                  hideSelectedOptions={false}
+                  // components={{ Option, MultiValue }}
+                  options={options.map(({ label, value }) => ({ label, value }))}
+                  defaultValue={options.map(({ label, value }) => ({ label, value }))}
+                  hideSelectedOptions={true}
                   backspaceRemovesValue={false}
                   onChange={(e, meta) => {
                     onChangeCallback(e, meta.name);
                   }}
                   {...otherProps}
+                  value={value}
                   name="selectedDepartments"
                   placeholder="Department"
-                />
+                /> */}
+                {/* <Select
+                  closeMenuOnSelect={false}
+                  components={animatedComponents}
+                  defaultValue={options.map(({ label, value }) => ({ label, value }))}
+                // hideSelectedOptions={false}
+                  isMulti
+                  className="basic-multi-select"
+                  classNamePrefix="select"
+                  options={options.map(({ label, value }) => ({ label, value }))}
+                /> */}
               </div>
               <div className="col-md-6 pr-0">
                 <label htmlFor="location" className="sr-only">
                   Location
                 </label>
+                {console.log('locations', locations)}
                 <Select
-                  closeMenuOnSelect={false}
-                  isMulti
-                  components={{ Option, MultiValue }}
+                  // closeMenuOnSelect={false}
+                  // isMulti
+                  // components={{ Option, MultiValue }}
                   options={locations}
-                  hideSelectedOptions={false}
-                  backspaceRemovesValue={false}
-                  onChange={(e, meta) => onChangeCallback(e, meta.name)}
-                  {...otherProps}
-                  name="selectedLocations"
+                  hasSelectAll={false}
+                  className="form-control rounded-pill"
+                  value={locationValue}
+                  // hideSelectedOptions={false}
+                  // backspaceRemovesValue={false}
+                  onChange={(e, meta) => onChangeCallback(e, 'selectedLocations')}
+                  // {...otherProps}
+                  // name="selectedLocations"
                   placeholder="Location"
                 />
               </div>
