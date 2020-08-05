@@ -107,10 +107,10 @@
     color: #696969;
   }
   &:nth-child(even) {
-    background: #fff;
+    background: #f2f2f2;
   }
   &:nth-child(odd) {
-    background: #f2f2f2;
+    background: #fff;
   }
   &:hover {
     cursor: pointer;
@@ -119,4 +119,9 @@
       font-family: $header-font;
     }
   }
+}
+
+.bg-img {
+  background-repeat: no-repeat;
+  background-size: cover;
 }

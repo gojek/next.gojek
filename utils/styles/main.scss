@@ -164,6 +164,7 @@ body {
     .illustration {
       margin-top: -1.5rem;
       z-index: 1;
+      margin-bottom: -11rem;
     }
 
     .location {
@@ -355,7 +356,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 140vh;
+  height: 120vh;
   width: 100%;
   z-index: -1;
 }
@@ -707,8 +708,6 @@ body {
   background: linear-gradient(to bottom, #fff 0%, #fff 55%, $blue 45%);
   .card {
     height: 15rem;
-    background-color: #dcdada;
-    border: 1px solid #dcdada;
     border-radius: 2.25rem;
   }
   .highlight {
@@ -843,7 +842,6 @@ body {
 
       .card-content {
         border-radius: 2.5rem;
-        background-color: #fff;
         height: 100%;
       }
 

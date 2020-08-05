@@ -19,7 +19,8 @@ function Departments(props) {
 
   const sortedDepartments = _.sortBy(departments, 'count').reverse();
 
-  sortedDepartments.push(sortedDepartments.splice(1, 1)[0]);
+  // sortedDepartments.push(sortedDepartments.splice(1, 1)[0]);
+  // console.log('Shilpa', sortedDepartments);
 
   return (
     <div className="container departments text-white">
@@ -28,8 +29,16 @@ function Departments(props) {
         {banner.departmentData.description}
       </p>
       <div className="card-columns text-left pt-5">
+        <Card
+          slug={sortedDepartments[0].value}
+          bg={sortedDepartments[0].bgImg}
+          bgType="img"
+          label={sortedDepartments[0].label}
+          openings={sortedDepartments[0].count}
+          index={1}
+        />
         {sortedDepartments.map((department, i) => {
-          if (i !== 1)
+          if (i > 1)
             return (
               <Card
                 slug={department.value}

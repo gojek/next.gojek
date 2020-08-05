@@ -2,7 +2,7 @@ import { banner } from './data';
 
 function Banner() {
   return (
-    <div className="row align-items-center pt-5">
+    <div className="row align-items-center mt-5">
       <div className="col-md-5">
         <img src={banner.bannerImg} className="img-fluid banner-img" alt="Gojek Careers Banner" />
       </div>

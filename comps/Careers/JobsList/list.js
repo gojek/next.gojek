@@ -4,8 +4,8 @@ function List(props) {
     <section className="full-height mb-5">
       <div className="container mb-5">
         <div className="listings bg-white shadow px-5 pt-5 pb-4" style={{ borderRadius: '3rem' }}>
-          <h1 className="header mb-4" style={{ fontSize: '2rem;' }}>
-            Recent Open Positions
+          <h1 className="header my-5 pb-2" style={{ fontSize: '2rem;' }}>
+            {props.heading}
           </h1>
           <div className="job">
             <div className="jobs-table-header row mb-4" style={{ fontSize: '20px' }}>
@@ -38,12 +38,15 @@ function List(props) {
                   </div>
                 </div>
               ))}
-              <div className="text-center mt-5">
-                <a href="#" className="text-green-light font-weight-bold mx-auto view-jobs">
-                  View all jobs {`  `}
-                  <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
-                </a>
-              </div>
+
+              {props.showAllJobs && (
+                <div className="text-center mt-5">
+                  <a href="#" className="text-green-light font-weight-bold mx-auto view-jobs">
+                    View all jobs {`  `}
+                    <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>

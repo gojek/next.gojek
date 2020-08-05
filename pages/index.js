@@ -112,25 +112,25 @@ function HomePage(props) {
                 <div className="row justify-content-around">
                   <div className="col-md-6">
                     <img
-                      src="./img/one.png"
+                      src="./img/home/gojek-indonasia.png"
                       className="mb-5 w-100 img-fluid border-0 mx-auto d-block"
                     />
                   </div>
                   <div className="col-md-6">
                     <img
-                      src="./img/one.png"
+                      src="./img/home/gojek-3.png"
                       className="mb-5 w-100 img-fluid border-0 mx-auto d-block"
                     />
                   </div>
                   <div className="col-md-6">
                     <img
-                      src="./img/one.png"
+                      src="./img/home/gojek-1.png"
                       className="mb-5 w-100 img-fluid border-0 mx-auto d-block"
                     />
                   </div>
                   <div className="col-md-6">
                     <img
-                      src="./img/one.png"
+                      src="./img/home/go-viet.png"
                       className="mb-5 w-100 img-fluid border-0 mx-auto d-block"
                     />
                   </div>

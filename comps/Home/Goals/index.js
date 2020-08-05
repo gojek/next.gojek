@@ -39,13 +39,13 @@ function Goals(props) {
                 <img
                   src={data.img}
                   alt={`${data.title} ${data.subtitle}`}
-                  className={`illustration img-fluid mx-auto
-                mb-n5 ${showFrontimage ? ' d-block' : 'd-none'}`}
+                  className={`illustration img-fluid float-right pr-4 mb-nm
+                 ${showFrontimage ? ' d-block' : 'd-none'}`}
                 />
                 <img
                   src="/img/banner-5.png"
                   alt=""
-                  // className="illustration img-fluid mx-auto mb-n3 d-none"
+                  style={{ marginBottom: '0' }}
                   className={`illustration img-fluid mx-auto
                  ${showBackimage ? ' d-block' : 'd-none'}`}
                 />

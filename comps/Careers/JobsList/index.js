@@ -38,9 +38,12 @@ class JobsList extends Component {
   render() {
     const { filteredData } = this.state;
     const openPositions = filteredData.length > 10 ? filteredData.slice(0, 10) : filteredData;
+
+    const heading = this.props.jobsHeading || 'Recent Open Positions';
+
     return (
       <div>
-        <section id="banner" className=" full-height py-5 d-flex align-items-end">
+        <section id="banner" className="full-height py-5 d-flex align-items-end">
           <div className="container">
             <Banner />
             <div className="pt-5">
@@ -55,16 +58,22 @@ class JobsList extends Component {
                   <strong>288 Opportunities</strong> found across <strong>20 Departments</strong>{' '}
                   and <strong>8 Locations</strong>{' '}
                 </p>
-                <a href="#" class="text-green link">
-                  View all jobs
-                  <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
-                </a>
+                {this.props.showAllJobs && (
+                  <a href="#" class="text-green link">
+                    View all jobs
+                    <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+                  </a>
+                )}
               </div>
             </div>
           </div>
         </section>
 
-        <List openPositions={openPositions} />
+        <List
+          openPositions={openPositions}
+          showAllJobs={this.props.showAllJobs}
+          heading={heading}
+        />
       </div>
     );
   }
