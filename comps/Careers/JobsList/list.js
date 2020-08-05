@@ -47,10 +47,10 @@ function List(props) {
               )}
 
               <div className="text-center mt-5">
-                <Link href="/jobs?all" className="text-green-light font-weight-bold mx-auto view-jobs">
+                <a href="/jobs?all" className="text-green-light font-weight-bold mx-auto view-jobs">
                   View all jobs {`  `}
                   <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

@@ -1,11 +1,8 @@
-import React, { Component, createRef } from 'react';
+import React, { Component } from 'react';
 import Search from './search';
 import List from './list';
 import Banner from '../banner';
-import Link from 'next/link';
-
 import { departments, locations } from '../data.js';
-import {withRouter} from 'next/router';
 import { listChopper } from '../../../utils/services';
 
 class JobsList extends Component {
@@ -18,26 +15,69 @@ class JobsList extends Component {
     chopNumber: 10,
   };
 
-
-  componentDidMount() {
-    console.log('this.props', this.props.router);
-    // if (location.hash === '#all') {
-    //   return this.setState({ chopNumber: null });
-    // }
-    // return this.setState({ chopNumber: 10 });
-  }
-
-  // componentDidUpdate() {
-  //   if (location.hash !== this.value) {
-  //     return this.setState({ chopNumber: location.hash === '#all' ? null : 10 });
+  // componentDidMount() {
+  //   console.log('this.props', location.hash);
+  //   if (location.hash !== '#all') {
+  //     this.setState({ chopNumber: 10 });
   //   }
   // }
+
+  // componentDidUpdate() {
+  //   if (location.hash === '#all') {
+  //     this.setState({chopNumber:null});
+  //   }
+  // }
+
+  applyExistingFilters = (filteredResults) => {
+    const { filteredData, selectedLocations, selectedDepartments, keyword } = this.state;
+
+    let departmentSelected = [];
+
+    if (selectedDepartments.length > 0) {
+      departmentSelected = filteredResults.filter(
+        (result) =>
+          selectedDepartments.filter(
+            (department) => result.categories.department === department.label,
+          ).length > 0,
+      );
+    }
+
+    if (selectedLocations.length > 0) {
+      departmentSelected = filteredResults.filter(
+        (result) =>
+          selectedLocations.filter((location) => result.categories.location === location.label)
+            .length > 0,
+      );
+    }
+
+    console.log('filteredResults', filteredResults);
+
+    return departmentSelected.length > 0 ? departmentSelected : filteredResults;
+  };
 
   handleSearchChange = (value, name) => {
     const { data } = this.props;
     const { filteredData, selectedLocations, selectedDepartments, keyword } = this.state;
     const filteredDataResults = (filteredData.length > 0 ? filteredData : data).filter(
       (array_el) => {
+        // let condition;
+        // let depCondition;
+        // let locCondition;
+
+        // if (selectedDepartments.length) {
+        //   depCondition =
+        //     value && value.length > 0 && array_el.categories.department === value[0].label;
+        // }
+        // if (selectedLocations.length) {
+        //   locCondition = value && value.length > 0 && array_el.categories.location === value[0].label;
+        // }
+
+        // if (keyword.length) {
+        //   condition = value && value.length > 0 && array_el.categories.location === value[0].label;
+        // }
+
+        // return
+
         switch (name) {
           case 'selectedDepartments':
             return value && value.length > 0 && array_el.categories.department === value[0].label;
@@ -53,8 +93,9 @@ class JobsList extends Component {
       },
     );
     console.log('here', filteredDataResults, name, value);
+    const existingFilterData = this.applyExistingFilters(filteredDataResults);
     this.setState({
-      filteredData: filteredDataResults,
+      filteredData: existingFilterData,
       keyword: name === 'keyword' ? value : keyword,
       selectedDepartments: name === 'selectedDepartments' ? value : selectedDepartments,
       selectedLocations: name === 'selectedLocations' ? value : selectedLocations,
@@ -98,10 +139,10 @@ class JobsList extends Component {
                   <strong>288 Opportunities</strong> found across <strong>20 Departments</strong>{' '}
                   and <strong>8 Locations</strong>{' '}
                 </p>
-                <Link href="/jobs?all" class="text-green link">
+                <a href="#all" class="text-green link">
                   View all jobs
                   <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -113,4 +154,4 @@ class JobsList extends Component {
   }
 }
 
-export default withRouter(JobsList);
+export default JobsList;
