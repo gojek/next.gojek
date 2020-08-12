@@ -47,7 +47,10 @@ function List(props) {
 
               {!props.showAllJobs && (
                 <div className="text-center mt-5">
-                  <a href="#" className="text-green-light font-weight-bold mx-auto view-jobs">
+                  <a
+                    href="/jobs/all-jobs"
+                    className="text-green-light font-weight-bold mx-auto view-jobs"
+                  >
                     View all jobs {`  `}
                     <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
                   </a>
