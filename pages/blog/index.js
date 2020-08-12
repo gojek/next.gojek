@@ -10,6 +10,7 @@ import FeaturedPosts from '~/../../comps/BlogNew/featured';
 import { CTA } from '../../comps/BlogNew/cta';
 
 function Blog(props) {
+  console.log('Props', props);
   const [tag, setTag] = useState('tech');
 
   const changeTag = (tagName) => {
@@ -64,7 +65,9 @@ function Blog(props) {
         <Tags tags={tags} onClick={changeTag} activeTag={tag} />
 
         {/* Tech Posts */}
-        <BlogNew heading="Tech" id="tech" posts={props.techPosts.items} link="tech" />
+        {props.techPosts.status !== 'error' && (
+          <BlogNew heading="Tech" id="tech" posts={props.techPosts.items} link="tech" />
+        )}
         {/* End Tech Posts */}
       </div>
 
@@ -77,7 +80,10 @@ function Blog(props) {
       <div className="container">
         {/* Data posts */}
         {/* <Element name="data-science"> */}
-        <BlogNew heading="Data" posts={props.dataPosts.items} link="data-science" />
+        {props.dataPosts.status !== 'error' && (
+          <BlogNew heading="Data" posts={props.dataPosts.items} link="data-science" />
+        )}
+
         {/* </Element> */}
         {/* End Data posts */}
 
@@ -86,11 +92,13 @@ function Blog(props) {
         {/* End CTA */}
 
         {/* Culture posts */}
-        <BlogNew heading="Culture" posts={props.culturePosts.items} link="culture" />
+        {props.culturePosts.status !== 'error' && (
+          <BlogNew heading="Culture" posts={props.culturePosts.items} link="culture" />
+        )}
         {/* End Culture posts */}
 
         {/* Blog tags */}
-        <section class="medium-tags">
+        <section class="medium-tags mt-5">
           <div className="row">
             <div className="col-md-5">
               <a target="_blank" href={`https://blog.gojekengineering.com/tech/home`}>
@@ -160,15 +168,21 @@ function Blog(props) {
         {/* End */}
 
         {/* News posts */}
-        <BlogNew heading="News" posts={props.newsPosts.items} link="news" />
+        {props.newsPosts.status !== 'error' && (
+          <BlogNew heading="News" posts={props.newsPosts.items} link="news" />
+        )}
         {/* End news posts */}
 
         {/* design posts */}
-        <BlogNew heading="Design" posts={props.designPosts.items} link="design" />
+        {props.designPosts.status !== 'error' && (
+          <BlogNew heading="Design" posts={props.designPosts.items} link="design" />
+        )}
         {/* End design posts */}
 
         {/* Stories posts */}
-        <BlogNew heading="Stories" posts={props.culturePosts.items} link="gojek-stories" />
+        {props.culturePosts.status !== 'error' && (
+          <BlogNew heading="Stories" posts={props.culturePosts.items} link="gojek-stories" />
+        )}
         {/* End Stories posts */}
       </div>
     </div>
