@@ -90,7 +90,7 @@ class JobsList extends Component {
                   and <strong>8 Locations</strong>{' '}
                 </p>
                 {!this.props.showAllJobs && (
-                  <a href="#" class="text-green link">
+                  <a href="/jobs/all-jobs" class="text-green link">
                     View all jobs
                     <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
                   </a>
