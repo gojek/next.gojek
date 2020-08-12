@@ -23,7 +23,7 @@ function AllJobs(props) {
 
       <div className="yellow-bg-gradient"></div>
       {/* banner and jobs section */}
-      <JobsList data={openPosisitions} showAllJobs={false} jobsHeading="All Open Positions" />
+      <JobsList data={openPosisitions} showAllJobs={true} jobsHeading="All Open Positions" />
     </div>
   );
 }

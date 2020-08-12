@@ -95,13 +95,13 @@ function Navbar(props) {
             })}
             {props.careers ? (
               <li className={`nav-item px-4 active menuActive menuItem`}>
-                <Link href="/careers">
+                <Link href="/jobs">
                   <a className={`nav-link menuLink`}>Join Us</a>
                 </Link>
               </li>
             ) : (
               <li className={`nav-item pr-4 pl-3 pl-lg-4 joinUs`}>
-                <Link href="/careers">
+                <Link href="/jobs">
                   <a className="btn rounded-pill text-success bg-white btn-sm px-3">Join Us</a>
                 </Link>
               </li>

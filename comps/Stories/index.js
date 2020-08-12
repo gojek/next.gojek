@@ -22,18 +22,6 @@ function StoriesSection() {
   // ];
 
   const stories = [
-    // {
-    //   url: '/img/videos/gomakeimpact.mp4',
-    //   type: 'video',
-    // },
-    // {
-    //   url: '/img/videos/gomakeimpact.mp4',
-    //   type: 'video',
-    // },
-    // {
-    //   url: '/img/videos/gomakeimpact.mp4',
-    //   type: 'video',
-    // },
     '/img/placeholder3.jpeg',
     '/img/placeholder3.jpeg',
     '/img/placeholder3.jpeg',

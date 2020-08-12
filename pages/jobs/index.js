@@ -23,7 +23,7 @@ function Jobs(props) {
 
       <div className="yellow-bg-gradient"></div>
       {/* banner and jobs section */}
-      <JobsList data={openPosisitions} showAllJobs={true} />
+      <JobsList data={openPosisitions} showAllJobs={false} />
 
       {/* Departments */}
       <section className="bg-black full-height py-5" id="departments">
