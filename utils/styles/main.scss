@@ -24,7 +24,7 @@ html {
 }
 
 body {
-  font-family: $body-font;
+  font-family: $body-font !important;
 }
 
 // navbar styles
@@ -156,9 +156,7 @@ body {
   }
 }
 
-#vision,
-#scale {
-  padding: 10rem 0;
+.vision {
   .card {
     border-radius: 2.75rem;
     border: none;
@@ -166,6 +164,7 @@ body {
     .illustration {
       margin-top: -1.5rem;
       z-index: 1;
+      margin-bottom: -11rem;
     }
 
     .location {
@@ -313,10 +312,14 @@ body {
     > :first-child {
       border-radius: 52px;
       height: 360px !important;
-      background-color: transparent !important;
+      background: none !important;
       > :first-child {
         bottom: -7.3rem;
         filter: none;
+        div {
+          height: 4px !important;
+          border-radius: 2px;
+        }
       }
     }
   }
@@ -339,12 +342,21 @@ body {
 }
 
 .yellow-bg-gradient {
-  background: $yellow-light linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #e18700);
+  // background: $yellow-light linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, #e18700);
+  // background-repeat: no-repeat;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // height: 107vh;
+  // width: 100%;
+  // z-index: -1;
+  background: #f7ce55 -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(255, 255, 255, 0)), to(#e18700));
+  background: #f7ce55 linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #e18700);
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
-  height: 107vh;
+  height: 120vh;
   width: 100%;
   z-index: -1;
 }
@@ -482,10 +494,10 @@ body {
 #teams {
   .card {
     min-height: 20rem;
-    background-color: #dcdada;
     border: none;
     outline: none !important;
     border-radius: $border-xl;
+    min-height: 430px;
   }
   @media screen and (min-width: $md-break) {
     .slick-slider {
@@ -518,8 +530,8 @@ body {
   }
 
   .locationPadding {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    // padding-top: 5rem;
+    // padding-bottom: 5rem;
     color: #515151;
   }
 }
@@ -688,11 +700,14 @@ body {
 }
 
 #open-source {
-  background: linear-gradient(to bottom, #fff 0%, #fff 58%, $blue 42%);
+  hr {
+    width: 10%;
+    height: 2px;
+    background-color: #fff;
+  }
+  background: linear-gradient(to bottom, #fff 0%, #fff 55%, $blue 45%);
   .card {
     height: 15rem;
-    background-color: #dcdada;
-    border: 1px solid #dcdada;
     border-radius: 2.25rem;
   }
   .highlight {
@@ -827,7 +842,6 @@ body {
 
       .card-content {
         border-radius: 2.5rem;
-        background-color: #fff;
         height: 100%;
       }
 
@@ -930,34 +944,23 @@ a:hover {
     border-top-width: 0;
   }
 }
-.scale,
-#vision {
-  .goal-title {
-    font-family: $header-font;
-    font-size: 2.815rem;
-  }
-  .goal-description {
-    font-family: $body-font;
-  }
-  .title {
-    font-size: 30px;
-    font-family: $header-font;
-  }
-  .subtitle {
-    font-family: $navbar-font;
-  }
-}
 .scale {
   img {
     border-radius: 44px;
   }
 }
+.funding {
+  .logo {
+    max-height: 60px;
+    border-radius: 2.875rem;
+    border-color: #979797;
+  }
+}
 
-// .title {
-//   font-family: $header-font;
-//   font-size: 2.815rem;
-// }
+.slick-slide .project .details {
+  display: none;
+}
 
-// .description {
-//   font-family: $body-font;
-// }
+.slick-center .project .details {
+  display: block;
+}

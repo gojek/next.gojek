@@ -1,0 +1,141 @@
+@import './constants.scss';
+
+.head {
+  font-size: 2.8125rem;
+  font-family: $header-font;
+  margin-bottom: 1.5rem;
+}
+.subhead {
+  font-size: 1.875rem;
+  font-family: $header-font;
+}
+
+.link {
+  font-family: $title-font;
+  font-size: 1.25rem;
+}
+
+.home-banner {
+  background-image: url('/img/home/banner-new.png');
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.font-demi {
+  font-family: $title-font;
+}
+
+.goal {
+  font-family: $body-font;
+  color: #000;
+}
+.font-extended-book {
+  font-family: $navbar-font;
+}
+.vision {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+.scale {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+// Styles for Careers dropdown
+.css-1rhbuit-multiValue {
+  display: none !important;
+}
+.css-1hb7zxy-IndicatorsContainer div:first-child {
+  display: none !important;
+}
+
+.css-yk16xz-control {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 1.5rem !important;
+}
+.department {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.openings {
+  font-size: 1.3125rem;
+}
+
+.teams {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 439px;
+  max-width: 330px;
+  border-radius: 44px;
+  .head {
+    font-size: 30px;
+  }
+  .openings {
+    font-size: 1rem;
+  }
+}
+.operations-platform {
+  background-image: url('/img/careers/operations.png');
+}
+.kernel {
+  background-image: url('/img/careers/kernel.png');
+}
+.identity-and-communication-platform {
+  background-image: url('/img/careers/identity-and-communication.png');
+}
+#teams {
+  .slick-next:before {
+    color: #fff !important;
+    opacity: 1;
+  }
+}
+
+.jobs-table-header {
+  .head {
+    font-size: 1.125rem;
+    color: $green-light;
+  }
+  border-bottom: 1px solid #979797;
+}
+.table-row {
+  // transition: 0s color;
+  p {
+    color: #696969;
+  }
+  &:nth-child(even) {
+    background: #f2f2f2;
+  }
+  &:nth-child(odd) {
+    background: #fff;
+  }
+  &:hover {
+    cursor: pointer;
+    p {
+      color: #242424;
+      font-family: $header-font;
+    }
+  }
+}
+
+.bg-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.css-2b097c-container:focus {
+  outline: none;
+}
+.css-1pahdxg-control {
+  border-color: #fff !important;
+  border-style: none !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 1.5rem !important;
+}
+.job-tag {
+  background-color: rgba(255, 255, 255, 0.75);
+}

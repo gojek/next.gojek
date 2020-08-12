@@ -19,7 +19,11 @@ function LifeAtGojek(props) {
         <div className="container">
           <div className="row align-items-end pb-0 pb-md-5">
             <div className="col-md-6">
-              <img src={bannerImage} className="img-fluid banner-img" alt="Gojek Banner" />
+              <img
+                src="/img/careers/banner.png"
+                className="img-fluid banner-img"
+                alt="Gojek Banner"
+              />
             </div>
             <div className="col-md-6">
               <h1 className="banner-head">Build products that build nations</h1>
@@ -112,39 +116,57 @@ function LifeAtGojek(props) {
           <h1 className="header">Build better lives</h1>
           <div className="card-columns text-left pt-5">
             <div className="card" style={{ height: '22.5rem' }}>
-              <div className="card-content mr-1"></div>
+              <div
+                style={{ backgroundImage: `url(/img/life-at-gojek/six.png)` }}
+                className="card-content mr-1 bg-img"
+              ></div>
             </div>
 
             <div className="card" style={{ height: '15.6rem' }}>
-              <div className="card-content mr-1"></div>
+              <div
+                style={{ backgroundImage: `url(/img/life-at-gojek/two.png)` }}
+                className="card-content mr-1 bg-img"
+              ></div>
             </div>
 
             <div className="card" style={{ height: '22.5rem' }}>
-              <div className="card-content mr-1"></div>
+              <div className="bg-red card-content mr-1"></div>
             </div>
 
             <div className="card" style={{ height: '18.3rem' }}>
-              <div className="card-content mx-1"></div>
+              <div
+                style={{ backgroundImage: `url(/img/life-at-gojek/five.png)` }}
+                className="card-content mx-1 bg-img"
+              ></div>
             </div>
 
             <div className="card" style={{ height: '24.4rem' }}>
-              <div className="card-content mx-1"></div>
+              <div className=" bg-blue card-content mx-1"></div>
             </div>
 
             <div className="card" style={{ height: '18.2rem' }}>
-              <div className="card-content mx-1"></div>
+              <div
+                style={{ backgroundImage: `url(/img/life-at-gojek/one.png)` }}
+                className="card-content mx-1 bg-img"
+              ></div>
             </div>
 
             <div className="card" style={{ height: '22.5rem' }}>
-              <div className="card-content ml-1"></div>
+              <div
+                style={{ backgroundImage: `url(/img/life-at-gojek/four.png)` }}
+                className="card-content ml-1 bg-img"
+              ></div>
             </div>
 
             <div className="card" style={{ height: '15.7rem' }}>
-              <div className="card-content ml-1"></div>
+              <div
+                style={{ backgroundImage: `url(/img/life-at-gojek/three.png)` }}
+                className="card-content ml-1 bg-img"
+              ></div>
             </div>
 
             <div className="card" style={{ height: '22.5rem' }}>
-              <div className="card-content ml-1"></div>
+              <div className="bg-yellow-light card-content ml-1"></div>
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ function HomeSlider(props) {
       dots
       customPaging={(i) => {
         return (
-          <a className="dot text-dark" style={{ borderColor: departments[i].borderColor }}>
+          <a className="dot" style={{ borderColor: departments[i].borderColor, color: '#000' }}>
             {departments[i].name}
           </a>
         );
@@ -25,15 +25,15 @@ function HomeSlider(props) {
       beforeChange={(oldSlide, nextSlide) => {
         $('#products')
           .removeClass()
-          .addClass('full-height d-flex align-items-center py-5 ' + departments[nextSlide].bgClass);
+          .addClass('full-height d-flex align-items-center ' + departments[nextSlide].bgClass);
       }}
     >
       {departments.map((department) => (
         <div>
-          <div className="card py-5 shadow mx-5">
+          <div className="card shadow mb-5">
             <div className="card shadowCard" />
-            <h5 className={`card-title sub-head my-4 ${department.class}`}>{department.name}</h5>
-            <div className="card-body pt-0 mx-auto partner-logos d-flex justify-content-center flex-wrap">
+            <h5 className={`card-title subhead my-4 ${department.class}`}>{department.name}</h5>
+            <div className="card-body mx-auto partner-logos d-flex justify-content-center flex-wrap">
               <img
                 src="/img/logo-horizontal.svg"
                 alt="Logo placeholder"

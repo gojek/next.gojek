@@ -22,16 +22,13 @@ function StoriesSection() {
   // ];
 
   const stories = [
-    'https://www.gojek.io/images/impact-stories/arif.jpg',
-
-    'https://www.gojek.io/images/impact-stories/nuridah.jpg',
-
-    'https://www.gojek.io/images/impact-stories/heru.jpg',
-
-    'https://www.gojek.io/images/impact-stories/sumani.jpg',
+    '/img/placeholder3.jpeg',
+    '/img/placeholder3.jpeg',
+    '/img/placeholder3.jpeg',
+    '/img/placeholder3.jpeg',
   ];
 
-  return <Stories stories={stories} defaultInterval={3000} width={'100%'} loader={<div />} loop />;
+  return <Stories stories={stories} defaultInterval={3000} width="100%" />;
 }
 
 export default StoriesSection;
