@@ -4,7 +4,7 @@ import Router, { useRouter } from 'next/router';
 
 import Navbar from '~/../../comps/Navbar';
 import bannerImage from '~/../../static/banner.png';
-import JobList from '~/../../comps/Careers/jobsList';
+// import JobList from '~/../../comps/Careers/jobsList';
 
 function CareersPage(props) {
   const router = useRouter();
@@ -34,7 +34,7 @@ function CareersPage(props) {
               </p>
             </div>
           </div>
-          <JobList data={props.data} departmentID={router.query.id} hideDepartments noParams />
+          {/* <JobList data={props.data} departmentID={router.query.id} hideDepartments noParams /> */}
         </div>
       </section>
     </div>
