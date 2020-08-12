@@ -3,6 +3,7 @@ import styles from './index.module.scss';
 import BlogCard from './blogCard';
 
 function BlogNew(props) {
+  console.log('props', props);
   const { heading, posts, link } = props;
   posts[0].featured = true;
 
