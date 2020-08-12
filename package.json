@@ -20,6 +20,8 @@
     "react-insta-stories": "^1.1.0",
     "react-intersection-observer": "^8.26.2",
     "react-moment": "^0.9.7",
+    "react-multi-select-component": "^3.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scroll": "^1.8.0",
     "react-select": "^3.1.0",
     "react-share": "^4.1.0",
