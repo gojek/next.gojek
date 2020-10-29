@@ -1,0 +1,32 @@
+// Font family
+@font-face {
+  font-family: 'Maison Nueue Book';
+  src: url(/fonts/MaisonNeueAPP-Book.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Maison Nueue Extended Book';
+  src: url(/fonts/MaisonNeueExtended-Book.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Maison Nueue Demi';
+  src: url(/fonts/MaisonNeueAPP-Demi.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Maison Nueue Bold';
+  src: url(/fonts/MaisonNeueExtended-Bold.otf) format('opentype');
+}
+
+$extra-bold: 'Maison Nueue Bold';
+$extended: 'Maison Nueue Extended Book';
+$demi: 'Maison Nueue Demi';
+$maisonbook: 'Maison Nueue Book';
+
+// Font Sizes
+
+$font-s: 0.875rem;
+$font-xl: 2.812rem;
+$font-l: 1.875rem;
+$font-m: 1.25rem;

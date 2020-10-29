@@ -1,257 +1,242 @@
-import { useState } from 'react';
-import Slider from 'react-slick';
-import HomeSlider from '~/../../comps/Home/slider';
-import Goals from '~/../../comps/Home/Goals';
-import { InView } from 'react-intersection-observer';
-import DynamicComponentWithNoSSR from '~/../../comps/Stories/export';
-import Project from '../comps/Home/OpenSource';
-
 import Navbar from '~/../../comps/Navbar';
+import ProductSlider from '../comps/Home/ProductSlider';
+import TechFacts from '../comps/Home/techFacts';
+import Projects from '../comps/Home/OpenSource';
+import Link from '../comps/Common/link';
 
-function HomePage(props) {
-  const [navbarLight, setNavbarLight] = useState(true);
-  const [navbarBG, setNavbarBG] = useState(true);
-
-  // function to chnage the navbar color on scroll
-  const changeBg = (color, light, entry) => {
-    if (entry.intersectionRatio >= 0.9 && entry.intersectionRatio != 0) {
-      setNavbarBG(color);
-      setNavbarLight(light);
-    } else if (
-      entry.intersectionRatio < 0.8 &&
-      entry.intersectionRect.bottom < 300 &&
-      entry.intersectionRatio != 0
-    ) {
-      setNavbarBG(color);
-      setNavbarLight(light);
-    }
-  };
-
+function Home(props) {
   return (
-    <div className="text-center text-md-left">
-      <Navbar light={navbarLight} bg={navbarBG} />
-
-      {/* banner section */}
-      <InView
-        as="div"
-        threshold={[0.9, 0.1]}
-        onChange={(inView, entry) => {
-          changeBg('#f74344', true, entry);
-        }}
-      >
-        <section className="watch home-banner" watch="#ffa000"></section>
-      </InView>
-
-      {/* products section */}
-      <InView
-        as="div"
-        threshold={[0.9, 0.1]}
-        onChange={(inView, entry) => {
-          changeBg('#fff', false, entry);
-        }}
-      >
-        <section
-          id="products"
-          className="full-height d-flex align-items-center transport watch py-5 watch"
-          watch="#fff"
-        >
-          <div className="container text-center">
-            <h1 className="head text-white">Gojek is Indonesia’s first decacorn.</h1>
-            <p className="text-white w-75 mx-auto font-demi pb-4">
-              An ecosystem of 20+ products that does over 7 million orders a month across
-              ride-hailing, food delivery, payments, logistics, entertainment, and lifestyle
-              services. <strong>All within a single app — a SuperApp.</strong>
-            </p>
-
-            <div className="row justify-content-center ">
-              <div id="products-carousel" className="col-md-8 text-dark">
-                <HomeSlider />
-              </div>
-            </div>
+    <div>
+      <section className="banner home">
+        <div className="container">
+          <Navbar />
+          <div className="row mx-0 align-items-center full-height-one">
+            <h1 className="heading">Gojek is a SuperApp. </h1>
           </div>
-        </section>
-      </InView>
+        </div>
+      </section>
 
-      {/* vision section */}
-      <InView
-        as="div"
-        threshold={[0.9, 0.1]}
-        onChange={(inView, entry) => {
-          changeBg('#000', false, entry);
-        }}
-      >
-        <section className="vision full-height d-flex align-items-center watch" watch="#000">
-          <div className="container">
-            <Goals />
-          </div>
-        </section>
-      </InView>
-
-      {/* Scale - New*/}
-      <InView
-        as="div"
-        threshold={[0.9, 0.1]}
-        onChange={(inView, entry) => {
-          changeBg('#101820', true, entry);
-        }}
-      >
-        <section className="bg-black scale">
-          <div className="container">
-            <div className="row align-items-center full-height">
-              <div className="col-md-4 text-white">
-                <h1 className="head">Scale</h1>
-                <p>
-                  Once a call-centre operation trying to make a dent in Jakarta’s traffic by
-                  organising bike taxi (ojek) services, Gojek is now Southeast Asia’s answer to the
-                  trials of daily life. Since the launch of our SuperApp in 2015, we’ve contributed
-                  over $3 billion in added value to the Indonesian economy, scaled order volumes
-                  1100x and expanded to Vietnam, Thailand, and Singapore.{' '}
-                </p>
-              </div>
-              <div className="col-md-8">
-                <div className="row justify-content-around">
-                  <div className="col-md-6">
-                    <img
-                      src="./img/home/gojek-indonasia.png"
-                      className="mb-5 w-100 img-fluid border-0 mx-auto d-block"
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <img
-                      src="./img/home/gojek-3.png"
-                      className="mb-5 w-100 img-fluid border-0 mx-auto d-block"
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <img
-                      src="./img/home/gojek-1.png"
-                      className="mb-5 w-100 img-fluid border-0 mx-auto d-block"
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <img
-                      src="./img/home/go-viet.png"
-                      className="mb-5 w-100 img-fluid border-0 mx-auto d-block"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* End Scale - New */}
-      </InView>
-
-      {/* Funding */}
-      <InView
-        as="div"
-        threshold={[0.9, 0.1]}
-        onChange={(inView, entry) => {
-          changeBg('#fff', true, entry);
-        }}
-      >
-        <section className="funding">
-          <div className="container">
-            <div className="row align-items-center full-height py-5">
-              <div className="col-md-3">
-                <img src="./img/funding.png" />
-              </div>
-              <div className="col-md-9">
-                <h1 className="head">Funding</h1>
-                <p className="w-75 pb-4">
-                  We’ve raised a fair amount of capital along the way, and recently closed our
-                  Series F funding round. Gojek is fortunate to count Sequoia Capital, Google,
-                  Tencent Holdings, JD.com, and Visa, among its investors.
-                </p>
-                <div className="row justify-contet-around">
-                  <div className="col-md-4 mb-4">
-                    <img src="./img/logo-horizontal.svg" className="img-fluid border logo" />
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <img src="./img/logo-horizontal.svg" className="img-fluid border logo" />
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <img src="./img/logo-horizontal.svg" className="img-fluid border logo" />
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <img src="./img/logo-horizontal.svg" className="img-fluid border logo" />
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <img src="./img/logo-horizontal.svg" className="img-fluid border logo" />
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <img src="./img/logo-horizontal.svg" className="img-fluid border logo" />
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <img src="./img/logo-horizontal.svg" className="img-fluid border logo" />
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <img src="./img/logo-horizontal.svg" className="img-fluid border logo" />
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <img src="./img/logo-horizontal.svg" className="img-fluid border logo" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </InView>
-      {/* End Funding */}
+      {/* Second section */}
+      <section className="products bg-black text-white">
+        <ProductSlider />
+      </section>
+      {/* End second section */}
 
       {/* Open Source */}
-      <InView
-        as="div"
-        threshold={[0.9, 0.1]}
-        onChange={(inView, entry) => {
-          changeBg('#fff', false, entry);
-        }}
-      >
-        <section
-          id="open-source"
-          className="full-height d-flex align-items-center watch pb-5"
-          watch="#fff"
-        >
-          <Project />
-        </section>
-      </InView>
+      <section className="my-5">
+        <Projects />
+      </section>
+      {/* End open source */}
 
-      <InView
-        as="div"
-        threshold={[0.9, 0.1]}
-        onChange={(inView, entry) => {
-          changeBg('#101820', true, entry);
-        }}
-      >
-        <section className="bg-black">
+      {/* CTA */}
+      <section className="position-relative">
+        <img src="../img/home/bgimg.png" alt="" className="img-fluid w-100 bg" />
+        <div className="position-absolute w-100" style={{ top: '0' }}>
           <div className="container">
-            <div className="row align-items-center full-height ">
-              <div className="col-md-4 text-white">
-                <h1 className="head">Social Impact</h1>
-                <p className="pb-5">
-                  The Gojek story is not just about helping customers book rides and buy things. An
-                  equally important component is ensuring we better the lives of our partners in
-                  some measurable way. The average Gojek driver partner is able to generate an
-                  income in excess of Indonesia’s average minimum wage, while merchants who sign up
-                  for GoFood have reported order volumes increasing by as much as 345%
-                </p>
-                <a href="#" className="text-yellow link">
-                  Chek them out
-                  <i className="fa fa-arrow-right ml-2"></i>
-                </a>
+            <div className="row d-flex full-height">
+              <div className="col-md-6 align-self-end  pointers text-white">
+                <ul className="text-lead pl-5">
+                  <li className="pb-3">200 million+ completed orders per month 1.</li>
+                  <li className="pb-3">
+                    As of 2019, the Gojek app has been downloaded almost 170 million times.
+                  </li>
+                  <li className="pb-3">1100% growth in transactions from 2016 to 2019.</li>
+                  <li className="pb-3">
+                    In 2019, we contributed $7 billion+ to the Indonesian economy.
+                  </li>
+                </ul>
               </div>
-              <div className="col-md-8">
-                <div className="" id="insta-stories">
-                  <DynamicComponentWithNoSSR />
+              <div className="col-md-6">
+                <h4 className="heading-sm pt-5">
+                  Once a call-centre
+                  <br /> operation in Jakarta, now <br />
+                  <span className="text-green-light">a Decacorn in Southeast Asia.</span>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* End CTA section  */}
+
+      {/* Tech Facts */}
+      <section className="bg-gray pt-5 tech-facts">
+        <div className="container">
+          <h1 className="text-center py-5 heading">Tech Facts</h1>
+
+          <TechFacts />
+
+          <div className="row mt-5 pt-5 d-flex">
+            <div className="col-md-4">
+              <img src="/img/home/funding.png" alt="Funding Gojek" />
+            </div>
+            <div className="col-md-8 funding mt-5">
+              <h1 className="heading">Funding</h1>
+              <p className="my-5 description">
+                We’ve raised a fair amount of capital along the way, and recently closed our Series
+                F funding round. Gojek is fortunate to count Sequoia Capital, Google, Tencent
+                Holdings, JD.com, and Visa, among its investors.
+              </p>
+              <div className="row">
+                <div className="col-md-4 mb-5">
+                  <div className="logo">
+                    <img
+                      src="./img/home/google.png"
+                      className="img-fluid rounded-pill px-5 align-middle"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-4 mb-5">
+                  <div className="logo">
+                    <img src="./img/home/jd.png" className="img-fluid rounded-pill px-5" />
+                  </div>
+                </div>
+                <div className="col-md-4 mb-5">
+                  <div className="logo">
+                    <img src="./img/home/tencent.png" className="img-fluid rounded-pill px-5" />
+                  </div>
+                </div>
+                <div className="col-md-4 mb-5">
+                  <div className="logo">
+                    <img
+                      src="./img/home/google.png"
+                      className="img-fluid rounded-pill px-5 align-middle"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-4 mb-5">
+                  <div className="logo">
+                    <img src="./img/home/jd.png" className="img-fluid rounded-pill px-5" />
+                  </div>
+                </div>
+                <div className="col-md-4 mb-5">
+                  <div className="logo">
+                    <img src="./img/home/tencent.png" className="img-fluid rounded-pill px-5" />
+                  </div>
+                </div>
+                <div className="col-md-4 mb-5">
+                  <div className="logo">
+                    <img
+                      src="./img/home/google.png"
+                      className="img-fluid rounded-pill px-5 align-middle"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-4 mb-5">
+                  <div className="logo">
+                    <img src="./img/home/jd.png" className="img-fluid rounded-pill px-5" />
+                  </div>
+                </div>
+                <div className="col-md-4 mb-5">
+                  <div className="logo">
+                    <img src="./img/home/tencent.png" className="img-fluid rounded-pill px-5" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      </InView>
-      {/* End Open Source */}
+        </div>
+      </section>
+
+      <section className="bg-black py-5 text-white social-media">
+        <div className="container py-5">
+          <div className="w-50 py-5">
+            <h1 className="pb-4 heading">Social Media</h1>
+            <p className="description">
+              Want to know the daily challenges, unconventional work culture and inner workings of
+              Southeast Asia’s largest startup? We have stories to tell.
+            </p>
+            <p>(Editorial favourite: Life At Gojek Instagram &amp; Gojek Tech Instagram)</p>
+          </div>
+          <div className="row">
+            <div className="col-md-4 mb-5">
+              <div
+                className="card position-relative"
+                style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              >
+                <a href="/" target="_blank" className="text-white">
+                  <i className="fab fa-youtube position-absolute overlay-icon"></i>
+                </a>
+              </div>
+            </div>
+            <div className="col-md-4 mb-5">
+              <div
+                className="card position-relative"
+                style={{ backgroundImage: `url(/img/home/gojek-instagram.png)` }}
+              >
+                <a href="/" target="_blank" className="text-white">
+                  <i className="fab fa-instagram position-absolute overlay-icon"></i>
+                </a>
+              </div>
+            </div>
+            <div className="col-md-4 mb-5">
+              <div
+                className="card position-relative"
+                style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              >
+                <a href="/" target="_blank" className="text-white">
+                  <i className="fab fa-youtube position-absolute overlay-icon"></i>
+                </a>
+              </div>
+            </div>
+            <div className="col-md-4 mb-5">
+              <div
+                className="card position-relative"
+                style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              >
+                <a href="/" target="_blank" className="text-white">
+                  <i className="fab fa-youtube position-absolute overlay-icon"></i>
+                </a>
+              </div>
+            </div>
+            <div className="col-md-4 mb-5">
+              <div
+                className="card position-relative"
+                style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              >
+                <a href="/" target="_blank" className="text-white">
+                  <i className="fab fa-youtube position-absolute overlay-icon"></i>
+                </a>
+              </div>
+            </div>
+            <div className="col-md-4 mb-5">
+              <div
+                className="card position-relative"
+                style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              >
+                <a href="/" target="_blank" className="text-white">
+                  <i className="fab fa-youtube position-absolute overlay-icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-black cta py-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <div className="card bg-green p-5 text-white">
+                <div className="card-body">
+                  <p className="w-75 text-lead">
+                    We're dedicated to creating (and scaling) positive socio-economic impact for our
+                    ecosystem of users.{' '}
+                  </p>
+                  {/* <a href="#" className="text-yellow link">
+                    Join Us
+                  </a> */}
+                  <Link href="/jobs" text="Join Us" color="text-yellow" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* End CTA */}
     </div>
   );
 }
 
-export default HomePage;
+export default Home;

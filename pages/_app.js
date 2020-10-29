@@ -5,6 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '~/../../utils/styles/main.scss';
 import '../utils/styles/blog.scss';
 import '../utils/styles/style.scss';
+import '../utils/styles/custom.scss';
+import Footer from '../comps/Common/Footer';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
+
 // import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
 
@@ -34,6 +41,7 @@ function MyApp({ Component, pageProps }) {
         <title>Gojek</title>
       </Head>
       <Component {...pageProps} />
+      <Footer />
     </div>
   );
 }

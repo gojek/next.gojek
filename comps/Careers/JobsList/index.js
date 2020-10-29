@@ -64,7 +64,10 @@ class JobsList extends Component {
 
     return (
       <div>
-        <section id="banner" className="full-height py-5 d-flex align-items-end">
+        <section
+          id="banner"
+          className="full-height py-5 d-flex align-items-end align-items-xl-center"
+        >
           <div className="container">
             <Banner />
             <div className="pt-5">
@@ -84,13 +87,13 @@ class JobsList extends Component {
                   </div>
                 )}
               </div> */}
-              <div class="col pt-5 d-flex justify-content-between">
+              <div className="col pt-5 d-flex justify-content-between">
                 <p>
                   <strong>288 Opportunities</strong> found across <strong>20 Departments</strong>{' '}
                   and <strong>8 Locations</strong>{' '}
                 </p>
                 {!this.props.showAllJobs && (
-                  <a href="/jobs/all-jobs" class="text-green link">
+                  <a href="/jobs/all-jobs" className="text-green link">
                     View all jobs
                     <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
                   </a>

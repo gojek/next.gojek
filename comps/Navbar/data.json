@@ -1,14 +1,28 @@
 [
   {
+    "id": 1,
     "name": "Home",
-    "routeTo": "/"
+    "link": "/"
   },
   {
+    "id": 2,
+    "name": "About",
+    "link": "about"
+  },
+  {
+    "id": 3,
     "name": "Life@Gojek",
-    "routeTo": "/lifeatgojek"
+    "link": "/life-at-gojek"
   },
   {
+    "id": 4,
     "name": "Blogs & News",
-    "routeTo": "/blog"
+    "link": "/blog"
+  },
+  {
+    "id": 5,
+    "name": "Join Us",
+    "link": "/jobs",
+    "type": "button"
   }
 ]
