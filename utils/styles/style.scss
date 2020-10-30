@@ -140,3 +140,18 @@
 .job-tag {
   background-color: rgba(255, 255, 255, 0.75);
 }
+
+.animation-icon {
+  position: absolute;
+  top: 250px;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+
+  &--right {
+    left: 30px;
+  }
+}
