@@ -150,6 +150,12 @@ export const perks = [
     description: 'When in doubt, take a nap. Late hours? Stay over.',
     bgColor: '#f4364c',
   },
+  {
+    id: 24,
+    title: 'Sleeping room',
+    description: 'When in doubt, take a nap. Late hours? Stay over.',
+    bgColor: '#f4364c',
+  },
 ];
 
 export const posts = [
