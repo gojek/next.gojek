@@ -165,3 +165,33 @@
     cursor: pointer;
   }
 }
+
+/* MASONRY */
+.single-perk-card {
+  display: inline-block;
+  border-radius: 10px;
+  width: 20rem;
+  padding: 3rem;
+  border-radius: 2.5rem;
+  background-position: center !important;
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  align-content: flex-end;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: grey;
+  margin-bottom: 30px;
+}

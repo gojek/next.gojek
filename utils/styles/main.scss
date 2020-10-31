@@ -842,10 +842,10 @@ body {
     padding-bottom: 5rem;
   }
   .card-columns {
-    column-count: 3;
-    @media screen and (max-width: $sm-break) {
-      column-count: 1;
-    }
+    // column-count: 3;
+    // @media screen and (max-width: $sm-break) {
+    //   column-count: 1;
+    // }
     .card {
       border: none;
       min-height: 15rem;
