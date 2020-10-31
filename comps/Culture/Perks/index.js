@@ -1,12 +1,14 @@
-import { perks } from '../data';
 
-function Perks() {
+
+function Perks({perks}) {
+  
+
   return (
     <div className="card-columns text-left pt-5">
       {perks.map((perk) => {
         return (
           <div
-            className="card"
+            className="card single-perk-card"
             key={perk.id}
             style={{ height: perk.img ? `26.875rem` : '17.625rem' }}
           >
