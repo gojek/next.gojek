@@ -64,15 +64,32 @@ const CardAnimation = (props) => {
     if (top !== 4) {
       setTop((prevTop) => prevTop + 1);
     } else {
-      setTop(1);
+      setTop(1)
     }
+
+    autoRestartInterval()
   };
 
-  const [top, setTop] = useState(1);
+  const autoRemoveCard = () => {
+    const link = document.getElementById('animationButton')
+    link.click()
+  }
+
+  const autoRestartInterval = () => {
+    clearInterval(inter)
+    setInter(setInterval(autoRemoveCard, 5000))
+  }
+
+  const [top, setTop] = useState(1)
+  const [inter, setInter] = useState(null)
 
   useEffect(() => {
     moveInFromRight();
-  }, []);
+
+    setInter(setInterval(autoRemoveCard, 5000))
+
+    return () => clearInterval(inter)
+  }, [])
 
   return (
     <div className="row full-height py-5 align-items-center position-relative" style={{ top: 0 }}>
@@ -91,7 +108,9 @@ const CardAnimation = (props) => {
       >
         <div className="row align-items-center">
           <div className="col-md-1">
-            {/* <button onClick={() => handleChange('right')}>RIght Arrow</button> */}
+          
+          <i class="fas fa-chevron-left animation-icon animation-icon--left" id="animationButton" onClick={() => handleChange('left')}></i>
+            
           </div>
           <div className="col-md-10">
             {props.data.data.map((card, index) => {
@@ -106,7 +125,9 @@ const CardAnimation = (props) => {
             })}
           </div>
           <div className="col-md-1">
-            {/* <button onClick={() => handleChange('left')}>Left Arrow</button> */}
+          
+            <i class="fas fa-chevron-right animation-icon animation-icon--right" onClick={() => handleChange('right')}></i>
+          
           </div>
         </div>
       </div>

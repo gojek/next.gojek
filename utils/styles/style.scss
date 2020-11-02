@@ -140,3 +140,60 @@
 .job-tag {
   background-color: rgba(255, 255, 255, 0.75);
 }
+
+.animation-icon {
+  position: absolute;
+  top: 250px;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+
+  &--right {
+    left: 30px;
+  }
+}
+
+.view-more-button {
+  display: inline-block;
+  margin-left: 50%;
+
+  &__icon {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+
+/* MASONRY */
+.single-perk-card {
+  display: inline-block;
+  border-radius: 10px;
+  width: 20rem;
+  padding: 3rem;
+  border-radius: 2.5rem;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  align-content: flex-end;
+  align-items: flex-end;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: grey;
+  margin-bottom: 30px;
+}
