@@ -1,0 +1,338 @@
+@import './colors.scss';
+@import './variables.scss';
+@import './constants.scss';
+body {
+  overflow-x: hidden;
+}
+
+.heading {
+  font-size: $font-xl;
+  font-family: $extra-bold, sans-serif;
+}
+.heading-sm {
+  font-size: $font-l;
+  font-family: $extra-bold, sans-serif;
+  line-height: 2.625rem;
+}
+.text-lead {
+  font-size: $font-m;
+  font-family: $extended, sans-serif;
+}
+
+.link {
+  font-size: $font-m;
+  font-family: $demi, sans-serif;
+}
+
+.home {
+  background: url('/img/home/banner.png') no-repeat center right;
+}
+.banner {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  top: -56px;
+  .head {
+    font-size: 2.812rem;
+  }
+}
+.full-height-one {
+  // height: calc(100vh - 56px);
+  height: 100vh;
+}
+
+.main-nav {
+  .navbar-brand img {
+    width: 150px;
+  }
+  .button {
+    background-color: #fff;
+    color: green;
+  }
+  .nav-item {
+    &.active {
+      .nav-link {
+        font-weight: bold;
+        &.nav-links {
+          &:after {
+            content: '';
+            display: block;
+            width: 2rem;
+            border-top: 2px solid $black;
+            margin-top: 5px;
+            border-radius: 1px;
+          }
+        }
+      }
+    }
+    .nav-link {
+      color: $black;
+      font-size: $font-s;
+      font-family: $extended, 'sans-serif';
+    }
+    .button {
+      color: $green-light;
+      font-weight: bold;
+    }
+  }
+}
+
+section {
+  .head {
+    font-family: $extended, 'sans-serif';
+    font-weight: bold;
+  }
+}
+.products {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  .head {
+    font-size: 1.875rem;
+  }
+  @media screen and (min-width: 576px) {
+    .slick-prev,
+    .slick-next {
+      z-index: 100;
+
+      &::before {
+        font-size: 1.25rem;
+        color: #fff;
+      }
+    }
+    .slick-next {
+      right: 1%;
+    }
+    .slick-prev {
+      left: 1%;
+    }
+  }
+
+  .slick-slide {
+    margin-top: 3rem;
+    .card {
+      height: 23rem;
+      border-radius: 52px;
+      img {
+        max-width: 150px;
+      }
+    }
+    &.slick-active.slick-center {
+      margin-top: 0;
+      .card {
+        min-height: 30rem;
+      }
+    }
+  }
+}
+
+.bg {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+.tech-facts {
+  // .description {
+  //   max-width: 450px;
+  //   font-size: 30px;
+  //   font-family: $extended, 'sans-serif';
+  //   font-weight: bold;
+  //   line-height: 42px;
+  // }
+  .card {
+    border-radius: 52px;
+  }
+  .logo {
+    border: 1px solid #979797;
+    max-width: 200px;
+    height: 70px;
+    line-height: 65px;
+  }
+}
+.social-media {
+  .card {
+    min-height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 52px;
+    .overlay-icon {
+      font-size: 5rem;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.cta {
+  margin-top: -1px;
+  .card {
+    border-radius: 48px;
+    font-size: 20px;
+  }
+}
+
+.footer {
+  margin-top: -1px;
+  img {
+    max-width: 200px;
+  }
+  .list-inline-item {
+    font-size: 1rem;
+    display: inline-block;
+    text-align: center;
+    height: 28px;
+    width: 28px;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    position: relative;
+    a {
+      color: #707070;
+    }
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+  .contact {
+    background-color: #000;
+    border-radius: 1.5rem;
+  }
+}
+
+.open-source {
+  .outer {
+    min-height: 500px;
+  }
+  .card {
+    min-height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .text-lead {
+    color: $dark-gray;
+  }
+}
+
+.funding {
+  .description {
+    font-family: $maisonbook, sans-serif;
+    color: #303030;
+  }
+}
+
+.values-slider {
+  .slick-slide {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+}
+
+#openingsBlogs {
+  .text-lead {
+    font-family: $extended;
+  }
+}
+
+@media screen and (min-width: $xl-break) {
+  .pointers {
+    padding-top: 20rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .pointers {
+    padding-top: 30rem;
+  }
+}
+.product {
+  p {
+    font-size: 18px;
+  }
+}
+
+.life-at-gojek {
+  background: url('/img/life-at-gojek/banner.png') no-repeat center right;
+  background-size: cover;
+}
+
+.slider-shilpa {
+  .slick-active {
+    margin-right: 10px;
+    &:not(.slick-current) {
+      margin-left: 10px;
+    }
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+  .media {
+    img {
+      max-width: 100px;
+    }
+  }
+}
+
+.single-card {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  font-size: 1.875rem;
+  border-radius: 20px;
+}
+
+.social-impact {
+  h1 {
+    font-family: $extended;
+  }
+}
+
+.values {
+  img {
+    max-width: 175px;
+  }
+  .slick-slider {
+    .slick-slide:first-child {
+      margin-left: -50px !important;
+    }
+    .slick-dots {
+      justify-content: center;
+      bottom: -3rem;
+      li {
+        min-width: 1px !important;
+      }
+    }
+    .slick-next {
+      right: 50px;
+    }
+    .slick-prev {
+      left: -100px;
+    }
+    .slick-next,
+    .slick-prev {
+      box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.5);
+      background-color: #ffffff;
+      text-align: center;
+      height: 43px;
+      width: 42px;
+      border: 1px solid #e0e0e0;
+      border-radius: 50%;
+      &:before {
+        font-size: 1.25rem;
+        color: #494a4a;
+      }
+    }
+  }
+}

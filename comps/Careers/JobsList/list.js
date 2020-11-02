@@ -33,9 +33,9 @@ function List(props) {
                       <p className="mb-0">{data.categories.location}</p>
                     </div>
                     <div className="col-md-1">
-                      <p className="mb-0">
+                      <a href="jobs/1" className="mb-0">
                         <i class="fas fa-chevron-right"></i>
-                      </p>
+                      </a>
                     </div>
                   </div>
                 ))

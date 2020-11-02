@@ -360,6 +360,20 @@ body {
   width: 100%;
   z-index: -1;
 }
+@media screen and (max-width: 2000px) {
+  .yellow-bg-gradient {
+    background: #f7ce55 linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, #e18700);
+    height: 150vh;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .yellow-bg-gradient {
+    height: 90vh;
+  }
+  .full-height {
+    min-height: 60vh;
+  }
+}
 
 .filter-badge {
   font-size: $font-s;
@@ -554,13 +568,12 @@ body {
     .placeholder {
       min-height: 16rem;
       background-color: #dcdada;
-      border: none;
+      border: 1px sold #eee;
       border-radius: $border-xl;
     }
 
     .card-name {
-      font-family: $title-font;
-      font-size: 1.125rem;
+      // font-size: 1.125rem;
       line-height: 28px;
     }
   }
@@ -829,10 +842,10 @@ body {
     padding-bottom: 5rem;
   }
   .card-columns {
-    column-count: 3;
-    @media screen and (max-width: $sm-break) {
-      column-count: 1;
-    }
+    // column-count: 3;
+    // @media screen and (max-width: $sm-break) {
+    //   column-count: 1;
+    // }
     .card {
       border: none;
       min-height: 15rem;
@@ -853,7 +866,7 @@ body {
 }
 
 #openingsBlogs {
-  background: linear-gradient(to bottom, #101820 13%, #fff 13%);
+  // background: linear-gradient(to bottom, #101820 13%, #fff 13%);
   .blogHeading {
     font-size: 1.25rem;
   }
