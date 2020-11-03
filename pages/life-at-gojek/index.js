@@ -12,43 +12,38 @@ import CardAnimation from '../../comps/Culture/CardAnimation';
 import { socialImpact } from '../../comps/Culture/data';
 import Values from '../../comps/Culture/Values';
 
-import {perks} from '../../comps/Culture/data.js';
-import {useState, useEffect} from 'react'
+import { perks } from '../../comps/Culture/data.js';
+import { useState, useEffect } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 
 function LifeAtGojek(props) {
-  const [perksList, setPerksList] = useState(perks.slice(0,6)) 
-  
+  const [perksList, setPerksList] = useState(perks.slice(0, 6));
 
   const handleViewMore = () => {
-    
-    if(perksList.length === 6 ) {
-      setPerksList(perks.slice(0,12))
+    if (perksList.length === 6) {
+      setPerksList(perks.slice(0, 12));
+    } else if (perksList.length === 12) {
+      setPerksList(perks.slice(0, 18));
+    } else if (perksList.length === 18) {
+      setPerksList(perks.slice(0, 24));
     }
-    else if(perksList.length === 12 ) {
-     setPerksList(perks.slice(0,18))
-    }
-    else if(perksList.length === 18 ) {
-      setPerksList(perks.slice(0,24))
-     }
-     
-  }
+  };
 
   useEffect(() => {
-    const tl = gsap.timeline({repeat: -1, yoyo: true})
+    const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
     tl.to('.view-more-button__icon', {
       y: 10,
-      duration: 0.5
-    })
+      duration: 0.5,
+    });
 
     gsap.from('.single-perk-card', {
       x: 5,
       opacity: 0,
       duration: 1,
-      stagger: 0.7
-    })
-  }, [])
+      stagger: 0.7,
+    });
+  }, []);
 
   return (
     <div>
@@ -84,18 +79,15 @@ function LifeAtGojek(props) {
       </section>
 
       <section className="bg-black text-white py-5" id="cards">
-        <div className="container">
-          <h1 className="heading">Perks and Benefits</h1>
+        <div className="container py-5">
+          <h1 className="heading py-5 mb-5">Perks and Benefits</h1>
           <Perks perks={perksList} />
 
-        {
-          perksList.length < perks.length && (
+          {perksList.length < perks.length && (
             <div className="view-more-button">
-              <i class="fas fa-chevron-down view-more-button__icon"  onClick={handleViewMore}></i>
+              <i class="fas fa-chevron-down view-more-button__icon" onClick={handleViewMore}></i>
             </div>
-          )
-        }
-          
+          )}
         </div>
       </section>
 

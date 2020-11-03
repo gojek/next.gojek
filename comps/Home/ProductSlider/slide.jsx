@@ -5,8 +5,9 @@ function Slide(props) {
     <div className="text-white product">
       <div className={`card mx-3 p-md-5 p-3 ${data.bgClass}`}>
         <div className="card-body">
+          <div className="container">
           <h2 className="card-title heading-sm pb-md-5">{data.name}</h2>
-          <div className="row mx-0">
+          <div className="row">
             {data.products.map((product) => (
               <div className="col-md-3 pb-md-5" key={product.id}>
                 <img src={product.img} alt={product.alt} className="img-fluid pb-md-3" />
@@ -14,9 +15,10 @@ function Slide(props) {
               </div>
             ))}
           </div>
+          </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 }
 

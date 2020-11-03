@@ -8,7 +8,7 @@ function Navbar(props) {
 
   return (
     <nav className="navbar navbar-expand-lg bg-transparent pt-5 main-nav">
-      <a className="navbar-brand" href="#">
+      <a className="navbar-brand" href="/">
         <img src="/img/gojek-logo.png" alt="Gojek Super app" />
       </a>
       <button

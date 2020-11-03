@@ -61,14 +61,14 @@ function Home(props) {
 
       {/* Tech Facts */}
       <section className="bg-gray pt-5 tech-facts">
-        <div className="container">
+        <div className="container pt-5">
           <h1 className="text-center py-5 heading">Tech Facts</h1>
 
           <TechFacts />
 
           <div className="row mt-5 pt-5 d-flex">
             <div className="col-md-4">
-              <img src="/img/home/funding.png" alt="Funding Gojek" />
+              <img src="./img/home/gojek-funding.png" alt="Funding Gojek" />
             </div>
             <div className="col-md-8 funding mt-5">
               <h1 className="heading">Funding</h1>

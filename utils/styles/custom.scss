@@ -110,6 +110,14 @@ section {
 
   .slick-slide {
     margin-top: 3rem;
+    &.slick-active.slick-center.slick-current {
+      .card-body {
+        visibility: visible;
+      }
+    }
+    .card-body {
+      visibility: hidden;
+    }
     .card {
       height: 23rem;
       border-radius: 52px;
@@ -332,6 +340,11 @@ section {
       &:before {
         font-size: 1.25rem;
         color: #494a4a;
+      }
+    }
+    @media screen and (min-width: 2000px) {
+      .slick-slide {
+        max-width: 580px;
       }
     }
   }

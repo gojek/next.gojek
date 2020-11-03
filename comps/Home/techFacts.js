@@ -2,7 +2,7 @@ import { techFacts } from './data';
 
 function TechFacts() {
   return (
-    <div>
+    <div className="pt-5">
       {techFacts.map((data, i) => (
         <div
           className="card text-white px-5 pt-3 border-0 mb-4 shadow"

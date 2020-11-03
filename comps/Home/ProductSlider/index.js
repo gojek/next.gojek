@@ -12,15 +12,15 @@ function ProductSlider() {
     centerMode: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerPadding: '60px',
+    centerPadding: '100px',
     afterChange: (current) => setActiveProduct(current),
   };
 
   return (
     <div>
       <div className="container">
-        <div className="row">
-          <h1 className="heading-sm w-75 mx-5 pb-5">
+        <div className="row pb-5">
+          <h1 className="heading-sm w-75 mx-4 pb-5">
             We have 20+ products and do over 7 million orders a day across
             <span className={`${activeProduct === 0 ? 'text-green' : 'text-white'}`}>
               Transport &amp; Logistics
