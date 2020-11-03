@@ -68,7 +68,7 @@ function Home(props) {
 
           <div className="row mt-5 pt-5 d-flex">
             <div className="col-md-4">
-              <img src="./img/home/gojek-funding.png" alt="Funding Gojek" />
+              <img src="./img/home/gojek-funding.PNG" alt="Funding Gojek" />
             </div>
             <div className="col-md-8 funding mt-5">
               <h1 className="heading">Funding</h1>
