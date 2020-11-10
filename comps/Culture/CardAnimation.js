@@ -64,53 +64,55 @@ const CardAnimation = (props) => {
     if (top !== 4) {
       setTop((prevTop) => prevTop + 1);
     } else {
-      setTop(1)
+      setTop(1);
     }
 
-    autoRestartInterval()
+    autoRestartInterval();
   };
 
   const autoRemoveCard = () => {
-    const link = document.getElementById('animationButton')
-    link.click()
-  }
+    const link = document.getElementById('animationButton');
+    link.click();
+  };
 
   const autoRestartInterval = () => {
-    clearInterval(inter)
-    setInter(setInterval(autoRemoveCard, 5000))
-  }
+    clearInterval(inter);
+    setInter(setInterval(autoRemoveCard, 5000));
+  };
 
-  const [top, setTop] = useState(1)
-  const [inter, setInter] = useState(null)
+  const [top, setTop] = useState(1);
+  const [inter, setInter] = useState(null);
 
   useEffect(() => {
     moveInFromRight();
 
-    setInter(setInterval(autoRemoveCard, 5000))
+    setInter(setInterval(autoRemoveCard, 5000));
 
-    return () => clearInterval(inter)
-  }, [])
+    return () => clearInterval(inter);
+  }, []);
 
   return (
     <div className="row full-height py-5 align-items-center position-relative" style={{ top: 0 }}>
-      <div className="col-md-4 pr-md-5 pt-5">
+      <div className="col-md-4 col-lg-3 pt-5">
         <h1 className="heading pb-3">{props.data.heading}</h1>
-        <p className="text-lead pb-5 pr-5">{props.data.description}</p>
+        <p className="pb-">{props.data.description}</p>
         {props.data.cta && <Link href="#" text="Check them out" color="text-green-light" />}
       </div>
       <div
-        className="col-md-8 pt-5"
+        className="col-md-8 col-lg-9 pt-5"
         style={{
-          left: '30%',
           position: 'absolute',
+          right: 0,
           top: 0,
         }}
       >
         <div className="row align-items-center">
           <div className="col-md-1">
-          
-          <i class="fas fa-chevron-left animation-icon animation-icon--left" id="animationButton" onClick={() => handleChange('left')}></i>
-            
+            <i
+              class="fas fa-chevron-left animation-icon animation-icon--left"
+              id="animationButton"
+              onClick={() => handleChange('left')}
+            ></i>
           </div>
           <div className="col-md-10">
             {props.data.data.map((card, index) => {
@@ -125,9 +127,10 @@ const CardAnimation = (props) => {
             })}
           </div>
           <div className="col-md-1">
-          
-            <i class="fas fa-chevron-right animation-icon animation-icon--right" onClick={() => handleChange('right')}></i>
-          
+            <i
+              class="fas fa-chevron-right animation-icon animation-icon--right"
+              onClick={() => handleChange('right')}
+            ></i>
           </div>
         </div>
       </div>

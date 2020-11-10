@@ -104,10 +104,10 @@ function LifeAtGojek(props) {
 
       {/* CTA */}
       <section className="bg-black cta py-5">
-        <div className="container">
+        <div className="container pt-5">
           <div className="row">
             <div className="col-12">
-              <div className="card bg-green p-5 text-white">
+              <div className="card footer-cta p-5 text-white">
                 <div className="card-body">
                   <p className="w-75 text-lead">
                     We're dedicated to creating (and scaling) positive socio-economic impact for our
