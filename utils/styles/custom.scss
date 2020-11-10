@@ -1,22 +1,26 @@
 @import './colors.scss';
 @import './variables.scss';
 @import './constants.scss';
+
 body {
   overflow-x: hidden;
+}
+.container {
+  max-width: 1000px;
 }
 
 .heading {
   font-size: $font-xl;
-  font-family: $extra-bold, sans-serif;
+  font-family: $font-bold, sans-serif;
 }
 .heading-sm {
   font-size: $font-l;
-  font-family: $extra-bold, sans-serif;
+  font-family: $font-bold, sans-serif;
   line-height: 2.625rem;
 }
 .text-lead {
   font-size: $font-m;
-  font-family: $extended, sans-serif;
+  font-family: $extended-book, sans-serif;
 }
 
 .link {
@@ -25,14 +29,13 @@ body {
 }
 
 .home {
-  background: url('/img/home/banner.png') no-repeat center right;
+  background: url('/img/home/banner-v2.png') no-repeat center center;
 }
 .banner {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  top: -56px;
   .head {
     font-size: 2.812rem;
   }
@@ -69,7 +72,7 @@ body {
     .nav-link {
       color: $black;
       font-size: $font-s;
-      font-family: $extended, 'sans-serif';
+      font-family: $extended-book, 'sans-serif';
     }
     .button {
       color: $green-light;
@@ -80,7 +83,7 @@ body {
 
 section {
   .head {
-    font-family: $extended, 'sans-serif';
+    font-family: $extended-book, 'sans-serif';
     font-weight: bold;
   }
 }
@@ -119,7 +122,7 @@ section {
       visibility: hidden;
     }
     .card {
-      height: 23rem;
+      height: 27rem;
       border-radius: 52px;
       img {
         max-width: 150px;
@@ -128,7 +131,7 @@ section {
     &.slick-active.slick-center {
       margin-top: 0;
       .card {
-        min-height: 30rem;
+        min-height: 33rem;
       }
     }
   }
@@ -139,13 +142,13 @@ section {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100vh;
+  min-height: 50rem;
 }
 .tech-facts {
   // .description {
   //   max-width: 450px;
   //   font-size: 30px;
-  //   font-family: $extended, 'sans-serif';
+  //   font-family: $extended-book, 'sans-serif';
   //   font-weight: bold;
   //   line-height: 42px;
   // }
@@ -161,7 +164,7 @@ section {
 }
 .social-media {
   .card {
-    min-height: 250px;
+    min-height: 225px;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 52px;
@@ -211,6 +214,11 @@ section {
   .contact {
     background-color: #000;
     border-radius: 1.5rem;
+    .form-text {
+      font-size: 20px;
+      font-family: $demi;
+      color: #bce194;
+    }
   }
 }
 
@@ -250,19 +258,13 @@ section {
 
 #openingsBlogs {
   .text-lead {
-    font-family: $extended;
-  }
-}
-
-@media screen and (min-width: $xl-break) {
-  .pointers {
-    padding-top: 20rem;
+    font-family: $extended-book;
   }
 }
 
 @media screen and (min-width: 2000px) {
   .pointers {
-    padding-top: 30rem;
+    margin-top: 50rem;
   }
 }
 .product {
@@ -303,7 +305,7 @@ section {
 
 .social-impact {
   h1 {
-    font-family: $extended;
+    font-family: $extended-book;
   }
 }
 
@@ -347,5 +349,33 @@ section {
         max-width: 580px;
       }
     }
+  }
+}
+
+@media screen and (min-width: $xl-break) and (max-width: 1999px) {
+  .pointers {
+    padding-top: 25rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .banner {
+    .image-container {
+      min-height: 35rem;
+    }
+  }
+}
+
+@media screen and(max-width: 1999px) {
+  .banner {
+    .image-container {
+      min-height: 15rem;
+    }
+  }
+}
+
+.pointers {
+  li {
+    font-size: 18px;
   }
 }

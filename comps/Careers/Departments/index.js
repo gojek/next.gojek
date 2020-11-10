@@ -47,6 +47,7 @@ function Departments(props) {
                 label={department.label}
                 openings={department.count}
                 index={i}
+                key={i}
               />
             );
         })}

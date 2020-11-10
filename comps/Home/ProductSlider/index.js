@@ -18,7 +18,7 @@ function ProductSlider() {
 
   return (
     <div>
-      <div className="container">
+      <div className="container px-0">
         <div className="row pb-5">
           <h1 className="heading-sm w-75 mx-4 pb-5">
             We have 20+ products and do over 7 million orders a day across

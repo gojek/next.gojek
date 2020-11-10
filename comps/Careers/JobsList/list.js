@@ -21,8 +21,8 @@ function List(props) {
             </div>
             <div className="pb-3">
               {openPositions.length > 0 ? (
-                openPositions.map((data) => (
-                  <div className="table-row row py-3">
+                openPositions.map((data, key) => (
+                  <div className="table-row row py-3" key={key}>
                     <div className="col-md-6">
                       <p className="mb-0">{data.text}</p>
                     </div>
@@ -34,7 +34,7 @@ function List(props) {
                     </div>
                     <div className="col-md-1">
                       <a href="jobs/1" className="mb-0">
-                        <i class="fas fa-chevron-right"></i>
+                        <i className="fas fa-chevron-right"></i>
                       </a>
                     </div>
                   </div>

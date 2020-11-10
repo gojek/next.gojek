@@ -5,24 +5,21 @@ export const perks = [
     description: "We don’t ask when/whether you're coming or going.",
     bgColor: '#93328e',
     img: '../img/life-at-gojek/one.png',
+    height: '430px',
   },
   {
     id: 2,
     title: 'Fly for work & fun',
     description: 'Explore new offices, different cultures, and a thousand islands!',
     bgColor: '#ff7f32',
+    height: '282px',
   },
   {
     id: 3,
     title: 'We talk about mental health',
     description: 'Free counselling for employees & families.',
     bgColor: '#00aed6',
-  },
-  {
-    id: 4,
-    title: 'We help you stay connected',
-    description: 'Mobile and internet bill reimbursement.',
-    bgColor: '#fcaa00',
+    height: '280px',
   },
   {
     id: 5,
@@ -30,6 +27,7 @@ export const perks = [
     description: 'Health and fitness related expenditure is on us',
     bgColor: '#f4364c',
     img: '../img/life-at-gojek/two.png',
+    height: '426px',
   },
   {
     id: 6,
@@ -37,6 +35,14 @@ export const perks = [
     description: 'Let us pick up the tab for  books.',
     bgColor: '#00aa13',
     img: '../img/life-at-gojek/three.png',
+    height: '426px',
+  },
+  {
+    id: 4,
+    title: 'We help you stay connected',
+    description: 'Mobile and internet bill reimbursement.',
+    bgColor: '#fcaa00',
+    height: '280px',
   },
   {
     id: 7,
@@ -44,12 +50,14 @@ export const perks = [
     description: 'Meet friends for lunch, every other day.',
     bgColor: '#00aed6',
     img: '../img/life-at-gojek/four.png',
+    height: '430px',
   },
   {
     id: 8,
     title: 'For moms-to-be',
     description: 'A 6-month maternity leave + WFH options. No questions asked.',
     bgColor: '#df1995',
+    height: '280px',
   },
   {
     id: 9,
@@ -57,12 +65,14 @@ export const perks = [
     description: 'Industry-wide meetups, events and conferences. We pay. You learn.',
     bgColor: '#ff7f32',
     img: '../img/life-at-gojek/five.png',
+    height: '426px',
   },
   {
     id: 10,
     title: 'The Gojek Cup',
     description: 'Our annual sports event is no child’s play.',
     bgColor: '#93328e',
+    height: '280px',
   },
   {
     id: 11,
@@ -70,18 +80,21 @@ export const perks = [
     description: 'Big goals? Allow us to lend a hand.',
     bgColor: '#00aa13',
     img: '../img/life-at-gojek/six.png',
+    height: '426px',
   },
   {
     id: 12,
     title: 'Unity in diversity',
     description: 'Work with superstars from across 31 nationalities.',
     bgColor: '#f4364c',
+    height: '280px',
   },
   {
     id: 13,
     title: 'Health insurance',
     description: 'Life, surgery, dental, inpatient, outpatient and more.',
     bgColor: '#00aa13',
+    height: '280px',
   },
   {
     id: 14,
@@ -89,6 +102,7 @@ export const perks = [
     description: 'Free courses on Coursera, and in-house mentorship.',
     bgColor: '#fcaa00',
     img: '../img/life-at-gojek/three.png',
+    height: '580px',
   },
 
   {
@@ -97,12 +111,14 @@ export const perks = [
     description: 'Coz our growth is credited to you.',
     bgColor: '#00aed6',
     img: '../img/life-at-gojek/four.png',
+    height: '720px',
   },
   {
     id: 16,
     title: '200-seater amphitheatre',
     description: 'For meetups, movies and madness.',
     bgColor: '#f4364c',
+    height: '280px',
   },
   {
     id: 17,
@@ -110,6 +126,7 @@ export const perks = [
     description: 'Subsidising GoCar rides for the elderly with dementia + more.',
     bgColor: '#ff7f32',
     img: '../img/life-at-gojek/five.png',
+    height: '426px',
   },
   {
     id: 18,
@@ -117,18 +134,21 @@ export const perks = [
     description: 'Football, Badminton, Boxing Yoga, Zumba, and more.',
     bgColor: '#00aed6',
     img: '../img/life-at-gojek/six.png',
+    height: '520px',
   },
   {
     id: 19,
     title: 'Gamers’ got a life',
     description: 'We’ve got you playrooms with arcade games.',
     bgColor: '#ff7f32',
+    height: '280px',
   },
   {
     id: 20,
     title: 'Sleeping room',
     description: 'When in doubt, take a nap. Late hours? Stay over.',
     bgColor: '#f4364c',
+    height: '350px',
   },
 ];
 

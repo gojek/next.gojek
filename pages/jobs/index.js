@@ -10,6 +10,7 @@ import Teams from '../../comps/Careers/Teams';
 import { openPosisitions } from '../../comps/Careers/data.js';
 
 function Jobs(props) {
+  console.log('props', props);
   const router = useRouter();
   const [navbarLight, setNavbarLight] = useState(true);
   const [navbarBG, setNavbarBG] = useState(true);
@@ -38,6 +39,25 @@ function Jobs(props) {
       {/* End Teams */}
     </div>
   );
+}
+
+// to fetch the jobs description
+export async function getServerSideProps(ctx) {
+  const apiUrl = `https://api.lever.co/v0/postings/gojek`;
+
+  try {
+    const response = await fetch(apiUrl);
+
+    if (response.ok) {
+      const data = await response.json();
+      return { props: { data } };
+    } else {
+      return await { props: { data: [] } };
+    }
+  } catch (error) {
+    // Network error
+    return { props: { data: [] } };
+  }
 }
 
 export default Jobs;

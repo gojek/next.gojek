@@ -23,7 +23,7 @@ function Teams(props) {
       <Slider {...temsSliderSettings}>
         {teams.map((team, i) => {
           return (
-            <a className={`teams px-4 ${team.slug}`}>
+            <a className={`teams px-4 ${team.slug}`} key={i}>
               <div className="card-body text-white">
                 <h2 className="head mb-2 pt-5">{team.name}</h2>
                 <p className="openings">{team.count} Openings</p>

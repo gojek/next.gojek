@@ -10,7 +10,7 @@ function Home(props) {
       <section className="banner home">
         <div className="container">
           <Navbar />
-          <div className="row mx-0 align-items-center full-height-one">
+          <div className="row mx-0 align-items-center image-container">
             <h1 className="heading">Gojek is a SuperApp. </h1>
           </div>
         </div>
@@ -23,17 +23,17 @@ function Home(props) {
       {/* End second section */}
 
       {/* Open Source */}
-      <section className="my-5">
+      <section className="my-5 pb-5">
         <Projects />
       </section>
       {/* End open source */}
 
       {/* CTA */}
-      <section className="position-relative">
-        <img src="../img/home/bgimg.png" alt="" className="img-fluid w-100 bg" />
+      <section className="position-relative full-height pt-5">
+        <img src="../img/home/one.png" alt="" className="img-fluid w-100 bg" />
         <div className="position-absolute w-100" style={{ top: '0' }}>
           <div className="container">
-            <div className="row d-flex full-height">
+            <div className="row d-flex ">
               <div className="col-md-6 align-self-end  pointers text-white">
                 <ul className="text-lead pl-5">
                   <li className="pb-3">200 million+ completed orders per month 1.</li>
@@ -67,10 +67,10 @@ function Home(props) {
           <TechFacts />
 
           <div className="row mt-5 pt-5 d-flex">
-            <div className="col-md-4">
+            <div className="col-md-4 mt-5 pt-5">
               <img src="./img/home/gojek-funding.PNG" alt="Funding Gojek" />
             </div>
-            <div className="col-md-8 funding mt-5">
+            <div className="col-md-8 funding mt-5 pt-5">
               <h1 className="heading">Funding</h1>
               <p className="my-5 description">
                 We’ve raised a fair amount of capital along the way, and recently closed our Series

@@ -22,10 +22,8 @@ function LifeAtGojek(props) {
   const handleViewMore = () => {
     if (perksList.length === 6) {
       setPerksList(perks.slice(0, 12));
-    } else if (perksList.length === 12) {
-      setPerksList(perks.slice(0, 18));
-    } else if (perksList.length === 18) {
-      setPerksList(perks.slice(0, 24));
+    } else {
+      setPerksList(perks.slice(0, 20));
     }
   };
 
@@ -38,7 +36,7 @@ function LifeAtGojek(props) {
     });
 
     gsap.from('.single-perk-card', {
-      x: 5,
+      x: 10,
       opacity: 0,
       duration: 1,
       stagger: 0.7,

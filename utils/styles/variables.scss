@@ -19,8 +19,14 @@
   src: url(/fonts/MaisonNeueExtended-Bold.otf) format('opentype');
 }
 
-$extra-bold: 'Maison Nueue Bold';
-$extended: 'Maison Nueue Extended Book';
+@font-face {
+  font-family: 'Maison Nueue Extra Bold';
+  src: url(/fonts/MaisonNeueExtended-ExtraBold.otf) format('opentype');
+}
+
+$font-bold: 'Maison Nueue Bold';
+$font-extra-bold: 'Maison Nueue Extra Bold';
+$extended-book: 'Maison Nueue Extended Book';
 $demi: 'Maison Nueue Demi';
 $maisonbook: 'Maison Nueue Book';
 

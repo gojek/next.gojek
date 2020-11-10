@@ -7,7 +7,7 @@ function Navbar(props) {
   const router = useRouter();
 
   return (
-    <nav className="navbar navbar-expand-lg bg-transparent pt-5 main-nav">
+    <nav className="navbar navbar-expand-lg bg-transparent pt-5 mb-5 main-nav">
       <a className="navbar-brand" href="/">
         <img src="/img/gojek-logo.png" alt="Gojek Super app" />
       </a>

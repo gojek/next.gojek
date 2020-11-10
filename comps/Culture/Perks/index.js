@@ -8,18 +8,19 @@ function Perks({ perks }) {
   };
 
   return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className="my-masonry-grid"
-      columnClassName="my-masonry-grid_column"
-    >
+    // <Masonry
+    //   breakpointCols={breakpointColumnsObj}
+    //   className="my-masonry-grid"
+    //   columnClassName="my-masonry-grid_column"
+    // >
+    <div class="card-columns">
       {perks.map((perk) => {
         return (
           <div
-            className="single-perk-card m-3"
+            className="single-perk-card m-3 card"
             key={perk.id}
             style={{
-              height: perk.img ? `26.875rem` : '17.625rem',
+              height: perk.height,
               backgroundImage: perk.img ? `url(${perk.img})` : '',
               backgroundColor: perk.bgColor,
             }}
@@ -29,7 +30,7 @@ function Perks({ perks }) {
           </div>
         );
       })}
-    </Masonry>
+    </div>
   );
 }
 export default Perks;

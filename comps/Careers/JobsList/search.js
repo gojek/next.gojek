@@ -37,7 +37,6 @@ class MySelect extends Component {
               type="text"
               onChange={(e) => onChange(e.target.value, e.target.name)}
               className="form-control rounded-pill"
-              id="keyword"
               placeholder="Keyword Search_"
               name="keyword"
             />
