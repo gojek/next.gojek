@@ -29,7 +29,8 @@ function Home(props) {
       {/* End open source */}
 
       {/* CTA */}
-      <section className="position-relative full-height pt-5">
+
+      <section className="position-relative pt-5">
         <img src="../img/home/one.png" alt="" className="img-fluid w-100 bg" />
         <div className="position-absolute w-100" style={{ top: '0' }}>
           <div className="container">
@@ -215,22 +216,16 @@ function Home(props) {
 
       {/* CTA */}
       <section className="bg-black cta py-5">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="card bg-green p-5 text-white">
-                <div className="card-body">
-                  <p className="w-75 text-lead">
-                    We're dedicated to creating (and scaling) positive socio-economic impact for our
-                    ecosystem of users.{' '}
-                  </p>
-                  {/* <a href="#" className="text-yellow link">
-                    Join Us
-                  </a> */}
-                  <Link href="/jobs" text="Join Us" color="text-yellow" />
-                </div>
-              </div>
+        <div className="container pt-5">
+          <div className="footer-cta text-white row">
+            <div className="py-5 pl-5 pr-0 col-md-7">
+              <p className="text-lead">
+                We're dedicated to creating (and scaling) positive socio-economic impact for our
+                ecosystem of users.{' '}
+              </p>
+              <Link href="/jobs" text="Join Us" color="text-yellow" />
             </div>
+            <div className="col-md-5 footer-img"></div>
           </div>
         </div>
       </section>

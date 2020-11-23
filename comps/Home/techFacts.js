@@ -15,7 +15,7 @@ function TechFacts() {
                 <h3 className="description heading-sm">{data.content}</h3>
               </div>
               <div className={`col-md-6`}>
-                <img src={data.image} alt={data.content} />
+                <img src={data.image} alt={data.content} className="img-fluid" />
               </div>
             </div>
           </div>
