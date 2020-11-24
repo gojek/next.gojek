@@ -183,7 +183,7 @@ section {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 50rem;
+  max-height: 50rem;
 }
 .tech-facts {
   // .description {
@@ -228,9 +228,6 @@ section {
 
 .footer {
   margin-top: -1px;
-  img {
-    max-width: 200px;
-  }
   .list-inline-item {
     font-size: 1rem;
     display: inline-block;
@@ -303,11 +300,11 @@ section {
   }
 }
 
-@media screen and (min-width: 2000px) {
-  .pointers {
-    margin-top: 50rem;
-  }
-}
+// @media screen and (min-width: 2000px) {
+//   .pointers {
+//     margin-top: 0rem;
+//   }
+// }
 .product {
   p {
     font-size: 18px;
@@ -355,15 +352,35 @@ section {
   img {
     max-width: 175px;
   }
+
   .slick-slider {
-    .slick-slide:first-child {
-      margin-left: -50px !important;
+    .slick-slide.slick-active {
+      max-width: 540px;
     }
     .slick-dots {
       justify-content: center;
-      bottom: -3rem;
+      bottom: -6rem;
+      margin-left: -8rem;
       li {
-        min-width: 1px !important;
+        min-width: 2rem !important;
+        button {
+          min-width: 1px !important;
+          width: 2rem;
+          margin: 0 1rem;
+          border-radius: 5px;
+          height: 4px;
+          padding: 3px;
+          background-color: #d2d2d2;
+        }
+        ::before {
+          content: '';
+          padding: 0;
+        }
+        &.slick-active {
+          button {
+            background-color: #101820;
+          }
+        }
       }
     }
     .slick-next {
@@ -392,9 +409,39 @@ section {
       }
     }
   }
+  // .swiper-slide {
+  //   width: 510px !important;
+  //   margin-left: -50px;
+  //   &.swiper-slide-prev {
+  //     width: auto !important;
+  //     margin-left: 0;
+  //     margin-right: 0 !important;
+  //   }
+  //   &.swiper-slide-active {
+  //     margin-left: 0;
+  //   }
+  //   &.swiper-slide-next {
+  //     margin-left: 0;
+  //   }
+  // }
 }
 
-@media screen and (min-width: $xl-break) and (max-width: 1999px) {
+@media screen and(min-width: $md-break) {
+  .bg {
+    max-height: auto;
+  }
+  .pointers {
+    padding-top: 10rem;
+  }
+}
+
+@media screen and (min-width: $lg-break) {
+  .pointers {
+    padding-top: 20rem;
+  }
+}
+
+@media screen and (min-width: $xl-break) {
   .pointers {
     padding-top: 30rem;
   }
@@ -419,5 +466,24 @@ section {
 .pointers {
   li {
     font-size: 18px;
+  }
+}
+.perks {
+  .card-columns {
+    grid-column-gap: 2rem;
+    column-gap: 2rem;
+    .card {
+      margin-bottom: 2.5rem;
+      padding: 2rem;
+    }
+  }
+}
+.footer-cta {
+  border-radius: 3rem;
+  .footer-img {
+    background-repeat: no-repeat;
+    background-image: url('/img/gojek-cta.svg');
+    background-position: bottom right;
+    border-radius: 3rem;
   }
 }

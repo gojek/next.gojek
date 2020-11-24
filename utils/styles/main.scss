@@ -566,7 +566,7 @@ body {
     border: none;
 
     .placeholder {
-      min-height: 16rem;
+      min-height: 13rem;
       background-color: #dcdada;
       border: 1px sold #eee;
       border-radius: $border-xl;
@@ -834,35 +834,34 @@ body {
   }
 }
 
-#cards,
-#feedback {
-  .cards {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-  .card-columns {
-    // column-count: 3;
-    // @media screen and (max-width: $sm-break) {
-    //   column-count: 1;
-    // }
-    .card {
-      border: none;
-      min-height: 15rem;
-      margin-bottom: 2.5rem;
-      position: relative;
-      background-color: transparent;
+// #feedback {
+//   .cards {
+//     padding-top: 5rem;
+//     padding-bottom: 5rem;
+//   }
+//   .card-columns {
+//     // column-count: 3;
+//     // @media screen and (max-width: $sm-break) {
+//     //   column-count: 1;
+//     // }
+//     .card {
+//       border: none;
+//       min-height: 15rem;
+//       margin-bottom: 2.5rem;
+//       position: relative;
+//       background-color: transparent;
 
-      .card-content {
-        border-radius: 2.5rem;
-        height: 100%;
-      }
+//       .card-content {
+//         border-radius: 2.5rem;
+//         height: 100%;
+//       }
 
-      .feedback {
-        background-color: #000;
-      }
-    }
-  }
-}
+//       .feedback {
+//         background-color: #000;
+//       }
+//     }
+//   }
+// }
 
 #openingsBlogs {
   // background: linear-gradient(to bottom, #101820 13%, #fff 13%);

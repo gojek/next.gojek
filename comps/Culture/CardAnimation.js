@@ -109,7 +109,7 @@ const CardAnimation = (props) => {
         <div className="row align-items-center">
           <div className="col-md-1">
             <i
-              class="fas fa-chevron-left animation-icon animation-icon--left"
+              className="fas fa-chevron-left animation-icon animation-icon--left"
               id="animationButton"
               onClick={() => handleChange('left')}
             ></i>
@@ -128,7 +128,7 @@ const CardAnimation = (props) => {
           </div>
           <div className="col-md-1">
             <i
-              class="fas fa-chevron-right animation-icon animation-icon--right"
+              className="fas fa-chevron-right animation-icon animation-icon--right"
               onClick={() => handleChange('right')}
             ></i>
           </div>
