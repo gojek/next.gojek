@@ -103,8 +103,8 @@
 }
 .table-row {
   // transition: 0s color;
-  p,
-  a {
+  i,
+  p {
     color: #696969;
   }
   &:nth-child(even) {
@@ -115,8 +115,12 @@
   }
   &:hover {
     cursor: pointer;
-    p {
+    color: #696969;
+    p,
+    i {
       color: #242424;
+    }
+    p {
       font-family: $header-font;
     }
   }

@@ -778,17 +778,16 @@ body {
   }
   .description {
     margin-top: 7rem;
-    margin-bottom: 7rem;
 
     .title {
       font-family: $header-font;
     }
     .apply {
       @media screen and (min-width: $xl-break) {
-        padding-left: 10rem;
+        padding-left: 8rem;
       }
       .applyText {
-        margin-top: 5rem;
+        margin-top: 9rem;
       }
       .card {
         min-height: 10rem;
@@ -980,4 +979,12 @@ a:hover {
 
 .footer-cta {
   background-color: #00aa13;
+}
+
+.linkedIn {
+  background-color: #924e8c;
+  border-radius: 48px;
+  p {
+    font-size: 11px;
+  }
 }

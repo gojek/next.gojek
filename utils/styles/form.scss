@@ -1,0 +1,31 @@
+@import './constants.scss';
+
+.applySection {
+  padding-bottom: 5rem;
+  .title {
+    font-size: $font-s;
+  }
+
+  .helpText {
+    color: #979797;
+  }
+
+  .form-control {
+    border: $form-border;
+    border-radius: $form-border-radius;
+  }
+
+  .invalid-feedback {
+    display: block;
+  }
+
+  .btn {
+    border-radius: $form-border-radius;
+  }
+
+  .file {
+    .fileTitle {
+      font-size: $font-s;
+    }
+  }
+}

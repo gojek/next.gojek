@@ -61,6 +61,7 @@ class JobsList extends Component {
     const heading = this.props.jobsHeading || 'Recent Open Positions';
     const selctedFilters = this.filteredCollected();
     const filters = _.union(selctedFilters.department, selctedFilters.location);
+    console.log('filters', selctedFilters);
 
     return (
       <div>
@@ -77,23 +78,35 @@ class JobsList extends Component {
                 onChange={this.handleSearchChange}
                 onChangeCallback={this.handleSearchChange}
               />
-              {/* <div className="mt-4">
+              <div className="mt-4">
                 {filters.length > 0 && (
                   <div>
-                    <span>Filters:</span>
+                    <span className="mr-3">Filters:</span>
                     {filters.map((name) => {
-                      return <span className="job-tag p-3 mr-3">{name}</span>;
+                      return <span className="job-tag rounded p-3 mr-3">{name}</span>;
                     })}
                   </div>
                 )}
-              </div> */}
+              </div>
               <div className="col pt-5 d-flex justify-content-between">
                 <p>
-                  <strong>288 Opportunities</strong> found across <strong>20 Departments</strong>{' '}
-                  and <strong>8 Locations</strong>{' '}
+                  <strong>{this.searchJobs().length} Opportunities</strong> found across{' '}
+                  <strong>
+                    {selctedFilters.department.length > 0
+                      ? selctedFilters.department.length
+                      : 'all'}{' '}
+                    Departments
+                  </strong>{' '}
+                  and{' '}
+                  <strong>
+                    {selctedFilters.location.length > 0 ? selctedFilters.location.length : 'all'}{' '}
+                    Locations
+                  </strong>{' '}
                 </p>
-                {!this.props.showAllJobs && (
-                  <a href="/jobs/all-jobs" className="text-green link">
+                {this.props.showAllJobs ? (
+                  ''
+                ) : (
+                  <a href="/jobs/all" className="text-green link">
                     View all jobs
                     <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
                   </a>
@@ -103,15 +116,7 @@ class JobsList extends Component {
           </div>
         </section>
 
-        <List
-          openPositions={
-            showAllJobs || this.searchJobs().length <= 10
-              ? this.searchJobs()
-              : this.searchJobs().slice(0, 10)
-          }
-          showAllJobs={showAllJobs}
-          heading={heading}
-        />
+        <List openPositions={this.searchJobs()} showAllJobs={showAllJobs} heading={heading} />
       </div>
     );
   }

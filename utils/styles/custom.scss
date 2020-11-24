@@ -49,10 +49,55 @@ body {
   .navbar-brand img {
     width: 150px;
   }
-  .button {
-    background-color: #fff;
-    color: green;
+
+  .navbar-nav {
+    align-items: center;
   }
+  .blackNav {
+    .button {
+      background-color: $green-light;
+      color: $white;
+    }
+    .nav-item {
+      &.active {
+        .nav-link {
+          &.nav-links {
+            &:after {
+              border-top: 2px solid $black;
+            }
+          }
+        }
+      }
+      .nav-link {
+        color: $black;
+      }
+    }
+  }
+  .whiteNav {
+    .button {
+      background-color: $white;
+      color: $green-light;
+    }
+    .nav-item {
+      &.active {
+        .nav-link {
+          &.nav-links {
+            &:after {
+              border-top: 2px solid $white;
+            }
+          }
+        }
+      }
+      .nav-link {
+        color: $white;
+      }
+    }
+  }
+  .button {
+    font-weight: bold;
+    align-self: center;
+  }
+
   .nav-item {
     &.active {
       .nav-link {
@@ -73,10 +118,6 @@ body {
       color: $black;
       font-size: $font-s;
       font-family: $extended-book, 'sans-serif';
-    }
-    .button {
-      color: $green-light;
-      font-weight: bold;
     }
   }
 }

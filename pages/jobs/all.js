@@ -1,47 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Router, { useRouter } from 'next/router';
 
 import Navbar from '~/../../comps/Navbar';
 import JobsList from '../../comps/Careers/JobsList/index';
-import Departments from '../../comps/Careers/Departments';
-import Teams from '../../comps/Careers/Teams';
 
-function Jobs(props) {
-  console.log('props', props);
+function AllJobs(props) {
   const router = useRouter();
+  const params = router.query;
   const [navbarLight, setNavbarLight] = useState(true);
   const [navbarBG, setNavbarBG] = useState(true);
 
   const openPosisitions = props.data;
+
+  useEffect(() => {
+    console.log('suto applied filters', params);
+  }, []);
 
   return (
     <div className="text-center text-md-left">
       <Head>
         <title>Gojek | Careers</title>
       </Head>
-      <Navbar whiteNav />
+      <Navbar light={navbarLight} bg={navbarBG} careers />
 
       <div className="yellow-bg-gradient"></div>
       {/* banner and jobs section */}
-      <JobsList data={openPosisitions} showAllJobs={false} />
-
-      {/* Departments */}
-      <section className="bg-black full-height py-5" id="departments">
-        <Departments data={openPosisitions} />
-      </section>
-      {/* End Departments */}
-
-      {/* Teams */}
-      <section id="teams" className="full-height align-items-center py-5">
-        <Teams data={openPosisitions} />
-      </section>
-      {/* End Teams */}
+      <JobsList data={openPosisitions} showAllJobs jobsHeading="All Open Positions" />
     </div>
   );
 }
 
-// to fetch the jobs description
 export async function getServerSideProps(ctx) {
   const apiUrl = `https://api.lever.co/v0/postings/gojek`;
 
@@ -60,4 +49,4 @@ export async function getServerSideProps(ctx) {
   }
 }
 
-export default Jobs;
+export default AllJobs;
