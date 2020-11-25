@@ -20,13 +20,15 @@ function BlogNew(props) {
 
   return (
     <section className="mt-5 posts" id={link}>
-      <h1 className={`my-5 ${styles.heading}`}>{props.pageName ? 'Latest' : heading}</h1>
+      <div className="row justify-content-between align-items-center my-5">
+        <h1 className={styles.heading}>{props.pageName ? 'Latest' : heading}</h1>
+        <p className="text-center">
+          <a href={mediumLink} target="_blank" className={`text-green-light ${styles.readMore}`}>
+            See More <i className="fas fa-long-arrow-alt-right"></i>
+          </a>
+        </p>
+      </div>
       <div className="row">{items}</div>
-      <p className="text-center mb-5">
-        <a href={mediumLink} target="_blank" className={`text-green-light ${styles.readMore}`}>
-          See More <i className="fas fa-long-arrow-alt-right"></i>
-        </a>
-      </p>
     </section>
   );
 }

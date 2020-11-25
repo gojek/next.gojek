@@ -25,7 +25,7 @@ function Footer(props) {
                       {data.socialLinks && (
                         <ul className="list-inline pt-3">
                           {data.socialLinks.map((socialMedia, key) => (
-                            <li className="list-inline-item bg-white" key={key}>
+                            <li className="list-inline-item" key={key}>
                               <a href={socialMedia.link} target="_blank" title={socialMedia.name}>
                                 <i className={` ${socialMedia.icon}`}></i>
                               </a>

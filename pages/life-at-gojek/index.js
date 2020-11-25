@@ -39,12 +39,12 @@ function LifeAtGojek(props) {
 
   return (
     <div>
-      <Navbar />
+      <Navbar whiteNav />
       <section className="banner life-at-gojek">
         <div className="container">
           <div className="row mx-0 align-items-center full-height-one text-white">
             <div className="col-md-6">
-              <h1 className="heading pb-3">Culture </h1>
+              <h1 className="heading pb-3 bannerHeading">Culture </h1>
               <p className="pb-3">
                 The biggest defining perk of Gojek is its culture. We have a cross-pollination of
                 ideas from Singapore, Indonesia, Thailand, Vietnam, and India. Different cultures,

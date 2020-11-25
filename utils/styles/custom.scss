@@ -51,7 +51,7 @@ body {
   }
 
   .navbar-nav {
-    align-items: center;
+    align-items: baseline;
   }
   .blackNav {
     .button {
@@ -234,13 +234,12 @@ section {
     text-align: center;
     height: 28px;
     width: 28px;
-    border: 1px solid #e0e0e0;
-    border-radius: 50%;
     position: relative;
     a {
-      color: #707070;
+      color: #ffffff;
     }
     i {
+      color: #ffffff;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -314,6 +313,11 @@ section {
 .life-at-gojek {
   background: url('/img/life-at-gojek/banner.png') no-repeat center right;
   background-size: cover;
+  background-position: center;
+
+  .bannerHeading {
+    font-size: 2.82rem;
+  }
 }
 
 .slider-shilpa {
@@ -351,6 +355,7 @@ section {
 .values {
   img {
     max-width: 175px;
+    margin-right: 2rem;
   }
 
   .slick-slider {
