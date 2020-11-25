@@ -56,42 +56,48 @@ function Navbar(props) {
 
   return (
     <nav className="navbar fixed-top navbar-expand-lg bg-transparent pt-5 mb-5 main-nav">
-      <a className="navbar-brand" href="/">
-        {logo()}
-      </a>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul
-          className={`navbar-nav ml-auto ${
-            props.whiteNav ? (scrolled ? 'blackNav' : 'whiteNav') : 'blackNav'
-          }`}
+      <div className="container">
+        <a className="navbar-brand" href="/">
+          {logo()}
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          {data.map((item) => (
-            <li
-              className={`nav-item px-3 ${item.link === router.pathname ? 'active' : ''}`}
-              key={item.id}
-            >
-              {item.type && item.type === 'button' ? (
-                joinUsButton(item)
-              ) : (
-                <a className="nav-link nav-links" href={item.link}>
-                  {item.name}{' '}
-                  {item.link === router.pathname ? <span className="sr-only">(current)</span> : ''}
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul
+            className={`navbar-nav ml-auto ${
+              props.whiteNav ? (scrolled ? 'blackNav' : 'whiteNav') : 'blackNav'
+            }`}
+          >
+            {data.map((item) => (
+              <li
+                className={`nav-item px-3 ${item.link === router.pathname ? 'active' : ''}`}
+                key={item.id}
+              >
+                {item.type && item.type === 'button' ? (
+                  joinUsButton(item)
+                ) : (
+                  <a className="nav-link nav-links" href={item.link}>
+                    {item.name}{' '}
+                    {item.link === router.pathname ? (
+                      <span className="sr-only">(current)</span>
+                    ) : (
+                      ''
+                    )}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );

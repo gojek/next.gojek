@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Router from 'next/router';
 import Navbar from '~/../../comps/Navbar';
 import JobsTable from '~/../../comps/Careers/jobsTable';
-import Router from 'next/router';
+import Cta from '~/../../comps/Common/Cta';
 
 function CareersPage(props) {
   console.log('props', props);
@@ -10,184 +11,6 @@ function CareersPage(props) {
 
   useEffect(() => {
     console.log('careers props', props);
-
-    const CareeersData = [
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Engineering', location: 'Gurugram' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Design', location: 'Bangalore' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Engineering', location: 'Bangalore' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Product', location: 'Jakarta' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Engineering', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'full stack developer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'Quality Engineer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'Quality Engineer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'Quality Engineer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'Quality Engineer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'Quality Engineer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'Quality Engineer',
-        categories: { department: 'Programm Management', location: 'Singapore' },
-      },
-      {
-        id: 1,
-        text: 'Quality Engineer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'Quality Engineer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'Quality Engineer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'Quality Engineer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-      {
-        id: 1,
-        text: 'Quality Engineer',
-        categories: { department: 'Science', location: 'Bangkok' },
-      },
-    ];
     const CareersData = props.data;
     let jobs = [];
 
@@ -215,7 +38,7 @@ function CareersPage(props) {
       <Head>
         <title>Gojek | Teams</title>
       </Head>
-      <Navbar light bg="#000" />
+      <Navbar whiteNav />
       {/* banner */}
       {/* <div className="blackBackground"></div> */}
       <section id="banner" className="teams-banner py-5 d-flex blackBackground">
@@ -366,18 +189,7 @@ function CareersPage(props) {
       </section>
 
       {/* works with us section */}
-      <section id="team-workWithUs" className="container my-5 px-5 pt-4">
-        <div className="row" style={{ backgroundColor: '#904790', borderRadius: '48px' }}>
-          <div className="col-12 col-md-5"></div>
-          <div className="col-12 col-md-5 py-5">
-            <h2 className="heading text-white">Wondering what it's like to work with us?</h2>
-            <a className="link text-green-light" href="#">
-              Find out
-              <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
-            </a>
-          </div>
-        </div>
-      </section>
+      <Cta />
     </div>
   );
 }

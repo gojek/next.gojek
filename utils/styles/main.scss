@@ -987,3 +987,18 @@ a:hover {
     font-size: 11px;
   }
 }
+
+.cta {
+  background-color: #904790;
+  border-radius: 48px;
+  .heading {
+    font-size: 1.875rem;
+  }
+  a {
+    color: #a1d884;
+    &:hover {
+      color: #a1d884;
+      text-decoration: underline;
+    }
+  }
+}

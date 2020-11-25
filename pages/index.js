@@ -7,9 +7,9 @@ import Link from '../comps/Common/link';
 function Home(props) {
   return (
     <div>
+      <Navbar />
       <section className="banner home">
         <div className="container">
-          <Navbar />
           <div className="row mx-0 align-items-center image-container">
             <h1 className="heading">Gojek is a SuperApp. </h1>
           </div>

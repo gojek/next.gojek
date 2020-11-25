@@ -71,9 +71,9 @@ function DescriptionPage(props) {
         </div>
       </section> */}
 
+      <Navbar whiteNav />
       <section className="banner pb-5" style={{ backgroundColor: '#924e8c' }}>
         <div className="container">
-          <Navbar whiteNav />
           <div className="row mx-0 align-items-center full-height-one">
             <div>
               <h1 className="heading text-white pb-3">{data.text}</h1>

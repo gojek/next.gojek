@@ -39,9 +39,9 @@ function LifeAtGojek(props) {
 
   return (
     <div>
+      <Navbar />
       <section className="banner life-at-gojek">
         <div className="container">
-          <Navbar />
           <div className="row mx-0 align-items-center full-height-one text-white">
             <div className="col-md-6">
               <h1 className="heading pb-3">Culture </h1>
