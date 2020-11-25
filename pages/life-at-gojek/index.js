@@ -9,6 +9,7 @@ import { socialImpact } from '../../comps/Culture/data';
 import Values from '../../comps/Culture/Values/index';
 
 import { perks } from '../../comps/Culture/data.js';
+import CommonCta from '~/../../comps/Common/Cta';
 import { useState, useEffect } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 
@@ -97,20 +98,7 @@ function LifeAtGojek(props) {
       </section>
 
       {/* CTA */}
-      <section className="bg-black cta py-5">
-        <div className="container pt-5">
-          <div className="footer-cta text-white row">
-            <div className="py-5 pl-5 pr-0 col-md-7">
-              <p className="text-lead">
-                We're dedicated to creating (and scaling) positive socio-economic impact for our
-                ecosystem of users.{' '}
-              </p>
-              <Link href="/jobs" text="Join Us" color="text-yellow" />
-            </div>
-            <div className="col-md-5 footer-img"></div>
-          </div>
-        </div>
-      </section>
+      <CommonCta />
       {/* End CTA */}
     </div>
   );

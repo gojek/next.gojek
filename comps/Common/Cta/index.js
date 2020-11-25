@@ -1,20 +1,24 @@
-function Cta(props) {
+function CommonCta(props) {
   console.log('props', props);
 
   return (
-    <section id="team-workWithUs" className="container my-5 px-5 pt-4">
-      <div className="row cta">
-        <div className="col-12 col-md-5"></div>
-        <div className="col-12 col-md-6 py-5">
-          <h2 className="heading text-white">Wondering what it's like to work with us?</h2>
-          <a className="link" href="#">
-            Find out
-            <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
-          </a>
+    <section className="px-5 pt-4 commonFooter">
+      <div className="container">
+        <div className="cta p-5">
+          <div className="col-12 col-md-7 py-3">
+            <p className="text-white">
+              We’re dedicated to creating (and scaling) positive socio-economic impact for our
+              ecosystem of users.{' '}
+            </p>
+            <a className="link" href="#">
+              Join Us
+              <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
+            </a>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-export default Cta;
+export default CommonCta;

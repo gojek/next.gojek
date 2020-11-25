@@ -988,17 +988,44 @@ a:hover {
   }
 }
 
-.cta {
-  background-color: #904790;
-  border-radius: 48px;
-  .heading {
-    font-size: 1.875rem;
-  }
-  a {
-    color: #a1d884;
-    &:hover {
+#team-workWithUs {
+  .cta {
+    background-color: #904790;
+    border-radius: 48px;
+    .heading {
+      font-size: 1.875rem;
+    }
+    a {
       color: #a1d884;
-      text-decoration: underline;
+      &:hover {
+        color: #a1d884;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.commonFooter {
+  background-color: #101820;
+
+  .cta {
+    background-color: #00aa13;
+    border-radius: 48px;
+    margin-top: 8rem;
+    background-repeat: no-repeat;
+    background-image: url('/img/gojek-cta.svg');
+    background-position: bottom right;
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    a {
+      color: #fff200;
+      &:hover {
+        color: #fff200;
+        text-decoration: underline;
+      }
     }
   }
 }

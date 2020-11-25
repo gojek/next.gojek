@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Router from 'next/router';
 import Navbar from '~/../../comps/Navbar';
 import JobsTable from '~/../../comps/Careers/jobsTable';
-import Cta from '~/../../comps/Common/Cta';
+import CommonCta from '~/../../comps/Common/Cta';
 
 function CareersPage(props) {
   console.log('props', props);
@@ -189,7 +189,20 @@ function CareersPage(props) {
       </section>
 
       {/* works with us section */}
-      <Cta />
+      <section id="team-workWithUs" className="container my-5 px-5 pt-4">
+        <div className="row cta">
+          <div className="col-12 col-md-5"></div>
+          <div className="col-12 col-md-6 py-5">
+            <h2 className="heading text-white">Wondering what it's like to work with us?</h2>
+            <a className="link" href="#">
+              Find out
+              <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <CommonCta />
     </div>
   );
 }
