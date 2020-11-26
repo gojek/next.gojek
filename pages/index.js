@@ -10,8 +10,8 @@ function Home(props) {
       <Navbar />
       <section className="banner home">
         <div className="container">
-          <div className="row mx-0 align-items-center image-container">
-            <h1 className="heading">Gojek is a SuperApp. </h1>
+          <div className="row mx-0 align-items-center image-container" style={{ height: '70vh' }}>
+            <h1 className="heading pt-5">Gojek is a SuperApp. </h1>
           </div>
         </div>
       </section>
@@ -28,14 +28,14 @@ function Home(props) {
       </section>
       {/* End open source */}
 
-      {/* CTA */}
-
-      <section className="position-relative pt-5">
-        <img src="../img/home/one.png" alt="" className="img-fluid w-100 bg" />
-        <div className="position-absolute w-100" style={{ top: '0' }}>
+      <section className="pt-5">
+        <div className="w-100 gojek-bg">
           <div className="container">
-            <div className="row d-flex ">
-              <div className="col-md-6 align-self-end  pointers text-white">
+            <div
+              className="row d-flex align-items-center justify-content-center"
+              style={{ minHeight: '800px' }}
+            >
+              <div className="col-md-6 align-self-end pointers text-white">
                 <ul className="text-lead pl-5">
                   <li className="pb-3">200 million+ completed orders per month 1.</li>
                   <li className="pb-3">
@@ -47,7 +47,7 @@ function Home(props) {
                   </li>
                 </ul>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6 align-self-start pt-5">
                 <h4 className="heading-sm pt-5">
                   Once a call-centre
                   <br /> operation in Jakarta, now <br />
@@ -58,7 +58,6 @@ function Home(props) {
           </div>
         </div>
       </section>
-      {/* End CTA section  */}
 
       {/* Tech Facts */}
       <section className="bg-gray pt-5 tech-facts">

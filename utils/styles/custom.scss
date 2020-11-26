@@ -29,7 +29,7 @@ body {
 }
 
 .home {
-  background: url('/img/home/banner-v2.png') no-repeat center center;
+  background: url('/img/home/banner.png') no-repeat center center;
 }
 .banner {
   -webkit-background-size: cover;
@@ -129,7 +129,7 @@ section {
   }
 }
 .products {
-  padding-top: 10rem;
+  padding-top: 5rem;
   padding-bottom: 10rem;
   .head {
     font-size: 1.875rem;
@@ -431,26 +431,26 @@ section {
   // }
 }
 
-@media screen and(min-width: $md-break) {
-  .bg {
-    max-height: auto;
-  }
-  .pointers {
-    padding-top: 10rem;
-  }
-}
+// @media screen and(min-width: $md-break) {
+//   .bg {
+//     max-height: auto;
+//   }
+//   .pointers {
+//     padding-top: 10rem;
+//   }
+// }
 
-@media screen and (min-width: $lg-break) {
-  .pointers {
-    padding-top: 20rem;
-  }
-}
+// @media screen and (min-width: $lg-break) {
+//   .pointers {
+//     padding-top: 20rem;
+//   }
+// }
 
-@media screen and (min-width: $xl-break) {
-  .pointers {
-    padding-top: 30rem;
-  }
-}
+// @media screen and (min-width: $xl-break) {
+//   .pointers {
+//     padding-top: 30rem;
+//   }
+// }
 
 @media screen and (min-width: 2000px) {
   .banner {
@@ -469,8 +469,14 @@ section {
 }
 
 .pointers {
+  ul {
+    list-style-type: square;
+  }
   li {
     font-size: 18px;
+    &:before {
+      font-size: 100px;
+    }
   }
 }
 .perks {
@@ -491,4 +497,12 @@ section {
     background-position: bottom right;
     border-radius: 3rem;
   }
+}
+
+.gojek-bg {
+  background-image: url('/img/home/gojek-bg.svg');
+  height: 100vh;
+  min-height: 850px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

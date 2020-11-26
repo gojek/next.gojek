@@ -119,18 +119,14 @@ function DescriptionPage(props) {
                 </div>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.additional ? data.additional.split('About Us') : '',
+                    __html: data.additional ? data.additional.split('About Us')[0] : '',
                   }}
                 ></div>{' '}
               </div>
             </div>
             <div className="col-md-5 apply pt-5 pt-md-0">
               <div>
-                <a
-                  href="#applySection"
-                  className="btn btn-success px-5 rounded-pill w-100"
-                  role="button"
-                >
+                <a href="#apply" className="btn btn-success px-5 rounded-pill w-100" role="button">
                   Apply Now
                 </a>
                 <div className="mt-3 share d-flex flex-wrap align-items-center justify-content-center justify-content-md-start">
@@ -183,7 +179,7 @@ function DescriptionPage(props) {
         </div>
 
         {/* apply section */}
-        <div className="applySection" id="applySection">
+        <div className="apply" id="apply">
           <div className="container">
             <div className="row">
               <div className="col-md-7 pr-2 pl-2 pr-md-5">
@@ -428,7 +424,7 @@ function DescriptionPage(props) {
                     </div>
                   ) : (
                     <div className="pt-3">
-                      <a href="#applySection">
+                      <a href="#apply">
                         <button
                           type="submit"
                           className="btn btn-success px-5"
