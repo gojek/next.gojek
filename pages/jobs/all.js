@@ -30,7 +30,7 @@ function AllJobs(props) {
         data={openPosisitions}
         showAllJobs
         jobsHeading="All Open Positions"
-        selectedDepartment={params}
+        selectedDepartment={params.d}
       />
     </div>
   );

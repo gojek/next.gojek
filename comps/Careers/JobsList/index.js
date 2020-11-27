@@ -14,6 +14,24 @@ class JobsList extends Component {
     keyword: '',
   };
 
+  componentDidMount() {
+    if (this.props.selectedDepartment && this.props.selectedDepartment !== '') {
+      var obj = [
+        {
+          value: this.props.selectedDepartment,
+          label: this.props.selectedDepartment,
+          // .split('-')
+          // .join(' ')
+          // .capitalize()
+          bgColor: '',
+          bgImg: '',
+          isSelected: true,
+        },
+      ];
+      this.setState({ selectedDepartments: obj });
+    }
+  }
+
   handleSearchChange = (value, name) => {
     this.setState({ [name]: value }, () => {});
   };
@@ -61,8 +79,7 @@ class JobsList extends Component {
     const heading = this.props.jobsHeading || 'Recent Open Positions';
     const selctedFilters = this.filteredCollected();
     const filters = _.union(selctedFilters.department, selctedFilters.location);
-    console.log('filters', selctedFilters);
-
+    console.log('filters', filters);
     return (
       <div>
         <section
@@ -81,9 +98,9 @@ class JobsList extends Component {
               <div className="mt-4">
                 {filters.length > 0 && (
                   <div>
-                    <span className="mr-3">Filters:</span>
+                    <span>Filters:</span>
                     {filters.map((name) => {
-                      return <span className="job-tag rounded p-3 mr-3">{name}</span>;
+                      return <span className="job-tag p-3 mr-3">{name}</span>;
                     })}
                   </div>
                 )}
@@ -103,9 +120,7 @@ class JobsList extends Component {
                     Locations
                   </strong>{' '}
                 </p>
-                {this.props.showAllJobs ? (
-                  ''
-                ) : (
+                {!this.props.showAllJobs && (
                   <a href="/jobs/all" className="text-green link">
                     View all jobs
                     <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
@@ -116,7 +131,15 @@ class JobsList extends Component {
           </div>
         </section>
 
-        <List openPositions={this.searchJobs()} showAllJobs={showAllJobs} heading={heading} />
+        <List
+          openPositions={
+            showAllJobs || this.searchJobs().length <= 10
+              ? this.searchJobs()
+              : this.searchJobs().slice(0, 10)
+          }
+          showAllJobs={showAllJobs}
+          heading={heading}
+        />
       </div>
     );
   }

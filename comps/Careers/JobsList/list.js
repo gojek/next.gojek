@@ -1,18 +1,7 @@
-import { useState } from 'react';
-
 function List(props) {
-  const [limit, setLimit] = useState(20);
-  const [openPositions, setOpenPositions] = useState(props.openPositions.slice(0, 20));
-
-  const viewMore = () => {
-    const newLimit = limit + 20,
-      newList = props.openPositions.slice(0, newLimit);
-    setOpenPositions(newList);
-    setLimit(newLimit);
-  };
-
+  const { openPositions } = props;
   return (
-    <section className="full-height mb-5">
+    <section className="full-height mb-5 pb-5">
       <div className="container mb-5">
         <div className="listings bg-white shadow px-5 pt-5 pb-4" style={{ borderRadius: '3rem' }}>
           <h1 className="header my-5 pb-2" style={{ fontSize: '2rem;' }}>
@@ -33,24 +22,24 @@ function List(props) {
             <div className="pb-3">
               {openPositions.length > 0 ? (
                 openPositions.map((data, key) => (
-                  <a href={`/jobs/${data.id}`}>
-                    <div className="table-row row py-3" key={key}>
-                      <div className="col-md-6">
-                        <p className="mb-0">{data.text}</p>
-                      </div>
-                      <div className="col-md-3">
-                        <p className="mb-0">{data.categories.department}</p>
-                      </div>
-                      <div className="col-md-2">
-                        <p className="mb-0">{data.categories.location}</p>
-                      </div>
-                      <div className="col-md-1">
-                        <div className="mb-0">
-                          <i className="fas fa-chevron-right"></i>
-                        </div>
-                      </div>
+                  // <a href={`jobs/${data.id}`}>
+                  <div className="table-row row py-3" key={key}>
+                    <div className="col-md-6">
+                      <p className="mb-0">{data.text}</p>
                     </div>
-                  </a>
+                    <div className="col-md-3">
+                      <p className="mb-0">{data.categories.department}</p>
+                    </div>
+                    <div className="col-md-2">
+                      <p className="mb-0">{data.categories.location}</p>
+                    </div>
+                    <div className="col-md-1">
+                      <a href={`/jobs/${data.id}`} className="mb-0">
+                        <i className="fas fa-chevron-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                  // </a>
                 ))
               ) : (
                 <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -58,18 +47,13 @@ function List(props) {
                 </div>
               )}
 
-              {props.openPositions.length > limit ? (
+              {!props.showAllJobs && (
                 <div className="text-center mt-5">
-                  <p
-                    className="text-green-light font-weight-bold mx-auto view-jobs pointer"
-                    onClick={() => viewMore()}
-                  >
-                    View more jobs {`  `}
+                  <a href="/jobs/all" className="text-green link">
+                    View all jobs
                     <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
-                  </p>
+                  </a>
                 </div>
-              ) : (
-                ''
               )}
             </div>
           </div>

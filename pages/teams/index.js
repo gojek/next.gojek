@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Router from 'next/router';
 import Navbar from '~/../../comps/Navbar';
-import JobsTable from '~/../../comps/Careers/jobsTable';
 import CommonCta from '~/../../comps/Common/Cta';
+import List from '../../comps/Careers/JobsList/list';
 
 function CareersPage(props) {
   console.log('props', props);
@@ -12,23 +11,10 @@ function CareersPage(props) {
   useEffect(() => {
     console.log('careers props', props);
     const CareersData = props.data;
-    let jobs = [];
-
-    CareersData.map((job, i) => {
-      let { team } = job.categories;
-      let { department } = job.categories;
-      let { location } = job.categories;
-
-      // to check the department name for department page
-      if (team == 'Kernel') {
-        jobs.push({
-          title: job.text,
-          department: department,
-          location: location,
-          id: job.id,
-        });
-      }
+    let teamJobs = CareersData.filter((job) => {
+      return job.categories.team.includes('Product Engineering');
     });
+    let jobs = teamJobs.slice(0, 9);
 
     setJobs(jobs);
   }, []);
@@ -51,7 +37,7 @@ function CareersPage(props) {
               <p className="mb-5">
                 In a nutshell, the Kernel team is responsible for running the core cloud platform
                 that powers Gojek’s engineering ecosystem. We work to enable engineers to be more
-                productive & deliver scalable, reliable products by building a PaaS that provide
+                productive &amp; deliver scalable, reliable products by building a PaaS that provide
                 abstractions over distributed systems.
               </p>
               <h2 className="heading">
@@ -79,16 +65,13 @@ function CareersPage(props) {
 
       <section className="teamsJobs">
         <div className="container">
-          <div
+          {/* <div
             className="listings bg-white py-5 px-2 px-md-5 "
             style={{ borderRadius: '3rem', paddingTop: '5rem' }}
-          >
+          > */}
+          <div>
             {jobs.length > 0 ? (
-              <JobsTable
-                jobs={jobs}
-                careers
-                routeToAllJobs={() => Router.push('/careers/all-open-positions')}
-              />
+              <List openPositions={jobs} showAllJobs={false} heading="Recent Open Positions" />
             ) : (
               <p className="text-center py-5" style={{ fontSize: '1.5rem' }}>
                 Currently we don't have any openings under Kernel, please check back later. Thanks
@@ -207,9 +190,8 @@ function CareersPage(props) {
   );
 }
 
-// to fetch the jobs json
 export async function getServerSideProps(ctx) {
-  const apiUrl = 'https://api.lever.co/v0/postings/gojek?mode=json';
+  const apiUrl = `https://api.lever.co/v0/postings/gojek`;
 
   try {
     const response = await fetch(apiUrl);

@@ -125,56 +125,54 @@ function DescriptionPage(props) {
               </div>
             </div>
             <div className="col-md-5 apply pt-5 pt-md-0">
-              <div>
-                <a href="#apply" className="btn btn-success px-5 rounded-pill w-100" role="button">
-                  Apply Now
-                </a>
-                <div className="mt-3 share d-flex flex-wrap align-items-center justify-content-center justify-content-md-start">
-                  <span>Share role: </span>
-                  <TwitterShareButton
-                    url={url}
-                    title={title}
-                    className="Demo__some-network__share-button mx-2"
-                  >
-                    <TwitterIcon size={30} round />
-                  </TwitterShareButton>
-                  <LinkedinShareButton
-                    url={url}
-                    title={title}
-                    quote={title}
-                    className="Demo__some-network__share-button mx-2"
-                  >
-                    <LinkedinIcon size={30} round />
-                  </LinkedinShareButton>
-                  <FacebookShareButton
-                    url={url}
-                    title={title}
-                    quote={title}
-                    // hashtag={this.state.hashtags}
-                    className="Demo__some-network__share-button mx-2"
-                  >
-                    <FacebookIcon size={30} round />
-                  </FacebookShareButton>
-                  <WhatsappShareButton
-                    url={url}
-                    className="Demo__some-network__share-button mx-2"
-                    title={title}
-                  >
-                    <WhatsappIcon size={30} round />
-                  </WhatsappShareButton>
-                </div>
-                <p className="applyText">
-                  Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out
-                  print, graphic or web designs. The passage is attributed to an unknown typesetter
-                  in the 15th century who is thought to have scrambled parts of Cicero's De Finibus
-                  Bonorum et Malorum for use in a type specimen book.
-                </p>
-                <div className="card my-4"></div>
+              <a href="#apply" className="btn btn-success px-5 rounded-pill w-100" role="button">
+                Apply Now
+              </a>
+              <div className="mt-3 share d-flex flex-wrap align-items-center justify-content-center justify-content-md-start">
+                <span>Share role: </span>
+                <TwitterShareButton
+                  url={url}
+                  title={title}
+                  className="Demo__some-network__share-button mx-2"
+                >
+                  <TwitterIcon size={30} round />
+                </TwitterShareButton>
+                <LinkedinShareButton
+                  url={url}
+                  title={title}
+                  quote={title}
+                  className="Demo__some-network__share-button mx-2"
+                >
+                  <LinkedinIcon size={30} round />
+                </LinkedinShareButton>
+                <FacebookShareButton
+                  url={url}
+                  title={title}
+                  quote={title}
+                  // hashtag={this.state.hashtags}
+                  className="Demo__some-network__share-button mx-2"
+                >
+                  <FacebookIcon size={30} round />
+                </FacebookShareButton>
+                <WhatsappShareButton
+                  url={url}
+                  className="Demo__some-network__share-button mx-2"
+                  title={title}
+                >
+                  <WhatsappIcon size={30} round />
+                </WhatsappShareButton>
               </div>
+              <p className="applyText">
+                Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out
+                print, graphic or web designs. The passage is attributed to an unknown typesetter in
+                the 15th century who is thought to have scrambled parts of Cicero's De Finibus
+                Bonorum et Malorum for use in a type specimen book.
+              </p>
+              <div className="card my-4"></div>
             </div>
-          </div>
-          <div className="pt-5 pb-2">
-            <hr />
+            <div className="pt-5 pb-2">
+              <hr />
+            </div>
           </div>
         </div>
 

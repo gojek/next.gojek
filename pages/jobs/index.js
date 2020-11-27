@@ -14,6 +14,7 @@ function Jobs(props) {
   const [navbarBG, setNavbarBG] = useState(true);
 
   const openPosisitions = props.data;
+  console.log('props', props.data);
 
   return (
     <div className="text-center text-md-left">
