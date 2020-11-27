@@ -1,16 +1,22 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Links from '~/../../comps/Common/Footer/Links';
 
 import data from './data.json';
 
 function Navbar(props) {
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   }, []);
+
+  const handleExpand = () => {
+    setExpanded(!expanded);
+  };
 
   const handleScroll = () => {
     if (window.scrollY > 30) {
@@ -61,15 +67,14 @@ function Navbar(props) {
           {logo()}
         </a>
         <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          className={`btn d-block d-lg-none ${
+            props.whiteNav ? (scrolled ? 'text-dark' : 'text-white') : 'text-dark'
+          }`}
+          onClick={() => handleExpand()}
         >
-          <span className="navbar-toggler-icon"></span>
+          <span>
+            <i class="fas fa-bars fa-1x"></i>
+          </span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul
@@ -99,6 +104,13 @@ function Navbar(props) {
           </ul>
         </div>
       </div>
+      {expanded ? (
+        <div className="fixed-top text-white footer smNav px-4 py-4">
+          <Links navbar onClose={handleExpand} />
+        </div>
+      ) : (
+        ''
+      )}
     </nav>
   );
 }

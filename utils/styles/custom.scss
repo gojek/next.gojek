@@ -228,6 +228,7 @@ section {
 
 .footer {
   margin-top: -1px;
+  background-color: #101820;
   .list-inline-item {
     font-size: 1rem;
     display: inline-block;
@@ -246,6 +247,17 @@ section {
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
+
+      @media screen and (max-width: 576px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  li {
+    font-size: 1.25rem;
+    @media screen and (max-width: 576px) {
+      font-size: 0.875rem;
     }
   }
   .contact {
@@ -257,6 +269,10 @@ section {
       color: #bce194;
     }
   }
+}
+
+.smNav {
+  min-height: 100vh;
 }
 
 .open-source {
