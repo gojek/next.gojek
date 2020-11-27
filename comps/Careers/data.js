@@ -69,30 +69,35 @@ export const teams = [
     slug: 'kernel',
     bgColor: '#ff695b',
     bgImg: '/img/careers/kernel.svg',
+    link: 'kernel',
   },
   {
     name: 'Go Food',
     slug: 'identity-and-communication-platform',
     bgColor: '#ffb31c',
     bgImg: '/img/careers/GoFood.svg',
+    link: 'gofood',
   },
   {
     name: 'Operations Platform',
     slug: 'operations-platform',
     bgColor: '#772583',
     bgImg: '/img/careers/Ops-Platform.svg',
+    link: 'operationsplatform',
   },
   {
     name: 'Kernel',
     slug: 'kernel',
     bgColor: '#ff695b',
     bgImg: '/img/careers/kernel.svg',
+    link: 'kernel',
   },
   {
     name: 'Go Food',
     slug: 'identity-and-communication-platform',
     bgColor: '#ffb31c',
     bgImg: '/img/careers/GoFood.svg',
+    link: 'gofood',
   },
 ];
 
