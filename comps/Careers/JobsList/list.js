@@ -22,24 +22,24 @@ function List(props) {
             <div className="pb-3">
               {openPositions.length > 0 ? (
                 openPositions.map((data, key) => (
-                  // <a href={`jobs/${data.id}`}>
-                  <div className="table-row row py-3" key={key}>
-                    <div className="col-md-6">
-                      <p className="mb-0">{data.text}</p>
+                  <a href={`jobs/${data.id}`}>
+                    <div className="table-row row py-3" key={key}>
+                      <div className="col-md-6">
+                        <p className="mb-0">{data.text}</p>
+                      </div>
+                      <div className="col-md-3">
+                        <p className="mb-0">{data.categories.department}</p>
+                      </div>
+                      <div className="col-md-2">
+                        <p className="mb-0">{data.categories.location}</p>
+                      </div>
+                      <div className="col-md-1">
+                        <div className="mb-0">
+                          <i className="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
                     </div>
-                    <div className="col-md-3">
-                      <p className="mb-0">{data.categories.department}</p>
-                    </div>
-                    <div className="col-md-2">
-                      <p className="mb-0">{data.categories.location}</p>
-                    </div>
-                    <div className="col-md-1">
-                      <a href={`/jobs/${data.id}`} className="mb-0">
-                        <i className="fas fa-chevron-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                  // </a>
+                  </a>
                 ))
               ) : (
                 <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>

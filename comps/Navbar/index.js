@@ -27,7 +27,7 @@ function Navbar(props) {
       }
     } else {
       document.querySelector('.navbar').className =
-        'navbar fixed-top navbar-expand-lg bg-transparent pt-5 mb-5 main-nav';
+        'navbar fixed-top navbar-expand-lg bg-transparent pt-3 pt-md-5 mb-5 main-nav';
       setScrolled(false);
     }
   };
@@ -61,7 +61,7 @@ function Navbar(props) {
   };
 
   return (
-    <nav className="navbar fixed-top navbar-expand-lg bg-transparent pt-5 mb-5 main-nav">
+    <nav className="navbar fixed-top navbar-expand-lg bg-transparent pt-3 pt-md-5 mb-5 main-nav">
       <div className="container">
         <a className="navbar-brand" href="/">
           {logo()}

@@ -2,7 +2,7 @@ function CommonCta(props) {
   console.log('props', props);
 
   return (
-    <section className="px-5 pt-4 commonFooter">
+    <section className="px-5 pt-4 commonFooter d-none d-md-block">
       <div className="container">
         <div className="cta p-5">
           <div className="col-12 col-md-7 py-3">

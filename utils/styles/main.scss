@@ -339,6 +339,9 @@ body {
 
 .teamsJobs {
   background: linear-gradient(to bottom, #000 10rem, #fff 10rem);
+  @media screen and (max-width: 576px) {
+    background: linear-gradient(to bottom, #000 7rem, #fff 7rem);
+  }
 }
 
 .yellow-bg-gradient {
@@ -775,9 +778,18 @@ body {
 .jobDescription {
   .banner {
     height: 75vh;
+    @media screen and (max-width: 576px) {
+      height: 60vh;
+      .full-height-one {
+        height: 60vh;
+      }
+    }
   }
   .description {
     margin-top: 7rem;
+    @media screen and (max-width: 576px) {
+      margin-top: 4rem;
+    }
 
     .title {
       font-family: $header-font;
@@ -788,6 +800,9 @@ body {
       }
       .applyText {
         margin-top: 9rem;
+        @media screen and (max-width: 576px) {
+          margin-top: 4rem;
+        }
       }
       .card {
         min-height: 10rem;

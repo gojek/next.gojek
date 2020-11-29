@@ -82,6 +82,9 @@ function DescriptionPage(props) {
                 {', '}
                 {data.categories.location}
               </h5>
+              <a href="#apply" className="btn btn-success rounded-pill px-5 mt-3" role="button">
+                Apply Now
+              </a>
             </div>
             {/* <div>
               <p className="text-white">System Engineering, Singapore</p>
@@ -98,6 +101,9 @@ function DescriptionPage(props) {
               <div>
                 <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
                 <div>
+                  <div>
+                    <br />
+                  </div>
                   <b>{data.lists[0].text}</b>
                   <div>
                     <br />
@@ -124,7 +130,7 @@ function DescriptionPage(props) {
                 ></div>{' '}
               </div>
             </div>
-            <div className="col-md-5 apply pt-5 pt-md-0">
+            <div className="col-md-5 apply pt-3 pt-md-0">
               <a href="#apply" className="btn btn-success px-5 rounded-pill w-100" role="button">
                 Apply Now
               </a>
@@ -175,6 +181,7 @@ function DescriptionPage(props) {
             </div>
           </div>
         </div>
+        <hr />
 
         {/* apply section */}
         <div className="apply" id="apply">
@@ -183,7 +190,7 @@ function DescriptionPage(props) {
               <div className="col-md-7 pr-2 pl-2 pr-md-5">
                 <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
                   <div className="form-group">
-                    <p className="py-3 mt-5 title font-weight-bold">
+                    <p className="py-3 mt-2 mt-md-5 title font-weight-bold">
                       Personal Information <span className="helpText">(‘*’ - Required Fields)</span>
                     </p>
                     <div className="mb-3">
@@ -252,7 +259,7 @@ function DescriptionPage(props) {
                   {expandForm ? (
                     <div>
                       <div className="form-group">
-                        <p className="py-3 mt-5 title font-weight-bold">Links</p>
+                        <p className="py-3 mt-md-5 title font-weight-bold">Links</p>
                         <div className="mb-3">
                           <input
                             className="form-control p-3"
@@ -291,7 +298,7 @@ function DescriptionPage(props) {
                         </div>
                       </div>
                       <div className="form-group">
-                        <p className="py-3 mt-5 title font-weight-bold">
+                        <p className="py-3 mt-md-5 title font-weight-bold">
                           Additional Information{' '}
                           <span className="helpText">(‘*’ - Required Fields)</span>
                         </p>
@@ -364,7 +371,7 @@ function DescriptionPage(props) {
                         </div>
                       </div>
                       <div className="form-group">
-                        <p className="py-3 mt-5 title font-weight-bold">
+                        <p className="py-3 mt-md-5 title font-weight-bold">
                           We would like to learn more about your work!
                         </p>
                         <div className="file">
@@ -374,7 +381,7 @@ function DescriptionPage(props) {
                             id="file"
                             style={{ display: 'none' }}
                           />
-                          <p className="fileTitle">
+                          <p className="fileTitle mb-2">
                             Please upload your portfolio or any other files (PDF format) you would
                             like to share:
                           </p>
@@ -435,7 +442,7 @@ function DescriptionPage(props) {
                   )}
                 </form>
               </div>
-              <div className="col-md-5 apply pt-5 mt-5">
+              <div className="col-md-5 apply py-5 mt-md-5">
                 {/* linked in banner */}
                 <div className="card linkedIn my-4 py-5">
                   <div className="row justify-content-center">

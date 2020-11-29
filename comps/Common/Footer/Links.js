@@ -58,7 +58,7 @@ function Links(props) {
   );
 
   const navbarLinks = (
-    <div className="pt-5">
+    <div className="pt-5 text-center">
       <ul className="list-unstyled mb-0 px-4">
         {data.links.map((data, i) => (
           <li className="pb-4" key={i}>

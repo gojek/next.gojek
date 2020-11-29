@@ -430,21 +430,21 @@ section {
       }
     }
   }
-  // .swiper-slide {
-  //   width: 510px !important;
-  //   margin-left: -50px;
-  //   &.swiper-slide-prev {
-  //     width: auto !important;
-  //     margin-left: 0;
-  //     margin-right: 0 !important;
-  //   }
-  //   &.swiper-slide-active {
-  //     margin-left: 0;
-  //   }
-  //   &.swiper-slide-next {
-  //     margin-left: 0;
-  //   }
-  // }
+  .swiper-slide {
+    width: 510px !important;
+    margin-left: -50px;
+    &.swiper-slide-prev {
+      width: auto !important;
+      margin-left: 0;
+      margin-right: 0 !important;
+    }
+    &.swiper-slide-active {
+      margin-left: 0;
+    }
+    &.swiper-slide-next {
+      margin-left: 0;
+    }
+  }
 }
 
 // @media screen and(min-width: $md-break) {
