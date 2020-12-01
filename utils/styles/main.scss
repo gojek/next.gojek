@@ -342,6 +342,9 @@ body {
   @media screen and (max-width: 576px) {
     background: linear-gradient(to bottom, #000 7rem, #fff 7rem);
   }
+  .full-height {
+    min-height: auto;
+  }
 }
 
 .yellow-bg-gradient {
@@ -375,6 +378,40 @@ body {
   }
   .full-height {
     min-height: 60vh;
+  }
+}
+@media screen and (max-width: 576px) {
+  .yellow-bg-gradient {
+    height: 80vh;
+  }
+}
+
+.xs-listings {
+  .header {
+    font-size: 1.6rem;
+  }
+  .odd {
+    background-color: rgba(242, 242, 242, 0.81);
+  }
+  .title {
+    color: #101010 !important;
+    font-family: $title-font;
+  }
+  .sub-title {
+    color: #848484;
+  }
+}
+
+.mobile-search {
+  min-height: 100vh;
+  .header {
+    font-size: 1.125rem;
+    font-family: $header-font;
+  }
+
+  .results,
+  .btn-success {
+    background-color: #00aa13 !important;
   }
 }
 
@@ -446,6 +483,14 @@ body {
   .departments {
     padding-top: 5rem;
     padding-bottom: 5rem;
+    @media screen and (max-width: 576px) {
+      .header {
+        font-size: 2.25rem;
+      }
+    }
+    .header-heigh {
+      color: $green-light;
+    }
   }
   .card-columns {
     column-count: 2;
@@ -464,6 +509,11 @@ body {
       &.highlight {
         height: 32rem;
         // margin-bottom: 1.25rem;
+        @media screen and (max-width: 576px) {
+          .header {
+            height: 20rem;
+          }
+        }
 
         .card-body {
           position: absolute;
@@ -516,6 +566,31 @@ body {
     border-radius: $border-xl;
     min-height: 430px;
   }
+
+  .slick-next {
+    right: 3.2rem;
+  }
+
+  .locationPadding {
+    // padding-top: 5rem;
+    // padding-bottom: 5rem;
+    color: #515151;
+  }
+  @media screen and (max-width: 576px) {
+    min-height: auto;
+    .slick-next {
+      right: 1rem;
+      &::before {
+        color: #101010;
+      }
+    }
+    .slick-prev {
+      left: 1rem;
+      &::before {
+        color: #101010;
+      }
+    }
+  }
   @media screen and (min-width: $md-break) {
     .slick-slider {
       margin-left: 4rem;
@@ -540,16 +615,6 @@ body {
       width: 1140px;
       margin: auto;
     }
-  }
-
-  .slick-next {
-    right: 3.2rem;
-  }
-
-  .locationPadding {
-    // padding-top: 5rem;
-    // padding-bottom: 5rem;
-    color: #515151;
   }
 }
 
@@ -680,22 +745,35 @@ body {
   .view-jobs {
     font-family: $header-font;
   }
-  tr:nth-child(even) {
-    background: #f2f2f2;
-  }
-
-  tr:nth-child(odd) {
-    background: #fff;
-  }
   @media screen and (max-width: $md-break) {
     .tableHeading {
       display: none;
     }
   }
 }
-// #job-list {
-//   min-height: 40vh;
-// }
+
+.xsSection {
+  .banner-head {
+    font-size: 1.6rem;
+  }
+  .heart {
+    color: #38bb38;
+  }
+}
+
+.careers {
+  .full-height {
+    @media screen and (max-width: 576px) {
+      min-height: 60vh;
+    }
+  }
+
+  #banner {
+    @media screen and (max-width: 576px) {
+      min-height: 80vh;
+    }
+  }
+}
 
 .listings {
   box-shadow: 0 0 82px 0 rgba(0, 0, 0, 0.12);
@@ -1017,6 +1095,12 @@ a:hover {
         text-decoration: underline;
       }
     }
+  }
+}
+
+.footer {
+  a {
+    color: #ffffff !important;
   }
 }
 

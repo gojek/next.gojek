@@ -13,8 +13,8 @@ function Teams(props) {
   });
 
   return (
-    <div>
-      <div className="container locationPadding py-5">
+    <div className="mb-5 mb-md-0">
+      <div className="container locationPadding py-5 text-left px-5">
         <h1 className="header pt-4">{banner.teamData.title}</h1>
         <p className="mt-4 mb-5" style={{ maxWidth: '48rem' }}>
           {banner.teamData.description}

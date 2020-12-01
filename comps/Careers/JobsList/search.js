@@ -28,8 +28,8 @@ class MySelect extends Component {
 
     return (
       <div className="container">
-        <div className="row">
-          <div className="col-md-7 px-0">
+        <div className="row text-body">
+          <div className="col-md-7 px-0 pb-3 pb-md-0">
             <label htmlFor="keyword" className="sr-only">
               Keyword
             </label>
@@ -41,9 +41,9 @@ class MySelect extends Component {
               name="keyword"
             />
           </div>
-          <div className="col-md-5">
+          <div className="col-md-5 pl-0 pl-md-3">
             <div className="row">
-              <div className="col-md-6 pr-0">
+              <div className="col-md-6 pr-0 pb-3 pb-md-0">
                 <label htmlFor="department" className="sr-only">
                   Department
                 </label>
@@ -62,7 +62,7 @@ class MySelect extends Component {
                   placeholder="Department"
                 />
               </div>
-              <div className="col-md-6 pr-0">
+              <div className="col-md-6 pr-0 pb-3 pb-md-0">
                 <label htmlFor="location" className="sr-only">
                   Location
                 </label>

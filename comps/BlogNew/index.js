@@ -19,8 +19,8 @@ function BlogNew(props) {
     : `https://blog.gojekengineering.com/${link}/home`;
 
   return (
-    <section className="mt-5 posts" id={link}>
-      <div className="row justify-content-between align-items-center my-5">
+    <section className="mt-5 posts text-left" id={link}>
+      <div className="row justify-content-between align-items-center my-3 my-md-5 px-3">
         <h1 className={styles.heading}>{props.pageName ? 'Latest' : heading}</h1>
         <p className="text-center">
           <a href={mediumLink} target="_blank" className={`text-green-light ${styles.readMore}`}>

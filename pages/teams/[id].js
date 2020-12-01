@@ -8,6 +8,7 @@ import Navbar from '~/../../comps/Navbar';
 import JobsTable from '~/../../comps/Careers/jobsTable';
 import CommonCta from '~/../../comps/Common/Cta';
 import { teamsData } from './data.js';
+import List from '~/../../comps/Careers/JobsList/list';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -31,13 +32,8 @@ function CareersPage(props) {
         let { location } = job.categories;
 
         // to check the department name for department page
-        if (team == teamsData[teamValue].value) {
-          jobs.push({
-            title: job.text,
-            department: department,
-            location: location,
-            id: job.id,
-          });
+        if (team == 'Finance & Accounting') {
+          jobs.push(job);
         }
       });
 
@@ -76,19 +72,14 @@ function CareersPage(props) {
               style={{ height: '14rem', borderRadius: '3rem', backgroundColor: '#f2d4d7' }}
             ></div>
           </div>
-          <div className="container">
-            <div
-              className="listings bg-white py-5 px-2 px-md-5 "
-              style={{ borderRadius: '3rem', paddingTop: '5rem' }}
-            >
-              {jobs.length > 0 ? (
-                <JobsTable jobs={jobs} careers routeToAllJobs={() => Router.push('/jobs/all')} />
-              ) : (
-                <p className="text-center py-5" style={{ fontSize: '1.5rem' }}>
-                  Currently we don't have any openings under Kernel, please check back later. Thanks
-                </p>
-              )}
-            </div>
+          <div className="">
+            {jobs.length > 0 ? (
+              <List openPositions={jobs} heading="Current Open Positions" />
+            ) : (
+              <p className="text-center py-5" style={{ fontSize: '1.5rem' }}>
+                Currently we don't have any openings under Kernel, please check back later. Thanks
+              </p>
+            )}
           </div>
         </section>
 
@@ -133,7 +124,7 @@ function CareersPage(props) {
               centeredSlides={true}
               // pagination={{ clickable: true }}
             >
-              {/* {data.blogs.map((blog, i) => {
+              {data.blogs.map((blog, i) => {
                 return (
                   <SwiperSlide>
                     <div className="col-md-4 px-3">
@@ -150,7 +141,7 @@ function CareersPage(props) {
                     </div>
                   </SwiperSlide>
                 );
-              })} */}
+              })}
             </Swiper>
             <div className="py-4 mt-3">
               <a className="link text-green-light pl-4" href="#">

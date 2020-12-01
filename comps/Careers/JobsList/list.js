@@ -1,8 +1,9 @@
 function List(props) {
   const { openPositions } = props;
   return (
-    <section className="full-height mb-5 pb-5">
-      <div className="container mb-5">
+    <section className="full-height mb-md-5 pb-md-5">
+      {/* desktop view */}
+      <div className="container mb-5 d-none d-md-block">
         <div className="listings bg-white shadow px-5 pt-5 pb-4" style={{ borderRadius: '3rem' }}>
           <h1 className="header my-5 pb-2" style={{ fontSize: '2rem;' }}>
             {props.heading}
@@ -56,6 +57,43 @@ function List(props) {
                 </div>
               )}
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* mobile view */}
+      <div className="xs-listings pt-5 pb-4 d-md-none text-left">
+        <h1 className="header my-1 pb-2 px-5">{props.heading}</h1>
+        <div className="job">
+          <div className="pb-3">
+            {openPositions.length > 0 ? (
+              openPositions.map((data, key) => (
+                <div className={key % 2 === 0 ? 'even' : 'odd'}>
+                  <a href={`jobs/${data.id}`}>
+                    <div className="py-3 px-5" key={key}>
+                      <p className="title mb-0">{data.text}</p>
+                      <p className="sub-title mb-0">
+                        {data.categories.department}
+                        {data.categories.department ? ', ' : ''} {data.categories.location}
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              ))
+            ) : (
+              <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                <strong>No Jobs!</strong>
+              </div>
+            )}
+
+            {!props.showAllJobs && (
+              <div className="mt-5 pl-5">
+                <a href="/jobs/all" className="text-green link">
+                  View all jobs
+                  <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>
