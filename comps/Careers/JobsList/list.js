@@ -62,7 +62,7 @@ function List(props) {
       </div>
 
       {/* mobile view */}
-      <div className="xs-listings pt-5 pb-4 d-md-none text-left">
+      <div className="xs-listings py-4 d-md-none text-left">
         <h1 className="header my-1 pb-2 px-5">{props.heading}</h1>
         <div className="job">
           <div className="pb-3">

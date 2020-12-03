@@ -10,7 +10,7 @@ function Perks({ perks, showPerks }) {
     count = 20;
   }
   return (
-    <div class="card-columns">
+    <div class="card-columns pt-5">
       {perks.map((perk) => {
         return (
           <div

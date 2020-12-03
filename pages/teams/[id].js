@@ -5,14 +5,14 @@ import Router from 'next/router';
 import Navbar from '~/../../comps/Navbar';
 import JobsTable from '~/../../comps/Careers/jobsTable';
 import CommonCta from '~/../../comps/Common/Cta';
-import { teamsData } from './data.js';
+import { teamsData } from '../../comps/Team/data.js';
 import List from '~/../../comps/Careers/JobsList/list';
 import Slider from 'react-slick';
 
 const blogsSliderSettings = {
   infinite: false,
   dots: false,
-  slidesToShow: 1.5,
+  slidesToShow: 1.2,
   slidesToScroll: 1,
 };
 
@@ -70,7 +70,7 @@ function CareersPage(props) {
         </section>
 
         <section className="teamsJobs">
-          <div className="d-block d-md-none px-3 mb-4">
+          <div className="d-md-none px-3 mb-5">
             <div
               className="shadow"
               style={{ height: '14rem', borderRadius: '3rem', backgroundColor: '#f2d4d7' }}
@@ -88,13 +88,12 @@ function CareersPage(props) {
         </section>
 
         {/* blogs section */}
-        <section id="blogs" className="d-flex align-items-center py-3">
-          <div className="d-none d-md-block container list">
-            <p className="mb-5 px-0 px-md-4">
-              (blog section) Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </p>
-
+        <section id="blogs" className="team-blogs py-3">
+          <p className="mb-md-5 px-4 container">
+            (blog section) Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+          <div className="d-none d-md-block container list pt-0">
             <div className="row">
               {data.blogs.map((blog, i) => {
                 return (
@@ -114,13 +113,13 @@ function CareersPage(props) {
               })}
             </div>
             <div className="py-4 mt-3">
-              <a className="link text-green-light pl-4" href="#">
+              <a className="link text-green-light pl-4" href="/blog">
                 Read more blogs
                 <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
               </a>
             </div>
           </div>
-          <div className="d-none">
+          <div className="d-md-none">
             <Slider {...blogsSliderSettings}>
               {data.blogs.map((blog, i) => {
                 return (
@@ -129,11 +128,7 @@ function CareersPage(props) {
                       <div className="card my-4 mx-1">
                         <div className="placeholder"></div>
                         <div className="card-body pb-0">
-                          <p className="card-text pointer">
-                            {blog.desc}
-                            <br />
-                            {blog.time} min read | {blog.date}
-                          </p>
+                          <p className="card-text pointer">{blog.desc}</p>
                         </div>
                       </div>
                     </div>
@@ -141,8 +136,8 @@ function CareersPage(props) {
                 );
               })}
             </Slider>
-            <div className="py-4 mt-3">
-              <a className="link text-green-light pl-4" href="#">
+            <div className="pb-4">
+              <a className="link text-green-light pl-4" href="/blog">
                 Read more blogs
                 <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
               </a>
@@ -173,12 +168,18 @@ function CareersPage(props) {
       {/* <div className="blackBackground"></div> */}
       {teamData ? teamSections(teamData) : teamNotFound}
       {/* works with us section */}
-      <section id="team-workWithUs" className="container my-5 px-5 pt-4 d-none d-md-block">
+      <section id="team-workWithUs" className="container my-5 px-5 py-4 d-none d-md-block">
         <div className="row cta">
-          <div className="col-12 col-md-5"></div>
+          <div className="col-12 col-md-5 align-self-center">
+            <img
+              className="img-fluid mx-auto d-block rounded-pill"
+              src="/img/blog-cta.jpg"
+              alt="Work with gojek"
+            />
+          </div>
           <div className="col-12 col-md-6 py-5">
             <h2 className="heading text-white">Wondering what it's like to work with us?</h2>
-            <a className="link" href="#">
+            <a className="link" href="/life-at-gojek">
               Find out
               <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
             </a>

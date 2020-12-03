@@ -588,19 +588,19 @@ body {
     .slick-prev {
       display: none !important;
     }
-  }
-  @media screen and (min-width: $md-break) {
-    .slick-slider {
-      margin-left: 4rem;
+    .slick-list {
+      padding-left: 30px !important;
     }
+  }
+  @media screen and (min-width: $lg-break) {
     .slick-prev {
       display: none !important;
     }
   }
 
-  @media screen and (min-width: $lg-break) {
+  @media screen and (min-width: $xl-break) {
     .slick-slider {
-      margin-left: 10rem;
+      margin-left: 16rem;
     }
     .slick-list {
       padding-right: 100px !important;
@@ -619,6 +619,13 @@ body {
 .teams-banner {
   .heading {
     font-size: 30px;
+  }
+}
+
+.team-blogs {
+  .slick-next,
+  .slick-prev {
+    display: none !important;
   }
 }
 
@@ -873,6 +880,9 @@ body {
       }
     }
   }
+  .full-height-one {
+    height: 100%;
+  }
   .description {
     margin-top: 7rem;
     @media screen and (max-width: 576px) {
@@ -884,11 +894,12 @@ body {
     }
     .apply {
       @media screen and (min-width: $xl-break) {
-        padding-left: 8rem;
+        padding-left: 7rem;
+        border-left: 1px solid #c9c9c9;
       }
       .applyText {
         margin-top: 9rem;
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: $md-break) {
           margin-top: 4rem;
         }
       }
@@ -1123,6 +1134,16 @@ a:hover {
     background-repeat: no-repeat;
     background-image: url('/img/gojek-cta.svg');
     background-position: bottom right;
+
+    @media screen and (max-width: $md-break) {
+      padding-bottom: 15rem !important;
+    }
+
+    @media screen and (max-width: 576px) {
+      padding-bottom: 10rem !important;
+      border-radius: 0;
+      margin-top: 0;
+    }
 
     p {
       font-size: 1.25rem;

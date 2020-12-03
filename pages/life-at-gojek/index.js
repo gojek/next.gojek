@@ -84,7 +84,7 @@ function LifeAtGojek(props) {
         </div>
       </section>
 
-      <section className="social-impact my-5 py-5 d-none d-md-block">
+      <section className="social-impact my-5 py-5 d-none d-lg-block">
         <div className="container">
           <CardAnimation data={socialImpact} />
         </div>
@@ -98,7 +98,7 @@ function LifeAtGojek(props) {
       </section>
 
       {/* CTA */}
-      <CommonCta />
+      <CommonCta mobile />
       {/* End CTA */}
     </div>
   );

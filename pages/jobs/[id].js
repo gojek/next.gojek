@@ -53,28 +53,11 @@ function DescriptionPage(props) {
         <meta property="og:image" content="/img/gojek-logo.png"></meta>
         <meta property="og:url" content={url} />
       </Head>
-      {/* <Navbar light bg="#924e8c" careers /> */}
-
-      {/* banner section */}
-      {/* <section
-        id="banner"
-        className="py-5 d-flex align-items-end banner"
-        style={{ backgroundColor: '#924e8c' }}
-      >
-        <div className="container">
-          <h1 className="banner-head text-white">{props.data.text}</h1>
-          <p className="text-white py-4" style={{ fontSize: '22px' }}>
-            Products
-            {', '}
-            Bangalore
-          </p>
-        </div>
-      </section> */}
 
       <Navbar whiteNav />
       <section className="banner pb-5" style={{ backgroundColor: '#924e8c' }}>
-        <div className="container">
-          <div className="row mx-0 align-items-center full-height-one">
+        <div className="container full-height-one">
+          <div className="row mx-0 align-items-end full-height-one pb-5">
             <div>
               <h1 className="heading text-white pb-3">{data.text}</h1>
               <h5 className="sub-heading text-white">
@@ -82,22 +65,23 @@ function DescriptionPage(props) {
                 {', '}
                 {data.categories.location}
               </h5>
-              <a href="#apply" className="btn btn-success rounded-pill px-5 mt-3" role="button">
+              <a
+                href="#apply"
+                className="btn btn-success rounded-pill px-5 mt-3 d-md-none"
+                role="button"
+              >
                 Apply Now
               </a>
             </div>
-            {/* <div>
-              <p className="text-white">System Engineering, Singapore</p>
-            </div> */}
           </div>
         </div>
       </section>
 
       {/* description section */}
       <section>
-        <div className="container description">
+        <div className="container description text-left">
           <div className="row">
-            <div className="col-md-7 pr-2 pl-2 pr-md-5">
+            <div className="col-lg-7 pr-2 pr-md-5">
               <div>
                 <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
                 <div>
@@ -130,51 +114,64 @@ function DescriptionPage(props) {
                 ></div>{' '}
               </div>
             </div>
-            <div className="col-md-5 apply pt-3 pt-md-0">
-              <a href="#apply" className="btn btn-success px-5 rounded-pill w-100" role="button">
-                Apply Now
-              </a>
-              <div className="mt-3 share d-flex flex-wrap align-items-center justify-content-center justify-content-md-start">
-                <span>Share role: </span>
-                <TwitterShareButton
-                  url={url}
-                  title={title}
-                  className="Demo__some-network__share-button mx-2"
+            <div className="col-lg-5 pt-3 pt-md-0">
+              <div className="apply">
+                <a href="#apply" className="btn btn-success px-5 rounded-pill w-100" role="button">
+                  Apply Now
+                </a>
+                <div className="mt-3 share d-flex flex-wrap align-items-center justify-content-center justify-content-md-start">
+                  <span>Share role: </span>
+                  <TwitterShareButton
+                    url={url}
+                    title={title}
+                    className="Demo__some-network__share-button mx-2"
+                  >
+                    <TwitterIcon size={30} round />
+                  </TwitterShareButton>
+                  <LinkedinShareButton
+                    url={url}
+                    title={title}
+                    quote={title}
+                    className="Demo__some-network__share-button mx-2"
+                  >
+                    <LinkedinIcon size={30} round />
+                  </LinkedinShareButton>
+                  <FacebookShareButton
+                    url={url}
+                    title={title}
+                    quote={title}
+                    // hashtag={this.state.hashtags}
+                    className="Demo__some-network__share-button mx-2"
+                  >
+                    <FacebookIcon size={30} round />
+                  </FacebookShareButton>
+                  <WhatsappShareButton
+                    url={url}
+                    className="Demo__some-network__share-button mx-2"
+                    title={title}
+                  >
+                    <WhatsappIcon size={30} round />
+                  </WhatsappShareButton>
+                </div>
+                <p className="applyText">
+                  Gojek is a Super App. It’s one app for ordering food, commuting, digital payments,
+                  shopping, hyper-local delivery, and a dozen other products. It is Indonesia’s
+                  first and only decacorn. It's also the only Southeast Asian startup to be part of
+                  Fortune's list of 'Companies That Changed The World.
+                </p>
+                <div
+                  className="card position-relative my-4"
+                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
                 >
-                  <TwitterIcon size={30} round />
-                </TwitterShareButton>
-                <LinkedinShareButton
-                  url={url}
-                  title={title}
-                  quote={title}
-                  className="Demo__some-network__share-button mx-2"
-                >
-                  <LinkedinIcon size={30} round />
-                </LinkedinShareButton>
-                <FacebookShareButton
-                  url={url}
-                  title={title}
-                  quote={title}
-                  // hashtag={this.state.hashtags}
-                  className="Demo__some-network__share-button mx-2"
-                >
-                  <FacebookIcon size={30} round />
-                </FacebookShareButton>
-                <WhatsappShareButton
-                  url={url}
-                  className="Demo__some-network__share-button mx-2"
-                  title={title}
-                >
-                  <WhatsappIcon size={30} round />
-                </WhatsappShareButton>
+                  <a
+                    href="https://www.youtube.com/watch?v=VJH5FJ5kaJA"
+                    target="_blank"
+                    className="text-white"
+                  >
+                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
+                  </a>
+                </div>
               </div>
-              <p className="applyText">
-                Gojek is a Super App. It’s one app for ordering food, commuting, digital payments,
-                shopping, hyper-local delivery, and a dozen other products. It is Indonesia’s first
-                and only decacorn. It's also the only Southeast Asian startup to be part of
-                Fortune's list of 'Companies That Changed The World.
-              </p>
-              <div className="card my-4"></div>
             </div>
             <div className="pt-5 pb-2">
               <hr />

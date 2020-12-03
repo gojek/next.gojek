@@ -3,7 +3,7 @@ import MobileSearch from './mobileSearch';
 
 function Banner(props) {
   return (
-    <div className="row align-items-center mt-5">
+    <div className="row align-items-center mt-md-5">
       <div className="col-md-5">
         <img src={banner.bannerImg} className="img-fluid banner-img" alt="Gojek Careers Banner" />
       </div>
