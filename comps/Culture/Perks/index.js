@@ -14,7 +14,9 @@ function Perks({ perks, showPerks }) {
       {perks.map((perk) => {
         return (
           <div
-            className={`single-perk-card card  ${perk.id <= count ? 'd-inline-block' : 'd-none'}`}
+            className={`single-perk-card card  ${perk.id <= count ? 'd-inline-block' : 'd-none'} ${
+              perk.img ? 'perk-img' : 'perk-card'
+            } `}
             key={perk.id}
             style={{
               height: perk.height,
