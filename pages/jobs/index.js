@@ -8,13 +8,7 @@ import Departments from '../../comps/Careers/Departments';
 import Teams from '../../comps/Careers/Teams';
 
 function Jobs(props) {
-  console.log('props', props);
-  const router = useRouter();
-  const [navbarLight, setNavbarLight] = useState(true);
-  const [navbarBG, setNavbarBG] = useState(true);
-
   const openPosisitions = props.data;
-  console.log('props', props.data);
 
   return (
     <div className="text-center text-md-left">
