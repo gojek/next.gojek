@@ -279,7 +279,6 @@ export const temsSliderSettings = {
   dots: true,
   slidesToShow: 2,
   slidesToScroll: 2,
-  centerMode: true,
   responsive: [
     {
       breakpoint: 1024,
