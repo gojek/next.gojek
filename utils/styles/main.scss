@@ -793,6 +793,10 @@ body {
     }
   }
 
+  .slick-list {
+    margin-left: 3rem;
+  }
+
   .slick-next,
   .slick-prev {
     display: none !important;
@@ -1156,5 +1160,20 @@ a:hover {
         text-decoration: underline;
       }
     }
+  }
+}
+
+.product-tab {
+  border-radius: 29px;
+
+  button {
+    border-radius: 29px;
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+
+  img {
+    max-width: 6rem;
   }
 }

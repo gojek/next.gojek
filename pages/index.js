@@ -75,12 +75,11 @@ function Home(props) {
   return (
     <div>
       <Navbar />
-      <section className="py-5 d-flex align-items-center home">
+      <section className="py-5 d-flex align-items-md-center home">
         <div className="container">
-          <div className="row align-items-center">
-            <h1 className="heading pt-5 text-white d-block d-md-none">Gojek is a SuperApp. </h1>
-
-            <h1 className="heading pt-5 d-none d-md-block">Gojek is a SuperApp. </h1>
+          <div className="align-items-center">
+            <h1 className="heading pt-5 text-white d-md-none">Gojek is a SuperApp. </h1>
+            <h1 className="heading pt-5 d-none text-white d-md-block">Gojek is a SuperApp. </h1>
           </div>
         </div>
       </section>
@@ -136,25 +135,28 @@ function Home(props) {
           <TechFacts />
 
           <div className="row mt-md-5 pt-md-5 d-flex">
-            <div className="col-4 mt-md-5 pt-md-5 align-self-center">
+            <div className="col-8 offset-4 d-md-none">
+              <h1 className="heading mb-4">Funding</h1>
+            </div>
+            <div className="col-4 mt-md-5 pt-md-5 align-self-md-center">
               <img src="./img/home/gojek-funding.PNG" alt="Funding Gojek" className="img-fluid" />
             </div>
             <div className="col-8 funding mt-md-5 pt-md-5">
-              <h1 className="heading">Funding</h1>
-              <p className="my-5 description">
+              <h1 className="heading d-none d-md-block">Funding</h1>
+              <p className="mb-5 description">
                 We’ve raised a fair amount of capital along the way, and recently closed our Series
                 F funding round. Gojek is fortunate to count Sequoia Capital, Google, Tencent
                 Holdings, JD.com, and Visa, among its investors.
               </p>
               <div className="d-none d-md-block">{fundingList}</div>
             </div>
-            <div className="d-md-none funding px-4">{fundingList}</div>
+            <div className="d-md-none funding px-4 mt-4">{fundingList}</div>
           </div>
         </div>
       </section>
 
       <section className="bg-black py-5 text-white social-media">
-        <div className="container py-5">
+        <div className="container pt-5 pb-4 pb-md-5">
           <div className="intro py-md-5 px-5 px-md-0">
             <h1 className="pb-4 heading">Social Media</h1>
             <p className="description">
@@ -227,70 +229,70 @@ function Home(props) {
               </div>
             </div>
           </div>
-          <div className="d-md-none">
-            <Slider {...sliderSettings}>
-              <div>
-                <div
-                  className="card position-relative mx-2"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+        </div>
+        <div className="d-md-none pb-5">
+          <Slider {...sliderSettings}>
+            <div>
+              <div
+                className="card position-relative mx-2"
+                style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              >
+                <a href="/" target="_blank" className="text-white">
+                  <i className="fab fa-youtube position-absolute overlay-icon"></i>
+                </a>
               </div>
-              <div>
-                <div
-                  className="card position-relative mx-2"
-                  style={{ backgroundImage: `url(/img/home/gojek-instagram.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-instagram position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+            </div>
+            <div>
+              <div
+                className="card position-relative mx-2"
+                style={{ backgroundImage: `url(/img/home/gojek-instagram.png)` }}
+              >
+                <a href="/" target="_blank" className="text-white">
+                  <i className="fab fa-instagram position-absolute overlay-icon"></i>
+                </a>
               </div>
-              <div>
-                <div
-                  className="card position-relative mx-2"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+            </div>
+            <div>
+              <div
+                className="card position-relative mx-2"
+                style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              >
+                <a href="/" target="_blank" className="text-white">
+                  <i className="fab fa-youtube position-absolute overlay-icon"></i>
+                </a>
               </div>
-              <div>
-                <div
-                  className="card position-relative mx-2"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+            </div>
+            <div>
+              <div
+                className="card position-relative mx-2"
+                style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              >
+                <a href="/" target="_blank" className="text-white">
+                  <i className="fab fa-youtube position-absolute overlay-icon"></i>
+                </a>
               </div>
-              <div>
-                <div
-                  className="card position-relative mx-2"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+            </div>
+            <div>
+              <div
+                className="card position-relative mx-2"
+                style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              >
+                <a href="/" target="_blank" className="text-white">
+                  <i className="fab fa-youtube position-absolute overlay-icon"></i>
+                </a>
               </div>
-              <div>
-                <div
-                  className="card position-relative mx-2"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+            </div>
+            <div>
+              <div
+                className="card position-relative mx-2"
+                style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              >
+                <a href="/" target="_blank" className="text-white">
+                  <i className="fab fa-youtube position-absolute overlay-icon"></i>
+                </a>
               </div>
-            </Slider>
-          </div>
+            </div>
+          </Slider>
         </div>
       </section>
 

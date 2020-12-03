@@ -3,7 +3,7 @@ import Links from './Links';
 function Footer(props) {
   return (
     <section className="py-5 footer">
-      <div className="container">
+      <div className="container pt-3 pt-md-0">
         <div className="row mx-0 text-white mt-md-5">
           <div className="col-md-6">
             <Links />
