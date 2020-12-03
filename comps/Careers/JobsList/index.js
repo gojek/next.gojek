@@ -3,7 +3,7 @@ import Search from './search';
 import List from './list';
 import Banner from '../banner';
 import { departments, locations } from '../data.js';
-import _, { filter } from 'underscore';
+import _, { remove } from 'underscore';
 
 class JobsList extends Component {
   state = {
@@ -15,14 +15,18 @@ class JobsList extends Component {
   };
 
   componentDidMount() {
+    let selectedDepartments = _.map(departments, 'label');
+
+    let jobs = _.filter(this.props.data, function(item) {
+      return selectedDepartments.includes(item.categories.department);
+    });
+    this.setState({ data: jobs });
+
     if (this.props.selectedDepartment && this.props.selectedDepartment !== '') {
       var obj = [
         {
           value: this.props.selectedDepartment,
           label: this.props.selectedDepartment,
-          // .split('-')
-          // .join(' ')
-          // .capitalize()
           bgColor: '',
           bgImg: '',
           isSelected: true,
@@ -35,6 +39,7 @@ class JobsList extends Component {
   handleSearchChange = (value, name) => {
     this.setState({ [name]: value }, () => {});
   };
+
   // This function collects ALL keys that are selected fromt dropdown then create a new obj to compare to filter.
   filteredCollected = () => {
     const collectedTrueKeys = {
@@ -74,12 +79,33 @@ class JobsList extends Component {
     });
   };
 
+  updateState(type, value) {
+    let departments = this.state.selectedDepartments;
+    let locations = this.state.selectedLocations;
+    if (type === 'filter') {
+      if (_.find(departments, { label: value })) {
+        const i = _.findIndex(departments, { label: value });
+        departments.splice(i, 1);
+        this.setState({ selectedDepartments: departments });
+      }
+
+      if (_.find(locations, { label: value })) {
+        const i = _.findIndex(locations, { label: value });
+        locations.splice(i, 1);
+        this.setState({ selectedLocations: locations });
+      }
+    } else {
+      this.setState({ keyword: '' });
+    }
+  }
+
   render() {
+    console.log('selectedDepartments', this.state.selectedDepartments);
     const { showAllJobs } = this.props;
     const heading = this.props.jobsHeading || 'Recent Open Positions';
     const selctedFilters = this.filteredCollected();
     const filters = _.union(selctedFilters.department, selctedFilters.location);
-    console.log('filters', filters);
+
     return (
       <div className="careers">
         <section
@@ -101,17 +127,37 @@ class JobsList extends Component {
                 locations={locations}
                 onChange={this.handleSearchChange}
                 onChangeCallback={this.handleSearchChange}
+                keyword={this.state.keyword}
               />
-              <div className="mt-4">
-                {filters.length > 0 && (
-                  <div>
-                    <span className="mr-3">Filters:</span>
-                    {filters.map((name) => {
-                      return <span className="job-tag p-3 mr-3">{name}</span>;
-                    })}
-                  </div>
+              <section className="">
+                {(filters.length > 0 || this.state.keyword !== '') && (
+                  <React.Fragment>
+                    <div className="pt-5">
+                      Filters:
+                      {this.state.keyword !== '' && (
+                        <p className="d-inline mt-5 p-3 job-tag mr-3">
+                          {this.state.keyword}{' '}
+                          <i
+                            className="fas fa-times align-middle"
+                            onClick={() => this.updateState('keyword', this.state.keyword)}
+                          ></i>
+                        </p>
+                      )}
+                      {filters.map((name, i) => {
+                        return (
+                          <p className="d-inline mt-5 p-3 job-tag mr-3" key={i}>
+                            {name}{' '}
+                            <i
+                              className="fas fa-times align-middle"
+                              onClick={() => this.updateState('filter', name)}
+                            ></i>
+                          </p>
+                        );
+                      })}
+                    </div>
+                  </React.Fragment>
                 )}
-              </div>
+              </section>
               <div className="col pt-5 d-flex justify-content-between">
                 <p>
                   <strong>{this.searchJobs().length} Opportunities</strong> found across{' '}

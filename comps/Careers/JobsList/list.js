@@ -23,8 +23,8 @@ function List(props) {
             <div className="pb-3">
               {openPositions.length > 0 ? (
                 openPositions.map((data, key) => (
-                  <a href={`jobs/${data.id}`}>
-                    <div className="table-row row py-3" key={key}>
+                  <a href={`jobs/${data.id}`} key={key}>
+                    <div className="table-row row py-3">
                       <div className="col-md-6">
                         <p className="mb-0">{data.text}</p>
                       </div>
@@ -68,9 +68,9 @@ function List(props) {
           <div className="pb-3">
             {openPositions.length > 0 ? (
               openPositions.map((data, key) => (
-                <div className={key % 2 === 0 ? 'even' : 'odd'}>
+                <div className={key % 2 === 0 ? 'even' : 'odd'} key={key}>
                   <a href={`jobs/${data.id}`}>
-                    <div className="py-3 px-5" key={key}>
+                    <div className="py-3 px-5">
                       <p className="title mb-0">{data.text}</p>
                       <p className="sub-title mb-0">
                         {data.categories.department}

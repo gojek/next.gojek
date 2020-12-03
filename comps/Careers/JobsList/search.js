@@ -39,6 +39,7 @@ class MySelect extends Component {
               className="form-control rounded-pill"
               placeholder="Keyword Search_"
               name="keyword"
+              value={this.props.keyword}
             />
           </div>
           <div className="col-md-5 pl-0 pl-md-3">
