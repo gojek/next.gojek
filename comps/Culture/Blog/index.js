@@ -12,14 +12,14 @@ const sliderSettings = {
 function Blog() {
   return (
     <div>
-      <div className="pt-5 d-none d-md-block">
+      <div className="pt-4 d-none d-md-block">
         <div className="row">
           {posts.map((post) => {
             return <Card data={post} />;
           })}
         </div>
       </div>
-      <div className="d-md-none">
+      <div className="pt-4 d-md-none">
         <Slider {...sliderSettings}>
           {posts.map((post) => {
             return <Card data={post} />;

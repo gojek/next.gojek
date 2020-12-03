@@ -1135,6 +1135,16 @@ a:hover {
     background-image: url('/img/gojek-cta.svg');
     background-position: bottom right;
 
+    @media screen and (max-width: $md-break) {
+      padding-bottom: 15rem !important;
+    }
+
+    @media screen and (max-width: 576px) {
+      padding-bottom: 10rem !important;
+      border-radius: 0;
+      margin-top: 0;
+    }
+
     p {
       font-size: 1.25rem;
     }
