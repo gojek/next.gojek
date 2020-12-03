@@ -33,7 +33,7 @@ function Blog(props) {
   ];
 
   return (
-    <div className="text-center text-md-left">
+    <div className="text-center text-md-left blog-page">
       <Head>
         <title>Gojek | Blogs</title>
       </Head>

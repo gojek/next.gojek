@@ -275,9 +275,36 @@ export const teams = [
 ];
 
 export const temsSliderSettings = {
-  // centerMode: true,
   infinite: true,
+  dots: true,
   slidesToShow: 2,
   slidesToScroll: 2,
-  dots: true,
+  centerMode: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        centerMode: true,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+      },
+    },
+    {
+      breakpoint: 425,
+      settings: {
+        slidesToShow: 1.2,
+        slidesToScroll: 1,
+        centerMode: false,
+        infinite: false,
+      },
+    },
+  ],
 };

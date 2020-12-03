@@ -1,11 +1,19 @@
 import { techFacts } from './data';
+import Slider from 'react-slick';
+
+const sliderSettings = {
+  infinite: true,
+  dots: false,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
 
 function TechFacts() {
-  return (
-    <div className="pt-5">
-      {techFacts.map((data, i) => (
+  const facts = (xs) => {
+    return techFacts.map((data, i) => (
+      <div>
         <div
-          className="card text-white px-5 pt-5 border-0 mb-4 shadow"
+          className={`card text-white px-5 pt-5 border-0 mb-4 ${xs ? 'mx-1' : 'shadow'}`}
           style={{ backgroundColor: data.bgColor }}
           key={i}
         >
@@ -20,7 +28,15 @@ function TechFacts() {
             </div>
           </div>
         </div>
-      ))}
+      </div>
+    ));
+  };
+  return (
+    <div>
+      <div className="pt-5 d-none d-md-block">{facts(false)}</div>
+      <div className="d-md-none">
+        <Slider {...sliderSettings}>{facts(true)}</Slider>
+      </div>
     </div>
   );
 }

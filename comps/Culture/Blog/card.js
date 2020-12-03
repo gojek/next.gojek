@@ -8,7 +8,7 @@ function Card(props) {
           className="placeholder bg-img"
           style={{ backgroundImage: `url(${props.data.img})` }}
         ></div>
-        <div className="card-body">
+        <div className="card-body px-0">
           <p className="card-name blogHeading pointer font-weight-bold text-lead">
             How We Pushed a Million Keys to Redis in Seconds{' '}
           </p>

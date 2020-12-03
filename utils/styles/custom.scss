@@ -134,6 +134,12 @@ section {
   .head {
     font-size: 1.875rem;
   }
+  @media screen and (max-width: 576px) {
+    padding-bottom: 5rem;
+    .heading-sm {
+      font-size: 1.25rem;
+    }
+  }
   @media screen and (min-width: 576px) {
     .slick-prev,
     .slick-next {
@@ -193,6 +199,16 @@ section {
   //   font-weight: bold;
   //   line-height: 42px;
   // }
+  @media screen and (max-width: 576px) {
+    .heading-sm {
+      font-size: 1.5rem;
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    top: 12rem;
+  }
   .card {
     border-radius: 52px;
   }
@@ -216,6 +232,15 @@ section {
       transform: translate(-50%, -50%);
     }
   }
+}
+
+.prod-desc {
+  font-size: 0.875rem;
+}
+
+.products-button,
+.products-expanded {
+  border-radius: 1.8rem;
 }
 
 .cta {
@@ -313,6 +338,12 @@ section {
   .text-lead {
     font-family: $extended-book;
   }
+  @media screen and (max-width: 576px) {
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
+  }
 }
 
 // @media screen and (min-width: 2000px) {
@@ -333,6 +364,13 @@ section {
 
   .bannerHeading {
     font-size: 2.82rem;
+  }
+
+  .heading-sm {
+    @media screen and (max-width: 576px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
   }
 }
 
@@ -369,9 +407,25 @@ section {
 }
 
 .values {
+  .slide {
+    align-items: flex-start;
+  }
+  @media screen and (max-width: 576px) {
+    .slick-list {
+      padding: 0 !important;
+    }
+  }
   img {
     max-width: 175px;
-    margin-right: 2rem;
+    margin-right: 3rem;
+    @media screen and (max-width: 576px) {
+      max-width: 100px;
+      margin-right: 1rem;
+    }
+  }
+
+  .text-lead {
+    font-family: $header-font;
   }
 
   .slick-slider {
@@ -380,16 +434,28 @@ section {
     }
     .slick-dots {
       justify-content: center;
-      bottom: -6rem;
-      margin-left: -8rem;
+      @media screen and (min-width: 576px) {
+        bottom: -6rem;
+        margin-left: -8rem;
+      }
+      @media screen and (max-width: 576px) {
+        margin-bottom: -4rem !important;
+      }
       li {
         min-width: 2rem !important;
+        @media screen and (max-width: 576px) {
+          margin-bottom: 1rem;
+          min-width: 1rem !important;
+        }
         button {
           min-width: 1px !important;
-          width: 2rem;
-          margin: 0 1rem;
-          border-radius: 5px;
-          height: 4px;
+          @media screen and (min-width: 576px) {
+            width: 2rem;
+            margin: 0 1rem;
+            height: 4px;
+            border-radius: 5px;
+          }
+          border-radius: 50%;
           padding: 3px;
           background-color: #d2d2d2;
         }
@@ -423,6 +489,9 @@ section {
         font-size: 1.25rem;
         color: #494a4a;
       }
+      @media screen and (max-width: 576px) {
+        display: none !important;
+      }
     }
     @media screen and (min-width: 2000px) {
       .slick-slide {
@@ -443,6 +512,15 @@ section {
     }
     &.swiper-slide-next {
       margin-left: 0;
+    }
+  }
+}
+
+.blog-page {
+  @media screen and (max-width: 576px) {
+    .slick-next,
+    .slick-prev {
+      display: none !important;
     }
   }
 }
@@ -502,6 +580,27 @@ section {
     .card {
       margin-bottom: 2.5rem;
       padding: 2rem;
+    }
+  }
+  @media screen and(max-width: 576px) {
+    .heading {
+      font-size: 1.625rem;
+    }
+    .heading-sm {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
+    p {
+      font-size: 0.875rem;
+    }
+    .card-columns {
+      grid-column-gap: 1rem;
+      column-gap: 1rem;
+      column-count: 2;
+      .card {
+        margin-bottom: 1rem;
+        padding: 2rem 1rem;
+      }
     }
   }
 }

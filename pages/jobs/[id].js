@@ -169,10 +169,10 @@ function DescriptionPage(props) {
                 </WhatsappShareButton>
               </div>
               <p className="applyText">
-                Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out
-                print, graphic or web designs. The passage is attributed to an unknown typesetter in
-                the 15th century who is thought to have scrambled parts of Cicero's De Finibus
-                Bonorum et Malorum for use in a type specimen book.
+                Gojek is a Super App. It’s one app for ordering food, commuting, digital payments,
+                shopping, hyper-local delivery, and a dozen other products. It is Indonesia’s first
+                and only decacorn. It's also the only Southeast Asian startup to be part of
+                Fortune's list of 'Companies That Changed The World.
               </p>
               <div className="card my-4"></div>
             </div>

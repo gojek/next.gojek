@@ -86,11 +86,11 @@ function Links(props) {
       <div
         className={`row pt-3 ${
           props.navbar
-            ? 'justify-content-between'
+            ? 'justify-content-between px-3'
             : 'justify-content-center justify-content-md-start px-4'
         }`}
       >
-        <img src="/img/gojek-tech-white-logo.png" alt="Gojek" />
+        <img src="/img/gojek-tech-white-logo.png" alt="Gojek" className="img-fluid" />
         {props.navbar ? (
           <button className="btn text-white" onClick={() => props.onClose()}>
             <span>

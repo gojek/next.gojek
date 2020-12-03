@@ -2,15 +2,19 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Router from 'next/router';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Navbar from '~/../../comps/Navbar';
 import JobsTable from '~/../../comps/Careers/jobsTable';
 import CommonCta from '~/../../comps/Common/Cta';
 import { teamsData } from './data.js';
 import List from '~/../../comps/Careers/JobsList/list';
+import Slider from 'react-slick';
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+const blogsSliderSettings = {
+  infinite: false,
+  dots: false,
+  slidesToShow: 1.5,
+  slidesToScroll: 1,
+};
 
 function CareersPage(props) {
   const router = useRouter();
@@ -116,18 +120,12 @@ function CareersPage(props) {
               </a>
             </div>
           </div>
-          <div className="d-block d-md-none">
-            <Swiper
-              // spaceBetween={32}
-              slidesPerView={1}
-              // navigation
-              centeredSlides={true}
-              // pagination={{ clickable: true }}
-            >
+          <div className="d-none">
+            <Slider {...blogsSliderSettings}>
               {data.blogs.map((blog, i) => {
                 return (
-                  <SwiperSlide>
-                    <div className="col-md-4 px-3">
+                  <div>
+                    <div className="px-3">
                       <div className="card my-4 mx-1">
                         <div className="placeholder"></div>
                         <div className="card-body pb-0">
@@ -139,10 +137,10 @@ function CareersPage(props) {
                         </div>
                       </div>
                     </div>
-                  </SwiperSlide>
+                  </div>
                 );
               })}
-            </Swiper>
+            </Slider>
             <div className="py-4 mt-3">
               <a className="link text-green-light pl-4" href="#">
                 Read more blogs

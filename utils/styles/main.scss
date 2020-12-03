@@ -485,7 +485,10 @@ body {
     padding-bottom: 5rem;
     @media screen and (max-width: 576px) {
       .header {
-        font-size: 2.25rem;
+        font-size: 1.625rem;
+      }
+      .head {
+        font-size: 1.125rem;
       }
     }
     .header-heigh {
@@ -494,8 +497,10 @@ body {
   }
   .card-columns {
     column-count: 2;
+    column-gap: 2.5rem;
     @media screen and (max-width: $sm-break) {
       column-count: 1;
+      column-gap: 1rem;
     }
     .card {
       border: none;
@@ -510,6 +515,7 @@ body {
         height: 32rem;
         // margin-bottom: 1.25rem;
         @media screen and (max-width: 576px) {
+          height: 15rem;
           .header {
             height: 20rem;
           }
@@ -578,17 +584,9 @@ body {
   }
   @media screen and (max-width: 576px) {
     min-height: auto;
-    .slick-next {
-      right: 1rem;
-      &::before {
-        color: #101010;
-      }
-    }
+    .slick-next,
     .slick-prev {
-      left: 1rem;
-      &::before {
-        color: #101010;
-      }
+      display: none !important;
     }
   }
   @media screen and (min-width: $md-break) {
@@ -674,10 +672,12 @@ body {
 
 .slick-prev {
   left: -10px;
+  z-index: 1;
 }
 
 .slick-next {
   right: -10px;
+  z-index: 1;
 }
 
 @media screen and (min-width: $sm-break) {
@@ -780,6 +780,16 @@ body {
 }
 
 .social-media {
+  @media screen and (min-width: 768px) {
+    .intro {
+      width: 50%;
+    }
+  }
+
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+  }
   .btn {
     width: 2rem;
     height: 2rem;
@@ -898,8 +908,7 @@ body {
 }
 
 #stories,
-#systems,
-#openingsBlogs {
+#systems {
   .heading {
     font-family: $header-font;
     font-size: 1.875rem;

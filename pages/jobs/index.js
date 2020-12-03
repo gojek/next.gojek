@@ -28,7 +28,7 @@ function Jobs(props) {
       <JobsList data={openPosisitions} showAllJobs={false} />
 
       {/* Departments */}
-      <section className="bg-black full-height py-5" id="departments">
+      <section className="bg-black full-height py-md-5" id="departments">
         <Departments data={openPosisitions} />
       </section>
       {/* End Departments */}
