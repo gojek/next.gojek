@@ -29,7 +29,9 @@ body {
 }
 
 .home {
-  background: url('/img/home/banner.png') no-repeat center center;
+  background: url('/img/home/banner-new.png') no-repeat center center;
+  min-height: 70vh;
+  background-size: cover;
 }
 .banner {
   -webkit-background-size: cover;
@@ -346,11 +348,11 @@ section {
   }
 }
 
-// @media screen and (min-width: 2000px) {
-//   .pointers {
-//     margin-top: 0rem;
-//   }
-// }
+@media screen and (min-width: 2000px) {
+  .pointers {
+    margin-bottom: 5rem;
+  }
+}
 .product {
   p {
     font-size: 18px;
@@ -616,8 +618,7 @@ section {
 
 .gojek-bg {
   background-image: url('/img/home/gojek-bg.svg');
-  height: 100vh;
-  min-height: 850px;
+  min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 }

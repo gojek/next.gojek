@@ -74,15 +74,13 @@ function Home(props) {
   );
   return (
     <div>
-      <Navbar whiteNav />
-      <section className="banner home">
+      <Navbar />
+      <section className="py-5 d-flex align-items-center home">
         <div className="container">
-          <div
-            className="row mx-0 pt-5 pt-md-0 align-items-md-center image-container"
-            style={{ height: '70vh' }}
-          >
+          <div className="row align-items-center">
+            <h1 className="heading pt-5 text-white d-block d-md-none">Gojek is a SuperApp. </h1>
+
             <h1 className="heading pt-5 d-none d-md-block">Gojek is a SuperApp. </h1>
-            <h1 className="heading pt-5 text-white d-md-none">Gojek is a SuperApp. </h1>
           </div>
         </div>
       </section>
@@ -104,9 +102,9 @@ function Home(props) {
           <div className="container">
             <div
               className="row d-flex align-items-center justify-content-center"
-              style={{ minHeight: '800px' }}
+              style={{ minHeight: '100vh' }}
             >
-              <div className="col-md-6 align-self-end pointers text-white">
+              <div className="col-md-6 align-self-end pb-xl-5 pointers text-white">
                 <ul className="text-lead pl-5">
                   <li className="pb-3">200 million+ completed orders per month 1.</li>
                   <li className="pb-3">

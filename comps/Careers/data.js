@@ -38,7 +38,7 @@ export const departments = [
 ];
 
 export const locations = [
-  { label: 'Bangalore', value: 'bangalore' },
+  { label: 'Bengaluru', value: 'bengaluru' },
   { label: 'Gurugram', value: 'gurugram' },
   { label: 'Jakarta', value: 'jakarta' },
   { label: 'Singapore', value: 'singapore' },

@@ -188,6 +188,11 @@
     margin-left: 20px !important;
   }
   @media screen and(max-width: 576px) {
-    height: 300px !important;
+    &.perk-img {
+      height: 331px !important;
+    }
+    &.perk-card {
+      height: 218px !important;
+    }
   }
 }
