@@ -295,7 +295,7 @@ function Home(props) {
       </section>
 
       {/* CTA */}
-      <CommonCta />
+      <CommonCta mobile />
       {/* End CTA */}
     </div>
   );

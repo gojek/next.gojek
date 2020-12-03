@@ -16,7 +16,7 @@ function Values(props) {
                 className="img-fluid "
                 alt="..."
               />
-              <div>
+              <div className="align-self-center align-self-md-start">
                 <h5 className="mt-0 text-lead font-weight-bold">
                   Collaborate <br />
                   with compassion
@@ -43,7 +43,7 @@ function Values(props) {
                 className="img-fluid mr-4"
                 alt="..."
               />
-              <div>
+              <div className="align-self-center align-self-md-start">
                 <h5 className="mt-0 text-lead font-weight-bold">
                   Criticism <br />
                   is a gift
@@ -66,7 +66,7 @@ function Values(props) {
                 className="img-fluid mr-4"
                 alt="..."
               />
-              <div>
+              <div className="align-self-center align-self-md-start">
                 <h5 className="mt-0 text-lead font-weight-bold">
                   Be fast <br />
                   and fearless
@@ -91,7 +91,7 @@ function Values(props) {
                 className="img-fluid mr-4"
                 alt="..."
               />
-              <div>
+              <div className="align-self-center align-self-md-start">
                 <h5 className="mt-0 text-lead font-weight-bold">
                   Stand up for
                   <br />
@@ -117,7 +117,7 @@ function Values(props) {
                 className="img-fluid mr-4"
                 alt="..."
               />
-              <div>
+              <div className="align-self-center align-self-md-start">
                 <h5 className="mt-0 text-lead font-weight-bold">
                   Earn <br />
                   your title
@@ -142,7 +142,7 @@ function Values(props) {
                 className="img-fluid mr-4"
                 alt="..."
               />
-              <div>
+              <div className="align-self-center align-self-md-start">
                 <h5 className="mt-0 text-lead font-weight-bold">
                   Become
                   <br />a scientist
@@ -168,7 +168,7 @@ function Values(props) {
                 className="img-fluid mr-4"
                 alt="..."
               />
-              <div>
+              <div className="align-self-center align-self-md-start">
                 <h5 className="mt-0 text-lead font-weight-bold">
                   Always <br />
                   be prepared
@@ -193,7 +193,7 @@ function Values(props) {
                 className="img-fluid mr-4"
                 alt="..."
               />
-              <div>
+              <div className="align-self-center align-self-md-start">
                 <h5 className="mt-0 text-lead font-weight-bold">
                   It’s not
                   <br />
@@ -221,7 +221,7 @@ function Values(props) {
                 className="img-fluid mr-4"
                 alt="..."
               />
-              <div>
+              <div className="align-self-center align-self-md-start">
                 <h5 className="mt-0 text-lead font-weight-bold">
                   Communicate
                   <br />
@@ -249,7 +249,7 @@ function Values(props) {
                 className="img-fluid mr-4"
                 alt="..."
               />
-              <div>
+              <div className="align-self-center align-self-md-start">
                 <h5 className="mt-0 text-lead font-weight-bold">
                   Shoot
                   <br />

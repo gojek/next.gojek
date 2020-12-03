@@ -52,7 +52,7 @@ function Blog(props) {
               </h1>
               <p className="text-white">
                 Take a behind-the-scenes peek into the triumphs and tribulations it takes to build a
-                #SuperApp.
+                #SuperApp.<i class="twa twa-railway-car"></i>
               </p>
             </div>
             <div className="col-12 col-lg-6 px-0 px-md-3">

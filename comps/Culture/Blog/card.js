@@ -12,9 +12,6 @@ function Card(props) {
           <p className="card-name blogHeading pointer font-weight-bold text-lead">
             How We Pushed a Million Keys to Redis in Seconds{' '}
           </p>
-          <p className="card-text blogDescription mb-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          </p>
           <Link href="" text="Read full story" color="text-green-light" />
         </div>
       </div>
