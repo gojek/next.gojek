@@ -70,12 +70,20 @@
   background-size: cover;
   min-height: 439px;
   max-width: 330px;
+
   border-radius: 44px;
   .head {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
   .openings {
     font-size: 1rem;
+  }
+  @media screen and(max-width: 576px) {
+    max-width: 210px;
+    min-height: 240px;
+    .head {
+      font-size: 1.125rem;
+    }
   }
 }
 .operations-platform {
@@ -175,6 +183,11 @@
   border-radius: 2.5rem;
   background-position: center bottom !important;
   background-repeat: no-repeat;
-  margin-right: 20px !important;
-  margin-left: 20px !important;
+  @media screen and(min-width: 576px) {
+    margin-right: 20px !important;
+    margin-left: 20px !important;
+  }
+  @media screen and(max-width: 576px) {
+    height: 300px !important;
+  }
 }

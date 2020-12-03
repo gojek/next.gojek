@@ -49,17 +49,14 @@ export const locations = [
 // Careers landing page text
 export const banner = {
   bannerImg: '/img/careers/banner.png',
-  title: 'We give you leverage to create impact at scale.',
-  subHead: "Join a company that strives to support you. Not just 'your best work', but all of you.",
-  departmentData: {
-    title: 'Choose where you belong…',
-    description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-  },
+  title: 'Hard to get into, harder to leave.',
+  subHead: '(A chance to build Southeast Asia)',
   teamData: {
-    title: 'Teams',
-    description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    xsTitle: 'Teams',
+    xsDescription:
+      'Want to work with a specific team? (Foodtech, fintech, ridetech, we have it all and more. Pick your choice )',
+    title: 'Want to work with a specific team?',
+    description: '(Foodtech, fintech, ridetech, we have it all and more. Pick your choice )',
   },
 };
 
@@ -101,7 +98,7 @@ export const teams = [
   },
 ];
 
-export const temsSliderSettings = {
+export const teamsSliderSettings = {
   centerMode: true,
   infinite: true,
   slidesToShow: 3,
@@ -110,22 +107,24 @@ export const temsSliderSettings = {
     {
       breakpoint: 1300,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2.5,
         centerMode: false,
+        infinite: false,
       },
     },
     {
       breakpoint: 768,
       settings: {
-        slidesToShow: 1,
-        // centerMode: false,
+        slidesToShow: 2,
+        centerMode: false,
       },
     },
     {
       breakpoint: 576,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 1.5,
         centerMode: false,
+        infinite: false,
       },
     },
   ],

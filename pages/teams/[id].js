@@ -2,14 +2,19 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Router from 'next/router';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Navbar from '~/../../comps/Navbar';
 import JobsTable from '~/../../comps/Careers/jobsTable';
 import CommonCta from '~/../../comps/Common/Cta';
 import { teamsData } from './data.js';
+import List from '~/../../comps/Careers/JobsList/list';
+import Slider from 'react-slick';
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+const blogsSliderSettings = {
+  infinite: false,
+  dots: false,
+  slidesToShow: 1.5,
+  slidesToScroll: 1,
+};
 
 function CareersPage(props) {
   const router = useRouter();
@@ -31,13 +36,8 @@ function CareersPage(props) {
         let { location } = job.categories;
 
         // to check the department name for department page
-        if (team == teamsData[teamValue].value) {
-          jobs.push({
-            title: job.text,
-            department: department,
-            location: location,
-            id: job.id,
-          });
+        if (team == 'Finance & Accounting') {
+          jobs.push(job);
         }
       });
 
@@ -76,19 +76,14 @@ function CareersPage(props) {
               style={{ height: '14rem', borderRadius: '3rem', backgroundColor: '#f2d4d7' }}
             ></div>
           </div>
-          <div className="container">
-            <div
-              className="listings bg-white py-5 px-2 px-md-5 "
-              style={{ borderRadius: '3rem', paddingTop: '5rem' }}
-            >
-              {jobs.length > 0 ? (
-                <JobsTable jobs={jobs} careers routeToAllJobs={() => Router.push('/jobs/all')} />
-              ) : (
-                <p className="text-center py-5" style={{ fontSize: '1.5rem' }}>
-                  Currently we don't have any openings under Kernel, please check back later. Thanks
-                </p>
-              )}
-            </div>
+          <div className="">
+            {jobs.length > 0 ? (
+              <List openPositions={jobs} heading="Current Open Positions" />
+            ) : (
+              <p className="text-center py-5" style={{ fontSize: '1.5rem' }}>
+                Currently we don't have any openings under Kernel, please check back later. Thanks
+              </p>
+            )}
           </div>
         </section>
 
@@ -125,18 +120,12 @@ function CareersPage(props) {
               </a>
             </div>
           </div>
-          <div className="d-block d-md-none">
-            <Swiper
-              // spaceBetween={32}
-              slidesPerView={1}
-              // navigation
-              centeredSlides={true}
-              // pagination={{ clickable: true }}
-            >
-              {/* {data.blogs.map((blog, i) => {
+          <div className="d-none">
+            <Slider {...blogsSliderSettings}>
+              {data.blogs.map((blog, i) => {
                 return (
-                  <SwiperSlide>
-                    <div className="col-md-4 px-3">
+                  <div>
+                    <div className="px-3">
                       <div className="card my-4 mx-1">
                         <div className="placeholder"></div>
                         <div className="card-body pb-0">
@@ -148,10 +137,10 @@ function CareersPage(props) {
                         </div>
                       </div>
                     </div>
-                  </SwiperSlide>
+                  </div>
                 );
-              })} */}
-            </Swiper>
+              })}
+            </Slider>
             <div className="py-4 mt-3">
               <a className="link text-green-light pl-4" href="#">
                 Read more blogs

@@ -81,14 +81,21 @@ class JobsList extends Component {
     const filters = _.union(selctedFilters.department, selctedFilters.location);
     console.log('filters', filters);
     return (
-      <div>
+      <div className="careers">
         <section
           id="banner"
           className="full-height py-5 d-flex align-items-end align-items-xl-center"
         >
           <div className="container">
-            <Banner />
-            <div className="pt-5">
+            <Banner
+              options={departments}
+              locations={locations}
+              onChange={this.handleSearchChange}
+              onChangeCallback={this.handleSearchChange}
+              searchJobs={this.searchJobs}
+              selctedFilters={selctedFilters}
+            />
+            <div className="pt-5 d-none d-md-block">
               <Search
                 options={departments}
                 locations={locations}
@@ -98,7 +105,7 @@ class JobsList extends Component {
               <div className="mt-4">
                 {filters.length > 0 && (
                   <div>
-                    <span>Filters:</span>
+                    <span className="mr-3">Filters:</span>
                     {filters.map((name) => {
                       return <span className="job-tag p-3 mr-3">{name}</span>;
                     })}

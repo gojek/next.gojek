@@ -4,7 +4,7 @@ function Footer(props) {
   return (
     <section className="py-5 footer">
       <div className="container">
-        <div className="row mx-0 text-white mt-5">
+        <div className="row mx-0 text-white mt-md-5">
           <div className="col-md-6">
             <Links />
           </div>

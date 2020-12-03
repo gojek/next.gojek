@@ -7,7 +7,7 @@ function Links(props) {
         <ul className="list-unstyled mb-0">
           {data.firstColumn.map((data, i) => (
             <li className="pb-3" key={i}>
-              {data.name}
+              <a href={data.link}>{data.name}</a>
             </li>
           ))}
         </ul>
@@ -16,7 +16,7 @@ function Links(props) {
         <ul className="list-unstyled mb-0">
           {data.secondColumn.map((data, i) => (
             <li className="pb-3" key={i}>
-              {data.name}
+              <a href={data.link}>{data.name}</a>
             </li>
           ))}
         </ul>
@@ -38,7 +38,7 @@ function Links(props) {
       <ul className="list-unstyled mb-0 row px-4">
         {data.links.map((data, i) => (
           <li className="pb-4 col-6" key={i}>
-            {data.name}
+            <a href={data.link}>{data.name}</a>
           </li>
         ))}
       </ul>
@@ -62,7 +62,7 @@ function Links(props) {
       <ul className="list-unstyled mb-0 px-4">
         {data.links.map((data, i) => (
           <li className="pb-4" key={i}>
-            {data.name}
+            <a href={data.link}>{data.name}</a>
           </li>
         ))}
       </ul>
@@ -86,11 +86,11 @@ function Links(props) {
       <div
         className={`row pt-3 ${
           props.navbar
-            ? 'justify-content-between'
+            ? 'justify-content-between px-3'
             : 'justify-content-center justify-content-md-start px-4'
         }`}
       >
-        <img src="/img/gojek-tech-white-logo.png" alt="Gojek" />
+        <img src="/img/gojek-tech-white-logo.png" alt="Gojek" className="img-fluid" />
         {props.navbar ? (
           <button className="btn text-white" onClick={() => props.onClose()}>
             <span>

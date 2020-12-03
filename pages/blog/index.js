@@ -33,7 +33,7 @@ function Blog(props) {
   ];
 
   return (
-    <div className="text-center text-md-left">
+    <div className="text-center text-md-left blog-page">
       <Head>
         <title>Gojek | Blogs</title>
       </Head>
@@ -45,9 +45,9 @@ function Blog(props) {
       >
         <div className="container">
           <div className="row justify-content-around align-items-end">
-            <div className="col-12 col-lg-6 order-1 order-lg-0 pr-5">
+            <div className="col-12 col-lg-6 order-1 order-lg-0 pr-md-2 px-5 px-md-5 ">
               <h1 className="banner-head text-white">
-                Wondering <br />
+                Wondering <br className="d-none d-md-block" />
                 how we do it all?
               </h1>
               <p className="text-white">
@@ -55,7 +55,7 @@ function Blog(props) {
                 #SuperApp.
               </p>
             </div>
-            <div className="col-12 col-lg-6">
+            <div className="col-12 col-lg-6 px-0 px-md-3">
               <img src="/img/Blog-Banner.png" className="img-fluid banner-img" alt="Gojek Banner" />
             </div>
           </div>

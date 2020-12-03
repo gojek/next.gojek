@@ -18,9 +18,9 @@ function ProductSlider() {
 
   return (
     <div>
-      <div className="container px-0">
-        <div className="row pb-5">
-          <h1 className="heading-sm w-75 mx-4 pb-5">
+      <div className="container">
+        <div className="row pb-md-5">
+          <h1 className="heading-sm w-75 mx-4 pb-5 d-none d-md-block">
             We have 20+ products and do over 7 million orders a day across
             <span className={`${activeProduct === 0 ? 'text-green' : 'text-white'}`}>
               Transport &amp; Logistics
@@ -36,13 +36,47 @@ function ProductSlider() {
             </span>{' '}
             .
           </h1>
+          <h1 className="heading-sm px-5 pb-2 d-md-none text-center">
+            We have 20+ products and do over 7 million orders a day across...
+          </h1>
         </div>
       </div>
-      <Slider {...settings}>
+      <div className="d-none d-md-block">
+        <Slider {...settings}>
+          {departments.map((data, i) => (
+            <Slide data={data} activeProduct={activeProduct} key={i} />
+          ))}
+        </Slider>
+      </div>
+      <div className="d-md-none px-4">
         {departments.map((data, i) => (
-          <Slide data={data} activeProduct={activeProduct} key={i} />
+          <div className="mb-3">
+            <button
+              class={`btn w-100 text-white ${data.bgClass}`}
+              data-toggle="collapse"
+              data-target={`#${data.id}`}
+              aria-expanded="false"
+              aria-controls={data.id}
+              type="button"
+            >
+              <div className="d-flex justify-content-between px-4">
+                <p className="mb-0">{data.name}</p>
+                <i class="fas fa-chevron-down align-self-center" aria-expanded="false"></i>
+              </div>
+              <div class="collapse text-left w-100 py-4" id={data.id}>
+                <div className="p-4">
+                  {data.products.map((product) => (
+                    <div className="mb-4 px-2" key={product.id}>
+                      <img src={product.img} alt={product.alt} className="img-fluid mb-2" />
+                      <p className="mb-0 prod-desc">{product.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </button>
+          </div>
         ))}
-      </Slider>
+      </div>
     </div>
   );
 }

@@ -3,7 +3,6 @@ import { scroller } from 'react-scroll';
 import Router from 'next/router';
 
 import Head from 'next/head';
-import homePage1 from '~/../../static/Homepage-05.png';
 import Navbar from '~/../../comps/Navbar';
 import Tags from '~/../../comps/Blog/Tag';
 import BlogNew from '../../comps/BlogNew';
@@ -26,15 +25,15 @@ function allPosts(props) {
   ];
 
   return (
-    <div className="text-center text-md-left">
+    <div className="text-center text-md-left blog-page">
       <Head>
         <title>Gojek | Blogs</title>
       </Head>
-      <Navbar light bg="#720062" />
+      <Navbar whiteNav />
       {/* banner section */}
       <section
         className="py-5 d-flex align-items-center blog-banner"
-        style={{ backgroundColor: '#720062' }}
+        style={{ backgroundColor: '#00a913' }}
       >
         <div className="container">
           <div className="row justify-content-around align-items-end">
@@ -48,7 +47,7 @@ function allPosts(props) {
               </p>
             </div>
             <div className="col-12 col-lg-6">
-              <img src={homePage1} className="img-fluid banner-img" alt="Gojek Banner" />
+              <img src="/img/Blog-Banner.png" className="img-fluid banner-img" alt="Gojek Banner" />
             </div>
           </div>
         </div>

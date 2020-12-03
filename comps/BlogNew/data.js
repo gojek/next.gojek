@@ -25,8 +25,11 @@ export const featuredArticles = [
 ];
 
 export const ctaData = {
-  image: '/img/placeholder3.jpeg',
+  image: '/img/blog-cta.jpg',
   title: 'Code Coverage: from Failing the Build to Publishing',
   link: '#',
   linkText: 'Read the article',
+  xsTitle: 'Build the tech that powers an entire country.',
+  xsLink: '/jobs',
+  xsLinkText: 'Apply Now',
 };

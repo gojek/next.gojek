@@ -7,11 +7,17 @@
 .heading {
   font-family: $header-font;
   font-size: $font-xxl;
+  @media screen and (max-width: 576px) {
+    font-size: 1.6rem;
+  }
 }
 
 .featuredHeading {
   font-size: 1.875rem;
   font-family: $header-font;
+  @media screen and (max-width: 576px) {
+    font-size: 1.6rem;
+  }
 }
 
 .ctaPurple {
@@ -21,6 +27,9 @@
 .ctaTitle {
   font-size: 1.75rem;
   font-family: $header-font;
+  @media screen and (max-width: 576px) {
+    font-size: 1.6rem;
+  }
 }
 .ctaLink {
   font-size: 1.25rem;

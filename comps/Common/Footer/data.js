@@ -8,12 +8,12 @@ export const data = {
     {
       id: 2,
       name: 'Life@Gojek',
-      link: '/',
+      link: '/life-at-gojek',
     },
     {
       id: 3,
       name: 'Blogs & News',
-      link: '#',
+      link: '/blog',
     },
     {
       id: 4,
@@ -30,7 +30,7 @@ export const data = {
     {
       id: 6,
       name: 'Join us',
-      link: '/',
+      link: '/jobs',
     },
     {
       id: 7,
@@ -52,7 +52,7 @@ export const data = {
     {
       id: 2,
       name: 'Blogs & News',
-      link: '/',
+      link: '/blog',
     },
     {
       id: 3,
@@ -67,12 +67,12 @@ export const data = {
     {
       id: 5,
       name: 'Life@Gojek',
-      link: '#',
+      link: '/life-at-gojek',
     },
     {
       id: 6,
       name: 'Join us',
-      link: '/',
+      link: '/jobs',
     },
     {
       id: 7,

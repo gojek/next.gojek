@@ -21,8 +21,8 @@ function Tag(tagData) {
 
 function Tags(props) {
   return (
-    <div className="mt-5">
-      <div className={`pt-5 d-flex flex-wrap mt-5 ${styles.tagList}`}>
+    <div>
+      <div className={`pt-5 d-flex ${styles.tagList}`}>
         {props.tags.map((tag) => (
           <Tag tag={tag} data={props} />
         ))}

@@ -3,8 +3,14 @@
   .title {
     color: #191919;
     font-family: $header-font;
+    @media screen and (max-width: 576px) {
+      font-size: 1.125rem;
+    }
     &.featured {
       font-size: 1.875rem;
+      @media screen and (max-width: 576px) {
+        font-size: 1.125rem;
+      }
     }
   }
   .description {
@@ -26,6 +32,9 @@
   .thumbnail {
     &.large {
       min-height: 28rem;
+      @media screen and (max-width: 576px) {
+        min-height: 15rem;
+      }
     }
     &.small {
       min-height: 12.25rem;
@@ -62,6 +71,11 @@
 }
 .blog-banner {
   min-height: 70vh;
+  @media screen and (max-width: 576px) {
+    .banner-head {
+      font-size: 1.7rem;
+    }
+  }
 }
 
 .view-all:hover {
