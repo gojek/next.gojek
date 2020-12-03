@@ -8,9 +8,9 @@ function Home(props) {
   return (
     <div>
       <Navbar />
-      <section className="banner home">
+      <section className="py-5 d-flex align-items-center home">
         <div className="container">
-          <div className="row mx-0 align-items-center image-container" style={{ height: '70vh' }}>
+          <div className="row justify-content-left align-items-center">
             <h1 className="heading pt-5">Gojek is a SuperApp. </h1>
           </div>
         </div>
@@ -33,9 +33,9 @@ function Home(props) {
           <div className="container">
             <div
               className="row d-flex align-items-center justify-content-center"
-              style={{ minHeight: '800px' }}
+              style={{ minHeight: '100vh' }}
             >
-              <div className="col-md-6 align-self-end pointers text-white">
+              <div className="col-md-6 align-self-end pb-xl-5 pointers text-white">
                 <ul className="text-lead pl-5">
                   <li className="pb-3">200 million+ completed orders per month 1.</li>
                   <li className="pb-3">
