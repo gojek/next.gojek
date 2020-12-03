@@ -33,29 +33,30 @@ function Blog(props) {
   ];
 
   return (
-    <div className="text-center text-md-left">
+    <div className="text-center text-md-left blog-page">
       <Head>
         <title>Gojek | Blogs</title>
       </Head>
-      <Navbar light bg="#720062" />
+      <Navbar whiteNav />
       {/* banner section */}
       <section
         className="py-5 d-flex align-items-center blog-banner"
-        style={{ backgroundColor: '#720062' }}
+        style={{ backgroundColor: '#00a913' }}
       >
         <div className="container">
           <div className="row justify-content-around align-items-end">
-            <div className="col-12 col-lg-5 order-1 order-lg-0 pr-5">
+            <div className="col-12 col-lg-6 order-1 order-lg-0 pr-md-2 px-5 px-md-5 ">
               <h1 className="banner-head text-white">
-                Wondering <br />
+                Wondering <br className="d-none d-md-block" />
                 how we do it all?
               </h1>
               <p className="text-white">
-                Relive our learnings, trials, and triumphs through the words of our GoTroops.
+                Take a behind-the-scenes peek into the triumphs and tribulations it takes to build a
+                #SuperApp.
               </p>
             </div>
-            <div className="col-12 col-lg-6">
-              <img src={homePage1} className="img-fluid banner-img" alt="Gojek Banner" />
+            <div className="col-12 col-lg-6 px-0 px-md-3">
+              <img src="/img/Blog-Banner.png" className="img-fluid banner-img" alt="Gojek Banner" />
             </div>
           </div>
         </div>
@@ -96,76 +97,6 @@ function Blog(props) {
           <BlogNew heading="Culture" posts={props.culturePosts.items} link="culture" />
         )}
         {/* End Culture posts */}
-
-        {/* Blog tags */}
-        <section class="medium-tags mt-5">
-          <div className="row">
-            <div className="col-md-5">
-              <a target="_blank" href={`https://blog.gojekengineering.com/tech/home`}>
-                <div className="card bg-blue border-0 text-white category-box p-4">
-                  <div className="card-body">
-                    <h3 className="title">Tech</h3>
-                    <p>13 articles</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div className="col">
-              <a target="_blank" href={`https://blog.gojekengineering.com/data-science/home`}>
-                <div className="card bg-orange border-0 text-white category-box p-4">
-                  <div className="card-body">
-                    <h3 className="title">Data</h3>
-                    <p>13 articles</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div className="col">
-              <a target="_blank" href={`https://blog.gojekengineering.com/culture/home`}>
-                <div className="card bg-pink-light border-0 text-white category-box p-4">
-                  <div className="card-body">
-                    <h3 className="title">Culture</h3>
-                    <p>13 articles</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div className="row pt-4">
-            <div className="col mt-2">
-              <a target="_blank" href={`https://blog.gojekengineering.com/news/home`}>
-                <div className="card bg-purple border-0 text-white category-box p-4">
-                  <div className="card-body">
-                    <h3 className="title">News</h3>
-                    <p>13 articles</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div className="col mt-2">
-              <a target="_blank" href={`https://blog.gojekengineering.com/design/home`}>
-                <div className="card bg-red border-0 text-white category-box p-4">
-                  <div className="card-body">
-                    <h3 className="title">Design</h3>
-                    <p>13 articles</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div className="col-md-5 mt-2">
-              <a target="_blank" href={`https://blog.gojekengineering.com/gojek-sories/home`}>
-                <div className="card bg-green-light border-0 text-white category-box p-4">
-                  <div className="card-body">
-                    <h3 className="title">Stories</h3>
-                    <p>13 articles</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </section>
-        {/* End */}
 
         {/* News posts */}
         {props.newsPosts.status !== 'error' && (

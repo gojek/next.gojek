@@ -8,7 +8,7 @@ function BlogCard(props) {
   return (
     <React.Fragment>
       {post.featured && (
-        <div className="col-md-8 mb-5">
+        <div className="col-md-8 mb-md-5">
           <div className="card border-0">
             <a href={post.link}>
               <div
@@ -19,7 +19,7 @@ function BlogCard(props) {
           </div>
         </div>
       )}
-      <div className="col-md-4 mb-5">
+      <div className="col-md-4 mb-md-5">
         <a href={post.link} className="post">
           <div className="card border-0 bg-transparent">
             {!post.featured && (

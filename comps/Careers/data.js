@@ -3,260 +3,42 @@ export const departments = [
     value: 'engineering',
     label: 'Engineering',
     bgColor: '#00acd1',
-    bgImg: 'img/careers/department-bitmap1.png',
+    bgImg: 'img/careers/Engineering.svg',
   },
   {
     value: 'design',
     label: 'Design',
     bgColor: '#7ccc6c',
-    bgImg: 'img/careers/department-bitmap1.png',
+    bgImg: 'img/careers/Engineering.svg',
   },
   {
     value: 'people-and-culture',
     label: 'People and Culture',
     bgColor: '#d48bc8',
-    bgImg: 'img/careers/department-bitmap1.png',
+    bgImg: 'img/careers/Engineering.svg',
   },
   {
     value: 'program-management',
     label: 'Program Management',
     bgColor: '#ff7f32',
-    bgImg: 'img/careers/department-bitmap1.png',
+    bgImg: 'img/careers/Engineering.svg',
   },
   {
     value: 'product',
     label: 'Product',
     bgColor: '#ff808b',
-    bgImg: 'img/careers/department-bitmap1.png',
+    bgImg: 'img/careers/Product.svg',
   },
   {
     value: 'science',
     label: 'Science',
     bgColor: '#29ece0',
-    bgImg: 'img/careers/department-bitmap2.png',
-  },
-];
-
-export const openPosisitions = [
-  {
-    id: 1,
-    text: 'full stack developer',
-    categories: { department: 'Engineering', location: 'Gurugram', team: 'Kernel' },
-  },
-  {
-    id: 2,
-    text: 'full stack developer',
-    categories: { department: 'Design', location: 'Bangalore', team: 'Kernel' },
-  },
-  {
-    id: 3,
-    text: 'full stack developer',
-    categories: { department: 'Engineering', location: 'Bangalore', team: 'Kernel' },
-  },
-  {
-    id: 4,
-    text: 'full stack developer',
-    categories: { department: 'Product', location: 'Jakarta', team: 'Kernel' },
-  },
-  {
-    id: 5,
-    text: 'full stack developer',
-    categories: {
-      department: 'Engineering',
-      location: 'Singapore',
-      team: 'The Identity & Communication Platform',
-    },
-  },
-  {
-    id: 6,
-    text: 'full stack developer',
-    categories: {
-      department: 'Program Management',
-      location: 'Singapore',
-      team: 'The Identity & Communication Platform',
-    },
-  },
-  {
-    id: 7,
-    text: 'full stack developer',
-    categories: {
-      department: 'Science',
-      location: 'Bangkok',
-      team: 'The Identity & Communication Platform',
-    },
-  },
-  {
-    id: 8,
-    text: 'full stack developer',
-    categories: {
-      department: 'Program Management',
-      location: 'Singapore',
-      team: 'The Identity & Communication Platform',
-    },
-  },
-  {
-    id: 9,
-    text: 'full stack developer',
-    categories: {
-      department: 'Science',
-      location: 'Bangkok',
-      team: 'The Identity & Communication Platform',
-    },
-  },
-  {
-    id: 10,
-    text: 'full stack developer',
-    categories: {
-      department: 'Program Management',
-      location: 'Singapore',
-      team: 'Operations Platform',
-    },
-  },
-  {
-    id: 11,
-    text: 'full stack developer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Operations Platform' },
-  },
-  {
-    id: 12,
-    text: 'full stack developer',
-    categories: {
-      department: 'Program Management',
-      location: 'Singapore',
-      team: 'Operations Platform',
-    },
-  },
-  {
-    id: 13,
-    text: 'full stack developer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Operations Platform' },
-  },
-  {
-    id: 14,
-    text: 'full stack developer',
-    categories: {
-      department: 'Program Management',
-      location: 'Singapore',
-      team: 'Operations Platform',
-    },
-  },
-  {
-    id: 15,
-    text: 'full stack developer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Kernel' },
-  },
-  {
-    id: 16,
-    text: 'full stack developer',
-    categories: { department: 'Program Management', location: 'Singapore', team: 'Kernel' },
-  },
-  {
-    id: 17,
-    text: 'full stack developer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Kernel' },
-  },
-  {
-    id: 18,
-    text: 'full stack developer',
-    categories: { department: 'Program Management', location: 'Singapore', team: 'Kernel' },
-  },
-  {
-    id: 19,
-    text: 'full stack developer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Kernel' },
-  },
-  {
-    id: 20,
-    text: 'full stack developer',
-    categories: { department: 'Program Management', location: 'Singapore', team: 'Kernel' },
-  },
-  {
-    id: 21,
-    text: 'full stack developer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Kernel' },
-  },
-  {
-    id: 22,
-    text: 'full stack developer',
-    categories: { department: 'Program Management', location: 'Singapore', team: 'Kernel' },
-  },
-  {
-    id: 23,
-    text: 'full stack developer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Operations Platform' },
-  },
-  {
-    id: 24,
-    text: 'full stack developer',
-    categories: {
-      department: 'Program Management',
-      location: 'Singapore',
-      team: 'Operations Platform',
-    },
-  },
-  {
-    id: 25,
-    text: 'Quality Engineer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Operations Platform' },
-  },
-  {
-    id: 26,
-    text: 'Quality Engineer',
-    categories: {
-      department: 'Program Management',
-      location: 'Singapore',
-      team: 'Operations Platform',
-    },
-  },
-  {
-    id: 27,
-    text: 'Quality Engineer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Operations Platform' },
-  },
-  {
-    id: 28,
-    text: 'Quality Engineer',
-    categories: { department: 'Program Management', location: 'Singapore', team: 'Kernel' },
-  },
-  {
-    id: 29,
-    text: 'Quality Engineer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Kernel' },
-  },
-  {
-    id: 30,
-    text: 'Quality Engineer',
-    categories: { department: 'Program Management', location: 'Singapore', team: 'Kernel' },
-  },
-  {
-    id: 31,
-    text: 'Quality Engineer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Kernel' },
-  },
-  {
-    id: 32,
-    text: 'Quality Engineer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Kernel' },
-  },
-  {
-    id: 33,
-    text: 'Quality Engineer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Kernel' },
-  },
-  {
-    id: 34,
-    text: 'Quality Engineer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Kernel' },
-  },
-  {
-    id: 35,
-    text: 'Quality Engineer',
-    categories: { department: 'Science', location: 'Bangkok', team: 'Kernel' },
+    bgImg: 'img/careers/Engineering.svg',
   },
 ];
 
 export const locations = [
-  { label: 'Bangalore', value: 'bangalore' },
+  { label: 'Bengaluru', value: 'bengaluru' },
   { label: 'Gurugram', value: 'gurugram' },
   { label: 'Jakarta', value: 'jakarta' },
   { label: 'Singapore', value: 'singapore' },
@@ -267,17 +49,14 @@ export const locations = [
 // Careers landing page text
 export const banner = {
   bannerImg: '/img/careers/banner.png',
-  title: 'We give you leverage to create impact at scale.',
-  subHead: "Join a company that strives to support you. Not just 'your best work', but all of you.",
-  departmentData: {
-    title: 'Choose where you belong…',
-    description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-  },
+  title: 'Hard to get into, harder to leave.',
+  subHead: '(A chance to build Southeast Asia)',
   teamData: {
-    title: 'Teams',
-    description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    xsTitle: 'Teams',
+    xsDescription:
+      'Want to work with a specific team? (Foodtech, fintech, ridetech, we have it all and more. Pick your choice )',
+    title: 'Want to work with a specific team?',
+    description: '(Foodtech, fintech, ridetech, we have it all and more. Pick your choice )',
   },
 };
 
@@ -286,35 +65,40 @@ export const teams = [
     name: 'Kernel',
     slug: 'kernel',
     bgColor: '#ff695b',
-    bgImg: '/img/careers/kernel.png',
+    bgImg: '/img/careers/kernel.svg',
+    link: 'kernel',
   },
   {
-    name: 'The Identity & Communication Platform',
+    name: 'Go Food',
     slug: 'identity-and-communication-platform',
     bgColor: '#ffb31c',
-    bgImg: '/img/careers/identity-and-communication.png',
+    bgImg: '/img/careers/GoFood.svg',
+    link: 'gofood',
   },
   {
     name: 'Operations Platform',
     slug: 'operations-platform',
     bgColor: '#772583',
-    bgImg: '/img/careers/operations.png',
+    bgImg: '/img/careers/Ops-Platform.svg',
+    link: 'operationsplatform',
   },
   {
     name: 'Kernel',
     slug: 'kernel',
     bgColor: '#ff695b',
-    bgImg: '/img/careers/kernel.png',
+    bgImg: '/img/careers/kernel.svg',
+    link: 'kernel',
   },
   {
-    name: 'Test',
+    name: 'Go Food',
     slug: 'identity-and-communication-platform',
     bgColor: '#ffb31c',
-    bgImg: '/img/careers/identity-and-communication.png',
+    bgImg: '/img/careers/GoFood.svg',
+    link: 'gofood',
   },
 ];
 
-export const temsSliderSettings = {
+export const teamsSliderSettings = {
   centerMode: true,
   infinite: true,
   slidesToShow: 3,
@@ -323,22 +107,24 @@ export const temsSliderSettings = {
     {
       breakpoint: 1300,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2.5,
         centerMode: false,
+        infinite: false,
       },
     },
     {
       breakpoint: 768,
       settings: {
-        slidesToShow: 1,
-        // centerMode: false,
+        slidesToShow: 2,
+        centerMode: false,
       },
     },
     {
       breakpoint: 576,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 1.5,
         centerMode: false,
+        infinite: false,
       },
     },
   ],

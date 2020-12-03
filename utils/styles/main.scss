@@ -339,6 +339,12 @@ body {
 
 .teamsJobs {
   background: linear-gradient(to bottom, #000 10rem, #fff 10rem);
+  @media screen and (max-width: 576px) {
+    background: linear-gradient(to bottom, #000 7rem, #fff 7rem);
+  }
+  .full-height {
+    min-height: auto;
+  }
 }
 
 .yellow-bg-gradient {
@@ -372,6 +378,40 @@ body {
   }
   .full-height {
     min-height: 60vh;
+  }
+}
+@media screen and (max-width: 576px) {
+  .yellow-bg-gradient {
+    height: 80vh;
+  }
+}
+
+.xs-listings {
+  .header {
+    font-size: 1.6rem;
+  }
+  .odd {
+    background-color: rgba(242, 242, 242, 0.81);
+  }
+  .title {
+    color: #101010 !important;
+    font-family: $title-font;
+  }
+  .sub-title {
+    color: #848484;
+  }
+}
+
+.mobile-search {
+  min-height: 100vh;
+  .header {
+    font-size: 1.125rem;
+    font-family: $header-font;
+  }
+
+  .results,
+  .btn-success {
+    background-color: #00aa13 !important;
   }
 }
 
@@ -443,11 +483,24 @@ body {
   .departments {
     padding-top: 5rem;
     padding-bottom: 5rem;
+    @media screen and (max-width: 576px) {
+      .header {
+        font-size: 1.625rem;
+      }
+      .head {
+        font-size: 1.125rem;
+      }
+    }
+    .header-heigh {
+      color: $green-light;
+    }
   }
   .card-columns {
     column-count: 2;
+    column-gap: 2.5rem;
     @media screen and (max-width: $sm-break) {
       column-count: 1;
+      column-gap: 1rem;
     }
     .card {
       border: none;
@@ -461,6 +514,12 @@ body {
       &.highlight {
         height: 32rem;
         // margin-bottom: 1.25rem;
+        @media screen and (max-width: 576px) {
+          height: 15rem;
+          .header {
+            height: 20rem;
+          }
+        }
 
         .card-body {
           position: absolute;
@@ -513,6 +572,23 @@ body {
     border-radius: $border-xl;
     min-height: 430px;
   }
+
+  .slick-next {
+    right: 3.2rem;
+  }
+
+  .locationPadding {
+    // padding-top: 5rem;
+    // padding-bottom: 5rem;
+    color: #515151;
+  }
+  @media screen and (max-width: 576px) {
+    min-height: auto;
+    .slick-next,
+    .slick-prev {
+      display: none !important;
+    }
+  }
   @media screen and (min-width: $md-break) {
     .slick-slider {
       margin-left: 4rem;
@@ -537,16 +613,6 @@ body {
       width: 1140px;
       margin: auto;
     }
-  }
-
-  .slick-next {
-    right: 3.2rem;
-  }
-
-  .locationPadding {
-    // padding-top: 5rem;
-    // padding-bottom: 5rem;
-    color: #515151;
   }
 }
 
@@ -606,10 +672,12 @@ body {
 
 .slick-prev {
   left: -10px;
+  z-index: 1;
 }
 
 .slick-next {
   right: -10px;
+  z-index: 1;
 }
 
 @media screen and (min-width: $sm-break) {
@@ -677,28 +745,51 @@ body {
   .view-jobs {
     font-family: $header-font;
   }
-  tr:nth-child(even) {
-    background: #f2f2f2;
-  }
-
-  tr:nth-child(odd) {
-    background: #fff;
-  }
   @media screen and (max-width: $md-break) {
     .tableHeading {
       display: none;
     }
   }
 }
-// #job-list {
-//   min-height: 40vh;
-// }
+
+.xsSection {
+  .banner-head {
+    font-size: 1.6rem;
+  }
+  .heart {
+    color: #38bb38;
+  }
+}
+
+.careers {
+  .full-height {
+    @media screen and (max-width: 576px) {
+      min-height: 60vh;
+    }
+  }
+
+  #banner {
+    @media screen and (max-width: 576px) {
+      min-height: 80vh;
+    }
+  }
+}
 
 .listings {
   box-shadow: 0 0 82px 0 rgba(0, 0, 0, 0.12);
 }
 
 .social-media {
+  @media screen and (min-width: 768px) {
+    .intro {
+      width: 50%;
+    }
+  }
+
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+  }
   .btn {
     width: 2rem;
     height: 2rem;
@@ -775,20 +866,31 @@ body {
 .jobDescription {
   .banner {
     height: 75vh;
+    @media screen and (max-width: 576px) {
+      height: 60vh;
+      .full-height-one {
+        height: 60vh;
+      }
+    }
   }
   .description {
     margin-top: 7rem;
-    margin-bottom: 7rem;
+    @media screen and (max-width: 576px) {
+      margin-top: 4rem;
+    }
 
     .title {
       font-family: $header-font;
     }
     .apply {
       @media screen and (min-width: $xl-break) {
-        padding-left: 10rem;
+        padding-left: 8rem;
       }
       .applyText {
-        margin-top: 5rem;
+        margin-top: 9rem;
+        @media screen and (max-width: 576px) {
+          margin-top: 4rem;
+        }
       }
       .card {
         min-height: 10rem;
@@ -806,8 +908,7 @@ body {
 }
 
 #stories,
-#systems,
-#openingsBlogs {
+#systems {
   .heading {
     font-family: $header-font;
     font-size: 1.875rem;
@@ -979,4 +1080,60 @@ a:hover {
 
 .footer-cta {
   background-color: #00aa13;
+}
+
+.linkedIn {
+  background-color: #924e8c;
+  border-radius: 48px;
+  p {
+    font-size: 11px;
+  }
+}
+
+#team-workWithUs {
+  .cta {
+    background-color: #904790;
+    border-radius: 48px;
+    .heading {
+      font-size: 1.875rem;
+    }
+    a {
+      color: #a1d884;
+      &:hover {
+        color: #a1d884;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.footer {
+  a {
+    color: #ffffff !important;
+  }
+}
+
+.commonFooter {
+  background-color: #101820;
+
+  .cta {
+    background-color: #00aa13;
+    border-radius: 48px;
+    margin-top: 8rem;
+    background-repeat: no-repeat;
+    background-image: url('/img/gojek-cta.svg');
+    background-position: bottom right;
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    a {
+      color: #fff200;
+      &:hover {
+        color: #fff200;
+        text-decoration: underline;
+      }
+    }
+  }
 }

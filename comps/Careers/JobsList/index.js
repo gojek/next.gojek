@@ -14,6 +14,24 @@ class JobsList extends Component {
     keyword: '',
   };
 
+  componentDidMount() {
+    if (this.props.selectedDepartment && this.props.selectedDepartment !== '') {
+      var obj = [
+        {
+          value: this.props.selectedDepartment,
+          label: this.props.selectedDepartment,
+          // .split('-')
+          // .join(' ')
+          // .capitalize()
+          bgColor: '',
+          bgImg: '',
+          isSelected: true,
+        },
+      ];
+      this.setState({ selectedDepartments: obj });
+    }
+  }
+
   handleSearchChange = (value, name) => {
     this.setState({ [name]: value }, () => {});
   };
@@ -61,39 +79,56 @@ class JobsList extends Component {
     const heading = this.props.jobsHeading || 'Recent Open Positions';
     const selctedFilters = this.filteredCollected();
     const filters = _.union(selctedFilters.department, selctedFilters.location);
-
+    console.log('filters', filters);
     return (
-      <div>
+      <div className="careers">
         <section
           id="banner"
           className="full-height py-5 d-flex align-items-end align-items-xl-center"
         >
           <div className="container">
-            <Banner />
-            <div className="pt-5">
+            <Banner
+              options={departments}
+              locations={locations}
+              onChange={this.handleSearchChange}
+              onChangeCallback={this.handleSearchChange}
+              searchJobs={this.searchJobs}
+              selctedFilters={selctedFilters}
+            />
+            <div className="pt-5 d-none d-md-block">
               <Search
                 options={departments}
                 locations={locations}
                 onChange={this.handleSearchChange}
                 onChangeCallback={this.handleSearchChange}
               />
-              {/* <div className="mt-4">
+              <div className="mt-4">
                 {filters.length > 0 && (
                   <div>
-                    <span>Filters:</span>
+                    <span className="mr-3">Filters:</span>
                     {filters.map((name) => {
                       return <span className="job-tag p-3 mr-3">{name}</span>;
                     })}
                   </div>
                 )}
-              </div> */}
+              </div>
               <div className="col pt-5 d-flex justify-content-between">
                 <p>
-                  <strong>288 Opportunities</strong> found across <strong>20 Departments</strong>{' '}
-                  and <strong>8 Locations</strong>{' '}
+                  <strong>{this.searchJobs().length} Opportunities</strong> found across{' '}
+                  <strong>
+                    {selctedFilters.department.length > 0
+                      ? selctedFilters.department.length
+                      : 'all'}{' '}
+                    Departments
+                  </strong>{' '}
+                  and{' '}
+                  <strong>
+                    {selctedFilters.location.length > 0 ? selctedFilters.location.length : 'all'}{' '}
+                    Locations
+                  </strong>{' '}
                 </p>
                 {!this.props.showAllJobs && (
-                  <a href="/jobs/all-jobs" className="text-green link">
+                  <a href="/jobs/all" className="text-green link">
                     View all jobs
                     <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
                   </a>

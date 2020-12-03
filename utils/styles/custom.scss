@@ -29,7 +29,9 @@ body {
 }
 
 .home {
-  background: url('/img/home/banner-v2.png') no-repeat center center;
+  background: url('/img/home/banner-new.png') no-repeat center center;
+  min-height: 70vh;
+  background-size: cover;
 }
 .banner {
   -webkit-background-size: cover;
@@ -49,10 +51,55 @@ body {
   .navbar-brand img {
     width: 150px;
   }
-  .button {
-    background-color: #fff;
-    color: green;
+
+  .navbar-nav {
+    align-items: baseline;
   }
+  .blackNav {
+    .button {
+      background-color: $green-light;
+      color: $white;
+    }
+    .nav-item {
+      &.active {
+        .nav-link {
+          &.nav-links {
+            &:after {
+              border-top: 2px solid $black;
+            }
+          }
+        }
+      }
+      .nav-link {
+        color: $black;
+      }
+    }
+  }
+  .whiteNav {
+    .button {
+      background-color: $white;
+      color: $green-light;
+    }
+    .nav-item {
+      &.active {
+        .nav-link {
+          &.nav-links {
+            &:after {
+              border-top: 2px solid $white;
+            }
+          }
+        }
+      }
+      .nav-link {
+        color: $white;
+      }
+    }
+  }
+  .button {
+    font-weight: bold;
+    align-self: center;
+  }
+
   .nav-item {
     &.active {
       .nav-link {
@@ -74,10 +121,6 @@ body {
       font-size: $font-s;
       font-family: $extended-book, 'sans-serif';
     }
-    .button {
-      color: $green-light;
-      font-weight: bold;
-    }
   }
 }
 
@@ -88,10 +131,16 @@ section {
   }
 }
 .products {
-  padding-top: 10rem;
+  padding-top: 5rem;
   padding-bottom: 10rem;
   .head {
     font-size: 1.875rem;
+  }
+  @media screen and (max-width: 576px) {
+    padding-bottom: 5rem;
+    .heading-sm {
+      font-size: 1.25rem;
+    }
   }
   @media screen and (min-width: 576px) {
     .slick-prev,
@@ -152,6 +201,16 @@ section {
   //   font-weight: bold;
   //   line-height: 42px;
   // }
+  @media screen and (max-width: 576px) {
+    .heading-sm {
+      font-size: 1.5rem;
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    top: 12rem;
+  }
   .card {
     border-radius: 52px;
   }
@@ -177,6 +236,15 @@ section {
   }
 }
 
+.prod-desc {
+  font-size: 0.875rem;
+}
+
+.products-button,
+.products-expanded {
+  border-radius: 1.8rem;
+}
+
 .cta {
   margin-top: -1px;
   .card {
@@ -187,25 +255,36 @@ section {
 
 .footer {
   margin-top: -1px;
+  background-color: #101820;
   .list-inline-item {
     font-size: 1rem;
     display: inline-block;
     text-align: center;
     height: 28px;
     width: 28px;
-    border: 1px solid #e0e0e0;
-    border-radius: 50%;
     position: relative;
     a {
-      color: #707070;
+      color: #ffffff;
     }
     i {
+      color: #ffffff;
       position: absolute;
       top: 50%;
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
+
+      @media screen and (max-width: 576px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  li {
+    font-size: 1.25rem;
+    @media screen and (max-width: 576px) {
+      font-size: 0.875rem;
     }
   }
   .contact {
@@ -217,6 +296,10 @@ section {
       color: #bce194;
     }
   }
+}
+
+.smNav {
+  min-height: 100vh;
 }
 
 .open-source {
@@ -257,13 +340,19 @@ section {
   .text-lead {
     font-family: $extended-book;
   }
+  @media screen and (max-width: 576px) {
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
+  }
 }
 
-// @media screen and (min-width: 2000px) {
-//   .pointers {
-//     margin-top: 0rem;
-//   }
-// }
+@media screen and (min-width: 2000px) {
+  .pointers {
+    margin-bottom: 5rem;
+  }
+}
 .product {
   p {
     font-size: 18px;
@@ -273,6 +362,18 @@ section {
 .life-at-gojek {
   background: url('/img/life-at-gojek/banner.png') no-repeat center right;
   background-size: cover;
+  background-position: center;
+
+  .bannerHeading {
+    font-size: 2.82rem;
+  }
+
+  .heading-sm {
+    @media screen and (max-width: 576px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
 }
 
 .slider-shilpa {
@@ -308,8 +409,25 @@ section {
 }
 
 .values {
+  .slide {
+    align-items: flex-start;
+  }
+  @media screen and (max-width: 576px) {
+    .slick-list {
+      padding: 0 !important;
+    }
+  }
   img {
     max-width: 175px;
+    margin-right: 3rem;
+    @media screen and (max-width: 576px) {
+      max-width: 100px;
+      margin-right: 1rem;
+    }
+  }
+
+  .text-lead {
+    font-family: $header-font;
   }
 
   .slick-slider {
@@ -318,16 +436,28 @@ section {
     }
     .slick-dots {
       justify-content: center;
-      bottom: -6rem;
-      margin-left: -8rem;
+      @media screen and (min-width: 576px) {
+        bottom: -6rem;
+        margin-left: -8rem;
+      }
+      @media screen and (max-width: 576px) {
+        margin-bottom: -4rem !important;
+      }
       li {
         min-width: 2rem !important;
+        @media screen and (max-width: 576px) {
+          margin-bottom: 1rem;
+          min-width: 1rem !important;
+        }
         button {
           min-width: 1px !important;
-          width: 2rem;
-          margin: 0 1rem;
-          border-radius: 5px;
-          height: 4px;
+          @media screen and (min-width: 576px) {
+            width: 2rem;
+            margin: 0 1rem;
+            height: 4px;
+            border-radius: 5px;
+          }
+          border-radius: 50%;
           padding: 3px;
           background-color: #d2d2d2;
         }
@@ -361,6 +491,9 @@ section {
         font-size: 1.25rem;
         color: #494a4a;
       }
+      @media screen and (max-width: 576px) {
+        display: none !important;
+      }
     }
     @media screen and (min-width: 2000px) {
       .slick-slide {
@@ -368,43 +501,52 @@ section {
       }
     }
   }
-  // .swiper-slide {
-  //   width: 510px !important;
-  //   margin-left: -50px;
-  //   &.swiper-slide-prev {
-  //     width: auto !important;
-  //     margin-left: 0;
-  //     margin-right: 0 !important;
-  //   }
-  //   &.swiper-slide-active {
-  //     margin-left: 0;
-  //   }
-  //   &.swiper-slide-next {
-  //     margin-left: 0;
-  //   }
-  // }
-}
-
-@media screen and(min-width: $md-break) {
-  .bg {
-    max-height: auto;
-  }
-  .pointers {
-    padding-top: 10rem;
+  .swiper-slide {
+    width: 510px !important;
+    margin-left: -50px;
+    &.swiper-slide-prev {
+      width: auto !important;
+      margin-left: 0;
+      margin-right: 0 !important;
+    }
+    &.swiper-slide-active {
+      margin-left: 0;
+    }
+    &.swiper-slide-next {
+      margin-left: 0;
+    }
   }
 }
 
-@media screen and (min-width: $lg-break) {
-  .pointers {
-    padding-top: 20rem;
+.blog-page {
+  @media screen and (max-width: 576px) {
+    .slick-next,
+    .slick-prev {
+      display: none !important;
+    }
   }
 }
 
-@media screen and (min-width: $xl-break) {
-  .pointers {
-    padding-top: 30rem;
-  }
-}
+// @media screen and(min-width: $md-break) {
+//   .bg {
+//     max-height: auto;
+//   }
+//   .pointers {
+//     padding-top: 10rem;
+//   }
+// }
+
+// @media screen and (min-width: $lg-break) {
+//   .pointers {
+//     padding-top: 20rem;
+//   }
+// }
+
+// @media screen and (min-width: $xl-break) {
+//   .pointers {
+//     padding-top: 30rem;
+//   }
+// }
 
 @media screen and (min-width: 2000px) {
   .banner {
@@ -423,8 +565,14 @@ section {
 }
 
 .pointers {
+  ul {
+    list-style-type: square;
+  }
   li {
     font-size: 18px;
+    &:before {
+      font-size: 100px;
+    }
   }
 }
 .perks {
@@ -436,6 +584,27 @@ section {
       padding: 2rem;
     }
   }
+  @media screen and(max-width: 576px) {
+    .heading {
+      font-size: 1.625rem;
+    }
+    .heading-sm {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
+    p {
+      font-size: 0.875rem;
+    }
+    .card-columns {
+      grid-column-gap: 1rem;
+      column-gap: 1rem;
+      column-count: 2;
+      .card {
+        margin-bottom: 1rem;
+        padding: 2rem 1rem;
+      }
+    }
+  }
 }
 .footer-cta {
   border-radius: 3rem;
@@ -445,4 +614,11 @@ section {
     background-position: bottom right;
     border-radius: 3rem;
   }
+}
+
+.gojek-bg {
+  background-image: url('/img/home/gojek-bg.svg');
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

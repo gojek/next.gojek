@@ -18,6 +18,7 @@
     "next-images": "^1.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-hook-form": "^6.11.5",
     "react-insta-stories": "^1.1.0",
     "react-intersection-observer": "^8.26.2",
     "react-masonry-css": "^1.0.14",

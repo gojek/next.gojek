@@ -9,7 +9,7 @@ function Tag(tagData) {
     <div
       key={tag.name}
       className={
-        `badge rounded-pill pointer px-5 mb-3 mr-3 ${styles.category}  ` +
+        `badge rounded-pill pointer px-4 mb-3 mr-3 ${styles.category}  ` +
         (data.activeTag === tag.slug ? styles.active : '')
       }
       onClick={() => data.onClick(tag.slug)}
@@ -21,15 +21,15 @@ function Tag(tagData) {
 
 function Tags(props) {
   return (
-    <div className="mt-5">
-      <div className={`pt-5 d-flex flex-wrap mt-5 ${styles.tagList}`}>
+    <div>
+      <div className={`pt-5 d-flex ${styles.tagList}`}>
         {props.tags.map((tag) => (
           <Tag tag={tag} data={props} />
         ))}
         <div
           key="all"
           className={
-            `badge rounded-pill pointer px-5 mb-3 mr-3 ${styles.category}  ` +
+            `badge rounded-pill pointer px-4 mb-3 mr-3 ${styles.category}  ` +
             (props.activeTag === 'all' ? styles.active : '')
           }
         >

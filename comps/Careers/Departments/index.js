@@ -23,11 +23,11 @@ function Departments(props) {
   // console.log('Shilpa', sortedDepartments);
 
   return (
-    <div className="container departments text-white">
-      <h1 className="header">{banner.departmentData.title}</h1>
-      <p style={{ maxWidth: '48rem' }} className="mt-4 mb-5">
-        {banner.departmentData.description}
-      </p>
+    <div className="container departments text-white text-left px-5">
+      <h1 className="header">
+        We have no dearth of <span className="header-heigh">Hard Technical Problems™</span>, work
+        with us.
+      </h1>
       <div className="card-columns text-left pt-5">
         <Card
           slug={sortedDepartments[0].value}

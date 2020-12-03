@@ -9,6 +9,7 @@ import { socialImpact } from '../../comps/Culture/data';
 import Values from '../../comps/Culture/Values/index';
 
 import { perks } from '../../comps/Culture/data.js';
+import CommonCta from '~/../../comps/Common/Cta';
 import { useState, useEffect } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 
@@ -39,12 +40,12 @@ function LifeAtGojek(props) {
 
   return (
     <div>
+      <Navbar whiteNav />
       <section className="banner life-at-gojek">
         <div className="container">
-          <Navbar />
           <div className="row mx-0 align-items-center full-height-one text-white">
             <div className="col-md-6">
-              <h1 className="heading pb-3">Culture </h1>
+              <h1 className="heading pb-4 pb-md-3 bannerHeading">Culture </h1>
               <p className="pb-3">
                 The biggest defining perk of Gojek is its culture. We have a cross-pollination of
                 ideas from Singapore, Indonesia, Thailand, Vietnam, and India. Different cultures,
@@ -61,7 +62,7 @@ function LifeAtGojek(props) {
 
       <section className="my-5 values">
         <div className="container py-5">
-          <h1 className="heading-sm py-5">
+          <h1 className="heading-sm py-md-5">
             Here are the <span className="text-green">10 values</span> that keep us going:
           </h1>
         </div>
@@ -72,7 +73,7 @@ function LifeAtGojek(props) {
 
       <section className="bg-black text-white py-5 perks">
         <div className="container py-5">
-          <h1 className="heading py-5 mb-5">Perks and Benefits</h1>
+          <h1 className="heading py-md-5 mb-5 mb-md-0 pl-4">Perks and Benefits</h1>
           <Perks perks={perks} showPerks={showPerks} />
 
           {showPerks < 3 && (
@@ -83,7 +84,7 @@ function LifeAtGojek(props) {
         </div>
       </section>
 
-      <section className="social-impact my-5 py-5">
+      <section className="social-impact my-5 py-5 d-none d-md-block">
         <div className="container">
           <CardAnimation data={socialImpact} />
         </div>
@@ -91,26 +92,13 @@ function LifeAtGojek(props) {
 
       <section className="py-5" id="openingsBlogs">
         <div className="container">
-          <h1 className="heading">Our Stories</h1>
+          <h1 className="heading pl-4 pl-md-0">Our Stories</h1>
           <Blog />
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-black cta py-5">
-        <div className="container pt-5">
-          <div className="footer-cta text-white row">
-            <div className="py-5 pl-5 pr-0 col-md-7">
-              <p className="text-lead">
-                We're dedicated to creating (and scaling) positive socio-economic impact for our
-                ecosystem of users.{' '}
-              </p>
-              <Link href="/jobs" text="Join Us" color="text-yellow" />
-            </div>
-            <div className="col-md-5 footer-img"></div>
-          </div>
-        </div>
-      </section>
+      <CommonCta />
       {/* End CTA */}
     </div>
   );

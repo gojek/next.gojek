@@ -6,6 +6,7 @@ import '~/../../utils/styles/main.scss';
 import '../utils/styles/blog.scss';
 import '../utils/styles/style.scss';
 import '../utils/styles/custom.scss';
+import '../utils/styles/form.scss';
 import Footer from '../comps/Common/Footer';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';

@@ -18,6 +18,7 @@ $teal: #004758;
 $yellow-base: #e8ce11;
 $yellow-light: #f7ce55;
 $black: #101820;
+$white: #ffffff;
 $dark-gray: #080808;
 
 // Font family
@@ -63,6 +64,10 @@ $sm-break: 576px;
 $md-break: 768px;
 $lg-break: 992px;
 $xl-break: 1200px;
+
+//form variables
+$form-border: 1px solid #979797;
+$form-border-radius: 28.5px;
 
 $colors: (
   green: (

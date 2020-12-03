@@ -1,13 +1,22 @@
 import styles from './index.module.scss';
 
 import BlogCard from './blogCard';
+import Slider from 'react-slick';
+
+const sliderSettings = {
+  infinite: false,
+  dots: false,
+  slidesToShow: 1.2,
+  slidesToScroll: 1,
+};
 
 function BlogNew(props) {
   console.log('props', props);
   const { heading, posts, link } = props;
   posts[0].featured = true;
 
-  const allPosts = props.pageName ? posts : posts.slice(0, 4);
+  const allPosts = props.pageName ? posts : posts.slice(0, 4),
+    mobileSliderPosts = allPosts.slice(1, 4);
   const items = allPosts.map((post) => (
     <React.Fragment key={post.guid}>
       <BlogCard post={post} tag={heading} />
@@ -19,14 +28,26 @@ function BlogNew(props) {
     : `https://blog.gojekengineering.com/${link}/home`;
 
   return (
-    <section className="mt-5 posts" id={link}>
-      <h1 className={`my-5 ${styles.heading}`}>{props.pageName ? 'Latest' : heading}</h1>
-      <div className="row">{items}</div>
-      <p className="text-center mb-5">
-        <a href={mediumLink} target="_blank" className={`text-green-light ${styles.readMore}`}>
-          See More <i className="fas fa-long-arrow-alt-right"></i>
-        </a>
-      </p>
+    <section className="mt-5 posts text-left" id={link}>
+      <div className="row justify-content-between align-items-center my-3 my-md-5 px-3">
+        <h1 className={styles.heading}>{props.pageName ? 'Latest' : heading}</h1>
+        <p className="text-center">
+          <a href={mediumLink} target="_blank" className={`text-green-light ${styles.readMore}`}>
+            See More <i className="fas fa-long-arrow-alt-right"></i>
+          </a>
+        </p>
+      </div>
+      <div className="d-none d-md-block">
+        <div className="row">{items}</div>
+      </div>
+      <div className="d-md-none">
+        <BlogCard post={allPosts[0]} tag={heading} />
+        <Slider {...sliderSettings}>
+          {mobileSliderPosts.map((post) => {
+            return <BlogCard post={post} tag={heading} />;
+          })}
+        </Slider>
+      </div>
     </section>
   );
 }

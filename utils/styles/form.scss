@@ -1,0 +1,39 @@
+@import './constants.scss';
+
+.apply {
+  @media screen and (min-width: 576px) {
+    padding-bottom: 5rem;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: $font-s;
+  }
+
+  .helpText {
+    color: #979797;
+  }
+
+  .form-control {
+    border: $form-border;
+    border-radius: $form-border-radius;
+  }
+
+  .invalid-feedback {
+    display: block;
+    text-align: left !important;
+  }
+
+  .btn {
+    border-radius: $form-border-radius;
+  }
+
+  .file {
+    .fileTitle {
+      font-size: $font-s;
+    }
+  }
+}

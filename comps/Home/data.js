@@ -4,6 +4,7 @@ export const departments = [
     class: 'text-green',
     bgClass: 'bg-green',
     borderColor: '#008c15',
+    id: 'Transport',
     products: [
       {
         id: 1,
@@ -48,6 +49,7 @@ export const departments = [
     class: 'text-blue',
     bgClass: 'bg-blue',
     borderColor: '#00aed6',
+    id: 'Payments',
     products: [
       {
         id: 1,
@@ -92,6 +94,7 @@ export const departments = [
     class: 'text-orange-light',
     bgClass: 'bg-orange-light',
     borderColor: '#ff7f32',
+    id: 'Food',
     products: [
       {
         id: 1,
@@ -136,6 +139,7 @@ export const departments = [
     class: 'text-red',
     bgClass: 'bg-red',
     borderColor: '#ee2737',
+    id: 'Logistics',
     products: [
       {
         id: 1,
@@ -180,6 +184,7 @@ export const departments = [
     class: 'text-pink-light',
     bgClass: 'bg-pink-light',
     borderColor: '#df1995',
+    id: 'Entertainment',
     products: [
       {
         id: 1,
@@ -224,6 +229,7 @@ export const departments = [
     class: 'text-yellow-light',
     bgClass: 'bg-yellow-light',
     borderColor: '#f7ce55',
+    id: 'Lifestyle',
     products: [
       {
         id: 1,

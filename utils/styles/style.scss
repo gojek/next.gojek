@@ -70,22 +70,30 @@
   background-size: cover;
   min-height: 439px;
   max-width: 330px;
+
   border-radius: 44px;
   .head {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
   .openings {
     font-size: 1rem;
   }
+  @media screen and(max-width: 576px) {
+    max-width: 210px;
+    min-height: 240px;
+    .head {
+      font-size: 1.125rem;
+    }
+  }
 }
 .operations-platform {
-  background-image: url('/img/careers/operations.png');
+  background-image: url('/img/careers/Ops-Platform.svg');
 }
 .kernel {
-  background-image: url('/img/careers/kernel.png');
+  background-image: url('/img/careers/kernel.svg');
 }
 .identity-and-communication-platform {
-  background-image: url('/img/careers/identity-and-communication.png');
+  background-image: url('/img/careers/GoFood.svg');
 }
 #teams {
   .slick-next:before {
@@ -103,8 +111,8 @@
 }
 .table-row {
   // transition: 0s color;
-  p,
-  a {
+  i,
+  p {
     color: #696969;
   }
   &:nth-child(even) {
@@ -115,8 +123,12 @@
   }
   &:hover {
     cursor: pointer;
-    p {
+    color: #696969;
+    p,
+    i {
       color: #242424;
+    }
+    p {
       font-family: $header-font;
     }
   }
@@ -171,6 +183,16 @@
   border-radius: 2.5rem;
   background-position: center bottom !important;
   background-repeat: no-repeat;
-  margin-right: 20px !important;
-  margin-left: 20px !important;
+  @media screen and(min-width: 576px) {
+    margin-right: 20px !important;
+    margin-left: 20px !important;
+  }
+  @media screen and(max-width: 576px) {
+    &.perk-img {
+      height: 331px !important;
+    }
+    &.perk-card {
+      height: 218px !important;
+    }
+  }
 }
