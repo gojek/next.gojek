@@ -5,7 +5,7 @@ import Router from 'next/router';
 import Navbar from '~/../../comps/Navbar';
 import JobsTable from '~/../../comps/Careers/jobsTable';
 import CommonCta from '~/../../comps/Common/Cta';
-import { teamsData } from './data.js';
+import { teamsData } from '../../comps/Team/data.js';
 import List from '~/../../comps/Careers/JobsList/list';
 import Slider from 'react-slick';
 
