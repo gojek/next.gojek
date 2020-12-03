@@ -10,7 +10,10 @@ function MobileSearch(props) {
 
   return (
     <div>
-      <button className="btn btn-success rounded-pill px-5 mt-3" onClick={() => handleExpand()}>
+      <button
+        className="btn btn-success rounded-pill px-5 mt-3 py-2"
+        onClick={() => handleExpand()}
+      >
         Find Jobs
       </button>
       {expanded ? (
@@ -32,10 +35,7 @@ function MobileSearch(props) {
             onChange={props.onChange}
             onChangeCallback={props.onChangeCallback}
           />
-          <button
-            className="btn btn-success rounded-pill px-5 mt-4 py-3 mb-5"
-            onClick={() => handleExpand()}
-          >
+          <button className="btn btn-success rounded-pill px-5 mt-4" onClick={() => handleExpand()}>
             Search
           </button>
           <div className="fixed-bottom results p-4">
