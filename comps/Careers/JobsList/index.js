@@ -139,11 +139,12 @@ class JobsList extends Component {
         </section>
 
         <List
-          openPositions={
-            showAllJobs || this.searchJobs().length <= 10
-              ? this.searchJobs()
-              : this.searchJobs().slice(0, 10)
-          }
+          // openPositions={
+          //   showAllJobs || this.searchJobs().length <= 10
+          //     ? this.searchJobs()
+          //     : this.searchJobs().slice(0, 10)
+          // }
+          openPositions={this.searchJobs()}
           showAllJobs={showAllJobs}
           heading={heading}
         />

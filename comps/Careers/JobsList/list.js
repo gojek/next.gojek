@@ -1,5 +1,19 @@
+import { useState } from 'react';
+
 function List(props) {
-  const { openPositions } = props;
+  // const { openPositions } = props;
+  const [limit, setLimit] = useState(10);
+  const [openPositions, setOpenPositions] = useState(props.openPositions.slice(0, 10));
+
+  const handleExpand = () => {
+    let newLimit = limit + 10,
+      newList = props.openPositions.slice(0, newLimit);
+    setLimit(newLimit);
+    setOpenPositions(newList);
+    let elmnt = document.getElementById(`${newList.length - 11}`);
+    elmnt.scrollIntoView();
+  };
+
   return (
     <section className="full-height mb-md-5 pb-md-5">
       {/* desktop view */}
@@ -24,7 +38,7 @@ function List(props) {
               {openPositions.length > 0 ? (
                 openPositions.map((data, key) => (
                   <a href={`jobs/${data.id}`}>
-                    <div className="table-row row py-3" key={key}>
+                    <div className="table-row row py-3" key={key} id={key}>
                       <div className="col-md-6">
                         <p className="mb-0">{data.text}</p>
                       </div>
@@ -47,15 +61,12 @@ function List(props) {
                   <strong>No Jobs!</strong>
                 </div>
               )}
-
-              {!props.showAllJobs && (
-                <div className="text-center mt-5">
-                  <a href="/jobs/all" className="text-green link">
-                    View all jobs
-                    <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
-                  </a>
-                </div>
-              )}
+              <div className="text-center mt-5">
+                <button className="text-green link btn" onClick={() => handleExpand()}>
+                  View more
+                  <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -70,7 +81,7 @@ function List(props) {
               openPositions.map((data, key) => (
                 <div className={key % 2 === 0 ? 'even' : 'odd'}>
                   <a href={`jobs/${data.id}`}>
-                    <div className="py-3 px-5" key={key}>
+                    <div className="py-3 px-5" key={key} id={key}>
                       <p className="title mb-0">{data.text}</p>
                       <p className="sub-title mb-0">
                         {data.categories.department}
@@ -86,14 +97,12 @@ function List(props) {
               </div>
             )}
 
-            {!props.showAllJobs && (
-              <div className="mt-4 pl-5">
-                <a href="/jobs/all" className="text-green link">
-                  View all jobs
-                  <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
-                </a>
-              </div>
-            )}
+            <div className="mt-4 pl-5">
+              <button className="text-green link btn" onClick={() => handleExpand()}>
+                View more
+                <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>

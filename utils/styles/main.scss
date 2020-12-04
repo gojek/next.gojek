@@ -402,6 +402,16 @@ body {
   }
 }
 
+.listings,
+.xs-listings {
+  .text-green {
+    &:focus {
+      border: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
 .mobile-search {
   min-height: 100vh;
   .header {
@@ -1125,6 +1135,9 @@ a:hover {
 .footer {
   a {
     color: #ffffff !important;
+  }
+  input {
+    border-radius: 1.5rem;
   }
 }
 
