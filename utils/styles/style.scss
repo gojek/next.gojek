@@ -86,15 +86,28 @@
     }
   }
 }
-.operations-platform {
-  background-image: url('/img/careers/Ops-Platform.svg');
+.transport {
+  background-image: url('/img/careers/teams/transport.svg');
 }
 .kernel {
-  background-image: url('/img/careers/kernel.svg');
+  background-image: url('/img/careers/teams/kernel.svg');
 }
-.identity-and-communication-platform {
-  background-image: url('/img/careers/GoFood.svg');
+.go-food {
+  background-image: url('/img/careers/teams/go-food.svg');
 }
+.operations-platform {
+  background-image: url('/img/careers/teams/operations-platform.svg');
+}
+.merchant {
+  background-image: url('/img/careers/teams/merchant.svg');
+}
+.marketplace {
+  background-image: url('/img/careers/teams/marketplace.svg');
+}
+.go-pay {
+  background-image: url('/img/careers/teams/go-pay.svg');
+}
+
 #teams {
   .slick-next:before {
     color: #fff !important;

@@ -35,6 +35,7 @@ function Teams(props) {
               className={`teams text-left px-md-4 ${team.slug}`}
               key={i}
               href={`/teams/${team.link}`}
+              style={{ backgroundColor: '#ff695b' }}
             >
               <div className="card-body text-white">
                 <h2 className="head mb-2 pt-md-5">{team.name}</h2>

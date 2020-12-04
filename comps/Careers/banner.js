@@ -14,7 +14,7 @@ function Banner(props) {
         </div>
         <div className="d-md-none px-5 xsSection">
           <h3 className="banner-head">
-            {banner.title} <i class="fas fa-heart heart"></i>
+            {banner.title} <i className="fas fa-heart heart"></i>
           </h3>
           <p>{banner.subHead}</p>
           <MobileSearch {...props} />

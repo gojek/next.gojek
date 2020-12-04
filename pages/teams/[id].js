@@ -62,7 +62,15 @@ function CareersPage(props) {
               <div className="col-lg-6">
                 <div
                   className="shadow my-5 d-none d-lg-block"
-                  style={{ height: '32rem', borderRadius: '3rem', backgroundColor: '#f2d4d7' }}
+                  style={{
+                    height: '32rem',
+                    borderRadius: '3rem',
+                    backgroundColor: '#f2d4d7',
+                    backgroundImage: `url(${data.img})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center bottom',
+                  }}
                 ></div>
               </div>
             </div>

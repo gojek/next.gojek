@@ -73,7 +73,7 @@ function Navbar(props) {
           onClick={() => handleExpand()}
         >
           <span>
-            <i class="fas fa-bars fa-1x"></i>
+            <i className="fas fa-bars fa-1x"></i>
           </span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
