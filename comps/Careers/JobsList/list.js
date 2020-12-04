@@ -5,12 +5,12 @@ function List(props) {
   const [limit, setLimit] = useState(10);
   const [openPositions, setOpenPositions] = useState(props.openPositions.slice(0, 10));
 
-  const handleExpand = () => {
+  const handleExpand = (xs) => {
     let newLimit = limit + 10,
       newList = props.openPositions.slice(0, newLimit);
     setLimit(newLimit);
     setOpenPositions(newList);
-    let elmnt = document.getElementById(`${newList.length - 11}`);
+    let elmnt = document.getElementById(`${xs ? 'xs' : ''}${newList.length - 11}`);
     elmnt.scrollIntoView();
   };
 
@@ -81,7 +81,7 @@ function List(props) {
               openPositions.map((data, key) => (
                 <div className={key % 2 === 0 ? 'even' : 'odd'}>
                   <a href={`jobs/${data.id}`}>
-                    <div className="py-3 px-5" key={key} id={key}>
+                    <div className="py-3 px-5" key={key} id={`xs${key}`}>
                       <p className="title mb-0">{data.text}</p>
                       <p className="sub-title mb-0">
                         {data.categories.department}
@@ -98,7 +98,7 @@ function List(props) {
             )}
 
             <div className="mt-4 pl-5">
-              <button className="text-green link btn" onClick={() => handleExpand()}>
+              <button className="text-green link btn" onClick={() => handleExpand(true)}>
                 View more
                 <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
               </button>
