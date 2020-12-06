@@ -310,6 +310,14 @@ section {
       color: #bce194;
     }
   }
+
+  .phoneDropdown {
+    .selected-flag,
+    .open {
+      border-radius: 50rem !important;
+      background-color: transparent !important;
+    }
+  }
 }
 
 .smNav {

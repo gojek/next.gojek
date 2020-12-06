@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import Links from './Links';
+import PhoneInput from 'react-phone-input-2';
 
 function Footer(props) {
   const { register, handleSubmit, errors } = useForm();
@@ -34,18 +35,22 @@ function Footer(props) {
                   })}
                 />
                 <div className="invalid-feedback pt-2 pl-3 d-block">
-                  {!!errors.name && errors.name.message}
+                  {!!errors.name && errors.name.message ? errors.name.message : ''}
                 </div>
               </div>
-              <input
-                className="form-control bg-transparent border px-3"
-                placeholder="Enter your phone number here"
-                type="number"
-                id="phone"
-                name="phone"
-                ref={register({
+              <PhoneInput
+                country={'in'}
+                inputProps={{
+                  name: 'phone',
+                  id: 'phone',
+                }}
+                inputRef={register({
                   required: 'Phone number is required',
                 })}
+                enableSearch
+                placeholder="Enter your phone number here"
+                inputClass="w-100 form-control bg-transparent border rounded-pill px-5 py-4"
+                buttonClass="rounded-pill text-body bg-transparent border-0 ml-1 phoneDropdown"
               />
               <div className="invalid-feedback pt-2 pl-3 d-block">
                 {!!errors.phone && errors.phone.message}
