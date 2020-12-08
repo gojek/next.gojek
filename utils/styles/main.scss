@@ -348,14 +348,6 @@ body {
 }
 
 .yellow-bg-gradient {
-  // background: $yellow-light linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, #e18700);
-  // background-repeat: no-repeat;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // height: 107vh;
-  // width: 100%;
-  // z-index: -1;
   background: #f7ce55 -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(255, 255, 255, 0)), to(#e18700));
   background: #f7ce55 linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #e18700);
   background-repeat: no-repeat;
@@ -578,8 +570,6 @@ body {
   }
 
   .locationPadding {
-    // padding-top: 5rem;
-    // padding-bottom: 5rem;
     color: #515151;
   }
   @media screen and (max-width: 576px) {
@@ -696,10 +686,6 @@ body {
     right: -50px;
   }
 }
-
-// .slick-slide {
-//   padding-left: 3rem;
-// }
 
 .slick-dots {
   display: flex !important;

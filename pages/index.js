@@ -4,6 +4,7 @@ import TechFacts from '../comps/Home/techFacts';
 import Projects from '../comps/Home/OpenSource';
 import Link from '../comps/Common/link';
 import CommonCta from '~/../../comps/Common/Cta';
+import Funding from '../comps/Home/funding';
 import Slider from 'react-slick';
 
 const sliderSettings = {
@@ -14,64 +15,6 @@ const sliderSettings = {
 };
 
 function Home(props) {
-  const fundingList = (
-    <div className="row">
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img
-            src="./img/home/google.png"
-            className="img-fluid rounded-pill px-2 px-lg-5 align-middle"
-          />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img src="./img/home/jd.png" className="img-fluid rounded-pill px-2 px-lg-5" />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img src="./img/home/tencent.png" className="img-fluid rounded-pill px-2 px-lg-5" />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img
-            src="./img/home/google.png"
-            className="img-fluid rounded-pill px-2 px-lg-5 align-middle"
-          />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img src="./img/home/jd.png" className="img-fluid rounded-pill px-2 px-lg-5" />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img src="./img/home/tencent.png" className="img-fluid rounded-pill px-2 px-lg-5" />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img
-            src="./img/home/google.png"
-            className="img-fluid rounded-pill px-2 px-lg-5 align-middle"
-          />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img src="./img/home/jd.png" className="img-fluid rounded-pill px-2 px-lg-5" />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img src="./img/home/tencent.png" className="img-fluid rounded-pill px-2 px-lg-5" />
-        </div>
-      </div>
-    </div>
-  );
   return (
     <div>
       <Navbar />
@@ -137,7 +80,11 @@ function Home(props) {
 
           <div className="row mt-md-5 pt-md-5 d-flex">
             <div className="col-4 mt-md-5 pt-md-5 align-self-center">
-              <img src="./img/home/gojek-funding.PNG" alt="Funding Gojek" className="img-fluid" />
+              <img
+                src="./img/home/funding/funding-bg.png"
+                alt="Funding Gojek"
+                className="img-fluid"
+              />
             </div>
             <div className="col-8 funding mt-md-5 pt-md-5">
               <h1 className="heading">Funding</h1>
@@ -146,9 +93,13 @@ function Home(props) {
                 F funding round. Gojek is fortunate to count Sequoia Capital, Google, Tencent
                 Holdings, JD.com, and Visa, among its investors.
               </p>
-              <div className="d-none d-md-block">{fundingList}</div>
+              <div className="d-none d-md-block">
+                <Funding />
+              </div>
             </div>
-            <div className="d-md-none funding px-4">{fundingList}</div>
+            <div className="d-md-none funding px-4">
+              <Funding />
+            </div>
           </div>
         </div>
       </section>

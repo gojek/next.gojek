@@ -353,26 +353,26 @@ export const techFacts = [
   {
     id: 1,
     content: 'We run one of the largest JRuby, Java and Go clusters in Asia.',
-    image: '/img/home/tech-fact.png',
+    image: '/img/home/tech-facts/tech-fact-1.svg',
     bgColor: '#74d2e7',
   },
   {
     id: 2,
-    content: 'We process more than 350 million internal API calls per second.',
-    image: '/img/home/tech-fact.png',
-    bgColor: '#ffae62',
+    content:
+      'By the time you finish reading this sentence, we would have completed 978 orders across our 20+ products.',
+    image: '/img/home/tech-facts/tech-fact-2.svg',
+    bgColor: '#7ccc6c',
   },
   {
     id: 3,
-    content:
-      'By the time you finish reading this sentence, we would have completed 978 orders across our 20+ products.',
-    image: '/img/home/tech-fact.png',
-    bgColor: '#7ccc6c',
+    content: 'We process more than 350 million internal API calls per second.',
+    image: '/img/home/tech-facts/tech-fact-3.svg',
+    bgColor: '#ffae62',
   },
   {
     id: 4,
     content: 'We allocate 2 million drivers at a peak load of 180,000 live orders.',
-    image: '/img/home/tech-fact.png',
+    image: '/img/home/tech-facts/tech-fact-4.svg',
     bgColor: '#ff808b',
   },
 ];
@@ -412,3 +412,34 @@ export const projects = {
     },
   ],
 };
+
+export const fundingLogos = [
+  {
+    id: '1',
+    logo: '../img/home/funding/google.png',
+  },
+  {
+    id: '2',
+    logo: '../img/home/funding/jd.png',
+  },
+  {
+    id: '3',
+    logo: '../img/home/funding/tencent.png',
+  },
+  {
+    id: '4',
+    logo: '../img/home/funding/facebook.png',
+  },
+  {
+    id: '5',
+    logo: '../img/home/funding/paypal.png',
+  },
+  {
+    id: '6',
+    logo: '../img/home/funding/sequoia.png',
+  },
+  {
+    id: '7',
+    logo: '../img/home/funding/visa.png',
+  },
+];
