@@ -48,6 +48,8 @@ body {
 }
 
 .main-nav {
+  transition-duration: 0.8s;
+
   .navbar-brand img {
     height: 2rem;
   }
