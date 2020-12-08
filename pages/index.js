@@ -81,7 +81,7 @@ function Home(props) {
           <div className="row mt-md-5 pt-md-5 d-flex">
             <div className="col-4 mt-md-5 pt-md-5 align-self-center">
               <img
-                src="./img/home/funding/funding-bg.png"
+                src="./img/home/funding/gojek-funding.png"
                 alt="Funding Gojek"
                 className="img-fluid"
               />
