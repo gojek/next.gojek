@@ -49,11 +49,11 @@ body {
 
 .main-nav {
   .navbar-brand img {
-    width: 150px;
+    height: 2rem;
   }
 
   .navbar-nav {
-    align-items: baseline;
+    align-items: center;
   }
   .blackNav {
     .button {
@@ -65,7 +65,7 @@ body {
         .nav-link {
           &.nav-links {
             &:after {
-              border-top: 2px solid $black;
+              border-top: 3px solid $black;
             }
           }
         }
@@ -85,7 +85,7 @@ body {
         .nav-link {
           &.nav-links {
             &:after {
-              border-top: 2px solid $white;
+              border-top: 3px solid $white;
             }
           }
         }
@@ -97,7 +97,8 @@ body {
   }
   .button {
     font-weight: bold;
-    align-self: center;
+    font-family: $demi, 'sans-serif';
+    font-size: $font-s;
   }
 
   .nav-item {
@@ -108,9 +109,10 @@ body {
           &:after {
             content: '';
             display: block;
+            position: absolute;
             width: 2rem;
-            border-top: 2px solid $black;
-            margin-top: 5px;
+            border-top: 3px solid $black;
+            margin-top: 2px;
             border-radius: 1px;
           }
         }
@@ -119,7 +121,8 @@ body {
     .nav-link {
       color: $black;
       font-size: $font-s;
-      font-family: $extended-book, 'sans-serif';
+      font-family: $font-bold, 'sans-serif';
+      padding-bottom: 0;
     }
   }
 }
