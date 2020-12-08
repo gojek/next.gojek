@@ -394,6 +394,16 @@ body {
   }
 }
 
+.listings,
+.xs-listings {
+  .text-green {
+    &:focus {
+      border: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
 .mobile-search {
   min-height: 100vh;
   .header {
@@ -779,6 +789,10 @@ body {
     }
   }
 
+  .slick-list {
+    margin-left: 3rem;
+  }
+
   .slick-next,
   .slick-prev {
     display: none !important;
@@ -1108,6 +1122,9 @@ a:hover {
   a {
     color: #ffffff !important;
   }
+  input {
+    border-radius: 1.5rem;
+  }
 }
 
 .commonFooter {
@@ -1142,5 +1159,20 @@ a:hover {
         text-decoration: underline;
       }
     }
+  }
+}
+
+.product-tab {
+  border-radius: 29px;
+
+  button {
+    border-radius: 29px;
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+
+  img {
+    max-width: 6rem;
   }
 }

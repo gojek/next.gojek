@@ -146,10 +146,8 @@ section {
     .slick-prev,
     .slick-next {
       z-index: 100;
-
       &::before {
         font-size: 1.25rem;
-        color: #fff;
       }
     }
     .slick-next {
@@ -202,6 +200,9 @@ section {
   //   line-height: 42px;
   // }
   @media screen and (max-width: 576px) {
+    .heading {
+      font-size: 1.63rem;
+    }
     .heading-sm {
       font-size: 1.5rem;
     }
@@ -210,6 +211,19 @@ section {
   .slick-prev,
   .slick-next {
     top: 12rem;
+    &:before {
+      background-color: #fff;
+      color: #000;
+      border-radius: 50%;
+      padding: 7px;
+      font-size: 1.2rem;
+    }
+  }
+  .slick-prev {
+    left: 6px;
+  }
+  .slick-next {
+    right: 6px;
   }
   .card {
     border-radius: 52px;
@@ -294,6 +308,14 @@ section {
       font-size: 20px;
       font-family: $demi;
       color: #bce194;
+    }
+  }
+
+  .phoneDropdown {
+    .selected-flag,
+    .open {
+      border-radius: 50rem !important;
+      background-color: transparent !important;
     }
   }
 }

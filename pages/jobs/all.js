@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
@@ -12,10 +12,6 @@ function AllJobs(props) {
   const [navbarBG, setNavbarBG] = useState(true);
 
   const openPosisitions = props.data;
-
-  useEffect(() => {
-    console.log('suto applied filters', params);
-  }, []);
 
   return (
     <div className="text-center text-md-left">
