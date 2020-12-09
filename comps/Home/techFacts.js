@@ -12,7 +12,7 @@ function TechFacts() {
   const facts = (xs) => {
     return techFacts.map((data, i) => (
       <div
-        className="card text-white px-5 border-0 mb-4 shadow mx-3 mx-md-0"
+        className="card text-white px-5 border-0 my-3 shadow mx-3 mx-md-0"
         style={{ backgroundColor: data.bgColor }}
         key={i}
       >
