@@ -16,8 +16,8 @@ function Project(props) {
     <div className="container py-5 projects">
       <div className="row">
         <div className="col-md-4 my-auto">
-          <h1 className="heading pb-5">We ❤️ open source. </h1>
-          <p className="text-lead pb-5 pr-5">
+          <h1 className="heading pb-4">We ❤️ open source. </h1>
+          <p className="text-lead">
             As firm believers in the pursuit of a collective quest for excellence, the tools we
             build are diligently open-sourced so others can learn from us, just as we have from the
             community.
@@ -30,7 +30,7 @@ function Project(props) {
             color="text-green-light"
           />
         </div>
-        <div className="col-md-8 opensource">
+        <div className="col-md-7 offset-md-1 opensource">
           <Slider {...settings}>
             {projects.data.map((data, i) => (
               <Card data={data} />
