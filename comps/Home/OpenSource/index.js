@@ -1,17 +1,19 @@
-import { opensourceProjects } from '../data';
+import { projects } from '../data';
 import Slider from 'react-slick';
 import Slide from './slide';
 import Link from '../../Common/link';
+import Card from './card';
 
 const settings = {
-  centerMode: false,
   infinite: true,
   slidesToShow: 1,
+  dots: true,
+  arrows: false,
 };
 
 function Project(props) {
   return (
-    <div className="container  py-5">
+    <div className="container py-5 projects">
       <div className="row">
         <div className="col-md-4 my-auto">
           <h1 className="heading pb-5">We ❤️ open source. </h1>
@@ -21,45 +23,18 @@ function Project(props) {
             community.
           </p>
 
-          <Link href="#" text="Check them out" color="text-green-light" />
+          <Link
+            href="https://github.com/gojek"
+            target="_blank"
+            text="Check them out"
+            color="text-green-light"
+          />
         </div>
-        <div className="col-md-8">
+        <div className="col-md-8 opensource">
           <Slider {...settings}>
-            <div
-              className={`card text-white shadow`}
-              style={{ backgroundImage: 'url(../img/home/open-source/heimdall.svg)' }}
-            >
-              <div className="card-body pb-0">
-                <p>dd</p>
-              </div>
-            </div>
-
-            <div
-              className={`card text-white shadow`}
-              style={{ backgroundImage: 'url(../img/home/open-source/heimdall.svg)' }}
-            >
-              <div className="card-body pb-0">
-                <p>dd</p>
-              </div>
-            </div>
-
-            <div
-              className={`card text-white shadow`}
-              style={{ backgroundImage: 'url(../img/home/open-source/heimdall.svg)' }}
-            >
-              <div className="card-body pb-0">
-                <p>dd</p>
-              </div>
-            </div>
-
-            <div
-              className={`card text-white shadow`}
-              style={{ backgroundImage: 'url(../img/home/open-source/heimdall.svg)' }}
-            >
-              <div className="card-body pb-0">
-                <p>dd</p>
-              </div>
-            </div>
+            {projects.data.map((data, i) => (
+              <Card data={data} />
+            ))}
           </Slider>
         </div>
       </div>

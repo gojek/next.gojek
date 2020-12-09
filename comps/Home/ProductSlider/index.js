@@ -25,17 +25,24 @@ function ProductSlider() {
             We have 20+ products and do over 7 million orders a day
             <br />
             across{' '}
-            <span className={`${activeProduct === 0 ? 'text-green' : 'text-white'}`}>
+            <span className={`${activeProduct === 0 ? 'text-green-light' : 'text-white'}`}>
               Transport &amp; Logistics
             </span>
             ,{' '}
-            <span className={`${activeProduct === 2 ? 'text-orange' : 'text-white'}`}>
+            <span className={`${activeProduct === 2 ? 'text-red' : 'text-white'}`}>
               Food &amp; Shopping
             </span>
             ,{' '}
             <span className={`${activeProduct === 1 ? 'text-blue' : 'text-white'}`}>Payments</span>,{' '}
-            <span className={`${activeProduct === 1 ? 'text-blue' : 'text-white'}`}>Business</span>,{' '}
-            <span className={`${activeProduct === 5 ? 'text-yellow-light' : 'text-white'}`}>
+            <span className={`${activeProduct === 4 ? 'daily-needs' : 'text-white'}`}>
+              Daily needs
+            </span>
+            ,{' '}
+            <span className={`${activeProduct === 5 ? 'text-purple' : 'text-white'}`}>
+              Business
+            </span>{' '}
+            and{' '}
+            <span className={`${activeProduct === 3 ? 'text-pink-light' : 'text-white'}`}>
               Lifestyle
             </span>{' '}
             .
@@ -45,12 +52,14 @@ function ProductSlider() {
           </h1>
         </div>
       </div>
-      <div className="d-none d-md-block container">
-        <Slider {...settings}>
-          {departments.map((data, i) => (
-            <Slide data={data} activeProduct={activeProduct} key={i} />
-          ))}
-        </Slider>
+      <div className="d-none d-md-block container-fluid">
+        <div className="product-wrapper">
+          <Slider {...settings}>
+            {departments.map((data, i) => (
+              <Slide data={data} activeProduct={activeProduct} key={i} />
+            ))}
+          </Slider>
+        </div>
       </div>
       <div className="d-md-none px-4">
         {departments.map((data, i) => (

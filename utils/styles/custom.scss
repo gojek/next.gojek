@@ -220,7 +220,6 @@ section {
     max-width: 192px;
     height: 4.5rem;
 
-
     img {
       @media screen and (max-width: 576px) {
         max-width: 72px;
@@ -750,4 +749,68 @@ html {
 }
 
 @media screen and (min-width: $xl-break) {
+}
+
+// Daily needs
+
+.daily-needs {
+  color: $orange;
+}
+.daily-need-bg {
+  background-color: $orange;
+}
+.product-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  .card {
+    min-height: 579px;
+  }
+}
+
+.projects {
+  .card {
+    .card-body {
+      background-repeat: no-repeat;
+      min-height: 540px;
+      background-size: cover;
+      background-position: center center;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+    }
+    .title {
+      font-family: $font-bold;
+    }
+    .description {
+      font-family: $extended-book;
+    }
+  }
+}
+
+.opensource {
+  .slick-slider {
+    .slick-dots {
+      justify-content: center;
+      li {
+        min-width: 2rem !important;
+        button {
+          min-width: 1px !important;
+          width: 2rem;
+          margin: 0 1rem;
+          border-radius: 5px;
+          height: 4px;
+          padding: 3px;
+          background-color: #d2d2d2;
+        }
+        ::before {
+          content: '';
+          padding: 0;
+        }
+        &.slick-active {
+          button {
+            background-color: #101820;
+          }
+        }
+      }
+    }
+  }
 }

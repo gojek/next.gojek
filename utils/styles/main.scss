@@ -697,32 +697,32 @@ body {
   }
 }
 
-.slick-dots {
-  display: flex !important;
-  justify-content: space-around;
-  @media screen and (max-width: $lg-break) {
-    flex-wrap: wrap;
-    margin-bottom: -2rem;
-  }
+// .slick-dots {
+//   display: flex !important;
+//   justify-content: space-around;
+//   @media screen and (max-width: $lg-break) {
+//     flex-wrap: wrap;
+//     margin-bottom: -2rem;
+//   }
 
-  li {
-    min-width: 9rem;
-    color: #fff;
-    font-weight: normal;
-  }
-  .slick-active {
-    opacity: 1;
-    font-family: $title-font;
+//   li {
+//     min-width: 9rem;
+//     color: #fff;
+//     font-weight: normal;
+//   }
+//   .slick-active {
+//     opacity: 1;
+//     font-family: $title-font;
 
-    &:after {
-      content: '';
-      display: block;
-      width: 25%;
-      margin: 0.5rem auto;
-      border-bottom: 1px solid #fff;
-    }
-  }
-}
+//     &:after {
+//       content: '';
+//       display: block;
+//       width: 25%;
+//       margin: 0.5rem auto;
+//       border-bottom: 1px solid #fff;
+//     }
+//   }
+// }
 
 #impact-stories-carousel {
   .carousel-indicators {
