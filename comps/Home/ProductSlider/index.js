@@ -21,10 +21,8 @@ function ProductSlider() {
     <div>
       <div className="container pt-0 pt-md-5">
         <div className="row pb-md-5">
-          <h1 className="heading-sm mx-4 pb-5 d-none d-md-block">
-            We have 20+ products and do over 7 million orders a day
-            <br />
-            across{' '}
+          <h1 className="heading-sm mx-4 pb-5 d-none d-md-block w-75">
+            We have 20+ products and do over 7 million orders a day across{' '}
             <span className={`${activeProduct === 0 ? 'text-green-light' : 'text-white'}`}>
               Transport &amp; Logistics
             </span>

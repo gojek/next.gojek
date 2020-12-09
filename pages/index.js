@@ -18,10 +18,12 @@ function Home(props) {
   return (
     <div>
       <Navbar />
-      <section className="py-5 d-flex align-items-center home">
+      <section className="py-5 d-flex align-items-md-center align-items-start home">
         <div className="container">
           <div className="row align-items-center">
-            <h1 className="heading pt-5 text-white d-block d-md-none">Gojek is a SuperApp. </h1>
+            <h1 className="heading pt-5 text-white d-block d-md-none px-3 pt-5">
+              Gojek is a<br /> SuperApp.{' '}
+            </h1>
 
             <h1 className="heading pt-5 d-none d-md-block">Gojek is a SuperApp. </h1>
           </div>
@@ -165,7 +167,7 @@ function Home(props) {
                   href="/"
                   target="_blank"
                   className="card"
-                  style={{ backgroundImage: `url(/img/home/social/Blog.png)` }}
+                  style={{ backgroundImage: `url(/img/home/social/blog-thumbnail.png)` }}
                 >
                   {/* <div
                     className="card position-relative"

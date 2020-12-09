@@ -77,13 +77,13 @@ export const departments = [
       },
       {
         id: 5,
-        img: '/img/home/payments/gopulsa.svg',
+        img: '',
         title: 'GoPulsa',
         description: 'Data or talktime, top-up on the go',
       },
       {
         id: 6,
-        img: '',
+        img: '/img/home/payments/gosure.svg',
         title: 'Gosure',
         description: 'Insure things you value',
       },

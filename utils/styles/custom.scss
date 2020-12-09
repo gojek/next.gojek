@@ -32,6 +32,11 @@ body {
   background: url('/img/home/home-banner.png') no-repeat center center;
   height: 80vh;
   background-size: cover;
+  @media screen and (max-width: 576px) {
+    background: url('/img/home/mobile-banner.png') no-repeat center center;
+    height: 70vh;
+    background-size: cover;
+  }
 }
 .banner {
   -webkit-background-size: cover;
