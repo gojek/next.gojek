@@ -81,7 +81,7 @@ function Home(props) {
           <div className="row mt-md-5 pt-md-5 d-flex">
             <div className="col-4 mt-md-5 pt-md-5 align-self-center">
               <img
-                src="./img/home/funding/funding-bg.png"
+                src="./img/home/funding/gojek-funding.png"
                 alt="Funding Gojek"
                 className="img-fluid"
               />
@@ -117,64 +117,60 @@ function Home(props) {
           <div className="d-none d-md-block">
             <div className="row ">
               <div className="col-md-4 mb-5">
-                <div
-                  className="card position-relative"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                <a
+                  href="/"
+                  target="_blank"
+                  className="card"
+                  style={{ backgroundImage: `url(/img/home/social/Insta.png)` }}
+                ></a>
               </div>
               <div className="col-md-4 mb-5">
-                <div
-                  className="card position-relative"
-                  style={{ backgroundImage: `url(/img/home/gojek-instagram.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-instagram position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                <a
+                  href="/"
+                  target="_blank"
+                  className="card"
+                  style={{ backgroundImage: `url(/img/home/social/youtube.png)` }}
+                ></a>
               </div>
               <div className="col-md-4 mb-5">
-                <div
-                  className="card position-relative"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                <a
+                  href="/"
+                  target="_blank"
+                  className="card"
+                  style={{ backgroundImage: `url(/img/home/social/Fb.png)` }}
+                ></a>
               </div>
               <div className="col-md-4 mb-5">
-                <div
-                  className="card position-relative"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                <a
+                  href="/"
+                  target="_blank"
+                  className="card"
+                  style={{ backgroundImage: `url(/img/home/social/Twitter.png)` }}
+                ></a>
               </div>
               <div className="col-md-4 mb-5">
-                <div
+                {/* <div
                   className="card position-relative"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                > */}
+                <a
+                  href="/"
+                  target="_blank"
+                  className="card"
+                  style={{ backgroundImage: `url(/img/home/social/LinkedIn.png)` }}
+                ></a>
+                {/* </div> */}
               </div>
               <div className="col-md-4 mb-5">
-                <div
-                  className="card position-relative"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+                <a
+                  href="/"
+                  target="_blank"
+                  className="card"
+                  style={{ backgroundImage: `url(/img/home/social/Blog.png)` }}
                 >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                  {/* <div
+                    className="card position-relative"
+                  ></div> */}
+                </a>
               </div>
             </div>
           </div>

@@ -234,7 +234,8 @@ section {
     border-radius: 52px;
   }
   .logo {
-    border: 1px solid #979797;
+    border: solid 1px #979797;
+    background-color: rgba(255, 255, 255, 0.94);
     max-width: 200px;
     height: 70px;
     line-height: 65px;
@@ -246,6 +247,7 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 52px;
+    background-position: center center;
   }
 }
 .overlay-icon {
