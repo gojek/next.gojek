@@ -120,51 +120,56 @@ function Home(props) {
             <div className="row ">
               <div className="col-md-4 mb-5">
                 <a
-                  href="/"
+                  href="https://www.instagram.com/gojek.tech/"
                   target="_blank"
-                  className="card"
-                  style={{ backgroundImage: `url(/img/home/social/Insta.png)` }}
-                ></a>
+                  className="card border-0"
+                >
+                  <img src="/img/home/social/Insta.png" alt="GOJEK Tech Instagram page" />
+                </a>
               </div>
               <div className="col-md-4 mb-5">
                 <a
-                  href="/"
+                  href="https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured"
                   target="_blank"
-                  className="card"
-                  style={{ backgroundImage: `url(/img/home/social/youtube.png)` }}
-                ></a>
+                  className="card border-0"
+                >
+                  <img src="/img/home/social/youtube.png" alt="GOJEK Tech Youtube channel" />
+                </a>
               </div>
               <div className="col-md-4 mb-5">
                 <a
-                  href="/"
+                  href="https://www.facebook.com/gojektech"
                   target="_blank"
-                  className="card"
-                  style={{ backgroundImage: `url(/img/home/social/Fb.png)` }}
-                ></a>
+                  className="card border-0"
+                >
+                  <img src="/img/home/social/Fb.png" alt="GOJEK Tech Facebook page" />
+                </a>
               </div>
               <div className="col-md-4 mb-5">
                 <a
-                  href="/"
+                  href="https://twitter.com/gojektech"
                   target="_blank"
-                  className="card"
-                  style={{ backgroundImage: `url(/img/home/social/Twitter.png)` }}
-                ></a>
+                  className="card border-0"
+                >
+                  <img src="/img/home/social/Twitter.png" alt="GOJEK Tech Twitter account" />
+                </a>
               </div>
               <div className="col-md-4 mb-5">
                 {/* <div
                   className="card position-relative"
                 > */}
                 <a
-                  href="/"
+                  href="https://www.linkedin.com/company/gojektech/"
                   target="_blank"
-                  className="card"
-                  style={{ backgroundImage: `url(/img/home/social/LinkedIn.png)` }}
-                ></a>
+                  className="card border-0"
+                >
+                  <img src="/img/home/social/LinkedIn.png" alt="GOJEK Tech LinkedIn page" />
+                </a>
                 {/* </div> */}
               </div>
               <div className="col-md-4 mb-5">
                 <a
-                  href="/"
+                  href="https://www.gojek.io/articles/"
                   target="_blank"
                   className="card"
                   style={{ backgroundImage: `url(/img/home/social/blog-thumbnail.png)` }}

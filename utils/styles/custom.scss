@@ -237,9 +237,9 @@ section {
   .card {
     min-height: 224px;
     background-repeat: no-repeat;
-    background-size: cover;
+    // background-size: cover;
     border-radius: 52px;
-    background-position: center center;
+    background-position: center;
   }
 }
 .overlay-icon {
@@ -788,6 +788,9 @@ html {
     .description {
       font-family: $extended-book;
     }
+  }
+  .text-lead {
+    font-size: 1.125rem;
   }
 }
 
