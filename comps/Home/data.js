@@ -395,4 +395,12 @@ export const fundingLogos = [
     id: '7',
     logo: '../img/home/funding/visa.png',
   },
+  {
+    id: '8',
+    logo: '../img/home/funding/mitsubishi.png',
+  },
+  {
+    id: '9',
+    logo: '../img/home/funding/temasek.png',
+  },
 ];
