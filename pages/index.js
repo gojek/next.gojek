@@ -78,17 +78,17 @@ function Home(props) {
 
           <TechFacts />
 
-          <div className="row mt-md-5 pt-md-5 d-flex">
+          <div className="row funding mt-md-5 pt-md-5 d-flex">
             <div className="col-4 mt-md-5 pt-md-5 align-self-center">
               <img
                 src="./img/home/funding/gojek-funding.png"
                 alt="Funding Gojek"
-                className="img-fluid"
+                className="img-fluid illustration"
               />
             </div>
-            <div className="col-8 funding mt-md-5 pt-md-5">
-              <h1 className="heading">Funding</h1>
-              <p className="my-5 description">
+            <div className="col-8  mt-md-5 pt-md-5">
+              <h1 className="heading mt-4">Funding</h1>
+              <p className="description my-4">
                 We’ve raised a fair amount of capital along the way, and recently closed our Series
                 F funding round. Gojek is fortunate to count Sequoia Capital, Google, Tencent
                 Holdings, JD.com, and Visa, among its investors.
@@ -97,7 +97,7 @@ function Home(props) {
                 <Funding />
               </div>
             </div>
-            <div className="d-md-none funding px-4">
+            <div className="d-md-none funding px-4 my-5">
               <Funding />
             </div>
           </div>

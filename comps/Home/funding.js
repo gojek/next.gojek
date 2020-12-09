@@ -4,9 +4,9 @@ function Funding() {
   return (
     <div className="row">
       {fundingLogos.map((funding) => (
-        <div className="col-4 mb-5 text-center">
-          <div className="logo">
-            <img src={funding.logo} className="img-fluid rounded-pill align-middle" />
+        <div className="col-4 my-2 my-md-3 text-center">
+          <div className="logo d-flex align-items-center justify-content-center">
+            <img src={funding.logo} className="img-fluid" />
           </div>
         </div>
       ))}

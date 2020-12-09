@@ -143,9 +143,9 @@ section {
   }
   @media screen and (max-width: 576px) {
     padding-bottom: 5rem;
-    .heading-sm {
-      font-size: 1.25rem;
-    }
+    // .heading-sm {
+    //   font-size: 1.25rem;
+    // }
   }
   @media screen and (min-width: 576px) {
     .slick-prev,
@@ -204,14 +204,14 @@ section {
   //   font-weight: bold;
   //   line-height: 42px;
   // }
-  @media screen and (max-width: 576px) {
-    .heading {
-      font-size: 1.63rem;
-    }
-    .heading-sm {
-      font-size: 1.5rem;
-    }
-  }
+  // @media screen and (max-width: 576px) {
+  //   .heading {
+  //     font-size: 1.63rem;
+  //   }
+  //   .heading-sm {
+  //     font-size: 1.5rem;
+  //   }
+  // }
 
   .slick-prev,
   .slick-next {
@@ -232,18 +232,26 @@ section {
   }
   .card {
     border-radius: 52px;
+    display: inline-block;
   }
   .logo {
-    border: solid 1px #979797;
+    border: solid 1px rgba($color: #979797, $alpha: 0.5);
     background-color: rgba(255, 255, 255, 0.94);
-    max-width: 200px;
-    height: 70px;
-    line-height: 65px;
+    max-width: 192px;
+    height: 4.5rem;
+
+
+    img {
+      @media screen and (max-width: 576px) {
+        max-width: 72px;
+        max-height: 16px;
+      }
+    }
   }
 }
 .social-media {
   .card {
-    min-height: 225px;
+    min-height: 224px;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 52px;
@@ -352,6 +360,12 @@ section {
 }
 
 .funding {
+  .illustration {
+    @media screen and(min-width: $md-break) {
+      max-width: 80%;
+    }
+  }
+
   .description {
     font-family: $maisonbook, sans-serif;
     color: #303030;
@@ -733,4 +747,27 @@ section {
   cursor: default;
   box-shadow: 0 5px 10px 0px #333;
   transition: 0.5s ease transform;
+}
+
+// Responsiveness
+html {
+  font-size: 12px;
+}
+
+@media screen and(min-width: $sm-break) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and(min-width: $md-break) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: $lg-break) {
+}
+
+@media screen and (min-width: $xl-break) {
 }
