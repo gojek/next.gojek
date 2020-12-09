@@ -2,7 +2,7 @@ export const departments = [
   {
     name: 'Transport & Logistics',
     class: 'text-green',
-    bgClass: 'bg-green',
+    bgClass: 'bg-green-light',
     borderColor: '#008c15',
     id: 'Transport',
     products: [

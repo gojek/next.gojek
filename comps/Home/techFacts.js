@@ -11,24 +11,22 @@ const sliderSettings = {
 function TechFacts() {
   const facts = (xs) => {
     return techFacts.map((data, i) => (
-      <div>
-        <div
-          className="card text-white px-5 border-0 mb-4 shadow mx-3 mx-md-0"
-          style={{ backgroundColor: data.bgColor }}
-          key={i}
-        >
-          <div className="card-body pb-0 pt-4">
-            <div className="row">
-              <div
-                className={`col-md-6 align-self-center py-5 ${
-                  i % 2 == '0' ? 'order-first' : 'order-last'
-                }`}
-              >
-                <h3 className="description heading-sm">{data.content}</h3>
-              </div>
-              <div className={`col-md-6 align-self-end`}>
-                <img src={data.image} alt={data.content} className="img-fluid" />
-              </div>
+      <div
+        className="card text-white px-5 border-0 mb-4 shadow mx-3 mx-md-0"
+        style={{ backgroundColor: data.bgColor }}
+        key={i}
+      >
+        <div className="card-body pb-0 pt-4">
+          <div className="row">
+            <div
+              className={`col-md-6 align-self-center py-5 ${
+                i % 2 == '0' ? 'order-first' : 'order-last'
+              }`}
+            >
+              <h3 className="description heading-sm">{data.content}</h3>
+            </div>
+            <div className={`col-md-6 align-self-end`}>
+              <img src={data.image} alt={data.content} className="img-fluid" />
             </div>
           </div>
         </div>

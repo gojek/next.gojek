@@ -10,10 +10,10 @@ function ProductSlider() {
 
   const settings = {
     infinite: true,
-    centerMode: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerPadding: '100px',
+    cssEase: 'ease-in-out',
+    speed: '1000',
     afterChange: (current) => setActiveProduct(current),
   };
 
@@ -21,8 +21,10 @@ function ProductSlider() {
     <div>
       <div className="container pt-0 pt-md-5">
         <div className="row pb-md-5">
-          <h1 className="heading-sm w-75 mx-4 pb-5 d-none d-md-block">
-            We have 20+ products and do over 7 million orders a day across
+          <h1 className="heading-sm mx-4 pb-5 d-none d-md-block">
+            We have 20+ products and do over 7 million orders a day
+            <br />
+            across{' '}
             <span className={`${activeProduct === 0 ? 'text-green' : 'text-white'}`}>
               Transport &amp; Logistics
             </span>
@@ -32,8 +34,9 @@ function ProductSlider() {
             </span>
             ,{' '}
             <span className={`${activeProduct === 1 ? 'text-blue' : 'text-white'}`}>Payments</span>,{' '}
+            <span className={`${activeProduct === 1 ? 'text-blue' : 'text-white'}`}>Business</span>,{' '}
             <span className={`${activeProduct === 5 ? 'text-yellow-light' : 'text-white'}`}>
-              Business and Lifestyle
+              Lifestyle
             </span>{' '}
             .
           </h1>
@@ -42,7 +45,7 @@ function ProductSlider() {
           </h1>
         </div>
       </div>
-      <div className="d-none d-md-block">
+      <div className="d-none d-md-block container">
         <Slider {...settings}>
           {departments.map((data, i) => (
             <Slide data={data} activeProduct={activeProduct} key={i} />

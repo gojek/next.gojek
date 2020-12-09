@@ -145,40 +145,20 @@ section {
   @media screen and (min-width: 576px) {
     .slick-prev,
     .slick-next {
-      z-index: 100;
+      z-index: 10;
       &::before {
         font-size: 1.25rem;
+        color: #fff;
+        opacity: 1;
       }
-    }
-    .slick-next {
-      right: 1%;
-    }
-    .slick-prev {
-      left: 1%;
     }
   }
 
   .slick-slide {
-    margin-top: 3rem;
-    &.slick-active.slick-center.slick-current {
-      .card-body {
-        visibility: visible;
-      }
-    }
-    .card-body {
-      visibility: hidden;
-    }
     .card {
-      height: 27rem;
       border-radius: 52px;
       img {
         max-width: 150px;
-      }
-    }
-    &.slick-active.slick-center {
-      margin-top: 0;
-      .card {
-        min-height: 33rem;
       }
     }
   }

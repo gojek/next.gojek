@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { gsap } from 'gsap/dist/gsap';
+import { opensourceProjects } from '../data';
+import Slider from 'react-slick';
+import Slide from './slide';
 import Link from '../../Common/link';
-import CardAnimation from '../../Culture/CardAnimation';
 
-import { opensourceProjects, projects } from '../data';
-import Card from './card';
+const settings = {
+  centerMode: false,
+  infinite: true,
+  slidesToShow: 1,
+};
 
-function Projects(props) {
+function Project(props) {
   return (
-    <div className="container open-source py-5">
-      {/* <div className="row">
+    <div className="container  py-5">
+      <div className="row">
         <div className="col-md-4 my-auto">
           <h1 className="heading pb-5">We ❤️ open source. </h1>
           <p className="text-lead pb-5 pr-5">
@@ -20,12 +23,48 @@ function Projects(props) {
 
           <Link href="#" text="Check them out" color="text-green-light" />
         </div>
-        <div className="col-md-8 position-relative outer"> */}
-      <CardAnimation data={projects} />
-      {/* </div>
-      </div> */}
+        <div className="col-md-8">
+          <Slider {...settings}>
+            <div
+              className={`card text-white shadow`}
+              style={{ backgroundImage: 'url(../img/home/open-source/heimdall.svg)' }}
+            >
+              <div className="card-body pb-0">
+                <p>dd</p>
+              </div>
+            </div>
+
+            <div
+              className={`card text-white shadow`}
+              style={{ backgroundImage: 'url(../img/home/open-source/heimdall.svg)' }}
+            >
+              <div className="card-body pb-0">
+                <p>dd</p>
+              </div>
+            </div>
+
+            <div
+              className={`card text-white shadow`}
+              style={{ backgroundImage: 'url(../img/home/open-source/heimdall.svg)' }}
+            >
+              <div className="card-body pb-0">
+                <p>dd</p>
+              </div>
+            </div>
+
+            <div
+              className={`card text-white shadow`}
+              style={{ backgroundImage: 'url(../img/home/open-source/heimdall.svg)' }}
+            >
+              <div className="card-body pb-0">
+                <p>dd</p>
+              </div>
+            </div>
+          </Slider>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default Projects;
+export default Project;
