@@ -3,12 +3,16 @@ import React, { useEffect } from 'react';
 const Card = React.memo((props) => {
   const { data } = props;
   return (
-    <div class="card mb-3 border-0" style={{ backgroundColor: `#ffc41c`, borderRadius: '40px' }}>
-      <div class="card-body" style={{ backgroundImage: `url(${data.image})` }}></div>
-      <h5 class=" text-center py-4">
-        <span className="title">{data.title} - </span>
-        <span className="description">{data.description}</span>
-      </h5>
+    <div class="card mb-3 border-0">
+      <div class="card-body position-relative">
+        <img src={data.image} alt={data.title} className="img-fluid image-cap" />
+        <div className="caption position-relative px-3  text-center">
+          <h5 class="py-3 position-absolute w-100" style={{ bottom: '5%' }}>
+            <span className="title">{data.title} - </span>
+            <span className="description">{data.description}</span>
+          </h5>
+        </div>
+      </div>
     </div>
   );
 });

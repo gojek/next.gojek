@@ -295,10 +295,12 @@ section {
   }
 
   li {
-    font-size: 1.25rem;
-    @media screen and (max-width: 576px) {
-      font-size: 0.875rem;
-    }
+    //   font-size: 1.25rem;
+    //   @media screen and (max-width: 576px) {
+    font-size: 0.875rem;
+
+    font-family: $demi;
+    // }
   }
   .contact {
     background-color: #000;
@@ -819,6 +821,15 @@ html {
           }
         }
       }
+    }
+  }
+  .caption {
+    h5 {
+      bottom: 5%;
+      padding-left: inherit;
+      padding-right: inherit;
+      left: 0;
+      right: 0;
     }
   }
 }

@@ -2,12 +2,14 @@ import { data } from './data';
 
 function Links(props) {
   const desktopLinks = (
-    <div className="row pt-5">
-      <div className="col-6 col-md-4">
+    <div className="row mx-0 pt-5">
+      <div className="col-6 col-md-4 pl-md-0">
         <ul className="list-unstyled mb-0">
           {data.firstColumn.map((data, i) => (
             <li className="pb-3" key={i}>
-              <a href={data.link}>{data.name}</a>
+              <a className="text-white" href={data.link}>
+                {data.name}
+              </a>
             </li>
           ))}
         </ul>
@@ -16,14 +18,21 @@ function Links(props) {
         <ul className="list-unstyled mb-0">
           {data.secondColumn.map((data, i) => (
             <li className="pb-3" key={i}>
-              <a href={data.link}>{data.name}</a>
+              <a className="text-white" href={data.link}>
+                {data.name}
+              </a>
             </li>
           ))}
         </ul>
         <ul className="list-inline">
           {data.socialLinks.map((socialMedia, key) => (
             <li className="list-inline-item" key={key}>
-              <a href={socialMedia.link} target="_blank" title={socialMedia.name}>
+              <a
+                className="text-white"
+                href={socialMedia.link}
+                target="_blank"
+                title={socialMedia.name}
+              >
                 <i className={` ${socialMedia.icon}`}></i>
               </a>
             </li>
@@ -82,12 +91,12 @@ function Links(props) {
   );
 
   return (
-    <div>
+    <React.Fragment>
       <div
-        className={`row pt-3 ${
+        className={`row pt-3 mx-0 ${
           props.navbar
             ? 'justify-content-between px-3'
-            : 'justify-content-center justify-content-md-start px-4'
+            : 'justify-content-center justify-content-md-start'
         }`}
       >
         <img src="/img/gojek-tech-white-logo.png" alt="Gojek" className="img-fluid" />
@@ -109,7 +118,7 @@ function Links(props) {
           <div className="d-none d-md-block">{desktopLinks}</div>
         </div>
       )}
-    </div>
+    </React.Fragment>
   );
 }
 

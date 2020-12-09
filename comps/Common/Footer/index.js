@@ -55,6 +55,12 @@ function Footer(props) {
               <div className="invalid-feedback pt-2 pl-3 d-block">
                 {!!errors.phone && errors.phone.message}
               </div>
+              <div>
+                <input type="checkbox" /> I agree to the{' '}
+                <a href="#" target="_blank" className="text-success">
+                  Terms and Conditions
+                </a>
+              </div>
               <button className="btn rounded-pill bg-green mt-4 px-4 text-white" type="submit">
                 Submit
               </button>

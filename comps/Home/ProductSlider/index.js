@@ -13,7 +13,7 @@ function ProductSlider() {
     slidesToShow: 1,
     slidesToScroll: 1,
     cssEase: 'ease-in-out',
-    speed: '1000',
+    // speed: '1000',
     afterChange: (current) => setActiveProduct(current),
   };
 
@@ -27,22 +27,22 @@ function ProductSlider() {
               Transport &amp; Logistics
             </span>
             ,{' '}
-            <span className={`${activeProduct === 2 ? 'text-red' : 'text-white'}`}>
+            <span className={`${activeProduct === 1 ? 'text-red' : 'text-white'}`}>
               Food &amp; Shopping
             </span>
             ,{' '}
-            <span className={`${activeProduct === 1 ? 'text-blue' : 'text-white'}`}>Payments</span>,{' '}
-            <span className={`${activeProduct === 4 ? 'daily-needs' : 'text-white'}`}>
+            <span className={`${activeProduct === 2 ? 'text-blue' : 'text-white'}`}>Payments</span>,{' '}
+            <span className={`${activeProduct === 3 ? 'daily-needs' : 'text-white'}`}>
               Daily needs
             </span>
             ,{' '}
-            <span className={`${activeProduct === 5 ? 'text-purple' : 'text-white'}`}>
+            <span className={`${activeProduct === 4 ? 'text-purple' : 'text-white'}`}>
               Business
             </span>{' '}
             and{' '}
-            <span className={`${activeProduct === 3 ? 'text-pink-light' : 'text-white'}`}>
-              Lifestyle
-            </span>{' '}
+            <span className={`${activeProduct === 5 ? 'text-pink-light' : 'text-white'}`}>
+              Entertainment
+            </span>
             .
           </h1>
           <h1 className="heading-sm px-5 pb-2 d-md-none text-center">
