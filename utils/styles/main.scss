@@ -361,7 +361,6 @@ body {
 @media screen and (max-width: 2000px) {
   .yellow-bg-gradient {
     background: #f7ce55 linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, #e18700);
-    height: 150vh;
   }
 }
 @media screen and (min-width: 2000px) {
@@ -380,7 +379,7 @@ body {
 
 .xs-listings {
   .header {
-    font-size: 1.6rem;
+    font-size: 2.25rem;
   }
   .odd {
     background-color: rgba(242, 242, 242, 0.81);
@@ -487,10 +486,10 @@ body {
     padding-bottom: 5rem;
     @media screen and (max-width: 576px) {
       .header {
-        font-size: 1.625rem;
+        font-size: 2.25rem;
       }
       .head {
-        font-size: 1.125rem;
+        font-size: 1.5rem;
       }
     }
     .header-heigh {
@@ -757,7 +756,7 @@ body {
 
 .xsSection {
   .banner-head {
-    font-size: 1.6rem;
+    font-size: 2.25rem;
   }
   .heart {
     color: #38bb38;
@@ -765,21 +764,25 @@ body {
 }
 
 .careers {
-  .full-height {
-    @media screen and (max-width: 576px) {
-      min-height: 60vh;
-    }
+  margin-top: 96px;
+
+  @media screen and (max-width: 576px) {
+    margin-top: 56px;
   }
 
-  #banner {
+  #job-list {
     @media screen and (max-width: 576px) {
-      min-height: 80vh;
+      background-color: #fff;
     }
   }
 }
 
 .listings {
   box-shadow: 0 0 82px 0 rgba(0, 0, 0, 0.12);
+
+  .header {
+    font-size: 2rem;
+  }
 }
 
 .social-media {

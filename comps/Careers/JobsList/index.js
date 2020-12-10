@@ -112,7 +112,7 @@ class JobsList extends Component {
       <div className="careers">
         <section
           id="banner"
-          className="full-height py-5 d-flex align-items-end align-items-xl-center"
+          className="py-5 d-flex align-items-end align-items-xl-center"
         >
           <div className="container">
             <Banner

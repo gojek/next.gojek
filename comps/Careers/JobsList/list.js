@@ -15,11 +15,11 @@ function List(props) {
   };
 
   return (
-    <section className="full-height mb-md-5 pb-md-5" id="job-list">
+    <section className="mb-md-5 pb-md-5" id="job-list">
       {/* desktop view */}
       <div className="container mb-5 d-none d-md-block">
         <div className="listings bg-white shadow px-5 pt-5 pb-4" style={{ borderRadius: '3rem' }}>
-          <h1 className="header my-5 pb-2" style={{ fontSize: '2rem;' }}>
+          <h1 className="header mb-5">
             {props.heading}
           </h1>
           <div className="job">
@@ -73,8 +73,8 @@ function List(props) {
       </div>
 
       {/* mobile view */}
-      <div className="xs-listings py-4 d-md-none text-left">
-        <h1 className="header my-1 pb-2 px-5">{props.heading}</h1>
+      <div className="xs-listings py-5 d-md-none text-left">
+        <h1 className="header mt-4 mb-1 pb-2 px-5">{props.heading}</h1>
         <div className="job">
           <div className="pb-3">
             {openPositions.length > 0 ? (
