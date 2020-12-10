@@ -66,6 +66,7 @@ function Navbar(props) {
         <a className="navbar-brand" href="/">
           {logo()}
         </a>
+
         <button
           className={`btn d-block d-lg-none ${
             props.whiteNav ? (scrolled ? 'text-dark' : 'text-white') : 'text-dark'

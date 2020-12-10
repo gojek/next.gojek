@@ -47,7 +47,9 @@ function Links(props) {
       <ul className="list-unstyled mb-0 row px-4">
         {data.links.map((data, i) => (
           <li className="pb-4 col-6" key={i}>
-            <a href={data.link}>{data.name}</a>
+            <a class="text-white" href={data.link}>
+              {data.name}
+            </a>
           </li>
         ))}
       </ul>
@@ -57,7 +59,7 @@ function Links(props) {
             className={`list-inline-item ${key < data.socialLinks.length - 1 ? 'mr-4' : ''}`}
             key={key}
           >
-            <a href={socialMedia.link} target="_blank" title={socialMedia.name}>
+            <a class="text-white" href={socialMedia.link} target="_blank" title={socialMedia.name}>
               <i className={` ${socialMedia.icon}`}></i>
             </a>
           </li>
@@ -67,11 +69,13 @@ function Links(props) {
   );
 
   const navbarLinks = (
-    <div className="pt-5 text-center">
+    <div className="pt-5">
       <ul className="list-unstyled mb-0 px-4">
         {data.links.map((data, i) => (
           <li className="pb-4" key={i}>
-            <a href={data.link}>{data.name}</a>
+            <a className="text-white" href={data.link}>
+              {data.name}
+            </a>
           </li>
         ))}
       </ul>

@@ -8,7 +8,7 @@ const settings = {
   infinite: true,
   slidesToShow: 1,
   dots: true,
-  arrows: false,
+  // arrows: false,
 };
 
 function Project(props) {

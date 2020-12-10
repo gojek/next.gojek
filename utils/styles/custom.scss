@@ -189,14 +189,11 @@ section {
   //   font-weight: bold;
   //   line-height: 42px;
   // }
-  // @media screen and (max-width: 576px) {
-  //   .heading {
-  //     font-size: 1.63rem;
-  //   }
-  //   .heading-sm {
-  //     font-size: 1.5rem;
-  //   }
-  // }
+  @media screen and (max-width: 576px) {
+    .card {
+      min-height: 470px;
+    }
+  }
 
   .slick-prev,
   .slick-next {
@@ -323,6 +320,9 @@ section {
 
 .smNav {
   min-height: 100vh;
+  img {
+    height: 2rem;
+  }
 }
 
 .open-source {
@@ -556,27 +556,6 @@ section {
   }
 }
 
-// @media screen and(min-width: $md-break) {
-//   .bg {
-//     max-height: auto;
-//   }
-//   .pointers {
-//     padding-top: 10rem;
-//   }
-// }
-
-// @media screen and (min-width: $lg-break) {
-//   .pointers {
-//     padding-top: 20rem;
-//   }
-// }
-
-// @media screen and (min-width: $xl-break) {
-//   .pointers {
-//     padding-top: 30rem;
-//   }
-// }
-
 @media screen and (min-width: 2000px) {
   .banner {
     .image-container {
@@ -599,8 +578,8 @@ section {
   }
   li {
     font-size: 18px;
-    &:before {
-      font-size: 100px;
+    @media screen and(max-width: 576px) {
+      font-size: 14px;
     }
   }
 }
@@ -650,6 +629,11 @@ section {
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  @media screen and (max-width: 576px) {
+    background-image: url('/img/home/mountain-mobile.svg');
+    min-height: 70vh;
+    background-position: center center;
+  }
 }
 
 // UPDATES
@@ -776,14 +760,6 @@ html {
 
 .projects {
   .card {
-    .card-body {
-      background-repeat: no-repeat;
-      min-height: 540px;
-      background-size: cover;
-      background-position: center center;
-      border-top-left-radius: 40px;
-      border-top-right-radius: 40px;
-    }
     .title {
       font-family: $font-bold;
     }
@@ -832,4 +808,28 @@ html {
       right: 0;
     }
   }
+}
+
+// .swiper-button-prev {
+//   background-image: url('/img/home/right-arrow.png') !important;
+// }
+
+.swiper-button-next {
+  background-image: url('/img/home/arrow-right.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  right: 0 !important;
+}
+.swiper-button-prev {
+  background-image: url('/img/home/arrow-left.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  left: 0 !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
 }
