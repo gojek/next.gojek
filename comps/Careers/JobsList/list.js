@@ -15,7 +15,7 @@ function List(props) {
   };
 
   return (
-    <section className="full-height mb-md-5 pb-md-5">
+    <section className="full-height mb-md-5 pb-md-5" id="job-list">
       {/* desktop view */}
       <div className="container mb-5 d-none d-md-block">
         <div className="listings bg-white shadow px-5 pt-5 pb-4" style={{ borderRadius: '3rem' }}>

@@ -1,10 +1,9 @@
-import Link from 'next/link';
-
 function Card(props) {
   const { slug, bg, label, openings, index, bgType } = props;
+  var Scroll = require('react-scroll');
+  var scroll = Scroll.animateScroll;
 
   return (
-    // <Link href={`/jobs/all?d=${slug}`}>
     <a
       className={`card text-white department ${label} ${index < 2 ? ' highlight' : ''}`}
       style={{
@@ -14,7 +13,7 @@ function Card(props) {
             ? `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.77)), url(${bg}) `
             : 'none',
       }}
-      href={`/jobs/all?d=${label}`}
+      href={`/jobs?d=${label}`}
     >
       <div className="card-body">
         <h2 className="head mb-0">{label}</h2>
