@@ -19,8 +19,10 @@ function Footer(props) {
           </div>
           <div className="col-md-6 px-0 p-5 boder-pill contact" style={{ backgroundColor: '#000' }}>
             <p className="form-text">
-              We'll strive to ensure you don’t mute us. Stories from our #SuperApp, straight to your
-              WhatsApp.
+              We'll strive to ensure you don’t mute us. Stories from our #SuperApp, straight to your{' '}
+              {''}
+              <i class="fab fa-whatsapp" style={{ color: '#00b100' }}></i>{' '}
+              <span className="text-white">WhatsApp.</span>
             </p>
             <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-3">

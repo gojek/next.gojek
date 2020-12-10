@@ -11,7 +11,11 @@ function Jobs(props) {
   const router = useRouter();
   const params = router.query;
   const recentjobs = props.data;
-  console.log('param', params);
+
+  function handleChange(val) {
+    router.query = {};
+    router.push('/jobs', { shallow: true });
+  }
 
   return (
     <div className="text-center text-md-left">
@@ -22,7 +26,12 @@ function Jobs(props) {
 
       <div className="yellow-bg-gradient"></div>
       {/* banner and jobs section */}
-      <JobsList data={recentjobs} showAllJobs={false} selectedDepartment={params.d} />
+      <JobsList
+        data={recentjobs}
+        showAllJobs={false}
+        selectedDepartment={params.d}
+        onSelectFilter={handleChange}
+      />
 
       {/* Departments */}
       <section className="bg-black full-height py-md-5" id="departments">
@@ -45,7 +54,7 @@ export async function getServerSideProps(ctx) {
     'https://api.lever.co/v0/postings/gojek?department=Design&department=Engineering&department=People and Culture&department=Program Management&department=Product&department=Science';
   // 'https://api.lever.co/v0/postings/gojek?department=Design&department=Engineering&department=People and Culture&department=Program Management&department=Product&department=Science&limit=10';
   if (ctx.query.d) {
-    apiUrl = `https://api.lever.co/v0/postings/gojek?department=${ctx.query.d}&limit=10`;
+    apiUrl = `https://api.lever.co/v0/postings/gojek?department=${ctx.query.d}`;
   }
 
   try {

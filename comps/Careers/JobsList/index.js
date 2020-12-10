@@ -4,6 +4,8 @@ import List from './list';
 import Banner from '../banner';
 import { departments, locations } from '../data.js';
 import _, { remove } from 'underscore';
+import { useRouter } from 'next/router';
+import { withRouter } from 'next/router';
 
 class JobsList extends Component {
   state = {
@@ -97,10 +99,10 @@ class JobsList extends Component {
     } else {
       this.setState({ keyword: '' });
     }
+    this.props.onSelectFilter('ok');
   }
 
   render() {
-    console.log('selectedDepartments', this.state.selectedDepartments);
     const { showAllJobs } = this.props;
     const heading = this.props.jobsHeading || 'Recent Open Positions';
     const selctedFilters = this.filteredCollected();
@@ -133,9 +135,9 @@ class JobsList extends Component {
                 {(filters.length > 0 || this.state.keyword !== '') && (
                   <React.Fragment>
                     <div className="pt-5">
-                      Filters:
+                      Filters:{' '}
                       {this.state.keyword !== '' && (
-                        <p className="d-inline mt-5 p-3 job-tag mr-3">
+                        <p className="d-inline mt-5 p-3 job-tag mr-3 ml-4">
                           {this.state.keyword}{' '}
                           <i
                             className="fas fa-times align-middle"

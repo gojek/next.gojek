@@ -116,9 +116,7 @@ function Home(props) {
             <div className="col-8  mt-md-5 pt-md-5">
               <h1 className="heading mt-4">Funding</h1>
               <p className="description my-4">
-                We’ve raised a fair amount of capital along the way, and recently closed our Series
-                F funding round. Gojek is fortunate to count Sequoia Capital, Google, Tencent
-                Holdings, JD.com, and Visa, among its investors.
+                We’re incredibly thankful to have great partners who help us in our goals.
               </p>
               <div className="d-none d-md-block">
                 <Funding />

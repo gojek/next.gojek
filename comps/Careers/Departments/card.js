@@ -1,7 +1,7 @@
+import { useRouter } from 'next/router';
+
 function Card(props) {
   const { slug, bg, label, openings, index, bgType } = props;
-  var Scroll = require('react-scroll');
-  var scroll = Scroll.animateScroll;
 
   return (
     <a
@@ -20,7 +20,6 @@ function Card(props) {
         <p className="openings">{openings} Openings</p>
       </div>
     </a>
-    // </Link>
   );
 }
 
