@@ -1,31 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import { gsap } from 'gsap/dist/gsap';
+import { projects } from '../data';
+import Slider from 'react-slick';
+import Slide from './slide';
 import Link from '../../Common/link';
-import CardAnimation from '../../Culture/CardAnimation';
-
-import { opensourceProjects, projects } from '../data';
 import Card from './card';
 
-function Projects(props) {
+const settings = {
+  infinite: true,
+  slidesToShow: 1,
+  dots: true,
+  // arrows: false,
+};
+
+function Project(props) {
   return (
-    <div className="container open-source py-5">
-      {/* <div className="row">
+    <div className="container py-5 projects">
+      <div className="row">
         <div className="col-md-4 my-auto">
-          <h1 className="heading pb-5">We ❤️ open source. </h1>
-          <p className="text-lead pb-5 pr-5">
+          <h1 className="heading pb-4">We ❤️ open source. </h1>
+          <p className="text-lead">
             As firm believers in the pursuit of a collective quest for excellence, the tools we
             build are diligently open-sourced so others can learn from us, just as we have from the
             community.
           </p>
 
-          <Link href="#" text="Check them out" color="text-green-light" />
+          <Link
+            href="https://github.com/gojek"
+            target="_blank"
+            text="Check them out"
+            color="text-green-light"
+          />
         </div>
-        <div className="col-md-8 position-relative outer"> */}
-      <CardAnimation data={projects} />
-      {/* </div>
-      </div> */}
+        <div className="col-md-7 offset-md-1 opensource">
+          <Slider {...settings}>
+            {projects.data.map((data, i) => (
+              <Card data={data} />
+            ))}
+          </Slider>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default Projects;
+export default Project;

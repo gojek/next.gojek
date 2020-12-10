@@ -20,7 +20,7 @@ function CommonCta(props) {
       {props.mobile ? (
         <div className="d-md-none">
           <div className="cta p-5">
-            <div className="py-3">
+            <div className="py-5">
               <p className="text-white">
                 We’re dedicated to creating (and scaling) positive socio-economic impact for our
                 ecosystem of users.{' '}

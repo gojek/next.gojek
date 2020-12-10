@@ -4,6 +4,7 @@ import TechFacts from '../comps/Home/techFacts';
 import Projects from '../comps/Home/OpenSource';
 import Link from '../comps/Common/link';
 import CommonCta from '~/../../comps/Common/Cta';
+import Funding from '../comps/Home/funding';
 import Slider from 'react-slick';
 
 const sliderSettings = {
@@ -14,71 +15,18 @@ const sliderSettings = {
 };
 
 function Home(props) {
-  const fundingList = (
-    <div className="row">
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img
-            src="./img/home/google.png"
-            className="img-fluid rounded-pill px-2 px-lg-5 align-middle"
-          />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img src="./img/home/jd.png" className="img-fluid rounded-pill px-2 px-lg-5" />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img src="./img/home/tencent.png" className="img-fluid rounded-pill px-2 px-lg-5" />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img
-            src="./img/home/google.png"
-            className="img-fluid rounded-pill px-2 px-lg-5 align-middle"
-          />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img src="./img/home/jd.png" className="img-fluid rounded-pill px-2 px-lg-5" />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img src="./img/home/tencent.png" className="img-fluid rounded-pill px-2 px-lg-5" />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img
-            src="./img/home/google.png"
-            className="img-fluid rounded-pill px-2 px-lg-5 align-middle"
-          />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img src="./img/home/jd.png" className="img-fluid rounded-pill px-2 px-lg-5" />
-        </div>
-      </div>
-      <div className="col-4 mb-5">
-        <div className="logo">
-          <img src="./img/home/tencent.png" className="img-fluid rounded-pill px-2 px-lg-5" />
-        </div>
-      </div>
-    </div>
-  );
   return (
     <div>
       <Navbar />
-      <section className="py-5 d-flex align-items-center home">
+      <section className="py-5 d-flex align-items-md-center align-items-start home">
         <div className="container">
-          <div className="row align-items-center">
-            <h1 className="heading pt-5 text-white d-block d-md-none">Gojek is a SuperApp. </h1>
+          <div className="row align-items-md-center align-items-start">
+            <h1
+              className="heading pt-5 d-block d-md-none text-white px-4"
+              style={{ marginTop: '50px' }}
+            >
+              Gojek is a<br /> SuperApp.{' '}
+            </h1>
 
             <h1 className="heading pt-5 d-none d-md-block">Gojek is a SuperApp. </h1>
           </div>
@@ -92,14 +40,19 @@ function Home(props) {
       {/* End second section */}
 
       {/* Open Source */}
-      <section className="my-5 pb-5 d-none d-md-block">
+      <section className="my-md-5 pb-md-5 pt-5">
         <Projects />
       </section>
       {/* End open source */}
 
-      <section className="pt-5 d-none d-lg-block">
+      <section className="pt-5">
+        <div className="container">
+          <h4 className="heading-sm pt-5 d-md-none d-block">
+            Once a call-centre operation in Jakarta, now a Decacorn in Southeast Asia.
+          </h4>
+        </div>
         <div className="w-100 gojek-bg">
-          <div className="container">
+          <div className="container  d-md-block d-none">
             <div
               className="row d-flex align-items-center justify-content-center"
               style={{ minHeight: '100vh' }}
@@ -125,6 +78,23 @@ function Home(props) {
               </div>
             </div>
           </div>
+
+          <div className="container d-block d-md-none">
+            <div className="row d-flex justify-content-center" style={{ minHeight: '60vh' }}>
+              <div className=" align-self-end pb-xl-5 pointers text-white">
+                <ul className="text-lead pl-5">
+                  <li className="pb-3">200 million+ completed orders per month 1.</li>
+                  <li className="pb-3">
+                    As of 2019, the Gojek app has been downloaded almost 170 million times.
+                  </li>
+                  <li className="pb-3">1100% growth in transactions from 2016 to 2019.</li>
+                  <li className="pb-3">
+                    In 2019, we contributed $7 billion+ to the Indonesian economy.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -135,20 +105,28 @@ function Home(props) {
 
           <TechFacts />
 
-          <div className="row mt-md-5 pt-md-5 d-flex">
+          <div className="row funding mt-md-5 pt-md-5 d-flex">
             <div className="col-4 mt-md-5 pt-md-5 align-self-center">
-              <img src="./img/home/gojek-funding.PNG" alt="Funding Gojek" className="img-fluid" />
+              <img
+                src="./img/home/funding/gojek-funding.png"
+                alt="Funding Gojek"
+                className="img-fluid illustration"
+              />
             </div>
-            <div className="col-8 funding mt-md-5 pt-md-5">
-              <h1 className="heading">Funding</h1>
-              <p className="my-5 description">
+            <div className="col-8  mt-md-5 pt-md-5">
+              <h1 className="heading mt-4">Funding</h1>
+              <p className="description my-4">
                 We’ve raised a fair amount of capital along the way, and recently closed our Series
                 F funding round. Gojek is fortunate to count Sequoia Capital, Google, Tencent
                 Holdings, JD.com, and Visa, among its investors.
               </p>
-              <div className="d-none d-md-block">{fundingList}</div>
+              <div className="d-none d-md-block">
+                <Funding />
+              </div>
             </div>
-            <div className="d-md-none funding px-4">{fundingList}</div>
+            <div className="d-md-none funding px-4 my-5">
+              <Funding />
+            </div>
           </div>
         </div>
       </section>
@@ -166,128 +144,117 @@ function Home(props) {
           <div className="d-none d-md-block">
             <div className="row ">
               <div className="col-md-4 mb-5">
-                <div
-                  className="card position-relative"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+                <a
+                  href="https://www.instagram.com/gojek.tech/"
+                  target="_blank"
+                  className="card border-0"
                 >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                  <img src="/img/home/social/Insta.png" alt="GOJEK Tech Instagram page" />
+                </a>
               </div>
               <div className="col-md-4 mb-5">
-                <div
-                  className="card position-relative"
-                  style={{ backgroundImage: `url(/img/home/gojek-instagram.png)` }}
+                <a
+                  href="https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured"
+                  target="_blank"
+                  className="card border-0"
                 >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-instagram position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                  <img src="/img/home/social/Yt.png" alt="GOJEK Tech Youtube channel" />
+                </a>
               </div>
               <div className="col-md-4 mb-5">
-                <div
-                  className="card position-relative"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+                <a
+                  href="https://www.facebook.com/gojektech"
+                  target="_blank"
+                  className="card border-0"
                 >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                  <img src="/img/home/social/Fb.png" alt="GOJEK Tech Facebook page" />
+                </a>
               </div>
               <div className="col-md-4 mb-5">
-                <div
-                  className="card position-relative"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                <a href="https://twitter.com/gojektech" target="_blank" className="card border-0">
+                  <img src="/img/home/social/Twitter.png" alt="GOJEK Tech Twitter account" />
+                </a>
               </div>
               <div className="col-md-4 mb-5">
-                <div
+                {/* <div
                   className="card position-relative"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+                > */}
+                <a
+                  href="https://www.linkedin.com/company/gojektech/"
+                  target="_blank"
+                  className="card border-0"
                 >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                  <img src="/img/home/social/LinkedIn.png" alt="GOJEK Tech LinkedIn page" />
+                </a>
+                {/* </div> */}
               </div>
               <div className="col-md-4 mb-5">
-                <div
-                  className="card position-relative"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+                <a
+                  href="https://www.linkedin.com/company/gojektech/"
+                  target="_blank"
+                  className="card border-0"
                 >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                  <img src="/img/home/social/blog-thumbnail.png" alt="GOJEK Tech Blogs" />
+                </a>
               </div>
             </div>
           </div>
-          <div className="d-md-none">
+          <div className="d-md-none pt-5">
             <Slider {...sliderSettings}>
-              <div>
-                <div
-                  className="card position-relative mx-2"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              <div className="col-md-4 mb-5 pl-0">
+                <a
+                  href="https://www.instagram.com/gojek.tech/"
+                  target="_blank"
+                  className="card border-0"
                 >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                  <img src="/img/home/social/Insta.png" alt="GOJEK Tech Instagram page" />
+                </a>
               </div>
-              <div>
-                <div
-                  className="card position-relative mx-2"
-                  style={{ backgroundImage: `url(/img/home/gojek-instagram.png)` }}
+
+              <div className="col-md-4 mb-5 pl-0">
+                <a
+                  href="https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured"
+                  target="_blank"
+                  className="card border-0"
                 >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-instagram position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                  <img src="/img/home/social/Yt.png" alt="GOJEK Tech Youtube channel" />
+                </a>
               </div>
-              <div>
-                <div
-                  className="card position-relative mx-2"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              <div className="col-md-4 mb-5 pl-0">
+                <a
+                  href="https://www.facebook.com/gojektech"
+                  target="_blank"
+                  className="card border-0"
                 >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                  <img src="/img/home/social/Fb.png" alt="GOJEK Tech Facebook page" />
+                </a>
               </div>
-              <div>
-                <div
-                  className="card position-relative mx-2"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
-                >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+              <div className="col-md-4 mb-5 pl-0">
+                <a href="https://twitter.com/gojektech" target="_blank" className="card border-0">
+                  <img src="/img/home/social/Twitter.png" alt="GOJEK Tech Twitter account" />
+                </a>
               </div>
-              <div>
-                <div
-                  className="card position-relative mx-2"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              <div className="col-md-4 mb-5 pl-0">
+                {/* <div
+                  className="card position-relative"
+                > */}
+                <a
+                  href="https://www.linkedin.com/company/gojektech/"
+                  target="_blank"
+                  className="card border-0"
                 >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                  <img src="/img/home/social/LinkedIn.png" alt="GOJEK Tech LinkedIn page" />
+                </a>
+                {/* </div> */}
               </div>
-              <div>
-                <div
-                  className="card position-relative mx-2"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
+              <div className="col-md-4 mb-5 pl-0">
+                <a
+                  href="https://www.linkedin.com/company/gojektech/"
+                  target="_blank"
+                  className="card border-0"
                 >
-                  <a href="/" target="_blank" className="text-white">
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
-                  </a>
-                </div>
+                  <img src="/img/home/social/blog-thumbnail.png" alt="GOJEK Tech Blogs" />
+                </a>
               </div>
             </Slider>
           </div>

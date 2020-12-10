@@ -22,23 +22,23 @@ function Navbar(props) {
     if (window.scrollY > 30) {
       if (!scrolled) {
         document.querySelector('.navbar').className =
-          'navbar fixed-top navbar-expand-lg bg-white pt-3 mb-5 main-nav shadow-sm';
+          'navbar fixed-top navbar-expand-lg bg-white py-3 mb-5 main-nav shadow-sm';
         setScrolled(true);
       }
     } else {
       document.querySelector('.navbar').className =
-        'navbar fixed-top navbar-expand-lg bg-transparent pt-3 pt-md-5 mb-5 main-nav';
+        'navbar fixed-top navbar-expand-lg bg-transparent py-3 pt-md-5 mb-5 main-nav';
       setScrolled(false);
     }
   };
 
   const logo = () => {
     if (scrolled) {
-      return <img src="/img/gojek-logo.png" alt="Gojek Super app" />;
+      return <img src="/img/gojek-logo.svg" alt="GOJEK Tech Logo" />;
     } else if (props.whiteNav) {
-      return <img src="/img/gojek-white-logo.png" alt="Gojek Super app" />;
+      return <img src="/img/gojek-tech-white-logo.png" alt="GOJEK Tech Logo" />;
     } else {
-      return <img src="/img/gojek-logo.png" alt="Gojek Super app" />;
+      return <img src="/img/gojek-logo.svg" alt="GOJEK Tech Logo" />;
     }
   };
 
@@ -66,6 +66,7 @@ function Navbar(props) {
         <a className="navbar-brand" href="/">
           {logo()}
         </a>
+
         <button
           className={`btn d-block d-lg-none ${
             props.whiteNav ? (scrolled ? 'text-dark' : 'text-white') : 'text-dark'
