@@ -117,7 +117,7 @@ function Navbar(props) {
       </div>
       {expanded ? (
         <div className="fixed-top text-white footer smNav py-4">
-          <div class="px-4">
+          <div class="pl-4">
             <Links navbar onClose={handleExpand} />
           </div>
         </div>
