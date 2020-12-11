@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 import Navbar from '~/../../comps/Navbar';
 import {
   FacebookShareButton,
@@ -32,7 +33,19 @@ function DescriptionPage(props) {
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    console.log('apply form data', data);
+    axios
+      .post(
+        'https://api.lever.co/v0/postings/gojek/9f1c11a2-384f-46db-90f1-2fb6821b84e?9oWUhmqSHImr72Imeq6EN6g7qy+s1GyT4HUz5edIiQfD6hEv',
+        {
+          data,
+        },
+      )
+      .then((res) => {
+        console.log('res', res.data);
+      })
+      .catch((err) => {
+        console.log('error in request', err);
+      });
   };
 
   const description = data.description,
@@ -119,7 +132,11 @@ function DescriptionPage(props) {
             </div>
             <div className="col-lg-5 pt-3 pt-md-0">
               <div className="apply">
-                <a href="#apply" className="btn btn-success px-5 rounded-pill w-100" role="button">
+                <a
+                  href="#apply"
+                  className="btn bg-green-light text-white px-5 rounded-pill w-100"
+                  role="button"
+                >
                   Apply Now
                 </a>
                 <div className="mt-3 share d-flex flex-wrap align-items-center justify-content-center justify-content-md-start">
@@ -187,7 +204,7 @@ function DescriptionPage(props) {
         <div className="apply" id="apply">
           <div className="container">
             <div className="row">
-              <div className="col-md-7 pr-2 pl-2 pr-md-5">
+              <div className="col-md-7 pr-2 pl-2 pr-md-5 pb-5">
                 <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
                   <div className="form-group">
                     <p className="py-3 mt-2 mt-md-5 title font-weight-bold">
@@ -195,7 +212,7 @@ function DescriptionPage(props) {
                     </p>
                     <div className="mb-3">
                       <input
-                        className="form-control p-3"
+                        className="form-control px-3"
                         id="name"
                         name="name"
                         placeholder="Full Name*"
@@ -315,17 +332,26 @@ function DescriptionPage(props) {
                           })}
                         >
                           <option defaultValue>Work Authorisation*</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          <option value="I am authorised to work for any employer in the country in which this position is based">
+                            I am authorised to work for any employer in the country in which this
+                            position is based
+                          </option>
+                          <option value="I require/will require Gojek's sponsorship to get work authorization in the country in which the position is based">
+                            I require/will require Gojek's sponsorship to get work authorization in
+                            the country in which the position is based
+                          </option>
+                          <option value="My status to work in the country in which this position is based is unknown">
+                            My status to work in the country in which this position is based is
+                            unknown
+                          </option>
                         </select>
                         <div className="invalid-feedback pl-3">
                           {!!errors.authorisation && errors.authorisation.message}
                         </div>
                         <select
                           className="custom-select form-control mb-3"
-                          id="hear"
-                          name="hear"
+                          id="experience"
+                          name="experience"
                           ref={register({
                             required: 'Required',
                             min: {
@@ -334,15 +360,16 @@ function DescriptionPage(props) {
                             },
                           })}
                         >
-                          <option defaultValue>Where did you hear about us?* </option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          <option defaultValue>Total work experience (in years)* </option>
+                          <option value="0-2 years">0-2 years</option>
+                          <option value="3 - 5 years">3 - 5 years</option>
+                          <option value="6 - 10 years">6 - 10 years</option>
+                          <option value="> 10 years"> {' >10 years'}</option>
                         </select>
                         <div className="invalid-feedback pl-3">
-                          {!!errors.hear && errors.hear.message}
+                          {!!errors.experience && errors.experience.message}
                         </div>
-                        <div className="mb-3">
+                        {/* <div className="mb-3">
                           <input
                             className="form-control p-3"
                             id="reference"
@@ -353,8 +380,8 @@ function DescriptionPage(props) {
                           <div className="invalid-feedback pl-3">
                             {!!errors.reference && errors.reference.message}
                           </div>
-                        </div>
-                        <div className="mb-3">
+                        </div> */}
+                        {/* <div className="mb-3">
                           <textarea
                             className="form-control p-3"
                             id="desc"
@@ -368,7 +395,7 @@ function DescriptionPage(props) {
                           <div className="invalid-feedback pl-3">
                             {!!errors.desc && errors.desc.message}
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                       <div className="form-group">
                         <p className="py-3 mt-md-5 title font-weight-bold">
@@ -385,11 +412,11 @@ function DescriptionPage(props) {
                             Please upload your portfolio or any other files (PDF format) you would
                             like to share:
                           </p>
-                          <label htmlFor="file" className="btn btn-secondary px-5 mb-3">
-                            upload files
+                          <label htmlFor="file" className="btn btn-file-upload px-5 mb-3">
+                            <i className="fas fa-file-upload"></i> Upload Files
                           </label>
                         </div>
-                        <div className="mb-3">
+                        {/* <div className="mb-3">
                           <input
                             className="form-control p-3"
                             id="website"
@@ -400,8 +427,8 @@ function DescriptionPage(props) {
                           <div className="invalid-feedback pl-3">
                             {!!errors.website && errors.website.message}
                           </div>
-                        </div>
-                        <div className="mb-3">
+                        </div> */}
+                        {/* <div className="mb-3">
                           <textarea
                             className="form-control p-3"
                             id="cover"
@@ -415,12 +442,12 @@ function DescriptionPage(props) {
                           <div className="invalid-feedback pl-3">
                             {!!errors.cover && errors.cover.message}
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                       <div className="pt-3">
                         <button
                           type="submit"
-                          className="btn btn-success px-5"
+                          className="btn bg-green-light text-white px-5"
                           onClick={() => onFormContinue()}
                         >
                           Submit
@@ -432,7 +459,7 @@ function DescriptionPage(props) {
                       <a href="#apply">
                         <button
                           type="submit"
-                          className="btn btn-success px-5"
+                          className="btn bg-green-light text-white px-4"
                           onClick={() => onFormContinue()}
                         >
                           Continue
@@ -444,7 +471,7 @@ function DescriptionPage(props) {
               </div>
               <div className="col-md-5 apply py-5 mt-md-5">
                 {/* linked in banner */}
-                <div className="card linkedIn my-4 py-5">
+                <div className="card linkedIn py-5">
                   <div className="row justify-content-center">
                     <div className="col-4 text-center">
                       <img

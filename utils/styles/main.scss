@@ -891,6 +891,16 @@ body {
     @media screen and (max-width: 576px) {
       margin-top: 4rem;
     }
+    b {
+      font-family: $title-font;
+      color: #212121;
+    }
+    li {
+      padding-bottom: 0.875rem;
+      list-style-position: inside;
+      padding: 10px 0 10px 20px;
+      text-indent: -1em;
+    }
 
     .title {
       font-family: $header-font;
@@ -902,6 +912,8 @@ body {
       }
       .applyText {
         margin-top: 9rem;
+        font-style: italic;
+        color: #464646;
         @media screen and (max-width: $md-break) {
           margin-top: 4rem;
         }
@@ -1130,13 +1142,14 @@ a:hover {
   }
 }
 
-.commonFooter {
+.commonFooter,
+.joinus-cta {
   background-color: #101820;
 
   .cta {
     background-color: #00aa13;
     border-radius: 48px;
-    margin-top: 8rem;
+    // margin-top: 8rem;
     background-repeat: no-repeat;
     background-image: url('/img/gojek-cta.svg');
     background-position: bottom right;

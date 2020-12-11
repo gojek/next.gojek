@@ -16,11 +16,6 @@ export const data = {
       link: '/blog',
     },
     {
-      id: 4,
-      name: 'Events',
-      link: '#',
-    },
-    {
       id: 5,
       name: 'Teams',
       link: '#',
@@ -59,11 +54,11 @@ export const data = {
       name: 'About Us',
       link: '#',
     },
-    {
-      id: 4,
-      name: 'Events',
-      link: '#',
-    },
+    // {
+    //   id: 4,
+    //   name: 'Events',
+    //   link: '#',
+    // },
     {
       id: 5,
       name: 'Life@Gojek',

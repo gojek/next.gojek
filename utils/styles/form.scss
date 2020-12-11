@@ -2,7 +2,7 @@
 
 .apply {
   @media screen and (min-width: 576px) {
-    padding-bottom: 5rem;
+    // padding-bottom: 5rem;
   }
 
   p {
@@ -15,6 +15,7 @@
 
   .helpText {
     color: #979797;
+    font-family: $title-font;
   }
 
   .form-control {
@@ -35,5 +36,12 @@
     .fileTitle {
       font-size: $font-s;
     }
+  }
+  .form-control {
+    padding: 12px;
+  }
+  .btn-file-upload {
+    background-color: #bbbcbc;
+    color: white;
   }
 }
