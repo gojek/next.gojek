@@ -137,7 +137,7 @@ class JobsList extends Component {
                     <div className="pt-5">
                       Filters:{' '}
                       {this.state.keyword !== '' && (
-                        <p className="d-inline mt-5 p-3 job-tag mr-3 ml-4">
+                        <p className="d-inline mt-5 job-tag mx-3">
                           {this.state.keyword}{' '}
                           <i
                             className="fas fa-times align-middle"
@@ -147,7 +147,7 @@ class JobsList extends Component {
                       )}
                       {filters.map((name, i) => {
                         return (
-                          <p className="d-inline mt-5 p-3 job-tag mr-3" key={i}>
+                          <p className="d-inline mt-5 job-tag ml-3" key={i}>
                             {name}{' '}
                             <i
                               className="fas fa-times align-middle"
