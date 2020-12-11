@@ -322,6 +322,7 @@ export const projects = {
       description: 'Your own x.509 cert manager',
       image: '../img/home/open-source/kingsly.svg',
       color: '#ffc41c',
+      url: 'https://github.com/gojek/kingsly',
     },
     {
       id: 2,
@@ -329,6 +330,7 @@ export const projects = {
       description: 'An enhanced HTTP client for Go',
       image: '../img/home/open-source/heimdall.svg',
       color: '#FDD086',
+      url: ' https://github.com/gojek/heimdall',
     },
     {
       id: 3,
@@ -336,6 +338,7 @@ export const projects = {
       description: 'A framework for writing Kubernetes contollers.',
       image: '../img/home/open-source/kubehandler.svg',
       color: '#E2ACD7',
+      url: '',
     },
     {
       id: 4,
@@ -343,6 +346,7 @@ export const projects = {
       description: 'A unix demon to perform health check on proxy backends.',
       image: '../img/home/open-source/probed.svg',
       color: '#7CCC6C',
+      url: '',
     },
     {
       id: 5,
@@ -350,6 +354,7 @@ export const projects = {
       description: 'A developer friendly Automation Orchestrator',
       image: '../img/home/open-source/proctor.svg',
       color: '#E2ACD7',
+      url: 'https://github.com/gojek/proctor',
     },
     {
       id: 6,
@@ -357,6 +362,7 @@ export const projects = {
       description: 'Dockerized version of StatsD with console backend',
       image: '../img/home/open-source/statsd-docker.svg',
       color: '#7CCC6C',
+      url: 'https://github.com/gojek/statsd-docker',
     },
     {
       id: 7,
@@ -364,6 +370,7 @@ export const projects = {
       description: 'A stream processing framework to build stateless application on Kafka',
       image: '../img/home/open-source/ziggurat.svg',
       color: '#7CCC6C',
+      url: 'https://github.com/gojek/ziggurat',
     },
   ],
 };

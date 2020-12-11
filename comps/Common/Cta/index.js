@@ -9,7 +9,7 @@ function CommonCta(props) {
                 We’re dedicated to creating (and scaling) positive socio-economic impact for our
                 ecosystem of users.{' '}
               </p>
-              <a className="link" href="#">
+              <a className="link" href="/jobs">
                 Join Us
                 <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
               </a>
