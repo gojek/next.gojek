@@ -137,7 +137,21 @@ function Home(props) {
               Want to know the daily challenges, unconventional work culture and inner workings of
               Southeast Asia’s largest startup? We have stories to tell.
             </p>
-            <p>(Editorial favourite: Life At Gojek Instagram &amp; Gojek Tech Instagram)</p>
+            <p>
+              (Editorial favourite:{' '}
+              <a
+                href="https://www.instagram.com/lifeatgojek/"
+                target="_blank"
+                className="text-white"
+              >
+                {' '}
+                Life At Gojek Instagram{' '}
+              </a>
+              &amp;{' '}
+              <a href="https://instagram.com/gojek.tech" target="_blank" className="text-white">
+                Gojek Tech Instagram)
+              </a>
+            </p>
           </div>
           <div className="d-none d-md-block">
             <div className="row ">
