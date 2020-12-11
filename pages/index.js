@@ -202,7 +202,7 @@ function Home(props) {
               </div>
               <div className="col-md-4 mb-5">
                 <a
-                  href="https://www.linkedin.com/company/gojektech/"
+                  href="https://blog.gojekengineering.com/"
                   target="_blank"
                   className="card border-0"
                 >

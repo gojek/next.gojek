@@ -45,14 +45,24 @@ function Navbar(props) {
   const joinUsButton = (item) => {
     if (scrolled) {
       return (
-        <a className="button rounded-pill px-3 py-2" href={item.link}>
+        <a
+          className={
+            router.pathname === '/jobs' ? 'nav-link nav-links' : 'button rounded-pill px-3 py-2'
+          }
+          href={item.link}
+        >
           {item.name}{' '}
           {item.link === router.pathname ? <span className="sr-only">(current)</span> : ''}
         </a>
       );
     } else {
       return (
-        <a className="button rounded-pill px-3 py-2" href={item.link}>
+        <a
+          className={
+            router.pathname === '/jobs' ? 'nav-link nav-links' : 'button rounded-pill px-3 py-2'
+          }
+          href={item.link}
+        >
           {item.name}{' '}
           {item.link === router.pathname ? <span className="sr-only">(current)</span> : ''}
         </a>
@@ -62,7 +72,7 @@ function Navbar(props) {
 
   return (
     <nav className="navbar fixed-top navbar-expand-lg bg-transparent pt-3 pt-md-5 mb-5 main-nav">
-      <div className="container">
+      <div className="container pt-3 pt-md-0">
         <a className="navbar-brand" href="/">
           {logo()}
         </a>
@@ -106,8 +116,10 @@ function Navbar(props) {
         </div>
       </div>
       {expanded ? (
-        <div className="fixed-top text-white footer smNav px-4 py-4">
-          <Links navbar onClose={handleExpand} />
+        <div className="fixed-top text-white footer smNav py-4">
+          <div class="pl-4">
+            <Links navbar onClose={handleExpand} />
+          </div>
         </div>
       ) : (
         ''

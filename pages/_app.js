@@ -43,7 +43,9 @@ function MyApp({ Component, pageProps }) {
         <title>Gojek</title>
       </Head>
       <Component {...pageProps} />
-      <Footer />
+      <div className="page-footer">
+        <Footer />
+      </div>
     </div>
   );
 }

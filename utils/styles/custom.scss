@@ -55,6 +55,23 @@ body {
   height: 100vh;
 }
 
+.main-nav.bg-transparent {
+  .button {
+    background-color: $white;
+    color: $green-light;
+    &:hover {
+      background-color: $green-light;
+      color: $white;
+    }
+  }
+}
+.main-nav.bg-white {
+  .button {
+    background-color: $green-light;
+    color: $white;
+  }
+}
+
 .main-nav {
   transition-duration: 0.8s;
 
@@ -66,10 +83,6 @@ body {
     align-items: center;
   }
   .blackNav {
-    .button {
-      background-color: $green-light;
-      color: $white;
-    }
     .nav-item {
       &.active {
         .nav-link {
@@ -86,10 +99,6 @@ body {
     }
   }
   .whiteNav {
-    .button {
-      background-color: $white;
-      color: $green-light;
-    }
     .nav-item {
       &.active {
         .nav-link {
@@ -194,7 +203,9 @@ section {
   // }
   @media screen and (max-width: 576px) {
     .card {
-      min-height: 470px;
+      .row {
+        min-height: 440px;
+      }
     }
   }
 
@@ -235,11 +246,7 @@ section {
 }
 .social-media {
   .card {
-    min-height: 224px;
-    background-repeat: no-repeat;
-    // background-size: cover;
     border-radius: 52px;
-    background-position: center;
   }
 }
 .overlay-icon {
@@ -294,10 +301,20 @@ section {
     }
   }
 
+  @media screen and (max-width: 576px) {
+    .page-footer .footer .footer-logo {
+      height: 30px !important;
+    }
+  }
+
   li {
-    //   font-size: 1.25rem;
-    //   @media screen and (max-width: 576px) {
-    font-size: 0.875rem;
+    font-size: 1.25rem;
+    @media screen and (max-width: 576px) {
+      font-size: 14px;
+      font-family: 'Maison Nueue Book';
+      line-height: 27px;
+    }
+    // font-size: 0.875rem;
 
     font-family: $demi;
     // }

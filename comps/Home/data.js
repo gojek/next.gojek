@@ -338,7 +338,7 @@ export const projects = {
       description: 'A framework for writing Kubernetes contollers.',
       image: '../img/home/open-source/kubehandler.svg',
       color: '#E2ACD7',
-      url: '',
+      url: '#',
     },
     {
       id: 4,
@@ -346,7 +346,7 @@ export const projects = {
       description: 'A unix demon to perform health check on proxy backends.',
       image: '../img/home/open-source/probed.svg',
       color: '#7CCC6C',
-      url: '',
+      url: '#',
     },
     {
       id: 5,
