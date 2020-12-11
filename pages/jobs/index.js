@@ -29,7 +29,7 @@ function Jobs(props) {
       <JobsList
         data={recentjobs}
         showAllJobs={false}
-        selectedDepartment={params.d}
+        // selectedDepartment={params.d}
         onSelectFilter={handleChange}
       />
 
@@ -53,9 +53,9 @@ export async function getServerSideProps(ctx) {
   let apiUrl =
     'https://api.lever.co/v0/postings/gojek?department=Design&department=Engineering&department=People and Culture&department=Program Management&department=Product&department=Science';
   // 'https://api.lever.co/v0/postings/gojek?department=Design&department=Engineering&department=People and Culture&department=Program Management&department=Product&department=Science&limit=10';
-  if (ctx.query.d) {
-    apiUrl = `https://api.lever.co/v0/postings/gojek?department=${ctx.query.d}`;
-  }
+  // if (ctx.query.d) {
+  //   apiUrl = `https://api.lever.co/v0/postings/gojek?department=${ctx.query.d}`;
+  // }
 
   try {
     const response = await fetch(apiUrl);

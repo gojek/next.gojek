@@ -37,7 +37,7 @@ class MySelect extends Component {
               type="text"
               onChange={(e) => onChange(e.target.value, e.target.name)}
               className="form-control rounded-pill search shadow"
-              placeholder="&#xf02b; Some Input Text"
+              placeholder="&#xf02b; &nbsp; Keyword Search_"
               name="keyword"
               value={this.props.keyword}
             />

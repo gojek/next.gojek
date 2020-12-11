@@ -99,7 +99,6 @@ class JobsList extends Component {
     } else {
       this.setState({ keyword: '' });
     }
-    this.props.onSelectFilter('ok');
   }
 
   render() {
@@ -110,10 +109,7 @@ class JobsList extends Component {
 
     return (
       <div className="careers">
-        <section
-          id="banner"
-          className="py-5 d-flex align-items-end align-items-xl-center"
-        >
+        <section id="banner" className="py-5 d-flex align-items-end align-items-xl-center">
           <div className="container">
             <Banner
               options={departments}
@@ -175,7 +171,7 @@ class JobsList extends Component {
                     Locations
                   </strong>{' '}
                 </p>
-                {!this.props.showAllJobs && (
+                {!showAllJobs && (
                   <a href="/jobs/all" className="text-green link">
                     View all jobs
                     <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
@@ -187,12 +183,11 @@ class JobsList extends Component {
         </section>
 
         <List
-          // openPositions={
-          //   showAllJobs || this.searchJobs().length <= 10
-          //     ? this.searchJobs()
-          //     : this.searchJobs().slice(0, 10)
-          // }
-          openPositions={this.searchJobs()}
+          openPositions={
+            showAllJobs || this.searchJobs().length <= 10
+              ? this.searchJobs()
+              : this.searchJobs().slice(0, 10)
+          }
           showAllJobs={showAllJobs}
           heading={heading}
         />
