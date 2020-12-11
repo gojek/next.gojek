@@ -203,7 +203,9 @@ section {
   // }
   @media screen and (max-width: 576px) {
     .card {
-      min-height: 470px;
+      .row {
+        min-height: 440px;
+      }
     }
   }
 
@@ -244,11 +246,7 @@ section {
 }
 .social-media {
   .card {
-    min-height: 224px;
-    background-repeat: no-repeat;
-    // background-size: cover;
     border-radius: 52px;
-    background-position: center;
   }
 }
 .overlay-icon {
@@ -303,10 +301,20 @@ section {
     }
   }
 
+  @media screen and (max-width: 576px) {
+    .page-footer .footer .footer-logo {
+      height: 30px !important;
+    }
+  }
+
   li {
-    //   font-size: 1.25rem;
-    //   @media screen and (max-width: 576px) {
-    font-size: 0.875rem;
+    font-size: 1.25rem;
+    @media screen and (max-width: 576px) {
+      font-size: 14px;
+      font-family: 'Maison Nueue Book';
+      line-height: 27px;
+    }
+    // font-size: 0.875rem;
 
     font-family: $demi;
     // }

@@ -71,12 +71,12 @@ export const data = {
     },
     {
       id: 7,
-      name: 'Contact with us',
+      name: 'Contact us',
       link: '/',
     },
     {
       id: 8,
-      name: 'Connect us',
+      name: 'Connect with us',
       link: '/',
     },
   ],

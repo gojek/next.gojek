@@ -53,7 +53,7 @@ function Links(props) {
           </li>
         ))}
       </ul>
-      <ul className="list-inline text-center">
+      <ul className="list-inline pl-3 pt-3">
         {data.socialLinks.map((socialMedia, key) => (
           <li
             className={`list-inline-item ${key < data.socialLinks.length - 1 ? 'mr-4' : ''}`}
@@ -100,10 +100,10 @@ function Links(props) {
         className={`row pt-3 mx-0 ${
           props.navbar
             ? 'justify-content-between px-3'
-            : 'justify-content-center justify-content-md-start'
+            : 'justify-content-center justify-content-md-start py-4 py-md-0'
         }`}
       >
-        <img src="/img/gojek-tech-white-logo.png" alt="Gojek" className="img-fluid" />
+        <img src="/img/gojek-tech-white-logo.png" alt="Gojek" className="img-fluid footer-logo" />
         {props.navbar ? (
           <button className="btn text-white" onClick={() => props.onClose()}>
             <span>

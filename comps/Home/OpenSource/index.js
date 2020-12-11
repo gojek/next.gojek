@@ -31,7 +31,7 @@ function Project(props) {
             icon="/img/right-arrow.svg"
           />
         </div>
-        <div className="col-md-7 offset-md-1 opensource pt-4 pt-md-0">
+        <div className="col-md-7 offset-md-1 opensource pt-2 pt-md-0">
           <Slider {...settings}>
             {projects.data.map((data, i) => (
               <Card data={data} />
