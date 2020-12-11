@@ -1,27 +1,25 @@
 import { useState } from 'react';
 
 function List(props) {
-  // const { openPositions } = props;
-  const [limit, setLimit] = useState(10);
-  const [openPositions, setOpenPositions] = useState(props.openPositions.slice(0, 10));
+  const { openPositions } = props;
+  // const [limit, setLimit] = useState(10);
+  // const [openPositions, setOpenPositions] = useState(props.openPositions.slice(0, 10));
 
-  const handleExpand = (xs) => {
-    let newLimit = limit + 10,
-      newList = props.openPositions.slice(0, newLimit);
-    setLimit(newLimit);
-    setOpenPositions(newList);
-    let elmnt = document.getElementById(`${xs ? 'xs' : ''}${newList.length - 11}`);
-    elmnt.scrollIntoView();
-  };
+  // const handleExpand = (xs) => {
+  //   let newLimit = limit + 10,
+  //     newList = props.openPositions.slice(0, newLimit);
+  //   setLimit(newLimit);
+  //   setOpenPositions(newList);
+  //   let elmnt = document.getElementById(`${xs ? 'xs' : ''}${newList.length - 11}`);
+  //   elmnt.scrollIntoView();
+  // };
 
   return (
-    <section className="full-height mb-md-5 pb-md-5">
+    <section className="mb-md-5 pb-md-5" id="job-list">
       {/* desktop view */}
       <div className="container mb-5 d-none d-md-block">
         <div className="listings bg-white shadow px-5 pt-5 pb-4" style={{ borderRadius: '3rem' }}>
-          <h1 className="header my-5 pb-2" style={{ fontSize: '2rem;' }}>
-            {props.heading}
-          </h1>
+          <h1 className="header mb-5">{props.heading}</h1>
           <div className="job">
             <div className="jobs-table-header row mb-4" style={{ fontSize: '20px' }}>
               <div className="col-md-6">
@@ -61,20 +59,20 @@ function List(props) {
                   <strong>No Jobs!</strong>
                 </div>
               )}
-              <div className="text-center mt-5">
-                <button className="text-green link btn" onClick={() => handleExpand()}>
+              {/* <div className="text-center mt-5">
+                <a href="/jobs/all" className="text-green link btn">
                   View more
                   <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
-                </button>
-              </div>
+                </a>
+              </div> */}
             </div>
           </div>
         </div>
       </div>
 
       {/* mobile view */}
-      <div className="xs-listings py-4 d-md-none text-left">
-        <h1 className="header my-1 pb-2 px-5">{props.heading}</h1>
+      <div className="xs-listings py-5 d-md-none text-left">
+        <h1 className="header mt-4 mb-1 pb-2 px-5">{props.heading}</h1>
         <div className="job">
           <div className="pb-3">
             {openPositions.length > 0 ? (
@@ -98,7 +96,7 @@ function List(props) {
             )}
 
             <div className="mt-4 pl-5">
-              <button className="text-green link btn" onClick={() => handleExpand(true)}>
+              <button className="text-green link btn">
                 View more
                 <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
               </button>

@@ -833,3 +833,8 @@ html {
 .swiper-button-prev::after {
   display: none;
 }
+.search {
+  font-family: $navbar-font, 'Font Awesome 5 Free';
+  font-size: 0.875rem;
+  line-height: normal;
+}

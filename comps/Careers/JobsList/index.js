@@ -4,6 +4,8 @@ import List from './list';
 import Banner from '../banner';
 import { departments, locations } from '../data.js';
 import _, { remove } from 'underscore';
+import { useRouter } from 'next/router';
+import { withRouter } from 'next/router';
 
 class JobsList extends Component {
   state = {
@@ -100,7 +102,6 @@ class JobsList extends Component {
   }
 
   render() {
-    console.log('selectedDepartments', this.state.selectedDepartments);
     const { showAllJobs } = this.props;
     const heading = this.props.jobsHeading || 'Recent Open Positions';
     const selctedFilters = this.filteredCollected();
@@ -108,10 +109,7 @@ class JobsList extends Component {
 
     return (
       <div className="careers">
-        <section
-          id="banner"
-          className="full-height py-5 d-flex align-items-end align-items-xl-center"
-        >
+        <section id="banner" className="py-5 d-flex align-items-end align-items-xl-center">
           <div className="container">
             <Banner
               options={departments}
@@ -133,9 +131,9 @@ class JobsList extends Component {
                 {(filters.length > 0 || this.state.keyword !== '') && (
                   <React.Fragment>
                     <div className="pt-5">
-                      Filters:
+                      Filters:{' '}
                       {this.state.keyword !== '' && (
-                        <p className="d-inline mt-5 p-3 job-tag mr-3">
+                        <p className="d-inline mt-5 job-tag mx-3">
                           {this.state.keyword}{' '}
                           <i
                             className="fas fa-times align-middle"
@@ -145,7 +143,7 @@ class JobsList extends Component {
                       )}
                       {filters.map((name, i) => {
                         return (
-                          <p className="d-inline mt-5 p-3 job-tag mr-3" key={i}>
+                          <p className="d-inline mt-5 job-tag ml-3" key={i}>
                             {name}{' '}
                             <i
                               className="fas fa-times align-middle"
@@ -173,7 +171,7 @@ class JobsList extends Component {
                     Locations
                   </strong>{' '}
                 </p>
-                {!this.props.showAllJobs && (
+                {!showAllJobs && (
                   <a href="/jobs/all" className="text-green link">
                     View all jobs
                     <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
@@ -185,12 +183,11 @@ class JobsList extends Component {
         </section>
 
         <List
-          // openPositions={
-          //   showAllJobs || this.searchJobs().length <= 10
-          //     ? this.searchJobs()
-          //     : this.searchJobs().slice(0, 10)
-          // }
-          openPositions={this.searchJobs()}
+          openPositions={
+            showAllJobs || this.searchJobs().length <= 10
+              ? this.searchJobs()
+              : this.searchJobs().slice(0, 10)
+          }
           showAllJobs={showAllJobs}
           heading={heading}
         />

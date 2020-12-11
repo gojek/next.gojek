@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import Router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
 import Navbar from '~/../../comps/Navbar';
 import JobsList from '../../comps/Careers/JobsList/index';
@@ -8,7 +8,14 @@ import Departments from '../../comps/Careers/Departments';
 import Teams from '../../comps/Careers/Teams';
 
 function Jobs(props) {
-  const openPosisitions = props.data;
+  const router = useRouter();
+  const params = router.query;
+  const recentjobs = props.data;
+
+  function handleChange(val) {
+    router.query = {};
+    router.push('/jobs', { shallow: true });
+  }
 
   return (
     <div className="text-center text-md-left">
@@ -19,18 +26,23 @@ function Jobs(props) {
 
       <div className="yellow-bg-gradient"></div>
       {/* banner and jobs section */}
-      <JobsList data={openPosisitions} showAllJobs={false} />
+      <JobsList
+        data={recentjobs}
+        showAllJobs={false}
+        // selectedDepartment={params.d}
+        onSelectFilter={handleChange}
+      />
 
       {/* Departments */}
       <section className="bg-black full-height py-md-5" id="departments">
-        <Departments data={openPosisitions} />
+        <Departments data={recentjobs} />
       </section>
       {/* End Departments */}
 
       {/* Teams */}
-      <section id="teams" className="full-height align-items-center py-5">
-        <Teams data={openPosisitions} />
-      </section>
+      {/* <section id="teams" className="full-height align-items-center py-5">
+        <Teams data={recentjobs} />
+      </section> */}
       {/* End Teams */}
     </div>
   );
@@ -38,7 +50,12 @@ function Jobs(props) {
 
 // to fetch the jobs description
 export async function getServerSideProps(ctx) {
-  const apiUrl = `https://api.lever.co/v0/postings/gojek`;
+  let apiUrl =
+    'https://api.lever.co/v0/postings/gojek?department=Design&department=Engineering&department=People and Culture&department=Program Management&department=Product&department=Science';
+  // 'https://api.lever.co/v0/postings/gojek?department=Design&department=Engineering&department=People and Culture&department=Program Management&department=Product&department=Science&limit=10';
+  // if (ctx.query.d) {
+  //   apiUrl = `https://api.lever.co/v0/postings/gojek?department=${ctx.query.d}`;
+  // }
 
   try {
     const response = await fetch(apiUrl);
@@ -53,6 +70,8 @@ export async function getServerSideProps(ctx) {
     // Network error
     return { props: { data: [] } };
   }
+
+  // Get all jobs
 }
 
 export default Jobs;

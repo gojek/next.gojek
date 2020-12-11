@@ -51,11 +51,22 @@
   display: none !important;
 }
 
-.css-yk16xz-control {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-radius: 1.5rem !important;
+.css-yk16xz-control,
+.css-1pahdxg-control {
+  padding-top: 8px;
+  padding-bottom: 7px;
+  border-radius: 2.5rem !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  border: none !important;
 }
+
+.css-g1d714-ValueContainer {
+  padding: 2px 16px !important;
+  font-family: 'Maison Nueue Extended Book', 'Font Awesome 5 Free';
+  font-size: 0.875rem;
+  line-height: normal;
+}
+
 .department {
   background-repeat: no-repeat;
   background-size: cover;
@@ -155,15 +166,18 @@
 .css-2b097c-container:focus {
   outline: none;
 }
-.css-1pahdxg-control {
-  border-color: #fff !important;
-  border-style: none !important;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-radius: 1.5rem !important;
-}
+// .css-1pahdxg-control {
+//   border-color: #fff !important;
+//   border-style: none !important;
+//   padding-top: 5px;
+//   padding-bottom: 5px;
+//   border-radius: 1.5rem !important;
+// }
 .job-tag {
   background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
 }
 
 .animation-icon {

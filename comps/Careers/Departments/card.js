@@ -1,10 +1,9 @@
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 function Card(props) {
   const { slug, bg, label, openings, index, bgType } = props;
 
   return (
-    // <Link href={`/jobs/all?d=${slug}`}>
     <a
       className={`card text-white department ${label} ${index < 2 ? ' highlight' : ''}`}
       style={{
@@ -21,7 +20,6 @@ function Card(props) {
         <p className="openings">{openings} Openings</p>
       </div>
     </a>
-    // </Link>
   );
 }
 

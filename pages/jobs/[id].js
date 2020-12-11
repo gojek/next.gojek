@@ -55,7 +55,10 @@ function DescriptionPage(props) {
       </Head>
 
       <Navbar whiteNav />
-      <section className="banner pb-5" style={{ backgroundColor: '#924e8c' }}>
+      <section
+        className="banner pb-5"
+        style={{ backgroundImage: "url('/img/careers/job-description/banner.png')" }}
+      >
         <div className="container full-height-one">
           <div className="row mx-0 align-items-end full-height-one pb-5">
             <div>
@@ -445,7 +448,7 @@ function DescriptionPage(props) {
                   <div className="row justify-content-center">
                     <div className="col-4 text-center">
                       <img
-                        src="/img/Marketplace.svg"
+                        src="/img/careers/job-description/apply-with-linkedin.svg"
                         alt="Gojek Super app"
                         style={{ height: '5rem' }}
                       />

@@ -24,7 +24,7 @@ function AllJobs(props) {
       {/* banner and jobs section */}
       <JobsList
         data={openPosisitions}
-        showAllJobs
+        showAllJobs={true}
         jobsHeading="All Open Positions"
         selectedDepartment={params.d}
       />
