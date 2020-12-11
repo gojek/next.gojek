@@ -25,7 +25,10 @@ body {
 
 .link {
   font-size: $font-m;
-  font-family: $demi, sans-serif;
+  font-family: $font-bold, sans-serif;
+  &:hover {
+    color: $green-light;
+  }
 }
 
 .home {
@@ -839,6 +842,42 @@ html {
   font-family: $navbar-font, 'Font Awesome 5 Free';
   font-size: 0.875rem;
   line-height: normal;
+}
+
+.search::-webkit-input-placeholder {
+  color: transparent;
+  text-indent: -9999px;
+  background-image: url('/img/careers/search.svg');
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 3%;
+}
+.search::-moz-placeholder {
+  /* Firefox 19+ */
+  color: transparent;
+  text-indent: -9999px;
+  background-image: url('/img/careers/search.svg');
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 3%;
+}
+.search:-moz-placeholder {
+  /* Firefox 18- */
+  color: transparent;
+  text-indent: -9999px;
+  background-image: url('/img/careers/.search.svg');
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 3%;
+}
+.search:-ms-input-placeholder {
+  /* IE 10- */
+  color: transparent;
+  text-indent: -9999px;
+  background-image: url('/img/careers/search.svg');
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 3%;
 }
 
 // To be removed

@@ -35,8 +35,8 @@ function List(props) {
             <div className="pb-3">
               {openPositions.length > 0 ? (
                 openPositions.map((data, key) => (
-                  <a href={`jobs/${data.id}`}>
-                    <div className="table-row row py-3" key={key} id={key}>
+                  <a href={`/jobs/${data.id}`} class="table-row">
+                    <div className="job-row row py-3" key={key} id={key}>
                       <div className="col-md-6">
                         <p className="mb-0">{data.text}</p>
                       </div>
@@ -59,12 +59,18 @@ function List(props) {
                   <strong>No Jobs!</strong>
                 </div>
               )}
-              {/* <div className="text-center mt-5">
-                <a href="/jobs/all" className="text-green link btn">
-                  View more
-                  <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
-                </a>
-              </div> */}
+              {!props.showAllJobs && (
+                <div className="text-center mt-5">
+                  <a href="/jobs/all" className="text-green-light link btn">
+                    View all jobs
+                    <img
+                      src="./img/right-arrow.svg"
+                      className="align-middle ml-2 img-fluid"
+                      alt="All jobs"
+                    />
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -94,13 +100,14 @@ function List(props) {
                 <strong>No Jobs!</strong>
               </div>
             )}
-
-            <div className="mt-4 pl-5">
-              <button className="text-green link btn">
-                View more
-                <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
-              </button>
-            </div>
+            {!props.showAllJobs && (
+              <div className="mt-4 pl-5">
+                <button className="text-green link btn">
+                  View more
+                  <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

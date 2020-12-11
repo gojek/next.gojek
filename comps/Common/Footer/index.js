@@ -21,7 +21,7 @@ function Footer(props) {
             <p className="form-text">
               We'll strive to ensure you don’t mute us. Stories from our #SuperApp, straight to your{' '}
               {''}
-              <img src="/img/whatsapp-logo.svg" alt="WhatsApp" />{' '}
+              <img src="./img/whatsapp-logo.svg" alt="WhatsApp" />{' '}
               <span className="text-white">WhatsApp.</span>
             </p>
             <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>

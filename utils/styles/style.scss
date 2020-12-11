@@ -140,10 +140,14 @@
     color: #696969;
   }
   &:nth-child(even) {
-    background: #f2f2f2;
+    .job-row {
+      background: #f2f2f2;
+    }
   }
   &:nth-child(odd) {
-    background: #fff;
+    .job-row {
+      background: #fff;
+    }
   }
   &:hover {
     cursor: pointer;
