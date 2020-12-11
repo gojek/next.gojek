@@ -2,7 +2,8 @@ const Link = (props) => {
   return (
     <a href={props.href} className={`${props.color} link`}>
       {props.text}
-      <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+
+      <img src="/img/right-arrow.svg" className="align-middle ml-2 img-fluid" alt="Open source" />
     </a>
   );
 };

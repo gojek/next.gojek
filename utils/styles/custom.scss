@@ -25,15 +25,18 @@ body {
 
 .link {
   font-size: $font-m;
-  font-family: $demi, sans-serif;
+  font-family: $font-bold, sans-serif;
+  &:hover {
+    color: $green-light;
+  }
 }
 
 .home {
-  background: url('/img/home/home-banner.png') no-repeat center center;
+  background: url('/img/home/home-banner.jpg') no-repeat center center;
   height: 80vh;
   background-size: cover;
   @media screen and (max-width: 576px) {
-    background: url('/img/home/mobile-banner.png') no-repeat center center;
+    background: url('/img/home/mobile-banner.jpg') no-repeat center center;
     height: 70vh;
     background-size: cover;
   }
@@ -765,6 +768,8 @@ html {
     }
     .description {
       font-family: $extended-book;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
     }
   }
   .text-lead {
@@ -837,4 +842,65 @@ html {
   font-family: $navbar-font, 'Font Awesome 5 Free';
   font-size: 0.875rem;
   line-height: normal;
+}
+
+.search::-webkit-input-placeholder {
+  color: transparent;
+  text-indent: -9999px;
+  background-image: url('/img/careers/search.svg');
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 3%;
+}
+.search::-moz-placeholder {
+  /* Firefox 19+ */
+  color: transparent;
+  text-indent: -9999px;
+  background-image: url('/img/careers/search.svg');
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 3%;
+}
+.search:-moz-placeholder {
+  /* Firefox 18- */
+  color: transparent;
+  text-indent: -9999px;
+  background-image: url('/img/careers/.search.svg');
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 3%;
+}
+.search:-ms-input-placeholder {
+  /* IE 10- */
+  color: transparent;
+  text-indent: -9999px;
+  background-image: url('/img/careers/search.svg');
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 3%;
+}
+
+// To be removed
+.ctaPurple {
+  background-color: #904790;
+  border-radius: $border-xl;
+}
+.ctaTitle {
+  font-size: 1.75rem;
+  font-family: $header-font;
+  @media screen and (max-width: 576px) {
+    font-size: 1.6rem;
+  }
+}
+.ctaLink {
+  font-size: 1.25rem;
+  font-family: $title-font;
+  color: #a1d884;
+}
+.readMore {
+  font-size: 1.125rem;
+  font-family: $title-font;
+}
+.ctaLink:hover {
+  color: $green-base;
 }

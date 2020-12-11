@@ -172,9 +172,11 @@ class JobsList extends Component {
                   </strong>{' '}
                 </p>
                 {!showAllJobs && (
-                  <a href="/jobs/all" className="text-green link">
-                    View all jobs
-                    <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+                  <a
+                    href="/jobs/all"
+                    className="button rounded-pill px-3 py-2 bg-green-light text-white"
+                  >
+                    Find jobs
                   </a>
                 )}
               </div>
