@@ -23,7 +23,7 @@ function Jobs(props) {
       <Head>
         <title>Gojek | Careers</title>
       </Head>
-      <Navbar whiteNav />
+      <Navbar />
 
       <div className="yellow-bg-gradient"></div>
       {/* banner and jobs section */}

@@ -55,6 +55,23 @@ body {
   height: 100vh;
 }
 
+.main-nav.bg-transparent {
+  .button {
+    background-color: $white;
+    color: $green-light;
+    &:hover {
+      background-color: $green-light;
+      color: $white;
+    }
+  }
+}
+.main-nav.bg-white {
+  .button {
+    background-color: $green-light;
+    color: $white;
+  }
+}
+
 .main-nav {
   transition-duration: 0.8s;
 
@@ -66,10 +83,6 @@ body {
     align-items: center;
   }
   .blackNav {
-    .button {
-      background-color: $green-light;
-      color: $white;
-    }
     .nav-item {
       &.active {
         .nav-link {
@@ -86,10 +99,6 @@ body {
     }
   }
   .whiteNav {
-    .button {
-      background-color: $white;
-      color: $green-light;
-    }
     .nav-item {
       &.active {
         .nav-link {

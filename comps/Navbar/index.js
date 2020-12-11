@@ -45,14 +45,24 @@ function Navbar(props) {
   const joinUsButton = (item) => {
     if (scrolled) {
       return (
-        <a className="button rounded-pill px-3 py-2" href={item.link}>
+        <a
+          className={
+            router.pathname === '/jobs' ? 'nav-link nav-links' : 'button rounded-pill px-3 py-2'
+          }
+          href={item.link}
+        >
           {item.name}{' '}
           {item.link === router.pathname ? <span className="sr-only">(current)</span> : ''}
         </a>
       );
     } else {
       return (
-        <a className="button rounded-pill px-3 py-2" href={item.link}>
+        <a
+          className={
+            router.pathname === '/jobs' ? 'nav-link nav-links' : 'button rounded-pill px-3 py-2'
+          }
+          href={item.link}
+        >
           {item.name}{' '}
           {item.link === router.pathname ? <span className="sr-only">(current)</span> : ''}
         </a>
