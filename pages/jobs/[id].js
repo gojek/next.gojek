@@ -179,16 +179,14 @@ function DescriptionPage(props) {
                   first and only decacorn. It's also the only Southeast Asian startup to be part of
                   Fortune's list of 'Companies That Changed The World.
                 </p>
-                <div
-                  className="card position-relative my-4"
-                  style={{ backgroundImage: `url(/img/home/youtube.png)` }}
-                >
+
+                <div className=" my-5">
                   <a
                     href="https://www.youtube.com/watch?v=VJH5FJ5kaJA"
                     target="_blank"
-                    className="text-white"
+                    className="card border-0"
                   >
-                    <i className="fab fa-youtube position-absolute overlay-icon"></i>
+                    <img src="/img/home/social/Yt.png" alt="GOJEK Tech YouTube" />
                   </a>
                 </div>
               </div>
@@ -469,8 +467,7 @@ function DescriptionPage(props) {
                   )}
                 </form>
               </div>
-              <div className="col-md-5 apply py-5 mt-md-5">
-                {/* linked in banner */}
+              {/*  <div className="col-md-5 apply py-5 mt-md-5">
                 <div className="card linkedIn py-5">
                   <div className="row justify-content-center">
                     <div className="col-4 text-center">
@@ -490,7 +487,7 @@ function DescriptionPage(props) {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>*/}
             </div>
           </div>
         </div>
