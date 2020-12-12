@@ -412,6 +412,17 @@ section {
   background-size: cover;
   background-position: center;
 
+  @media screen and (max-width: 576px) {
+    background: url('/img/life-at-gojek/mobile-banner.png') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+  }
+  .wrapper {
+    @media screen and (max-width: 576px) {
+      bottom: 15%;
+    }
+  }
+
   .bannerHeading {
     font-size: 2.82rem;
   }
@@ -452,7 +463,21 @@ section {
 
 .social-impact {
   h1 {
-    font-family: $extended-book;
+    font-family: $header-font;
+    font-size: 2.812rem;
+  }
+  .card {
+    .row {
+      min-height: 35rem;
+      @media screen and (max-width: 576px) {
+        min-height: 500px;
+      }
+    }
+    .title {
+      font-size: 1.875rem;
+      font-family: $font-bold;
+      line-height: 2.625rem;
+    }
   }
 }
 
@@ -616,11 +641,11 @@ section {
       font-size: 1.625rem;
     }
     .heading-sm {
-      font-size: 1.125rem;
-      line-height: 1.5rem;
+      font-size: 18px;
+      line-height: 28px;
     }
     p {
-      font-size: 0.875rem;
+      font-size: 14px;
     }
     .card-columns {
       grid-column-gap: 1rem;

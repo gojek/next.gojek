@@ -642,6 +642,8 @@ body {
       background-color: #dcdada;
       border: 1px sold #eee;
       border-radius: $border-xl;
+      background-size: cover;
+      background-position: center center;
     }
 
     .card-name {
@@ -1149,7 +1151,7 @@ a:hover {
   .cta {
     background-color: #00aa13;
     border-radius: 48px;
-    // margin-top: 8rem;
+    margin-top: 6rem;
     background-repeat: no-repeat;
     background-image: url('/img/gojek-cta.svg');
     background-position: bottom right;

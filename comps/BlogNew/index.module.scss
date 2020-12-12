@@ -35,6 +35,9 @@
   font-size: 1.25rem;
   font-family: $title-font;
   color: #a1d884;
+  &:hover {
+    color: #a1d884;
+  }
 }
 .readMore {
   font-size: 1.125rem;

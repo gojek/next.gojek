@@ -9,9 +9,9 @@ function CommonCta(props) {
                 We’re dedicated to creating (and scaling) positive socio-economic impact for our
                 ecosystem of users.{' '}
               </p>
-              <a className="link" href="/jobs">
+              <a className="link" href="/jobs" style={{ fontFamily: 'Maison Nueue Demi' }}>
                 Join Us
-                <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
+                <img src="/img/arrow-right-yellow.svg" className="pl-2" alt="join Us" />
               </a>
             </div>
           </div>
@@ -27,7 +27,7 @@ function CommonCta(props) {
               </p>
               <a className="link" href="/jobs">
                 Join Us
-                <i className="fas fa-long-arrow-alt-right align-middle ml-2"></i>
+                <img src="/img/arrow-right-yellow.svg" alt="join Us" />
               </a>
             </div>
           </div>

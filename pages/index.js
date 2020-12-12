@@ -129,7 +129,7 @@ function Home(props) {
         </div>
       </section>
 
-      <section className="bg-black py-5 text-white social-media">
+      <section className="bg-black pt-5 text-white social-media">
         <div className="container py-5">
           <div className="intro py-md-5 px-5 px-md-0">
             <h1 className="pb-4 heading">Social Media</h1>
