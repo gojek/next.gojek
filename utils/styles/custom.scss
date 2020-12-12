@@ -308,13 +308,12 @@ section {
   }
 
   li {
-    font-size: 1.25rem;
     @media screen and (max-width: 576px) {
       font-size: 14px;
       font-family: 'Maison Nueue Book';
       line-height: 27px;
     }
-    // font-size: 0.875rem;
+    font-size: 0.875rem;
 
     font-family: $demi;
     // }
