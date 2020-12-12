@@ -3,14 +3,12 @@ import Head from 'next/head';
 import Navbar from '~/../../comps/Navbar';
 import Perks from '../../comps/Culture/Perks';
 import Blog from '../../comps/Culture/Blog';
-import Link from '../../comps/Common/link';
-import CardAnimation from '../../comps/Culture/CardAnimation';
-import { socialImpact } from '../../comps/Culture/data';
 import Values from '../../comps/Culture/Values/index';
-
-import { perks } from '../../comps/Culture/data.js';
+import { CTA } from '../../comps/BlogNew/cta';
+import { perks, mobilePerks } from '../../comps/Culture/data.js';
 import CommonCta from '~/../../comps/Common/Cta';
 import { useState, useEffect } from 'react';
+import Impact from '~/../../comps/Culture/SocialImpact/index';
 import { gsap } from 'gsap/dist/gsap';
 
 function LifeAtGojek(props) {
@@ -44,7 +42,7 @@ function LifeAtGojek(props) {
       <section className="banner life-at-gojek">
         <div className="container">
           <div className="row mx-0 align-items-center full-height-one text-white">
-            <div className="col-md-6">
+            <div className="col-md-6 col-10 px-0 position-relative wrapper">
               <h1 className="heading pb-4 pb-md-3 bannerHeading">Culture </h1>
               <p className="pb-3">
                 The biggest defining perk of Gojek is its culture. We have a cross-pollination of
@@ -74,7 +72,7 @@ function LifeAtGojek(props) {
       <section className="bg-black text-white py-5 perks">
         <div className="container py-5">
           <h1 className="heading py-md-5 mb-5 mb-md-0 pl-4">Perks and Benefits</h1>
-          <Perks perks={perks} showPerks={showPerks} />
+          <Perks perks={perks} showPerks={showPerks} mobilePerks={mobilePerks} />
 
           {showPerks < 3 && (
             <div className="view-more-button">
@@ -84,10 +82,19 @@ function LifeAtGojek(props) {
         </div>
       </section>
 
-      <section className="social-impact my-5 py-5 d-none d-lg-block">
+      <section className="bg-white mt-5 pt-5">
         <div className="container">
-          <CardAnimation data={socialImpact} />
+          <CTA
+            title="We’re dedicated to creating (and scaling) positive socio-economic impact for our ecosystem of users. "
+            href="/jobs"
+            hrefText="Apply Now"
+            font="small"
+          />
         </div>
+      </section>
+
+      <section className="my-md-5 pb-md-5 pt-5">
+        <Impact />
       </section>
 
       <section className="py-5" id="openingsBlogs">

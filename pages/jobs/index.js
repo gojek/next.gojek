@@ -48,30 +48,11 @@ function Jobs(props) {
 
       {/* CTA */}
 
-      <section className="joinus-cta">
-        <div className="px-5 pt-4 d-none d-md-block">
-          <div className="container">
-            <div className="ctaPurple cta-jobs p-5">
-              <div className="row justify-content-center align-items-center">
-                <div className="col-lg-4">
-                  <img
-                    className="img-fluid mx-auto d-block"
-                    src="/img/blog-cta.jpg"
-                    alt="Read Gojek blogs"
-                  />
-                </div>
-                <div className="col-lg-5">
-                  <h1 className={`text-white mb-5 ctaTitle`}>Read stories from our blog</h1>
-                  <a href="/blogs" className="ctaLink">
-                    Read More <i className="fas fa-long-arrow-alt-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+      <section className="bg-black  py-5">
+        <div className="container">
+          <CTA title="Read stories from our Blog " href="/blog" hrefText="Read More" />
         </div>
       </section>
-      {/* End CTA */}
     </div>
   );
 }
