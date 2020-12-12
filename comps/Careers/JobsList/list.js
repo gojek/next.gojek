@@ -35,7 +35,7 @@ function List(props) {
             <div className="pb-3">
               {openPositions.length > 0 ? (
                 openPositions.map((data, key) => (
-                  <a href={`/jobs/${data.id}`} class="table-row">
+                  <a href={`/jobs/${data.id}`} className="table-row">
                     <div className="job-row row py-3" key={key} id={key}>
                       <div className="col-md-6">
                         <p className="mb-0">{data.text}</p>
