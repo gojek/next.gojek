@@ -194,13 +194,6 @@ section {
   max-height: 50rem;
 }
 .tech-facts {
-  // .description {
-  //   max-width: 450px;
-  //   font-size: 30px;
-  //   font-family: $extended-book, 'sans-serif';
-  //   font-weight: bold;
-  //   line-height: 42px;
-  // }
   @media screen and (max-width: 576px) {
     .card {
       .row {
@@ -314,9 +307,7 @@ section {
       line-height: 27px;
     }
     font-size: 0.875rem;
-
     font-family: $demi;
-    // }
   }
   .contact {
     background-color: #000;
@@ -944,4 +935,76 @@ html {
 }
 .ctaLink:hover {
   color: $green-base;
+}
+
+// About us page styles
+.about-green-bg {
+  background-color: #bce194;
+}
+.about-pink-bg {
+  background-color: #ffb1bb;
+}
+.about-blue-bg {
+  background-color: #bbdde6;
+}
+.about-purple-bg {
+  background-color: #eedaea;
+}
+.about-orange-bg {
+  background-color: #ffc27b;
+}
+
+.about-pattern-a {
+  background-image: url('/img/about-us/about-pattern-a.svg');
+}
+.about-pattern-b {
+  background-image: url('/img/about-us/about-pattern-b.svg');
+}
+.about-pattern-c {
+  background-image: url('/img/about-us/about-pattern-c.svg');
+}
+
+.about-pattern-a,
+.about-pattern-b,
+.about-pattern-c {
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: 1200px) {
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 1920px) {
+    background-image: none;
+  }
+}
+
+.milestones {
+
+  .link::after {
+    content: url('/img/right-arrow.svg');
+    padding-left: 0.5rem;
+    vertical-align: middle;
+    display: inline-block;
+
+    @media screen and (max-width: 576px) {
+      height: 16px;
+    }
+  }
+
+  .mobile {
+    margin-top: 62px;
+
+    .card {
+      border-radius: 2.75rem;
+      border: none;
+      min-height: 480px;
+    }
+
+    .illustration {
+      max-width: 224px;
+      margin: 0 auto;
+    }
+  }
 }
