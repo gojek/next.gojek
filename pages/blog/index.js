@@ -71,24 +71,20 @@ function Blog(props) {
 }
 
 Blog.getInitialProps = async () => {
-  const latestPosts = await getLatestPosts();
-  const tags = await getTags();
-  const featuredPosts = await getFeaturedPosts();
-
+  // const latestPosts = await getLatestPosts();
+  // const tags = await getTags();
+  // const featuredPosts = await getFeaturedPosts();
   // TODO: JUNK
   // Update featured of all posts as false except for the first post
   // latestPosts.forEach((post) => {
   //   post.featured = false;
   // });
   // latestPosts[0].featured = true;
-
   // featuredPosts.forEach((post) => {
   //   post.featured = false;
   // });
-
   // Featured artticles
-
-  return { latestPosts, tags, featuredPosts };
+  // return { latestPosts, tags, featuredPosts };
 };
 
 export default Blog;
