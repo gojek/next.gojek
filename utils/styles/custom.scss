@@ -387,11 +387,6 @@ section {
   }
 }
 
-@media screen and (min-width: 2000px) {
-  .pointers {
-    margin-bottom: 5rem;
-  }
-}
 .product {
   p {
     font-size: 18px;
@@ -610,14 +605,31 @@ section {
 .pointers {
   ul {
     list-style-type: square;
-  }
-  li {
-    font-size: 18px;
-    @media screen and(max-width: 576px) {
-      font-size: 14px;
+
+    li {
+      font-size: 1.125rem;
+      padding-bottom: 1.125rem;
     }
   }
 }
+
+.gojek-bg {
+  background-image: url('/img/home/gojek-bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+
+  @media screen and (max-width: 1200px) {
+    background-position: -192px center;
+  }
+
+  @media screen and (max-width: 576px) {
+    background-image: url('/img/home/mountain-mobile.svg');
+    background-position-y: 160px;
+    background-position-x: center;
+  }
+}
+
 .perks {
   .card-columns {
     grid-column-gap: 2rem;
@@ -656,18 +668,6 @@ section {
     background-image: url('/img/gojek-cta.svg');
     background-position: bottom right;
     border-radius: 3rem;
-  }
-}
-
-.gojek-bg {
-  background-image: url('/img/home/gojek-bg.svg');
-  min-height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  @media screen and (max-width: 576px) {
-    background-image: url('/img/home/mountain-mobile.svg');
-    min-height: 70vh;
-    background-position: center center;
   }
 }
 
@@ -981,7 +981,6 @@ html {
 }
 
 .milestones {
-
   .link::after {
     content: url('/img/right-arrow.svg');
     padding-left: 0.5rem;
