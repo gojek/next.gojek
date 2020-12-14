@@ -971,9 +971,9 @@ html {
   background-position: center;
   background-repeat: no-repeat;
 
-  @media screen and (min-width: 1200px) {
-    background-size: cover;
-  }
+  // @media screen and (min-width: 1200px) {
+  //   background-size: cover;
+  // }
 
   @media screen and (min-width: 1920px) {
     background-image: none;

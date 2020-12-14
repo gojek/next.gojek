@@ -1,6 +1,10 @@
 function Slide(props) {
   const { data } = props;
-  const anchor = <a className="text-green-light link" href={data.linkURL}>{data.linkText}</a>;
+  const anchor = (
+    <a className="text-green-light link" href={data.linkURL}>
+      {data.linkText}
+    </a>
+  );
 
   return (
     <div className={`${data.bgClass} ${data.bgPattern}`}>
@@ -13,8 +17,12 @@ function Slide(props) {
           />
           <div className={`${data.id % 2 === 0 ? 'order-1' : 'order-2'} col-md-4`}>
             <h2 className="heading">{data.title}</h2>
-            <p>{data.description}</p>
-            { data.linkText ? anchor : '' }
+            <p
+              dangerouslySetInnerHTML={{
+                __html: data.description,
+              }}
+            ></p>
+            {data.linkText ? anchor : ''}
           </div>
         </div>
       </div>
