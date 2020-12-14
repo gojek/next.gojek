@@ -169,7 +169,7 @@ section {
     .slick-next {
       z-index: 10;
       &::before {
-        font-size: 1.25rem;
+        // font-size: 1.25rem;
         color: #fff;
         opacity: 1;
       }
@@ -197,7 +197,7 @@ section {
   @media screen and (max-width: 576px) {
     .card {
       .row {
-        min-height: 440px;
+        min-height: 37rem;
       }
     }
   }
@@ -228,6 +228,9 @@ section {
     background-color: rgba(255, 255, 255, 0.94);
     max-width: 192px;
     height: 4.5rem;
+    @media screen and (max-width: 576px) {
+      height: 2.5rem;
+    }
 
     img {
       @media screen and (max-width: 576px) {
@@ -251,6 +254,9 @@ section {
 
 .prod-desc {
   font-size: 0.875rem;
+  @media screen and (max-width: 576px) {
+    font-size: 1rem;
+  }
 }
 
 .products-button,
@@ -756,7 +762,7 @@ section {
 
 // Responsiveness
 html {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 @media screen and(min-width: $sm-break) {
@@ -789,7 +795,33 @@ html {
   max-width: 1200px;
   margin: 0 auto;
   .card {
-    min-height: 579px;
+    min-height: 585px;
+  }
+  @media screen and(min-width: 993px) and (max-width: 1024px) {
+    .slick-prev {
+      left: 10px !important;
+    }
+    .slick-next {
+      right: 10px !important;
+    }
+  }
+  @media screen and(min-width: $sm-break) and (max-width: $md-break) {
+    .card {
+      min-height: 48rem;
+    }
+  }
+
+  @media screen and(max-width: $md-break) {
+    .slick-prev::before,
+    .slick-next::before {
+      font-size: 2.25rem;
+    }
+    .slick-prev {
+      left: 10px;
+    }
+    .slick-next {
+      right: 10px;
+    }
   }
 }
 

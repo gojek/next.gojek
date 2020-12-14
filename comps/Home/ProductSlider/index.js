@@ -13,8 +13,17 @@ function ProductSlider() {
     slidesToShow: 1,
     slidesToScroll: 1,
     cssEase: 'ease-in-out',
-    // speed: '1000',
     afterChange: (current) => setActiveProduct(current),
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          infinite: true,
+          dots: true,
+          arrows: true,
+        },
+      },
+    ],
   };
 
   return (

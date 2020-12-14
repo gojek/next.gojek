@@ -16,7 +16,7 @@ function MobileSlider(props) {
         onClick={() => handleExpand()}
       >
         <div className="d-flex justify-content-between">
-          <p className="mb-0">{data.name}</p>
+          <p className="mb-0 prod-title">{data.name}</p>
           <i
             className={`fas align-self-center ${expanded ? 'fa-chevron-up' : 'fa-chevron-down'}`}
             aria-expanded="false"
@@ -26,9 +26,14 @@ function MobileSlider(props) {
       {expanded ? (
         <div className="text-left w-100 pt-5" id={data.id}>
           {data.products.map((product) => (
-            <div className="mb-4" key={product.id}>
+            <div className="mb-5" key={product.id}>
               <img src={product.img} alt={product.alt} className="img-fluid mb-2" />
-              <p className="mb-0 prod-desc">{product.description}</p>
+              <p
+                className="mb-0 prod-desc"
+                dangerouslySetInnerHTML={{
+                  __html: product.description,
+                }}
+              ></p>
             </div>
           ))}
         </div>
