@@ -414,3 +414,42 @@ export const fundingLogos = [
     logo: '../img/home/funding/temasek.png',
   },
 ];
+
+export const socialMedia = [
+  {
+    id: '1',
+    img: '/img/home/social/Insta.png',
+    link: 'https://www.instagram.com/gojek.tech/',
+    alt: 'GOJEK Tech Instagram page',
+  },
+  {
+    id: '2',
+    img: '/img/home/social/Yt.png',
+    link: 'https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured',
+    alt: 'GOJEK Tech Youtube channel',
+  },
+  {
+    id: '3',
+    img: '/img/home/social/Fb.png',
+    link: 'https://www.facebook.com/gojektech',
+    alt: 'GOJEK Tech Facebook page',
+  },
+  {
+    id: '4',
+    img: '/img/home/social/Twitter.png',
+    link: 'https://twitter.com/gojektech',
+    alt: 'GOJEK Tech Twitter account',
+  },
+  {
+    id: '5',
+    img: '/img/home/social/LinkedIn.png',
+    link: 'https://twitter.com/gojektech',
+    alt: 'GOJEK Tech LinkedIn page',
+  },
+  {
+    id: '6',
+    img: '/img/home/social/blog-thumbnail.png',
+    link: 'https://blog.gojekengineering.com/',
+    alt: 'GOJEK Tech Blogs',
+  },
+];

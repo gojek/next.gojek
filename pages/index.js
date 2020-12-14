@@ -6,6 +6,7 @@ import Link from '../comps/Common/link';
 import CommonCta from '~/../../comps/Common/Cta';
 import Funding from '../comps/Home/funding';
 import Slider from 'react-slick';
+import { socialMedia } from '../comps/Home/data.js';
 
 const sliderSettings = {
   infinite: false,
@@ -50,7 +51,8 @@ function Home(props) {
           {/* Row for heading */}
           <div className="row justify-content-end">
             <h4 className="heading-sm pt-0 pt-lg-5 col-md-6">
-              Once a call-centre <br /> operation in Jakarta, now <br className="d-none d-lg-block" />
+              Once a call-centre <br /> operation in Jakarta, now{' '}
+              <br className="d-none d-lg-block" />
               <span className="text-green-light">a Decacorn in Southeast Asia.</span>
             </h4>
           </div>
@@ -123,120 +125,25 @@ function Home(props) {
             </p>
           </div>
           <div className="d-none d-md-block">
-            <div className="row ">
-              <div className="col-md-4 mb-5">
-                <a
-                  href="https://www.instagram.com/gojek.tech/"
-                  target="_blank"
-                  className="card border-0"
-                >
-                  <img src="/img/home/social/Insta.png" alt="GOJEK Tech Instagram page" />
-                </a>
-              </div>
-              <div className="col-md-4 mb-5">
-                <a
-                  href="https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured"
-                  target="_blank"
-                  className="card border-0"
-                >
-                  <img src="/img/home/social/Yt.png" alt="GOJEK Tech Youtube channel" />
-                </a>
-              </div>
-              <div className="col-md-4 mb-5">
-                <a
-                  href="https://www.facebook.com/gojektech"
-                  target="_blank"
-                  className="card border-0"
-                >
-                  <img src="/img/home/social/Fb.png" alt="GOJEK Tech Facebook page" />
-                </a>
-              </div>
-              <div className="col-md-4 mb-5">
-                <a href="https://twitter.com/gojektech" target="_blank" className="card border-0">
-                  <img src="/img/home/social/Twitter.png" alt="GOJEK Tech Twitter account" />
-                </a>
-              </div>
-              <div className="col-md-4 mb-5">
-                {/* <div
-                  className="card position-relative"
-                > */}
-                <a
-                  href="https://www.linkedin.com/company/gojektech/"
-                  target="_blank"
-                  className="card border-0"
-                >
-                  <img src="/img/home/social/LinkedIn.png" alt="GOJEK Tech LinkedIn page" />
-                </a>
-                {/* </div> */}
-              </div>
-              <div className="col-md-4 mb-5">
-                <a
-                  href="https://blog.gojekengineering.com/"
-                  target="_blank"
-                  className="card border-0"
-                >
-                  <img src="/img/home/social/blog-thumbnail.png" alt="GOJEK Tech Blogs" />
-                </a>
-              </div>
+            <div className="row">
+              {socialMedia.map((data, i) => (
+                <div className="col-md-4 mb-5">
+                  <a href={data.link} target="_blank" className="card border-0">
+                    <img src={data.img} alt={data.alt} />
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
           <div className="d-md-none pt-5">
             <Slider {...sliderSettings}>
-              <div className="col-md-4 mb-5 pl-0">
-                <a
-                  href="https://www.instagram.com/gojek.tech/"
-                  target="_blank"
-                  className="card border-0"
-                >
-                  <img src="/img/home/social/Insta.png" alt="GOJEK Tech Instagram page" />
-                </a>
-              </div>
-
-              <div className="col-md-4 mb-5 pl-0">
-                <a
-                  href="https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured"
-                  target="_blank"
-                  className="card border-0"
-                >
-                  <img src="/img/home/social/Yt.png" alt="GOJEK Tech Youtube channel" />
-                </a>
-              </div>
-              <div className="col-md-4 mb-5 pl-0">
-                <a
-                  href="https://www.facebook.com/gojektech"
-                  target="_blank"
-                  className="card border-0"
-                >
-                  <img src="/img/home/social/Fb.png" alt="GOJEK Tech Facebook page" />
-                </a>
-              </div>
-              <div className="col-md-4 mb-5 pl-0">
-                <a href="https://twitter.com/gojektech" target="_blank" className="card border-0">
-                  <img src="/img/home/social/Twitter.png" alt="GOJEK Tech Twitter account" />
-                </a>
-              </div>
-              <div className="col-md-4 mb-5 pl-0">
-                {/* <div
-                  className="card position-relative"
-                > */}
-                <a
-                  href="https://www.linkedin.com/company/gojektech/"
-                  target="_blank"
-                  className="card border-0"
-                >
-                  <img src="/img/home/social/LinkedIn.png" alt="GOJEK Tech LinkedIn page" />
-                </a>
-                {/* </div> */}
-              </div>
-              <div className="col-md-4 mb-5 pl-0">
-                <a
-                  href="https://www.linkedin.com/company/gojektech/"
-                  target="_blank"
-                  className="card border-0"
-                >
-                  <img src="/img/home/social/blog-thumbnail.png" alt="GOJEK Tech Blogs" />
-                </a>
-              </div>
+              {socialMedia.map((data, i) => (
+                <div className="col-md-4 mb-5 pl-0">
+                  <a href={data.link} target="_blank" className="card border-0">
+                    <img src={data.img} alt={data.alt} />
+                  </a>
+                </div>
+              ))}
             </Slider>
           </div>
         </div>
