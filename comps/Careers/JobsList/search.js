@@ -30,17 +30,24 @@ class MySelect extends Component {
       <div className="container">
         <div className="row text-body">
           <div className="col-md-7 px-0 pb-3 pb-md-0">
-            <label htmlFor="keyword" className="sr-only">
-              Keyword
-            </label>
-            <input
-              type="text"
-              onChange={(e) => onChange(e.target.value, e.target.name)}
-              className="form-control rounded-pill search shadow"
-              placeholder="Keyword Search_"
-              name="keyword"
-              value={this.props.keyword}
-            />
+            <div className="input-group">
+              <label htmlFor="keyword" className="sr-only">
+                Keyword
+              </label>
+              {/* <span className="input-group-prepend rounded-pill">
+                <div className="input-group-text bg-white border-right-0">
+                  <img src="/img/careers/search.svg" alt="search" />
+                </div>
+              </span> */}
+              <input
+                type="text"
+                onChange={(e) => onChange(e.target.value, e.target.name)}
+                className="form-control rounded-pill search shadow"
+                placeholder="Keyword Search_"
+                name="keyword"
+                value={this.props.keyword}
+              />
+            </div>
           </div>
           <div className="col-md-5 pl-0 pl-md-3">
             <div className="row">

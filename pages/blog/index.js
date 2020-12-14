@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { scroller } from 'react-scroll';
+import { getLatestPosts, getTags, getFeaturedPosts } from '../../api/posts';
 
 import Head from 'next/head';
 import homePage1 from '~/../../static/Homepage-05.png';
@@ -31,7 +32,7 @@ function Blog(props) {
     { name: 'Design', slug: 'design' },
     { name: 'Stories', slug: 'gojek-stories' },
   ];
-
+  console.log('ss', props);
   return (
     <div className="text-center text-md-left blog-page">
       <Head>
@@ -64,120 +65,30 @@ function Blog(props) {
 
       <div className="container">
         <Tags tags={tags} onClick={changeTag} activeTag={tag} />
-
-        {/* Tech Posts */}
-        {props.techPosts.status !== 'error' && (
-          <BlogNew heading="Tech" id="tech" posts={props.techPosts.items} link="tech" />
-        )}
-        {/* End Tech Posts */}
-      </div>
-
-      <div className="container-fluid bg-light">
-        {/* Data posts */}
-        <FeaturedPosts />
-        {/* End Featured posts */}
-      </div>
-
-      <div className="container">
-        {/* Data posts */}
-        {/* <Element name="data-science"> */}
-        {props.dataPosts.status !== 'error' && (
-          <BlogNew heading="Data" posts={props.dataPosts.items} link="data-science" />
-        )}
-
-        {/* </Element> */}
-        {/* End Data posts */}
-
-        {/* CTA 1 */}
-        <CTA />
-        {/* End CTA */}
-
-        {/* Culture posts */}
-        {props.culturePosts.status !== 'error' && (
-          <BlogNew heading="Culture" posts={props.culturePosts.items} link="culture" />
-        )}
-        {/* End Culture posts */}
-
-        {/* News posts */}
-        {props.newsPosts.status !== 'error' && (
-          <BlogNew heading="News" posts={props.newsPosts.items} link="news" />
-        )}
-        {/* End news posts */}
-
-        {/* design posts */}
-        {props.designPosts.status !== 'error' && (
-          <BlogNew heading="Design" posts={props.designPosts.items} link="design" />
-        )}
-        {/* End design posts */}
-
-        {/* Stories posts */}
-        {props.culturePosts.status !== 'error' && (
-          <BlogNew heading="Stories" posts={props.culturePosts.items} link="gojek-stories" />
-        )}
-        {/* End Stories posts */}
       </div>
     </div>
   );
 }
 
-export async function getServerSideProps(ctx) {
-  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fblog.gojekengineering.com%2Ffeed`;
+Blog.getInitialProps = async () => {
+  const latestPosts = await getLatestPosts();
+  const tags = await getTags();
+  const featuredPosts = await getFeaturedPosts();
 
-  const techPostUrl =
-    'https://api.rss2json.com/v1/api.json?rss_url=https://blog.gojekengineering.com/feed/tagged/tech';
+  // TODO: JUNK
+  // Update featured of all posts as false except for the first post
+  // latestPosts.forEach((post) => {
+  //   post.featured = false;
+  // });
+  // latestPosts[0].featured = true;
 
-  const dataPostUrl =
-    'https://api.rss2json.com/v1/api.json?rss_url=https://blog.gojekengineering.com/feed/tagged/data-science';
+  // featuredPosts.forEach((post) => {
+  //   post.featured = false;
+  // });
 
-  const culturePostUrl =
-    'https://api.rss2json.com/v1/api.json?rss_url=https://blog.gojekengineering.com/feed/tagged/culture';
+  // Featured artticles
 
-  const storiesPostUrl =
-    'https://api.rss2json.com/v1/api.json?rss_url=https://blog.gojekengineering.com/feed/tagged/gojek-stories';
-
-  const designPostUrl =
-    'https://api.rss2json.com/v1/api.json?rss_url=https://blog.gojekengineering.com/feed/tagged/design';
-
-  const newsPostUrl =
-    'https://api.rss2json.com/v1/api.json?rss_url=https://blog.gojekengineering.com/feed/tagged/news';
-
-  try {
-    const response = await fetch(apiUrl);
-    const techResponse = await fetch(techPostUrl);
-    const dataResponse = await fetch(dataPostUrl);
-    const cultureResponse = await fetch(culturePostUrl);
-    const storiesResponse = await fetch(storiesPostUrl);
-    const designResponse = await fetch(designPostUrl);
-    const newsResponse = await fetch(newsPostUrl);
-
-    if (response.ok) {
-      const data = await response.json();
-      const techPosts = await techResponse.json();
-      const dataPosts = await dataResponse.json();
-      const culturePosts = await cultureResponse.json();
-      const storiesPosts = await storiesResponse.json();
-      const designPosts = await designResponse.json();
-      const newsPosts = await newsResponse.json();
-      return {
-        props: { data, techPosts, dataPosts, culturePosts, storiesPosts, designPosts, newsPosts },
-      };
-    } else {
-      return await {
-        props: {
-          data: [],
-          techPosts: [],
-          dataPosts: [],
-          culturePosts: [],
-          storiesPosts: [],
-          designPosts: [],
-          newsPosts: [],
-        },
-      };
-    }
-  } catch (error) {
-    // Network error
-    return { props: { data: [] } };
-  }
-}
+  return { latestPosts, tags, featuredPosts };
+};
 
 export default Blog;

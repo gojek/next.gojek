@@ -5,8 +5,8 @@
   },
   "dependencies": {
     "@babel/core": "^7.9.6",
-    "@tryghost/content-api": "^1.4.1",
-    "@tryghost/helpers": "^1.1.27",
+    "@tryghost/content-api": "^1.4.11",
+    "@tryghost/helpers": "^1.1.35",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.0",
     "gsap": "^3.5.1",
