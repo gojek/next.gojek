@@ -56,14 +56,14 @@ function List(props) {
                 ))
               ) : (
                 <div className="">
-                  <div className="w-100 text-center">
-                    <strong>No Jobs!</strong>
+                  <div className="text-center">
+                    <strong className="py-5 d-block">No Jobs!</strong>
                   </div>
                   <div className="text-center mt-5">
                     <a href="/jobs/all" className="text-green-light link btn">
                       View all jobs
                       <img
-                        src="./img/right-arrow.svg"
+                        src="/img/right-arrow.svg"
                         className="align-middle ml-2 img-fluid"
                         alt="All jobs"
                       />
@@ -71,12 +71,12 @@ function List(props) {
                   </div>
                 </div>
               )}
-              {props.showCTA && (
+              {(props.showCTA && !props.showAllJobs) && (
                 <div className="text-center mt-5">
                   <a href="/jobs/all" className="text-green-light link btn">
                     View all jobs
                     <img
-                      src="./img/right-arrow.svg"
+                      src="/img/right-arrow.svg"
                       className="align-middle ml-2 img-fluid"
                       alt="All jobs"
                     />
@@ -109,15 +109,31 @@ function List(props) {
               ))
             ) : (
               <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                <strong>No Jobs!</strong>
+                <strong className="py-5">No Jobs!</strong>
               </div>
             )}
             {!props.showAllJobs && (
               <div className="mt-4 pl-5">
                 <button className="text-green link btn">
                   View more
-                  <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+                  <img
+                    src="/img/right-arrow.svg"
+                    className="align-middle ml-2 img-fluid"
+                    alt="All jobs"
+                  />
                 </button>
+              </div>
+            )}
+            {!props.showAllJobs && (
+              <div className="mt-4 pl-5">
+                <a href="/jobs/all" className="text-green-light link btn">
+                  View all jobs
+                  <img
+                    src="/img/right-arrow.svg"
+                    className="align-middle ml-2 img-fluid"
+                    alt="All jobs"
+                  />
+                </a>
               </div>
             )}
           </div>
