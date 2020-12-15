@@ -181,6 +181,9 @@ class JobsList extends Component {
                   <a
                     href="/jobs/all"
                     className="button rounded-pill px-3 py-2 bg-green-light text-white"
+                    style= {{
+                      fontFamily: "Maison Nueue Demi"
+                    }}
                   >
                     Find jobs
                   </a>

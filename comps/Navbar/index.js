@@ -47,7 +47,7 @@ function Navbar(props) {
       return (
         <a
           className={
-            router.pathname === '/jobs' ? 'nav-link nav-links' : 'button rounded-pill px-3 py-2'
+            router.pathname === '/jobs' || router.pathname === '/jobs/all' ? 'nav-link nav-links' : 'button rounded-pill px-3 py-2'
           }
           href={item.link}
         >
@@ -59,7 +59,7 @@ function Navbar(props) {
       return (
         <a
           className={
-            router.pathname === '/jobs' ? 'nav-link nav-links' : 'button rounded-pill px-3 py-2'
+            router.pathname === '/jobs' || router.pathname === '/jobs/all' ? 'nav-link nav-links' : 'button rounded-pill px-3 py-2'
           }
           href={item.link}
         >

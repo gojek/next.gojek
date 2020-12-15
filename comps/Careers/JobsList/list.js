@@ -21,7 +21,7 @@ function List(props) {
         <div className="listings bg-white shadow px-5 pt-5 pb-4" style={{ borderRadius: '3rem' }}>
           <h1 className="header mb-5">{props.heading}</h1>
           <div className="job">
-            <div className="jobs-table-header row mb-4" style={{ fontSize: '20px' }}>
+            <div className="jobs-table-header row" style={{ fontSize: '1.25rem' }}>
               <div className="col-md-6">
                 <p className="head">Job Title</p>
               </div>

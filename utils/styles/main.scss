@@ -484,6 +484,11 @@ body {
   .departments {
     padding-top: 5rem;
     padding-bottom: 5rem;
+
+    .header {
+      font-size: 2.6rem;
+    }
+
     @media screen and (max-width: 576px) {
       .header {
         font-size: 2.25rem;

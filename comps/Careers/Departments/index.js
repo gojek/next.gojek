@@ -23,9 +23,9 @@ function Departments(props) {
   // console.log('Shilpa', sortedDepartments);
 
   return (
-    <div className="container departments text-white text-left px-5">
+    <div className="container departments text-white text-left">
       <h1 className="header">
-        We have no dearth of <span className="header-heigh">Hard Technical Problems™</span>, work
+        We have no dearth of <br className="d-none d-md-block" /> <span className="header-heigh">Hard Technical Problems™</span>, work
         with us.
       </h1>
       <div className="card-columns text-left pt-5">
