@@ -2,8 +2,8 @@ import Link from '../../Common/link';
 
 function Card(props) {
   return (
-    <div className="col-md-6 col-lg-4 pr-4">
-      <div className="card my-4">
+    <div className="col-md-4">
+      <div className="card">
         <div
           className="placeholder bg-img"
           style={{ backgroundImage: `url(${props.data.img})` }}

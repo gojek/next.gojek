@@ -11,15 +11,16 @@ const sliderSettings = {
 
 function Blog() {
   return (
-    <div>
-      <div className="pt-4 d-none d-md-block">
-        <div className="row">
+    <div className="container">
+      {/* For Desktop */}
+      <div className="d-none d-md-block">
+        <div className="row pt-4">
           {posts.map((post) => {
             return <Card data={post} />;
           })}
         </div>
       </div>
-      <div className="pt-4 d-md-none">
+      <div className="pt-4 px-0 d-md-none">
         <Slider {...sliderSettings}>
           {posts.map((post) => {
             return <Card data={post} />;

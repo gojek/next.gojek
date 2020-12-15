@@ -200,8 +200,6 @@
 }
 
 .view-more-button {
-  display: inline-block;
-  margin-left: 50%;
 
   &__icon {
     font-size: 2rem;
@@ -214,10 +212,7 @@
   border-radius: 2.5rem;
   background-position: center bottom !important;
   background-repeat: no-repeat;
-  @media screen and(min-width: 576px) {
-    margin-right: 20px !important;
-    margin-left: 20px !important;
-  }
+
   @media screen and(max-width: 576px) {
     &.perk-img {
       height: 331px !important;
