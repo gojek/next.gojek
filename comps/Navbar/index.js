@@ -22,12 +22,12 @@ function Navbar(props) {
     if (window.scrollY > 30) {
       if (!scrolled) {
         document.querySelector('.navbar').className =
-          'navbar fixed-top navbar-expand-lg bg-white py-3 mb-5 main-nav shadow-sm';
+          'navbar fixed-top navbar-expand-lg bg-white py-3 main-nav shadow-sm';
         setScrolled(true);
       }
     } else {
       document.querySelector('.navbar').className =
-        'navbar fixed-top navbar-expand-lg bg-transparent py-3 pt-md-5 mb-5 main-nav';
+        'navbar fixed-top navbar-expand-lg bg-transparent py-3 pt-md-5 main-nav';
       setScrolled(false);
     }
   };
@@ -36,7 +36,7 @@ function Navbar(props) {
     if (scrolled) {
       return <img src="/img/gojek-logo.svg" alt="GOJEK Tech Logo" />;
     } else if (props.whiteNav) {
-      return <img src="/img/gojek-tech-white-logo.png" alt="GOJEK Tech Logo" />;
+      return <img src="/img/gojek-white-logo.svg" alt="GOJEK Tech Logo" />;
     } else {
       return <img src="/img/gojek-logo.svg" alt="GOJEK Tech Logo" />;
     }
@@ -71,7 +71,7 @@ function Navbar(props) {
   };
 
   return (
-    <nav className="navbar fixed-top navbar-expand-lg bg-transparent pt-3 pt-md-5 mb-5 main-nav">
+    <nav className="navbar fixed-top navbar-expand-lg bg-transparent pt-3 pt-md-5 main-nav">
       <div className="container pt-3 pt-md-0">
         <a className="navbar-brand" href="/">
           {logo()}

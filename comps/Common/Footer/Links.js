@@ -103,7 +103,7 @@ function Links(props) {
             : 'justify-content-center justify-content-md-start py-4 py-md-0'
         }`}
       >
-        <img src="/img/gojek-tech-white-logo.png" alt="Gojek" className="img-fluid footer-logo" />
+        <img src="/img/gojek-white-logo.svg" alt="Gojek" className="img-fluid footer-logo" />
         {props.navbar ? (
           <button className="btn text-white" onClick={() => props.onClose()}>
             <span>
