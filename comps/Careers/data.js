@@ -48,7 +48,7 @@ export const locations = [
 
 // Careers landing page text
 export const banner = {
-  bannerImg: '/img/careers/banner.png',
+  bannerImg: '/img/careers/careers-banner.svg',
   title: 'Hard to get into, harder to leave.',
   subHead: '(A chance to build Southeast Asia)',
   teamData: {

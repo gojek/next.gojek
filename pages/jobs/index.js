@@ -27,12 +27,7 @@ function Jobs(props) {
 
       <div className="yellow-bg-gradient"></div>
       {/* banner and jobs section */}
-      <JobsList
-        data={recentjobs}
-        showAllJobs={false}
-        // selectedDepartment={params.d}
-        onSelectFilter={handleChange}
-      />
+      <JobsList data={recentjobs} showAllJobs={false} onSelectFilter={handleChange} />
 
       {/* Departments */}
       <section className="bg-black full-height py-md-5" id="departments">

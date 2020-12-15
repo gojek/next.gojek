@@ -890,47 +890,6 @@ html {
 .swiper-button-prev::after {
   display: none;
 }
-.search {
-  font-family: $navbar-font, 'Font Awesome 5 Free';
-  font-size: 0.875rem;
-  line-height: normal;
-}
-
-.search::-webkit-input-placeholder {
-  color: transparent;
-  text-indent: -9999px;
-  background-image: url('/img/careers/search.svg');
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 3%;
-}
-.search::-moz-placeholder {
-  /* Firefox 19+ */
-  color: transparent;
-  text-indent: -9999px;
-  background-image: url('/img/careers/search.svg');
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 3%;
-}
-.search:-moz-placeholder {
-  /* Firefox 18- */
-  color: transparent;
-  text-indent: -9999px;
-  background-image: url('/img/careers/.search.svg');
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 3%;
-}
-.search:-ms-input-placeholder {
-  /* IE 10- */
-  color: transparent;
-  text-indent: -9999px;
-  background-image: url('/img/careers/search.svg');
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 3%;
-}
 
 // To be removed
 .ctaPurple {
@@ -1026,4 +985,46 @@ html {
       margin: 0 auto;
     }
   }
+}
+
+// Search
+.search-box {
+  .input-group {
+    filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.15));
+  }
+  .input-group-text {
+    border-top-left-radius: 50rem;
+    border-bottom-left-radius: 50rem;
+  }
+  img {
+    width: 14px;
+    height: 14px;
+  }
+  .search {
+    border-top-right-radius: 50rem;
+    border-bottom-right-radius: 50rem;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+.department {
+  .css-1okebmr-indicatorSeparator,
+  .css-1okebmr-indicatorSeparator {
+    background-color: transparent !important;
+  }
+}
+
+.css-26l3qy-menu {
+  margin-top: 0 !important;
+  border-radius: 10%;
+}
+
+.option-label {
+  font-size: 0.875rem;
+  font-family: 'Maison Nueue Book';
+}
+
+.css-1wa3eu0-placeholder {
+  display: block;
 }
