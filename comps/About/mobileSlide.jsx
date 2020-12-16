@@ -4,7 +4,7 @@ function Slide(props) {
 
   return (
     <div
-      className={`${data.bgClass} ${data.bgPattern} card align-items-center justify-content-around p-4`}
+      className={`${data.bgClass} card align-items-center justify-content-around p-4`}
     >
       <div class="card-body flex-grow-0">
         <h2 className="heading">{data.title}</h2>

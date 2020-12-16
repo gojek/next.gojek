@@ -6,20 +6,27 @@ const settings = {
   infinite: true,
   slidesToShow: 1,
   dots: true,
-  // arrows: false,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+      }
+    },
+  ]
 };
 
 function Impact(props) {
   return (
     <div className="container py-5 social-impact">
       <div className="row">
-        <div className="col-md-3 my-auto">
+        <div className="col-md-4 col-lg-3 my-auto">
           <h1 className="text-black pb-4">{socialImpact.heading}</h1>
-          <p className="text-black" style={{ fontFamily: 'Maison Nueue Book', lineHeight: '28px' }}>
+          <p className="text-black" style={{ fontFamily: 'Maison Nueue Book', lineHeight: '1.6rem' }}>
             {socialImpact.description}
           </p>
         </div>
-        <div className="col-md-8 offset-md-1 opensource pt-2 pt-md-0">
+        <div className="col-md-8 col-lg-7 offset-lg-2 opensource pt-2 pt-md-0">
           <Slider {...settings}>
             {socialImpact.data.map((data, i) => (
               <Card data={data} />

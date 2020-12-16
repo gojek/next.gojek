@@ -363,19 +363,19 @@ body {
     background: #f7ce55 linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, #e18700);
   }
 }
-@media screen and (min-width: 2000px) {
-  .yellow-bg-gradient {
-    height: 90vh;
-  }
-  .full-height {
-    min-height: 60vh;
-  }
-}
-@media screen and (max-width: 576px) {
+@media screen and (min-width: 1920px) {
   .yellow-bg-gradient {
     height: 80vh;
   }
+  // .full-height {
+  //   min-height: 60vh;
+  // }
 }
+// @media screen and (max-width: 576px) {
+//   .yellow-bg-gradient {
+//     height: 80vh;
+//   }
+// }
 
 .xs-listings {
   .header {
@@ -484,6 +484,11 @@ body {
   .departments {
     padding-top: 5rem;
     padding-bottom: 5rem;
+
+    .header {
+      font-size: 2.6rem;
+    }
+
     @media screen and (max-width: 576px) {
       .header {
         font-size: 2.25rem;
@@ -879,11 +884,11 @@ body {
 
 .jobDescription {
   .banner {
-    height: 75vh;
+    height: 50vh;
     @media screen and (max-width: 576px) {
-      height: 60vh;
+      height: 50vh;
       .full-height-one {
-        height: 60vh;
+        height: 50vh;
       }
     }
   }

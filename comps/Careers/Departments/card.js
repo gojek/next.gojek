@@ -10,7 +10,7 @@ function Card(props) {
         backgroundColor: `${bg}`,
         backgroundImage:
           bgType === 'img'
-            ? `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.77)), url(${bg}) `
+            ? `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url(${bg}) `
             : 'none',
       }}
       href={`/jobs/all?d=${label}`}

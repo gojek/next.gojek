@@ -71,11 +71,11 @@ function LifeAtGojek(props) {
 
       <section className="bg-black text-white py-5 perks">
         <div className="container py-5">
-          <h1 className="heading py-md-5 mb-5 mb-md-0 pl-4">Perks and Benefits</h1>
+          <h1 className="heading py-md-3 mb-md-0">Perks and Benefits</h1>
           <Perks perks={perks} showPerks={showPerks} mobilePerks={mobilePerks} />
 
           {showPerks < 3 && (
-            <div className="view-more-button">
+            <div className="view-more-button text-center">
               <i class="fas fa-chevron-down view-more-button__icon" onClick={handleViewMore}></i>
             </div>
           )}
@@ -85,7 +85,7 @@ function LifeAtGojek(props) {
       <section className="bg-white mt-5 pt-5">
         <div className="container">
           <CTA
-            title="We’re dedicated to creating (and scaling) positive socio-economic impact for our ecosystem of users. "
+            title="We're dedicated to creating (and scaling) positive socio-economic impact for our ecosystem of users. "
             href="/jobs"
             hrefText="Apply Now"
             font="small"
@@ -98,8 +98,8 @@ function LifeAtGojek(props) {
       </section>
 
       <section className="py-5" id="openingsBlogs">
-        <div className="container">
-          <h1 className="heading pl-4 pl-md-0">Our Stories</h1>
+        <div className="container px-0 px-md-3">
+          <h1 className="heading pl-4 pl-md-3">Our Stories</h1>
           <Blog />
         </div>
       </section>
