@@ -44,7 +44,7 @@ function TechFacts() {
                 <div className="card-body pb-0 pt-4">
                   <div className="row">
                     <div className={`col-md-6 px-0 align-self-center py-5 text-center`}>
-                      <h3 className="description heading-sm">{data.content}</h3>
+                      <h3 className="description text-lead font-demi">{data.content}</h3>
                     </div>
                     <div className={`col-md-6 px-0 align-self-end`}>
                       <img src={data.image} alt={data.content} className="img-fluid" />

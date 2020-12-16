@@ -38,7 +38,21 @@ function Navbar(props) {
     } else if (props.whiteNav) {
       return <img src="/img/gojek-white-logo.svg" alt="GOJEK Tech Logo" />;
     } else {
-      return <img src="/img/gojek-logo.svg" alt="GOJEK Tech Logo" />;
+      return (
+        <div>
+          <img src="/img/gojek-logo.svg" alt="GOJEK Tech Logo" className="d-none d-md-block" />
+          {router.pathname !== '/' && (
+            <img src="/img/gojek-logo.svg" alt="GOJEK Tech Logo" className="d-block d-md-none" />
+          )}
+          {router.pathname === '/' && (
+            <img
+              src="/img/gojek-white-logo.svg"
+              alt="GOJEK Tech Logo"
+              className="d-block d-md-none"
+            />
+          )}
+        </div>
+      );
     }
   };
 
@@ -47,7 +61,9 @@ function Navbar(props) {
       return (
         <a
           className={
-            router.pathname === '/jobs' || router.pathname === '/jobs/all' ? 'nav-link nav-links' : 'button rounded-pill px-3 py-2'
+            router.pathname === '/jobs' || router.pathname === '/jobs/all'
+              ? 'nav-link nav-links'
+              : 'button rounded-pill px-3 py-2'
           }
           href={item.link}
         >
@@ -59,7 +75,9 @@ function Navbar(props) {
       return (
         <a
           className={
-            router.pathname === '/jobs' || router.pathname === '/jobs/all' ? 'nav-link nav-links' : 'button rounded-pill px-3 py-2'
+            router.pathname === '/jobs' || router.pathname === '/jobs/all'
+              ? 'nav-link nav-links'
+              : 'button rounded-pill px-3 py-2'
           }
           href={item.link}
         >
@@ -84,7 +102,13 @@ function Navbar(props) {
           onClick={() => handleExpand()}
         >
           <span>
-            <i className="fas fa-bars fa-1x"></i>
+            {!scrolled && router.pathname === '/' && (
+              <i className="fas fa-bars fa-1x text-white"></i>
+            )}
+            {!scrolled && router.pathname !== '/' && (
+              <i className="fas fa-bars fa-1x text-dark"></i>
+            )}
+            {scrolled && <i className="fas fa-bars fa-1x"></i>}
           </span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -116,7 +140,7 @@ function Navbar(props) {
         </div>
       </div>
       {expanded ? (
-        <div className="fixed-top text-white footer smNav py-4">
+        <div className="fixed-top text-white footer smNav py-4 text-left">
           <div class="pl-4">
             <Links navbar onClose={handleExpand} />
           </div>

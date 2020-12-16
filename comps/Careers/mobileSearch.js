@@ -18,8 +18,13 @@ function MobileSearch(props) {
       </button>
       {expanded ? (
         <div className="fixed-top mobile-search text-white text-left footer px-4 py-4">
-          <div className="row pt-3 justify-content-between">
-            <img src="/img/gojek-tech-white-logo.png" alt="Gojek" />
+          <div className="row pt-3 justify-content-between mx-0">
+            <img
+              src="/img/gojek-tech-white-logo.png"
+              alt="Gojek"
+              className="img-fluid"
+              style={{ height: '2rem' }}
+            />
             <button className="btn text-white" onClick={() => handleExpand()}>
               <span>
                 <i class="fas fa-times"></i>
@@ -42,19 +47,23 @@ function MobileSearch(props) {
             <div className="row justify-content-between ">
               <div className="col-6">
                 <p className="mb-0">
-                  <strong>{props.searchJobs().length} Opportunities</strong> found across{' '}
+                  <strong>
+                    {props.searchJobs().length}{' '}
+                    {props.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}
+                  </strong>{' '}
+                  found across{' '}
                   <strong>
                     {props.selctedFilters.department.length > 0
                       ? props.selctedFilters.department.length
                       : 'all'}{' '}
-                    Departments
+                    {props.selctedFilters.department.length === 1 ? 'Department' : 'Departments'}
                   </strong>{' '}
                   and{' '}
                   <strong>
                     {props.selctedFilters.location.length > 0
                       ? props.selctedFilters.location.length
                       : 'all'}{' '}
-                    Locations
+                    {props.selctedFilters.location.length === 1 ? 'Location' : 'Locations'}
                   </strong>{' '}
                 </p>
               </div>

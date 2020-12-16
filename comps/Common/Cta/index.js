@@ -26,8 +26,7 @@ function CommonCta(props) {
                 ecosystem of users.{' '}
               </p>
               <a className="link" href="/jobs">
-                Join Us
-                <img src="/img/arrow-right-yellow.svg" alt="join Us" />
+                Join Us <img src="/img/arrow-right-yellow.svg" alt="join Us" />
               </a>
             </div>
           </div>

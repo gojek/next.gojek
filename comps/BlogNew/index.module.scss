@@ -23,6 +23,9 @@
 .ctaPurple {
   background-color: #904790;
   border-radius: $border-xl;
+  @media screen and (max-width: 576px) {
+    border-radius: 0;
+  }
 }
 .ctaTitle {
   font-size: 1.75rem;
