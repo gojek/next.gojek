@@ -63,7 +63,7 @@ class JobsList extends Component {
   searchJobs = () => {
     const filteredJobss = this.multiPropsFilter(this.state.data, this.filteredCollected());
     return filteredJobss.filter((job) => {
-      return job.text.toLowerCase().includes(this.state.keyword);
+      return job.text.toLowerCase().includes(this.state.keyword.toLowerCase());
     });
   };
 
