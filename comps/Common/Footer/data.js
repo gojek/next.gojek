@@ -52,7 +52,7 @@ export const data = {
     {
       id: 3,
       name: 'About Us',
-      link: '#',
+      link: '/about-us',
     },
     // {
     //   id: 4,
