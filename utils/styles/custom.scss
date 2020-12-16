@@ -169,7 +169,7 @@ section {
     .slick-next {
       z-index: 10;
       &::before {
-        font-size: 1.25rem;
+        // font-size: 1.25rem;
         color: #fff;
         opacity: 1;
       }
@@ -194,17 +194,10 @@ section {
   max-height: 50rem;
 }
 .tech-facts {
-  // .description {
-  //   max-width: 450px;
-  //   font-size: 30px;
-  //   font-family: $extended-book, 'sans-serif';
-  //   font-weight: bold;
-  //   line-height: 42px;
-  // }
   @media screen and (max-width: 576px) {
     .card {
       .row {
-        min-height: 440px;
+        min-height: 37rem;
       }
     }
   }
@@ -235,6 +228,9 @@ section {
     background-color: rgba(255, 255, 255, 0.94);
     max-width: 192px;
     height: 4.5rem;
+    @media screen and (max-width: 576px) {
+      height: 2.5rem;
+    }
 
     img {
       @media screen and (max-width: 576px) {
@@ -258,6 +254,9 @@ section {
 
 .prod-desc {
   font-size: 0.875rem;
+  @media screen and (max-width: 576px) {
+    font-size: 1rem;
+  }
 }
 
 .products-button,
@@ -314,9 +313,7 @@ section {
       line-height: 27px;
     }
     font-size: 0.875rem;
-
     font-family: $demi;
-    // }
   }
   .contact {
     background-color: #000;
@@ -396,11 +393,6 @@ section {
   }
 }
 
-@media screen and (min-width: 2000px) {
-  .pointers {
-    margin-bottom: 5rem;
-  }
-}
 .product {
   p {
     font-size: 18px;
@@ -619,14 +611,31 @@ section {
 .pointers {
   ul {
     list-style-type: square;
-  }
-  li {
-    font-size: 18px;
-    @media screen and(max-width: 576px) {
-      font-size: 14px;
+
+    li {
+      font-size: 1.125rem;
+      padding-bottom: 1.125rem;
     }
   }
 }
+
+.gojek-bg {
+  background-image: url('/img/home/gojek-bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+
+  @media screen and (max-width: 1200px) {
+    background-position: -192px center;
+  }
+
+  @media screen and (max-width: 576px) {
+    background-image: url('/img/home/mountain-mobile.svg');
+    background-position-y: 160px;
+    background-position-x: center;
+  }
+}
+
 .perks {
   .card-columns {
     grid-column-gap: 2rem;
@@ -665,18 +674,6 @@ section {
     background-image: url('/img/gojek-cta.svg');
     background-position: bottom right;
     border-radius: 3rem;
-  }
-}
-
-.gojek-bg {
-  background-image: url('/img/home/gojek-bg.svg');
-  min-height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  @media screen and (max-width: 576px) {
-    background-image: url('/img/home/mountain-mobile.svg');
-    min-height: 70vh;
-    background-position: center center;
   }
 }
 
@@ -765,7 +762,7 @@ section {
 
 // Responsiveness
 html {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 @media screen and(min-width: $sm-break) {
@@ -798,7 +795,33 @@ html {
   max-width: 1200px;
   margin: 0 auto;
   .card {
-    min-height: 579px;
+    min-height: 585px;
+  }
+  @media screen and(min-width: 993px) and (max-width: 1024px) {
+    .slick-prev {
+      left: 10px !important;
+    }
+    .slick-next {
+      right: 10px !important;
+    }
+  }
+  @media screen and(min-width: $sm-break) and (max-width: $md-break) {
+    .card {
+      min-height: 48rem;
+    }
+  }
+
+  @media screen and(max-width: $md-break) {
+    .slick-prev::before,
+    .slick-next::before {
+      font-size: 2.25rem;
+    }
+    .slick-prev {
+      left: 10px;
+    }
+    .slick-next {
+      right: 10px;
+    }
   }
 }
 
@@ -879,47 +902,6 @@ html {
 .swiper-button-prev::after {
   display: none;
 }
-.search {
-  font-family: $navbar-font, 'Font Awesome 5 Free';
-  font-size: 0.875rem;
-  line-height: normal;
-}
-
-.search::-webkit-input-placeholder {
-  color: transparent;
-  text-indent: -9999px;
-  background-image: url('/img/careers/search.svg');
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 3%;
-}
-.search::-moz-placeholder {
-  /* Firefox 19+ */
-  color: transparent;
-  text-indent: -9999px;
-  background-image: url('/img/careers/search.svg');
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 3%;
-}
-.search:-moz-placeholder {
-  /* Firefox 18- */
-  color: transparent;
-  text-indent: -9999px;
-  background-image: url('/img/careers/.search.svg');
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 3%;
-}
-.search:-ms-input-placeholder {
-  /* IE 10- */
-  color: transparent;
-  text-indent: -9999px;
-  background-image: url('/img/careers/search.svg');
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 3%;
-}
 
 // To be removed
 .ctaPurple {
@@ -944,4 +926,117 @@ html {
 }
 .ctaLink:hover {
   color: $green-base;
+}
+
+// About us page styles
+.about-green-bg {
+  background-color: #bce194;
+}
+.about-pink-bg {
+  background-color: #ffb1bb;
+}
+.about-blue-bg {
+  background-color: #bbdde6;
+}
+.about-purple-bg {
+  background-color: #eedaea;
+}
+.about-orange-bg {
+  background-color: #ffc27b;
+}
+
+.about-pattern-a {
+  background-image: url('/img/about-us/about-pattern-a.svg');
+}
+.about-pattern-b {
+  background-image: url('/img/about-us/about-pattern-b.svg');
+}
+.about-pattern-c {
+  background-image: url('/img/about-us/about-pattern-c.svg');
+}
+
+.about-pattern-a,
+.about-pattern-b,
+.about-pattern-c {
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  // @media screen and (min-width: 1200px) {
+  //   background-size: cover;
+  // }
+
+  @media screen and (min-width: 1920px) {
+    background-image: none;
+  }
+}
+
+.milestones {
+  .link::after {
+    content: url('/img/right-arrow.svg');
+    padding-left: 0.5rem;
+    vertical-align: middle;
+    display: inline-block;
+
+    @media screen and (max-width: 576px) {
+      height: 16px;
+    }
+  }
+
+  .mobile {
+    margin-top: 62px;
+
+    .card {
+      border-radius: 2.75rem;
+      border: none;
+      min-height: 480px;
+    }
+
+    .illustration {
+      max-width: 224px;
+      margin: 0 auto;
+    }
+  }
+}
+
+// Search
+.search-box {
+  .input-group {
+    filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.15));
+  }
+  .input-group-text {
+    border-top-left-radius: 50rem;
+    border-bottom-left-radius: 50rem;
+  }
+  img {
+    width: 14px;
+    height: 14px;
+  }
+  .search {
+    border-top-right-radius: 50rem;
+    border-bottom-right-radius: 50rem;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+.department {
+  .css-1okebmr-indicatorSeparator,
+  .css-1okebmr-indicatorSeparator {
+    background-color: transparent !important;
+  }
+}
+
+.css-26l3qy-menu {
+  margin-top: 0 !important;
+  border-radius: 10%;
+}
+
+.option-label {
+  font-size: 0.875rem;
+  font-family: 'Maison Nueue Book';
+}
+
+.css-1wa3eu0-placeholder {
+  display: block;
 }

@@ -3,7 +3,7 @@ import Search from './search';
 import List from './list';
 import Banner from '../banner';
 import { departments, locations } from '../data.js';
-import _, { remove } from 'underscore';
+import _, { filter, remove } from 'underscore';
 import { useRouter } from 'next/router';
 import { withRouter } from 'next/router';
 
@@ -103,9 +103,11 @@ class JobsList extends Component {
 
   render() {
     const { showAllJobs } = this.props;
-    const heading = this.props.jobsHeading || 'Recent Open Positions';
     const selctedFilters = this.filteredCollected();
     const filters = _.union(selctedFilters.department, selctedFilters.location);
+    const jobListHeading =
+      this.state.keyword !== '' || filters.length > 0 ? 'Search Results…' : 'Recent Open Positions';
+    const heading = this.props.jobsHeading || jobListHeading;
 
     return (
       <div className="careers">
@@ -133,7 +135,7 @@ class JobsList extends Component {
                     <div className="pt-5">
                       Filters:{' '}
                       {this.state.keyword !== '' && (
-                        <p className="d-inline mt-5 job-tag mx-3">
+                        <p className="d-inline mt-5 job-tag ml-3">
                           {this.state.keyword}{' '}
                           <i
                             className="fas fa-times align-middle"
@@ -158,17 +160,21 @@ class JobsList extends Component {
               </section>
               <div className="col pt-5 d-flex justify-content-between">
                 <p>
-                  <strong>{this.searchJobs().length} Opportunities</strong> found across{' '}
+                  <strong>
+                    {this.searchJobs().length}{' '}
+                    {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '}
+                  </strong>{' '}
+                  found across{' '}
                   <strong>
                     {selctedFilters.department.length > 0
                       ? selctedFilters.department.length
                       : 'all'}{' '}
-                    Departments
+                    {selctedFilters.department.length === 1 ? 'Department' : 'Departments'}
                   </strong>{' '}
                   and{' '}
                   <strong>
                     {selctedFilters.location.length > 0 ? selctedFilters.location.length : 'all'}{' '}
-                    Locations
+                    {selctedFilters.location.length === 1 ? 'Location' : 'Locations'}
                   </strong>{' '}
                 </p>
                 {!showAllJobs && (
@@ -191,6 +197,7 @@ class JobsList extends Component {
               : this.searchJobs().slice(0, 10)
           }
           showAllJobs={showAllJobs}
+          showCTA={this.searchJobs().length > 10 ? true : false}
           heading={heading}
         />
       </div>

@@ -678,23 +678,25 @@ body {
   content: '\f054';
 }
 
-.slick-prev {
-  left: -10px;
-  z-index: 1;
-}
+// .slick-prev {
+//   left: -10px;
+//   z-index: 1;
+// }
 
-.slick-next {
-  right: -10px;
-  z-index: 1;
-}
+// .slick-next {
+//   right: -10px;
+//   z-index: 1;
+// }
 
-@media screen and (min-width: $sm-break) {
-  .slick-prev {
-    left: -50px;
-  }
+.product-wrapper {
+  @media screen and (min-width: $lg-break) {
+    .slick-prev {
+      left: -50px;
+    }
 
-  .slick-next {
-    right: -50px;
+    .slick-next {
+      right: -50px;
+    }
   }
 }
 
@@ -1182,7 +1184,7 @@ a:hover {
 
 .product-tab {
   border-radius: 29px;
-  p {
+  p.prod-title {
     font-family: 'Maison Nueue Demi';
     font-size: 16px;
   }
@@ -1192,9 +1194,5 @@ a:hover {
     &:focus {
       box-shadow: none !important;
     }
-  }
-
-  img {
-    max-width: 6rem;
   }
 }

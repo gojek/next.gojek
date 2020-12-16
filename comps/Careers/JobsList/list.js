@@ -55,11 +55,23 @@ function List(props) {
                   </a>
                 ))
               ) : (
-                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                  <strong>No Jobs!</strong>
+                <div className="">
+                  <div className="w-100 text-center">
+                    <strong>No Jobs!</strong>
+                  </div>
+                  <div className="text-center mt-5">
+                    <a href="/jobs/all" className="text-green-light link btn">
+                      View all jobs
+                      <img
+                        src="./img/right-arrow.svg"
+                        className="align-middle ml-2 img-fluid"
+                        alt="All jobs"
+                      />
+                    </a>
+                  </div>
                 </div>
               )}
-              {!props.showAllJobs && (
+              {props.showCTA && (
                 <div className="text-center mt-5">
                   <a href="/jobs/all" className="text-green-light link btn">
                     View all jobs

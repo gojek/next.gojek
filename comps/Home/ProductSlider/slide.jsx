@@ -18,7 +18,11 @@ function Slide(props) {
                   ! product.img &&
                   <p>{product.title}</p>
                 }
-                <p>{product.description}</p>
+                <p
+              dangerouslySetInnerHTML={{
+                __html: product.description,
+              }}
+            ></p>
               </div>
             ))}
           </div>
