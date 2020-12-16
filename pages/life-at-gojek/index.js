@@ -42,7 +42,7 @@ function LifeAtGojek(props) {
       <section className="banner life-at-gojek">
         <div className="container">
           <div className="row mx-0 align-items-center full-height-one text-white">
-            <div className="col-md-6 col-10 px-0 position-relative wrapper">
+            <div className="col-md-6 col-10 px-0 position-relative wrapper pb-5 pb-md-0 mb-5 mb-md-0">
               <h1 className="heading pb-4 pb-md-3 bannerHeading">Culture </h1>
               <p className="pb-3">
                 The biggest defining perk of Gojek is its culture. We have a cross-pollination of
@@ -50,8 +50,8 @@ function LifeAtGojek(props) {
                 different mindsets, unified in solving problems and learning.
               </p>
               <h5 className="heading-sm pb-3">
-                We ardently believe failing is learning. If we’re not failing, we’re not doing it
-                right.
+                We ardently believe failing is <br className="d-block d-md-none" /> learning. If
+                we’re not failing, <br className="d-block d-md-none" /> we’re not doing it right.
               </h5>
             </div>
           </div>
@@ -82,15 +82,13 @@ function LifeAtGojek(props) {
         </div>
       </section>
 
-      <section className="bg-white mt-5 pt-5">
-        <div className="container">
-          <CTA
-            title="We're dedicated to creating (and scaling) positive socio-economic impact for our ecosystem of users. "
-            href="/jobs"
-            hrefText="Apply Now"
-            font="small"
-          />
-        </div>
+      <section className="bg-white mt-md-5 pt-md-5">
+        <CTA
+          title="We're dedicated to creating (and scaling) positive socio-economic impact for our ecosystem of users. "
+          href="/jobs"
+          hrefText="Apply Now"
+          font="small"
+        />
       </section>
 
       <section className="my-md-5 pb-md-5 pt-5">

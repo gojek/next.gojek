@@ -416,7 +416,7 @@ export const socialImpact = {
       id: 5,
       title:
         'Since joining, the quality of life for driver partners has increased.  83% of GoRide & 91% of GoCar drivers can now send their children to school.',
-      image: '../img/life-at-gojek/social-impact/quality-of-life.svg',
+      image: '../img/life-at-gojek/social-impact/quality-of-life.png',
       color: '#ffb1bb',
     },
     {

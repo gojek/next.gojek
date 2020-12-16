@@ -43,7 +43,7 @@ function Links(props) {
   );
 
   const mobileLinks = (
-    <div className="py-5">
+    <div className="py-md-5 py-4">
       <ul className="list-unstyled mb-0 row px-4">
         {data.links.map((data, i) => (
           <li className="pb-4 col-6" key={i}>

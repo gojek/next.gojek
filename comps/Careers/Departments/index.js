@@ -25,8 +25,8 @@ function Departments(props) {
   return (
     <div className="container departments text-white text-left">
       <h1 className="header">
-        We have no dearth of <br className="d-none d-md-block" /> <span className="header-heigh">Hard Technical Problems™</span>, work
-        with us.
+        We have no dearth of <br className="d-none d-md-block" />{' '}
+        <span className="header-heigh">Hard Technical Problems™</span>, work with us.
       </h1>
       <div className="card-columns text-left pt-5">
         <Card

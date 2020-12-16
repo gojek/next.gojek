@@ -26,7 +26,7 @@ function MobileSlider(props) {
       {expanded ? (
         <div className="text-left w-100 pt-5" id={data.id}>
           {data.products.map((product) => (
-            <div className="mb-5" key={product.id}>
+            <div className="mb-4" key={product.id}>
               <img src={product.img} alt={product.alt} className="img-fluid mb-2" />
               <p
                 className="mb-0 prod-desc"

@@ -200,7 +200,11 @@ class JobsList extends Component {
               : this.searchJobs().slice(0, 10)
           }
           showAllJobs={showAllJobs}
-          showCTA={this.searchJobs().length > 10 ? true : false}
+          showCTA={
+            this.searchJobs().length > 10 && (this.state.keyword !== '' || filters.length > 0)
+              ? true
+              : false
+          }
           heading={heading}
         />
       </div>

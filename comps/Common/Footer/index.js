@@ -14,10 +14,13 @@ function Footer(props) {
     <section className="py-5 footer">
       <div className="container pt-3 pt-md-0">
         <div className="row mx-0 text-white mt-md-5">
-          <div className="col-md-6">
+          <div className="col-md-6 order-md-first order-last">
             <Links />
           </div>
-          <div className="col-md-6 px-0 p-5 boder-pill contact" style={{ backgroundColor: '#000' }}>
+          <div
+            className="col-md-6 order-md-last order-first px-0 p-md-5 px-3 py-5 boder-pill contact"
+            style={{ backgroundColor: '#000' }}
+          >
             <p className="form-text">
               We'll strive to ensure you don’t mute us. Stories from our #SuperApp, straight to your{' '}
               {''}

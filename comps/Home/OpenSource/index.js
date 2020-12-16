@@ -8,7 +8,16 @@ const settings = {
   infinite: true,
   slidesToShow: 1,
   dots: true,
-  // arrows: false,
+  responsive: [
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+      },
+    },
+  ],
 };
 
 function Project(props) {

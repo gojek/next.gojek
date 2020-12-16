@@ -125,3 +125,11 @@ $colors: (
     }
   }
 }
+.social-media {
+  .text-orange-light:hover {
+    color: $orange-light;
+  }
+  .text-green-light:hover {
+    color: $green-light;
+  }
+}

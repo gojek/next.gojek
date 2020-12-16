@@ -12,7 +12,7 @@ function Banner(props) {
           <h1 className="banner-head w-75">{banner.title}</h1>
           <p>{banner.subHead}</p>
         </div>
-        <div className="d-md-none px-5 xsSection">
+        <div className="d-md-none px-5 xsSection pt-4">
           <h3 className="banner-head">
             {banner.title} <i className="fas fa-heart heart"></i>
           </h3>

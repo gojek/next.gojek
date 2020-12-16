@@ -113,15 +113,21 @@ function Home(props) {
               <a
                 href="https://www.instagram.com/lifeatgojek/"
                 target="_blank"
-                className="text-white"
+                className="text-green-light"
               >
                 {' '}
-                Life At Gojek Instagram{' '}
+                Life@Gojek{' '}
               </a>
-              &amp;{' '}
-              <a href="https://instagram.com/gojek.tech" target="_blank" className="text-white">
-                Gojek Tech Instagram)
-              </a>
+              Instagram &amp;{' '}
+              <a
+                href="https://instagram.com/gojek.tech"
+                target="_blank"
+                className="text-orange-light"
+              >
+                {' '}
+                Gojek Tech
+              </a>{' '}
+              Instagram)
             </p>
           </div>
           <div className="d-none d-md-block">
@@ -129,7 +135,7 @@ function Home(props) {
               {socialMedia.map((data, i) => (
                 <div className="col-md-4 mb-5">
                   <a href={data.link} target="_blank" className="card border-0">
-                    <img src={data.img} alt={data.alt} />
+                    <img className="img-fluid" src={data.img} alt={data.alt} />
                   </a>
                 </div>
               ))}
@@ -140,7 +146,7 @@ function Home(props) {
               {socialMedia.map((data, i) => (
                 <div className="col-md-4 mb-5 pl-0">
                   <a href={data.link} target="_blank" className="card border-0">
-                    <img src={data.img} alt={data.alt} />
+                    <img className="img-fluid" src={data.img} alt={data.alt} />
                   </a>
                 </div>
               ))}

@@ -500,6 +500,11 @@ body {
     .header-heigh {
       color: $green-light;
     }
+    .department {
+      &:last-child {
+        margin-top: 10px;
+      }
+    }
   }
   .card-columns {
     column-count: 2;
@@ -521,7 +526,7 @@ body {
         height: 32rem;
         // margin-bottom: 1.25rem;
         @media screen and (max-width: 576px) {
-          height: 15rem;
+          // height: 19rem;
           .header {
             height: 20rem;
           }
@@ -1198,6 +1203,14 @@ a:hover {
     border-radius: 29px;
     &:focus {
       box-shadow: none !important;
+    }
+  }
+}
+
+.careers {
+  .banner-img {
+    @media screen and (max-width: $sm-break) {
+      max-height: 250px;
     }
   }
 }

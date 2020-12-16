@@ -7,6 +7,10 @@ body {
 }
 .container {
   max-width: 1000px;
+  @media screen and(max-width: $sm-break) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .heading {
@@ -20,6 +24,7 @@ body {
 }
 .text-lead {
   font-size: $font-m;
+  line-height: 1.7rem;
   font-family: $extended-book, sans-serif;
 }
 
@@ -28,6 +33,10 @@ body {
   font-family: $font-bold, sans-serif;
   &:hover {
     color: $green-light;
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 1.5rem;
+    font-family: $demi;
   }
 }
 
@@ -179,9 +188,9 @@ section {
   .slick-slide {
     .card {
       border-radius: 52px;
-      img {
-        max-width: 150px;
-      }
+      // img {
+      //   max-width: 150px;
+      // }
     }
   }
 }
@@ -197,7 +206,7 @@ section {
   @media screen and (max-width: 576px) {
     .card {
       .row {
-        min-height: 37rem;
+        min-height: 26rem;
       }
     }
   }
@@ -412,12 +421,16 @@ section {
 
   .bannerHeading {
     font-size: 2.82rem;
+    @media screen and (max-width: 576px) {
+      font-size: 2rem;
+    }
   }
 
   .heading-sm {
     @media screen and (max-width: 576px) {
-      font-size: 1.5rem;
-      line-height: 2rem;
+      font-size: 18px;
+      line-height: 1.9rem;
+      font-family: $demi;
     }
   }
 }
@@ -507,6 +520,8 @@ section {
         }
         button {
           min-width: 1px !important;
+          width: auto;
+          height: auto;
           @media screen and (min-width: 576px) {
             width: 2rem;
             margin: 0 1rem;
@@ -606,6 +621,14 @@ section {
     li {
       font-size: 1.125rem;
       padding-bottom: 1.125rem;
+      @media screen and(max-width: $sm-break) {
+        font-size: 1rem;
+      }
+    }
+  }
+  .text-lead {
+    @media screen and(max-width: $sm-break) {
+      font-size: 1rem;
     }
   }
 }
@@ -826,11 +849,28 @@ html {
   }
   .text-lead {
     font-size: 1.125rem;
+    @media screen and(max-width: $sm-break) {
+      font-size: 1rem;
+    }
+  }
+  .heading {
+    @media screen and(max-width: $sm-break) {
+      font-size: 26px;
+    }
   }
 }
 
 .opensource {
   .slick-slider {
+    @media screen and (min-width: $lg-break) {
+      .slick-prev {
+        left: -3rem;
+      }
+
+      .slick-next {
+        right: -3rem;
+      }
+    }
     .slick-dots {
       justify-content: center;
       li {

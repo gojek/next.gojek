@@ -5,7 +5,7 @@ const Card = React.memo((props) => {
   return (
     <div class="card mb-3 border-0">
       <a href={data.url} target="_blank">
-        <div class="card-body position-relative">
+        <div class="card-body position-relative px-0">
           <img src={data.image} alt={data.title} className="img-fluid image-cap" />
           <div className="caption position-relative px-3  text-center">
             <h5
