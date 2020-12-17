@@ -60,8 +60,18 @@ export async function getPost(postSlug) {
   return await api.posts
     .read({
       slug: postSlug,
+      include: 'tags,authors',
     })
     // .browse({ include: 'tags,authors' })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
+// Search posts
+export function search() {
+  return api.posts
+    .browse({ order: 'published_at DESC', limit: 4, include: 'tags,authors' })
     .catch((err) => {
       console.error(err);
     });

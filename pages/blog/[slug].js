@@ -3,6 +3,7 @@ import { scroller } from 'react-scroll';
 import { getPost } from '../../api/posts';
 
 import Head from 'next/head';
+import Moment from 'react-moment';
 import Navbar from '~/../../comps/Navbar';
 import Tags from '~/../../comps/Blog/Tag';
 import BlogNew from '../../comps/BlogNew';
@@ -45,10 +46,7 @@ function BlogDetails(props) {
       </Head>
       <Navbar whiteNav />
       {/* banner section */}
-      <section
-        className="py-5 d-flex align-items-center blog-banner"
-        style={{ backgroundColor: '#00a913' }}
-      >
+      <section className="py-5">
         <div className="container">
           <div className="row justify-content-around align-items-end">
             <div className="col-12 col-lg-6 order-1 order-lg-0 pr-md-2 px-5 px-md-5 ">
@@ -71,44 +69,11 @@ function BlogDetails(props) {
           <div className="row">
             <article className="post-details">
               <header className="post-full-header">
-                {/* <div className="container py-5 px-0">
-                                    {tags.map((tag, key) => (
-                                        <Link
-                                            key={tag.slug}
-                                            to={`tag/${tag.slug}`}
-                                            className="text-white mr-2"
-                                        >
-                                            <span
-                                                className={
-                                                    `category badge rounded-pill py-2 px-3 mt-2 mt-md-0 ` +
-                                                    (post.primary_tag !==
-                                                        null &&
-                                                    post.primary_tag.slug ===
-                                                        tag.slug
-                                                        ? `active`
-                                                        : ``)
-                                                }
-                                            >
-                                                {tag.name}
-                                            </span>
-                                        </Link>
-                                    ))}
-                                    <Link
-                                        key="all"
-                                        to="articles/all"
-                                        className="text-white mr-2 mb-3 mb-md-0"
-                                    >
-                                        <span className="category badge rounded-pill py-2 px-3 mt-2 mt-md-0">
-                                            All
-                                        </span>
-                                    </Link>
-                                </div> */}
-
                 <h1 className="post-full-title font-weight-bold">{post.title}</h1>
 
                 <p className="post-full-custom-excerpt">{post.excerpt}</p>
 
-                <div className="post-full-byline">
+                {/* <div className="post-full-byline">
                   <section className="post-full-byline-content">
                     <ul className="author-list">
                       <li className="author-list-item">
@@ -132,27 +97,16 @@ function BlogDetails(props) {
 
                     <section className="post-full-byline-meta">
                       <h4 className="author-name text-dark text-capitalize">
-                        {/* <a
-                                                    href={`tag/${post.primary_author.slug}`}
-                                                > */}
                         {post.primary_author.name}
-                        {/* </a> */}
                       </h4>
                       <div className="byline-meta-content">
                         <time className="byline-meta-date" dateTime="2020-05-22">
                           <Moment format="MMM DD, YYYY">{post.published_at}</Moment>
                         </time>
-                        <span className="byline-reading-time">
-                          <span className="bull">&bull;</span>
-                          {` `}
-                          <span>{readingTime}</span>
-                          {` `}
-                          {/* &nbsp;| &nbsp; */}
-                        </span>
                       </div>
                     </section>
                   </section>
-                </div>
+                </div> */}
               </header>
               {/* Post image */}
               <figure className="post-full-image">

@@ -10,7 +10,7 @@ function BlogCard(props) {
       {post.featured && (
         <div className="col-md-8 mb-md-5">
           <div className="card border-0">
-            <a href={post.link}>
+            <a href={`/blog/${post.slug}`} className="post">
               <div
                 className={`thumbnail large`}
                 style={{ backgroundImage: `url(${post.feature_image})` }}
@@ -20,7 +20,7 @@ function BlogCard(props) {
         </div>
       )}
       <div className="col-md-4 mb-md-5">
-        <a href={post.link} className="post">
+        <a href={`/blog/${post.slug}`} className="post">
           <div className="card border-0 bg-transparent">
             {!post.featured && (
               <React.Fragment>

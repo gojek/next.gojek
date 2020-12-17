@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { scroller } from 'react-scroll';
-import { getLatestPosts, getTags, getFeaturedPosts, getPosts } from '../../api/posts';
+import axios from 'axios';
+import Moment from 'react-moment';
+
+import { getLatestPosts, getTags, getFeaturedPosts, getPosts, search } from '../../api/posts';
 
 import Head from 'next/head';
 import Navbar from '~/../../comps/Navbar';
@@ -8,9 +11,12 @@ import Tags from '~/../../comps/Blog/Tag';
 import BlogNew from '../../comps/BlogNew';
 import FeaturedPosts from '~/../../comps/BlogNew/featured';
 import { CTA } from '../../comps/BlogNew/cta';
+import CommonCta from '~/../../comps/Common/Cta';
 
 function Blog(props) {
   const [tag, setTag] = useState('tech');
+  const [keyword, setkeyword] = useState('');
+  const [articles, setarticles] = useState([]);
 
   const changeTag = (tagName) => {
     setTag(tagName);
@@ -20,6 +26,23 @@ function Blog(props) {
       duration: 500,
       delay: 0,
     });
+  };
+
+  const changekeyword = (keyword) => {
+    setkeyword(keyword);
+    axios
+      .get('https://blog.gojek.io/ghost/api/v3/content/posts/?key=dc81903c2020e7c9d2f8bafcf7')
+      .then((res) => {
+        console.log('herr', res.data.posts);
+        setarticles(
+          res.data.posts.filter((data) => {
+            return data.title.toLowerCase().includes(keyword.toLowerCase());
+          }),
+        );
+      })
+      .catch((err) => {
+        console.log('error in request', err);
+      });
   };
 
   const tags = [
@@ -62,50 +85,126 @@ function Blog(props) {
 
       <div className="container">
         <Tags tags={tags} onClick={changeTag} activeTag={tag} />
+
+        <div class="form-group">
+          <label for="search" class="sr-only">
+            Keyword
+          </label>
+          <input
+            type="text"
+            id="search"
+            class="form-control"
+            style={{ borderBottom: '1px solid green' }}
+            onChange={(event) => changekeyword(event.target.value)}
+          />
+        </div>
       </div>
 
-      <section className="post-feed pb-3 container">
-        <div className="row">
-          <BlogNew heading="Latest" posts={props.latestPosts} link="latest" pageName="all-posts" />
+      {keyword === '' && (
+        <section className="post-feed pb-3 container">
+          <div className="row">
+            <BlogNew
+              heading="Latest"
+              posts={props.latestPosts}
+              link="latest"
+              pageName="all-posts"
+            />
+          </div>
+        </section>
+      )}
+
+      {keyword === '' && (
+        <section className="post-feed pb-3 container">
+          <div className="row">
+            <FeaturedPosts heading="Tech" posts={props.featuredPosts} />
+          </div>
+        </section>
+      )}
+
+      {keyword === '' && (
+        <section className="post-feed pb-3 container">
+          <div className="row">
+            <BlogNew heading="Tech" posts={props.techPosts} link="tech" pageName="all-posts" />
+          </div>
+        </section>
+      )}
+
+      {keyword === '' && (
+        <div className="container">
+          <CTA
+            title="Build the tech that powers an entire country."
+            href="/jobs"
+            hrefText="Apply Now"
+          />
+        </div>
+      )}
+
+      {keyword === '' && (
+        <section className="post-feed pb-3 container">
+          <div className="row">
+            <BlogNew heading="Data" posts={props.dataPosts} link="data" pageName="all-posts" />
+          </div>
+        </section>
+      )}
+
+      {keyword === '' && (
+        <section className="post-feed pb-3 container">
+          <div className="row">
+            <BlogNew
+              heading="Culture"
+              posts={props.culturePosts}
+              link="data"
+              pageName="all-posts"
+            />
+          </div>
+        </section>
+      )}
+      {keyword === '' && (
+        <section className="post-feed pb-3 container">
+          <div className="row">
+            <BlogNew heading="News" posts={props.newsPosts} link="news" pageName="all-posts" />
+          </div>
+        </section>
+      )}
+
+      <section className="pb-3 container">
+        <h1>Search Results</h1>
+        <div className="row posts">
+          {articles.map((post) => (
+            <div className="col-md-4 mb-md-5">
+              <a href={post.link} className="post">
+                <div className="card border-0 bg-transparent">
+                  <React.Fragment>
+                    <div
+                      className={`thumbnail small`}
+                      style={{ backgroundImage: `url(${post.feature_image})` }}
+                    />
+                  </React.Fragment>
+                  <div className="card-body px-0">
+                    <h5 className={`${post.featured ? 'featured' : ''} title`}>{post.title}</h5>
+                    <p className={`${post.featured ? 'featured' : ''} description`}>
+                      {' '}
+                      {post.excerpt}...
+                    </p>
+                    <React.Fragment>
+                      <div className="mt-3 meta">
+                        <p className="mb-0 author">{post.author}</p>
+                        <p className="date-time">
+                          <Moment format="MMM DD">{post.published_at}</Moment> | 5mins
+                        </p>
+                      </div>
+                    </React.Fragment>
+                  </div>
+                </div>
+              </a>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="post-feed pb-3 container">
-        <div className="row">
-          <FeaturedPosts heading="Tech" posts={props.featuredPosts} />
-        </div>
-      </section>
-
-      {/* <section className="post-feed pb-3 container">
-        <div className="row">
-          <BlogNew heading="Tech" posts={props.techPosts} link="tech" pageName="all-posts" />
-        </div>
-      </section>
-      <div className="container">
-        <CTA
-          title="Build the tech that powers an entire country."
-          href="/jobs"
-          hrefText="Apply Now"
-        />
-      </div>
-
-      <section className="post-feed pb-3 container">
-        <div className="row">
-          <BlogNew heading="Data" posts={props.dataPosts} link="data" pageName="all-posts" />
-        </div>
-      </section>
-
-      <section className="post-feed pb-3 container">
-        <div className="row">
-          <BlogNew heading="Culture" posts={props.culturePosts} link="data" pageName="all-posts" />
-        </div>
-      </section>
-
-      <section className="post-feed pb-3 container">
-        <div className="row">
-          <BlogNew heading="News" posts={props.newsPosts} link="news" pageName="all-posts" />
-        </div>
-      </section> */}
+      {/* CTA */}
+      <CommonCta mobile />
+      {/* End CTA */}
     </div>
   );
 }
@@ -127,24 +226,24 @@ Blog.getInitialProps = async () => {
   });
   techPosts[0].featured = true;
 
-  // dataPosts.forEach((post) => {
-  //   post.featured = false;
-  // });
-  // dataPosts[0].featured = true;
+  dataPosts.forEach((post) => {
+    post.featured = false;
+  });
+  dataPosts[0].featured = true;
 
-  // newsPosts.forEach((post) => {
-  //   post.featured = false;
-  // });
-  // newsPosts[0].featured = true;
+  newsPosts.forEach((post) => {
+    post.featured = false;
+  });
+  newsPosts[0].featured = true;
 
-  // culturePosts.forEach((post) => {
-  //   post.featured = false;
-  // });
-  // culturePosts[0].featured = true;
+  culturePosts.forEach((post) => {
+    post.featured = false;
+  });
+  culturePosts[0].featured = true;
 
   // Featured artticles
 
-  return { latestPosts, tags, featuredPosts, techPosts };
+  return { latestPosts, tags, featuredPosts, techPosts, dataPosts, newsPosts, culturePosts };
 };
 
 export default Blog;
