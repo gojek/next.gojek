@@ -42,19 +42,19 @@ function Blog(props) {
         style={{ backgroundColor: '#00a913' }}
       >
         <div className="container">
-          <div className="row justify-content-around align-items-end">
-            <div className="col-12 col-lg-6 order-1 order-lg-0 pr-md-2 px-5 px-md-5 ">
-              <h1 className="banner-head text-white">
+          <div className="row justify-content-around align-items-center">
+            <div className="col-12 col-md-5 col-lg-5 order-1 order-md-0">
+              <h1 className="banner-head text-white pt-5 pt-md-0 px-4 px-md-0">
                 Wondering <br className="d-none d-md-block" />
-                how we do it all?
+                how <br className="d-block d-md-none" /> we do it all?
               </h1>
-              <p className="text-white">
+              <p className="banner-sub-head text-white">
                 Take a behind-the-scenes peek into the triumphs and tribulations it takes to build a
-                #SuperApp.<i class="twa twa-railway-car"></i>
+                #SuperApp.
               </p>
             </div>
-            <div className="col-12 col-lg-6 px-0 px-md-3">
-              <img src="/img/Blog-Banner.png" className="img-fluid banner-img" alt="Gojek Banner" />
+            <div className="col-12 col-md-7 col-lg-7 px-0 px-md-3">
+              <img src="/img/Blog-Banner.png" className="img-fluid banner-img mt-5 mt-md-0 px-3 px-md-0" alt="Gojek Banner" />
             </div>
           </div>
         </div>
@@ -65,15 +65,11 @@ function Blog(props) {
       </div>
 
       <section className="post-feed pb-3 container">
-        <div className="row">
-          <BlogNew heading="Latest" posts={props.latestPosts} link="latest" pageName="all-posts" />
-        </div>
+        <BlogNew heading="Latest" posts={props.latestPosts} link="latest" pageName="all-posts" />
       </section>
 
       <section className="post-feed pb-3 container">
-        <div className="row">
           <FeaturedPosts heading="Tech" posts={props.featuredPosts} />
-        </div>
       </section>
 
       {/* <section className="post-feed pb-3 container">

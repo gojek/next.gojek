@@ -31,13 +31,13 @@
   }
   .thumbnail {
     &.large {
-      min-height: 28rem;
+      min-height: 24rem;
       @media screen and (max-width: 576px) {
         min-height: 15rem;
       }
     }
     &.small {
-      min-height: 12.25rem;
+      min-height: 10rem;
     }
     background-size: cover;
     background-repeat: no-repeat;
