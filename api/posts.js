@@ -58,10 +58,14 @@ export async function getPosts(tag) {
 // Get Blog details
 export async function getPost(postSlug) {
   return await api.posts
-    .read({
-      slug: postSlug,
-      include: 'tags,authors',
-    })
+    .read(
+      {
+        slug: postSlug,
+      },
+      {
+        include: 'tags,authors',
+      },
+    )
     // .browse({ include: 'tags,authors' })
     .catch((err) => {
       console.error(err);

@@ -590,6 +590,24 @@ section {
 }
 
 .blog-page {
+  .banner-head {
+    font-size: 2.75rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  .banner-sub-head {
+    font-size: 1.125rem;
+
+    @media screen and (max-width: 768px) {
+      max-width: 21rem;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+  }
+
   @media screen and (max-width: 576px) {
     .slick-next,
     .slick-prev {

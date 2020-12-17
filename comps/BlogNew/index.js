@@ -28,14 +28,16 @@ function BlogNew(props) {
 
   return (
     <section className="mt-5 posts text-left" id={link}>
-      <div className="row justify-content-between align-items-center my-3 my-md-5 px-3">
+      <div className="d-flex justify-content-between align-items-end">
         <h1 className={styles.heading}>{heading}</h1>
-        <p className="text-center">
-          <a href={mediumLink} target="_blank" className={`text-green-light ${styles.readMore}`}>
-            See More <i className="fas fa-long-arrow-alt-right"></i>
+        {/* <p className="text-center">
+          <a href={props.link} target="_blank" className={`text-green-light ${styles.readMore}`}>
+            See More <img src="/img/arrow-right-green.svg" className="pl-2" alt="View Blogs" />
           </a>
-        </p>
+        </p> */}
       </div>
+      <hr className="mb-3 d-block" />
+
       <div className="d-none d-md-block">
         <div className="row">{items}</div>
       </div>

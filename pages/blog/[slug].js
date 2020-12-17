@@ -5,14 +5,14 @@ import { getPost } from '../../api/posts';
 import Head from 'next/head';
 import Moment from 'react-moment';
 import Navbar from '~/../../comps/Navbar';
-import Tags from '~/../../comps/Blog/Tag';
-import BlogNew from '../../comps/BlogNew';
-import FeaturedPosts from '~/../../comps/BlogNew/featured';
-import { CTA } from '../../comps/BlogNew/cta';
+
+import { readingTime as readingTimeHelper } from '@tryghost/helpers';
 
 function BlogDetails(props) {
   const { post } = props;
-  console.log('post', post);
+
+  const readingTime = readingTimeHelper(post);
+
   const tags = [
     {
       name: `Tech`,
@@ -46,25 +46,33 @@ function BlogDetails(props) {
       </Head>
       <Navbar whiteNav />
       {/* banner section */}
-      <section className="py-5">
+      <section
+        className="py-5 d-flex align-items-center blog-banner"
+        style={{ backgroundColor: '#00a913' }}
+      >
         <div className="container">
-          <div className="row justify-content-around align-items-end">
-            <div className="col-12 col-lg-6 order-1 order-lg-0 pr-md-2 px-5 px-md-5 ">
-              <h1 className="banner-head text-white">
+          <div className="row justify-content-around align-items-center">
+            <div className="col-12 col-md-5 col-lg-5 order-1 order-md-0">
+              <h1 className="banner-head text-white pt-5 pt-md-0 px-4 px-md-0">
                 Wondering <br className="d-none d-md-block" />
-                how we do it all?
+                how <br className="d-block d-md-none" /> we do it all?
               </h1>
-              <p className="text-white">
+              <p className="banner-sub-head text-white">
                 Take a behind-the-scenes peek into the triumphs and tribulations it takes to build a
-                #SuperApp.<i class="twa twa-railway-car"></i>
+                #SuperApp.
               </p>
             </div>
-            <div className="col-12 col-lg-6 px-0 px-md-3">
-              <img src="/img/Blog-Banner.png" className="img-fluid banner-img" alt="Gojek Banner" />
+            <div className="col-12 col-md-7 col-lg-7 px-0 px-md-3">
+              <img
+                src="/img/Blog-Banner.png"
+                className="img-fluid banner-img mt-5 mt-md-0 px-3 px-md-0"
+                alt="Gojek Banner"
+              />
             </div>
           </div>
         </div>
-
+      </section>
+      <section className="py-5">
         <div className="container">
           <div className="row">
             <article className="post-details">
@@ -73,7 +81,7 @@ function BlogDetails(props) {
 
                 <p className="post-full-custom-excerpt">{post.excerpt}</p>
 
-                {/* <div className="post-full-byline">
+                <div className="post-full-byline">
                   <section className="post-full-byline-content">
                     <ul className="author-list">
                       <li className="author-list-item">
@@ -97,16 +105,21 @@ function BlogDetails(props) {
 
                     <section className="post-full-byline-meta">
                       <h4 className="author-name text-dark text-capitalize">
+                        {/* <a
+                                                    href={`tag/${post.primary_author.slug}`}
+                                                > */}
                         {post.primary_author.name}
+                        {/* </a> */}
                       </h4>
-                      <div className="byline-meta-content">
-                        <time className="byline-meta-date" dateTime="2020-05-22">
+                      <div className="date-time">
+                        <span>{readingTime}</span> &nbsp;| &nbsp;
+                        <span>
                           <Moment format="MMM DD, YYYY">{post.published_at}</Moment>
-                        </time>
+                        </span>
                       </div>
                     </section>
                   </section>
-                </div> */}
+                </div>
               </header>
               {/* Post image */}
               <figure className="post-full-image">
