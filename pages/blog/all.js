@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { scroller } from 'react-scroll';
 import Router from 'next/router';
 
+import { getAllPosts } from '../../api/posts';
 import Head from 'next/head';
 import Navbar from '~/../../comps/Navbar';
 import Tags from '~/../../comps/Blog/Tag';
@@ -53,39 +54,27 @@ function allPosts(props) {
         </div>
       </section>
 
-      <div className="container">
+      <div className="container posts">
         <Tags tags={tags} onClick={changeTag} activeTag={tag} />
 
         {/* Tech Posts */}
-        <BlogNew heading="Tech" posts={props.data.items} link="tech" pageName="all-posts" />
+        <BlogNew heading="Tech" posts={props.posts} link="tech" pageName="all-posts" />
         {/* End Tech Posts */}
       </div>
     </div>
   );
 }
 
-export async function getServerSideProps(ctx) {
-  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fblog.gojekengineering.com%2Ffeed`;
+allPosts.getInitialProps = async () => {
+  const posts = await getAllPosts();
 
-  try {
-    const response = await fetch(apiUrl);
+  // featuredPosts.forEach((post) => {
+  //   post.featured = false;
+  // });
 
-    if (response.ok) {
-      const data = await response.json();
-      return {
-        props: { data },
-      };
-    } else {
-      return await {
-        props: {
-          data: [],
-        },
-      };
-    }
-  } catch (error) {
-    // Network error
-    return { props: { data: [] } };
-  }
-}
+  // Featured artticles
+
+  return { posts };
+};
 
 export default allPosts;

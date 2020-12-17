@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { scroller } from 'react-scroll';
-import { getLatestPosts, getTags, getFeaturedPosts } from '../../api/posts';
+import { getLatestPosts, getTags, getFeaturedPosts, getPosts } from '../../api/posts';
 
 import Head from 'next/head';
-import homePage1 from '~/../../static/Homepage-05.png';
 import Navbar from '~/../../comps/Navbar';
 import Tags from '~/../../comps/Blog/Tag';
 import BlogNew from '../../comps/BlogNew';
@@ -11,7 +10,6 @@ import FeaturedPosts from '~/../../comps/BlogNew/featured';
 import { CTA } from '../../comps/BlogNew/cta';
 
 function Blog(props) {
-  console.log('Props', props);
   const [tag, setTag] = useState('tech');
 
   const changeTag = (tagName) => {
@@ -26,13 +24,12 @@ function Blog(props) {
 
   const tags = [
     { name: 'Tech', slug: 'tech' },
-    { name: 'Data', slug: 'data-science' },
+    { name: 'Data', slug: 'data' },
     { name: 'Culture', slug: 'culture' },
     { name: 'News', slug: 'news' },
     { name: 'Design', slug: 'design' },
-    { name: 'Stories', slug: 'gojek-stories' },
+    { name: 'Stories', slug: 'stories' },
   ];
-  console.log('ss', props);
   return (
     <div className="text-center text-md-left blog-page">
       <Head>
@@ -66,25 +63,88 @@ function Blog(props) {
       <div className="container">
         <Tags tags={tags} onClick={changeTag} activeTag={tag} />
       </div>
+
+      <section className="post-feed pb-3 container">
+        <div className="row">
+          <BlogNew heading="Latest" posts={props.latestPosts} link="latest" pageName="all-posts" />
+        </div>
+      </section>
+
+      <section className="post-feed pb-3 container">
+        <div className="row">
+          <FeaturedPosts heading="Tech" posts={props.featuredPosts} />
+        </div>
+      </section>
+
+      {/* <section className="post-feed pb-3 container">
+        <div className="row">
+          <BlogNew heading="Tech" posts={props.techPosts} link="tech" pageName="all-posts" />
+        </div>
+      </section>
+      <div className="container">
+        <CTA
+          title="Build the tech that powers an entire country."
+          href="/jobs"
+          hrefText="Apply Now"
+        />
+      </div>
+
+      <section className="post-feed pb-3 container">
+        <div className="row">
+          <BlogNew heading="Data" posts={props.dataPosts} link="data" pageName="all-posts" />
+        </div>
+      </section>
+
+      <section className="post-feed pb-3 container">
+        <div className="row">
+          <BlogNew heading="Culture" posts={props.culturePosts} link="data" pageName="all-posts" />
+        </div>
+      </section>
+
+      <section className="post-feed pb-3 container">
+        <div className="row">
+          <BlogNew heading="News" posts={props.newsPosts} link="news" pageName="all-posts" />
+        </div>
+      </section> */}
     </div>
   );
 }
 
 Blog.getInitialProps = async () => {
-  // const latestPosts = await getLatestPosts();
-  // const tags = await getTags();
-  // const featuredPosts = await getFeaturedPosts();
-  // TODO: JUNK
-  // Update featured of all posts as false except for the first post
-  // latestPosts.forEach((post) => {
+  const latestPosts = await getLatestPosts();
+  const tags = await getTags();
+  const featuredPosts = await getFeaturedPosts();
+  const techPosts = await getPosts('tech');
+  const dataPosts = await getPosts('data');
+  const culturePosts = await getPosts('culture');
+  const newsPosts = await getPosts('news');
+
+  featuredPosts.forEach((post) => {
+    post.featured = false;
+  });
+  techPosts.forEach((post) => {
+    post.featured = false;
+  });
+  techPosts[0].featured = true;
+
+  // dataPosts.forEach((post) => {
   //   post.featured = false;
   // });
-  // latestPosts[0].featured = true;
-  // featuredPosts.forEach((post) => {
+  // dataPosts[0].featured = true;
+
+  // newsPosts.forEach((post) => {
   //   post.featured = false;
   // });
+  // newsPosts[0].featured = true;
+
+  // culturePosts.forEach((post) => {
+  //   post.featured = false;
+  // });
+  // culturePosts[0].featured = true;
+
   // Featured artticles
-  // return { latestPosts, tags, featuredPosts };
+
+  return { latestPosts, tags, featuredPosts, techPosts };
 };
 
 export default Blog;
