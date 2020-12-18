@@ -61,14 +61,31 @@
   }
 }
 
+
 .tag {
   position: absolute;
   background-color: $green-light;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
   margin-top: 2rem;
   border-radius: 0.5rem 1rem 1rem 0;
   top: 0;
+  left: 11px;
+  line-height: normal;
+  z-index: 1;
 }
+
+.tag::after {
+  content: '';
+  height: 0;
+  width: 0;
+  border-left: 4px solid transparent;
+  border-top: 16px solid #257226;
+  left: 0px;
+  bottom: -16px;
+  position: absolute;
+  z-index: 0;
+}
+
 .blog-banner {
   min-height: 70vh;
   @media screen and (max-width: 576px) {
@@ -349,7 +366,7 @@
   }
 }
 .posts hr {
-  margin-top: 2rem;
+  margin-top: 0rem;
   margin-bottom: 2rem;
 }
 .posts .view-all {

@@ -12,11 +12,11 @@ const sliderSettings = {
 
 function FeaturedPosts(props) {
   return (
-    <section className="py-5 posts text-left">
+    <section className="py-5 posts text-left container">
       <h1
         className={`mb-5 ${styles.featuredHeading} text-md-center pt-4`}
       >{`Featured Articles`}</h1>
-      <div className="container pb-4 d-none d-md-block">
+      <div className="pb-4 d-none d-md-block">
         <div className="row">
           {props.posts.map((post) => (
             <div className="col-md-4" key={post.id}>

@@ -4,9 +4,9 @@ import styles from './index.module.scss';
 
 export function CTA(props) {
   return (
-    <div className="container px-0">
-      <section className={`${styles.ctaPurple} py-4 mx-md-3 mx-0`}>
-        <div className="row justify-content-center align-items-center mx-0">
+    <div className="container">
+      <section className={`${styles.ctaPurple} py-4`}>
+        <div className="row justify-content-center align-items-center">
           <div className="col-md-5">
             <img
               className="img-fluid mx-auto d-block rounded-md-pill"

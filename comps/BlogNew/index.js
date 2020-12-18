@@ -27,7 +27,7 @@ function BlogNew(props) {
     : `https://blog.gojekengineering.com/${link}/home`;
 
   return (
-    <section className="mt-5 posts text-left" id={link}>
+    <section className="posts text-left" id={link}>
       <div className="d-flex justify-content-between align-items-end">
         <h1 className={styles.heading}>{heading}</h1>
         {/* <p className="text-center">
@@ -36,7 +36,7 @@ function BlogNew(props) {
           </a>
         </p> */}
       </div>
-      <hr className="mb-3 d-block" />
+      <hr/>
 
       <div className="d-none d-md-block">
         <div className="row">{items}</div>

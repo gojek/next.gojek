@@ -113,36 +113,32 @@ function Blog(props) {
       </div>
 
       {keyword === '' && (
-        <section className="post-feed container">
-          <div className="row">
-            <BlogNew
-              heading="Latest"
-              posts={props.latestPosts}
-              link="blog/all"
-              pageName="all-posts"
-            />
-          </div>
+        <section className="post-feed container mt-5">
+          <BlogNew
+            heading="Latest"
+            posts={props.latestPosts}
+            link="blog/all"
+            pageName="all-posts"
+          />
         </section>
       )}
 
       {keyword === '' && (
-        <section className="post-feed container">
-          <div className="row">
+        <section className="py-3" style={{ backgroundColor: '#f2f2f2' }}>
+          <div className="post-feed">
             <FeaturedPosts heading="Tech" posts={props.featuredPosts} />
           </div>
         </section>
       )}
 
       {keyword === '' && (
-        <section className="post-feed container">
-          <div className="row">
-            <BlogNew heading="Tech" posts={props.techPosts} link="tech" pageName="all-posts" />
-          </div>
+        <section className="post-feed container mt-5 pt-5">
+          <BlogNew heading="Tech" posts={props.techPosts} link="tech" pageName="all-posts" />
         </section>
       )}
 
       {keyword === '' && (
-        <div className="container">
+        <div className="mt-5">
           <CTA
             title="Build the tech that powers an entire country."
             href="/jobs"
@@ -152,30 +148,19 @@ function Blog(props) {
       )}
 
       {keyword === '' && (
-        <section className="post-feed container">
-          <div className="row">
-            <BlogNew heading="Data" posts={props.dataPosts} link="data" pageName="all-posts" />
-          </div>
+        <section className="post-feed container mt-5 pt-5">
+          <BlogNew heading="Data" posts={props.dataPosts} link="data" pageName="all-posts" />
         </section>
       )}
 
       {keyword === '' && (
-        <section className="post-feed container">
-          <div className="row">
-            <BlogNew
-              heading="Culture"
-              posts={props.culturePosts}
-              link="data"
-              pageName="all-posts"
-            />
-          </div>
+        <section className="post-feed container mt-5">
+          <BlogNew heading="Culture" posts={props.culturePosts} link="data" pageName="all-posts" />
         </section>
       )}
       {keyword === '' && (
-        <section className="post-feed container">
-          <div className="row">
-            <BlogNew heading="News" posts={props.newsPosts} link="news" pageName="all-posts" />
-          </div>
+        <section className="post-feed container mt-5">
+          <BlogNew heading="News" posts={props.newsPosts} link="news" pageName="all-posts" />
         </section>
       )}
 
