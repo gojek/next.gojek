@@ -112,7 +112,7 @@ function List(props) {
                 <strong className="py-5">No Jobs!</strong>
               </div>
             )}
-            {props.showCTA && (
+            {!props.showAllJobs && (
               <div className="mt-4 pl-5">
                 <button className="text-green link btn">
                   View more
@@ -124,7 +124,7 @@ function List(props) {
                 </button>
               </div>
             )}
-            {!props.showAllJobs && !props.showCTA && (
+            {!props.showAllJobs && (
               <div className="mt-4 pl-5">
                 <a href="/jobs/all" className="text-green-light link btn">
                   View all jobs

@@ -11,7 +11,6 @@ const sliderSettings = {
 };
 
 function BlogNew(props) {
-  console.log('props', props);
   const { heading, posts, link } = props;
   posts[0].featured = true;
 
@@ -28,15 +27,17 @@ function BlogNew(props) {
     : `https://blog.gojekengineering.com/${link}/home`;
 
   return (
-    <section className="mt-5 posts text-left" id={link}>
-      <div className="row justify-content-between align-items-center my-3 my-md-5 px-3">
-        <h1 className={styles.heading}>{props.pageName ? 'Latest' : heading}</h1>
-        <p className="text-center">
-          <a href={mediumLink} target="_blank" className={`text-green-light ${styles.readMore}`}>
-            See More <i className="fas fa-long-arrow-alt-right"></i>
+    <section className="posts text-left" id={link}>
+      <div className="d-flex justify-content-between align-items-end">
+        <h1 className={styles.heading}>{heading}</h1>
+        {/* <p className="text-center">
+          <a href={props.link} target="_blank" className={`text-green-light ${styles.readMore}`}>
+            See More <img src="/img/arrow-right-green.svg" className="pl-2" alt="View Blogs" />
           </a>
-        </p>
+        </p> */}
       </div>
+      <hr/>
+
       <div className="d-none d-md-block">
         <div className="row">{items}</div>
       </div>
