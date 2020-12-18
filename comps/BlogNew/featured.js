@@ -25,7 +25,9 @@ function FeaturedPosts(props) {
                   className={`thumbnail ${styles.blogImg}`}
                   style={{ backgroundImage: `url(${post.feature_image})` }}
                 ></div>
-                <span className="text-white text-uppercase tag shadow">{post.tag}</span>
+                <span className="text-white text-uppercase tag shadow">
+                  {post.primary_tag.name}
+                </span>
                 <h5 className="title pt-4">
                   {post.title.length > 60 ? post.title.substring(0, 60) + '...' : post.title}
                 </h5>

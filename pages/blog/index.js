@@ -214,7 +214,10 @@ Blog.getInitialProps = async () => {
   const dataPosts = await getPosts('data');
   const culturePosts = await getPosts('culture');
   const newsPosts = await getPosts('news');
+  const designPosts = await getPosts('design');
+  const storiesPosts = await getPosts('stories');
 
+  console.log('test', featuredPosts);
   featuredPosts.forEach((post) => {
     post.featured = false;
   });
@@ -238,9 +241,29 @@ Blog.getInitialProps = async () => {
   });
   culturePosts[0].featured = true;
 
+  designPosts.forEach((post) => {
+    post.featured = false;
+  });
+  designPosts[0].featured = true;
+
+  storiesPosts.forEach((post) => {
+    post.featured = false;
+  });
+  storiesPosts[0].featured = true;
+
   // Featured artticles
 
-  return { latestPosts, tags, featuredPosts, techPosts, dataPosts, newsPosts, culturePosts };
+  return {
+    latestPosts,
+    tags,
+    featuredPosts,
+    techPosts,
+    dataPosts,
+    newsPosts,
+    culturePosts,
+    designPosts,
+    storiesPosts,
+  };
 };
 
 export default Blog;

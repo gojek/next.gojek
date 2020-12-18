@@ -61,7 +61,6 @@
   }
 }
 
-
 .tag {
   position: absolute;
   background-color: $green-light;
@@ -123,6 +122,9 @@
   }
 }
 
+.gist {
+  max-width: 680px;
+}
 .post-card-image {
   border: 1px solid rgba(0, 0, 0, 0.15) !important;
   background-origin: border-box !important;
