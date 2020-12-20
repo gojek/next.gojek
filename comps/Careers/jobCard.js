@@ -6,7 +6,6 @@ function JobCard(props) {
   const [mobile, setMobile] = useState(null);
 
   useEffect(() => {
-    console.log('window length', screen.width);
     setMobile(screen.width < 768 ? true : false);
   }, []);
 

@@ -21,8 +21,6 @@ function DescriptionPage(props) {
   const { data } = props;
   const { register, handleSubmit, errors } = useForm();
 
-  console.log('decs props', props);
-
   useEffect(() => {
     setUrl(window.location.href);
   }, []);
@@ -109,7 +107,8 @@ function DescriptionPage(props) {
                   <b>{data.lists[1].text}</b>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: data.lists[1].content }}></div>
-                <div className="mt-4"
+                <div
+                  className="mt-4"
                   dangerouslySetInnerHTML={{
                     __html: data.additional ? data.additional.split('About Us')[0] : '',
                   }}

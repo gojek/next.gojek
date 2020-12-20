@@ -43,7 +43,6 @@ function Blog(props) {
         'https://blog.gojek.io/ghost/api/v3/content/posts/?key=dc81903c2020e7c9d2f8bafcf7&limit=all',
       )
       .then((res) => {
-        console.log('herr', res.data.posts);
         setarticles(
           res.data.posts.filter((data) => {
             return data.title.toLowerCase().includes(keyword.toLowerCase());
@@ -259,7 +258,6 @@ Blog.getInitialProps = async () => {
   const designPosts = await getPosts('design');
   const storiesPosts = await getPosts('stories');
 
-  console.log('test', featuredPosts);
   featuredPosts.forEach((post) => {
     post.featured = false;
   });

@@ -7,7 +7,6 @@ function Footer(props) {
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    console.log('apply form data', data);
   };
 
   return (

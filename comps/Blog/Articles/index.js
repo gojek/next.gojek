@@ -3,7 +3,6 @@ import Post from './post';
 
 function Articles(props) {
   const { posts } = props;
-  console.log('post', posts);
   return (
     <>
       <h1 className="my-5">{props.title}</h1>

@@ -10,9 +10,11 @@ function Card(props) {
         ></div>
         <div className="card-body px-0">
           <p className="card-name blogHeading pointer font-weight-bold text-lead">
-            How We Pushed a Million Keys to Redis in Seconds{' '}
+            {props.data.title}{' '}
           </p>
-          <Link href="" text="Read full story" color="text-green-light" />
+          <a href={props.data.link} className="text-green-light" target="_blank">
+            Read full story
+          </a>
         </div>
       </div>
     </div>

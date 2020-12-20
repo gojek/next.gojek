@@ -22,10 +22,8 @@ function CareersPage(props) {
   const [jobs, setJobs] = useState([]);
 
   const teamData = teamsData[teamValue];
-  console.log('props', teamsData[teamValue]);
 
   useEffect(() => {
-    console.log('careers props', props);
     if (teamsData[teamValue]) {
       const CareersData = props.data;
       let jobs = [];
