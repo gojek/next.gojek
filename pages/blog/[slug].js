@@ -5,6 +5,7 @@ import { getPost } from '../../api/posts';
 import Head from 'next/head';
 import Moment from 'react-moment';
 import Navbar from '~/../../comps/Navbar';
+import CommonCta from '~/../../comps/Common/Cta';
 
 import { readingTime as readingTimeHelper } from '@tryghost/helpers';
 
@@ -142,6 +143,10 @@ function BlogDetails(props) {
           </div>
         </div>
       </section>
+
+      {/* CTA */}
+      <CommonCta mobile />
+      {/* End CTA */}
     </div>
   );
 }
