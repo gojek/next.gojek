@@ -21,22 +21,27 @@ function Tag(tagData) {
 
 function Tags(props) {
   return (
-    <div>
-      <div className={`pt-5 d-flex ${styles.tagList}`}>
-        {props.tags.map((tag) => (
-          <Tag tag={tag} data={props} />
-        ))}
-        <div
-          key="all"
-          className={
-            `badge rounded-pill pointer px-4 mb-3 mr-3 ${styles.category}  ` +
-            (props.activeTag === 'all' ? styles.active : '')
-          }
-        >
-          <a href="/blog/all" className="mb-0 view-all">
-            All
-          </a>
-        </div>
+    <div className={`py-5 d-flex ${styles.tagList}`}>
+      {props.tags.map((tag) => (
+        <Tag tag={tag} data={props} />
+      ))}
+      <div
+        key="all"
+        className={
+          `badge rounded-pill pointer px-4 mb-3 mr-3 ${styles.category}  ` +
+          (props.activeTag === 'all' ? styles.active : '')
+        }
+      >
+        <a href="/blog/all" className="mb-0 view-all">
+          All
+        </a>
+      </div>
+      <div className="pointer px-4 mb-3 mr-3 ml-1" style={{ borderLeft: '1px solid #b5b2b2' }}>
+        <img
+          onClick={props.handlesearchClicked}
+          className="img-fluid mt-2"
+          src="/img/blog/search.svg"
+        />
       </div>
     </div>
   );

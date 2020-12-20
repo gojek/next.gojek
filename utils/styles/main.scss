@@ -639,7 +639,7 @@ body {
 }
 
 #blogs,
-#stories,
+// #stories,
 #openingsBlogs {
   .list {
     padding-top: 7rem;
@@ -947,7 +947,7 @@ body {
   font-family: $title-font;
 }
 
-#stories,
+// #stories,
 #systems {
   .heading {
     font-family: $header-font;
@@ -956,14 +956,14 @@ body {
   }
 }
 
-#stories {
-  padding-top: 7rem;
-  padding-bottom: 5rem;
+// #stories {
+//   padding-top: 7rem;
+//   padding-bottom: 5rem;
 
-  .description {
-    font-size: 1.875rem;
-  }
-}
+//   .description {
+//     font-size: 1.875rem;
+//   }
+// }
 
 #systems,
 #openingsBlogs {

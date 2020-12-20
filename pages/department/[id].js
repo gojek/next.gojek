@@ -8,7 +8,6 @@ import bannerImage from '~/../../static/banner.png';
 
 function CareersPage(props) {
   const router = useRouter();
-  console.log('department router', Router, router);
   return (
     <div className="text-center text-md-left">
       <Head>

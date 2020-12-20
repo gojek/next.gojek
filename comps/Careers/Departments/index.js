@@ -19,9 +19,6 @@ function Departments(props) {
 
   const sortedDepartments = _.sortBy(departments, 'count').reverse();
 
-  // sortedDepartments.push(sortedDepartments.splice(1, 1)[0]);
-  // console.log('Shilpa', sortedDepartments);
-
   return (
     <div className="container departments text-white text-left">
       <h1 className="header">

@@ -2,19 +2,19 @@ import { useState } from 'react';
 import { scroller } from 'react-scroll';
 import axios from 'axios';
 import Moment from 'react-moment';
+import { useRouter } from 'next/router';
 
-import { getLatestPosts, getTags, getFeaturedPosts, getPosts, search } from '../../api/posts';
+import { getTagPosts } from '../../../api/posts';
 
 import Head from 'next/head';
-import Navbar from '~/../../comps/Navbar';
-import Tags from '~/../../comps/Blog/Tag';
-import BlogNew from '../../comps/BlogNew';
-import FeaturedPosts from '~/../../comps/BlogNew/featured';
-import { CTA } from '../../comps/BlogNew/cta';
-import CommonCta from '~/../../comps/Common/Cta';
+import Navbar from '../../../comps/Navbar';
+import Tags from '../../..//comps/Blog/Tag';
+import BlogNew from '../../../comps/BlogNew';
+import CommonCta from '../../../comps/Common/Cta';
 
-function Blog(props) {
-  const [tag, setTag] = useState('tech');
+function TagPosts(props) {
+  const router = useRouter();
+  const [tag, setTag] = useState(router.query.slug);
   const [keyword, setkeyword] = useState('');
   const [articles, setarticles] = useState([]);
   const [clicked, setclicked] = useState(false);
@@ -62,6 +62,7 @@ function Blog(props) {
     { name: 'Stories', slug: 'stories' },
     { name: 'News', slug: 'news' },
   ];
+
   return (
     <div className="text-center text-md-left blog-page">
       <Head>
@@ -137,71 +138,7 @@ function Blog(props) {
 
       {keyword === '' && (
         <section className="post-feed container mt-5">
-          <BlogNew heading="Latest" posts={props.latestPosts} link="/blog/all" pageName="blog" />
-        </section>
-      )}
-
-      {keyword === '' && (
-        <section className="py-3" style={{ backgroundColor: '#f2f2f2' }}>
-          <div className="post-feed">
-            <FeaturedPosts heading="Featured Articles" posts={props.featuredPosts} />
-          </div>
-        </section>
-      )}
-
-      {keyword === '' && (
-        <section className="post-feed container mt-5">
-          <BlogNew heading="Tech" posts={props.techPosts} link="/tag/tech" pageName="blog" />
-        </section>
-      )}
-
-      {keyword === '' && (
-        <div className="mt-5">
-          <CTA
-            title="Build the tech that powers an entire country."
-            href="/jobs"
-            hrefText="Apply Now"
-          />
-        </div>
-      )}
-
-      {keyword === '' && (
-        <section className="post-feed container mt-5 pt-5">
-          <BlogNew heading="Data" posts={props.dataPosts} link="/tag/data" pageName="blog" />
-        </section>
-      )}
-
-      {keyword === '' && (
-        <section className="post-feed container">
-          <BlogNew
-            heading="Culture"
-            posts={props.culturePosts}
-            link="/tag/culture"
-            pageName="blog"
-          />
-        </section>
-      )}
-
-      {keyword === '' && (
-        <section className="post-feed container">
-          <BlogNew heading="Design" posts={props.designPosts} link="/tag/design" pageName="blog" />
-        </section>
-      )}
-
-      {keyword === '' && (
-        <section className="post-feed container ">
-          <BlogNew
-            heading="Stories"
-            posts={props.storiesPosts}
-            link="/tag/stories"
-            pageName="blog"
-          />
-        </section>
-      )}
-
-      {keyword === '' && (
-        <section className="post-feed container">
-          <BlogNew heading="News" posts={props.newsPosts} link="/tag/news" pageName="blog" />
+          <BlogNew heading={router.query.slug} posts={props.posts} link="" pageName="tag" />
         </section>
       )}
 
@@ -247,63 +184,15 @@ function Blog(props) {
   );
 }
 
-Blog.getInitialProps = async () => {
-  const latestPosts = await getLatestPosts();
-  const tags = await getTags();
-  const featuredPosts = await getFeaturedPosts();
-  const techPosts = await getPosts('tech');
-  const dataPosts = await getPosts('data');
-  const culturePosts = await getPosts('culture');
-  const newsPosts = await getPosts('news');
-  const designPosts = await getPosts('design');
-  const storiesPosts = await getPosts('stories');
+TagPosts.getInitialProps = async (ctx) => {
+  const posts = await getTagPosts(ctx.query.slug);
 
-  featuredPosts.forEach((post) => {
+  posts.forEach((post) => {
     post.featured = false;
   });
-  techPosts.forEach((post) => {
-    post.featured = false;
-  });
-  techPosts[0].featured = true;
-
-  dataPosts.forEach((post) => {
-    post.featured = false;
-  });
-  dataPosts[0].featured = true;
-
-  newsPosts.forEach((post) => {
-    post.featured = false;
-  });
-  newsPosts[0].featured = true;
-
-  culturePosts.forEach((post) => {
-    post.featured = false;
-  });
-  culturePosts[0].featured = true;
-
-  designPosts.forEach((post) => {
-    post.featured = false;
-  });
-  designPosts[0].featured = true;
-
-  storiesPosts.forEach((post) => {
-    post.featured = false;
-  });
-  storiesPosts[0].featured = true;
-
-  // Featured artticles
-
   return {
-    latestPosts,
-    tags,
-    featuredPosts,
-    techPosts,
-    dataPosts,
-    newsPosts,
-    culturePosts,
-    designPosts,
-    storiesPosts,
+    posts,
   };
 };
 
-export default Blog;
+export default TagPosts;

@@ -346,37 +346,37 @@ export const posts = [
     id: 1,
     title: 'How GOJEK Manages 1 million Drivers With 12 Engineers',
     img: '../img/life-at-gojek/blog/managing-1-million-drivers.png',
-    link: '#',
+    link: '/blog/how-gojek-manages-1-million-drivers-with-12-engineers-part-1',
   },
   {
     id: 2,
     title: 'Why We Swear by the RCA',
     img: '../img/life-at-gojek/blog/why-we-swear-by-rca.png',
-    link: '#',
+    link: '/blog/why-we-swear-by-the-rca',
   },
   {
     id: 3,
     title: 'How Design Can Build or Break a Business',
     img: '../img/life-at-gojek/blog/design-can-build-or-break-business.png',
-    link: '#',
+    link: '/blog/how-design-can-build-or-break-a-business-1-of-3',
   },
   {
     id: 4,
     title: 'The Rise and Fall of Mod Apps',
     img: '../img/life-at-gojek/blog/rise-and-fall-of-mod-apps.png',
-    link: '#',
+    link: 'https://www.instagram.com/p/B_XQkmvAlmb/',
   },
   {
     id: 5,
     title: 'When Canned Messages Opened a Can of Worms',
     img: '../img/life-at-gojek/blog/canned-messages.png',
-    link: '#',
+    link: 'https://www.instagram.com/p/CApot3pg4p9/',
   },
   {
     id: 6,
     title: 'Don’t be Proud of being a Perfectionist',
     img: '../img/life-at-gojek/blog/dont-be-proud-of-perfectionist.png',
-    link: '#',
+    link: 'https://www.instagram.com/p/CBQIwpMgH-t/',
   },
 ];
 

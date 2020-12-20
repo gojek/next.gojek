@@ -9,8 +9,6 @@ function TagCounts(props) {
 
   // to format data from medium
   useEffect(() => {
-    console.log('blog props', props);
-
     let tagsCountArray = [],
       tagsCount = [];
 
@@ -35,7 +33,6 @@ function TagCounts(props) {
       return a.count - b.count;
     });
     tagsCount.reverse();
-    console.log('sorted tags count', tagsCount);
     setTagsCount(tagsCount);
   }, []);
 

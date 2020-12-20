@@ -5,11 +5,9 @@ import CommonCta from '~/../../comps/Common/Cta';
 import List from '../../comps/Careers/JobsList/list';
 
 function CareersPage(props) {
-  console.log('props', props);
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    console.log('careers props', props);
     const CareersData = props.data;
     let teamJobs = CareersData.filter((job) => {
       return job.categories.team.includes('Product Engineering');

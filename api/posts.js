@@ -35,7 +35,10 @@ export async function getFeaturedPosts() {
 // Get featured posts
 export async function getAllPosts() {
   return await api.posts
-    .browse({ order: 'published_at DESC', include: 'tags,authors' }, { featured: true })
+    .browse(
+      { order: 'published_at DESC', limit: 'all', include: 'tags,authors' },
+      { featured: true },
+    )
     .catch((err) => {
       console.error(err);
     });
@@ -76,6 +79,20 @@ export async function getPost(postSlug) {
 export function search() {
   return api.posts
     .browse({ order: 'published_at DESC', limit: 4, include: 'tags,authors' })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
+// Search posts
+export async function getTagPosts(tag) {
+  return await api.posts
+    .browse({
+      filter: `tag: ${tag}`,
+      order: 'published_at DESC',
+      limit: 'all',
+      include: 'tags,authors',
+    })
     .catch((err) => {
       console.error(err);
     });
