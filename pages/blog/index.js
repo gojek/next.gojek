@@ -151,7 +151,7 @@ function Blog(props) {
 
       {keyword === '' && (
         <section className="post-feed container mt-5">
-          <BlogNew heading="Tech" posts={props.techPosts} link="/tag/tech" pageName="blog" />
+          <BlogNew heading="Tech" posts={props.techPosts} link="/blog/tag/tech" pageName="blog" />
         </section>
       )}
 
@@ -167,7 +167,7 @@ function Blog(props) {
 
       {keyword === '' && (
         <section className="post-feed container mt-5 pt-5">
-          <BlogNew heading="Data" posts={props.dataPosts} link="/tag/data" pageName="blog" />
+          <BlogNew heading="Data" posts={props.dataPosts} link="/blog/tag/data" pageName="blog" />
         </section>
       )}
 
@@ -176,7 +176,7 @@ function Blog(props) {
           <BlogNew
             heading="Culture"
             posts={props.culturePosts}
-            link="/tag/culture"
+            link="/blog/tag/culture"
             pageName="blog"
           />
         </section>
@@ -184,7 +184,12 @@ function Blog(props) {
 
       {keyword === '' && (
         <section className="post-feed container">
-          <BlogNew heading="Design" posts={props.designPosts} link="/tag/design" pageName="blog" />
+          <BlogNew
+            heading="Design"
+            posts={props.designPosts}
+            link="/blog/tag/design"
+            pageName="blog"
+          />
         </section>
       )}
 
@@ -193,7 +198,7 @@ function Blog(props) {
           <BlogNew
             heading="Stories"
             posts={props.storiesPosts}
-            link="/tag/stories"
+            link="/blog/tag/stories"
             pageName="blog"
           />
         </section>
@@ -201,7 +206,7 @@ function Blog(props) {
 
       {keyword === '' && (
         <section className="post-feed container">
-          <BlogNew heading="News" posts={props.newsPosts} link="/tag/news" pageName="blog" />
+          <BlogNew heading="News" posts={props.newsPosts} link="/blog/tag/news" pageName="blog" />
         </section>
       )}
 
