@@ -168,7 +168,7 @@ export const departments = [
     ],
   },
   {
-    name: 'Entertainment',
+    name: 'News & Entertainment',
     class: 'text-pink-light',
     bgClass: 'bg-pink-light',
     borderColor: '#ee2737',
@@ -283,7 +283,7 @@ export const opensourceProjects = [
 export const techFacts = [
   {
     id: 1,
-    content: 'We run one of the largest JRuby, Java and Go clusters in Asia.',
+    content: 'We run one of the largest JRuby, Java, and Go clusters in Asia.',
     image: '/img/home/tech-facts/tech-fact-1.svg',
     bgColor: '#74d2e7',
   },

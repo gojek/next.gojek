@@ -46,11 +46,10 @@ function ProductSlider() {
             </span>
             ,{' '}
             <span className={`${activeProduct === 4 ? 'text-purple' : 'text-white'}`}>
-              Business
+              Business,
             </span>{' '}
-            and{' '}
             <span className={`${activeProduct === 5 ? 'text-pink-light' : 'text-white'}`}>
-              Entertainment
+              News &amp; Entertainment
             </span>
             .
           </h1>

@@ -60,10 +60,10 @@ function Home(props) {
           {/* Row for description */}
           <div className="row mt-auto mb-3 mb-md-5 pointers justify-content-center justify-content-md-start pl-0 pl-md-5">
             <ul className="text-lead text-white col-8 col-md-6">
-              <li>200 million+ completed orders per month 1.</li>
-              <li>As of 2019, the Gojek app has been downloaded almost 170 million times.</li>
-              <li>1100% growth in transactions from 2016 to 2019.</li>
-              <li>In 2019, we contributed $7 billion+ to the Indonesian economy.</li>
+              <li>200 million+ completed orders per month</li>
+              <li>As of 2019, the Gojek app has been downloaded almost 170 million times</li>
+              <li>1100% growth in transactions from 2016 to 2019</li>
+              <li>In 2019, we contributed $7 billion+ to the Indonesian economy</li>
             </ul>
           </div>
         </div>
@@ -72,7 +72,7 @@ function Home(props) {
       {/* Tech Facts */}
       <section className="bg-gray pt-5 tech-facts">
         <div className="container pt-md-5">
-          <h1 className="text-center py-5 heading">Tech Facts</h1>
+          <h1 className="text-center py-5 heading">Our tech powers Southeast Asia</h1>
 
           <TechFacts />
 
@@ -87,7 +87,7 @@ function Home(props) {
             <div className="col-8  mt-md-5 pt-md-5">
               <h1 className="heading mt-4">Funding</h1>
               <p className="description my-4">
-                We’re incredibly thankful to have great partners who help us in our goals.
+                We're incredibly thankful to have partners who help us realise our mission
               </p>
               <div className="d-none d-md-block">
                 <Funding />
@@ -103,7 +103,7 @@ function Home(props) {
       <section className="bg-black pt-5 text-white social-media">
         <div className="container py-5">
           <div className="intro py-md-5 px-5 px-md-0">
-            <h1 className="pb-4 heading">Social Media</h1>
+            <h1 className="pb-4 heading sr-only">Social Media</h1>
             <p className="description">
               Want to know the daily challenges, unconventional work culture and inner workings of
               Southeast Asia’s largest startup? We have stories to tell.

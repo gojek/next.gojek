@@ -15,25 +15,15 @@ export const data = {
       name: 'Blogs & News',
       link: '/blog',
     },
-    {
-      id: 5,
-      name: 'Teams',
-      link: '#',
-    },
   ],
   secondColumn: [
     {
-      id: 6,
+      id: 5,
       name: 'Join us',
       link: '/jobs',
     },
     {
-      id: 7,
-      name: 'Contact us',
-      link: '/',
-    },
-    {
-      id: 8,
+      id: 6,
       name: 'Connect with us',
       link: '/',
     },
