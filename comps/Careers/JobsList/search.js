@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Select, { components } from 'react-select';
 import { departments } from '../data';
+const { ValueContainer, Placeholder } = components;
 
 const styles = {
   placeholder: (base, state) => ({
@@ -19,17 +20,24 @@ const Option = (props) => (
   </div>
 );
 
-const ValueContainer = (props) => (
-  <components.ValueContainer {...props}>
-    <span>{props.selectProps.placeholder}</span>
-  </components.ValueContainer>
-);
-
 const MultiValue = (props) => (
   <components.MultiValue {...props}>
     <span className="d-none">{props.data.label}</span>
   </components.MultiValue>
 );
+
+const CustomValueContainer = ({ children, ...props }) => {
+  return (
+    <ValueContainer {...props}>
+      <Placeholder {...props} isFocused={props.isFocused}>
+        {props.selectProps.placeholder}
+      </Placeholder>
+      {React.Children.map(children, (child) =>
+        child && child.type !== Placeholder ? child : null,
+      )}
+    </ValueContainer>
+  );
+};
 
 class MySelect extends Component {
   static defaultProps = {
@@ -37,32 +45,11 @@ class MySelect extends Component {
   };
 
   render() {
-    const { options, locations, onChange, onChangeCallback, ...otherProps } = this.props;
+    const { options, locations, onChange, onKeyDown, onChangeCallback, ...otherProps } = this.props;
 
     return (
       <div className="container">
         <div className="row text-body">
-          {/* <div className="col-md-7 px-0 pb-3 pb-md-0">
-            <div className="input-group">
-              <label htmlFor="keyword" className="sr-only">
-                Keyword
-              </label>
-              <span className="input-group-prepend">
-                <div className="input-group-text bg-white border-right-0">
-                  <img src="/img/careers/search.svg" alt="search" />
-                </div>
-              </span>
-              <input
-                type="text"
-                onChange={(e) => onChange(e.target.value, e.target.name)}
-                className="form-control rounded-pill search shadow"
-                placeholder="Keyword Search_"
-                name="keyword"
-                value={this.props.keyword}
-              />
-            </div>
-          </div> */}
-
           <div className="col-md-7 px-0 pb-3 pb-md-0 rounded-pill search-box">
             <label htmlFor="keyword" className="sr-only">
               Keyword
@@ -76,6 +63,7 @@ class MySelect extends Component {
               <input
                 type="text"
                 onChange={(e) => onChange(e.target.value, e.target.name)}
+                onKeyDown={(e) => onKeyDown(e)}
                 className="form-control search pl-0"
                 placeholder="Keyword Search_"
                 name="keyword"
@@ -93,7 +81,7 @@ class MySelect extends Component {
                 <Select
                   closeMenuOnSelect={false}
                   isMulti
-                  components={{ Option, MultiValue, ValueContainer }}
+                  components={{ Option, MultiValue, ValueContainer: CustomValueContainer }}
                   options={options}
                   hideSelectedOptions={false}
                   backspaceRemovesValue={false}
@@ -113,7 +101,7 @@ class MySelect extends Component {
                 <Select
                   closeMenuOnSelect={false}
                   isMulti
-                  components={{ Option, MultiValue, ValueContainer }}
+                  components={{ Option, MultiValue, ValueContainer: CustomValueContainer }}
                   options={locations}
                   hideSelectedOptions={false}
                   backspaceRemovesValue={false}

@@ -39,12 +39,15 @@ function MobileSearch(props) {
             locations={props.locations}
             onChange={props.onChange}
             onChangeCallback={props.onChangeCallback}
+            keyword={props.keyword}
+            onKeyDown={props.onKeyDown}
+            onKeyDownCallback={props.onKeyDownCallback}
           />
           <button className="btn btn-success rounded-pill px-5 mt-4" onClick={() => handleExpand()}>
             Search
           </button>
           <div className="fixed-bottom results p-4">
-            <div className="row justify-content-between ">
+            {/* <div className="row justify-content-between ">
               <div className="col-6">
                 <p className="mb-0">
                   <strong>
@@ -73,7 +76,7 @@ function MobileSearch(props) {
                   <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       ) : (
