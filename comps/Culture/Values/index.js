@@ -21,20 +21,19 @@ function Values(props) {
                   Collaborate <br />
                   with compassion
                 </h5>
-                <p className="d-none d-md-block">
-                  - Be a pleasure to work with. <br />
-                  - Support others in areas beyond your scope. <br />
-                  - Consider how your actions affect <br />
-                  others.
-                </p>
+                <ul className="d-none d-md-block pl-3">
+                  <li>Be a pleasure to work with </li>
+                  <li>Support others in areas beyond your scope </li>
+                  <li>Consider how your actions affect others.</li>
+                </ul>
               </div>
             </div>
-            <p className="d-md-none pt-4">
-              - Be a pleasure to work with. <br />
-              - Support others in areas beyond your scope. <br />
-              - Consider how your actions affect <br />
+            <ul className="d-md-none pt-4 pl-3">
+              <li>Be a pleasure to work with </li>
+              <li>Support others in areas beyond your scope </li>
+              <li>Consider how your actions affect </li>
               others.
-            </p>
+            </ul>
           </div>
           <div className="px-3">
             <div className="d-flex slide">
@@ -48,16 +47,18 @@ function Values(props) {
                   Criticism <br />
                   is a gift
                 </h5>
-                <p className="d-none d-md-block">
-                  - Actively seek feedback <br />
-                  - Proactively give helpful feedback <br />- Genuinely act upon feedback given
-                </p>
+                <ul className="d-none d-md-block pl-3">
+                  <li>Actively seek feedback </li>
+                  <li>Proactively give helpful feedback </li>
+                  <li>Genuinely act upon feedback given</li>
+                </ul>
               </div>
             </div>
-            <p className="d-md-none pt-4">
-              - Actively seek feedback <br />
-              - Proactively give helpful feedback <br />- Genuinely act upon feedback given
-            </p>
+            <ul className="d-md-none pt-4 pl-3">
+              <li> Actively seek feedback </li>
+              <li>Proactively give helpful feedback </li>
+              <li>Genuinely act upon feedback given</li>
+            </ul>
           </div>
           <div className="px-3">
             <div className="d-flex slide">
@@ -71,18 +72,18 @@ function Values(props) {
                   Be fast <br />
                   and fearless
                 </h5>
-                <p className="d-none d-md-block">
-                  - Take calculated risks
-                  <br />
-                  - Value failure as much as success <br />- Have a strong sense of urgency
-                </p>
+                <ul className="d-none d-md-block pl-3">
+                  <li>Take calculated risks</li>
+                  <li>Value failure as much as success </li>
+                  <li>Have a strong sense of urgency</li>
+                </ul>
               </div>
             </div>
-            <p className="d-md-none pt-4">
-              - Take calculated risks
-              <br />
-              - Value failure as much as success <br />- Have a strong sense of urgency
-            </p>
+            <ul className="d-md-none pt-4 pl-3">
+              <li>Take calculated risks</li>
+              <li>Value failure as much as success </li>
+              <li> Have a strong sense of urgency</li>
+            </ul>
           </div>
           <div className="px-3">
             <div className="d-flex slide">
@@ -97,18 +98,19 @@ function Values(props) {
                   <br />
                   what you believe in
                 </h5>
-                <p className="d-none d-md-block">
-                  - Say what you mean
-                  <br />
-                  - Have the courage to disagree <br />- Have a strong moral compass
-                </p>
+                <ul className="d-none d-md-block pl-3">
+                  <li>Say what you mean</li>
+                  <li>Have the courage to disagree </li>
+                  <li> Have a strong moral compass</li>
+                </ul>
               </div>
             </div>
-            <p className="d-md-none pt-4">
-              - Say what you mean
-              <br />
-              - Have the courage to disagree <br />- Have a strong moral compass
-            </p>
+            <ul className="d-md-none pt-4 pl-3">
+              <li>Say what you mean</li>
+
+              <li>Have the courage to disagree </li>
+              <li>Have a strong moral compass</li>
+            </ul>
           </div>
           <div className="px-3">
             <div className="d-flex slide">
@@ -122,18 +124,18 @@ function Values(props) {
                   Earn <br />
                   your title
                 </h5>
-                <p className="d-none d-md-block">
-                  - Walk the talk
-                  <br />
-                  - Get down in the trenches <br />- Trust your team
-                </p>
+                <ul className="d-none d-md-block pl-3">
+                  <li>Walk the talk</li>
+                  <li>Get down in the trenches </li>
+                  <li>Trust your team</li>
+                </ul>
               </div>
             </div>
-            <p className="d-md-none pt-4">
-              - Walk the talk
-              <br />
-              - Get down in the trenches <br />- Trust your team
-            </p>
+            <ul className="d-md-none pt-4 pl-3">
+              <li>Walk the talk</li>
+              <li>Get down in the trenches</li>
+              <li>Trust your team</li>
+            </ul>
           </div>
           <div className="px-3">
             <div className="d-flex slide">
@@ -147,19 +149,18 @@ function Values(props) {
                   Become
                   <br />a scientist
                 </h5>
-                <p className="d-none d-md-block">
-                  - Follow the numbers intensively
-                  <br />
-                  - Find solutions in unexpected places <br />- Learn independently and share
-                  knowledge
-                </p>
+                <ul className="d-none d-md-block pl-3">
+                  <li> Follow the numbers intensively</li>
+                  <li> Find solutions in unexpected places </li>
+                  <li> Learn independently and share knowledge</li>
+                </ul>
               </div>
             </div>
-            <p className="d-md-none pt-4">
-              - Follow the numbers intensively
-              <br />
-              - Find solutions in unexpected places <br />- Learn independently and share knowledge
-            </p>
+            <ul className="d-md-none pt-4 pl-3">
+              <li>Follow the numbers intensively</li>
+              <li>Find solutions in unexpected places </li>{' '}
+              <li>Learn independently and share knowledge</li>
+            </ul>
           </div>
           <div className="px-3">
             <div className="d-flex slide">
@@ -173,18 +174,18 @@ function Values(props) {
                   Always <br />
                   be prepared
                 </h5>
-                <p className="d-none d-md-block">
-                  - Do your homework
-                  <br />
-                  - Plan out every scenario <br />- Take actions to reduce risk
-                </p>
+                <ul className="d-none d-md-block pl-3">
+                  <li> Do your homework</li>
+                  <li> Plan out every scenario </li>
+                  <li> Take actions to reduce risk</li>
+                </ul>
               </div>
             </div>
-            <p className="d-md-none pt-4">
-              - Do your homework
-              <br />
-              - Plan out every scenario <br />- Take actions to reduce risk
-            </p>
+            <ul className="d-md-none pt-4 pl-3">
+              <li> Do your homework</li>
+              <li> Plan out every scenario</li>
+              <li> Take actions to reduce risk</li>
+            </ul>
           </div>
           <div className="px-3">
             <div className="d-flex slide">
@@ -199,20 +200,18 @@ function Values(props) {
                   <br />
                   about you
                 </h5>
-                <p className="d-none d-md-block">
-                  - Put the company before self
-                  <br />
-                  - Be obsessed about customer problems
-                  <br />- Have a purpose beyond personal success
-                </p>
+                <ul className="d-none d-md-block pl-3">
+                  <li> Put the company before self</li>
+                  <li>Be obsessed about customer problems</li>
+                  <li> Have a purpose beyond personal success</li>
+                </ul>
               </div>
             </div>
-            <p className="d-md-none pt-4">
-              - Put the company before self
-              <br />
-              - Be obsessed about customer problems
-              <br />- Have a purpose beyond personal success
-            </p>
+            <ul className="d-md-none pt-4 pl-3">
+              <li> Put the company before self</li>
+              <li> Be obsessed about customer problems</li>
+              <li> Have a purpose beyond personal success</li>
+            </ul>
           </div>
           <div className="px-3">
             <div className="d-flex slide">
@@ -227,20 +226,18 @@ function Values(props) {
                   <br />
                   with purpose
                 </h5>
-                <p className="d-none d-md-block">
-                  - State objectives in every interaction
-                  <br />
-                  - Align early and consistently
-                  <br />- Focus on what is actionable
-                </p>
+                <ul className="d-none d-md-block pl-3">
+                  <li> State objectives in every interaction</li>
+                  <li> Align early and consistently</li>
+                  <li> Focus on what is actionable</li>
+                </ul>
               </div>
             </div>
-            <p className="d-md-none pt-4">
-              - State objectives in every interaction
-              <br />
-              - Align early and consistently
-              <br />- Focus on what is actionable
-            </p>
+            <ul className="d-md-none pt-4 pl-3">
+              <li> State objectives in every interaction</li>
+              <li> Align early and consistently</li>
+              <li> Focus on what is actionable</li>
+            </ul>
           </div>
           <div className="px-3">
             <div className="d-flex slide">
@@ -255,20 +252,18 @@ function Values(props) {
                   <br />
                   for greatness
                 </h5>
-                <p className="d-none d-md-block">
-                  - Go the extra mile
-                  <br />
-                  - Think big
-                  <br />- Love challenges
-                </p>
+                <ul className="d-none d-md-block pl-3">
+                  <li> Go the extra mile</li>
+                  <li> Think big</li>
+                  <li> Love challenges</li>
+                </ul>
               </div>
             </div>
-            <p className="d-md-none pt-4">
-              - Go the extra mile
-              <br />
-              - Think big
-              <br />- Love challenges
-            </p>
+            <ul className="d-md-none pt-4 pl-3">
+              <li>Go the extra mile</li>
+              <li>Think big</li>
+              <li>Love challenges</li>
+            </ul>
           </div>
         </Slider>
       </div>

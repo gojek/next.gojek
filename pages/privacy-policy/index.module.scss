@@ -1,0 +1,12 @@
+@import '~/../../utils/styles/constants.scss';
+
+.heading {
+  font-family: $header-font;
+  font-size: 1.875rem;
+}
+.description {
+  li {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}

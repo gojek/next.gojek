@@ -61,7 +61,8 @@ function LifeAtGojek(props) {
       <section className="my-5 values">
         <div className="container py-5">
           <h1 className="heading-sm py-md-5">
-            Here are the <span className="text-green">10 values</span> that keep us going:
+            {/* Here are the <span className="text-green">10 values</span> that keep us going: */}
+            Our values
           </h1>
         </div>
         <div className="container-fluid pb-5">
@@ -71,7 +72,7 @@ function LifeAtGojek(props) {
 
       <section className="bg-black text-white py-5 perks">
         <div className="container py-5">
-          <h1 className="heading py-md-3 mb-md-0">Perks and Benefits</h1>
+          <h1 className="heading py-md-3 mb-md-0">We care for you</h1>
           <Perks perks={perks} showPerks={showPerks} mobilePerks={mobilePerks} />
 
           {showPerks < 3 && (

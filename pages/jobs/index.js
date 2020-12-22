@@ -6,7 +6,6 @@ import Navbar from '~/../../comps/Navbar';
 import JobsList from '../../comps/Careers/JobsList/index';
 import Departments from '../../comps/Careers/Departments';
 import Teams from '../../comps/Careers/Teams';
-import { CTA } from '../../comps/BlogNew/cta';
 
 function Jobs(props) {
   const router = useRouter();
@@ -40,16 +39,6 @@ function Jobs(props) {
         <Teams data={recentjobs} />
       </section> */}
       {/* End Teams */}
-
-      {/* CTA */}
-
-      <section className="bg-black py-5">
-        <div className="container">
-          <div className="row">
-            <CTA title="Read stories from our Blog " href="/blog" hrefText="Read More" />
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
