@@ -12,20 +12,20 @@ function PrivacyPolicyPage(props) {
       <Navbar whiteNav />
 
       <section
-        className="py-5 d-flex align-items-center blog-banner"
-        style={{ backgroundColor: '#00a913' }}
+        className="py-5 d-flex align-items-center"
+        style={{ backgroundColor: '#00a913', minHeight: '50vh' }}
       >
-        <div className="container">
+        <div className="container mt-5">
           <div className="row justify-content-around align-items-center">
             <div className="col-12 col-md-5 col-lg-5 order-1 order-md-0">
-              <h1 className="banner-head text-white pt-5 pt-md-0 px-4 px-md-0">Privacy Ploicy</h1>
+              <h1 className="banner-head text-white pt-5 pt-md-0 px-4 px-md-0">Privacy Policy</h1>
             </div>
             <div className="col-12 col-md-7 col-lg-7 px-0 px-md-3">
-              <img
+              {/* <img
                 src="/img/Blog-Banner.png"
                 className="img-fluid banner-img mt-5 mt-md-0 px-3 px-md-0"
                 alt="Gojek Banner"
-              />
+              /> */}
             </div>
           </div>
         </div>
