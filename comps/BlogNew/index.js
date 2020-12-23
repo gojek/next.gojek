@@ -11,7 +11,7 @@ const sliderSettings = {
 };
 
 function BlogNew(props) {
-  const { heading, posts, link } = props;
+  const { heading, posts, link, id } = props;
   props.pageName !== 'all-posts' ? (posts[0].featured = true) : '';
 
   const allPosts = props.pageName ? posts : posts.slice(0, 4),
@@ -27,13 +27,13 @@ function BlogNew(props) {
     : `https://blog.gojekengineering.com/${link}/home`;
 
   return (
-    <section className="posts text-left" id={link}>
+    <section className="posts text-left" id={id}>
       <div className="d-flex justify-content-between align-items-end">
         <h1 className={styles.heading}>{heading}</h1>
         {props.pageName === 'blog' && (
           <p className="text-center">
             <a href={props.link} target="_blank" className={`text-green-light ${styles.readMore}`}>
-              See More <img src="/img/arrow-right-green.svg" className="pl-2" alt="View Blogs" />
+              See All <img src="/img/arrow-right-green.svg" className="pl-2" alt="View Blogs" />
             </a>
           </p>
         )}

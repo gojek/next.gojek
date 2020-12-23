@@ -7,7 +7,7 @@ function Tag(props) {
         `badge rounded-pill pointer px-5 mb-3 mr-3 ${styles.category}  ` +
         (props.active ? styles.active : '')
       }
-      onClick={() => props.onClick(props.tag)}
+      onClick={() => props.onClick(props.tag.slug)}
     >
       <p className="mb-0">{props.tag.name}</p>
     </div>

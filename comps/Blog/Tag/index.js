@@ -14,7 +14,12 @@ function Tag(tagData) {
       }
       onClick={() => data.onClick(tag.slug)}
     >
-      <p className="mb-0">{tag.name}</p>
+      {data.page === 'blog' && <p className="mb-0">{tag.name}</p>}
+      {data.page === 'all-blogs' && (
+        <a href={`/blog/tag/${tag.slug}`} className="mb-0">
+          {tag.name}
+        </a>
+      )}
     </div>
   );
 }
