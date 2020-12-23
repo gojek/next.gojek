@@ -103,6 +103,7 @@ function allPosts(props) {
             activeTag={tag}
             handlesearchClicked={changeClicked}
             clicked={clicked}
+            page="all-blogs"
           />
         )}
 

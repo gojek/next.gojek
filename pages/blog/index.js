@@ -104,6 +104,7 @@ function Blog(props) {
             activeTag={tag}
             handlesearchClicked={changeClicked}
             clicked={clicked}
+            page="blog"
           />
         )}
 
@@ -151,7 +152,13 @@ function Blog(props) {
 
       {keyword === '' && (
         <section className="post-feed container mt-5">
-          <BlogNew heading="Tech" posts={props.techPosts} link="/blog/tag/tech" pageName="blog" />
+          <BlogNew
+            heading="Tech"
+            posts={props.techPosts}
+            link="/blog/tag/tech"
+            id="tech"
+            pageName="blog"
+          />
         </section>
       )}
 
@@ -167,7 +174,13 @@ function Blog(props) {
 
       {keyword === '' && (
         <section className="post-feed container mt-5 pt-5">
-          <BlogNew heading="Data" posts={props.dataPosts} link="/blog/tag/data" pageName="blog" />
+          <BlogNew
+            heading="Data"
+            posts={props.dataPosts}
+            link="/blog/tag/data"
+            id="data"
+            pageName="blog"
+          />
         </section>
       )}
 
@@ -178,6 +191,7 @@ function Blog(props) {
             posts={props.culturePosts}
             link="/blog/tag/culture"
             pageName="blog"
+            id="culture"
           />
         </section>
       )}
@@ -189,6 +203,7 @@ function Blog(props) {
             posts={props.designPosts}
             link="/blog/tag/design"
             pageName="blog"
+            id="design"
           />
         </section>
       )}
@@ -200,13 +215,20 @@ function Blog(props) {
             posts={props.storiesPosts}
             link="/blog/tag/stories"
             pageName="blog"
+            id="stories"
           />
         </section>
       )}
 
       {keyword === '' && (
         <section className="post-feed container">
-          <BlogNew heading="News" posts={props.newsPosts} link="/blog/tag/news" pageName="blog" />
+          <BlogNew
+            heading="News"
+            posts={props.newsPosts}
+            link="/blog/tag/news"
+            id="news"
+            pageName="blog"
+          />
         </section>
       )}
 
