@@ -1,0 +1,28 @@
+@import '../../../utils/styles/variables.scss';
+@import '../../../utils/styles/constants.scss';
+
+.heading {
+  font-size: $font-xl;
+  font-family: $font-bold, sans-serif;
+  @media screen and(max-width: $sm-break) {
+    font-size: 26px;
+  }
+}
+
+.subHeading {
+  font-size: 1.125rem;
+  font-family: $maisonbook;
+  line-height: 1.75rem;
+  @media screen and(max-width: $sm-break) {
+    font-size: 1rem;
+  }
+}
+
+.projectTitle {
+  font-family: $font-bold;
+}
+.projectDescription {
+  font-family: $extended-book;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}

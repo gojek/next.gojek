@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import Slider from 'react-slick';
+
+import MobileSlider from './mobileSlide';
+import Slide from './slide';
+import styles from './index.module.scss';
 
 import { departments } from '../data';
-import Slider from 'react-slick';
-import Slide from './slide';
-import MobileSlider from './mobileSlide';
 
 function ProductSlider() {
   const [activeProduct, setActiveProduct] = useState(0);
@@ -30,7 +32,7 @@ function ProductSlider() {
     <div>
       <div className="container pt-0 pt-md-5">
         <div className="row pb-md-5">
-          <h1 className="heading-sm mx-4 pb-5 d-none d-md-block">
+          <h1 className={`mx-4 pb-5 d-none d-md-block ${styles.heading}`}>
             We have 20+ products and do over 7 million orders a day across{' '}
             <span className={`${activeProduct === 0 ? 'text-green-light' : 'text-white'}`}>
               Transport &amp; Logistics
@@ -53,15 +55,15 @@ function ProductSlider() {
             </span>
             .
           </h1>
-          <h1 className="text-lead px-5 mx-auto pb-5 d-md-none text-center font-demi">
+          <h1 className={`px-5 mx-auto pb-5 d-md-none text-center  ${styles.subHeading}`}>
             We have 20+ products and do <br />
             over 7 million orders a day
             <br /> across...
           </h1>
         </div>
       </div>
-      <div className="d-none d-md-block container-fluid">
-        <div className="product-wrapper">
+      <div className="d-none d-md-block container-fluid gojek-products">
+        <div className={`${styles.productWrapper}`}>
           <Slider {...settings}>
             {departments.map((data, i) => (
               <Slide data={data} activeProduct={activeProduct} key={i} />

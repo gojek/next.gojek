@@ -120,7 +120,7 @@ function Blog(props) {
               class="form-control search-blog px-0"
               style={{ borderBottom: '1px solid green' }}
               onChange={(event) => changekeyword(event.target.value)}
-              placeholder="Search blogs_"
+              placeholder="Search blogs (kubernetes, #firstprinciples, work from home, design)"
             />
             <div class="input-group-append" style={{ borderBottom: '1px solid green' }}>
               <span

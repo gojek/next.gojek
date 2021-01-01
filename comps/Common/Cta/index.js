@@ -3,18 +3,20 @@ function CommonCta(props) {
     <section className="commonFooter">
       <div className="px-5 pt-4 d-none d-md-block">
         <div className="container">
-          <div className="cta p-5">
-            <div className="col-12 col-lg-7 py-3">
-              <p className="text-white">
-                We’re dedicated to creating (and scaling) positive socio-economic impact for our
-                ecosystem of users.{' '}
-              </p>
-              <a className="link" href="/jobs" style={{ fontFamily: 'Maison Nueue Demi' }}>
-                Join Us
-                <img src="/img/arrow-right-yellow.svg" className="pl-2" alt="join Us" />
-              </a>
+          <a href="/jobs">
+            <div className="cta p-5">
+              <div className="col-12 col-lg-7 py-3">
+                <p className="text-white">
+                  We’re dedicated to creating (and scaling) positive socio-economic impact for our
+                  ecosystem of users.{' '}
+                </p>
+                <span style={{ fontFamily: 'Maison Nueue Demi' }} className="link">
+                  Join Us
+                  <img src="/img/arrow-right-yellow.svg" className="pl-2" alt="join Us" />
+                </span>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
       {props.mobile ? (

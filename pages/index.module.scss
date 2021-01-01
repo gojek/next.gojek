@@ -1,0 +1,91 @@
+@import '~/../../utils/styles/constants.scss';
+@import '~/../../utils/styles/variables.scss';
+
+.home {
+  background: url('/img/home/home-banner.jpg') no-repeat center center;
+  height: 80vh;
+  background-size: cover;
+  @media screen and (max-width: 576px) {
+    background: url('/img/home/mobile-banner.jpg') no-repeat center center;
+    height: 70vh;
+    background-size: cover;
+    .heading {
+      color: white;
+    }
+  }
+}
+
+.heading {
+  font-size: $font-xl;
+  font-family: $font-bold, sans-serif;
+}
+
+.products {
+  padding-top: 5rem;
+  padding-bottom: 10rem;
+  @media screen and (max-width: 576px) {
+    padding-bottom: 5rem;
+  }
+}
+
+// Once a call center.. section
+.gojekBg {
+  background: #ffffff url('/img/home/gojek-bg.svg') no-repeat top center;
+  background-size: cover;
+  @media screen and (max-width: 1200px) {
+    background-position: -192px center;
+  }
+  @media screen and (max-width: 576px) {
+    background-image: url('/img/home/mountain-mobile.svg');
+    background-position-y: 160px;
+    background-position-x: center;
+  }
+}
+
+.subHeading {
+  font-size: $font-l;
+  font-family: $font-bold, sans-serif;
+  line-height: 2.625rem;
+}
+
+.pointers {
+  list-style-type: square;
+  font-size: $font-m;
+  line-height: 1.7rem;
+  font-family: $extended-book, sans-serif;
+}
+.point {
+  font-size: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  @media screen and(max-width: $sm-break) {
+    font-size: 1rem;
+  }
+}
+
+// Funding section styles
+.fundingHeading {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-family: $font-bold, sans-serif;
+}
+.illustration {
+  @media screen and(min-width: $md-break) {
+    max-width: 80%;
+  }
+}
+
+.fundingDescription {
+  font-family: $maisonbook, sans-serif;
+  color: #303030;
+}
+
+// Social media section styles
+.socialMediaCard {
+  border-radius: 52px;
+}
+.socialMediaDescription {
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+}

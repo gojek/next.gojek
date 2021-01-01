@@ -129,10 +129,20 @@ function Footer(props) {
                 {!!errors.phone && errors.phone.message}
               </div>
               <div>
-                <input type="checkbox" /> I agree to the{' '}
+                <input
+                  type="checkbox"
+                  name="terms"
+                  ref={register({
+                    required: 'Privacy policy is required',
+                  })}
+                />{' '}
+                I agree to the{' '}
                 <a href="privacy-policy" target="_blank" className="text-success checkbox">
                   Privacy policy
                 </a>
+                <div className="invalid-feedback pl-3 d-block">
+                  {!!errors.terms && errors.terms.message ? errors.terms.message : ''}
+                </div>
               </div>
               <button className="btn rounded-pill bg-green mt-4 px-4 text-white" type="submit">
                 Submit

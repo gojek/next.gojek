@@ -1,7 +1,7 @@
 function Slide(props) {
   const { data } = props;
   const anchor = (
-    <a className="text-green-light link" href={data.linkURL}>
+    <a className="text-green-light link" target="_blank" href={data.linkURL}>
       {data.linkText}
     </a>
   );
