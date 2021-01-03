@@ -1027,6 +1027,72 @@ html {
 
     @media screen and (max-width: 576px) {
       height: 16px;
+      line-height: 16px;
+    }
+  }
+
+  .desktop {
+    .slick-dots {
+      display: flex !important;
+      background: white;
+      bottom: 36px;
+      max-width: 1000px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      border-radius: 32px;
+      padding: 16px 32px;
+      -ms-flex-pack: justify !important;
+      -webkit-justify-content: space-between !important;
+      justify-content: space-between !important;
+
+      li {
+        height: 24px;
+        width: 24px;
+
+        &::after {
+          height: 0.25rem;
+          position: absolute;
+          content: ' ';
+          left: 2rem;
+          top: 0.675rem;
+          right: 0;
+          background: black;
+          opacity: 0.25;
+          width: 4rem;
+          z-index: 0;
+        }
+
+        &:last-child {
+          &::after {
+            display: none;
+          }
+        }
+
+        &.slick-active {
+          button::before {
+            text-align: center;
+            width: 86px;
+            content: '';
+            background-image: url('/img/about-us/slider-indicator.svg');
+            background-position: center;
+            height: 48px;
+            opacity: 1;
+            border-radius: 32px;
+            margin-top: -12px;
+            margin-left: -32px;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+          }
+        }
+
+        button::before {
+          width: 24px;
+          height: 24px;
+          font-size: 16px;
+          line-height: 24px;
+          z-index: 1;
+        }
+      }
     }
   }
 
