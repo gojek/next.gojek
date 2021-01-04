@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 
 export function CTA(props) {
   return (
-    <div className="container">
+    <div className={`container ${styles.ctaContainer}`}>
       <a href={props.href} className={`${styles.ctaLink}`}>
         <section className={`${styles.ctaPurple} py-4`}>
           <div className="row justify-content-center align-items-center">

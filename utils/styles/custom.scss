@@ -286,24 +286,17 @@ section {
   }
 }
 
-.values-slider {
-  .slick-slide {
-    margin-right: 2rem;
-    margin-left: 2rem;
-  }
-}
-
-#openingsBlogs {
-  .text-lead {
-    font-family: $header-font;
-  }
-  @media screen and (max-width: 576px) {
-    .slick-prev,
-    .slick-next {
-      display: none !important;
-    }
-  }
-}
+// #openingsBlogs {
+//   .text-lead {
+//     font-family: $header-font;
+//   }
+//   @media screen and (max-width: 576px) {
+//     .slick-prev,
+//     .slick-next {
+//       display: none !important;
+//     }
+//   }
+// }
 
 .product {
   p {
@@ -311,186 +304,31 @@ section {
   }
 }
 
-.life-at-gojek {
-  background: url('/img/life-at-gojek/banner.png') no-repeat center right;
-  background-size: cover;
-  background-position: center;
+// .slider-shilpa {
+//   .slick-active {
+//     margin-right: 10px;
+//     &:not(.slick-current) {
+//       margin-left: 10px;
+//     }
+//     &:last-child {
+//       margin-right: 0px;
+//     }
+//   }
+//   .media {
+//     img {
+//       max-width: 100px;
+//     }
+//   }
+// }
 
-  @media screen and (max-width: 576px) {
-    background: url('/img/life-at-gojek/mobile-banner.png') no-repeat center center;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .bannerHeading {
-    font-size: 2.82rem;
-    @media screen and (max-width: 576px) {
-      font-size: 2rem;
-    }
-  }
-
-  .heading-sm {
-    @media screen and (max-width: 576px) {
-      font-size: 18px;
-      line-height: 1.9rem;
-      font-family: $demi;
-    }
-  }
-}
-
-.slider-shilpa {
-  .slick-active {
-    margin-right: 10px;
-    &:not(.slick-current) {
-      margin-left: 10px;
-    }
-    &:last-child {
-      margin-right: 0px;
-    }
-  }
-  .media {
-    img {
-      max-width: 100px;
-    }
-  }
-}
-
-.single-card {
-  display: inline-block;
-  position: absolute;
-  text-align: center;
-  font-size: 1.875rem;
-  border-radius: 20px;
-  height: 530px;
-}
-
-.social-impact {
-  h1 {
-    font-family: $header-font;
-    font-size: 2.812rem;
-  }
-  .card {
-    min-height: 32.5rem;
-
-    .title {
-      font-size: 1.75rem;
-      font-family: $font-bold;
-      line-height: normal;
-    }
-  }
-}
-
-.values {
-  .slide {
-    align-items: flex-start;
-  }
-  @media screen and (max-width: 576px) {
-    .slick-list {
-      padding: 0 !important;
-    }
-  }
-  img {
-    max-width: 175px;
-    margin-right: 3rem;
-    @media screen and (max-width: 576px) {
-      max-width: 100px;
-      margin-right: 1rem;
-    }
-  }
-
-  .text-lead {
-    font-family: $header-font;
-  }
-
-  .slick-slider {
-    .slick-slide.slick-active {
-      max-width: 540px;
-    }
-    .slick-dots {
-      justify-content: center;
-      @media screen and (min-width: 576px) {
-        bottom: -6rem;
-        margin-left: -8rem;
-      }
-      @media screen and (max-width: 576px) {
-        margin-bottom: -4rem !important;
-      }
-      li {
-        min-width: 2rem !important;
-        @media screen and (max-width: 576px) {
-          margin-bottom: 1rem;
-          min-width: 1rem !important;
-        }
-        button {
-          min-width: 1px !important;
-          width: auto;
-          height: auto;
-          @media screen and (min-width: 576px) {
-            width: 2rem;
-            margin: 0 1rem;
-            height: 4px;
-            border-radius: 5px;
-          }
-          border-radius: 50%;
-          padding: 3px;
-          background-color: #d2d2d2;
-        }
-        ::before {
-          content: '';
-          padding: 0;
-        }
-        &.slick-active {
-          button {
-            background-color: #101820;
-          }
-        }
-      }
-    }
-    .slick-next {
-      right: 50px;
-    }
-    .slick-prev {
-      left: -100px;
-    }
-    .slick-next,
-    .slick-prev {
-      box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.5);
-      background-color: #ffffff;
-      text-align: center;
-      height: 43px;
-      width: 42px;
-      border: 1px solid #e0e0e0;
-      border-radius: 50%;
-      &:before {
-        font-size: 1.25rem;
-        color: #494a4a;
-      }
-      @media screen and (max-width: 576px) {
-        display: none !important;
-      }
-    }
-    @media screen and (min-width: 2000px) {
-      .slick-slide {
-        max-width: 580px;
-      }
-    }
-  }
-  .swiper-slide {
-    width: 510px !important;
-    margin-left: -50px;
-    &.swiper-slide-prev {
-      width: auto !important;
-      margin-left: 0;
-      margin-right: 0 !important;
-    }
-    &.swiper-slide-active {
-      margin-left: 0;
-    }
-    &.swiper-slide-next {
-      margin-left: 0;
-    }
-  }
-}
+// .single-card {
+//   display: inline-block;
+//   position: absolute;
+//   text-align: center;
+//   font-size: 1.875rem;
+//   border-radius: 20px;
+//   height: 530px;
+// }
 
 .blog-page {
   .banner-head {
@@ -535,34 +373,35 @@ section {
   }
 }
 
-.perks {
-  .card-columns {
-    grid-column-gap: 2rem;
-    column-gap: 2rem;
-    .card {
-      margin-bottom: 2.5rem;
-      padding: 2rem;
-    }
-  }
-  @media screen and(max-width: 576px) {
-    .heading-sm {
-      font-size: 1.125rem;
-      line-height: 1.6rem;
-    }
-    p {
-      font-size: 1rem;
-    }
-    .card-columns {
-      grid-column-gap: 1rem;
-      column-gap: 1rem;
-      column-count: 2;
-      .card {
-        margin-bottom: 1rem;
-        padding: 2rem 1rem;
-      }
-    }
-  }
-}
+// .perks {
+//   .card-columns {
+//     grid-column-gap: 2rem;
+//     column-gap: 2rem;
+//     .card {
+//       margin-bottom: 2.5rem;
+//       padding: 2rem;
+//     }
+//   }
+//   @media screen and(max-width: 576px) {
+//     .heading-sm {
+//       font-size: 1.125rem;
+//       line-height: 1.6rem;
+//     }
+//     p {
+//       font-size: 1rem;
+//     }
+//     .card-columns {
+//       grid-column-gap: 1rem;
+//       column-gap: 1rem;
+//       column-count: 2;
+//       .card {
+//         margin-bottom: 1rem;
+//         padding: 2rem 1rem;
+//       }
+//     }
+//   }
+// }
+
 .footer-cta {
   border-radius: 3rem;
   .footer-img {
@@ -950,7 +789,7 @@ html {
   }
 }
 
-// CSS for Social media slick carouse for mobile device - Home page
+// CSS for Social media slick carousel for mobile device - Home page
 .social-media {
   .slick-list {
     margin-left: 3rem;
@@ -959,5 +798,91 @@ html {
   .slick-next,
   .slick-prev {
     display: none !important;
+  }
+}
+
+// CSS for Values slick carousel - Life@GOjek
+
+.values {
+  .slide {
+    align-items: flex-start;
+  }
+  @media screen and (max-width: 576px) {
+    .slick-list {
+      padding: 0 !important;
+    }
+  }
+  .slick-slider {
+    .slick-slide.slick-active {
+      max-width: 540px;
+    }
+    .slick-dots {
+      justify-content: center;
+      @media screen and (min-width: 576px) {
+        bottom: -6rem;
+        margin-left: -8rem;
+      }
+      @media screen and (max-width: 576px) {
+        margin-bottom: -4rem !important;
+      }
+      li {
+        min-width: 2rem !important;
+        @media screen and (max-width: 576px) {
+          margin-bottom: 1rem;
+          min-width: 1rem !important;
+        }
+        button {
+          min-width: 1px !important;
+          width: auto;
+          height: auto;
+          @media screen and (min-width: 576px) {
+            width: 2rem;
+            margin: 0 1rem;
+            height: 4px;
+            border-radius: 5px;
+          }
+          border-radius: 50%;
+          padding: 3px;
+          background-color: #d2d2d2;
+        }
+        ::before {
+          content: '';
+          padding: 0;
+        }
+        &.slick-active {
+          button {
+            background-color: #101820;
+          }
+        }
+      }
+    }
+    .slick-next {
+      right: 50px;
+    }
+    .slick-prev {
+      left: -100px;
+    }
+    .slick-next,
+    .slick-prev {
+      box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.5);
+      background-color: #ffffff;
+      text-align: center;
+      height: 43px;
+      width: 42px;
+      border: 1px solid #e0e0e0;
+      border-radius: 50%;
+      &:before {
+        font-size: 1.25rem;
+        color: #494a4a;
+      }
+      @media screen and (max-width: 576px) {
+        display: none !important;
+      }
+    }
+    @media screen and (min-width: 2000px) {
+      .slick-slide {
+        max-width: 580px;
+      }
+    }
   }
 }

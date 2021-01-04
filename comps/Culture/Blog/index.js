@@ -7,6 +7,14 @@ const sliderSettings = {
   dots: false,
   slidesToShow: 1.2,
   slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 425,
+      settings: {
+        arrows: false,
+      },
+    },
+  ],
 };
 
 function Blog() {

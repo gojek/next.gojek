@@ -201,17 +201,17 @@
 }
 
 /* MASONRY */
-.single-perk-card {
-  border-radius: 2.5rem;
-  background-position: center bottom !important;
-  background-repeat: no-repeat;
+// .single-perk-card {
+//   border-radius: 2.5rem;
+//   background-position: center bottom !important;
+//   background-repeat: no-repeat;
 
-  @media screen and(max-width: 576px) {
-    &.perk-img {
-      height: 331px !important;
-    }
-    &.perk-card {
-      height: 218px !important;
-    }
-  }
-}
+//   @media screen and(max-width: 576px) {
+//     &.perk-img {
+//       height: 331px !important;
+//     }
+//     &.perk-card {
+//       height: 218px !important;
+//     }
+//   }
+// }
