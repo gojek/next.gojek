@@ -85,7 +85,7 @@ function Navbar(props) {
       );
     }
   };
-  console.log('router.pathname', router.pathname);
+
   return (
     <nav className="navbar fixed-top navbar-expand-lg bg-transparent pt-3 pt-md-5 main-nav">
       <div className="container pt-3 pt-md-0">
