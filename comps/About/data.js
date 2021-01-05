@@ -56,7 +56,7 @@ export const milestones = [
     bgPattern: 'about-pattern-b',
     title: 'The big rewrite',
     description:
-      'Downtimes were a routine affair and leaky faucets needed to be fixed. <br/> "No project has a budget and impact as big as this in Gojek\'s history"<br/> - From Nadiem’s internal mail.',
+      'Downtimes were a routine affair and leaky faucets needed to be fixed. <br class="d-none d-md-block"/> "No project has a budget and impact as big as this in Gojek\'s history"<br/> - From Nadiem’s internal mail.',
     linkText: 'Read our story',
     linkURL:
       'https://blog.gojekengineering.com/how-go-jek-manages-1-million-drivers-with-12-engineers-part-2-35f6a27a0faf',

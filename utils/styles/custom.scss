@@ -706,6 +706,38 @@ html {
       max-width: 224px;
       margin: 0 auto;
     }
+    @media screen and (max-width: 576px) {
+      .heading {
+        font-size: 1.875rem;
+      }
+      .link {
+        font-size: 18px;
+      }
+      .slick-dots {
+        bottom: -50px;
+        li {
+          min-width: 0.5rem !important;
+          button {
+            min-width: 1px !important;
+            width: 0.5rem;
+            // margin: 0 1rem;
+            border-radius: 50%;
+            height: 4px;
+            padding: 3px;
+            background-color: #d2d2d2;
+          }
+          ::before {
+            content: '';
+            padding: 0;
+          }
+          &.slick-active {
+            button {
+              background-color: #00aa13;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

@@ -4,14 +4,21 @@ import MobileSlider from './mobileSlide';
 import { milestones } from './data';
 
 function Milestones() {
-
   const settings = {
-    arrows: false,
     dots: true,
     infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     cssEase: 'ease-in-out',
+    responsive: [
+      {
+        breakpoint: 576,
+        settings: {
+          arrows: false,
+          slidesToShow: 1.1,
+        },
+      },
+    ],
   };
 
   return (
@@ -24,7 +31,7 @@ function Milestones() {
         </Slider>
       </div>
 
-      <div className="d-md-none p-5 mobile">
+      <div className="d-md-none py-5 pl-5 pr-0 mobile bg-black">
         <Slider {...settings}>
           {milestones.map((data, i) => (
             <MobileSlider data={data} key={i} />
