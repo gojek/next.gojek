@@ -21,13 +21,13 @@ import 'react-phone-input-2/lib/style.css';
 // import 'slick-carousel/slick/slick-theme.css';
 
 function MyApp({ Component, pageProps }) {
-  const timeoutRef = React.useRef();
-
-  const clearTimer = React.useCallback(() => clearTimeout(timeoutRef.current), []);
+  const { pathname } = useRouter();
 
   const [offline, setOffline] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
         .register('/sw.js')
@@ -35,16 +35,7 @@ function MyApp({ Component, pageProps }) {
     } else {
       console.log('Service worker not supported');
     }
-
-    if (timeoutRef.current) clearTimer();
-    timeoutRef.current = setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 1000);
-
-    return () => {
-      clearTimer();
-    };
-  }, [clearTimer]);
+  }, [pathname]);
 
   // to handle app going offline
   typeof window !== 'undefined' &&
