@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="14px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>ic_keyboard_backspace_24px copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Page-Copy-9" transform="translate(-359.000000, -7517.000000)" fill="#fff">
+            <g id="ic_keyboard_backspace_24px-copy" transform="translate(368.000000, 7524.000000) rotate(-180.000000) translate(-368.000000, -7524.000000) translate(359.000000, 7517.000000)">
+                <path d="M14.5857864,8 L1.0001,8 C0.44781525,8 0.000100000005,7.55228475 0.000100000005,7 C0.000100000005,6.44771525 0.44781525,6 1.0001,6 L14.5857864,6 L10.2928932,1.70710678 C9.90236893,1.31658249 9.90236893,0.683417511 10.2928932,0.292893219 C10.6834175,-0.0976310729 11.3165825,-0.0976310729 11.7071068,0.292893219 L17.7071068,6.29289322 C18.0976311,6.68341751 18.0976311,7.31658249 17.7071068,7.70710678 L11.7071068,13.7071068 C11.3165825,14.0976311 10.6834175,14.0976311 10.2928932,13.7071068 C9.90236893,13.3165825 9.90236893,12.6834175 10.2928932,12.2928932 L14.5857864,8 Z" id="navigation/24/ic_next" transform="translate(9.000050, 7.000000) rotate(-180.000000) translate(-9.000050, -7.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

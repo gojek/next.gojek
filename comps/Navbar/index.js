@@ -55,31 +55,33 @@ function Navbar(props) {
   const joinUsButton = (item) => {
     if (scrolled) {
       return (
-        <a
-          className={
-            router.pathname === '/jobs' || router.pathname === '/jobs/all'
-              ? 'nav-link nav-links'
-              : 'button rounded-pill px-3 py-2'
-          }
-          href={item.link}
-        >
-          {item.name}{' '}
-          {item.link === router.pathname ? <span className="sr-only">(current)</span> : ''}
-        </a>
+        <Link href={item.link}>
+          <a
+            className={
+              router.pathname === '/jobs' || router.pathname === '/jobs/all'
+                ? 'nav-link nav-links'
+                : 'button rounded-pill px-3 py-2'
+            }
+          >
+            {item.name}{' '}
+            {item.link === router.pathname ? <span className="sr-only">(current)</span> : ''}
+          </a>
+        </Link>
       );
     } else {
       return (
-        <a
-          className={
-            router.pathname === '/jobs' || router.pathname === '/jobs/all'
-              ? 'nav-link nav-links'
-              : 'button rounded-pill px-3 py-2'
-          }
-          href={item.link}
-        >
-          {item.name}{' '}
-          {item.link === router.pathname ? <span className="sr-only">(current)</span> : ''}
-        </a>
+        <Link href={item.link}>
+          <a
+            className={
+              router.pathname === '/jobs' || router.pathname === '/jobs/all'
+                ? 'nav-link nav-links'
+                : 'button rounded-pill px-3 py-2'
+            }
+          >
+            {item.name}{' '}
+            {item.link === router.pathname ? <span className="sr-only">(current)</span> : ''}
+          </a>
+        </Link>
       );
     }
   };
@@ -87,9 +89,9 @@ function Navbar(props) {
   return (
     <nav className="navbar fixed-top navbar-expand-lg bg-transparent pt-3 pt-md-5 main-nav">
       <div className="container pt-3 pt-md-0">
-        <a className="navbar-brand" href="/">
-          {logo()}
-        </a>
+        <Link href="/">
+          <a className="navbar-brand">{logo()}</a>
+        </Link>
 
         <button
           className={`btn d-block d-lg-none ${
@@ -117,7 +119,8 @@ function Navbar(props) {
               <li
                 className={`nav-item px-3 ${
                   item.link === router.pathname ||
-                  (router.pathname === '/jobs/all' && item.link === '/jobs')
+                  (router.pathname === '/jobs/all' && item.link === '/jobs') ||
+                  (router.pathname === '/blog/all' && item.link === '/blog')
                     ? 'active'
                     : ''
                 }`}
@@ -126,14 +129,16 @@ function Navbar(props) {
                 {item.type && item.type === 'button' ? (
                   joinUsButton(item)
                 ) : (
-                  <a className="nav-link nav-links" href={item.link}>
-                    {item.name}{' '}
-                    {item.link === router.pathname ? (
-                      <span className="sr-only">(current)</span>
-                    ) : (
-                      ''
-                    )}
-                  </a>
+                  <Link href={item.link}>
+                    <a className="nav-link nav-links">
+                      {item.name}{' '}
+                      {item.link === router.pathname ? (
+                        <span className="sr-only">(current)</span>
+                      ) : (
+                        ''
+                      )}
+                    </a>
+                  </Link>
                 )}
               </li>
             ))}
