@@ -1,27 +1,5 @@
-.search {
-  background: #fff;
-  // padding: 0.5rem 1rem;
+.searchBox {
   position: relative;
-  top: 0;
-  left: 0;
-  width: 90%;
-  // height: 40px;
-  outline: none;
-  border: transparent;
-  // border-radius: 6px;
-  transition: all 0.5s;
-  &::after {
-    position: absolute;
-    left: 0;
-    width: 100px;
-    top: 10px;
-    background-color: red;
-    content: '*';
-    // background: url('/img/blog/search.svg');
-  }
-}
-
-.search:focus {
-  width: 90%;
-  right: 100%;
+  right: 0;
+  width: 94%;
 }

@@ -18,10 +18,16 @@
 }
 
 .productCard {
-  min-height: 36.75rem;
+  min-height: 30.75rem;
 
   border-radius: 3.25rem;
   @media screen and(min-width: $sm-break) and (max-width: $md-break) {
-    min-height: 48rem;
+    min-height: 40rem;
+  }
+}
+
+.productLogo {
+  @media screen and(max-width: 576px) {
+    height: 1.5rem;
   }
 }

@@ -5,12 +5,12 @@ function CommonCta(props) {
         <div className="container">
           <a href="/jobs">
             <div className="cta p-5">
-              <div className="col-12 col-lg-7 py-3">
+              <div className="col-12 col-lg-7 py-3" style={{ fontFamily: 'Maison Nueue Demi' }}>
                 <p className="text-white">
                   We’re dedicated to creating (and scaling) positive socio-economic impact for our
                   ecosystem of users.{' '}
                 </p>
-                <span style={{ fontFamily: 'Maison Nueue Demi' }} className="link">
+                <span className="link">
                   Join Us
                   <img src="/img/arrow-right-yellow.svg" className="pl-2" alt="join Us" />
                 </span>

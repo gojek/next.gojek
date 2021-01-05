@@ -2,15 +2,16 @@
 @import '~/../../utils/styles/variables.scss';
 
 .home {
-  background: url('/img/home/home-banner.jpg') no-repeat center center;
+  background: url('/img/home/gojek-banner.png') no-repeat center center;
   height: 80vh;
   background-size: cover;
   @media screen and (max-width: 576px) {
-    background: url('/img/home/mobile-banner.jpg') no-repeat center center;
+    background: url('/img/home/mobile-banner-new.png') no-repeat center bottom;
     height: 70vh;
     background-size: cover;
     .heading {
-      color: white;
+      font-size: 1.875rem;
+      font-family: $font-extra-bold;
     }
   }
 }
@@ -65,9 +66,12 @@
 
 // Funding section styles
 .fundingHeading {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   line-height: 3rem;
   font-family: $font-bold, sans-serif;
+  @media screen and(max-width: $sm-break) {
+    font-size: 1.85rem;
+  }
 }
 .illustration {
   @media screen and(min-width: $md-break) {
@@ -78,6 +82,10 @@
 .fundingDescription {
   font-family: $maisonbook, sans-serif;
   color: #303030;
+  font-size: 1.125rem;
+  @media screen and (max-width: 567px) {
+    font-size: 1rem;
+  }
 }
 
 // Social media section styles

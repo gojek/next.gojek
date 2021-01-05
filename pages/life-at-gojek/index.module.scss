@@ -18,7 +18,7 @@
   font-size: 2.82rem;
   font-family: $font-bold;
   @media screen and (max-width: 576px) {
-    font-size: 2rem;
+    font-size: 1.875rem;
   }
 }
 .subHeading {
@@ -26,9 +26,9 @@
   font-family: $font-bold, sans-serif;
   line-height: 2.625rem;
   @media screen and (max-width: 576px) {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.9rem;
-    font-family: $demi;
+    // font-family: $demi;
   }
 }
 

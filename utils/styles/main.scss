@@ -444,7 +444,11 @@ body {
   font-family: $navbar-font, 'Font Awesome 5 Free';
   font-size: 0.875rem;
   line-height: normal;
-  color: #fff !important;
+}
+.subscribe-whatsapp {
+  .form-control {
+    color: #fff !important;
+  }
 }
 
 .select__control {
@@ -965,7 +969,7 @@ a:hover {
 .commonFooter,
 .joinus-cta {
   background-color: #101820;
-
+  color: $title-font;
   .cta {
     background-color: #00aa13;
     border-radius: 48px;
@@ -992,6 +996,10 @@ a:hover {
       color: #fff200;
       &:hover {
         color: #fff200;
+      }
+      @media screen and (max-width: 576px) {
+        font-family: $title-font;
+        font-size: 20px;
       }
     }
   }

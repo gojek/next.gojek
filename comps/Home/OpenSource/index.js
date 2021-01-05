@@ -33,13 +33,14 @@ function Project(props) {
             community.
           </p>
 
-          <Link
-            href="https://github.com/gojek"
-            target="_blank"
-            text="Check them out"
-            color="text-green-light"
-            icon="/img/right-arrow.svg"
-          />
+          <a href="https://github.com/gojek" className={`${styles.link}`} target="_blank">
+            Check them out
+            <img
+              src="/img/right-arrow.svg"
+              className="align-middle ml-2 img-fluid d-inline-block"
+              alt="Open source"
+            />
+          </a>
         </div>
         <div className="col-md-7 offset-md-1 opensource pt-2 pt-md-0">
           <Slider {...settings}>

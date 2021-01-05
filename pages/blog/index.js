@@ -72,7 +72,6 @@ function Blog(props) {
   ];
 
   const inputRef = useRef(null);
-  console.log('inputRef', inputRef.current);
   return (
     <div className="text-center text-md-left blog-page">
       <Head>
@@ -119,50 +118,52 @@ function Blog(props) {
           />
         )}
 
-        {/* {clicked && ( */}
-        <div class="input-group my-5">
+        <div class="input-group  py-5">
           <label htmlFor="search" class="sr-only">
             Keyword
           </label>
-          <input
-            type="text"
-            ref={inputRef}
-            class={`${styles.search} ${clicked ? 'active' : ''}`}
-            style={{ borderBottom: '1px solid green' }}
-            onChange={(event) => changekeyword(event.target.value)}
-            placeholder="Search blogs (kubernetes, #firstprinciples, work from home, design)"
-            onBlur={(event) => handleClose()}
-          />
 
-          <div class="input-group-append" style={{ borderBottom: '1px solid green' }}>
-            <span
-              aria-hidden="true"
-              style={{ fontSize: '2rem' }}
-              className="text-green-light pointer"
-              onClick={handleClose}
-            >
-              &times;
-            </span>
+          <div class={`${styles.searchBox}`}>
+            <input
+              type="text"
+              placeholder="Search"
+              className={`input-search ${clicked ? 'active-link visible mb-5' : 'invisible mb-0'}`}
+              ref={inputRef}
+              onChange={(event) => changekeyword(event.target.value)}
+              placeholder="Search blogs (kubernetes, #firstprinciples, work from home, design)"
+            />
           </div>
+
+          {clicked && (
+            <div class="input-group-append" style={{ borderBottom: '1px solid green' }}>
+              <span
+                aria-hidden="true"
+                style={{ fontSize: '2rem' }}
+                className="text-green-light pointer"
+                onClick={handleClose}
+              >
+                &times;
+              </span>
+            </div>
+          )}
         </div>
-        {/* )} */}
       </div>
 
       {keyword === '' && (
-        <section className="post-feed container mt-5">
+        <section className={`post-feed container ${clicked ? 'mt-5' : ''}`}>
           <BlogNew heading="Latest" posts={props.latestPosts} link="/blog/all" pageName="blog" />
         </section>
       )}
 
-      {/* {keyword === '' && (
+      {keyword === '' && (
         <section className="py-3" style={{ backgroundColor: '#f2f2f2' }}>
           <div className="post-feed">
             <FeaturedPosts heading="Featured Articles" posts={props.featuredPosts} />
           </div>
         </section>
-      )} */}
+      )}
 
-      {/* {keyword === '' && (
+      {keyword === '' && (
         <section className="post-feed container mt-5">
           <BlogNew
             heading="Tech"
@@ -277,7 +278,7 @@ function Blog(props) {
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
 
       {/* CTA */}
       <CommonCta mobile />
@@ -289,59 +290,59 @@ function Blog(props) {
 Blog.getInitialProps = async () => {
   const latestPosts = await getLatestPosts();
   const tags = await getTags();
-  // const featuredPosts = await getFeaturedPosts();
-  // const techPosts = await getPosts('tech');
-  // const dataPosts = await getPosts('data');
-  // const culturePosts = await getPosts('culture');
-  // const newsPosts = await getPosts('news');
-  // const designPosts = await getPosts('design');
-  // const storiesPosts = await getPosts('stories');
+  const featuredPosts = await getFeaturedPosts();
+  const techPosts = await getPosts('tech');
+  const dataPosts = await getPosts('data');
+  const culturePosts = await getPosts('culture');
+  const newsPosts = await getPosts('news');
+  const designPosts = await getPosts('design');
+  const storiesPosts = await getPosts('stories');
 
-  // featuredPosts.forEach((post) => {
-  //   post.featured = false;
-  // });
-  // techPosts.forEach((post) => {
-  //   post.featured = false;
-  // });
-  // techPosts[0].featured = true;
+  featuredPosts.forEach((post) => {
+    post.featured = false;
+  });
+  techPosts.forEach((post) => {
+    post.featured = false;
+  });
+  techPosts[0].featured = true;
 
-  // dataPosts.forEach((post) => {
-  //   post.featured = false;
-  // });
-  // dataPosts[0].featured = true;
+  dataPosts.forEach((post) => {
+    post.featured = false;
+  });
+  dataPosts[0].featured = true;
 
-  // newsPosts.forEach((post) => {
-  //   post.featured = false;
-  // });
-  // newsPosts[0].featured = true;
+  newsPosts.forEach((post) => {
+    post.featured = false;
+  });
+  newsPosts[0].featured = true;
 
-  // culturePosts.forEach((post) => {
-  //   post.featured = false;
-  // });
-  // culturePosts[0].featured = true;
+  culturePosts.forEach((post) => {
+    post.featured = false;
+  });
+  culturePosts[0].featured = true;
 
-  // designPosts.forEach((post) => {
-  //   post.featured = false;
-  // });
-  // designPosts[0].featured = true;
+  designPosts.forEach((post) => {
+    post.featured = false;
+  });
+  designPosts[0].featured = true;
 
-  // storiesPosts.forEach((post) => {
-  //   post.featured = false;
-  // });
-  // storiesPosts[0].featured = true;
+  storiesPosts.forEach((post) => {
+    post.featured = false;
+  });
+  storiesPosts[0].featured = true;
 
   // Featured artticles
 
   return {
     latestPosts,
     tags,
-    // featuredPosts,
-    // techPosts,
-    // dataPosts,
-    // newsPosts,
-    // culturePosts,
-    // designPosts,
-    // storiesPosts,
+    featuredPosts,
+    techPosts,
+    dataPosts,
+    newsPosts,
+    culturePosts,
+    designPosts,
+    storiesPosts,
   };
 };
 

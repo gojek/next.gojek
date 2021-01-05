@@ -247,6 +247,9 @@ section {
       font-size: 20px;
       font-family: $demi;
       color: #bce194;
+      @media screen and (max-width: 576px) {
+        font-size: 1.25rem;
+      }
     }
   }
 
@@ -885,4 +888,42 @@ html {
       }
     }
   }
+}
+
+// Blog search animation
+
+.input-search {
+  position: absolute;
+  width: 0px;
+  padding: 0.75rem 0;
+  border: 0;
+  transition: all 0.8s ease;
+  &::placeholder {
+    opacity: 0; /* Firefox */
+  }
+}
+// label[for='search'] {
+//   content: url('/img/blog/search.svg');
+//   width: 1.5rem;
+//   margin-right: 12px;
+//   margin-bottom: 0;
+//   transition: all 0.8s ease;
+// }
+
+.active-link {
+  width: 100%;
+  border-bottom: 1px solid green;
+  right: 0;
+  outline: none;
+  &::placeholder {
+    opacity: 1; /* Firefox */
+  }
+}
+
+.search-btn {
+  transition: all 0.8s ease;
+}
+
+.animate {
+  right: 90%;
 }

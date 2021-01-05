@@ -24,7 +24,7 @@ function Home(props) {
         <div className="container">
           <div className="row align-items-md-center align-items-start">
             <h1 className={`pt-5 px-4 ${styles.heading}`} style={{ marginTop: '50px' }}>
-              Gojek is a<br className="d-md-block d-none" /> SuperApp.{' '}
+              Gojek is a<br /> SuperApp.{' '}
             </h1>
           </div>
         </div>
@@ -72,13 +72,14 @@ function Home(props) {
       {/* Tech Facts */}
       <section className="bg-gray pt-5">
         <div className="container pt-md-5">
-          <h1 className={`text-center py-5 ${styles.fundingHeading}`}>
-            Our tech powers Southeast Asia
+          <h1 className={`text-center ${styles.fundingHeading}`}>
+            Our tech powers
+            <br className="d-block d-md-none" /> Southeast Asia
           </h1>
 
           <TechFacts />
 
-          <div className="row mt-md-5 pt-md-5 d-flex">
+          <div className="row mt-md-5 d-flex">
             <div className="col-4 mt-md-5 pt-md-5 align-self-center">
               <img
                 src="./img/home/funding/gojek-funding.png"

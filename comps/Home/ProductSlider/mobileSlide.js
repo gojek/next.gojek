@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import styles from './index.module.scss';
+
 function MobileSlider(props) {
   const [expanded, setExpanded] = useState(false);
 
@@ -27,7 +29,11 @@ function MobileSlider(props) {
         <div className="text-left w-100 pt-5" id={data.id}>
           {data.products.map((product) => (
             <div className="mb-4" key={product.id}>
-              <img src={product.img} alt={product.alt} className="img-fluid mb-2" />
+              <img
+                src={product.img}
+                alt={product.alt}
+                className={`img-fluid mb-2 ${styles.productLogo}`}
+              />
               <p
                 className="mb-0 prod-desc"
                 dangerouslySetInnerHTML={{

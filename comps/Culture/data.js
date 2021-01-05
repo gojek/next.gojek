@@ -395,7 +395,7 @@ export const teams = [
   },
 ];
 
-export const temsSliderSettings = {
+export const teamsSliderSettings = {
   infinite: true,
   dots: true,
   slidesToShow: 2,

@@ -3,14 +3,14 @@ import _ from 'underscore';
 
 import styles from '../index.module.scss';
 
-import { temsSliderSettings, values } from '../data';
+import { teamsSliderSettings, values } from '../data';
 
 function Values() {
   return (
     <div className="row pb-5">
       <div className="col-md-2"></div>
       <div className="col-md-10 px-0 pb-5">
-        <Slider {...temsSliderSettings}>
+        <Slider {...teamsSliderSettings}>
           {values.map((value, index) => {
             return (
               <div className="px-3" key={index}>
