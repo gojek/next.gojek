@@ -329,13 +329,12 @@ class JobsList extends Component {
                             onClick={() => this.handleExpand()}
                             className="text-white link"
                           >
-                            View jobs
-                            <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+                            View jobs <img src="/img/white-arrow-right.svg" alt="join Us" />
                           </a>
                         )}
                         {filters.length == 0 && this.state.keywordList.length == 0 && (
                           <a href="/jobs/all" className="text-white link">
-                            View all jobs <img src="/img/arrow-right-yellow.svg" alt="join Us" />
+                            View all jobs <img src="/img/white-arrow-right.svg" alt="join Us" />
                           </a>
                         )}
                       </div>
@@ -373,8 +372,7 @@ class JobsList extends Component {
                     <div className="col-5 px-0">
                       {(filters.length > 0 || this.state.keywordList.length > 0) && (
                         <a href="#" onClick={() => this.handleExpand()} className="text-white link">
-                          Filters
-                          <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+                          Filters <img src="/img/white-arrow-right.svg" alt="join Us" />
                         </a>
                       )}
                     </div>
