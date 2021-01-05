@@ -45,13 +45,9 @@ function BlogDetails(props) {
       <Head>
         <title>Gojek | Blogs</title>
       </Head>
-      <Navbar whiteNav />
-      {/* banner section */}
-      <section
-        className="py-5 d-flex align-items-center"
-        style={{ backgroundColor: '#00a913', minHeight: '20vh' }}
-      ></section>
-      <section className="pb-5">
+      <Navbar />
+
+      <section className="pb-5 mt-5 pt-5">
         <div className="container">
           <div className="row">
             <article className="post-details">
