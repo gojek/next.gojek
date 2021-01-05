@@ -445,6 +445,11 @@ body {
   font-size: 0.875rem;
   line-height: normal;
 }
+.subscribe-whatsapp {
+  .form-control {
+    color: #fff !important;
+  }
+}
 
 .select__control {
   border: none !important;
@@ -638,9 +643,7 @@ body {
   }
 }
 
-#blogs,
-// #stories,
-#openingsBlogs {
+#blogs {
   .list {
     padding-top: 7rem;
   }
@@ -663,14 +666,6 @@ body {
   }
 }
 
-#funding {
-  @media screen and (min-width: $lg-break) {
-    background-repeat: no-repeat;
-    background-position: left;
-    background: linear-gradient(to right, #f7ce55 40%, #f7ce55 40%, #fff 0%, #fff 65%, #fff 65%);
-  }
-}
-
 // Slick Slider
 .slick-next:before,
 .slick-prev:before {
@@ -688,65 +683,16 @@ body {
   content: '\f054';
 }
 
-// .slick-prev {
-//   left: -10px;
-//   z-index: 1;
-// }
+// #impact-stories-carousel {
+//   .carousel-indicators {
+//     margin: 0;
+//     bottom: -4rem;
 
-// .slick-next {
-//   right: -10px;
-//   z-index: 1;
-// }
-
-.product-wrapper {
-  @media screen and (min-width: $lg-break) {
-    .slick-prev {
-      left: -50px;
-    }
-
-    .slick-next {
-      right: -50px;
-    }
-  }
-}
-
-// .slick-dots {
-//   display: flex !important;
-//   justify-content: space-around;
-//   @media screen and (max-width: $lg-break) {
-//     flex-wrap: wrap;
-//     margin-bottom: -2rem;
-//   }
-
-//   li {
-//     min-width: 9rem;
-//     color: #fff;
-//     font-weight: normal;
-//   }
-//   .slick-active {
-//     opacity: 1;
-//     font-family: $title-font;
-
-//     &:after {
-//       content: '';
-//       display: block;
-//       width: 25%;
-//       margin: 0.5rem auto;
-//       border-bottom: 1px solid #fff;
+//     li {
+//       flex: 1 1 auto;
 //     }
 //   }
 // }
-
-#impact-stories-carousel {
-  .carousel-indicators {
-    margin: 0;
-    bottom: -4rem;
-
-    li {
-      flex: 1 1 auto;
-    }
-  }
-}
 
 // Jobs Css
 
@@ -796,94 +742,6 @@ body {
 
   .header {
     font-size: 2rem;
-  }
-}
-
-.social-media {
-  @media screen and (min-width: 768px) {
-    .intro {
-      width: 50%;
-    }
-  }
-
-  .slick-list {
-    margin-left: 3rem;
-  }
-
-  .slick-next,
-  .slick-prev {
-    display: none !important;
-  }
-  .btn {
-    width: 2rem;
-    height: 2rem;
-    padding-left: 0;
-    padding-right: 0;
-
-    .fab {
-      display: block;
-      text-align: center;
-    }
-  }
-}
-
-#open-source {
-  hr {
-    width: 10%;
-    height: 2px;
-    background-color: #fff;
-  }
-  background: linear-gradient(to bottom, #fff 0%, #fff 55%, $blue 45%);
-  .card {
-    height: 15rem;
-    border-radius: 2.25rem;
-  }
-  .highlight {
-    color: #fff;
-    text-align: center;
-    position: relative;
-    bottom: -62px;
-  }
-  .slick-slide {
-    margin-top: 3rem;
-  }
-  .slick-prev,
-  .slick-next {
-    top: 150px;
-  }
-
-  #{selectAllFrom(2, '.slick-active')} {
-    margin-top: 0;
-    .card {
-      height: 20rem;
-    }
-    .highlight {
-      bottom: -30px;
-      &:after {
-        content: '';
-        display: block;
-        width: 10%;
-        margin: 12px auto;
-        border-top: 2px solid #fff;
-      }
-    }
-  }
-
-  #{selectAllFrom(3, '.slick-active')} {
-    margin-top: 3rem;
-    .card {
-      height: 15rem;
-    }
-    .highlight {
-      bottom: -62px;
-      &:after {
-        display: none;
-      }
-    }
-  }
-
-  .cta {
-    padding-top: 7rem;
   }
 }
 
@@ -956,15 +814,6 @@ body {
   }
 }
 
-// #stories {
-//   padding-top: 7rem;
-//   padding-bottom: 5rem;
-
-//   .description {
-//     font-size: 1.875rem;
-//   }
-// }
-
 #systems,
 #openingsBlogs {
   .banner {
@@ -976,45 +825,16 @@ body {
   }
 }
 
-// #feedback {
-//   .cards {
-//     padding-top: 5rem;
-//     padding-bottom: 5rem;
+// #openingsBlogs {
+//   background: linear-gradient(to bottom, #101820 13%, #fff 13%);
+//   .blogHeading {
+//     font-size: 1.25rem;
 //   }
-//   .card-columns {
-//     // column-count: 3;
-//     // @media screen and (max-width: $sm-break) {
-//     //   column-count: 1;
-//     // }
-//     .card {
-//       border: none;
-//       min-height: 15rem;
-//       margin-bottom: 2.5rem;
-//       position: relative;
-//       background-color: transparent;
-
-//       .card-content {
-//         border-radius: 2.5rem;
-//         height: 100%;
-//       }
-
-//       .feedback {
-//         background-color: #000;
-//       }
-//     }
+//   .blogDescription {
+//     font-size: 14px;
+//     color: #575757;
 //   }
 // }
-
-#openingsBlogs {
-  // background: linear-gradient(to bottom, #101820 13%, #fff 13%);
-  .blogHeading {
-    font-size: 1.25rem;
-  }
-  .blogDescription {
-    font-size: 14px;
-    color: #575757;
-  }
-}
 
 #blogs {
   #banner {
@@ -1102,13 +922,6 @@ a:hover {
     border-radius: 44px;
   }
 }
-.funding {
-  .logo {
-    max-height: 60px;
-    border-radius: 2.875rem;
-    border-color: #979797;
-  }
-}
 
 .slick-slide .project .details {
   display: none;
@@ -1148,9 +961,6 @@ a:hover {
 }
 
 .footer {
-  // a {
-  //   color: #ffffff !important;
-  // }
   input {
     border-radius: 1.5rem;
   }
@@ -1159,7 +969,7 @@ a:hover {
 .commonFooter,
 .joinus-cta {
   background-color: #101820;
-
+  color: $title-font;
   .cta {
     background-color: #00aa13;
     border-radius: 48px;
@@ -1182,11 +992,14 @@ a:hover {
       font-size: 1.25rem;
     }
 
-    a {
+    .link {
       color: #fff200;
       &:hover {
         color: #fff200;
-        text-decoration: underline;
+      }
+      @media screen and (max-width: 576px) {
+        font-family: $title-font;
+        font-size: 20px;
       }
     }
   }

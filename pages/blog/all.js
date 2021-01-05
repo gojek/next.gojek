@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { scroller } from 'react-scroll';
 import axios from 'axios';
 import Moment from 'react-moment';
@@ -10,13 +10,13 @@ import Navbar from '~/../../comps/Navbar';
 import Tags from '~/../../comps/Blog/Tag';
 import CommonCta from '~/../../comps/Common/Cta';
 import BlogNew from '../../comps/BlogNew';
+import styles from './index.module.scss';
 
 function allPosts(props) {
-  const [tag, setTag] = useState('all');
-  const [articles, setarticles] = useState([]);
+  const [tag, setTag] = useState('tech');
   const [keyword, setkeyword] = useState('');
+  const [articles, setarticles] = useState([]);
   const [clicked, setclicked] = useState(false);
-  const [pagenumber, setpageNo] = useState(1);
 
   const changeTag = (tagName) => {
     setTag(tagName);
@@ -27,6 +27,12 @@ function allPosts(props) {
       delay: 0,
     });
   };
+  useEffect(() => {
+    if (clicked) {
+      inputRef.current.focus();
+    }
+  }, [clicked]);
+
   const changeClicked = () => {
     setclicked(true);
   };
@@ -61,6 +67,9 @@ function allPosts(props) {
     { name: 'Stories', slug: 'stories' },
     { name: 'News', slug: 'news' },
   ];
+
+  const inputRef = useRef(null);
+
   return (
     <div className="text-center text-md-left blog-page">
       <Head>
@@ -107,20 +116,23 @@ function allPosts(props) {
           />
         )}
 
-        {clicked && (
-          <div class="input-group my-5">
-            <label htmlFor="search" class="sr-only">
-              Keyword
-            </label>
+        <div class="input-group  py-5">
+          <label htmlFor="search" class="sr-only">
+            Keyword
+          </label>
+
+          <div class={`${styles.searchBox}`}>
             <input
               type="text"
-              id="search"
-              autoFocus
-              class="form-control search-blog px-0"
-              style={{ borderBottom: '1px solid green' }}
+              placeholder="Search"
+              className={`input-search ${clicked ? 'active-link visible mb-5' : 'invisible mb-0'}`}
+              ref={inputRef}
               onChange={(event) => changekeyword(event.target.value)}
-              placeholder="Search blogs_"
+              placeholder="Search blogs (kubernetes, #firstprinciples, work from home, design)"
             />
+          </div>
+
+          {clicked && (
             <div class="input-group-append" style={{ borderBottom: '1px solid green' }}>
               <span
                 aria-hidden="true"
@@ -131,12 +143,12 @@ function allPosts(props) {
                 &times;
               </span>
             </div>
-          </div>
-        )}
+          )}
+        </div>
 
         {/* All Posts */}
         {keyword === '' && (
-          <div>
+          <div className={`post-feed container ${clicked ? 'mt-5' : ''}`}>
             <BlogNew heading="All blogs" posts={props.posts} pageName="all-posts" />
             <p className="text-center">
               {/* <a href="" className={`text-green-light`}>

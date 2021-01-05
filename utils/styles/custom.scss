@@ -161,39 +161,6 @@ section {
     font-weight: bold;
   }
 }
-.products {
-  padding-top: 5rem;
-  padding-bottom: 10rem;
-  .head {
-    font-size: 1.875rem;
-  }
-  @media screen and (max-width: 576px) {
-    padding-bottom: 5rem;
-    // .heading-sm {
-    //   font-size: 1.25rem;
-    // }
-  }
-  @media screen and (min-width: 576px) {
-    .slick-prev,
-    .slick-next {
-      z-index: 10;
-      &::before {
-        // font-size: 1.25rem;
-        color: #fff;
-        opacity: 1;
-      }
-    }
-  }
-
-  .slick-slide {
-    .card {
-      border-radius: 52px;
-      // img {
-      //   max-width: 150px;
-      // }
-    }
-  }
-}
 
 .bg {
   -webkit-background-size: cover;
@@ -202,58 +169,7 @@ section {
   background-size: cover;
   max-height: 50rem;
 }
-.tech-facts {
-  @media screen and (max-width: 576px) {
-    .card {
-      .row {
-        min-height: 26rem;
-      }
-    }
-  }
 
-  .slick-prev,
-  .slick-next {
-    top: 12rem;
-    &:before {
-      background-color: #fff;
-      color: #000;
-      border-radius: 50%;
-      padding: 7px;
-      font-size: 1.2rem;
-    }
-  }
-  .slick-prev {
-    left: 6px;
-  }
-  .slick-next {
-    right: 6px;
-  }
-  .card {
-    border-radius: 52px;
-    display: inline-block;
-  }
-  .logo {
-    border: solid 1px rgba($color: #979797, $alpha: 0.5);
-    background-color: rgba(255, 255, 255, 0.94);
-    max-width: 192px;
-    height: 4.5rem;
-    @media screen and (max-width: 576px) {
-      height: 2.5rem;
-    }
-
-    img {
-      @media screen and (max-width: 576px) {
-        max-width: 72px;
-        max-height: 16px;
-      }
-    }
-  }
-}
-.social-media {
-  .card {
-    border-radius: 52px;
-  }
-}
 .overlay-icon {
   font-size: 5rem;
   left: 50%;
@@ -331,6 +247,9 @@ section {
       font-size: 20px;
       font-family: $demi;
       color: #bce194;
+      @media screen and (max-width: 576px) {
+        font-size: 1.25rem;
+      }
     }
   }
 
@@ -370,37 +289,17 @@ section {
   }
 }
 
-.funding {
-  .illustration {
-    @media screen and(min-width: $md-break) {
-      max-width: 80%;
-    }
-  }
-
-  .description {
-    font-family: $maisonbook, sans-serif;
-    color: #303030;
-  }
-}
-
-.values-slider {
-  .slick-slide {
-    margin-right: 2rem;
-    margin-left: 2rem;
-  }
-}
-
-#openingsBlogs {
-  .text-lead {
-    font-family: $header-font;
-  }
-  @media screen and (max-width: 576px) {
-    .slick-prev,
-    .slick-next {
-      display: none !important;
-    }
-  }
-}
+// #openingsBlogs {
+//   .text-lead {
+//     font-family: $header-font;
+//   }
+//   @media screen and (max-width: 576px) {
+//     .slick-prev,
+//     .slick-next {
+//       display: none !important;
+//     }
+//   }
+// }
 
 .product {
   p {
@@ -408,186 +307,31 @@ section {
   }
 }
 
-.life-at-gojek {
-  background: url('/img/life-at-gojek/banner.png') no-repeat center right;
-  background-size: cover;
-  background-position: center;
+// .slider-shilpa {
+//   .slick-active {
+//     margin-right: 10px;
+//     &:not(.slick-current) {
+//       margin-left: 10px;
+//     }
+//     &:last-child {
+//       margin-right: 0px;
+//     }
+//   }
+//   .media {
+//     img {
+//       max-width: 100px;
+//     }
+//   }
+// }
 
-  @media screen and (max-width: 576px) {
-    background: url('/img/life-at-gojek/mobile-banner.png') no-repeat center center;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .bannerHeading {
-    font-size: 2.82rem;
-    @media screen and (max-width: 576px) {
-      font-size: 2rem;
-    }
-  }
-
-  .heading-sm {
-    @media screen and (max-width: 576px) {
-      font-size: 18px;
-      line-height: 1.9rem;
-      font-family: $demi;
-    }
-  }
-}
-
-.slider-shilpa {
-  .slick-active {
-    margin-right: 10px;
-    &:not(.slick-current) {
-      margin-left: 10px;
-    }
-    &:last-child {
-      margin-right: 0px;
-    }
-  }
-  .media {
-    img {
-      max-width: 100px;
-    }
-  }
-}
-
-.single-card {
-  display: inline-block;
-  position: absolute;
-  text-align: center;
-  font-size: 1.875rem;
-  border-radius: 20px;
-  height: 530px;
-}
-
-.social-impact {
-  h1 {
-    font-family: $header-font;
-    font-size: 2.812rem;
-  }
-  .card {
-    min-height: 32.5rem;
-
-    .title {
-      font-size: 1.75rem;
-      font-family: $font-bold;
-      line-height: normal;
-    }
-  }
-}
-
-.values {
-  .slide {
-    align-items: flex-start;
-  }
-  @media screen and (max-width: 576px) {
-    .slick-list {
-      padding: 0 !important;
-    }
-  }
-  img {
-    max-width: 175px;
-    margin-right: 3rem;
-    @media screen and (max-width: 576px) {
-      max-width: 100px;
-      margin-right: 1rem;
-    }
-  }
-
-  .text-lead {
-    font-family: $header-font;
-  }
-
-  .slick-slider {
-    .slick-slide.slick-active {
-      max-width: 540px;
-    }
-    .slick-dots {
-      justify-content: center;
-      @media screen and (min-width: 576px) {
-        bottom: -6rem;
-        margin-left: -8rem;
-      }
-      @media screen and (max-width: 576px) {
-        margin-bottom: -4rem !important;
-      }
-      li {
-        min-width: 2rem !important;
-        @media screen and (max-width: 576px) {
-          margin-bottom: 1rem;
-          min-width: 1rem !important;
-        }
-        button {
-          min-width: 1px !important;
-          width: auto;
-          height: auto;
-          @media screen and (min-width: 576px) {
-            width: 2rem;
-            margin: 0 1rem;
-            height: 4px;
-            border-radius: 5px;
-          }
-          border-radius: 50%;
-          padding: 3px;
-          background-color: #d2d2d2;
-        }
-        ::before {
-          content: '';
-          padding: 0;
-        }
-        &.slick-active {
-          button {
-            background-color: #101820;
-          }
-        }
-      }
-    }
-    .slick-next {
-      right: 50px;
-    }
-    .slick-prev {
-      left: -100px;
-    }
-    .slick-next,
-    .slick-prev {
-      box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.5);
-      background-color: #ffffff;
-      text-align: center;
-      height: 43px;
-      width: 42px;
-      border: 1px solid #e0e0e0;
-      border-radius: 50%;
-      &:before {
-        font-size: 1.25rem;
-        color: #494a4a;
-      }
-      @media screen and (max-width: 576px) {
-        display: none !important;
-      }
-    }
-    @media screen and (min-width: 2000px) {
-      .slick-slide {
-        max-width: 580px;
-      }
-    }
-  }
-  .swiper-slide {
-    width: 510px !important;
-    margin-left: -50px;
-    &.swiper-slide-prev {
-      width: auto !important;
-      margin-left: 0;
-      margin-right: 0 !important;
-    }
-    &.swiper-slide-active {
-      margin-left: 0;
-    }
-    &.swiper-slide-next {
-      margin-left: 0;
-    }
-  }
-}
+// .single-card {
+//   display: inline-block;
+//   position: absolute;
+//   text-align: center;
+//   font-size: 1.875rem;
+//   border-radius: 20px;
+//   height: 530px;
+// }
 
 .blog-page {
   .banner-head {
@@ -632,70 +376,35 @@ section {
   }
 }
 
-.pointers {
-  ul {
-    list-style-type: square;
+// .perks {
+//   .card-columns {
+//     grid-column-gap: 2rem;
+//     column-gap: 2rem;
+//     .card {
+//       margin-bottom: 2.5rem;
+//       padding: 2rem;
+//     }
+//   }
+//   @media screen and(max-width: 576px) {
+//     .heading-sm {
+//       font-size: 1.125rem;
+//       line-height: 1.6rem;
+//     }
+//     p {
+//       font-size: 1rem;
+//     }
+//     .card-columns {
+//       grid-column-gap: 1rem;
+//       column-gap: 1rem;
+//       column-count: 2;
+//       .card {
+//         margin-bottom: 1rem;
+//         padding: 2rem 1rem;
+//       }
+//     }
+//   }
+// }
 
-    li {
-      font-size: 1.125rem;
-      padding-bottom: 1.125rem;
-      @media screen and(max-width: $sm-break) {
-        font-size: 1rem;
-      }
-    }
-  }
-  .text-lead {
-    @media screen and(max-width: $sm-break) {
-      font-size: 1rem;
-    }
-  }
-}
-
-.gojek-bg {
-  background-image: url('/img/home/gojek-bg.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-
-  @media screen and (max-width: 1200px) {
-    background-position: -192px center;
-  }
-
-  @media screen and (max-width: 576px) {
-    background-image: url('/img/home/mountain-mobile.svg');
-    background-position-y: 160px;
-    background-position-x: center;
-  }
-}
-
-.perks {
-  .card-columns {
-    grid-column-gap: 2rem;
-    column-gap: 2rem;
-    .card {
-      margin-bottom: 2.5rem;
-      padding: 2rem;
-    }
-  }
-  @media screen and(max-width: 576px) {
-    .heading-sm {
-      font-size: 1.125rem;
-      line-height: 1.6rem;
-    }
-    p {
-      font-size: 1rem;
-    }
-    .card-columns {
-      grid-column-gap: 1rem;
-      column-gap: 1rem;
-      column-count: 2;
-      .card {
-        margin-bottom: 1rem;
-        padding: 2rem 1rem;
-      }
-    }
-  }
-}
 .footer-cta {
   border-radius: 3rem;
   .footer-img {
@@ -820,114 +529,6 @@ html {
 .daily-need-bg {
   background-color: $orange;
 }
-.product-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  .card {
-    min-height: 585px;
-  }
-  @media screen and(min-width: 993px) and (max-width: 1024px) {
-    .slick-prev {
-      left: 10px !important;
-    }
-    .slick-next {
-      right: 10px !important;
-    }
-  }
-  @media screen and(min-width: $sm-break) and (max-width: $md-break) {
-    .card {
-      min-height: 48rem;
-    }
-  }
-
-  @media screen and(max-width: $md-break) {
-    .slick-prev::before,
-    .slick-next::before {
-      font-size: 2.25rem;
-    }
-    .slick-prev {
-      left: 10px;
-    }
-    .slick-next {
-      right: 10px;
-    }
-  }
-}
-
-.projects {
-  .card {
-    .title {
-      font-family: $font-bold;
-    }
-    .description {
-      font-family: $extended-book;
-      font-size: 1.125rem;
-      line-height: 1.75rem;
-    }
-  }
-  .text-lead {
-    font-size: 1.125rem;
-    @media screen and(max-width: $sm-break) {
-      font-size: 1rem;
-    }
-  }
-  .heading {
-    @media screen and(max-width: $sm-break) {
-      font-size: 26px;
-    }
-  }
-}
-
-.opensource {
-  .slick-slider {
-    @media screen and (min-width: $lg-break) {
-      .slick-prev {
-        left: -3rem;
-      }
-
-      .slick-next {
-        right: -3rem;
-      }
-    }
-    .slick-dots {
-      justify-content: center;
-      li {
-        min-width: 2rem !important;
-        button {
-          min-width: 1px !important;
-          width: 2rem;
-          margin: 0 1rem;
-          border-radius: 5px;
-          height: 4px;
-          padding: 3px;
-          background-color: #d2d2d2;
-        }
-        ::before {
-          content: '';
-          padding: 0;
-        }
-        &.slick-active {
-          button {
-            background-color: #101820;
-          }
-        }
-      }
-    }
-  }
-  .caption {
-    h5 {
-      bottom: 5%;
-      padding-left: inherit;
-      padding-right: inherit;
-      left: 0;
-      right: 0;
-    }
-  }
-}
-
-// .swiper-button-prev {
-//   background-image: url('/img/home/right-arrow.png') !important;
-// }
 
 .swiper-button-next {
   background-image: url('/img/home/arrow-right.png');
@@ -1008,10 +609,6 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   padding-top: 3rem;
-
-  // @media screen and (min-width: 1200px) {
-  //   background-size: cover;
-  // }
 
   @media screen and (min-width: 1920px) {
     background-image: none;
@@ -1152,4 +749,247 @@ html {
 
 .css-1wa3eu0-placeholder {
   display: block;
+}
+
+.blog-card {
+  a {
+    font-size: 20px;
+    font-family: $demi;
+  }
+}
+
+.milestones {
+  .slick-dots {
+    bottom: 0;
+  }
+}
+
+// Css for Products slick carousel - Home page
+.gojek-products {
+  @media screen and (min-width: $lg-break) {
+    .slick-prev {
+      left: -50px;
+    }
+
+    .slick-next {
+      right: -50px;
+    }
+  }
+  @media screen and(min-width: 993px) and (max-width: 1024px) {
+    .slick-prev {
+      left: 10px !important;
+    }
+    .slick-next {
+      right: 10px !important;
+    }
+  }
+
+  @media screen and(max-width: $md-break) {
+    .slick-prev::before,
+    .slick-next::before {
+      font-size: 2.25rem;
+    }
+    .slick-prev {
+      left: 10px;
+    }
+    .slick-next {
+      right: 10px;
+    }
+  }
+
+  @media screen and (min-width: $sm-break) {
+    .slick-prev,
+    .slick-next {
+      z-index: 10;
+      &::before {
+        color: #fff;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// CSS for Open source slick carousel - Home page
+
+.opensource {
+  .slick-slider {
+    @media screen and (min-width: $lg-break) {
+      .slick-prev {
+        left: -3rem;
+      }
+
+      .slick-next {
+        right: -3rem;
+      }
+    }
+    .slick-dots {
+      justify-content: center;
+      li {
+        min-width: 2rem !important;
+        button {
+          min-width: 1px !important;
+          width: 2rem;
+          margin: 0 1rem;
+          border-radius: 5px;
+          height: 4px;
+          padding: 3px;
+          background-color: #d2d2d2;
+        }
+        ::before {
+          content: '';
+          padding: 0;
+        }
+        &.slick-active {
+          button {
+            background-color: #101820;
+          }
+        }
+      }
+    }
+  }
+  .caption {
+    h5 {
+      bottom: 5%;
+      padding-left: inherit;
+      padding-right: inherit;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+// CSS for Social media slick carousel for mobile device - Home page
+.social-media {
+  .slick-list {
+    margin-left: 3rem;
+  }
+
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+  }
+}
+
+// CSS for Values slick carousel - Life@GOjek
+
+.values {
+  .slide {
+    align-items: flex-start;
+  }
+  @media screen and (max-width: 576px) {
+    .slick-list {
+      padding: 0 !important;
+    }
+  }
+  .slick-slider {
+    .slick-slide.slick-active {
+      max-width: 540px;
+    }
+    .slick-dots {
+      justify-content: center;
+      @media screen and (min-width: 576px) {
+        bottom: -6rem;
+        margin-left: -8rem;
+      }
+      @media screen and (max-width: 576px) {
+        margin-bottom: -4rem !important;
+      }
+      li {
+        min-width: 2rem !important;
+        @media screen and (max-width: 576px) {
+          margin-bottom: 1rem;
+          min-width: 1rem !important;
+        }
+        button {
+          min-width: 1px !important;
+          width: auto;
+          height: auto;
+          @media screen and (min-width: 576px) {
+            width: 2rem;
+            margin: 0 1rem;
+            height: 4px;
+            border-radius: 5px;
+          }
+          border-radius: 50%;
+          padding: 3px;
+          background-color: #d2d2d2;
+        }
+        ::before {
+          content: '';
+          padding: 0;
+        }
+        &.slick-active {
+          button {
+            background-color: #101820;
+          }
+        }
+      }
+    }
+    .slick-next {
+      right: 50px;
+    }
+    .slick-prev {
+      left: -100px;
+    }
+    .slick-next,
+    .slick-prev {
+      box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.5);
+      background-color: #ffffff;
+      text-align: center;
+      height: 43px;
+      width: 42px;
+      border: 1px solid #e0e0e0;
+      border-radius: 50%;
+      &:before {
+        font-size: 1.25rem;
+        color: #494a4a;
+      }
+      @media screen and (max-width: 576px) {
+        display: none !important;
+      }
+    }
+    @media screen and (min-width: 2000px) {
+      .slick-slide {
+        max-width: 580px;
+      }
+    }
+  }
+}
+
+// Blog search animation
+
+.input-search {
+  position: absolute;
+  width: 0px;
+  padding: 0.75rem 0;
+  border: 0;
+  transition: all 0.8s ease;
+  &::placeholder {
+    opacity: 0; /* Firefox */
+  }
+}
+// label[for='search'] {
+//   content: url('/img/blog/search.svg');
+//   width: 1.5rem;
+//   margin-right: 12px;
+//   margin-bottom: 0;
+//   transition: all 0.8s ease;
+// }
+
+.active-link {
+  width: 100%;
+  border-bottom: 1px solid green;
+  right: 0;
+  outline: none;
+  &::placeholder {
+    opacity: 1; /* Firefox */
+  }
+}
+
+.search-btn {
+  transition: all 0.8s ease;
+}
+
+.animate {
+  right: 90%;
 }

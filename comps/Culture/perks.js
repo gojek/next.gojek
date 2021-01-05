@@ -1,23 +1,21 @@
-import Masonry from 'react-masonry-css';
+import styles from './index.module.scss';
 
 function Perks({ perks, showPerks, mobilePerks }) {
   let count = 0;
   if (showPerks === 1) {
     count = 6;
-  } else if (showPerks === 2) {
-    count = 12;
   } else {
-    count = 20;
+    count = 12;
   }
   return (
     <div>
-      <div class="card-columns pt-5 d-md-block d-none">
+      <div className={`card-columns pt-5 d-md-block d-none ${styles.perksColumns}`}>
         {perks.map((perk) => {
           return (
             <div
-              className={`single-perk-card card  ${
-                perk.id <= count ? 'd-inline-block' : 'd-none'
-              } ${perk.img ? 'perk-img' : 'perk-card'} `}
+              className={`card  ${perk.id <= count ? 'd-inline-block' : 'd-none'} ${
+                perk.img ? 'perk-img' : 'perk-card'
+              } ${styles.perkCard}`}
               key={perk.id}
               style={{
                 height: perk.height,
@@ -25,20 +23,20 @@ function Perks({ perks, showPerks, mobilePerks }) {
                 backgroundColor: perk.bgColor,
               }}
             >
-              <h1 className="heading-sm">{perk.title}</h1>
+              <h1 className={`${styles.perkHeading}`}>{perk.title}</h1>
               <p>{perk.description}</p>
             </div>
           );
         })}
       </div>
 
-      <div class="card-columns pt-5 d-md-none d-block">
+      <div className={`card-columns pt-5 d-md-none d-block ${styles.perksColumns}`}>
         {mobilePerks.map((perk) => {
           return (
             <div
               className={`single-perk-card card px-4  ${
                 perk.id <= count ? 'd-inline-block' : 'd-none'
-              } ${perk.img ? 'perk-img' : 'perk-card'} `}
+              } ${perk.img ? 'perk-img' : 'perk-card'} ${styles.perkCard}`}
               key={perk.id}
               style={{
                 height: perk.height,
@@ -46,8 +44,8 @@ function Perks({ perks, showPerks, mobilePerks }) {
                 backgroundColor: perk.bgColor,
               }}
             >
-              <h1 className="heading-sm">{perk.title}</h1>
-              <p>{perk.description}</p>
+              <h1 className={`${styles.perkHeading}`}>{perk.title}</h1>
+              <p className={`mt-3 ${styles.descrption}`}>{perk.description}</p>
             </div>
           );
         })}

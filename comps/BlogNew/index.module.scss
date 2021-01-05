@@ -50,3 +50,9 @@
 .readMore:hover {
   color: $green-base;
 }
+.ctaContainer {
+  @media screen and (max-width: 576px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

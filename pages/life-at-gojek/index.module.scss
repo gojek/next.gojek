@@ -1,0 +1,43 @@
+@import '~/../../utils/styles/variables.scss';
+
+.banner {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+  background: url('/img/life-at-gojek/banner.png') no-repeat center center;
+  background-size: cover;
+
+  @media screen and (max-width: 576px) {
+    background: url('/img/life-at-gojek/mobile-banner.png') no-repeat center center;
+    background-size: cover;
+  }
+}
+
+.heading {
+  font-size: 2.82rem;
+  font-family: $font-bold;
+  @media screen and (max-width: 576px) {
+    font-size: 1.875rem;
+  }
+}
+.subHeading {
+  font-size: 1.875rem;
+  font-family: $font-bold, sans-serif;
+  line-height: 2.625rem;
+  @media screen and (max-width: 576px) {
+    font-size: 20px;
+    line-height: 1.9rem;
+    // font-family: $demi;
+  }
+}
+
+.valuesHeading {
+  font-size: 1.875rem;
+  font-family: $font-bold, sans-serif;
+  line-height: 2.625rem;
+  @media screen and (max-width: 576px) {
+    font-size: 26px;
+    line-height: 36px;
+  }
+}

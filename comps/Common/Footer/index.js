@@ -80,12 +80,17 @@ function Footer(props) {
             className="col-md-6 order-md-last order-first px-0 p-md-5 px-3 py-5 boder-pill contact"
             style={{ backgroundColor: '#000' }}
           >
-            <p className="form-text">
-              Stories from our #SuperApp, straight to your {''}
+            <p className="form-text pb-4">
+              Stories from our #SuperApp, <br />
+              straight to your {''}
               <img src="/img/whatsapp-logo.svg" alt="WhatsApp" />{' '}
               <span className="text-white">WhatsApp.</span>
             </p>
-            <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
+            <form
+              autoComplete="off"
+              onSubmit={handleSubmit(onSubmit)}
+              className="subscribe-whatsapp"
+            >
               <div className="mb-3">
                 <input
                   type="text"
@@ -129,10 +134,20 @@ function Footer(props) {
                 {!!errors.phone && errors.phone.message}
               </div>
               <div>
-                <input type="checkbox" /> I agree to the{' '}
-                <a href="privacy-policy" target="_blank" className="text-success checkbox">
+                <input
+                  type="checkbox"
+                  name="terms"
+                  ref={register({
+                    required: 'Privacy policy is required',
+                  })}
+                />{' '}
+                I agree to the{' '}
+                <a href="/privacy-policy" target="_blank" className="text-success checkbox">
                   Privacy policy
                 </a>
+                <div className="invalid-feedback pl-3 d-block">
+                  {!!errors.terms && errors.terms.message ? errors.terms.message : ''}
+                </div>
               </div>
               <button className="btn rounded-pill bg-green mt-4 px-4 text-white" type="submit">
                 Submit

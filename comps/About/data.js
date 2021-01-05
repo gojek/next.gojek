@@ -33,7 +33,8 @@ export const milestones = [
     description:
       'Systems were crashing because of a major spike in volumes. <br/> We rewrote a key piece of technology in Golang in under 3 days.',
     linkText: 'Read our story',
-    linkURL: '#',
+    linkURL:
+      'https://blog.gojekengineering.com/how-go-jek-manages-1-million-drivers-with-12-engineers-part-1-978af9ccfd32',
   },
   {
     id: 4,
@@ -57,7 +58,8 @@ export const milestones = [
     description:
       'Downtimes were a routine affair and leaky faucets needed to be fixed. <br/> "No project has a budget and impact as big as this in Gojek\'s history"<br/> - From Nadiem’s internal mail.',
     linkText: 'Read our story',
-    linkURL: '#',
+    linkURL:
+      'https://blog.gojekengineering.com/how-go-jek-manages-1-million-drivers-with-12-engineers-part-2-35f6a27a0faf',
   },
   {
     id: 6,
@@ -66,9 +68,10 @@ export const milestones = [
     bgClass: 'about-green-bg',
     bgPattern: 'about-pattern-c',
     title: 'In 2017',
-    description: 'Reached 30 million monthly bookings. Gojek employed more than 30,000 people with disabilities.',
+    description:
+      'Reached 30 million monthly bookings. Gojek employed more than 30,000 people with disabilities.',
     linkText: 'Watch the video',
-    linkURL: '#',
+    linkURL: 'https://www.youtube.com/watch?v=tu-5s8KhzvQ&feature=youtu.be',
   },
   {
     id: 7,
@@ -77,7 +80,8 @@ export const milestones = [
     bgClass: 'about-blue-bg',
     bgPattern: 'about-pattern-a',
     title: 'By 2018',
-    description: 'Gojek did 100+ million orders across 18+ products. Total order volume growth: 1100x.',
+    description:
+      'Gojek did 100+ million orders across 18+ products. Total order volume growth: 1100x.',
     linkText: '',
     linkURL: '',
   },
@@ -90,7 +94,7 @@ export const milestones = [
     title: 'Going international',
     description: 'Gojek went live in Vietnam 🇻🇳, Singapore 🇸🇬, and Thailand 🇹🇭 in 2018.',
     linkText: 'Read the story',
-    linkURL: '#',
+    linkURL: 'http://bit.ly/2XTN6WK',
   },
   {
     id: 9,
@@ -99,9 +103,10 @@ export const milestones = [
     bgClass: 'about-green-bg',
     bgPattern: 'about-pattern-c',
     title: 'In 2019',
-    description: 'Gojek became Indonesia\'s first decacorn. We also underwent a massive rebranding and had a new identity: Solv.',
+    description:
+      "Gojek became Indonesia's first decacorn. We also underwent a massive rebranding and had a new identity: Solv.",
     linkText: 'Read about Solv',
-    linkURL: '#',
+    linkURL: 'http://bit.ly/2Sw2tmK',
   },
   {
     id: 10,
@@ -110,7 +115,8 @@ export const milestones = [
     bgClass: 'about-orange-bg',
     bgPattern: 'about-pattern-a',
     title: 'Uplifting the economy',
-    description: 'Gojek contributed $7.1 billion to the Indonesian economy in 2019 (that\'s more than twice of 2018!)',
+    description:
+      "Gojek contributed $7.1 billion to the Indonesian economy in 2019 (that's more than twice of 2018!)",
     linkText: '',
     linkURL: '',
   },

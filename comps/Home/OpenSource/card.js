@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+
+import styles from './index.module.scss';
 
 const Card = React.memo((props) => {
   const { data } = props;
@@ -13,8 +15,8 @@ const Card = React.memo((props) => {
                 data.id === 1 ? 'text-black' : 'text-white'
               }`}
             >
-              <span className="title">{data.title} - </span>
-              <span className="description">{data.description}</span>
+              <span className={` ${styles.projectTitle}`}>{data.title} - </span>
+              <span className={` ${styles.projectDescription}`}>{data.description}</span>
             </h5>
           </div>
         </div>

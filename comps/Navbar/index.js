@@ -45,11 +45,7 @@ function Navbar(props) {
             <img src="/img/gojek-logo.svg" alt="GOJEK Tech Logo" className="d-block d-md-none" />
           )}
           {router.pathname === '/' && (
-            <img
-              src="/img/gojek-white-logo.svg"
-              alt="GOJEK Tech Logo"
-              className="d-block d-md-none"
-            />
+            <img src="/img/gojek-logo.svg" alt="GOJEK Tech Logo" className="d-block d-md-none" />
           )}
         </div>
       );
@@ -87,7 +83,7 @@ function Navbar(props) {
       );
     }
   };
-
+  console.log('router.pathname', router.pathname);
   return (
     <nav className="navbar fixed-top navbar-expand-lg bg-transparent pt-3 pt-md-5 main-nav">
       <div className="container pt-3 pt-md-0">
@@ -103,7 +99,7 @@ function Navbar(props) {
         >
           <span>
             {!scrolled && router.pathname === '/' && (
-              <i className="fas fa-bars fa-1x text-white"></i>
+              <i className="fas fa-bars fa-1x text-dark"></i>
             )}
             {!scrolled && router.pathname !== '/' && (
               <i className="fas fa-bars fa-1x text-dark"></i>
@@ -119,7 +115,12 @@ function Navbar(props) {
           >
             {data.map((item) => (
               <li
-                className={`nav-item px-3 ${item.link === router.pathname ? 'active' : ''}`}
+                className={`nav-item px-3 ${
+                  item.link === router.pathname ||
+                  (router.pathname === '/jobs/all' && item.link === '/jobs')
+                    ? 'active'
+                    : ''
+                }`}
                 key={item.id}
               >
                 {item.type && item.type === 'button' ? (
