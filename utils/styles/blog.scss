@@ -68,9 +68,11 @@
   margin-top: 2rem;
   border-radius: 0.5rem 1rem 1rem 0;
   top: 0;
-  left: 11px;
+  // left: 11px;
   line-height: normal;
   z-index: 1;
+  // change
+  margin-left: 0.75rem;
 }
 
 .tag::after {

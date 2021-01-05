@@ -1,7 +1,5 @@
-import Head from 'next/head';
-
 import Navbar from '~/../../comps/Navbar';
-import Perks from '../../comps/Culture/Perks';
+import Perks from '../../comps/Culture/perks';
 import Blog from '../../comps/Culture/Blog';
 import Values from '../../comps/Culture/Values/index';
 import { CTA } from '../../comps/BlogNew/cta';
@@ -11,11 +9,13 @@ import { useState, useEffect } from 'react';
 import Impact from '~/../../comps/Culture/SocialImpact/index';
 import { gsap } from 'gsap/dist/gsap';
 
-function LifeAtGojek(props) {
+import styles from './index.module.scss';
+
+function LifeAtGojek() {
   const [showPerks, setPerks] = useState(1);
 
   const handleViewMore = () => {
-    if (showPerks !== 3) {
+    if (showPerks < 2) {
       setPerks(showPerks + 1);
     }
   };
@@ -39,17 +39,18 @@ function LifeAtGojek(props) {
   return (
     <div>
       <Navbar whiteNav />
-      <section className="banner life-at-gojek">
+
+      <section className={`${styles.banner}`}>
         <div className="container">
-          <div className="row mx-0 align-items-center full-height-one text-white">
-            <div className="col-md-6 col-10 px-0 position-relative wrapper pb-5 pb-md-0 mb-5 mb-md-0">
-              <h1 className="heading pb-4 pb-md-3 bannerHeading">Culture </h1>
+          <div className="row mx-0 align-items-center full-height text-white">
+            <div className="col-md-6 col-10 px-0 position-relative pb-5 pb-md-0 mb-5 mb-md-0">
+              <h1 className={`pb-4 pb-md-3 ${styles.heading}`}>Culture </h1>
               <p className="pb-3">
                 The biggest defining perk of Gojek is its culture. We have a cross-pollination of
                 ideas from Singapore, Indonesia, Thailand, Vietnam, and India. Different cultures,
                 different mindsets, unified in solving problems and learning.
               </p>
-              <h5 className="heading-sm pb-3">
+              <h5 className={`pb-3 ${styles.subHeading}`}>
                 We ardently believe failing is <br className="d-block d-md-none" /> learning. If
                 we’re not failing, <br className="d-block d-md-none" /> we’re not doing it right.
               </h5>
@@ -60,10 +61,7 @@ function LifeAtGojek(props) {
 
       <section className="my-5 values">
         <div className="container py-5">
-          <h1 className="heading-sm py-md-5">
-            {/* Here are the <span className="text-green">10 values</span> that keep us going: */}
-            Our values
-          </h1>
+          <h1 className={`py-md-5 ${styles.valuesHeading}`}>Our values</h1>
         </div>
         <div className="container-fluid pb-5">
           <Values />
@@ -72,12 +70,15 @@ function LifeAtGojek(props) {
 
       <section className="bg-black text-white py-5 perks">
         <div className="container py-5">
-          <h1 className="heading py-md-3 mb-md-0">We care for you</h1>
+          <h1 className={`py-md-3 mb-md-0 ${styles.heading}`}>We care for you</h1>
           <Perks perks={perks} showPerks={showPerks} mobilePerks={mobilePerks} />
 
-          {showPerks < 3 && (
-            <div className="view-more-button text-center">
-              <i class="fas fa-chevron-down view-more-button__icon" onClick={handleViewMore}></i>
+          {showPerks < 2 && (
+            <div className={`text-center`}>
+              <i
+                className={`fas fa-chevron-down view-more-button__icon `}
+                onClick={handleViewMore}
+              ></i>
             </div>
           )}
         </div>
@@ -98,7 +99,7 @@ function LifeAtGojek(props) {
 
       <section className="py-5" id="openingsBlogs">
         <div className="container px-0 px-md-3">
-          <h1 className="heading pl-4 pl-md-3">Our Stories</h1>
+          <h1 className={`${styles.heading} pl-4 pl-md-3 pb-4`}>Our Stories</h1>
           <Blog />
         </div>
       </section>

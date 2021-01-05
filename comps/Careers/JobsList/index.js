@@ -41,7 +41,6 @@ class JobsList extends Component {
   }
 
   handleExpand = () => {
-    console.log('click');
     const expanded = this.state.expanded;
     this.setState({ expanded: !expanded });
   };
@@ -344,6 +343,45 @@ class JobsList extends Component {
                   </div>
                 </div>
               )}
+              {/* Show filters if selected */}
+              {(filters.length > 0 || this.state.keywordList.length > 0) && !this.state.expanded && (
+                <div className="fixed-bottom results p-4 bg-green-light text-white text-left">
+                  <div className="row d-flex align-items-center justify-content-around">
+                    <div className="col-6">
+                      <p>
+                        <strong>
+                          {this.searchJobs().length}{' '}
+                          {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '}
+                        </strong>{' '}
+                        found across{' '}
+                        <strong>
+                          {selctedFilters.department.length > 0
+                            ? selctedFilters.department.length
+                            : 'all'}{' '}
+                          {selctedFilters.department.length === 1 ? 'Department' : 'Departments'}
+                        </strong>{' '}
+                        and{' '}
+                        <strong>
+                          {selctedFilters.location.length > 0
+                            ? selctedFilters.location.length
+                            : 'all'}{' '}
+                          {selctedFilters.location.length === 1 ? 'Location' : 'Locations'}
+                        </strong>{' '}
+                      </p>
+                    </div>
+
+                    <div className="col-5 px-0">
+                      {(filters.length > 0 || this.state.keywordList.length > 0) && (
+                        <a href="#" onClick={() => this.handleExpand()} className="text-white link">
+                          Filters
+                          <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+              {/* End filters */}
             </div>
           </div>
         </section>

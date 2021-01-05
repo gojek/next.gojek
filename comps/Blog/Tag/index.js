@@ -15,7 +15,7 @@ function Tag(tagData) {
       onClick={() => data.onClick(tag.slug)}
     >
       {data.page === 'blog' && <p className="mb-0">{tag.name}</p>}
-      {data.page === 'all-blogs' && (
+      {(data.page === 'all-blogs' || data.page === 'tags') && (
         <a href={`/blog/tag/${tag.slug}`} className="mb-0">
           {tag.name}
         </a>
@@ -27,8 +27,8 @@ function Tag(tagData) {
 function Tags(props) {
   return (
     <div className={`py-5 d-flex ${styles.tagList}`}>
-      {props.tags.map((tag) => (
-        <Tag tag={tag} data={props} />
+      {props.tags.map((tag, key) => (
+        <Tag tag={tag} data={props} key={key} />
       ))}
       <div
         key="all"
@@ -41,7 +41,13 @@ function Tags(props) {
           All
         </a>
       </div>
-      <div className="pointer px-4 mb-3 mr-3 ml-1" style={{ borderLeft: '1px solid #b5b2b2' }}>
+      {/* <div className="pointer px-4 mb-3 mr-3 ml-1" style={{ borderLeft: '1px solid #b5b2b2' }}> */}
+
+      <div
+        className={`pointer px-4 mb-3 mr-3 ml-1 search-btn ${props.clicked ? 'animate' : ''}`}
+        onClick={props.handlesearchClicked}
+        style={{ borderLeft: '1px solid #b5b2b2' }}
+      >
         <img
           onClick={props.handlesearchClicked}
           className="img-fluid mt-2"

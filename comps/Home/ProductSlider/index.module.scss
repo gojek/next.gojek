@@ -1,0 +1,33 @@
+@import '../../../utils/styles/variables.scss';
+@import '../../../utils/styles/constants.scss';
+
+.heading {
+  font-size: $font-l;
+  font-family: $font-bold, sans-serif;
+  line-height: 2.625rem;
+}
+.subHeading {
+  font-size: $font-m;
+  line-height: 1.7rem;
+  font-family: $demi;
+}
+
+.productWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.productCard {
+  min-height: 30.75rem;
+
+  border-radius: 3.25rem;
+  @media screen and(min-width: $sm-break) and (max-width: $md-break) {
+    min-height: 40rem;
+  }
+}
+
+.productLogo {
+  @media screen and(max-width: 576px) {
+    height: 1.5rem;
+  }
+}

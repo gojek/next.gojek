@@ -1,7 +1,8 @@
-import { techFacts } from './data';
 import SwiperCore, { Navigation, Scrollbar, A11y } from 'swiper';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
+import styles from './home.module.scss';
+
+import { techFacts } from './data';
 
 SwiperCore.use([Navigation, Scrollbar, A11y]);
 
@@ -11,7 +12,7 @@ function TechFacts() {
       <div className="pt-5 d-none d-md-block">
         {techFacts.map((data, i) => (
           <div
-            className="card text-white px-5 border-0 my-3 shadow mx-3 mx-md-0"
+            className={`card text-white px-5 border-0 my-3 shadow mx-3 mx-md-0 ${styles.factCard}`}
             style={{ backgroundColor: data.bgColor }}
             key={i}
           >
@@ -22,7 +23,7 @@ function TechFacts() {
                     i % 2 == '0' ? 'order-first' : 'order-last'
                   }`}
                 >
-                  <h3 className="description heading-sm">{data.content}</h3>
+                  <h3 className={`${styles.factHeading}`}>{data.content}</h3>
                 </div>
                 <div className={`col-md-6 align-self-end`}>
                   <img src={data.image} alt={data.content} className="img-fluid" />
@@ -37,14 +38,14 @@ function TechFacts() {
           {techFacts.map((data, i) => (
             <SwiperSlide>
               <div
-                className="card text-white px-5 border-0 my-3 shadow mx-md-0"
+                className={`card text-white px-5 border-0 my-3 shadow mx-md-0  ${styles.factCard}`}
                 style={{ backgroundColor: data.bgColor }}
                 key={i}
               >
                 <div className="card-body pb-0 pt-4">
-                  <div className="row">
+                  <div className={`row ${styles.techFactsWrapper}`}>
                     <div className={`col-md-6 px-0 align-self-center py-5 text-center`}>
-                      <h3 className="description text-lead font-demi">{data.content}</h3>
+                      <h3 className={`${styles.factHeading}`}>{data.content}</h3>
                     </div>
                     <div className={`col-md-6 px-0 align-self-end`}>
                       <img src={data.image} alt={data.content} className="img-fluid" />
