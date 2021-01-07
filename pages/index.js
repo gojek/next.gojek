@@ -1,22 +1,17 @@
+import InstagramEmbed from 'react-instagram-embed';
+
 import Navbar from '~/../../comps/Navbar';
 import ProductSlider from '../comps/Home/ProductSlider';
 import TechFacts from '../comps/Home/techFacts';
 import Projects from '../comps/Home/OpenSource';
-import Link from '../comps/Common/link';
 import CommonCta from '~/../../comps/Common/Cta';
 import Funding from '../comps/Home/funding';
-import Slider from 'react-slick';
-import { socialMedia } from '../comps/Home/data.js';
+import SocialMedia from '../comps/Home/socialMedia';
+
 import styles from './index.module.scss';
 
-const sliderSettings = {
-  infinite: false,
-  dots: false,
-  slidesToShow: 1.2,
-  slidesToScroll: 1,
-};
-
 function Home(props) {
+  console.log('fdfd', props);
   return (
     <div>
       <Navbar />
@@ -103,66 +98,27 @@ function Home(props) {
         </div>
       </section>
 
-      <section className="bg-black pt-5 text-white social-media">
-        <div className="container py-5">
-          <div className="py-md-5 px-5 px-md-0">
-            <h1 className="pb-4 sr-only">Social Media</h1>
-            <p className={`${styles.socialMediaDescription}`}>
-              Want to know the daily challenges, unconventional work culture and inner workings of
-              Southeast Asia’s largest startup? We have stories to tell.
-            </p>
-            <p>
-              (Editorial favourite:{' '}
-              <a
-                href="https://www.instagram.com/lifeatgojek/"
-                target="_blank"
-                className="text-green-light"
-              >
-                {' '}
-                Life@Gojek{' '}
-              </a>
-              Instagram &amp;{' '}
-              <a
-                href="https://instagram.com/gojek.tech"
-                target="_blank"
-                className="text-orange-light"
-              >
-                {' '}
-                Gojek Tech
-              </a>{' '}
-              Instagram)
-            </p>
-          </div>
-          <div className="d-none d-md-block">
-            <div className="row">
-              {socialMedia.map((data, i) => (
-                <div className="col-md-4 mb-5">
-                  <a
-                    href={data.link}
-                    target="_blank"
-                    className={`card border-0 ${styles.socialMediaCard}`}
-                  >
-                    <img className="img-fluid" src={data.img} alt={data.alt} />
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="d-md-none pt-5">
-            <Slider {...sliderSettings}>
-              {socialMedia.map((data, i) => (
-                <div className="col-md-4 mb-5 pl-0">
-                  <a
-                    href={data.link}
-                    target="_blank"
-                    className={`card border-0 ${styles.socialMediaCard}`}
-                  >
-                    <img className="img-fluid" src={data.img} alt={data.alt} />
-                  </a>
-                </div>
-              ))}
-            </Slider>
-          </div>
+      {/* <div className="container">
+        <h1>Hello</h1>
+        <InstagramEmbed
+          url="https://instagr.am/p/Zw9o4/"
+          clientAccessToken="276438368243|N37FEUhZRRuBewKrfO-5yGQ5Am0"
+          maxWidth={500}
+          hideCaption={true}
+          containerTagName="div"
+          protocol=""
+          injectScript
+          onLoading={() => {}}
+          onSuccess={() => {}}
+          onAfterRender={() => {}}
+          onFailure={() => {}}
+        />
+      </div> */}
+
+      <section className={`${styles.socialMedia}`}>
+        <h1 className="Social Media"></h1>
+        <div className="container">
+          <SocialMedia />
         </div>
       </section>
 

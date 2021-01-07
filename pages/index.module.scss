@@ -89,11 +89,12 @@
 }
 
 // Social media section styles
+.socialMedia {
+  background: linear-gradient(to bottom, #fff 0%, #fff 43%, #fff 43%, #101820 43%, #101820 100%);
+  @media screen and (max-width: 567px) {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  }
+}
 .socialMediaCard {
   border-radius: 52px;
-}
-.socialMediaDescription {
-  @media screen and (min-width: 768px) {
-    width: 50%;
-  }
 }
