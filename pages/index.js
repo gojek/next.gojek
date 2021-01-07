@@ -16,6 +16,13 @@ const sliderSettings = {
   slidesToScroll: 1,
 };
 
+const scalePointers = [
+  '200 million+ completed orders per month',
+  'As of 2019, the Gojek app has been downloaded almost 170 million times',
+  '1100% growth in transactions from 2016 to 2019',
+  'In 2019, we contributed $7 billion+ to the Indonesian economy',
+];
+
 function Home(props) {
   return (
     <div>
@@ -46,31 +53,24 @@ function Home(props) {
         <div className="container py-5 full-height d-flex flex-column justify-content-start">
           {/* Row for heading */}
           <div className="row justify-content-end">
-            <h4 className={`pt-0 pt-lg-5 col-md-6 ${styles.subHeading}`}>
-              Once a call-centre <br /> operation in Jakarta, now{' '}
-              <br className="d-none d-lg-block" />
-              <span className="text-green-light">a Decacorn in Southeast Asia.</span>
-            </h4>
-          </div>
-
-          {/* Row for description */}
-          <div className="row mt-auto mb-3 mb-md-5 justify-content-center justify-content-md-start pl-0 pl-md-5">
-            <ul className={`ext-white col-8 col-md-6 ${styles.pointers}`}>
-              <li className={`${styles.point}`}>200 million+ completed orders per month</li>
-              <li className={`${styles.point}`}>
-                As of 2019, the Gojek app has been downloaded almost 170 million times
-              </li>
-              <li className={`${styles.point}`}>1100% growth in transactions from 2016 to 2019</li>
-              <li className={`${styles.point}`}>
-                In 2019, we contributed $7 billion+ to the Indonesian economy
-              </li>
-            </ul>
+            <div className={`col-md-6`}>
+              <h4 className={`pt-0 pt-lg-5 ${styles.subHeading}`}>
+                Once a call-centre <br /> operation in Jakarta, now{' '}
+                <br className="d-none d-lg-block" />
+                <span className="text-green-light">a Decacorn in Southeast Asia.</span>
+              </h4>
+              <ul className={`mt-5 ${styles.pointers}`}>
+                {scalePointers.map((pointer) => (
+                  <li className={`${styles.point}`}>{pointer}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Tech Facts */}
-      <section className="bg-gray pt-5">
+      <section className="bg-black text-white pt-5">
         <div className="container pt-md-5">
           <h1 className={`text-center ${styles.fundingHeading}`}>
             Our tech powers
@@ -82,7 +82,7 @@ function Home(props) {
           <div className="row mt-md-5 d-flex">
             <div className="col-4 mt-md-5 pt-md-5 align-self-center">
               <img
-                src="./img/home/funding/gojek-funding.png"
+                src="./img/home/funding/gojek-funding.svg"
                 alt="Funding Gojek"
                 className={`img-fluid ${styles.illustration}`}
               />
@@ -102,6 +102,10 @@ function Home(props) {
           </div>
         </div>
       </section>
+
+      {/* CTA */}
+      <CommonCta mobile light halfBackground />
+      {/* End CTA */}
 
       <section className="bg-black pt-5 text-white social-media">
         <div className="container py-5">
@@ -166,9 +170,7 @@ function Home(props) {
         </div>
       </section>
 
-      {/* CTA */}
-      <CommonCta mobile />
-      {/* End CTA */}
+
     </div>
   );
 }

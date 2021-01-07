@@ -31,8 +31,9 @@
 
 // Once a call center.. section
 .gojekBg {
-  background: #ffffff url('/img/home/gojek-bg.svg') no-repeat top center;
+  background: #ffffff url('/img/home/scale-bg.svg') no-repeat top center;
   background-size: cover;
+  height: 100vh;
   @media screen and (max-width: 1200px) {
     background-position: -192px center;
   }
@@ -56,9 +57,9 @@
   font-family: $extended-book, sans-serif;
 }
 .point {
-  font-size: 1.25rem;
-  padding-bottom: 1.25rem;
-  color: #fff;
+  font-size: 1.125rem;
+  padding-bottom: 1.125rem;
+
   @media screen and(max-width: $sm-break) {
     font-size: 1rem;
   }
@@ -81,7 +82,6 @@
 
 .fundingDescription {
   font-family: $maisonbook, sans-serif;
-  color: #303030;
   font-size: 1.125rem;
   @media screen and (max-width: 567px) {
     font-size: 1rem;
