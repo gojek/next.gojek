@@ -98,3 +98,9 @@
 .socialMediaCard {
   border-radius: 52px;
 }
+.test {
+  background: linear-gradient(to bottom, #101820 0%, #101820 60%, #101820 60%, #fff 60%, #fff 100%);
+  @media screen and (max-width: 567px) {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  }
+}

@@ -54,7 +54,7 @@ function Home(props) {
                 <br className="d-none d-lg-block" />
                 <span className="text-green-light">a Decacorn in Southeast Asia.</span>
               </h4>
-              <ul className={`mt-5 ${styles.pointers}`}>
+              <ul className={`mt-5 ${styles.pointers} pl-3`}>
                 {scalePointers.map((pointer) => (
                   <li className={`${styles.point}`}>{pointer}</li>
                 ))}
@@ -65,7 +65,7 @@ function Home(props) {
       </section>
 
       {/* Tech Facts */}
-      <section className="bg-black text-white pt-5">
+      <section className="bg-black text-white py-5">
         <div className="container pt-md-5">
           <h1 className={`text-center ${styles.fundingHeading}`}>
             Our tech powers
@@ -97,6 +97,10 @@ function Home(props) {
           </div>
         </div>
       </section>
+
+      {/* CTA */}
+      <CommonCta mobile light halfBackground />
+      {/* End CTA */}
 
       {/* <div className="container">
         <h1>Hello</h1>
