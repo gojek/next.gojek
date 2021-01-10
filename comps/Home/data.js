@@ -309,26 +309,26 @@ export const techFacts = [
     id: 1,
     content: 'We run one of the largest JRuby, Java, and Go clusters in Asia.',
     image: '/img/home/tech-facts/tech-fact-1.svg',
-    bgColor: '#74d2e7',
+    bgColor: '#4ac9e3',
   },
   {
     id: 2,
     content:
       'By the time you finish reading this sentence, we would have completed 978 orders across our 20+ products.',
     image: '/img/home/tech-facts/tech-fact-2.svg',
-    bgColor: '#7ccc6c',
+    bgColor: '#6cc24a',
   },
   {
     id: 3,
     content: 'We process more than 350 million internal API calls per second.',
     image: '/img/home/tech-facts/tech-fact-3.svg',
-    bgColor: '#ffae62',
+    bgColor: '#ff7f32',
   },
   {
     id: 4,
     content: 'We allocate 2 million drivers at a peak load of 180,000 live orders.',
     image: '/img/home/tech-facts/tech-fact-4.svg',
-    bgColor: '#ff808b',
+    bgColor: '#ff585d',
   },
 ];
 

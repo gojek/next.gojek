@@ -44,7 +44,7 @@ function Home(props) {
       </section>
       {/* End open source */}
 
-      <section className={`${styles.gojekBg}`}>
+      <section className={`${styles.gojekBg} d-md-block d-none`}>
         <div className="container py-5 full-height d-flex flex-column justify-content-start">
           {/* Row for heading */}
           <div className="row justify-content-end">
@@ -60,6 +60,33 @@ function Home(props) {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.gojekBg} d-md-none d-block`}>
+        <div className="container py-5 full-height d-flex flex-column justify-content-end">
+          {/* Row for heading */}
+          <div className="row justify-content-end">
+            <h4 className={`pt-0 pt-lg-5 col-md-6 ${styles.subHeading}`}>
+              Once a call-centre <br /> operation in Jakarta, now{' '}
+              <br className="d-none d-lg-block" />
+              <span className="text-green-light">a Decacorn in Southeast Asia.</span>
+            </h4>
+          </div>
+
+          {/* Row for description */}
+          <div className="row mt-auto mb-3 mb-md-5 justify-content-center justify-content-md-start pl-0 pl-md-5 text-white">
+            <ul className={`ext-white col-8 col-md-6 ${styles.pointers}`}>
+              <li className={`${styles.point}`}>200 million+ completed orders per month</li>
+              <li className={`${styles.point}`}>
+                As of 2019, the Gojek app has been downloaded almost 170 million times
+              </li>
+              <li className={`${styles.point}`}>1100% growth in transactions from 2016 to 2019</li>
+              <li className={`${styles.point}`}>
+                In 2019, we contributed $7 billion+ to the Indonesian economy
+              </li>
+            </ul>
           </div>
         </div>
       </section>
