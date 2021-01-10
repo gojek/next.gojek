@@ -1,73 +1,74 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Links from './Links';
+import WhatsAppForm from './whatsAppform';
 import PhoneInput from 'react-phone-input-2';
 import axios from 'axios';
 import swal from 'sweetalert';
 
 function Footer(props) {
-  const { register, handleSubmit, errors } = useForm();
-  const [countryName, setCountryName] = useState('');
-  const [name, setName] = useState('');
-  const [phoneNumber, setphoneNumber] = useState('');
+  // const { register, handleSubmit, errors } = useForm();
+  // const [countryName, setCountryName] = useState('');
+  // const [name, setName] = useState('');
+  // const [phoneNumber, setphoneNumber] = useState('');
 
-  const onSubmit = (data, e) => {
-    e.preventDefault();
-    console.log('country', countryName);
-    if (phoneNumber.length < 11) {
-      swal({
-        title: '',
-        text: 'Please enter a valid phone number',
-        icon: 'error',
-        timer: 4000,
-        button: false,
-      });
-    } else {
-      axios
-        .post(
-          `https://live-server-367.wati.io/api/v1/addContact/${phoneNumber}`,
-          {
-            name: data.name,
-            contactStatus: 'VALID',
-            customParams: [
-              {
-                name: 'country',
-                value: countryName,
-              },
-            ],
-          },
-          {
-            headers: {
-              Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4YWRiNTM0Zi0wYzI2LTQ1ZDUtOGJhMi04N2RlMzJhMTkxMjYiLCJ1bmlxdWVfbmFtZSI6InN1bWFudGgucmFqQGdvamVrLmNvbSIsIm5hbWVpZCI6InN1bWFudGgucmFqQGdvamVrLmNvbSIsImVtYWlsIjoic3VtYW50aC5yYWpAZ29qZWsuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQURNSU5JU1RSQVRPUiIsImV4cCI6MjUzNDAyMzAwODAwLCJpc3MiOiJDbGFyZV9BSSIsImF1ZCI6IkNsYXJlX0FJIn0.WXEky8gpycozqFQ-c9XrjGb2cqUEZc3is4taurCKppU`,
-            },
-          },
-        )
-        .then((response) => {
-          if (response.data.result === true) {
-            swal({
-              title: "You're on the list!",
-              text: 'We will keep you up to date on all the news from Gojek',
-              icon: 'success',
-              timer: 4000,
-              button: false,
-            });
-          } else {
-            swal({
-              title: 'Oops!',
-              text: 'Something went wrong. Please try again after later',
-              icon: 'error',
-              timer: 4000,
-              button: false,
-            });
-          }
-          setName('');
-          setphoneNumber('');
-        })
-        .catch((err) => {
-          console.log('error in request', err);
-        });
-    }
-  };
+  // const onSubmit = (data, e) => {
+  //   e.preventDefault();
+  //   console.log('country', countryName);
+  //   if (phoneNumber.length < 11) {
+  //     swal({
+  //       title: '',
+  //       text: 'Please enter a valid phone number',
+  //       icon: 'error',
+  //       timer: 4000,
+  //       button: false,
+  //     });
+  //   } else {
+  //     axios
+  //       .post(
+  //         `https://live-server-367.wati.io/api/v1/addContact/${phoneNumber}`,
+  //         {
+  //           name: data.name,
+  //           contactStatus: 'VALID',
+  //           customParams: [
+  //             {
+  //               name: 'country',
+  //               value: countryName,
+  //             },
+  //           ],
+  //         },
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4YWRiNTM0Zi0wYzI2LTQ1ZDUtOGJhMi04N2RlMzJhMTkxMjYiLCJ1bmlxdWVfbmFtZSI6InN1bWFudGgucmFqQGdvamVrLmNvbSIsIm5hbWVpZCI6InN1bWFudGgucmFqQGdvamVrLmNvbSIsImVtYWlsIjoic3VtYW50aC5yYWpAZ29qZWsuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQURNSU5JU1RSQVRPUiIsImV4cCI6MjUzNDAyMzAwODAwLCJpc3MiOiJDbGFyZV9BSSIsImF1ZCI6IkNsYXJlX0FJIn0.WXEky8gpycozqFQ-c9XrjGb2cqUEZc3is4taurCKppU`,
+  //           },
+  //         },
+  //       )
+  //       .then((response) => {
+  //         if (response.data.result === true) {
+  //           swal({
+  //             title: "You're on the list!",
+  //             text: 'We will keep you up to date on all the news from Gojek',
+  //             icon: 'success',
+  //             timer: 4000,
+  //             button: false,
+  //           });
+  //         } else {
+  //           swal({
+  //             title: 'Oops!',
+  //             text: 'Something went wrong. Please try again after later',
+  //             icon: 'error',
+  //             timer: 4000,
+  //             button: false,
+  //           });
+  //         }
+  //         setName('');
+  //         setphoneNumber('');
+  //       })
+  //       .catch((err) => {
+  //         console.log('error in request', err);
+  //       });
+  //   }
+  // };
 
   return (
     <section className="py-5 footer">
@@ -80,7 +81,7 @@ function Footer(props) {
             className="col-md-6 order-md-last order-first px-0 p-md-5 px-3 py-5 boder-pill contact"
             style={{ backgroundColor: '#000' }}
           >
-            <p className="form-text pb-4">
+            {/* <p className="form-text pb-4">
               Stories from our #SuperApp, <br />
               straight to your {''}
               <img src="/img/whatsapp-logo.svg" alt="WhatsApp" />{' '}
@@ -152,7 +153,8 @@ function Footer(props) {
               <button className="btn rounded-pill bg-green mt-4 px-4 text-white" type="submit">
                 Submit
               </button>
-            </form>
+            </form> */}
+            <WhatsAppForm src={'footer'} />
           </div>
         </div>
       </div>

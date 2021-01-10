@@ -1,6 +1,6 @@
 function CommonCta(props) {
   return (
-    <section className="commonFooter">
+    <section className={`commonFooter ${props.halfBackground ? 'joinus-cta' : ' bg-black'}`}>
       <div className="px-5 pt-4 d-none d-md-block">
         <div className="container">
           <a href="/jobs">

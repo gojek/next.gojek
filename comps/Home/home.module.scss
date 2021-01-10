@@ -40,3 +40,51 @@
     max-height: 16px;
   }
 }
+
+.socialMediaDescription {
+  font-size: 18px;
+  font-family: $demi;
+  line-height: 28px;
+  color: #080808;
+  a {
+    color: #080808;
+  }
+  // @media screen and (min-width: 768px) {
+  //   width: 50%;
+  // }
+}
+
+.socialMediaCard {
+  height: 312px;
+  border-radius: 3rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  @media screen and (max-width: 576px) {
+    height: 224px;
+  }
+}
+.socialIcon {
+  width: 45px !important;
+  height: 45px !important;
+  background-color: #00aa13;
+  padding: 16px;
+  border-radius: 50%;
+}
+
+.moreBtn {
+  font-family: $demi;
+  font-size: 21px;
+  @media screen and (max-width: 576px) {
+    font-size: 16px;
+  }
+}
+
+.name {
+  font-size: 20px;
+  font-family: $demi;
+  color: #fff;
+  @media screen and (max-width: 576px) {
+    color: #000;
+  }
+}
