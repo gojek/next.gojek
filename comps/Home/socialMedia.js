@@ -12,6 +12,21 @@ const sliderSettings = {
   infinite: false,
 };
 
+const socialIcons = [
+  {
+    icon: 'fa-instagram',
+    title: '',
+  },
+  {
+    icon: 'fa-',
+    title: '',
+  },
+  {
+    icon: '',
+    title: '',
+  },
+];
+
 function SocialMedia() {
   return (
     <div className="d-flex flex-column justify-content-around full-height">
