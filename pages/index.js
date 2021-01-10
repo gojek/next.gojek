@@ -1,4 +1,5 @@
-import InstagramEmbed from 'react-instagram-embed';
+import { useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
 
 import Navbar from '~/../../comps/Navbar';
 import ProductSlider from '../comps/Home/ProductSlider';
@@ -7,6 +8,7 @@ import Projects from '../comps/Home/OpenSource';
 import CommonCta from '~/../../comps/Common/Cta';
 import Funding from '../comps/Home/funding';
 import SocialMedia from '../comps/Home/socialMedia';
+import WhatsAppForm from '../comps/Common/Footer/whatsAppform';
 
 import styles from './index.module.scss';
 
@@ -18,7 +20,8 @@ const scalePointers = [
 ];
 
 function Home(props) {
-  console.log('fdfd', props);
+  const [active, setactive] = useState(false);
+
   return (
     <div>
       <Navbar />
@@ -37,6 +40,31 @@ function Home(props) {
         <ProductSlider />
       </section>
       {/* End Products section */}
+
+      {/* Floating whatsApp button */}
+      <div className="container">
+        <div className={`${styles.whatsappContainer}`}>
+          {!active && (
+            <div className={`${styles.whatsappPopup}`}>
+              <p onClick={() => setactive(true)} className="pointer">
+                <img src="/img/whatsapp-popup.svg" alt="WhatsApp" />
+              </p>
+            </div>
+          )}
+
+          {active && (
+            <div className={`${styles.whatsAppPopover} text-white p-5`}>
+              <WhatsAppForm
+                setactive={setactive}
+                src={'popup'}
+                formStyle={styles.formHeading}
+                style={styles.close}
+              />
+            </div>
+          )}
+        </div>
+      </div>
+      {/* End floating button */}
 
       {/* Open Source */}
       <section className="my-md-5 pb-md-5 pt-5">

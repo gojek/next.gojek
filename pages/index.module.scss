@@ -104,3 +104,38 @@
     background: linear-gradient(to bottom, #fff 0%, #fff 100%);
   }
 }
+
+// Whatsapp popup styles
+.whatsappContainer {
+  position: fixed;
+  right: 5%;
+  bottom: 1rem;
+  z-index: 5000;
+}
+.whatsappPopup {
+  float: right;
+  img {
+    width: 59px;
+    height: 59px;
+  }
+}
+.whatsAppPopover {
+  min-height: 10rem;
+  width: 100%;
+  border-radius: 2rem;
+  background-color: #000;
+}
+
+.close {
+  bottom: 10%;
+  position: absolute;
+  right: 10%;
+}
+.formHeading {
+  font-size: 20px;
+  font-family: $demi;
+  color: #bce194;
+  @media screen and (max-width: 576px) {
+    font-size: 1.25rem;
+  }
+}
