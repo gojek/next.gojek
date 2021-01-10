@@ -65,18 +65,19 @@
   }
 }
 .socialIcon {
-  width: 45px!important;
-    height: 45px!important;
+  width: 45px !important;
+  height: 45px !important;
   background-color: #00aa13;
   padding: 16px;
   border-radius: 50%;
 }
-.icon {
-  font-size: 21px;
-}
+
 .moreBtn {
   font-family: $demi;
-  min-height: 2.5rem;
+  font-size: 21px;
+  @media screen and (max-width: 576px) {
+    font-size: 16px;
+  }
 }
 
 .name {

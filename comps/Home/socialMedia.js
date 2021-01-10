@@ -100,9 +100,12 @@ function SocialMedia() {
 
         <div className="mb-5 my-md-5">
           <div className="w-100 text-md-center">
-            <a className={`${styles.moreBtn} btn bg-green-light rounded-pill px-4 text-white`} href="https://www.instagram.com/lifeatgojek/" target="_blank">
-              <i className={`fab fa-instagram pt-2 ${styles.icon}`}></i>
-              <span className="align-middle"> More like this</span>
+            <a
+              className={`btn bg-green-light rounded-pill px-4 text-white ${styles.moreBtn}`}
+              href="https://www.instagram.com/lifeatgojek/"
+              target="_blank"
+            >
+              <i className={`fab fa-instagram pt-2 `}></i> More like this
             </a>
           </div>
           <div className=" pt-5 mt-md-5 row justify-content-center">
@@ -116,7 +119,7 @@ function SocialMedia() {
                 </li>
                 <li className="list-inline-item mr-3">
                   <a href="#" target="_blank" className={`${styles.socialIcon} text-white`}>
-                    <i className={`fab fa-instagram align-middle ${styles.icon}`}></i>
+                    <i className={`fab fa-linkedin-in align-middle ${styles.icon}`}></i>
                   </a>
                 </li>
                 <li className="list-inline-item mr-3">
@@ -130,17 +133,29 @@ function SocialMedia() {
               <p className={` d-md-inline-block pr-3 pb-3 ${styles.name}`}>Gojek Tech</p>
               <ul className="list-inline d-md-inline-block">
                 <li className="list-inline-item mr-3">
-                  <a href="https://www.instagram.com/gojek.tech/" target="_blank" className={`${styles.socialIcon} text-white`}>
+                  <a
+                    href="https://www.instagram.com/gojek.tech/"
+                    target="_blank"
+                    className={`${styles.socialIcon} text-white`}
+                  >
                     <i className={`fab fa-instagram align-middle ${styles.icon}`}></i>
                   </a>
                 </li>
                 <li className="list-inline-item mr-3">
-                  <a href="https://www.linkedin.com/company/gojektech/" target="_blank" className={`${styles.socialIcon} text-white`}>
+                  <a
+                    href="https://www.linkedin.com/company/gojektech/"
+                    target="_blank"
+                    className={`${styles.socialIcon} text-white`}
+                  >
                     <i className={`fab fa-linkedin-in align-middle ${styles.icon}`}></i>
                   </a>
                 </li>
                 <li className="list-inline-item mr-3">
-                  <a href="https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured" target="_blank" className={`${styles.socialIcon} text-white`}>
+                  <a
+                    href="https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured"
+                    target="_blank"
+                    className={`${styles.socialIcon} text-white`}
+                  >
                     <i className={`fab fa-youtube align-middle ${styles.icon}`}></i>
                   </a>
                 </li>
