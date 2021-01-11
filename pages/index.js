@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import PhoneInput from 'react-phone-input-2';
 
 import Navbar from '~/../../comps/Navbar';
 import ProductSlider from '../comps/Home/ProductSlider';
@@ -20,6 +19,8 @@ const scalePointers = [
 ];
 
 function Home(props) {
+  const data = props.data.data;
+
   const [active, setactive] = useState(false);
 
   return (
@@ -159,31 +160,38 @@ function Home(props) {
       <CommonCta mobile light halfBackground />
       {/* End CTA */}
 
-      {/* <div className="container">
-        <h1>Hello</h1>
-        <InstagramEmbed
-          url="https://instagr.am/p/Zw9o4/"
-          clientAccessToken="276438368243|N37FEUhZRRuBewKrfO-5yGQ5Am0"
-          maxWidth={500}
-          hideCaption={true}
-          containerTagName="div"
-          protocol=""
-          injectScript
-          onLoading={() => {}}
-          onSuccess={() => {}}
-          onAfterRender={() => {}}
-          onFailure={() => {}}
-        />
-      </div> */}
+      <div className="container"></div>
 
       <section className={`${styles.socialMedia}`}>
         <h1 className="Social Media"></h1>
         <div className="container">
-          <SocialMedia />
+          <SocialMedia posts={data} />
         </div>
       </section>
     </div>
   );
+}
+
+// to fetch the jobs description
+export async function getServerSideProps(ctx) {
+  let apiUrl =
+    'https://graph.instagram.com/me/media?fields=media_url,thumbnail_url,permalink&access_token=IGQVJYc3c3S3A3VUlTa1FaSXotekpXS2NYNmRWMjFBdERlMVpQTnlqWFFJUmFRTTN3aWF4eFdES2YzaTNRdnE3ekN3WUQyQllwdzZAqQktLam1GQXVSUXc0SWRPUFRscFJidl90dG9Ka1V2SHVwamJnUgZDZD';
+
+  try {
+    const response = await fetch(apiUrl);
+
+    if (response.ok) {
+      const data = await response.json();
+      return { props: { data } };
+    } else {
+      return await { props: { data: [] } };
+    }
+  } catch (error) {
+    // Network error
+    return { props: { data: [] } };
+  }
+
+  // Get all jobs
 }
 
 export default Home;

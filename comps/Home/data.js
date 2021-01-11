@@ -441,7 +441,7 @@ export const fundingLogos = [
 
 export const socialMediaData = {
   description:
-    'Want to know the daily challenges, unconventional work culture and inner <br /> workings of Southeast Asia’s largest startup? We have stories to tell.<br /> <br/>(Editorial favourite: <a href="" class="font-weight-bold" target="_blank">Life At Gojek</a> Instagram & <a class="font-weight-bold" href="" target="_blank">Gojek Tech</a> Instagram)',
+    'Want to know the daily challenges, unconventional work culture and inner <br /> workings of Southeast Asia’s largest startup? We have stories to tell.<br /> <br/>(Editorial favourite: <strong>Life At Gojek</strong> Instagram & <strong>Gojek Tech</strong> Instagram)',
   links: [
     {
       id: '1',
