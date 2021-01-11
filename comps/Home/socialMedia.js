@@ -27,7 +27,9 @@ const socialIcons = [
   },
 ];
 
-function SocialMedia() {
+function SocialMedia(props) {
+  const posts = props.posts.slice(0, 3);
+  console.log('posys', props);
   return (
     <div className="d-flex flex-column justify-content-around full-height">
       <div></div>
@@ -40,61 +42,31 @@ function SocialMedia() {
         ></div>
         <div className="d-none d-md-block">
           <div className="row pb-5 ">
-            <div className="col-md-4 ">
-              <div
-                class={`${styles.socialMediaCard} card border-0`}
-                style={{ backgroundImage: `url(/img/home/open-source/heimdall.svg)` }}
-              >
-                <a href="" target="_blank"></a>
+            {posts.map((post, i) => (
+              <div className="col-md-4" key={post.id}>
+                <a href={post.permalink} target="_blank">
+                  <div
+                    class={`${styles.socialMediaCard} card border-0`}
+                    style={{ backgroundImage: `url(${post.media_url})` }}
+                  ></div>
+                </a>
               </div>
-            </div>
-
-            <div className="col-md-4 ">
-              <div
-                class={`${styles.socialMediaCard} card border-0`}
-                style={{ backgroundImage: `url(/img/home/open-source/heimdall.svg)` }}
-              >
-                <a href="" target="_blank"></a>
-              </div>
-            </div>
-
-            <div className="col-md-4 ">
-              <div
-                class={`${styles.socialMediaCard} card border-0`}
-                style={{ backgroundImage: `url(/img/home/open-source/heimdall.svg)` }}
-              >
-                <a href="" target="_blank"></a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
         <div className="d-block d-md-none pb-5">
           <Slider {...sliderSettings}>
-            <div className="col-md-12 pl-0">
-              <div
-                class={`${styles.socialMediaCard} card border-0`}
-                style={{ backgroundImage: `url(/img/home/open-source/heimdall.svg)` }}
-              >
-                <a href="" target="_blank"></a>
+            {posts.map((post, i) => (
+              <div className="col-md-12 pl-0">
+                <a href={post.permalink} target="_blank">
+                  <div
+                    class={`${styles.socialMediaCard} card border-0`}
+                    style={{ backgroundImage: `url(${post.media_url})` }}
+                  ></div>
+                </a>
               </div>
-            </div>
-            <div className="col-md-12 pl-0">
-              <div
-                class={`${styles.socialMediaCard} card border-0`}
-                style={{ backgroundImage: `url(/img/home/open-source/heimdall.svg)` }}
-              >
-                <a href="" target="_blank"></a>
-              </div>
-            </div>
-            <div className="col-md-12 pl-0">
-              <div
-                class={`${styles.socialMediaCard} card border-0`}
-                style={{ backgroundImage: `url(/img/home/open-source/heimdall.svg)` }}
-              >
-                <a href="" target="_blank"></a>
-              </div>
-            </div>
+            ))}
           </Slider>
         </div>
 
@@ -123,7 +95,11 @@ function SocialMedia() {
                   </a>
                 </li>
                 <li className="list-inline-item mr-3">
-                  <a href="#" target="_blank" className={`${styles.socialIcon} text-white`}>
+                  <a
+                    href="https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured"
+                    target="_blank"
+                    className={`${styles.socialIcon} text-white`}
+                  >
                     <i className={`fab fa-youtube align-middle ${styles.icon}`}></i>
                   </a>
                 </li>
@@ -152,11 +128,11 @@ function SocialMedia() {
                 </li>
                 <li className="list-inline-item mr-3">
                   <a
-                    href="https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured"
+                    href="https://www.linkedin.com/company/gojek"
                     target="_blank"
                     className={`${styles.socialIcon} text-white`}
                   >
-                    <i className={`fab fa-youtube align-middle ${styles.icon}`}></i>
+                    <i className={`fab fa-twitter align-middle ${styles.icon}`}></i>
                   </a>
                 </li>
               </ul>
