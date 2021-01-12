@@ -6,6 +6,7 @@ import Head from 'next/head';
 import Moment from 'react-moment';
 import Navbar from '~/../../comps/Navbar';
 import CommonCta from '~/../../comps/Common/Cta';
+import DisqusComments from '~/../../comps/BlogNew/DisqusComments';
 
 import { readingTime as readingTimeHelper } from '@tryghost/helpers';
 
@@ -116,6 +117,14 @@ function BlogDetails(props) {
             </article>
           </div>
         </div>
+      </section>
+
+      <section className="mb-5">
+        <DisqusComments
+          id={post.id}
+          title={post.title}
+          url={`http://localhost:3030/blog/${post.slug}`}
+        />
       </section>
 
       {/* CTA */}
