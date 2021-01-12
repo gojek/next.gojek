@@ -9,6 +9,7 @@
     "@tryghost/helpers": "^1.1.35",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.0",
+    "disqus-react": "^1.0.10",
     "gsap": "^3.5.1",
     "isomorphic-unfetch": "^3.0.0",
     "moment": "^2.26.0",

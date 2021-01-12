@@ -48,7 +48,7 @@ function Home(props) {
           {!active && (
             <div className={`${styles.whatsappPopup}`}>
               <p onClick={() => setactive(true)} className="pointer">
-                <img src="/img/whatsapp-popup.svg" alt="WhatsApp" />
+                <img src="/img/whatsapp-logo.svg" alt="WhatsApp" />
               </p>
             </div>
           )}
