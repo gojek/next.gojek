@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Moment from 'react-moment';
 import Navbar from '~/../../comps/Navbar';
 import CommonCta from '~/../../comps/Common/Cta';
-import DisqusComments from '~/../../comps/BlogNew/DisqusComments';
+import DisqusComments from '~/../../comps/BlogNew/disqusComments';
 
 import { readingTime as readingTimeHelper } from '@tryghost/helpers';
 
