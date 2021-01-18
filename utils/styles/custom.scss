@@ -632,7 +632,8 @@ html {
     .slick-dots {
       display: flex !important;
       background: white;
-      bottom: 36px;
+      bottom: 4rem;
+      // bottom: 36px;
       max-width: 1000px;
       left: 0;
       right: 0;
@@ -690,6 +691,13 @@ html {
           z-index: 1;
         }
       }
+    }
+    .slick-prev {
+      left: 2rem;
+      z-index: 1;
+    }
+    .slick-next {
+      right: 2rem;
     }
   }
 

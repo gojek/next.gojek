@@ -7,6 +7,7 @@ function Milestones() {
   const settings = {
     dots: true,
     infinite: false,
+    arrows: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     cssEase: 'ease-in-out',
