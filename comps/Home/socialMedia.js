@@ -43,12 +43,18 @@ function SocialMedia(props) {
         <div className="d-none d-md-block">
           <div className="row pb-5 ">
             {posts.map((post, i) => (
-              <div className="col-md-4" key={post.id}>
+              <div className={` ${styles.socialMediaWrapper} col-md-4`} key={post.id}>
                 <a href={post.permalink} target="_blank">
                   <div
-                    class={`${styles.socialMediaCard} card border-0`}
+                    className={`${styles.socialMediaCard} card border-0`}
                     style={{ backgroundImage: `url(${post.media_url})` }}
-                  ></div>
+                  >
+                    <div className={`${styles.socialMediaOverlay}`}>
+                      <div className={`${styles.overlayText} d-flex justify-content-center align-items-center`}>
+                        <i className="far fa-eye"></i>
+                      </div>
+                    </div>
+                  </div>
                 </a>
               </div>
             ))}
@@ -70,7 +76,7 @@ function SocialMedia(props) {
           </Slider>
         </div>
 
-        <div className="mb-5 my-md-5">
+        <div className="mb-5 mb-md-0 mt-md-5">
           <div className="w-100 text-md-center">
             <a
               className={`btn bg-green-light rounded-pill px-4 text-white ${styles.moreBtn}`}

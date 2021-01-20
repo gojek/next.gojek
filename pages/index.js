@@ -68,7 +68,7 @@ function Home(props) {
       {/* End floating button */}
 
       {/* Open Source */}
-      <section className="my-md-5 pb-md-5 pt-5">
+      <section className="pb-md-5">
         <Projects />
       </section>
       {/* End open source */}
@@ -123,7 +123,7 @@ function Home(props) {
       </section>
 
       {/* Tech Facts */}
-      <section className="bg-black text-white py-5">
+      <section className="bg-black text-white py-3">
         <div className="container pt-md-5">
           <h1 className={`text-center ${styles.fundingHeading}`}>
             Our tech powers
@@ -132,7 +132,7 @@ function Home(props) {
 
           <TechFacts />
 
-          <div className="row mt-md-5 d-flex">
+          <div className="row d-flex">
             <div className="col-4 mt-md-5 pt-md-5 align-self-center">
               <img
                 src="./img/home/funding/gojek-funding.svg"

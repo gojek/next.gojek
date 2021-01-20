@@ -22,8 +22,10 @@
 }
 
 .products {
-  padding-top: 5rem;
-  padding-bottom: 10rem;
+  // padding-top: 5rem;
+  padding-top: 3rem;
+  // padding-bottom: 10rem;
+  padding-bottom: 5rem;
   @media screen and (max-width: 576px) {
     padding-bottom: 5rem;
   }

@@ -9,7 +9,7 @@ SwiperCore.use([Navigation, Scrollbar, A11y]);
 function TechFacts() {
   return (
     <div>
-      <div className="pt-5 d-none d-md-block">
+      <div className="pt-3 d-none d-md-block">
         {techFacts.map((data, i) => (
           <div
             className={`card text-white px-5 border-0 my-3 shadow mx-3 mx-md-0 ${styles.factCard}`}

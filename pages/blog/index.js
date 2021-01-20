@@ -106,8 +106,8 @@ function Blog(props) {
         </div>
       </section>
 
-      <div className="container">
-        {!clicked && (
+      <div className="container" style={{ position: 'relative' }}>
+
           <Tags
             tags={tags}
             onClick={changeTag}
@@ -116,41 +116,55 @@ function Blog(props) {
             clicked={clicked}
             page="blog"
           />
-        )}
 
-        <div class="input-group  py-5">
-          <label htmlFor="search" class="sr-only">
-            Keyword
-          </label>
-
-          <div class={`${styles.searchBox}`}>
-            <input
-              type="text"
-              placeholder="Search"
-              className={`input-search ${clicked ? 'active-link visible mb-5' : 'invisible mb-0'}`}
-              ref={inputRef}
-              onChange={(event) => changekeyword(event.target.value)}
-              placeholder="Search blogs (kubernetes, #firstprinciples, work from home, design)"
-            />
+        <div
+          className={`input-group py-5 ${styles.searchBox}`}
+          style={clicked ? { width: '84%' } : { width: '5%' }}
+        >
+          <div
+            className={`input-group-prepend `}
+            style={clicked ? { borderBottom: '1px solid green', backgroundColor: 'white' } : { borderBottom: 'none', backgroundColor: 'white' }}
+            onClick={changeClicked}
+          >
+            <span
+              className={`input-group-text text-green-light `}
+              style={{ border: '0', backgroundColor: 'transparent' }}
+            >
+              <img className="img-fluid" src="/img/blog/search.svg" />
+            </span>
           </div>
 
-          {clicked && (
-            <div class="input-group-append" style={{ borderBottom: '1px solid green' }}>
-              <span
-                aria-hidden="true"
-                style={{ fontSize: '2rem' }}
-                className="text-green-light pointer"
-                onClick={handleClose}
-              >
-                &times;
-              </span>
-            </div>
-          )}
+          <input
+            type="text"
+            placeholder="Search"
+            className={`input-search form-control active-link ${
+              clicked ? 'd-block' : 'd-none'
+            }`}
+            ref={inputRef}
+            onChange={(event) => changekeyword(event.target.value)}
+            placeholder="Search blogs (kubernetes, #firstprinciples, design)"
+          />
+
+          <div
+            className={`input-group-append ${
+              clicked ? 'd-block' : 'd-none'
+            }`}
+            style={{ borderBottom: '1px solid green' }}
+          >
+            <span
+              aria-hidden="true"
+              className="input-group-text text-green-light pointer"
+              style={{ border: '0', backgroundColor: 'transparent', fontSize: '24px' }}
+              onClick={handleClose}
+            >
+              &times;
+            </span>
+          </div>
         </div>
       </div>
 
       {keyword === '' && (
-        <section className={`post-feed container ${clicked ? 'mt-5' : ''}`}>
+        <section className={`post-feed container`}>
           <BlogNew heading="Latest" posts={props.latestPosts} link="/blog/all" pageName="blog" />
         </section>
       )}
