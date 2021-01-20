@@ -73,7 +73,7 @@ function WhatsAppForm(props) {
 
   return (
     <>
-      <p className={`form-text pb-4 ${props.formStyle}`}>
+      <p className={`form-text pb-4 formHeading`}>
         Stories from our #SuperApp, <br />
         straight to your {''}
         <img src="/img/whatsapp-logo.svg" alt="WhatsApp" />{' '}
@@ -146,7 +146,7 @@ function WhatsAppForm(props) {
         {props.src === 'popup' && (
           <i
             onClick={() => props.setactive(false)}
-            className={`fas fa-times text-white float-right pointer ${props.style}`}
+            className={`fas fa-times text-white float-right pointer whatsApp-close`}
           ></i>
         )}
       </form>

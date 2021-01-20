@@ -70,7 +70,7 @@ function SocialMedia(props) {
           </Slider>
         </div>
 
-        <div className="mb-5 my-md-5">
+        <div className="">
           <div className="w-100 text-md-center">
             <a
               className={`btn bg-green-light rounded-pill px-4 text-white ${styles.moreBtn}`}
@@ -80,7 +80,7 @@ function SocialMedia(props) {
               <i className={`fab fa-instagram pt-2 `}></i> More like this
             </a>
           </div>
-          <div className=" pt-5 mt-md-5 row justify-content-center">
+          <div className="mt-md-5 row justify-content-center">
             <div className="col-md-5 pb-5">
               <p className={` d-md-inline-block pr-3 pb-3 ${styles.name}`}>Life at Gojek</p>
               <ul className="list-inline d-md-inline-block">

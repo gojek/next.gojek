@@ -128,6 +128,7 @@ function Blog(props) {
               type="text"
               placeholder="Search"
               className={`input-search ${clicked ? 'active-link visible mb-5' : 'invisible mb-0'}`}
+              style={clicked ? { width: '84%' } : { width: '10%' }}
               ref={inputRef}
               onChange={(event) => changekeyword(event.target.value)}
               placeholder="Search blogs (kubernetes, #firstprinciples, work from home, design)"

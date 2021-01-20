@@ -158,7 +158,7 @@ function Footer(props) {
           </div>
         </div>
       </div>
-      <p className="text-white pt-3 pt-md-5 mt-0 mt-md-5 text-center">
+      <p className="text-white pt-3 pt-md-0 mt-0 mt-md-5 text-center">
         {' '}
         Gojek tech | <span>{new Date().getFullYear()}</span> All Rights Reserved
       </p>
