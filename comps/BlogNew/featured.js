@@ -8,6 +8,22 @@ const sliderSettings = {
   dots: false,
   slidesToShow: 3,
   slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1.2,
+        slidesToScroll: 1
+      },
+    },
+  ],
 };
 
 function FeaturedPosts(props) {
@@ -40,7 +56,7 @@ function FeaturedPosts(props) {
       <Slider {...sliderSettings}>
         {props.posts.map((post) => (
           <div className="" key={post.id}>
-            <a href={post.link} className="">
+            <a href={`/blog/${post.slug}`} className="">
               <div
                 className={`thumbnail mx-3 ${styles.blogImg}`}
                 style={{ backgroundImage: `url(${post.feature_image})` }}

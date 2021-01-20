@@ -1,5 +1,7 @@
 .searchBox {
-  position: relative;
-  right: 0;
-  width: 94%;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  position: absolute;
+  right: 154px;
+  top: 0;
 }

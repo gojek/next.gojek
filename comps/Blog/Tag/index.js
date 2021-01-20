@@ -41,19 +41,6 @@ function Tags(props) {
           All
         </a>
       </div>
-      {/* <div className="pointer px-4 mb-3 mr-3 ml-1" style={{ borderLeft: '1px solid #b5b2b2' }}> */}
-
-      <div
-        className={`pointer px-4 mb-3 mr-3 ml-1 search-btn ${props.clicked ? 'animate' : ''}`}
-        onClick={props.handlesearchClicked}
-        style={{ borderLeft: '1px solid #b5b2b2' }}
-      >
-        <img
-          onClick={props.handlesearchClicked}
-          className="img-fluid mt-2"
-          src="/img/blog/search.svg"
-        />
-      </div>
     </div>
   );
 }

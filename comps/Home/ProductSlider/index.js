@@ -30,9 +30,9 @@ function ProductSlider() {
 
   return (
     <div>
-      <div className="container">
-        <div className="row pb-md-5">
-          <h1 className={`mx-4 d-none d-md-block ${styles.heading}`}>
+      <div className="container pt-0 pt-md-2">
+        <div className="row">
+          <h1 className={`mx-4 pb-4 d-none d-md-block ${styles.heading}`}>
             We have 20+ products and do over 7 million orders a day across{' '}
             <span className={`${activeProduct === 0 ? 'text-green-light' : 'text-white'}`}>
               Transport &amp; Logistics

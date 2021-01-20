@@ -7,10 +7,22 @@ import Moment from 'react-moment';
 import Navbar from '~/../../comps/Navbar';
 import CommonCta from '~/../../comps/Common/Cta';
 import DisqusComments from '~/../../comps/BlogNew/disqusComments';
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  WhatsappIcon,
+  LinkedinIcon,
+} from 'react-share';
 
 import { readingTime as readingTimeHelper } from '@tryghost/helpers';
 
 function BlogDetails(props) {
+  const [url, setUrl] = useState('./jobs');
+  const title = `Need to replace slug here`;
   const { post } = props;
 
   const readingTime = readingTimeHelper(post);
@@ -58,7 +70,7 @@ function BlogDetails(props) {
                 <p className="post-full-custom-excerpt">{post.excerpt}</p>
 
                 <div className="post-full-byline">
-                  <section className="post-full-byline-content">
+                  <section className="post-full-byline-content flex-wrap flex-sm-nowrap">
                     <ul className="author-list">
                       <li className="author-list-item">
                         <p className="author-avatar">
@@ -83,7 +95,7 @@ function BlogDetails(props) {
                       <h4 className="author-name text-dark text-capitalize">
                         {/* <a
                                                     href={`tag/${post.primary_author.slug}`}
-                                                > */}
+                                                  > */}
                         {post.primary_author.name}
                         {/* </a> */}
                       </h4>
@@ -94,6 +106,41 @@ function BlogDetails(props) {
                         </span>
                       </div>
                     </section>
+
+                    <div className="share mt-4 mt-sm-0 ml-0 ml-sm-auto">
+                      <span>Share: </span>
+                      <TwitterShareButton
+                        url={url}
+                        title={title}
+                        className="Demo__some-network__share-button mx-2"
+                      >
+                        <TwitterIcon size={30} round />
+                      </TwitterShareButton>
+                      <LinkedinShareButton
+                        url={url}
+                        title={title}
+                        quote={title}
+                        className="Demo__some-network__share-button mx-2"
+                      >
+                        <LinkedinIcon size={30} round />
+                      </LinkedinShareButton>
+                      <FacebookShareButton
+                        url={url}
+                        title={title}
+                        quote={title}
+                        // hashtag={this.state.hashtags}
+                        className="Demo__some-network__share-button mx-2"
+                      >
+                        <FacebookIcon size={30} round />
+                      </FacebookShareButton>
+                      <WhatsappShareButton
+                        url={url}
+                        className="Demo__some-network__share-button mx-2"
+                        title={title}
+                      >
+                        <WhatsappIcon size={30} round />
+                      </WhatsappShareButton>
+                    </div>
                   </section>
                 </div>
               </header>
