@@ -7,7 +7,7 @@ function Slide(props) {
     <div className="text-white product">
       <div className={`card p-3 ${data.bgClass} ${styles.productCard}`}>
         <div className="card-body pt-5">
-          <div className="container mx-4">
+          <div className="container">
           <h2 className={`card-title pb-md-5 ${styles.heading}`}>{data.name}</h2>
           <div className="row">
             {data.products.map((product) => (

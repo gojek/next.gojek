@@ -2,8 +2,8 @@
 @import '~/../../utils/styles/variables.scss';
 
 .home {
-  background: url('/img/home/gojek-banner.png') no-repeat center center;
-  height: 80vh;
+  background: url('/img/home/gojek-banner.png') no-repeat bottom center;
+  height: 70vh;
   background-size: cover;
   @media screen and (max-width: 576px) {
     background: url('/img/home/mobile-banner-new.png') no-repeat center bottom;
@@ -34,7 +34,7 @@
 .gojekBg {
   background: #ffffff url('/img/home/scale-bg.svg') no-repeat top center;
   background-size: cover;
-  height: 100vh;
+  height: 105vh;
   @media screen and (max-width: 1200px) {
     background-position: -192px center;
   }
@@ -43,7 +43,7 @@
     background-position-y: 160px;
     background-position-x: center;
   }
-  .fullHeight {
+  .full-height {
     min-height: 105vh;
   }
 }

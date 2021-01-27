@@ -5,8 +5,8 @@ import { fundingLogos } from './data';
 function Funding() {
   return (
     <div className="row">
-      {fundingLogos.map((funding) => (
-        <div className="col-4 my-2 my-md-3 text-center">
+      {fundingLogos.map((funding, i) => (
+        <div className="col-4 my-2 my-md-3 text-center" key={`${i}`}>
           <div
             className={`${styles.fundingLogo}  d-flex align-items-center justify-content-center`}
           >

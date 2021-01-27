@@ -79,8 +79,8 @@ function Home(props) {
                 <span className="text-green-light">a Decacorn in Southeast Asia.</span>
               </h4>
               <ul className={`mt-5 ${styles.pointers} pl-3`}>
-                {scalePointers.map((pointer) => (
-                  <li className={`${styles.point}`}>{pointer}</li>
+                {scalePointers.map((pointer, i) => (
+                  <li className={`${styles.point}`} key={i}>{pointer}</li>
                 ))}
               </ul>
             </div>
@@ -90,7 +90,7 @@ function Home(props) {
 
       <section className={`${styles.gojekBg} d-md-none d-block`}>
         <div
-          className={`container py-5 d-flex flex-column justify-content-end ${styles.fullHeight}`}
+          className={`container py-5 h-100 d-flex flex-column justify-content-end ${styles.fullHeight}`}
         >
           {/* Row for heading */}
           <div className="row justify-content-end">
@@ -167,7 +167,7 @@ function Home(props) {
 // to fetch the jobs description
 export async function getServerSideProps(ctx) {
   let apiUrl =
-    'https://graph.instagram.com/me/media?fields=media_url,thumbnail_url,permalink&access_token=IGQVJYc3c3S3A3VUlTa1FaSXotekpXS2NYNmRWMjFBdERlMVpQTnlqWFFJUmFRTTN3aWF4eFdES2YzaTNRdnE3ekN3WUQyQllwdzZAqQktLam1GQXVSUXc0SWRPUFRscFJidl90dG9Ka1V2SHVwamJnUgZDZD';
+    'https://graph.instagram.com/me/media?fields=media_url,thumbnail_url,permalink&access_token=IGQVJVZAzlDaVZAoS05QZA1FpTFBlbDZAsaXAxY0trUlh4U2cxUU8tMksyZAWlLdzFKZAENfWmdRanBvZAUNoLWZAvWl9XLTBjdWlqTjdSQ3l1T19LUEtIQUdSamxickhlNnhOM2pzLV9mQlpvTVZAwOHc4VHFVeAZDZD';
 
   try {
     const response = await fetch(apiUrl);
