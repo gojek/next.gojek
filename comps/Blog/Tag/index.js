@@ -26,7 +26,7 @@ function Tag(tagData) {
 
 function Tags(props) {
   return (
-    <div className={`py-5 d-flex ${styles.tagList}`}>
+    <div className={`pt-5 pb-4 d-flex ${styles.tagList}`}>
       {props.tags.map((tag, key) => (
         <Tag tag={tag} data={props} key={key} />
       ))}
@@ -41,6 +41,7 @@ function Tags(props) {
           All
         </a>
       </div>
+      <span style={{ lineHeight: '2.25rem', color: '#b5b2b2' }}>|</span>
     </div>
   );
 }

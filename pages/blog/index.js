@@ -106,7 +106,7 @@ function Blog(props) {
         </div>
       </section>
 
-      <div className="container" style={{ position: 'relative' }}>
+      <div className="container sticky-top bg-white">
         <Tags
           tags={tags}
           onClick={changeTag}
@@ -118,10 +118,10 @@ function Blog(props) {
 
         <div
           className={`input-group py-5 ${styles.searchBox}`}
-          style={clicked ? { width: '84%' } : { width: '5%' }}
+          style={clicked ? { width: '100%' } : { width: '5%' }}
         >
           <div
-            className={`input-group-prepend `}
+            className={`input-group-prepend`}
             style={
               clicked
                 ? { borderBottom: '1px solid green', backgroundColor: 'white' }
@@ -131,7 +131,7 @@ function Blog(props) {
           >
             <span
               className={`input-group-text text-green-light `}
-              style={{ border: '0', backgroundColor: 'transparent' }}
+              style={{ backgroundColor: 'transparent', border: 0, paddingLeft: '1rem' }}
             >
               <img className="img-fluid" src="/img/blog/search.svg" />
             </span>

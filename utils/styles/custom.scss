@@ -1080,3 +1080,13 @@ html {
     font-size: 1.25rem;
   }
 }
+.search-group {
+  border: 0;
+  border-radius: 0;
+  &:after {
+    content: '';
+    display: block;
+    border-left: 1px solid #b5b2b2;
+    width: 90%;
+  }
+}
