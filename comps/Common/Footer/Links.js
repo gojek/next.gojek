@@ -28,12 +28,12 @@ function Links(props) {
           {data.socialLinks.map((socialMedia, key) => (
             <li className="list-inline-item" key={key}>
               <a
-                className="text-white"
+                className="text-white social-icon"
                 href={socialMedia.link}
                 target="_blank"
                 title={socialMedia.name}
               >
-                <i className={` ${socialMedia.icon}`}></i>
+                <img src={socialMedia.icon} alt={socialMedia.title}/>
               </a>
             </li>
           ))}
@@ -60,7 +60,8 @@ function Links(props) {
             key={key}
           >
             <a class="text-white" href={socialMedia.link} target="_blank" title={socialMedia.name}>
-              <i className={` ${socialMedia.icon}`}></i>
+              {/* <i className={` ${socialMedia.icon}`}></i> */}
+              <img src={socialMedia.icon} />
             </a>
           </li>
         ))}

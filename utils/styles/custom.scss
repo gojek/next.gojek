@@ -1090,3 +1090,9 @@ html {
     width: 90%;
   }
 }
+
+.tags-nav {
+  &.sticky-top {
+    top: 72px;
+  }
+}

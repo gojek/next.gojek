@@ -106,61 +106,63 @@ function Blog(props) {
         </div>
       </section>
 
-      <div className="container sticky-top bg-white">
-        <Tags
-          tags={tags}
-          onClick={changeTag}
-          activeTag={tag}
-          handlesearchClicked={changeClicked}
-          clicked={clicked}
-          page="blog"
-        />
-
-        <div
-          className={`input-group py-5 ${styles.searchBox}`}
-          style={clicked ? { width: '100%' } : { width: '5%' }}
-        >
-          <div
-            className={`input-group-prepend`}
-            style={
-              clicked
-                ? { borderBottom: '1px solid green', backgroundColor: 'white' }
-                : { borderBottom: 'none', backgroundColor: 'white' }
-            }
-            onClick={changeClicked}
-          >
-            <span
-              className={`input-group-text text-green-light `}
-              style={{ backgroundColor: 'transparent', border: 0, paddingLeft: '1rem' }}
-            >
-              <img className="img-fluid" src="/img/blog/search.svg" />
-            </span>
-          </div>
-
-          <input
-            type="text"
-            placeholder="Search"
-            className={`input-search form-control active-link ${clicked ? 'd-block' : 'd-none'}`}
-            ref={inputRef}
-            onChange={(event) => changekeyword(event.target.value)}
-            placeholder="Search blogs (kubernetes, #firstprinciples, design)"
+      <section className={`tags-nav bg-white sticky-top`}>
+        <div className="container" style={{ position: 'relative'}}>
+          <Tags
+            tags={tags}
+            onClick={changeTag}
+            activeTag={tag}
+            handlesearchClicked={changeClicked}
+            clicked={clicked}
+            page="blog"
           />
 
           <div
-            className={`input-group-append ${clicked ? 'd-block' : 'd-none'}`}
-            style={{ borderBottom: '1px solid green' }}
+            className={`input-group py-5 ${styles.searchBox}`}
+            style={clicked ? { width: '100%' } : { width: '5%' }}
           >
-            <span
-              aria-hidden="true"
-              className="input-group-text text-green-light pointer"
-              style={{ border: '0', backgroundColor: 'transparent', fontSize: '24px' }}
-              onClick={handleClose}
+            <div
+              className={`input-group-prepend`}
+              style={
+                clicked
+                  ? { borderBottom: '1px solid green', backgroundColor: 'white' }
+                  : { borderBottom: 'none', backgroundColor: 'white' }
+              }
+              onClick={changeClicked}
             >
-              &times;
-            </span>
+              <span
+                className={`input-group-text text-green-light `}
+                style={{ backgroundColor: 'transparent', border: 0, paddingLeft: '1rem' }}
+              >
+                <img className="img-fluid" src="/img/blog/search.svg" />
+              </span>
+            </div>
+
+            <input
+              type="text"
+              placeholder="Search"
+              className={`input-search form-control active-link ${clicked ? 'd-block' : 'd-none'}`}
+              ref={inputRef}
+              onChange={(event) => changekeyword(event.target.value)}
+              placeholder="Search blogs (kubernetes, #firstprinciples, design)"
+            />
+
+            <div
+              className={`input-group-append ${clicked ? 'd-block' : 'd-none'}`}
+              style={{ borderBottom: '1px solid green' }}
+            >
+              <span
+                aria-hidden="true"
+                className="input-group-text text-green-light pointer"
+                style={{ border: '0', backgroundColor: 'transparent', fontSize: '24px' }}
+                onClick={handleClose}
+              >
+                &times;
+              </span>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {keyword === '' && (
         <section className={`post-feed container`}>

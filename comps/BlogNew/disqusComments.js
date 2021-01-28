@@ -1,7 +1,7 @@
 import { DiscussionEmbed } from 'disqus-react';
 const DisqusComments = (props) => {
   console.log('Pros', props);
-  const disqusShortname = 'test-8t3gldoljf';
+  const disqusShortname = 'gojek-tech';
   const disqusConfig = {
     url: props.url,
     identifier: props.id, // Single props id

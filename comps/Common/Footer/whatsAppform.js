@@ -80,7 +80,7 @@ function WhatsAppForm(props) {
         <span className="text-white">WhatsApp.</span>
       </p>
       <form autoComplete="off" onSubmit={handleSubmit(onSubmit)} className="subscribe-whatsapp">
-        <div className="mb-3">
+        <div className="mb-1">
           <input
             type="text"
             className="form-control bg-transparent border px-3"
