@@ -44,9 +44,9 @@ function Home(props) {
 
       {/* Floating whatsApp button */}
       <div className="container">
-        <div className={`${styles.whatsappContainer}`}>
+        <div className={`whatsappContainer`}>
           {!active && (
-            <div className={`${styles.whatsappPopup}`}>
+            <div className={`whatsappPopup`}>
               <p onClick={() => setactive(true)} className="pointer">
                 <img src="/img/whatsapp-logo.svg" alt="WhatsApp" />
               </p>
@@ -54,13 +54,8 @@ function Home(props) {
           )}
 
           {active && (
-            <div className={`${styles.whatsAppPopover} text-white p-5`}>
-              <WhatsAppForm
-                setactive={setactive}
-                src={'popup'}
-                formStyle={styles.formHeading}
-                style={styles.close}
-              />
+            <div className={`whatsAppPopover text-white p-5`}>
+              <WhatsAppForm setactive={setactive} src={'popup'} />
             </div>
           )}
         </div>
@@ -68,7 +63,7 @@ function Home(props) {
       {/* End floating button */}
 
       {/* Open Source */}
-      <section className="my-md-5 pb-md-5 pt-5">
+      <section className="my-md-2">
         <Projects />
       </section>
       {/* End open source */}
@@ -84,8 +79,8 @@ function Home(props) {
                 <span className="text-green-light">a Decacorn in Southeast Asia.</span>
               </h4>
               <ul className={`mt-5 ${styles.pointers} pl-3`}>
-                {scalePointers.map((pointer) => (
-                  <li className={`${styles.point}`}>{pointer}</li>
+                {scalePointers.map((pointer, i) => (
+                  <li className={`${styles.point}`} key={i}>{pointer}</li>
                 ))}
               </ul>
             </div>
@@ -95,7 +90,7 @@ function Home(props) {
 
       <section className={`${styles.gojekBg} d-md-none d-block`}>
         <div
-          className={`container py-5 d-flex flex-column justify-content-end ${styles.fullHeight}`}
+          className={`container py-5 h-100 d-flex flex-column justify-content-end ${styles.fullHeight}`}
         >
           {/* Row for heading */}
           <div className="row justify-content-end">
@@ -123,8 +118,8 @@ function Home(props) {
       </section>
 
       {/* Tech Facts */}
-      <section className="bg-black text-white py-5">
-        <div className="container pt-md-5">
+      <section className="bg-black text-white">
+        <div className="container py-md-5">
           <h1 className={`text-center ${styles.fundingHeading}`}>
             Our tech powers
             <br className="d-block d-md-none" /> Southeast Asia
@@ -132,8 +127,8 @@ function Home(props) {
 
           <TechFacts />
 
-          <div className="row mt-md-5 d-flex">
-            <div className="col-4 mt-md-5 pt-md-5 align-self-center">
+          <div className="row d-flex">
+            <div className="col-4 align-self-center">
               <img
                 src="./img/home/funding/gojek-funding.svg"
                 alt="Funding Gojek"
@@ -159,9 +154,6 @@ function Home(props) {
       {/* CTA */}
       <CommonCta mobile light halfBackground />
       {/* End CTA */}
-
-      <div className="container"></div>
-
       <section className={`${styles.socialMedia}`}>
         <h1 className="Social Media"></h1>
         <div className="container">
@@ -175,7 +167,7 @@ function Home(props) {
 // to fetch the jobs description
 export async function getServerSideProps(ctx) {
   let apiUrl =
-    'https://graph.instagram.com/me/media?fields=media_url,thumbnail_url,permalink&access_token=IGQVJYc3c3S3A3VUlTa1FaSXotekpXS2NYNmRWMjFBdERlMVpQTnlqWFFJUmFRTTN3aWF4eFdES2YzaTNRdnE3ekN3WUQyQllwdzZAqQktLam1GQXVSUXc0SWRPUFRscFJidl90dG9Ka1V2SHVwamJnUgZDZD';
+    'https://graph.instagram.com/me/media?fields=media_url,thumbnail_url,permalink&access_token=IGQVJVZAzlDaVZAoS05QZA1FpTFBlbDZAsaXAxY0trUlh4U2cxUU8tMksyZAWlLdzFKZAENfWmdRanBvZAUNoLWZAvWl9XLTBjdWlqTjdSQ3l1T19LUEtIQUdSamxickhlNnhOM2pzLV9mQlpvTVZAwOHc4VHFVeAZDZD';
 
   try {
     const response = await fetch(apiUrl);

@@ -73,20 +73,20 @@ export const data = {
   socialLinks: [
     {
       id: 1,
-      icon: 'fab fa-linkedin-in',
-      name: 'LinkedIn',
+      icon: '/img/icons/linkedin.svg',
+      title: 'Linkedin',
       link: 'https://www.linkedin.com/company/gojektech/',
     },
     {
       id: 2,
-      icon: 'fab fa-twitter',
-      name: 'twitter',
+      icon: '/img/icons/twitter.svg',
+      title: 'Twitter',
       link: 'https://twitter.com/gojektech',
     },
     {
       id: 3,
-      icon: 'fab fa-instagram',
-      name: 'Instagram',
+      icon: '/img/icons/instagram.svg',
+      title: 'Instagram',
       link: 'https://www.instagram.com/gojek.tech/',
     },
     // {
@@ -97,13 +97,13 @@ export const data = {
     // },
     {
       id: 5,
-      icon: 'fab fa-youtube',
-      name: 'YouTube',
+      icon: '/img/icons/youtube.svg',
+      title: 'YouTube',
       link: 'https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured',
     },
     {
       id: 6,
-      icon: 'fab fa-github',
+      icon: '/img/icons/github-big-logo.svg',
       name: 'GitHub',
       link: 'https://github.com/gojek',
     },

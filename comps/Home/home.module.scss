@@ -60,16 +60,49 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  backface-visibility: hidden;
+  transition: 0.6s ease;
+
   @media screen and (max-width: 576px) {
     height: 224px;
+    border-radius: 1rem;
   }
 }
+
+.socialMediaWrapper {
+  position: relative;
+  transition: 0.6s ease;
+
+  &:hover .socialMediaOverlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+    transition: 0.5s ease;
+  }
+}
+
+.socialMediaOverlay {
+  position: absolute;
+  border-radius: 3rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: #fff;
+  text-align: center;
+  transition: 0.6s ease;
+
+  .overlayText {
+    height: 100%;
+  }
+}
+
 .socialIcon {
-  width: 45px !important;
-  height: 45px !important;
+  width: 48px;
+  height: 48px;
   background-color: #00aa13;
-  padding: 16px 18px;
   border-radius: 50%;
+  display: flex;
 }
 
 .moreBtn {

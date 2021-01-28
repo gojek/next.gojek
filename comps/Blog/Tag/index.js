@@ -26,7 +26,7 @@ function Tag(tagData) {
 
 function Tags(props) {
   return (
-    <div className={`py-5 d-flex ${styles.tagList}`}>
+    <div className={`pt-5 pb-4 d-flex ${styles.tagList}`}>
       {props.tags.map((tag, key) => (
         <Tag tag={tag} data={props} key={key} />
       ))}
@@ -41,19 +41,7 @@ function Tags(props) {
           All
         </a>
       </div>
-      {/* <div className="pointer px-4 mb-3 mr-3 ml-1" style={{ borderLeft: '1px solid #b5b2b2' }}> */}
-
-      <div
-        className={`pointer px-4 mb-3 mr-3 ml-1 search-btn ${props.clicked ? 'animate' : ''}`}
-        onClick={props.handlesearchClicked}
-        style={{ borderLeft: '1px solid #b5b2b2' }}
-      >
-        <img
-          onClick={props.handlesearchClicked}
-          className="img-fluid mt-2"
-          src="/img/blog/search.svg"
-        />
-      </div>
+      <span style={{ lineHeight: '2.25rem', color: '#b5b2b2' }}>|</span>
     </div>
   );
 }

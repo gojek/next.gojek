@@ -12,18 +12,39 @@ const sliderSettings = {
   infinite: false,
 };
 
-const socialIcons = [
+const lifeAtGojekSocialAccounts = [
   {
-    icon: 'fa-instagram',
-    title: '',
+    icon: '/img/icons/instagram.svg',
+    title: 'Instagram',
+    link: 'https://www.instagram.com/lifeatgojek/',
   },
   {
-    icon: 'fa-',
-    title: '',
+    icon: '/img/icons/linkedin.svg',
+    title: 'Linkedin',
+    link: 'https://www.linkedin.com/company/gojek/life/engineering/',
   },
   {
-    icon: '',
-    title: '',
+    icon: '/img/icons/youtube.svg',
+    title: 'YouTube',
+    link: 'https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured',
+  },
+];
+
+const gojekTechSocialAccounts = [
+  {
+    icon: '/img/icons/instagram.svg',
+    title: 'Instagram',
+    link: 'https://www.instagram.com/gojek.tech/',
+  },
+  {
+    icon: '/img/icons/linkedin.svg',
+    title: 'Linkedin',
+    link: 'https://www.linkedin.com/company/gojektech/',
+  },
+  {
+    icon: '/img/icons/twitter.svg',
+    title: 'Twitter',
+    link: 'https://twitter.com/gojektech',
   },
 ];
 
@@ -32,7 +53,6 @@ function SocialMedia(props) {
   console.log('posys', props);
   return (
     <div className="d-flex flex-column justify-content-around full-height">
-      <div></div>
       <div>
         <div
           className={`${styles.socialMediaDescription} my-5`}
@@ -43,12 +63,20 @@ function SocialMedia(props) {
         <div className="d-none d-md-block">
           <div className="row pb-5 ">
             {posts.map((post, i) => (
-              <div className="col-md-4" key={post.id}>
+              <div className={` ${styles.socialMediaWrapper} col-md-4`} key={post.id}>
                 <a href={post.permalink} target="_blank">
                   <div
-                    class={`${styles.socialMediaCard} card border-0`}
+                    className={`${styles.socialMediaCard} card border-0 shadow`}
                     style={{ backgroundImage: `url(${post.media_url})` }}
-                  ></div>
+                  >
+                    <div className={`${styles.socialMediaOverlay}`}>
+                      <div
+                        className={`${styles.overlayText} d-flex justify-content-center align-items-center`}
+                      >
+                        View post
+                      </div>
+                    </div>
+                  </div>
                 </a>
               </div>
             ))}
@@ -58,10 +86,10 @@ function SocialMedia(props) {
         <div className="d-block d-md-none pb-5">
           <Slider {...sliderSettings}>
             {posts.map((post, i) => (
-              <div className="col-md-12 pl-0">
+              <div className="col-md-12 pl-0" key={post.id}>
                 <a href={post.permalink} target="_blank">
                   <div
-                    class={`${styles.socialMediaCard} card border-0`}
+                    className={`${styles.socialMediaCard} card border-0`}
                     style={{ backgroundImage: `url(${post.media_url})` }}
                   ></div>
                 </a>
@@ -70,77 +98,66 @@ function SocialMedia(props) {
           </Slider>
         </div>
 
-        <div className="mb-5 my-md-5">
+        <div className="">
           <div className="w-100 text-md-center">
             <a
               className={`btn bg-green-light rounded-pill px-4 text-white ${styles.moreBtn}`}
-              href="https://www.instagram.com/lifeatgojek/"
+              href="https://www.instagram.com/gojek.tech/"
               target="_blank"
             >
-              <i className={`fab fa-instagram pt-2 `}></i> More like this
+              <img
+                src="/img/icons/instagram.svg"
+                alt="Gojek Tech Instagram"
+                className="mr-2 img-fluid"
+              />{' '}
+              More like this
             </a>
           </div>
-          <div className=" pt-5 mt-md-5 row justify-content-center">
-            <div className="col-md-5 pb-5">
-              <p className={` d-md-inline-block pr-3 pb-3 ${styles.name}`}>Life at Gojek</p>
+          <div className="mt-md-5 row justify-content-center">
+            <div className="col-md-5 pt-5 pt-md-0 d-lg-flex align-items-center">
+              <p className={`pr-3 ${styles.name}`}>Life at Gojek</p>
               <ul className="list-inline d-md-inline-block">
-                <li className="list-inline-item mr-3">
-                  <a href="#" target="_blank" className={`${styles.socialIcon} text-white`}>
-                    <i className={`fab fa-instagram align-middle ${styles.icon}`}></i>
-                  </a>
-                </li>
-                <li className="list-inline-item mr-3">
-                  <a href="#" target="_blank" className={`${styles.socialIcon} text-white`}>
-                    <i className={`fab fa-linkedin-in align-middle ${styles.icon}`}></i>
-                  </a>
-                </li>
-                <li className="list-inline-item mr-3">
-                  <a
-                    href="https://www.youtube.com/channel/UCRQzgsSnYyxzhYGxLddKgEw/featured"
-                    target="_blank"
-                    className={`${styles.socialIcon} text-white`}
-                  >
-                    <i className={`fab fa-youtube align-middle ${styles.icon}`}></i>
-                  </a>
-                </li>
+                {lifeAtGojekSocialAccounts.map((lifeAtGojekSocialAccount, i) => (
+                  <li className="list-inline-item mr-3" key={i}>
+                    <a
+                      href={lifeAtGojekSocialAccount.link}
+                      target="_blank"
+                      className={`${styles.socialIcon} text-white align-items-middle justify-content-center`}
+                    >
+                      <img
+                        className="img-fluid"
+                        src={lifeAtGojekSocialAccount.icon}
+                        alt={lifeAtGojekSocialAccount.title}
+                      />
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
-            <div className="col-md-5">
-              <p className={` d-md-inline-block pr-3 pb-3 ${styles.name}`}>Gojek Tech</p>
+
+            <div className="col-md-5 d-lg-flex align-items-center">
+              <p className={`pr-3 ${styles.name}`}>Gojek Tech</p>
               <ul className="list-inline d-md-inline-block">
-                <li className="list-inline-item mr-3">
-                  <a
-                    href="https://www.instagram.com/gojek.tech/"
-                    target="_blank"
-                    className={`${styles.socialIcon} text-white`}
-                  >
-                    <i className={`fab fa-instagram align-middle ${styles.icon}`}></i>
-                  </a>
-                </li>
-                <li className="list-inline-item mr-3">
-                  <a
-                    href="https://www.linkedin.com/company/gojektech/"
-                    target="_blank"
-                    className={`${styles.socialIcon} text-white`}
-                  >
-                    <i className={`fab fa-linkedin-in align-middle ${styles.icon}`}></i>
-                  </a>
-                </li>
-                <li className="list-inline-item mr-3">
-                  <a
-                    href="https://www.linkedin.com/company/gojek"
-                    target="_blank"
-                    className={`${styles.socialIcon} text-white`}
-                  >
-                    <i className={`fab fa-twitter align-middle ${styles.icon}`}></i>
-                  </a>
-                </li>
+                {gojekTechSocialAccounts.map((gojekTechSocialAccount, i) => (
+                  <li className="list-inline-item mr-3" key={i}>
+                    <a
+                      href={gojekTechSocialAccount.link}
+                      target="_blank"
+                      className={`${styles.socialIcon} text-white align-items-middle justify-content-center`}
+                    >
+                      <img
+                        className="img-fluid"
+                        src={gojekTechSocialAccount.icon}
+                        alt={gojekTechSocialAccount.title}
+                      />
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div></div>
     </div>
   );
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Life@Gojek-Copy-8" transform="translate(-431.000000, -7540.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-3-Copy-2" transform="translate(431.000000, 7540.000000)">
+                <g id="Group-2">
+                    <path d="M19.9945845,20 L20,19.9991477 L20,12.4971387 C20,8.82710337 19.1633035,6 14.6196893,6 C12.4354329,6 10.9696345,7.13186412 10.3712204,8.20491903 L10.3080395,8.20491903 L10.3080395,6.34262754 L6,6.34262754 L6,19.9991477 L10.4858488,19.9991477 L10.4858488,13.2369414 C10.4858488,11.4564714 10.8432725,9.73481067 13.1782606,9.73481067 C15.4789504,9.73481067 15.5132487,11.7667113 15.5132487,13.3511506 L15.5132487,20 L19.9945845,20 Z" id="Path"></path>
+                    <polygon id="Path" points="8.92462238e-17 6 4 6 4 20 0 20"></polygon>
+                    <path d="M2,0 C0.895905621,0 0,0.891728544 0,1.99067519 C0,3.08962183 0.895905621,4 2,4 C3.10409438,4 4,3.08962183 4,1.99067519 C3.99930604,0.891728544 3.10340042,0 2,0 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
