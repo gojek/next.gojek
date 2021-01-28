@@ -123,7 +123,7 @@ function Navbar(props) {
                   (router.pathname === '/blog/all' && item.link === '/blog')
                     ? 'active'
                     : ''
-                }${item.type && item.type === 'button' ? ' pt-2' : ' '}`}
+                }${item.type && item.type === 'button' ? '' : ' '}`}
                 key={item.id}
               >
                 {item.type && item.type === 'button' ? (
