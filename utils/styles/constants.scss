@@ -71,40 +71,40 @@ $form-border: 1px solid #979797;
 $form-border-radius: 28.5px;
 
 $colors: (
-  green: (
+  "green": (
     base: $green-base,
     light: $green-light,
   ),
-  red: (
+  "red": (
     base: $red,
   ),
-  orange: (
+  "orange": (
     base: $orange-base,
     light: $orange-light,
     lightest: $orange-lightest,
   ),
-  pink: (
+  "pink": (
     base: $pink-base,
     light: $pink-light,
   ),
-  blue: (
+  "blue": (
     base: $blue,
     light: $blue-light,
   ),
-  purple: (
+  "purple": (
     base: $purple,
   ),
-  gray: (
+  "gray": (
     base: $gray,
   ),
-  teal: (
+  "teal": (
     base: $teal,
   ),
-  yellow: (
+  "yellow": (
     base: $yellow-base,
     light: $yellow-light,
   ),
-  black: (
+  "black": (
     base: $black,
   ),
 );
