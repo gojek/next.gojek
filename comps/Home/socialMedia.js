@@ -50,7 +50,6 @@ const gojekTechSocialAccounts = [
 
 function SocialMedia(props) {
   const posts = props.posts.slice(0, 3);
-  console.log('posys', props);
   return (
     <div className="d-flex flex-column justify-content-around full-height">
       <div>
