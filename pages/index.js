@@ -28,8 +28,8 @@ function Home(props) {
       <Navbar />
       <section className={`py-5 d-flex align-items-md-center align-items-start ${styles.home}`}>
         <div className="container">
-          <div className="row align-items-md-center align-items-start">
-            <h1 className={`pt-5 px-4 ${styles.heading}`} style={{ marginTop: '50px' }}>
+          <div className="align-items-md-center align-items-start">
+            <h1 className={`pt-5 ${styles.heading}`} style={{ marginTop: '50px' }}>
               Gojek is a<br /> SuperApp.{' '}
             </h1>
           </div>
@@ -37,38 +37,18 @@ function Home(props) {
       </section>
 
       {/* Products section */}
-      <section className={`bg-black text-white ${styles.products}`}>
+      <section className={`py-5 bg-black text-white ${styles.products}`}>
         <ProductSlider />
       </section>
       {/* End Products section */}
 
-      {/* Floating whatsApp button */}
-      <div className="container">
-        <div className={`whatsappContainer`}>
-          {!active && (
-            <div className={`whatsappPopup`}>
-              <p onClick={() => setactive(true)} className="pointer">
-                <img src="/img/whatsapp-logo.svg" alt="WhatsApp" />
-              </p>
-            </div>
-          )}
-
-          {active && (
-            <div className={`whatsAppPopover text-white p-5`}>
-              <WhatsAppForm setactive={setactive} src={'popup'} />
-            </div>
-          )}
-        </div>
-      </div>
-      {/* End floating button */}
-
       {/* Open Source */}
-      <section className="my-md-2">
+      <section className="py-5">
         <Projects />
       </section>
       {/* End open source */}
 
-      <section className={`${styles.gojekBg} d-md-block d-none`}>
+      <section className={`py-5 ${styles.gojekBg} d-md-block d-none`}>
         <div className="container py-5 full-height d-flex flex-column justify-content-start">
           {/* Row for heading */}
           <div className="row justify-content-end">
@@ -80,7 +60,9 @@ function Home(props) {
               </h4>
               <ul className={`mt-5 ${styles.pointers} pl-3`}>
                 {scalePointers.map((pointer, i) => (
-                  <li className={`${styles.point}`} key={i}>{pointer}</li>
+                  <li className={`${styles.point}`} key={i}>
+                    {pointer}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -118,15 +100,19 @@ function Home(props) {
       </section>
 
       {/* Tech Facts */}
-      <section className="bg-black text-white">
-        <div className="container py-md-5">
-          <h1 className={`text-center ${styles.fundingHeading}`}>
+      <section className="py-5 bg-black text-white">
+        <div className="container">
+          <h1 className={`py-5 text-center ${styles.fundingHeading}`}>
             Our tech powers
             <br className="d-block d-md-none" /> Southeast Asia
           </h1>
 
           <TechFacts />
+        </div>
+      </section>
 
+      <section className="py-5 bg-black text-white">
+        <div className="container">
           <div className="row d-flex">
             <div className="col-4 align-self-center">
               <img
@@ -160,6 +146,26 @@ function Home(props) {
           <SocialMedia posts={data} />
         </div>
       </section>
+
+      {/* Floating whatsApp button */}
+      <div className="container">
+        <div className={`whatsappContainer`}>
+          {!active && (
+            <div className={`whatsappPopup`}>
+              <p onClick={() => setactive(true)} className="pointer">
+                <img src="/img/whatsapp-logo.svg" alt="WhatsApp" />
+              </p>
+            </div>
+          )}
+
+          {active && (
+            <div className={`whatsAppPopover text-white p-5`}>
+              <WhatsAppForm setactive={setactive} src={'popup'} />
+            </div>
+          )}
+        </div>
+      </div>
+      {/* End floating button */}
     </div>
   );
 }

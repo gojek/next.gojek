@@ -30,39 +30,34 @@ function ProductSlider() {
 
   return (
     <div>
-      <div className="container pt-0 pt-md-2">
-        <div className="row">
-          <h1 className={`mx-4 pb-4 d-none d-md-block ${styles.heading}`}>
-            We have 20+ products and do over 7 million orders a day across{' '}
-            <span className={`${activeProduct === 0 ? 'text-green-light' : 'text-white'}`}>
-              Transport &amp; Logistics
-            </span>
-            ,{' '}
-            <span className={`${activeProduct === 1 ? 'text-red' : 'text-white'}`}>
-              Food &amp; Shopping
-            </span>
-            ,{' '}
-            <span className={`${activeProduct === 2 ? 'text-blue' : 'text-white'}`}>Payments</span>,{' '}
-            <span className={`${activeProduct === 3 ? 'daily-needs' : 'text-white'}`}>
-              Daily needs
-            </span>
-            ,{' '}
-            <span className={`${activeProduct === 4 ? 'text-purple' : 'text-white'}`}>
-              Business,
-            </span>{' '}
-            <span className={`${activeProduct === 5 ? 'text-pink-light' : 'text-white'}`}>
-              News &amp; Entertainment
-            </span>
-            .
-          </h1>
-          <h1 className={`px-5 mx-auto pb-5 d-md-none text-center  ${styles.subHeading}`}>
-            We have 20+ products and do <br />
-            over 7 million orders a day
-            <br /> across...
-          </h1>
-        </div>
+      <div className="container py-5">
+        <h1 className={`pt-5 d-none d-md-block ${styles.heading}`}>
+          We have 20+ products and do over 7 million orders a day across{' '}
+          <span className={`${activeProduct === 0 ? 'text-green-light' : 'text-white'}`}>
+            Transport &amp; Logistics
+          </span>
+          ,{' '}
+          <span className={`${activeProduct === 1 ? 'text-red' : 'text-white'}`}>
+            Food &amp; Shopping
+          </span>
+          , <span className={`${activeProduct === 2 ? 'text-blue' : 'text-white'}`}>Payments</span>,{' '}
+          <span className={`${activeProduct === 3 ? 'daily-needs' : 'text-white'}`}>
+            Daily needs
+          </span>
+          ,{' '}
+          <span className={`${activeProduct === 4 ? 'text-purple' : 'text-white'}`}>Business,</span>{' '}
+          <span className={`${activeProduct === 5 ? 'text-pink-light' : 'text-white'}`}>
+            News &amp; Entertainment
+          </span>
+          .
+        </h1>
+        <h1 className={`px-5 mx-auto pb-5 d-md-none text-center  ${styles.subHeading}`}>
+          We have 20+ products and do <br />
+          over 7 million orders a day
+          <br /> across...
+        </h1>
       </div>
-      <div className="d-none d-md-block container-fluid gojek-products">
+      <div className="py-5 mb-5 d-none d-md-block gojek-products">
         <div className={`${styles.productWrapper}`}>
           <Slider {...settings}>
             {departments.map((data, i) => (
