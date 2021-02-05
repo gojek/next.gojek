@@ -42,13 +42,11 @@ function TechFacts() {
                 style={{ backgroundColor: data.bgColor }}
                 key={i}
               >
-                <div className="card-body pb-0 pt-4">
-                    <div className={`py-5 text-center`}>
-                      <h3 className={`${styles.factHeading}`}>{data.content}</h3>
-                    </div>
-                    <div className={``}>
-                      <img src={data.image} alt={data.content} className="img-fluid" />
-                    </div>
+                <div className="card-body d-flex flex-column justify-content-between pb-0">
+                  <div className={`py-5 text-center`}>
+                    <h3 className={`${styles.factHeading}`}>{data.content}</h3>
+                  </div>
+                  <img src={data.image} alt={data.content} className="img-fluid" />
                 </div>
               </div>
             </SwiperSlide>
