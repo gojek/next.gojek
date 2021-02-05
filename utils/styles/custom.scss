@@ -633,8 +633,7 @@ html {
       display: flex !important;
       background: white;
       bottom: 4rem;
-      // bottom: 36px;
-      max-width: 1000px;
+      max-width: 968px;
       left: 0;
       right: 0;
       margin: 0 auto;
@@ -659,6 +658,11 @@ html {
           opacity: 0.25;
           width: 4rem;
           z-index: 0;
+
+          @media (min-width: 576px) and (max-width: 768px) {
+            top: 0.575rem;
+            width: 2rem;
+          }
         }
 
         &:last-child {
@@ -702,7 +706,8 @@ html {
   }
 
   .mobile {
-    margin-top: 62px;
+    padding-top: 8rem;
+    padding-bottom: 6rem;
 
     .card {
       border-radius: 2.75rem;
@@ -1042,7 +1047,7 @@ html {
   }
 }
 .joinus-cta {
-  background: linear-gradient(to bottom, #101020 0%, #101020 65%, #101020 65%, #fff 65%, #fff 100%);
+  background: linear-gradient(to bottom, #101820 0%, #101820 50%, #101820 50%, #fff 50%, #fff 100%);
 }
 
 // Whatsapp styles

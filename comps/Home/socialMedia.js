@@ -50,12 +50,11 @@ const gojekTechSocialAccounts = [
 
 function SocialMedia(props) {
   const posts = props.posts.slice(0, 3);
-  console.log('posys', props);
   return (
     <div className="d-flex flex-column justify-content-around full-height">
       <div>
         <div
-          className={`${styles.socialMediaDescription} my-5`}
+          className={`${styles.socialMediaDescription} mb-5`}
           dangerouslySetInnerHTML={{
             __html: socialMediaData.description,
           }}
@@ -89,7 +88,7 @@ function SocialMedia(props) {
               <div className="col-md-12 pl-0" key={post.id}>
                 <a href={post.permalink} target="_blank">
                   <div
-                    className={`${styles.socialMediaCard} card border-0`}
+                    className={`${styles.socialMediaCard} card border-0 shadow-sm`}
                     style={{ backgroundImage: `url(${post.media_url})` }}
                   ></div>
                 </a>

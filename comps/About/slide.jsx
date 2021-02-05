@@ -9,7 +9,7 @@ function Slide(props) {
   return (
     <div className={`${data.bgClass} ${data.bgPattern}`}>
       <div className="container">
-        <div className="row full-height d-flex align-items-center justify-content-around">
+        <div className="row full-height d-flex align-items-center justify-content-md-around justify-content-lg-between">
           <img
             src={data.img}
             alt={data.title}

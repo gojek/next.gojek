@@ -2,14 +2,13 @@
 
 .factCard {
   border-radius: 52px;
-  display: inline-block;
-}
+  overflow: hidden;
 
-.techFactsWrapper {
   @media screen and (max-width: 576px) {
-    min-height: 26rem;
+    min-height: 30rem;
   }
 }
+
 .factHeading {
   font-size: $font-l;
   font-family: $font-bold, sans-serif;
@@ -19,6 +18,8 @@
     font-size: $font-m;
     line-height: 1.7rem;
     font-family: $demi, sans-serif;
+    max-width: 240px;
+    margin: 0 auto;
   }
 }
 
@@ -65,7 +66,7 @@
 
   @media screen and (max-width: 576px) {
     height: 224px;
-    border-radius: 1rem;
+    border-radius: 2rem;
   }
 }
 
@@ -103,6 +104,10 @@
   background-color: #00aa13;
   border-radius: 50%;
   display: flex;
+
+  img {
+    width: 18px;
+  }
 }
 
 .moreBtn {

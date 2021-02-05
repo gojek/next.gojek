@@ -32,7 +32,7 @@ function Milestones() {
         </Slider>
       </div>
 
-      <div className="d-md-none py-5 pl-5 pr-0 mobile bg-black">
+      <div className="d-md-none pl-5 pr-0 mobile bg-black">
         <Slider {...settings}>
           {milestones.map((data, i) => (
             <MobileSlider data={data} key={i} />

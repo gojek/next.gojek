@@ -7,7 +7,7 @@ function About() {
   const [active, setactive] = useState(false);
   return (
     <div>
-      <Navbar />
+      <Navbar whiteNav />
 
       <Milestones />
 

@@ -47,7 +47,7 @@ function Links(props) {
       <ul className="list-unstyled mb-0 row px-4">
         {data.links.map((data, i) => (
           <li className="pb-4 col-6" key={i}>
-            <a class="text-white" href={data.link}>
+            <a className="text-white" href={data.link}>
               {data.name}
             </a>
           </li>
@@ -59,7 +59,7 @@ function Links(props) {
             className={`list-inline-item ${key < data.socialLinks.length - 1 ? 'mr-4' : ''}`}
             key={key}
           >
-            <a class="text-white" href={socialMedia.link} target="_blank" title={socialMedia.name}>
+            <a className="text-white" href={socialMedia.link} target="_blank" title={socialMedia.name}>
               {/* <i className={` ${socialMedia.icon}`}></i> */}
               <img src={socialMedia.icon} />
             </a>
@@ -108,7 +108,7 @@ function Links(props) {
         {props.navbar ? (
           <button className="btn text-white" onClick={() => props.onClose()}>
             <span>
-              <i class="fas fa-times"></i>
+              <i className="fas fa-times"></i>
             </span>
           </button>
         ) : (

@@ -45,7 +45,7 @@ function Project(props) {
         <div className="col-md-7 offset-md-1 opensource pt-2 pt-md-0">
           <Slider {...settings}>
             {projects.data.map((data, i) => (
-              <Card data={data} />
+              <Card data={data} key={i}/>
             ))}
           </Slider>
         </div>
