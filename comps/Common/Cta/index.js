@@ -7,7 +7,7 @@ function CommonCta(props) {
             <div className="cta p-5">
               <div className="col-12 col-lg-7 py-3" style={{ fontFamily: 'Maison Nueue Demi' }}>
                 <p className="text-white">
-                  We’re dedicated to creating (and scaling) positive socio-economic impact for our
+                  We're dedicated to creating (and scaling) positive socio-economic impact for our
                   ecosystem of users.{' '}
                 </p>
                 <span className="link">

@@ -51,7 +51,7 @@ function ProductSlider() {
           </span>
           .
         </h1>
-        <h1 className={`px-5 mx-auto pb-5 d-md-none text-center  ${styles.subHeading}`}>
+        <h1 className={`px-5 mx-auto d-md-none text-center  ${styles.subHeading}`}>
           We have 20+ products and do <br />
           over 7 million orders a day
           <br /> across...

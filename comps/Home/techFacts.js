@@ -33,24 +33,22 @@ function TechFacts() {
           </div>
         ))}
       </div>
-      <div className="d-md-none mb-5">
+      <div className="d-md-none">
         <Swiper spaceBetween={32} slidesPerView={1} navigation>
           {techFacts.map((data, i) => (
             <SwiperSlide>
               <div
-                className={`card text-white px-5 border-0 my-3 shadow mx-md-0  ${styles.factCard}`}
+                className={`card text-white border-0 shadow mx-md-0  ${styles.factCard}`}
                 style={{ backgroundColor: data.bgColor }}
                 key={i}
               >
                 <div className="card-body pb-0 pt-4">
-                  <div className={`row ${styles.techFactsWrapper}`}>
-                    <div className={`col-md-6 px-0 align-self-center py-5 text-center`}>
+                    <div className={`py-5 text-center`}>
                       <h3 className={`${styles.factHeading}`}>{data.content}</h3>
                     </div>
-                    <div className={`col-md-6 px-0 align-self-end`}>
+                    <div className={``}>
                       <img src={data.image} alt={data.content} className="img-fluid" />
                     </div>
-                  </div>
                 </div>
               </div>
             </SwiperSlide>
