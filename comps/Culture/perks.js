@@ -19,7 +19,7 @@ function Perks({ perks, showPerks, mobilePerks }) {
               key={perk.id}
               style={{
                 height: perk.height,
-                backgroundImage: perk.img ? `url(${perk.img})` : '',
+                backgroundImage: perk.img ? `url(${perk.img})` : 'none',
                 backgroundColor: perk.bgColor,
               }}
             >
@@ -40,7 +40,7 @@ function Perks({ perks, showPerks, mobilePerks }) {
               key={perk.id}
               style={{
                 height: perk.height,
-                backgroundImage: perk.img ? `url(${perk.img})` : '',
+                backgroundImage: perk.img ? `url(${perk.img})` : 'none',
                 backgroundColor: perk.bgColor,
               }}
             >

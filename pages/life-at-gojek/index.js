@@ -41,29 +41,27 @@ function LifeAtGojek() {
       <Navbar whiteNav />
 
       <section className={`${styles.banner}`}>
-        <div className="container">
-          <div className="row mx-0 align-items-center full-height text-white">
-            <div className="col-md-6 col-10 px-0 position-relative pb-5 pb-md-0 mb-5 mb-md-0">
-              <h1 className={`pb-4 pb-md-3 ${styles.heading}`}>Culture </h1>
-              <p className="pb-3">
-                The biggest defining perk of Gojek is its culture. We have a cross-pollination of
-                ideas from Singapore, Indonesia, Thailand, Vietnam, and India. Different cultures,
-                different mindsets, unified in solving problems and learning.
-              </p>
-              <h5 className={`pb-3 ${styles.subHeading}`}>
-                We ardently believe failing is <br className="d-block d-md-none" /> learning. If
-                we’re not failing, <br className="d-block d-md-none" /> we’re not doing it right.
-              </h5>
-            </div>
+        <div className="container d-flex align-items-center full-height text-white">
+          <div className="col-md-6 col-10 px-0 position-relative pt-md-5 mt-md-5 pb-5 pb-md-0 mb-5 mb-md-0">
+            <h1 className={`pb-4 pb-md-3 ${styles.heading}`}>Culture </h1>
+            <p className="pb-3">
+              The biggest defining perk of Gojek is its culture. We have a cross-pollination of
+              ideas from Singapore, Indonesia, Thailand, Vietnam, and India. Different cultures,
+              different mindsets, unified in solving problems and learning.
+            </p>
+            <h5 className={`pb-3 ${styles.subHeading}`}>
+              We ardently believe failing is <br className="d-block d-md-none" /> learning. If we’re
+              not failing, <br className="d-block d-md-none" /> we’re not doing it right.
+            </h5>
           </div>
         </div>
       </section>
 
-      <section className="my-5 values">
-        <div className="container py-5">
+      <section className="py-5 values">
+        <div className="container py-3">
           <h1 className={`py-md-5 ${styles.valuesHeading}`}>Our values</h1>
         </div>
-        <div className="container-fluid pb-5">
+        <div className="container-fluid pb-3">
           <Values />
         </div>
       </section>
@@ -84,7 +82,7 @@ function LifeAtGojek() {
         </div>
       </section>
 
-      <section className="bg-white mt-md-5 pt-md-5">
+      <section className="bg-white pt-0 mt-0 pb-5 pt-md-5 pb-md-5 mt-md-5 mb-md-5">
         <CTA
           title="We're dedicated to creating (and scaling) positive socio-economic impact for our ecosystem of users. "
           href="/jobs"
@@ -93,13 +91,13 @@ function LifeAtGojek() {
         />
       </section>
 
-      <section className="my-md-5 pb-md-5 pt-5">
+      <section className="py-5">
         <Impact />
       </section>
 
       <section className="py-5" id="openingsBlogs">
-        <div className="container px-0 px-md-3">
-          <h1 className={`${styles.heading} pl-4 pl-md-3 pb-4`}>Our Stories</h1>
+        <div className="container">
+          <h1 className={`${styles.heading} pb-4`}>Our Stories</h1>
           <Blog />
         </div>
       </section>
