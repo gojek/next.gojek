@@ -2,13 +2,13 @@ import styles from '../index.module.scss';
 
 function Card(props) {
   return (
-    <div className="col-md-4 mb-5">
+    <div className="col-md-4 mb-2">
       <div className={`card ${styles.blogCard}`}>
         <div
           className={`bg-img ${styles.blogThumbnail}`}
           style={{ backgroundImage: `url(${props.data.img})` }}
         ></div>
-        <div className="card-body px-0 blog-card py-4">
+        <div className="card-body px-0 blog-card pt-4 pb-5">
           <p
             dangerouslySetInnerHTML={{
               __html: props.data.title,

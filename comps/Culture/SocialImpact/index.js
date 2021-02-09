@@ -20,7 +20,7 @@ const settings = {
 
 function Impact() {
   return (
-    <div className="container py-5 pr-md-0">
+    <div className="container pr-md-0">
       <div className="row">
         <div className="col-md-4 col-lg-3 my-auto">
           <h1 className={`${styles.heading} pb-4`}>{socialImpact.heading}</h1>

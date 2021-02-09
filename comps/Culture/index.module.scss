@@ -31,9 +31,11 @@
   padding: 2rem;
 
   border-radius: 2.5rem;
-  background-position: center bottom;
+  background-position: left bottom;
   background-repeat: no-repeat;
   margin-bottom: 2rem !important;
+  border: none;
+
   @media screen and(max-width: 576px) {
     margin-bottom: 1rem;
     padding: 2rem 1rem;

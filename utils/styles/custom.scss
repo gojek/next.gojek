@@ -933,12 +933,14 @@ html {
     .slick-dots {
       justify-content: center;
       @media screen and (min-width: 576px) {
-        bottom: -6rem;
-        margin-left: -8rem;
+        bottom: -4rem;
+        max-width: 1000px;
       }
+
       @media screen and (max-width: 576px) {
         margin-bottom: -4rem !important;
       }
+
       li {
         min-width: 2rem !important;
         @media screen and (max-width: 576px) {

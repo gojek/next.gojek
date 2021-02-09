@@ -19,7 +19,7 @@ const sliderSettings = {
 
 function Blog() {
   return (
-    <div className="container">
+    <div>
       {/* For Desktop */}
       <div className="d-none d-md-block">
         <div className="row pt-4">

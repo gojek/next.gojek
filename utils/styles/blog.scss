@@ -64,15 +64,17 @@
 .tag {
   position: absolute;
   background-color: $green-light;
-  padding: 0.4rem 1rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   border-radius: 0.5rem 1rem 1rem 0;
   top: 0;
-  // left: 11px;
-  line-height: normal;
+  line-height: 36px;
   z-index: 1;
   // change
   margin-left: 0.75rem;
+  min-width: 100px;
+  min-height: 36px;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 .tag::after {
@@ -88,11 +90,18 @@
 }
 
 .blog-banner {
-  min-height: 70vh;
+  min-height: 80vh;
+
   @media screen and (max-width: 576px) {
+    min-height: 60vh;
+
     .banner-head {
       font-size: 1.7rem;
     }
+  }
+
+  @media screen and (min-width: 1920px) {
+    min-height: 65vh;
   }
 }
 
@@ -602,11 +611,6 @@
   color: #009944;
 }
 
-@media screen and (min-width: 1900px) {
-  .blog-banner {
-    min-height: 50rem;
-  }
-}
 .search-blog:focus {
   box-shadow: none;
 }

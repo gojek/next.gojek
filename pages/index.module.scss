@@ -2,9 +2,16 @@
 @import '~/../../utils/styles/variables.scss';
 
 .home {
-  background: url('/img/home/gojek-banner.png') no-repeat bottom center;
+  background: url('/img/home/banner-xl.jpg') no-repeat bottom center;
   height: 70vh;
   background-size: cover;
+  @media screen and (max-width: 1440px) {
+    background: url('/img/home/banner-lg.jpg') no-repeat center bottom;
+  }
+  @media screen and (max-width: 768px) {
+    height: 50vh;
+    background: url('/img/home/banner-md.jpg') no-repeat center bottom;
+  }
   @media screen and (max-width: 576px) {
     background: url('/img/home/mobile-banner-new.png') no-repeat center bottom;
     height: 70vh;
