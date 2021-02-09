@@ -27,36 +27,10 @@ function BlogDetails(props) {
 
   const readingTime = readingTimeHelper(post);
 
-  const tags = [
-    {
-      name: `Tech`,
-      slug: `tech`,
-    },
-    {
-      name: `Data`,
-      slug: `data`,
-    },
-    {
-      name: `Culture`,
-      slug: `culture`,
-    },
-    {
-      name: `News`,
-      slug: `news`,
-    },
-    {
-      name: `Design`,
-      slug: `design`,
-    },
-    {
-      name: `Stories`,
-      slug: `stories`,
-    },
-  ];
   return (
     <div className="text-center text-md-left blog-page">
       <Head>
-        <title>Gojek | Blogs</title>
+        <title>{post.title} | Gojek Blogs</title>
       </Head>
       <Navbar />
 
