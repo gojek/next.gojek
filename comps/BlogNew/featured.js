@@ -28,7 +28,7 @@ const sliderSettings = {
 
 function FeaturedPosts(props) {
   return (
-    <section className="py-5 posts text-left container">
+    <section className="pt-3 pb-5 posts text-left container">
       <h1
         className={`mb-5 ${styles.featuredHeading} text-md-center pt-4`}
       >{`Featured Articles`}</h1>

@@ -80,10 +80,10 @@ function Blog(props) {
       <Navbar whiteNav />
       {/* banner section */}
       <section
-        className="py-5 d-flex align-items-center blog-banner"
+        className="py-5 mb-3 mb-md-5 d-flex align-items-center blog-banner"
         style={{ backgroundColor: '#00a913' }}
       >
-        <div className="container">
+        <div className="container pt-5">
           <div className="row justify-content-around align-items-center">
             <div className="col-12 col-md-5 col-lg-5 order-1 order-md-0">
               <h1 className="banner-head text-white pt-5 pt-md-0 px-4 px-md-0">
@@ -118,7 +118,7 @@ function Blog(props) {
           />
 
           <div
-            className={`input-group py-5 ${styles.searchBox}`}
+            className={`input-group my-3 ${styles.searchBox}`}
             style={clicked ? { width: '100%' } : { width: '5%' }}
           >
             <div
@@ -165,13 +165,13 @@ function Blog(props) {
       </section>
 
       {keyword === '' && (
-        <section className={`post-feed container`}>
+        <section className={`post-feed container mt-md-5 pt-3`}>
           <BlogNew heading="Latest" posts={props.latestPosts} link="/blog/all" pageName="blog" />
         </section>
       )}
 
       {keyword === '' && (
-        <section className="py-3" style={{ backgroundColor: '#f2f2f2' }}>
+        <section className="py-3 py-md-5" style={{ backgroundColor: '#f2f2f2' }}>
           <div className="post-feed">
             <FeaturedPosts heading="Featured Articles" posts={props.featuredPosts} />
           </div>
@@ -179,7 +179,7 @@ function Blog(props) {
       )}
 
       {keyword === '' && (
-        <section className="post-feed container mt-5">
+        <section className="post-feed container mt-md-5 pt-5">
           <BlogNew
             heading="Tech"
             posts={props.techPosts}
@@ -191,7 +191,7 @@ function Blog(props) {
       )}
 
       {keyword === '' && (
-        <div className="mt-5">
+        <div className="pt-5 pb-4">
           <CTA
             title="Build the tech that powers an entire country."
             href="/jobs"
@@ -201,7 +201,7 @@ function Blog(props) {
       )}
 
       {keyword === '' && (
-        <section className="post-feed container mt-5 pt-5">
+        <section className="post-feed container mt-md-5 pt-5">
           <BlogNew
             heading="Data"
             posts={props.dataPosts}
@@ -213,7 +213,7 @@ function Blog(props) {
       )}
 
       {keyword === '' && (
-        <section className="post-feed container">
+        <section className="post-feed container mt-5">
           <BlogNew
             heading="Culture"
             posts={props.culturePosts}
@@ -225,7 +225,7 @@ function Blog(props) {
       )}
 
       {keyword === '' && (
-        <section className="post-feed container">
+        <section className="post-feed container mt-5">
           <BlogNew
             heading="Design"
             posts={props.designPosts}
@@ -237,7 +237,7 @@ function Blog(props) {
       )}
 
       {keyword === '' && (
-        <section className="post-feed container ">
+        <section className="post-feed container mt-5">
           <BlogNew
             heading="Stories"
             posts={props.storiesPosts}
@@ -249,7 +249,7 @@ function Blog(props) {
       )}
 
       {keyword === '' && (
-        <section className="post-feed container">
+        <section className="post-feed container mt-5">
           <BlogNew
             heading="News"
             posts={props.newsPosts}
