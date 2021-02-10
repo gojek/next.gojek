@@ -201,17 +201,14 @@ class JobsList extends Component {
                       </p>
                     );
                   })}
-                  &nbsp;&nbsp;&nbsp;
-                  <p className="d-inline pointer" onClick={() => this.clearAllFilters()}>
-                    <u>
-                      <i>Clear all filters</i>
-                    </u>
+                  <p className="d-inline clear-filters ml-3" onClick={() => this.clearAllFilters()}>
+                    Clear all filters
                   </p>
                 </div>
               )}
 
-              <div className="col pt-5 d-flex justify-content-between">
-                <p>
+              <div className="pt-3 mt-4 d-flex justify-content-between">
+                <p className="job-results-text">
                   <strong>
                     {this.searchJobs().length}{' '}
                     {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '}
@@ -298,56 +295,8 @@ class JobsList extends Component {
                   )}
 
                   <div className="fixed-bottom results p-4">
-                    <div className="row d-flex align-items-center justify-content-around">
-                      <div className="col-6">
-                        <p>
-                          <strong>
-                            {this.searchJobs().length}{' '}
-                            {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '}
-                          </strong>{' '}
-                          found across{' '}
-                          <strong>
-                            {selctedFilters.department.length > 0
-                              ? selctedFilters.department.length
-                              : 'all'}{' '}
-                            {selctedFilters.department.length === 1 ? 'Department' : 'Departments'}
-                          </strong>{' '}
-                          and{' '}
-                          <strong>
-                            {selctedFilters.location.length > 0
-                              ? selctedFilters.location.length
-                              : 'all'}{' '}
-                            {selctedFilters.location.length === 1 ? 'Location' : 'Locations'}
-                          </strong>{' '}
-                        </p>
-                      </div>
-
-                      <div className="col-5 px-0">
-                        {(filters.length > 0 || this.state.keywordList.length > 0) && (
-                          <a
-                            href="#"
-                            onClick={() => this.handleExpand()}
-                            className="text-white link"
-                          >
-                            View jobs <img src="/img/white-arrow-right.svg" alt="join Us" />
-                          </a>
-                        )}
-                        {filters.length == 0 && this.state.keywordList.length == 0 && (
-                          <a href="/jobs/all" className="text-white link">
-                            View all jobs <img src="/img/white-arrow-right.svg" alt="join Us" />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {/* Show filters if selected */}
-              {(filters.length > 0 || this.state.keywordList.length > 0) && !this.state.expanded && (
-                <div className="fixed-bottom results p-4 bg-green-light text-white text-left">
-                  <div className="row d-flex align-items-center justify-content-around">
-                    <div className="col-6">
-                      <p>
+                    <div className="d-flex align-items-end justify-content-between">
+                      <p className="mb-0 job-results-text mobile">
                         <strong>
                           {this.searchJobs().length}{' '}
                           {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '}
@@ -367,15 +316,52 @@ class JobsList extends Component {
                           {selctedFilters.location.length === 1 ? 'Location' : 'Locations'}
                         </strong>{' '}
                       </p>
-                    </div>
 
-                    <div className="col-5 px-0">
                       {(filters.length > 0 || this.state.keywordList.length > 0) && (
                         <a href="#" onClick={() => this.handleExpand()} className="text-white link">
-                          Filters <img src="/img/white-arrow-right.svg" alt="join Us" />
+                          View jobs <img src="/img/white-arrow-right.svg" alt="join Us" />
+                        </a>
+                      )}
+                      {filters.length == 0 && this.state.keywordList.length == 0 && (
+                        <a href="/jobs/all" className="text-white link">
+                          View all jobs <img src="/img/white-arrow-right.svg" alt="join Us" />
                         </a>
                       )}
                     </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Show filters if selected */}
+              {(filters.length > 0 || this.state.keywordList.length > 0) && !this.state.expanded && (
+                <div className="fixed-bottom results p-4 bg-green-light text-white text-left">
+                  <div className="d-flex align-items-end justify-content-between">
+                    <p className="mb-0 job-results-text mobile">
+                      <strong>
+                        {this.searchJobs().length}{' '}
+                        {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '}
+                      </strong>{' '}
+                      found across{' '}
+                      <strong>
+                        {selctedFilters.department.length > 0
+                          ? selctedFilters.department.length
+                          : 'all'}{' '}
+                        {selctedFilters.department.length === 1 ? 'Department' : 'Departments'}
+                      </strong>{' '}
+                      and{' '}
+                      <strong>
+                        {selctedFilters.location.length > 0
+                          ? selctedFilters.location.length
+                          : 'all'}{' '}
+                        {selctedFilters.location.length === 1 ? 'Location' : 'Locations'}
+                      </strong>{' '}
+                    </p>
+
+                    {(filters.length > 0 || this.state.keywordList.length > 0) && (
+                      <a href="#" onClick={() => this.handleExpand()} className="text-white link">
+                        Filters <img src="/img/white-arrow-right.svg" alt="join Us" />
+                      </a>
+                    )}
                   </div>
                 </div>
               )}

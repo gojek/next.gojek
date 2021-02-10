@@ -52,7 +52,7 @@ function DescriptionPage(props) {
   return (
     <div className="jobDescription">
       <Head>
-        <title>Gojek | Opening | {data.text}</title>
+        <title>{data.text} | Gojek Careers</title>
         {/* Social media tags */}
         <meta name="description" content={description} />
         <meta name="twitter:title" content={title} />
