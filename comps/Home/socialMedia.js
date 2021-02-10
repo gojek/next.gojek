@@ -51,7 +51,7 @@ const gojekTechSocialAccounts = [
 function SocialMedia(props) {
   const posts = props.posts.slice(0, 3);
   return (
-    <div className="d-flex flex-column justify-content-around full-height">
+    <div className="d-flex flex-column justify-content-around">
       <div>
         <div
           className={`${styles.socialMediaDescription} mb-5`}

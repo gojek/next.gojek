@@ -67,34 +67,30 @@ function DescriptionPage(props) {
 
       <Navbar whiteNav />
       <section
-        className="banner pb-5"
+        className="banner pt-5 d-flex align-items-center"
         style={{ backgroundImage: "url('/img/careers/job-description/banner.png')" }}
       >
-        <div className="container full-height-one">
-          <div className="row mx-0 align-items-end full-height-one pb-5">
-            <div>
-              <h1 className="heading text-white pb-3">{data.text}</h1>
-              <h5 className="sub-heading text-white">
-                {data.categories.team}
-                {', '}
-                {data.categories.location}
-              </h5>
-              <a
-                href={`${data.applyUrl}`}
-                className="btn btn-success rounded-pill px-5 mt-3 d-md-none"
-                role="button"
-                target="_blank"
-              >
-                Apply Now
-              </a>
-            </div>
-          </div>
+        <div className="container">
+          <h1 className="heading text-white pb-3">{data.text}</h1>
+          <h5 className="sub-heading text-white">
+            {data.categories.team}
+            {', '}
+            {data.categories.location}
+          </h5>
+          <a
+            href={`${data.applyUrl}`}
+            className="btn btn-success rounded-pill px-5 mt-3 d-md-none"
+            role="button"
+            target="_blank"
+          >
+            Apply Now
+          </a>
         </div>
       </section>
 
       {/* description section */}
-      <section>
-        <div className="container description text-left">
+      <section className="py-5">
+        <div className="mt-5 container description text-left">
           <div className="row">
             <div className="col-lg-7 pr-2 pr-md-5">
               <div>
