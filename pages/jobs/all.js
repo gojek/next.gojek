@@ -16,7 +16,7 @@ function AllJobs(props) {
   return (
     <div className="text-center text-md-left">
       <Head>
-        <title>Gojek | Careers</title>
+        <title>Gojek Careers | Check out the current job openings at Gojek Tech</title>
       </Head>
       <Navbar light={navbarLight} bg={navbarBG} careers />
 
