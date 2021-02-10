@@ -107,7 +107,7 @@ function Blog(props) {
       </section>
 
       <section className={`tags-nav bg-white sticky-top`}>
-        <div className="container" style={{ position: 'relative'}}>
+        <div className="container" style={{ position: 'relative' }}>
           <Tags
             tags={tags}
             onClick={changeTag}
@@ -134,7 +134,7 @@ function Blog(props) {
                 className={`input-group-text text-green-light `}
                 style={{ backgroundColor: 'transparent', border: 0, paddingLeft: '1rem' }}
               >
-                <img className="img-fluid" src="/img/blog/search.svg" />
+                <img className="img-fluid pointer" src="/img/blog/search.svg" />
               </span>
             </div>
 
