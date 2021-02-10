@@ -18,6 +18,7 @@ function TagPosts(props) {
   const [tag, setTag] = useState(router.query.slug);
   const [keyword, setkeyword] = useState('');
   const [articles, setarticles] = useState([]);
+  const [active, setactive] = useState(false);
   const [clicked, setclicked] = useState(false);
 
   const changeTag = (tagName) => {
@@ -80,10 +81,10 @@ function TagPosts(props) {
       <Navbar whiteNav />
       {/* banner section */}
       <section
-        className="py-5 d-flex align-items-center blog-banner"
+        className="py-5 mb-3 mb-md-5 d-flex align-items-center blog-banner"
         style={{ backgroundColor: '#00a913' }}
       >
-        <div className="container">
+        <div className="container pt-5">
           <div className="row justify-content-around align-items-center">
             <div className="col-12 col-md-5 col-lg-5 order-1 order-md-0">
               <h1 className="banner-head text-white pt-5 pt-md-0 px-4 px-md-0">
@@ -106,48 +107,63 @@ function TagPosts(props) {
         </div>
       </section>
 
-      <div className="container">
-        {!clicked && (
+      <section className={`tags-nav bg-white sticky-top`}>
+        <div className="container" style={{ position: 'relative' }}>
           <Tags
             tags={tags}
             onClick={changeTag}
             activeTag={tag}
             handlesearchClicked={changeClicked}
             clicked={clicked}
-            page="tags"
+            page="all-blogs"
           />
-        )}
 
-        <div class="input-group  py-5">
-          <label htmlFor="search" class="sr-only">
-            Keyword
-          </label>
+          <div
+            className={`input-group my-3 ${styles.searchBox}`}
+            style={clicked ? { width: '100%' } : { width: '5%' }}
+          >
+            <div
+              className={`input-group-prepend`}
+              style={
+                clicked
+                  ? { borderBottom: '1px solid green', backgroundColor: 'white' }
+                  : { borderBottom: 'none', backgroundColor: 'white' }
+              }
+              onClick={changeClicked}
+            >
+              <span
+                className={`input-group-text text-green-light `}
+                style={{ backgroundColor: 'transparent', border: 0, paddingLeft: '1rem' }}
+              >
+                <img className="img-fluid" src="/img/blog/search.svg" />
+              </span>
+            </div>
 
-          <div class={`${styles.searchBox}`}>
             <input
               type="text"
               placeholder="Search"
-              className={`input-search ${clicked ? 'active-link visible mb-5' : 'invisible mb-0'}`}
+              className={`input-search form-control active-link ${clicked ? 'd-block' : 'd-none'}`}
               ref={inputRef}
               onChange={(event) => changekeyword(event.target.value)}
-              placeholder="Search blogs (kubernetes, #firstprinciples, work from home, design)"
+              placeholder="Search blogs (kubernetes, #firstprinciples, design)"
             />
-          </div>
 
-          {clicked && (
-            <div class="input-group-append" style={{ borderBottom: '1px solid green' }}>
+            <div
+              className={`input-group-append ${clicked ? 'd-block' : 'd-none'}`}
+              style={{ borderBottom: '1px solid green' }}
+            >
               <span
                 aria-hidden="true"
-                style={{ fontSize: '2rem' }}
-                className="text-green-light pointer"
+                className="input-group-text text-green-light pointer"
+                style={{ border: '0', backgroundColor: 'transparent', fontSize: '24px' }}
                 onClick={handleClose}
               >
                 &times;
               </span>
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      </section>
 
       {keyword === '' && (
         <section className="post-feed container mt-5">

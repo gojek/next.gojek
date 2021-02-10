@@ -53,11 +53,11 @@
 
 .css-yk16xz-control,
 .css-1pahdxg-control {
-  padding-top: 8px;
-  padding-bottom: 7px;
+  padding: 8px;
   border-radius: 2.5rem !important;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   border: none !important;
+  max-height: 50px;
 }
 
 .css-g1d714-ValueContainer {
@@ -174,8 +174,31 @@
 .job-tag {
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 8px;
-  padding: 0.5rem 1rem;
   font-size: 0.875rem;
+  margin: 4px auto;
+  height: 36px;
+  padding-left: 1rem;
+  line-height: 36px;
+  padding-right: 1rem;
+
+  .pointer {
+    font-size: 12px;
+    margin-left: 4px;
+  }
+}
+
+.job-results-text {
+  font-size: 1.125rem;
+
+  &.mobile {
+    max-width: 176px;
+  }
+}
+
+.clear-filters {
+  cursor: pointer;
+  font-style: italic;
+  text-decoration: underline;
 }
 
 .animation-icon {

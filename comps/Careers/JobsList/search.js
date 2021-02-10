@@ -54,7 +54,7 @@ class MySelect extends Component {
             <label htmlFor="keyword" className="sr-only">
               Keyword
             </label>
-            <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group mr-sm-2">
               <div class="input-group-prepend">
                 <div class="input-group-text bg-white border-white">
                   <img src="/img/careers/search.svg" alt="search" />
@@ -65,7 +65,7 @@ class MySelect extends Component {
                 onChange={(e) => onChange(e.target.value, e.target.name)}
                 onKeyDown={(e) => onKeyDown(e)}
                 className="form-control search pl-0"
-                placeholder="Keyword Search_"
+                placeholder="Keyword Search"
                 name="keyword"
                 value={this.props.keyword}
               />
