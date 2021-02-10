@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Links from '~/../../comps/Common/Footer/Links';
 
 import data from './data.json';
+import { data as socialLinks } from '../Common/Footer/data';
 
 function Navbar(props) {
   const router = useRouter();
@@ -100,13 +100,7 @@ function Navbar(props) {
           onClick={() => handleExpand()}
         >
           <span>
-            {!scrolled && router.pathname === '/' && (
-              <i className="fas fa-bars fa-1x text-dark"></i>
-            )}
-            {!scrolled && router.pathname !== '/' && (
-              <i className="fas fa-bars fa-1x text-dark"></i>
-            )}
-            {scrolled && <i className="fas fa-bars fa-1x"></i>}
+            <i className="fas fa-bars fa-1x"></i>
           </span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -119,8 +113,8 @@ function Navbar(props) {
               <li
                 className={`nav-item px-3 ${
                   item.link === router.pathname ||
-                  (router.pathname === '/jobs/all' && item.link === '/jobs') ||
-                  (router.pathname === '/blog/all' && item.link === '/blog')
+                  ((item.link === '/jobs' || item.link === '/blog') &&
+                    router.pathname.includes(item.link))
                     ? 'active'
                     : ''
                 }${item.type && item.type === 'button' ? '' : ' '}`}
@@ -146,9 +140,48 @@ function Navbar(props) {
         </div>
       </div>
       {expanded ? (
-        <div className="fixed-top text-white footer smNav py-4 text-left">
-          <div class="pl-4">
-            <Links navbar onClose={handleExpand} />
+        <div class="text-white bg-black full-height fixed-top pt-3">
+          <div class="container pt-3 d-block" style={{ padding: '.5rem 1rem' }}>
+            <div className="d-flex justify-content-between pb-5">
+              <a class="navbar-brand" href="/">
+                <img
+                  src="/img/gojek-white-logo.svg"
+                  alt="Gojek"
+                  className="img-fluid footer-logo text-left"
+                  style={{ height: '2rem' }}
+                />
+              </a>
+              <button className="btn text-white text-right" onClick={() => setExpanded(false)}>
+                <img src="/img/cross.svg" alt="close button" />
+              </button>
+            </div>
+
+            <ul className="list-unstyled mobile-menu text-center">
+              {data.map((data, i) => (
+                <li className="pb-5" key={i}>
+                  <a className="text-white" href={data.link}>
+                    {data.name}
+                  </a>
+                </li>
+              ))}
+              <li className="pb-5 text-white d-block" key="connect-with-us">
+                Connect with Us
+                <ul className="list-inline pt-5 d-flex justify-content-around">
+                  {socialLinks.socialLinks.map((socialMedia, i) => (
+                    <li className="list-inline-item " key={i}>
+                      <a
+                        className="text-white social-icon"
+                        href={socialMedia.link}
+                        target="_blank"
+                        title={socialMedia.name}
+                      >
+                        <img src={socialMedia.icon} alt={socialMedia.title} />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
       ) : (

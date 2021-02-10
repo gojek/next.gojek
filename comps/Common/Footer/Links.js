@@ -33,7 +33,7 @@ function Links(props) {
                 target="_blank"
                 title={socialMedia.name}
               >
-                <img src={socialMedia.icon} alt={socialMedia.title}/>
+                <img src={socialMedia.icon} alt={socialMedia.title} />
               </a>
             </li>
           ))}
@@ -43,7 +43,7 @@ function Links(props) {
   );
 
   const mobileLinks = (
-    <div className="py-md-5 py-4">
+    <div className="py-md-5">
       <ul className="list-unstyled mb-0 row px-4">
         {data.links.map((data, i) => (
           <li className="pb-4 col-6" key={i}>
@@ -52,20 +52,41 @@ function Links(props) {
             </a>
           </li>
         ))}
+        <li className="pb-5 text-white w-100 pl-3" key="connect-with-us">
+          Connect with Us
+          <ul className="list-inline pt-4 d-flex justify-content-between">
+            {data.socialLinks.map((socialMedia, i) => (
+              <li className="list-inline-item " key={i}>
+                <a
+                  className="text-white social-icon"
+                  href={socialMedia.link}
+                  target="_blank"
+                  title={socialMedia.name}
+                >
+                  <img src={socialMedia.icon} alt={socialMedia.title} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
       </ul>
-      <ul className="list-inline pl-3 pt-3">
+      {/* <ul className="list-inline pl-3 pt-3">
         {data.socialLinks.map((socialMedia, key) => (
           <li
             className={`list-inline-item ${key < data.socialLinks.length - 1 ? 'mr-4' : ''}`}
             key={key}
           >
-            <a className="text-white" href={socialMedia.link} target="_blank" title={socialMedia.name}>
-              {/* <i className={` ${socialMedia.icon}`}></i> */}
+            <a
+              className="text-white"
+              href={socialMedia.link}
+              target="_blank"
+              title={socialMedia.name}
+            >
               <img src={socialMedia.icon} />
             </a>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 
@@ -101,7 +122,7 @@ function Links(props) {
         className={`row pt-3 mx-0 ${
           props.navbar
             ? 'justify-content-between px-3'
-            : 'justify-content-center justify-content-md-start py-4 py-md-0'
+            : 'justify-content-center justify-content-md-start py-5 py-md-0'
         }`}
       >
         <img src="/img/gojek-white-logo.svg" alt="Gojek" className="img-fluid footer-logo" />

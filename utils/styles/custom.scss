@@ -1103,3 +1103,21 @@ html {
     top: 72px;
   }
 }
+
+.mobile-menu {
+  li {
+    font-family: $font-bold;
+    font-size: 18px;
+  }
+}
+
+@media screen and(max-width: $sm-break) {
+  .social-icon {
+    img {
+      min-width: 1.75rem;
+    }
+  }
+  .footer-logo {
+    height: 2rem;
+  }
+}

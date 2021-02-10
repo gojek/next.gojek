@@ -64,11 +64,11 @@ export const data = {
     //   name: 'Contact us',
     //   link: '/',
     // },
-    {
-      id: 8,
-      name: 'Connect with us',
-      link: '/',
-    },
+    // {
+    //   id: 8,
+    //   name: 'Connect with us',
+    //   link: '/',
+    // },
   ],
   socialLinks: [
     {
