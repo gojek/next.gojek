@@ -4,7 +4,6 @@ import Router, { useRouter } from 'next/router';
 
 import Navbar from '~/../../comps/Navbar';
 import bannerImage from '~/../../static/banner.png';
-// import JobList from '~/../../comps/Careers/jobsList';
 
 function CareersPage(props) {
   const router = useRouter();
