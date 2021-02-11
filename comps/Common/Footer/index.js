@@ -1,7 +1,11 @@
+import { useState } from 'react';
+
 import Links from './Links';
 import WhatsAppForm from './whatsAppform';
 
 function Footer(props) {
+
+  const [active, setactive] = useState(false);
 
   return (
     <section className="py-5 footer">
@@ -22,6 +26,26 @@ function Footer(props) {
         {' '}
         Gojek tech | <span>{new Date().getFullYear()}</span> All Rights Reserved
       </p>
+
+      {/* Floating whatsApp button */}
+      <div className="container">
+        <div className={`whatsappContainer`}>
+          {!active && (
+            <div className={`whatsappPopup`}>
+              <p onClick={() => setactive(true)} className="pointer">
+                <img src="/img/whatsapp-logo.svg" alt="WhatsApp" />
+              </p>
+            </div>
+          )}
+
+          {active && (
+            <div className={`whatsAppPopover text-white p-5`}>
+              <WhatsAppForm setactive={setactive} src={'popup'} />
+            </div>
+          )}
+        </div>
+      </div>
+      {/* End floating button */}
     </section>
   );
 }

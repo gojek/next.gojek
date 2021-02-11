@@ -1,35 +1,14 @@
-import { useState } from 'react';
 import Navbar from '~/../../comps/Navbar';
 import Milestones from '../comps/About/milestone';
-import WhatsAppForm from '../comps/Common/Footer/whatsAppform';
 
 function About() {
-  const [active, setactive] = useState(false);
+
   return (
     <div>
       <Navbar whiteNav />
 
       <Milestones />
 
-      {/* Floating whatsApp button */}
-      <div className="container">
-        <div className={`whatsappContainer`}>
-          {!active && (
-            <div className={`whatsappPopup`}>
-              <p onClick={() => setactive(true)} className="pointer">
-                <img src="/img/whatsapp-logo.svg" alt="WhatsApp" />
-              </p>
-            </div>
-          )}
-
-          {active && (
-            <div className={`whatsAppPopover text-white p-5`}>
-              <WhatsAppForm setactive={setactive} src={'popup'} />
-            </div>
-          )}
-        </div>
-      </div>
-      {/* End floating button */}
       <section className="bg-green-light text-white py-5">
         <div className="container">
           <h1 className="heading mb-3">About Us</h1>
