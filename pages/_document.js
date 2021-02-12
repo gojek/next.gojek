@@ -11,7 +11,7 @@ class MyDocument extends Document {
     const description =
         "Gojek is a Super App. It's one app for ordering food, commuting, digital payments, shopping, hyper-local delivery, getting a massage and two dozen services. It is Indonesia's first and fastest growing unicorn building an on-demand empire.",
       title = 'Gojek',
-      name = 'Gojeck',
+      name = 'Gojek',
       url = '/';
     return (
       <Html lang="en">
