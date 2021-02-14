@@ -52,17 +52,22 @@ function DescriptionPage(props) {
   return (
     <div className="jobDescription">
       <Head>
-        <title>{data.text} | Gojek Careers</title>
-        {/* Social media tags */}
-        <meta name="description" content={description} />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:url" content={url} />
-        <meta property="og:title" content={title} />
+        <title>{name}</title>
+        <meta property="og:title" content={name} key="title" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta property={`description`} content={description} />
+        <meta property="twitter:title" content={name} />
+        <meta property={`twitter:card`} content={name} />
+        <meta property={`twitter:site`} content="@gojektech" />
+        <meta property={`twitter:image`} content="/img/og-img.jpg" />
+        <meta property="twitter:description" content={description} />
+        <meta property="og:title" content={name} />
+        <meta property="og:url" content="https://gojek.io" />
+        <meta property="og:image" content="/img/og-img.jpg" />
         <meta property="og:description" content={description} />
-        <meta property="og:site_name" content={name} />
-        <meta property="og:image" content="/img/gojek-logo.png"></meta>
-        <meta property="og:url" content={url} />
+        <meta property="og:type" content={'website'} />
+        <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon " />
+        <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
       </Head>
 
       <Navbar whiteNav />

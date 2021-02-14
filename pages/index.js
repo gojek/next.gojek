@@ -1,3 +1,4 @@
+import PageMeta from '../comps/Common/head';
 import Navbar from '~/../../comps/Navbar';
 import ProductSlider from '../comps/Home/ProductSlider';
 import TechFacts from '../comps/Home/techFacts';
@@ -20,6 +21,7 @@ function Home(props) {
 
   return (
     <div>
+      <PageMeta />
       <Navbar />
       <section className={`py-5 d-flex align-items-md-center align-items-start ${styles.home}`}>
         <div className="container">
@@ -132,9 +134,7 @@ function Home(props) {
       {/* End CTA */}
       <section className={`${styles.socialMedia} py-5`}>
         <h1 className="Social Media"></h1>
-        <div className="container">
-          <SocialMedia posts={data} />
-        </div>
+        <div className="container">{data && <SocialMedia posts={data} />}</div>
       </section>
     </div>
   );

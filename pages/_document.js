@@ -48,14 +48,14 @@ class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
 
           {/* Social media tags */}
-          <meta name="description" content={description} />
+          {/* <meta name="description" content={description} />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:url" content={url} />
           <meta property="og:title" content={title} />
           <meta property="og:description" content={description} />
           <meta property="og:site_name" content={name} />
-          <meta property="og:url" content={url} />
+          <meta property="og:url" content={url} /> */}
           {/* <meta property="og:image" content="/icons/icon-152x152.png"></meta> */}
 
           {/* PWA primary color */}
