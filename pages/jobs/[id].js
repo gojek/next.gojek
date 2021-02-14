@@ -46,7 +46,7 @@ function DescriptionPage(props) {
       });
   };
 
-  const description = data.description,
+  const description = data.descriptionPlain,
     name = `Gojek | Opening | ${data.text}`;
 
   return (
