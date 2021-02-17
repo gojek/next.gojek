@@ -1,16 +1,14 @@
 @import '~/../../utils/styles/variables.scss';
 
 .banner {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-
-  background: url('/img/life-at-gojek/banner.png') no-repeat center center;
-  background-size: cover;
+  background: url('/img/life-at-gojek/banner/banner.png') bottom/cover no-repeat;
 
   @media screen and (max-width: 576px) {
-    background: url('/img/life-at-gojek/mobile-banner.png') no-repeat center center;
-    background-size: cover;
+    background: url('/img/life-at-gojek/banner/mobile-banner.png') center/cover no-repeat;
+  }
+
+  @media screen and (min-width: 1920px) {
+    background: url('/img/life-at-gojek/banner/Life@Gojek_banner_1920_600.jpg') center/cover no-repeat;
   }
 }
 
