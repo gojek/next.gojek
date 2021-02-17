@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
+import PageMeta from '~/../../comps/Common/head';
 
 import Navbar from '~/../../comps/Navbar';
 import JobsList from '../../comps/Careers/JobsList/index';
@@ -15,9 +15,10 @@ function AllJobs(props) {
 
   return (
     <div className="text-center text-md-left">
-      <Head>
-        <title>Gojek Careers | Check out the current job openings at Gojek Tech</title>
-      </Head>
+      <PageMeta
+        title="Gojek Careers | Check out the current job openings at Gojek Tech"
+        description="Gojek is hiring the best and brightest of tech minds to build one of the world's most versatile and agile on-demand service apps."
+      />
       <Navbar light={navbarLight} bg={navbarBG} careers />
 
       <div className="yellow-bg-gradient"></div>

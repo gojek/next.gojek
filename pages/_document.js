@@ -8,20 +8,10 @@ class MyDocument extends Document {
   }
 
   render() {
-    const description =
-        "Gojek is a Super App. It's one app for ordering food, commuting, digital payments, shopping, hyper-local delivery, getting a massage and two dozen services. It is Indonesia's first and fastest growing unicorn building an on-demand empire.",
-      title = 'Gojek',
-      name = 'Gojek',
-      url = '/';
+    const name = 'Gojek'
     return (
       <Html lang="en">
         <Head>
-          {/* The first thing in any HTML file should be the charset */}
-          <meta charSet="utf-8" />
-
-          {/* Make the page mobile compatible */}
-          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

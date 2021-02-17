@@ -17,6 +17,7 @@ import {
   WhatsappIcon,
   LinkedinIcon,
 } from 'react-share';
+import PageMeta from '~/../../comps/Common/head';
 
 import { readingTime as readingTimeHelper } from '@tryghost/helpers';
 
@@ -29,9 +30,10 @@ function BlogDetails(props) {
 
   return (
     <div className="text-center text-md-left blog-page">
-      <Head>
-        <title>{post.title} | Gojek Blogs</title>
-      </Head>
+      <PageMeta
+        title={`${post.title}`}
+        description={`${post.excerpt}`}
+      />
       <Navbar />
 
       <section className="pb-5 mt-5 pt-5">

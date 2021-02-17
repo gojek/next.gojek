@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import PageMeta from '~/../../comps/Common/head';
 import fetch from 'isomorphic-unfetch';
 import Router, { useRouter } from 'next/router';
 
@@ -9,9 +9,10 @@ function CareersPage(props) {
   const router = useRouter();
   return (
     <div className="text-center text-md-left">
-      <Head>
-        <title>Gojek | Department</title>
-      </Head>
+      <PageMeta
+        title="Gojek: Departments"
+        description="Gojek is a Super App. It’s one app for ordering food, commuting, digital payments, shopping, hyper-local delivery, getting a massage and two dozen services. It is Indonesia’s first and fastest growing unicorn building an on-demand empire."
+      />
       <Navbar bg="#f7ce55" careers />
 
       <div className="yellow-bg-gradient"></div>

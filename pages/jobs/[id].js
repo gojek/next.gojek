@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Head from 'next/head';
+import PageMeta from '~/../../comps/Common/head';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Navbar from '~/../../comps/Navbar';
@@ -47,28 +47,14 @@ function DescriptionPage(props) {
   };
 
   const description = data.descriptionPlain,
-    name = `Gojek | Opening | ${data.text}`;
+    name = `Gojek Careers: ${data.text}`;
 
   return (
     <div className="jobDescription">
-      <Head>
-        <title>{name}</title>
-        <meta property="og:title" content={name} key="title" />
-        <meta content="yes" name="apple-mobile-web-app-capable" />
-        <meta property={`description`} content={description} />
-        <meta property="twitter:title" content={name} />
-        <meta property={`twitter:card`} content={name} />
-        <meta property={`twitter:site`} content="@gojektech" />
-        <meta property={`twitter:image`} content="/img/og-img.jpg" />
-        <meta property="twitter:description" content={description} />
-        <meta property="og:title" content={name} />
-        <meta property="og:url" content="https://gojek.io" />
-        <meta property="og:image" content="/img/og-img.jpg" />
-        <meta property="og:description" content={description} />
-        <meta property="og:type" content={'website'} />
-        <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon " />
-        <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
-      </Head>
+      <PageMeta
+        title={name}
+        description={description}
+      />
 
       <Navbar whiteNav />
       <section

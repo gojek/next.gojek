@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import PageMeta from '../comps/Common/head';
 import Navbar from '../../comps/Navbar';
 import CommonCta from '../../comps/Common/Cta';
 import styles from './index.module.scss';
@@ -6,9 +6,10 @@ import styles from './index.module.scss';
 function PrivacyPolicyPage(props) {
   return (
     <div className="text-center text-md-left">
-      <Head>
-        <title>Gojek | Privacy Policy</title>
-      </Head>
+      <PageMeta
+        title="Privacy Policy | Gojek Tech"
+        description="Gojek is a Super App. It’s one app for ordering food, commuting, digital payments, shopping, hyper-local delivery, getting a massage and two dozen services. It is Indonesia’s first and fastest growing unicorn building an on-demand empire."
+      />
       <Navbar whiteNav />
 
       <section

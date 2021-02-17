@@ -21,7 +21,10 @@ function Home(props) {
 
   return (
     <div>
-      <PageMeta />
+      <PageMeta
+        title="Gojek: On-Demand Services for Transport, Payment, Food Delivery, etc."
+        description="Gojek is a Super App. It's one app for ordering food, commuting, digital payments, shopping, hyper-local delivery, getting a massage and two dozen services. It is Indonesia's first and fastest growing unicorn building an on-demand empire."
+      />
       <Navbar />
       <section className={`py-5 d-flex align-items-md-center align-items-start ${styles.home}`}>
         <div className="container">

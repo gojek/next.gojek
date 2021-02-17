@@ -11,6 +11,7 @@ import Tags from '~/../../comps/Blog/Tag';
 import CommonCta from '~/../../comps/Common/Cta';
 import BlogNew from '../../comps/BlogNew';
 import styles from './index.module.scss';
+import PageMeta from '~/../../comps/Common/head';
 
 function allPosts(props) {
   const [tag, setTag] = useState('tech');
@@ -73,9 +74,11 @@ function allPosts(props) {
 
   return (
     <div className="text-center text-md-left blog-page">
-      <Head>
-        <title>Gojek | Blogs</title>
-      </Head>
+      <PageMeta
+        title="Everything you wanted to know about Gojek and how we do what we do."
+        description="The blog section provides valuable information on Gojek's engineering ideals, our culture, and insights on where we failed and what we learnt in the process."
+      />
+
       <Navbar whiteNav />
       {/* banner section */}
       <section
@@ -110,7 +113,7 @@ function allPosts(props) {
           <Tags
             tags={tags}
             onClick={changeTag}
-            activeTag={tag}
+            activeTag="all"
             handlesearchClicked={changeClicked}
             clicked={clicked}
             page="all-blogs"
