@@ -67,7 +67,7 @@ function DescriptionPage(props) {
             {data.categories.location}
           </h5>
           <a
-            href={`${data.applyUrl}`}
+            href={`${data.applyUrl}?lever-source[]=null`}
             className="btn btn-success rounded-pill px-5 mt-3 d-md-none"
             role="button"
             target="_blank"
@@ -98,16 +98,17 @@ function DescriptionPage(props) {
                     __html: data.additional ? data.additional.split('About Us')[0] : '',
                   }}
                 ></div>
-                {/* used to autoscroll to show apply form */}
-                <div id="apply" />
+                {/* used to autoscroll to show apply form
+                <div id="apply" /> */}
               </div>
             </div>
             <div className="col-lg-5 pt-3 pt-md-0">
               <div className="apply">
                 <a
-                  href="#apply"
+                  href={`${data.applyUrl}?lever-source[]=null`}
                   className="btn bg-green-light text-white px-5 rounded-pill w-100"
                   role="button"
+                  target="_blank"
                 >
                   Apply Now
                 </a>
@@ -167,7 +168,7 @@ function DescriptionPage(props) {
               <hr />
             </div>
           </div>
-          <ApplyForm />
+          {/* <ApplyForm /> */}
         </div>
       </section>
     </div>

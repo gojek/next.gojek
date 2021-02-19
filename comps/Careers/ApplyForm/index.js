@@ -93,10 +93,6 @@ function ApplyForm(props) {
                       placeholder="Email id*"
                       ref={register({
                         required: 'Email id is required',
-                        pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                          message: 'Please enter valid Email id',
-                        },
                       })}
                     />
                     <div className="invalid-feedback pl-3">
