@@ -13,6 +13,7 @@ import {
   WhatsappIcon,
   LinkedinIcon,
 } from 'react-share';
+import ApplyForm from '~/../../comps/Careers/ApplyForm';
 
 function DescriptionPage(props) {
   const [url, setUrl] = useState('./jobs');
@@ -51,10 +52,7 @@ function DescriptionPage(props) {
 
   return (
     <div className="jobDescription">
-      <PageMeta
-        title={name}
-        description={description}
-      />
+      <PageMeta title={name} description={description} />
 
       <Navbar whiteNav />
       <section
@@ -100,15 +98,16 @@ function DescriptionPage(props) {
                     __html: data.additional ? data.additional.split('About Us')[0] : '',
                   }}
                 ></div>
+                {/* used to autoscroll to show apply form */}
+                <div id="apply" />
               </div>
             </div>
             <div className="col-lg-5 pt-3 pt-md-0">
               <div className="apply">
                 <a
-                  href={`${data.applyUrl}`}
+                  href="#apply"
                   className="btn bg-green-light text-white px-5 rounded-pill w-100"
                   role="button"
-                  target="_blank"
                 >
                   Apply Now
                 </a>
@@ -168,6 +167,7 @@ function DescriptionPage(props) {
               <hr />
             </div>
           </div>
+          <ApplyForm />
         </div>
       </section>
     </div>
@@ -176,7 +176,6 @@ function DescriptionPage(props) {
 
 // to fetch the jobs description
 export async function getServerSideProps(ctx) {
-  console.log('server id', ctx.query.id);
   const apiUrl = `https://api.lever.co/v0/postings/gojek/${ctx.query.id}/`;
 
   try {
