@@ -1,6 +1,6 @@
-import PageMeta from '../comps/Common/head';
-import Navbar from '../../comps/Navbar';
-import CommonCta from '../../comps/Common/Cta';
+import PageMeta from '~/../../comps/Common/head';
+import Navbar from '~/../../comps/Navbar';
+import CommonCta from '~/../../comps/Common/Cta';
 import styles from './index.module.scss';
 
 function PrivacyPolicyPage(props) {
