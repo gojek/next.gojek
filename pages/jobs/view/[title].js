@@ -13,6 +13,7 @@ import {
   WhatsappIcon,
   LinkedinIcon,
 } from 'react-share';
+import { auth } from '~/../../utils/auth';
 import ApplyForm from '~/../../comps/Careers/ApplyForm';
 
 function DescriptionPage(props) {
@@ -186,11 +187,11 @@ export async function getServerSideProps(ctx) {
       const data = await response.json();
       return { props: { data } };
     } else {
-      return await { props: { data: [] } };
+      return await auth(ctx);
     }
   } catch (error) {
     // Network error
-    return { props: { data: [] } };
+    return auth(ctx);
   }
 }
 

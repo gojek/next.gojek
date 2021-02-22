@@ -14,6 +14,11 @@ function List(props) {
   //   elmnt.scrollIntoView();
   // };
 
+  const getJobLink = (title, id) => {
+    let jobTitle = title.replace(/\s/g, '-');
+    return `/jobs/view/${jobTitle}?id=${id}`;
+  };
+
   return (
     <section className="mb-md-5 pb-md-5" id="job-list">
       {/* desktop view */}
@@ -35,7 +40,7 @@ function List(props) {
             <div className="pb-3">
               {openPositions.length > 0 ? (
                 openPositions.map((data, key) => (
-                  <a href={`/jobs/${data.id}`} target="_blank" className="table-row">
+                  <a href={getJobLink(data.text, data.id)} target="_blank" className="table-row">
                     <div className="job-row row py-3" key={key} id={key}>
                       <div className="col-md-6">
                         <p className="mb-0">{data.text}</p>
@@ -96,7 +101,7 @@ function List(props) {
             {openPositions.length > 0 ? (
               openPositions.map((data, key) => (
                 <div className={key % 2 === 0 ? 'even' : 'odd'} key={key}>
-                  <a href={`jobs/${data.id}`}>
+                  <a href={getJobLink(data.text, data.id)} target="_blank">
                     <div className="py-3 px-5" key={key} id={`xs${key}`}>
                       <p className="title mb-0">{data.text}</p>
                       <p className="sub-title mb-0">

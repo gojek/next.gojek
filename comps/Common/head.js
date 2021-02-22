@@ -13,8 +13,8 @@ function PageMeta(props) {
         <meta property={`twitter:site`} content="@gojektech" />
         <meta property={`twitter:image`} content="/img/og-img.jpg" />
         <meta property="twitter:description" content={`${props.title}`} />
-        <meta property="og:title" content={`${props.title}`} key="title" />
-        {/* <meta property="og:title" content={`${props.title}`} /> */}
+        {/* <meta property="og:title" content={`${props.title}`} key="title" /> */}
+        <meta property="og:title" content={`${props.title}`} />
         <meta property="og:url" content="https://gojek.io" />
         <meta property="og:image" content="/img/og-img.jpg" />
         <meta property="og:description" content={`${props.description}`} />
