@@ -105,7 +105,7 @@ function WhatsAppForm(props) {
             name: 'phone',
             id: 'phone',
             required: true,
-            autoFocus: true,
+            autoFocus: false,
           }}
           value={phoneNumber}
           inputRef={register({

@@ -55,7 +55,9 @@ function BlogDetails(props) {
                     <ul className="author-list">
                       <li className="author-list-item">
                         <p className="author-avatar">
-                          <p className="author-profile-image">{post.primary_author.name[0]}</p>
+                          <p className="author-profile-image">
+                            {post.primary_author.name[0].toUpperCase()}
+                          </p>
                           {/* {post.primary_author.profile_image ? (
                             <img
                               className="author-profile-image"

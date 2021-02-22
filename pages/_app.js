@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
   const [offline, setOffline] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
