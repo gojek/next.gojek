@@ -5,15 +5,15 @@ function PageMeta(props) {
   return (
     <div>
       <Head>
-        <title>{props.title}</title>
+        <title>{`norm title ${props.title}`}</title>
         <meta content="yes" name="apple-mobile-web-app-capable" />
         <meta property={`description`} content={`normal comp${props.description}`} />
-        <meta property="twitter:title" content={`${props.title}`} />
+        <meta property="twitter:title" content={`twi title${props.title}`} />
         <meta property={`twitter:card`} content={`${props.title}`} />
         <meta property={`twitter:site`} content="@gojektech" />
         <meta property={`twitter:image`} content="/img/og-img.jpg" />
-        <meta property="twitter:description" content={`${props.description}`} />
-        <meta property="og:title" content={`${props.title}`} key="title" />
+        <meta property="twitter:description" content={`twi desc ${props.description}`} />
+        <meta property="og:title" content={`of title ${props.title}`} key="title" />
         <meta property="og:url" content="https://gojek.io" />
         <meta property="og:image" content="/img/og-img.jpg" />
         <meta property="og:description" content={`og comp${props.description}`} />
