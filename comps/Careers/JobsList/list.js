@@ -15,7 +15,8 @@ function List(props) {
   // };
 
   const getJobLink = (title, id) => {
-    let jobTitle = title.replace(/\s/g, '-');
+    let jobTitle = title.toLowerCase();
+    jobTitle = jobTitle.replace(/\s/g, '-');
     return `/jobs/view/${jobTitle}?id=${id}`;
   };
 
