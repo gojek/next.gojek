@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { scroller } from 'react-scroll';
 import { getPost } from '../../api/posts';
 
@@ -22,17 +22,22 @@ import PageMeta from '~/../../comps/Common/head';
 import { readingTime as readingTimeHelper } from '@tryghost/helpers';
 
 function BlogDetails(props) {
-  const [url, setUrl] = useState('./jobs');
-  const title = `Need to replace slug here`;
+  const [url, setUrl] = useState('./blog');
   const { post } = props;
-
   const readingTime = readingTimeHelper(post);
+  const shareTitle = `${post.meta_title} by ${post.primary_author.name} - ${post.reading_time} MIN`;
+
+  useEffect(() => {
+    setUrl(window.location.href);
+    console.log('post data', post);
+  }, []);
 
   return (
     <div className="text-center text-md-left blog-page">
       <PageMeta
-        title={`${post.title}`}
-        description={`${post.excerpt}`}
+        title={post.title}
+        description={post.meta_description}
+        img={`${post.feature_image}`}
       />
       <Navbar />
 
@@ -50,19 +55,20 @@ function BlogDetails(props) {
                     <ul className="author-list">
                       <li className="author-list-item">
                         <p className="author-avatar">
-                          {post.primary_author.profile_image ? (
+                          <p className="author-profile-image">{post.primary_author.name[0]}</p>
+                          {/* {post.primary_author.profile_image ? (
                             <img
                               className="author-profile-image"
                               src={post.primary_author.profile_image}
                               alt={post.primary_author.name}
                             />
                           ) : (
-                            <img
-                              className="default-avatar"
-                              src="/images/icons/avatar.svg"
-                              alt={post.primary_author.name}
-                            />
-                          )}
+                            // <img
+                            //   className="default-avatar"
+                            //   src="/images/icons/avatar.svg"
+                            //   alt={post.primary_author.name}
+                            // />
+                          )} */}
                         </p>
                       </li>
                     </ul>
@@ -87,23 +93,23 @@ function BlogDetails(props) {
                       <span>Share: </span>
                       <TwitterShareButton
                         url={url}
-                        title={title}
+                        title={shareTitle}
                         className="Demo__some-network__share-button mx-2"
                       >
                         <TwitterIcon size={30} round />
                       </TwitterShareButton>
                       <LinkedinShareButton
                         url={url}
-                        title={title}
-                        quote={title}
+                        title={shareTitle}
+                        quote={shareTitle}
                         className="Demo__some-network__share-button mx-2"
                       >
                         <LinkedinIcon size={30} round />
                       </LinkedinShareButton>
                       <FacebookShareButton
                         url={url}
-                        title={title}
-                        quote={title}
+                        title={shareTitle}
+                        quote={shareTitle}
                         // hashtag={this.state.hashtags}
                         className="Demo__some-network__share-button mx-2"
                       >
@@ -112,7 +118,7 @@ function BlogDetails(props) {
                       <WhatsappShareButton
                         url={url}
                         className="Demo__some-network__share-button mx-2"
-                        title={title}
+                        title={shareTitle}
                       >
                         <WhatsappIcon size={30} round />
                       </WhatsappShareButton>
