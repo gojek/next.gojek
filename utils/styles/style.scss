@@ -152,12 +152,12 @@
   &:hover {
     cursor: pointer;
     color: #696969;
+    .job-row {
+      background: #dcdbdb;
+    }
     p,
     i {
       color: #242424;
-    }
-    p {
-      font-family: $header-font;
     }
   }
 }
