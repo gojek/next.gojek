@@ -163,6 +163,22 @@ function List(props) {
                 </a>
               </div>
             )}
+            {props.showAllJobs && props.openPositions.length > limit && (
+              <div className="text-center mt-5">
+                <div className="text-green-light link btn" onClick={() => handleExpand()}>
+                  View{' '}
+                  {props.openPositions.length - limit > 10
+                    ? '10'
+                    : `${props.openPositions.length - limit}`}{' '}
+                  more jobs
+                  <img
+                    src="/img/right-arrow.svg"
+                    className="align-middle ml-2 img-fluid"
+                    alt="More jobs"
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
