@@ -405,6 +405,7 @@ body {
 
 .mobile-search {
   min-height: 100vh;
+  z-index: 6000; // to override whatsapp logo
   .header {
     font-size: 1.125rem;
     font-family: $header-font;
