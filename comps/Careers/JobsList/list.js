@@ -1,18 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function List(props) {
-  const { openPositions } = props;
-  // const [limit, setLimit] = useState(10);
-  // const [openPositions, setOpenPositions] = useState(props.openPositions.slice(0, 10));
+  // const { openPositions } = props;
+  const [limit, setLimit] = useState(10);
+  const [openPositions, setOpenPositions] = useState(props.openPositions.slice(0, 10));
 
-  // const handleExpand = (xs) => {
-  //   let newLimit = limit + 10,
-  //     newList = props.openPositions.slice(0, newLimit);
-  //   setLimit(newLimit);
-  //   setOpenPositions(newList);
-  //   let elmnt = document.getElementById(`${xs ? 'xs' : ''}${newList.length - 11}`);
-  //   elmnt.scrollIntoView();
-  // };
+  useEffect(() => {
+    setOpenPositions(props.openPositions.slice(0, 10));
+    setLimit(10);
+  }, [props.openPositions]);
+
+  const handleExpand = (xs) => {
+    let newLimit = limit + 10,
+      newList = props.openPositions.slice(0, newLimit);
+    setLimit(newLimit);
+    setOpenPositions(newList);
+    let elmnt = document.getElementById(`${xs ? 'xs' : ''}${newList.length - 11}`);
+    elmnt.scrollIntoView();
+  };
 
   const getJobLink = (title, id) => {
     let jobTitle = title.toLowerCase();
@@ -87,6 +92,22 @@ function List(props) {
                       alt="All jobs"
                     />
                   </a>
+                </div>
+              )}
+              {props.showAllJobs && props.openPositions.length > limit && (
+                <div className="text-center mt-5">
+                  <div className="text-green-light link btn" onClick={() => handleExpand()}>
+                    View{' '}
+                    {props.openPositions.length - limit > 10
+                      ? '10'
+                      : `${props.openPositions.length - limit}`}{' '}
+                    more jobs
+                    <img
+                      src="/img/right-arrow.svg"
+                      className="align-middle ml-2 img-fluid"
+                      alt="More jobs"
+                    />
+                  </div>
                 </div>
               )}
             </div>
