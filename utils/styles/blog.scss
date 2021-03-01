@@ -621,7 +621,10 @@
 .search-blog:focus {
   box-shadow: none;
 }
-img,
-iframe {
-  max-width: 100% !important;
+
+.post-details {
+  img,
+  iframe {
+    max-width: 100% !important;
+  }
 }
