@@ -174,7 +174,7 @@ function DescriptionPage(props) {
 
 // to fetch the jobs description
 export async function getServerSideProps(ctx) {
-  const apiUrl = `https://api.lever.co/v0/postings/gojek/${ctx.query.id}/`;
+  const apiUrl = `${process.env.jobDetailsApi}${ctx.query.id}/`;
 
   try {
     const response = await fetch(apiUrl);

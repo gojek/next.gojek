@@ -34,10 +34,8 @@ function AllJobs(props) {
 }
 
 export async function getServerSideProps(ctx) {
-  const apiUrl = `https://api.lever.co/v0/postings/gojek`;
-
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(process.env.jobDetailsApi);
 
     if (response.ok) {
       const data = await response.json();

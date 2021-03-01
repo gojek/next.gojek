@@ -3,7 +3,7 @@ import GhostContentAPI from '@tryghost/content-api';
 //Ghost API instance with site credentials
 const api = new GhostContentAPI({
   url: 'https://blog.gojek.io',
-  key: 'dc81903c2020e7c9d2f8bafcf7',
+  key: process.env.ghostKey,
   version: 'v3',
 });
 

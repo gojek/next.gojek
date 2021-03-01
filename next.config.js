@@ -25,6 +25,9 @@ const config = {
     whatsAppToken: process.env.whatsAppToken,
     whatsAppAddApi: process.env.whatsAppAddApi,
     whatsAppTemplateApi: process.env.whatsAppTemplateApi,
+    jobDetailsApi: process.env.jobDetailsApi,
+    ghostBlogsApi: process.env.ghostBlogsApi,
+    ghostKey: process.env.ghostKey,
   },
 };
 

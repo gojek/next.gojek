@@ -145,11 +145,8 @@ function Home(props) {
 
 // to fetch the jobs description
 export async function getServerSideProps(ctx) {
-  let apiUrl =
-    'https://graph.instagram.com/me/media?fields=media_url,thumbnail_url,permalink&access_token=IGQVJVZAzlDaVZAoS05QZA1FpTFBlbDZAsaXAxY0trUlh4U2cxUU8tMksyZAWlLdzFKZAENfWmdRanBvZAUNoLWZAvWl9XLTBjdWlqTjdSQ3l1T19LUEtIQUdSamxickhlNnhOM2pzLV9mQlpvTVZAwOHc4VHFVeAZDZD';
-
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(process.env.instaApi);
 
     if (response.ok) {
       const data = await response.json();

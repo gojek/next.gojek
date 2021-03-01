@@ -48,9 +48,7 @@ function Blog(props) {
   const changekeyword = (keyword) => {
     setkeyword(keyword);
     axios
-      .get(
-        'https://blog.gojek.io/ghost/api/v3/content/posts/?key=dc81903c2020e7c9d2f8bafcf7&limit=all',
-      )
+      .get(process.env.ghostBlogsApi)
       .then((res) => {
         setarticles(
           res.data.posts.filter((data) => {

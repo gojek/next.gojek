@@ -27,7 +27,7 @@ function ApplyForm(props) {
       fd.append('cards[cc56f5ef-4f9d-4686-bca8-b3b29b032087][field2]', data.source);
       axios
         .post(
-          `https://api.lever.co/v0/postings/gojek/${router.query.id}`,
+          `${process.env.jobDetailsApi}${router.query.id}`,
           {
             fd,
           },
