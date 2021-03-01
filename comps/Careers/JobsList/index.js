@@ -241,7 +241,7 @@ class JobsList extends Component {
                     />
                     <button className="btn text-white" onClick={() => this.handleExpand()}>
                       <span>
-                        <i class="fas fa-times"></i>
+                        <i className="fas fa-times"></i>
                       </span>
                     </button>
                   </div>

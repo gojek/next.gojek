@@ -12,7 +12,6 @@ function WhatsAppForm(props) {
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    console.log('country', countryName);
     if (phoneNumber.length < 11) {
       swal({
         title: '',
@@ -52,6 +51,30 @@ function WhatsAppForm(props) {
             });
             if (props.src === 'popup') {
               props.setactive(false);
+              // Send welcome message
+              var dd = [
+                {
+                  name: 'name',
+                  value: data.name,
+                },
+              ];
+              axios
+                .post(
+                  `https://live-server-367.wati.io/api/v1/sendTemplateMessage/${phoneNumber}`,
+                  {
+                    template_name: 'welcome_message',
+                    broadcast_name: 'new_chat_v1_1614241965353',
+                    parameters: JSON.stringify(dd),
+                  },
+                  {
+                    headers: {
+                      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4YWRiNTM0Zi0wYzI2LTQ1ZDUtOGJhMi04N2RlMzJhMTkxMjYiLCJ1bmlxdWVfbmFtZSI6InN1bWFudGgucmFqQGdvamVrLmNvbSIsIm5hbWVpZCI6InN1bWFudGgucmFqQGdvamVrLmNvbSIsImVtYWlsIjoic3VtYW50aC5yYWpAZ29qZWsuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQURNSU5JU1RSQVRPUiIsImV4cCI6MjUzNDAyMzAwODAwLCJpc3MiOiJDbGFyZV9BSSIsImF1ZCI6IkNsYXJlX0FJIn0.WXEky8gpycozqFQ-c9XrjGb2cqUEZc3is4taurCKppU`,
+                    },
+                  },
+                )
+                .then((response) => {
+                  console.log('Responde', response);
+                });
             }
           } else {
             swal({
@@ -65,9 +88,7 @@ function WhatsAppForm(props) {
           setName('');
           setphoneNumber('');
         })
-        .catch((err) => {
-          console.log('error in request', err);
-        });
+        .catch((err) => {});
     }
   };
 

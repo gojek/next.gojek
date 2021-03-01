@@ -30,10 +30,11 @@ export function CTA(props) {
               </div>
               <div className="d-md-none text-center px-0">
                 <h1 className={`text-white my-4 ${styles.ctaTitle}`}>{ctaData.xsTitle}</h1>
-                <a href={props.href} className={`${styles.ctaLink}`}>
+                {/* <a href={props.href} className={`${styles.ctaLink}`}> */}
+                <span>
                   {props.hrefText}{' '}
                   <img src="/img/life-at-gojek/arrow-right.svg" alt="Right arrow" />
-                </a>
+                </span>
               </div>
             </div>
           </div>

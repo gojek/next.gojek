@@ -54,9 +54,9 @@ class MySelect extends Component {
             <label htmlFor="keyword" className="sr-only">
               Keyword
             </label>
-            <div class="input-group mr-sm-2">
-              <div class="input-group-prepend">
-                <div class="input-group-text bg-white border-white">
+            <div className="input-group mr-sm-2">
+              <div className="input-group-prepend">
+                <div className="input-group-text bg-white border-white">
                   <img src="/img/careers/search.svg" alt="search" />
                 </div>
               </div>

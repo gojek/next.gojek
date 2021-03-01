@@ -264,6 +264,7 @@
 .post-details {
   text-align: left;
   word-break: break-word;
+  width: 100%;
   .post-full-header {
     position: relative;
     margin: 0 auto;
@@ -354,6 +355,7 @@
     flex-grow: 1;
     display: flex;
     align-items: flex-start;
+    align-items: center;
   }
   .post-full-byline-content .author-list {
     justify-content: flex-start;
@@ -498,6 +500,7 @@
 
 @media (max-width: 800px) {
   .post-details {
+    width: 100%;
     .post-full-header {
       padding-right: 5vw;
       padding-left: 5vw;
@@ -617,4 +620,8 @@
 
 .search-blog:focus {
   box-shadow: none;
+}
+img,
+iframe {
+  max-width: 100% !important;
 }

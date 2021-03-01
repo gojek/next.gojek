@@ -140,10 +140,10 @@ function Navbar(props) {
         </div>
       </div>
       {expanded ? (
-        <div class="text-white bg-black full-height fixed-top pt-3">
-          <div class="container pt-3 d-block" style={{ padding: '.5rem 1rem' }}>
+        <div className="text-white bg-black full-height fixed-top pt-3">
+          <div className="container pt-3 d-block" style={{ padding: '.5rem 1rem' }}>
             <div className="d-flex justify-content-between pb-5">
-              <a class="navbar-brand" href="/">
+              <a className="navbar-brand" href="/">
                 <img
                   src="/img/gojek-white-logo.svg"
                   alt="Gojek"

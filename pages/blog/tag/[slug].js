@@ -57,9 +57,7 @@ function TagPosts(props) {
           }),
         );
       })
-      .catch((err) => {
-        console.log('error in request', err);
-      });
+      .catch((err) => {});
   };
 
   const tags = [

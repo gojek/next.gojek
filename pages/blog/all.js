@@ -5,7 +5,6 @@ import Moment from 'react-moment';
 
 import { getAllPosts } from '../../api/posts';
 
-import Head from 'next/head';
 import Navbar from '~/../../comps/Navbar';
 import Tags from '~/../../comps/Blog/Tag';
 import CommonCta from '~/../../comps/Common/Cta';
@@ -56,9 +55,7 @@ function allPosts(props) {
           }),
         );
       })
-      .catch((err) => {
-        console.log('error in request', err);
-      });
+      .catch((err) => {});
   };
 
   const tags = [
@@ -71,7 +68,6 @@ function allPosts(props) {
   ];
 
   const inputRef = useRef(null);
-
   return (
     <div className="text-center text-md-left blog-page">
       <PageMeta
@@ -170,12 +166,6 @@ function allPosts(props) {
       {keyword === '' && (
         <div className={`post-feed container mt-md-5 pt-3`}>
           <BlogNew heading="All blogs" posts={props.posts} pageName="all-posts" />
-          <p className="text-center">
-            {/* <a href="" className={`text-green-light`}>
-                onClick={loadMoreposts()}
-                See More <img src="/img/arrow-right-green.svg" className="pl-2" alt="View Blogs" />
-              </a> */}
-          </p>
         </div>
       )}
 

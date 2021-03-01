@@ -25,7 +25,6 @@ function ApplyForm(props) {
       fd.append('cards[cc56f5ef-4f9d-4686-bca8-b3b29b032087][field0]', data.authorisation);
       fd.append('cards[cc56f5ef-4f9d-4686-bca8-b3b29b032087][field1]', data.experience);
       fd.append('cards[cc56f5ef-4f9d-4686-bca8-b3b29b032087][field2]', data.source);
-      console.log('fd', fd, data);
       axios
         .post(
           `https://api.lever.co/v0/postings/gojek/${router.query.id}`,
@@ -314,7 +313,7 @@ function ApplyForm(props) {
                     />
                   </div>
                   <div className="col-6">
-                    <button type="button" class="btn btn-warning px-3 font-weight-bold">
+                    <button type="button" className="btn btn-warning px-3 font-weight-bold">
                       Apply with LinkedIn
                     </button>
                     <p className="text-white pt-3">

@@ -11,20 +11,17 @@ const sliderSettings = {
 };
 
 function BlogNew(props) {
-  const { heading, posts, link, id } = props;
+  const { heading, posts, id } = props;
   props.pageName !== 'all-posts' ? (posts[0].featured = true) : '';
 
   const allPosts = props.pageName ? posts : posts.slice(0, 4),
     mobileSliderPosts = allPosts.slice(1, 4);
-  const items = allPosts.map((post) => (
-    <React.Fragment key={post.guid}>
+
+  const items = allPosts.map((post, key) => (
+    <React.Fragment key={post.guid} key={key}>
       <BlogCard post={post} tag={heading} />
     </React.Fragment>
   ));
-
-  const mediumLink = props.pageName
-    ? 'https://blog.gojekengineering.com/allstories/home'
-    : `https://blog.gojekengineering.com/${link}/home`;
 
   return (
     <section className="posts text-left" id={id}>
@@ -43,14 +40,21 @@ function BlogNew(props) {
       <div className="d-none d-md-block">
         <div className="row">{items}</div>
       </div>
-      <div className="d-md-none">
-        <BlogCard post={allPosts[0]} tag={heading} />
-        <Slider {...sliderSettings}>
-          {mobileSliderPosts.map((post) => {
-            return <BlogCard post={post} tag={heading} />;
-          })}
-        </Slider>
-      </div>
+      {props.pageName === 'blog' && (
+        <div className="d-md-none">
+          <BlogCard post={allPosts[0]} tag={heading} />
+          <Slider {...sliderSettings}>
+            {mobileSliderPosts.map((post) => {
+              return <BlogCard post={post} tag={heading} />;
+            })}
+          </Slider>
+        </div>
+      )}
+      {props.pageName !== 'blog' && (
+        <div className="d-md-none d-block">
+          <div className="row">{items}</div>
+        </div>
+      )}
     </section>
   );
 }

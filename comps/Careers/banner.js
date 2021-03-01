@@ -2,7 +2,6 @@ import { banner } from './data';
 import MobileSearch from './mobileSearch';
 
 function Banner(props) {
-  console.log('props', props);
   return (
     <div className="row align-items-center mt-md-5 mx-auto">
       <div className="col-md-5">

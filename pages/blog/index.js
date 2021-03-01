@@ -58,9 +58,7 @@ function Blog(props) {
           }),
         );
       })
-      .catch((err) => {
-        console.log('error in request', err);
-      });
+      .catch((err) => {});
   };
 
   const tags = [
@@ -266,8 +264,8 @@ function Blog(props) {
       <section className="container py-5">
         {keyword !== '' && <h1 className="heading pb-4">Search Results for '{keyword}'</h1>}
         <div className="row posts">
-          {articles.map((post) => (
-            <div className="col-md-4 mb-md-5">
+          {articles.map((post, key) => (
+            <div className="col-md-4 mb-md-5" key={key}>
               <a href={`/blog/${post.slug}`} className="post">
                 <div className="card border-0 bg-transparent">
                   <React.Fragment>

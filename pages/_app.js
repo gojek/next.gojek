@@ -33,7 +33,6 @@ function MyApp({ Component, pageProps }) {
         .register('/sw.js')
         .catch((err) => console.error('Service worker registration failed', err));
     } else {
-      console.log('Service worker not supported');
     }
   }, [pathname]);
 

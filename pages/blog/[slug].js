@@ -29,7 +29,6 @@ function BlogDetails(props) {
 
   useEffect(() => {
     setUrl(window.location.href);
-    console.log('post data', post);
   }, []);
 
   return (
@@ -52,13 +51,13 @@ function BlogDetails(props) {
 
                 <div className="post-full-byline">
                   <section className="post-full-byline-content flex-wrap flex-sm-nowrap">
-                    <ul className="author-list">
+                    {/* <ul className="author-list">
                       <li className="author-list-item">
                         <p className="author-avatar">
                           <p className="author-profile-image">
                             {post.primary_author.name[0].toUpperCase()}
                           </p>
-                          {/* {post.primary_author.profile_image ? (
+                          {post.primary_author.profile_image ? (
                             <img
                               className="author-profile-image"
                               src={post.primary_author.profile_image}
@@ -70,19 +69,15 @@ function BlogDetails(props) {
                             //   src="/images/icons/avatar.svg"
                             //   alt={post.primary_author.name}
                             // />
-                          )} */}
+                          )}
                         </p>
                       </li>
-                    </ul>
+                    </ul>*/}
 
                     <section className="post-full-byline-meta">
-                      <h4 className="author-name text-dark text-capitalize">
-                        {/* <a
-                                                    href={`tag/${post.primary_author.slug}`}
-                                                  > */}
-                        {post.primary_author.name}
-                        {/* </a> */}
-                      </h4>
+                      {/* <h4 className="author-name text-dark text-capitalize">
+                        <a href={`tag/${post.primary_author.slug}`}>{post.primary_author.name}</a>
+                      </h4> */}
                       <div className="date-time">
                         <span>{readingTime}</span> &nbsp;| &nbsp;
                         <span>

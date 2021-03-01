@@ -40,12 +40,8 @@ function DescriptionPage(props) {
           data,
         },
       )
-      .then((res) => {
-        console.log('res', res.data);
-      })
-      .catch((err) => {
-        console.log('error in request', err);
-      });
+      .then((res) => {})
+      .catch((err) => {});
   };
 
   const description = data.descriptionPlain,
