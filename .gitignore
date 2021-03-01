@@ -8,6 +8,7 @@ stats.json
 .next/
 config.js
 .env
+.env.local
 public.env
 coverage/
 out/

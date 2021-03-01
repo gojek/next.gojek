@@ -7,12 +7,12 @@ import swal from 'sweetalert';
 function WhatsAppForm(props) {
   const { register, handleSubmit, errors } = useForm();
   const [countryName, setCountryName] = useState('');
-  const [name, setName] = useState('');
   const [phoneNumber, setphoneNumber] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    if (phoneNumber.length < 11) {
+    if (phoneNumber.length != 12) {
       swal({
         title: '',
         text: 'Please enter a valid phone number',
@@ -21,79 +21,99 @@ function WhatsAppForm(props) {
         button: false,
       });
     } else {
-      axios
-        .post(
-          `https://live-server-367.wati.io/api/v1/addContact/${phoneNumber}`,
-          {
-            name: data.name,
-            contactStatus: 'VALID',
-            customParams: [
-              {
-                name: 'country',
-                value: countryName,
-              },
-            ],
-          },
-          {
-            headers: {
-              Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4YWRiNTM0Zi0wYzI2LTQ1ZDUtOGJhMi04N2RlMzJhMTkxMjYiLCJ1bmlxdWVfbmFtZSI6InN1bWFudGgucmFqQGdvamVrLmNvbSIsIm5hbWVpZCI6InN1bWFudGgucmFqQGdvamVrLmNvbSIsImVtYWlsIjoic3VtYW50aC5yYWpAZ29qZWsuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQURNSU5JU1RSQVRPUiIsImV4cCI6MjUzNDAyMzAwODAwLCJpc3MiOiJDbGFyZV9BSSIsImF1ZCI6IkNsYXJlX0FJIn0.WXEky8gpycozqFQ-c9XrjGb2cqUEZc3is4taurCKppU`,
-            },
-          },
-        )
-        .then((response) => {
-          if (response.data.result === true) {
-            swal({
-              title: "You're on the list!",
-              text: 'We will keep you up to date on all the news from Gojek',
-              icon: 'success',
-              timer: 4000,
-              button: false,
-            });
-            if (props.src === 'popup') {
-              props.setactive(false);
-              // Send welcome message
-              var dd = [
-                {
-                  name: 'name',
-                  value: data.name,
-                },
-              ];
-              axios
-                .post(
-                  `https://live-server-367.wati.io/api/v1/sendTemplateMessage/${phoneNumber}`,
-                  {
-                    template_name: 'welcome_message',
-                    broadcast_name: 'new_chat_v1_1614241965353',
-                    parameters: JSON.stringify(dd),
-                  },
-                  {
-                    headers: {
-                      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4YWRiNTM0Zi0wYzI2LTQ1ZDUtOGJhMi04N2RlMzJhMTkxMjYiLCJ1bmlxdWVfbmFtZSI6InN1bWFudGgucmFqQGdvamVrLmNvbSIsIm5hbWVpZCI6InN1bWFudGgucmFqQGdvamVrLmNvbSIsImVtYWlsIjoic3VtYW50aC5yYWpAZ29qZWsuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQURNSU5JU1RSQVRPUiIsImV4cCI6MjUzNDAyMzAwODAwLCJpc3MiOiJDbGFyZV9BSSIsImF1ZCI6IkNsYXJlX0FJIn0.WXEky8gpycozqFQ-c9XrjGb2cqUEZc3is4taurCKppU`,
-                    },
-                  },
-                )
-                .then((response) => {
-                  console.log('Responde', response);
-                });
-            }
-          } else {
-            swal({
-              title: 'Oops!',
-              text: 'Something went wrong. Please try again after later',
-              icon: 'error',
-              timer: 4000,
-              button: false,
-            });
-          }
-          setName('');
-          setphoneNumber('');
-        })
-        .catch((err) => {});
+      setLoading(true);
+      callSubscribe(data.name);
     }
   };
 
+  const callSubscribe = (name) => {
+    console.log(process.env.whatsAppAddApi);
+
+    axios
+      .post(
+        `${process.env.whatsAppAddApi}${phoneNumber}`,
+        {
+          name: name,
+          contactStatus: 'VALID',
+          customParams: [
+            {
+              name: 'country',
+              value: countryName,
+            },
+          ],
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.whatsAppToken}`,
+          },
+        },
+      )
+      .then((response) => {
+        if (response.data.result === true) {
+          swal({
+            title: "You're on the list!",
+            text: 'We will keep you up to date on all the news from Gojek',
+            icon: 'success',
+            timer: 4000,
+            button: false,
+          });
+          if (props.src === 'popup') {
+            props.setactive(false);
+            sendTemplate(name);
+          } else {
+            setLoading(false);
+          }
+        } else {
+          setLoading(false);
+          swal({
+            title: 'Oops!',
+            text: 'Something went wrong. Please try again after later',
+            icon: 'error',
+            timer: 4000,
+            button: false,
+          });
+        }
+        setName('');
+        setphoneNumber('');
+      })
+      .catch((err) => {
+        setLoading(false);
+      });
+  };
+
+  const sendTemplate = (name) => {
+    // Send welcome message
+    var dd = [
+      {
+        name: 'name',
+        value: name,
+      },
+    ];
+    axios
+      .post(
+        `${process.env.whatsAppTemplateApi}${phoneNumber}`,
+        {
+          template_name: 'welcome_message',
+          broadcast_name: 'new_chat_v1_1614241965353',
+          parameters: JSON.stringify(dd),
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.whatsAppToken}`,
+          },
+        },
+      )
+      .then((response) => {
+        console.log('Response', response);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+      });
+  };
+
   return (
-    <>
+    <div>
       <p className={`form-text pb-4 formHeading`}>
         Stories from our #SuperApp, <br />
         straight to your {''}
@@ -108,8 +128,6 @@ function WhatsAppForm(props) {
             placeholder="Enter your Name"
             id="name"
             name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
             ref={register({
               required: 'Name is required',
             })}
@@ -129,9 +147,6 @@ function WhatsAppForm(props) {
             autoFocus: false,
           }}
           value={phoneNumber}
-          inputRef={register({
-            required: 'Phone number is required',
-          })}
           enableSearch
           searchPlaceholder="Search"
           inputClass="w-100 form-control bg-transparent border rounded-pill px-5 py-4"
@@ -160,7 +175,11 @@ function WhatsAppForm(props) {
             {!!errors.terms && errors.terms.message ? errors.terms.message : ''}
           </div>
         </div>
-        <button className="btn rounded-pill bg-green mt-4 px-4 text-white" type="submit">
+        <button
+          className="btn rounded-pill bg-green mt-4 px-4 text-white"
+          type="submit"
+          disabled={loading}
+        >
           Submit
         </button>
 
@@ -171,7 +190,7 @@ function WhatsAppForm(props) {
           ></i>
         )}
       </form>
-    </>
+    </div>
   );
 }
 

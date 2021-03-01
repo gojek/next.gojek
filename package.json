@@ -51,6 +51,9 @@
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1"
   },
+  "cacheDirectories": [
+    ".next/cache"
+  ],
   "scripts": {
     "dev": "next dev -p 3030",
     "build": "next build",

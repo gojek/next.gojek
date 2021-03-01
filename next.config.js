@@ -21,6 +21,11 @@ const config = {
     });
     return config;
   },
+  env: {
+    whatsAppToken: process.env.whatsAppToken,
+    whatsAppAddApi: process.env.whatsAppAddApi,
+    whatsAppTemplateApi: process.env.whatsAppTemplateApi,
+  },
 };
 
 module.exports = withPlugins(
