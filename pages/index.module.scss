@@ -28,7 +28,6 @@
   font-family: $font-bold, sans-serif;
 }
 
-
 // Once a call center.. section
 .gojekBg {
   background: #ffffff url('/img/home/scale-bg.svg') no-repeat top center;
@@ -42,6 +41,13 @@
     background-position-y: 160px;
     background-position-x: center;
   }
+
+  @media screen and (max-width: 425px) {
+    .container {
+      padding-bottom: 0 !important;
+    }
+  }
+
   .full-height {
     min-height: 105vh;
   }

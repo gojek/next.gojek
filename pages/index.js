@@ -71,7 +71,9 @@ function Home(props) {
       </section>
 
       <section className={`${styles.gojekBg} d-md-none d-block`}>
-        <div className={`container py-5 h-100 d-flex flex-column justify-content-end`}>
+        <div
+          className={`${styles.container} container py-5 h-100 d-flex flex-column justify-content-end`}
+        >
           {/* Row for heading */}
           <div className="row justify-content-end">
             <h4 className={`pt-0 pt-lg-5 col-md-6 ${styles.subHeading}`}>
