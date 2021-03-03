@@ -24,7 +24,7 @@ function Blog(props) {
   const changeTag = (tagName) => {
     setTag(tagName);
     scroller.scrollTo(tagName, {
-      offset: -125,
+      offset: -175,
       smooth: 'easeOutCubic',
       duration: 500,
       delay: 0,
