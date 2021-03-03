@@ -83,6 +83,7 @@ body {
 
 .main-nav {
   transition-duration: 0.8s;
+  z-index: 7000;
 
   .navbar-brand img {
     height: 2rem;
@@ -953,10 +954,9 @@ html {
       padding-right: inherit;
       left: 0;
       right: 0;
-    @media screen and (min-width: $md-break) {
-      bottom: -16px;
-
-    }
+      @media screen and (min-width: $md-break) {
+        bottom: -16px;
+      }
     }
   }
 }
