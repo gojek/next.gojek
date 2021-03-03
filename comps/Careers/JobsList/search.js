@@ -45,7 +45,15 @@ class MySelect extends Component {
   };
 
   render() {
-    const { options, locations, onChange, onKeyDown, onChangeCallback, ...otherProps } = this.props;
+    const {
+      options,
+      locations,
+      onChange,
+      onKeyDown,
+      onChangeCallback,
+      mobileFilters,
+      ...otherProps
+    } = this.props;
 
     return (
       <div className="container">
@@ -83,6 +91,7 @@ class MySelect extends Component {
                   isMulti
                   components={{ Option, MultiValue, ValueContainer: CustomValueContainer }}
                   options={options}
+                  isSearchable={!mobileFilters}
                   hideSelectedOptions={false}
                   backspaceRemovesValue={false}
                   onChange={(e, meta) => {
@@ -92,6 +101,7 @@ class MySelect extends Component {
                   name="selectedDepartments"
                   placeholder="Department"
                   styles={styles}
+                  classNamePrefix="filter"
                 />
               </div>
               <div className="col-md-6 pr-0 pb-3 pb-md-0">
@@ -101,6 +111,7 @@ class MySelect extends Component {
                 <Select
                   closeMenuOnSelect={false}
                   isMulti
+                  isSearchable={!mobileFilters}
                   components={{ Option, MultiValue, ValueContainer: CustomValueContainer }}
                   options={locations}
                   hideSelectedOptions={false}

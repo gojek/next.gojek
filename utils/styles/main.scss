@@ -1024,3 +1024,14 @@ a:hover {
     }
   }
 }
+
+//to display dropdown values on top of fixed bottom results
+.mobile-search {
+  .filter__menu {
+    z-index: 2000;
+  }
+}
+
+.mobile-applied-filters {
+  z-index: 6000
+}

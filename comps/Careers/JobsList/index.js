@@ -257,6 +257,7 @@ class JobsList extends Component {
                     keyword={this.state.keyword}
                     onKeyDown={this.handleKeyDown}
                     onKeyDownCallback={this.handleKeyDown}
+                    mobileFilters
                   />
 
                   {(filters.length > 0 || this.state.keywordList.length > 0) && (
@@ -334,7 +335,7 @@ class JobsList extends Component {
 
               {/* Show filters if selected */}
               {(filters.length > 0 || this.state.keywordList.length > 0) && !this.state.expanded && (
-                <div className="fixed-bottom results p-4 bg-green-light text-white text-left">
+                <div className="fixed-bottom results p-4 bg-green-light text-white text-left mobile-applied-filters">
                   <div className="d-flex align-items-end justify-content-between">
                     <p className="mb-0 job-results-text mobile">
                       <strong>
