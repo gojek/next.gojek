@@ -225,7 +225,7 @@ function Blog(props) {
       )}
 
       {keyword === '' && (
-        <section className="py-3 py-md-5" style={{ backgroundColor: '#f2f2f2' }}>
+        <section className="py-3 py-md-5 px-md-3 px-xl-0" style={{ backgroundColor: '#f2f2f2' }}>
           <div className="post-feed">
             <FeaturedPosts heading="Featured Articles" posts={props.featuredPosts} />
           </div>
