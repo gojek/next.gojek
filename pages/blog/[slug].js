@@ -50,7 +50,7 @@ function BlogDetails(props) {
                 <p className="post-full-custom-excerpt">{post.excerpt}</p>
 
                 <div className="post-full-byline">
-                  <section className="post-full-byline-content flex-wrap flex-sm-nowrap">
+                  <section className="post-full-byline-content flex-wrap flex-sm-nowrap align-items-baseline justify-content-between">
                     {/* <ul className="author-list">
                       <li className="author-list-item">
                         <p className="author-avatar">

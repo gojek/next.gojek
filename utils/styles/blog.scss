@@ -16,6 +16,11 @@
   .description {
     color: #707070;
     font-size: 0.875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
     &.featured {
       font-size: 1rem;
     }
