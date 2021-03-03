@@ -18,6 +18,7 @@ function allPosts(props) {
   const [articles, setarticles] = useState([]);
   const [clicked, setclicked] = useState(false);
   const [active, setactive] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const changeTag = (tagName) => {
     setTag(tagName);
@@ -44,6 +45,13 @@ function allPosts(props) {
 
   const changekeyword = (keyword) => {
     setkeyword(keyword);
+    setLoading(true);
+    scroller.scrollTo('searchResults', {
+      offset: -175,
+      smooth: 'easeOutCubic',
+      duration: 500,
+      delay: 0,
+    });
     axios
       .get(process.env.ghostBlogsApi)
       .then((res) => {
@@ -139,6 +147,7 @@ function allPosts(props) {
               placeholder="Search"
               className={`input-search form-control active-link ${clicked ? 'd-block' : 'd-none'}`}
               ref={inputRef}
+              value={keyword}
               onChange={(event) => changekeyword(event.target.value)}
               placeholder="Search blogs (kubernetes, #firstprinciples, design)"
             />
@@ -160,16 +169,16 @@ function allPosts(props) {
         </div>
       </section>
 
-      {/* All Posts */}
-      {keyword === '' && (
-        <div className={`post-feed container mt-md-5 pt-3`}>
-          <BlogNew heading="All blogs" posts={props.posts} pageName="all-posts" />
-        </div>
-      )}
-
-      {/* End All Posts */}
-      <section className="container py-5">
-        {keyword !== '' && <h1 className="heading pb-4">Search Results for '{keyword}'</h1>}
+      <section className="container py-5" id="searchResults">
+        {keyword !== '' ? (
+          loading ? (
+            <h1 className="heading pb-4">Loading search Results for '{keyword}'</h1>
+          ) : (
+            <h1 className="heading pb-4">Search Results for '{keyword}'</h1>
+          )
+        ) : (
+          ''
+        )}
         <div className="row posts">
           {articles.map((post) => (
             <div className="col-md-4 mb-md-5">
@@ -202,6 +211,14 @@ function allPosts(props) {
           ))}
         </div>
       </section>
+
+      {/* All Posts */}
+      {keyword === '' && (
+        <div className={`post-feed container mt-md-5 pt-3`}>
+          <BlogNew heading="All blogs" posts={props.posts} pageName="all-posts" />
+        </div>
+      )}
+      {/* End All Posts */}
 
       {/* CTA */}
       <CommonCta mobile />

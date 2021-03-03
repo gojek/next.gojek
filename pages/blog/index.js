@@ -20,6 +20,7 @@ function Blog(props) {
   const [keyword, setkeyword] = useState('');
   const [articles, setarticles] = useState([]);
   const [clicked, setclicked] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const changeTag = (tagName) => {
     setTag(tagName);
@@ -47,6 +48,13 @@ function Blog(props) {
 
   const changekeyword = (keyword) => {
     setkeyword(keyword);
+    setLoading(true);
+    scroller.scrollTo('searchResults', {
+      offset: -175,
+      smooth: 'easeOutCubic',
+      duration: 500,
+      delay: 0,
+    });
     axios
       .get(process.env.ghostBlogsApi)
       .then((res) => {
@@ -55,6 +63,7 @@ function Blog(props) {
             return data.title.toLowerCase().includes(keyword.toLowerCase());
           }),
         );
+        setLoading(false);
       })
       .catch((err) => {});
   };
@@ -117,8 +126,9 @@ function Blog(props) {
           />
 
           <div
-            className={`input-group my-3 ${styles.searchBox}`}
-            style={clicked ? { width: '100%' } : { width: '5%' }}
+            className={`input-group my-3 ${styles.searchBox} ${
+              clicked ? styles.activeWidth : styles.normalWidth
+            }`}
           >
             <div
               className={`input-group-prepend`}
@@ -142,6 +152,7 @@ function Blog(props) {
               placeholder="Search"
               className={`input-search form-control active-link ${clicked ? 'd-block' : 'd-none'}`}
               ref={inputRef}
+              value={keyword}
               onChange={(event) => changekeyword(event.target.value)}
               placeholder="Search blogs (kubernetes, #firstprinciples, design)"
             />
@@ -160,6 +171,50 @@ function Blog(props) {
               </span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* search results section */}
+      <section className="container py-5" id="searchResults">
+        {keyword !== '' ? (
+          loading ? (
+            <h1 className="heading pb-4">Loading search Results for '{keyword}'</h1>
+          ) : (
+            <h1 className="heading pb-4">Search Results for '{keyword}'</h1>
+          )
+        ) : (
+          ''
+        )}
+        <div className="row posts">
+          {articles.map((post, key) => (
+            <div className="col-md-4 mb-md-5" key={key}>
+              <a href={`/blog/${post.slug}`} className="post">
+                <div className="card border-0 bg-transparent">
+                  <React.Fragment>
+                    <div
+                      className={`thumbnail small`}
+                      style={{ backgroundImage: `url(${post.feature_image})` }}
+                    />
+                  </React.Fragment>
+                  <div className="card-body px-0">
+                    <h5 className={`${post.featured ? 'featured' : ''} title`}>{post.title}</h5>
+                    <p className={`${post.featured ? 'featured' : ''} description`}>
+                      {' '}
+                      {post.excerpt}...
+                    </p>
+                    <React.Fragment>
+                      <div className="mt-3 meta">
+                        <p className="mb-0 author">{post.author}</p>
+                        <p className="date-time">
+                          <Moment format="MMM DD">{post.published_at}</Moment> | 5mins
+                        </p>
+                      </div>
+                    </React.Fragment>
+                  </div>
+                </div>
+              </a>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -258,41 +313,6 @@ function Blog(props) {
           />
         </section>
       )}
-
-      <section className="container py-5">
-        {keyword !== '' && <h1 className="heading pb-4">Search Results for '{keyword}'</h1>}
-        <div className="row posts">
-          {articles.map((post, key) => (
-            <div className="col-md-4 mb-md-5" key={key}>
-              <a href={`/blog/${post.slug}`} className="post">
-                <div className="card border-0 bg-transparent">
-                  <React.Fragment>
-                    <div
-                      className={`thumbnail small`}
-                      style={{ backgroundImage: `url(${post.feature_image})` }}
-                    />
-                  </React.Fragment>
-                  <div className="card-body px-0">
-                    <h5 className={`${post.featured ? 'featured' : ''} title`}>{post.title}</h5>
-                    <p className={`${post.featured ? 'featured' : ''} description`}>
-                      {' '}
-                      {post.excerpt}...
-                    </p>
-                    <React.Fragment>
-                      <div className="mt-3 meta">
-                        <p className="mb-0 author">{post.author}</p>
-                        <p className="date-time">
-                          <Moment format="MMM DD">{post.published_at}</Moment> | 5mins
-                        </p>
-                      </div>
-                    </React.Fragment>
-                  </div>
-                </div>
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* CTA */}
       <CommonCta mobile />
