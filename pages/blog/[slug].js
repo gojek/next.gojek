@@ -124,9 +124,13 @@ function BlogDetails(props) {
                 </div>
               </header>
               {/* Post image */}
-              <figure className="post-full-image">
-                <img src={post.feature_image} alt={post.title} />
-              </figure>
+              {post.feature_image ? (
+                <figure className="post-full-image">
+                  <img src={post.feature_image} alt={post.title} />
+                </figure>
+              ) : (
+                ''
+              )}
               {/* End Post image */}
 
               {/* Content */}

@@ -175,7 +175,7 @@ function Blog(props) {
       </section>
 
       {/* search results section */}
-      <section className="container py-5" id="searchResults">
+      <section className="container" id="searchResults">
         {keyword !== '' ? (
           loading ? (
             <h1 className="heading pb-4">Loading search Results for '{keyword}'</h1>
@@ -185,36 +185,38 @@ function Blog(props) {
         ) : (
           ''
         )}
-        <div className="row posts">
-          {articles.map((post, key) => (
-            <div className="col-md-4 mb-md-5" key={key}>
-              <a href={`/blog/${post.slug}`} className="post">
-                <div className="card border-0 bg-transparent">
-                  <React.Fragment>
-                    <div
-                      className={`thumbnail small`}
-                      style={{ backgroundImage: `url(${post.feature_image})` }}
-                    />
-                  </React.Fragment>
-                  <div className="card-body px-0">
-                    <h5 className={`${post.featured ? 'featured' : ''} title`}>{post.title}</h5>
-                    <p className={`${post.featured ? 'featured' : ''} description`}>
-                      {' '}
-                      {post.excerpt}...
-                    </p>
+        <div className="py-5">
+          <div className="row posts">
+            {articles.map((post, key) => (
+              <div className="col-md-4 mb-md-5" key={key}>
+                <a href={`/blog/${post.slug}`} className="post">
+                  <div className="card border-0 bg-transparent">
                     <React.Fragment>
-                      <div className="mt-3 meta">
-                        <p className="mb-0 author">{post.author}</p>
-                        <p className="date-time">
-                          <Moment format="MMM DD">{post.published_at}</Moment> | 5 min read
-                        </p>
-                      </div>
+                      <div
+                        className={`thumbnail small`}
+                        style={{ backgroundImage: `url(${post.feature_image})` }}
+                      />
                     </React.Fragment>
+                    <div className="card-body px-0">
+                      <h5 className={`${post.featured ? 'featured' : ''} title`}>{post.title}</h5>
+                      <p className={`${post.featured ? 'featured' : ''} description`}>
+                        {' '}
+                        {post.excerpt}...
+                      </p>
+                      <React.Fragment>
+                        <div className="mt-3 meta">
+                          <p className="mb-0 author">{post.author}</p>
+                          <p className="date-time">
+                            <Moment format="MMM DD">{post.published_at}</Moment> | 5 min read
+                          </p>
+                        </div>
+                      </React.Fragment>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
-          ))}
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
