@@ -15,7 +15,7 @@ import CommonCta from '../../../comps/Common/Cta';
 
 function TagPosts(props) {
   const router = useRouter();
-  const [tag, setTag] = useState(router.query.slug);
+  const [tag, setTag] = useState(props.slug);
   const [keyword, setkeyword] = useState('');
   const [articles, setarticles] = useState([]);
   const [active, setactive] = useState(false);
@@ -115,8 +115,9 @@ function TagPosts(props) {
           />
 
           <div
-            className={`input-group my-3 ${styles.searchBox}`}
-            style={clicked ? { width: '100%' } : { width: '5%' }}
+            className={`input-group my-3 ${styles.searchBox} ${
+              clicked ? styles.activeWidth : styles.normalWidth
+            }`}
           >
             <div
               className={`input-group-prepend`}
@@ -163,7 +164,7 @@ function TagPosts(props) {
 
       {keyword === '' && (
         <section className="post-feed container mt-5">
-          <BlogNew heading={router.query.slug} posts={props.posts} link="" pageName="tag" />
+          <BlogNew heading={props.slug} posts={props.posts} link="" pageName="tag" />
         </section>
       )}
 
@@ -190,7 +191,7 @@ function TagPosts(props) {
                       <div className="mt-3 meta">
                         <p className="mb-0 author">{post.author}</p>
                         <p className="date-time">
-                          <Moment format="MMM DD">{post.published_at}</Moment> | 5mins
+                          <Moment format="MMM DD">{post.published_at}</Moment> | 5 min read
                         </p>
                       </div>
                     </React.Fragment>
@@ -217,6 +218,7 @@ TagPosts.getInitialProps = async (ctx) => {
   });
   return {
     posts,
+    slug: ctx.query.slug,
   };
 };
 

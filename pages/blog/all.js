@@ -122,8 +122,9 @@ function allPosts(props) {
           />
 
           <div
-            className={`input-group my-3 ${styles.searchBox}`}
-            style={clicked ? { width: '100%' } : { width: '5%' }}
+            className={`input-group my-3 ${styles.searchBox} ${
+              clicked ? styles.activeWidth : styles.normalWidth
+            }`}
           >
             <div
               className={`input-group-prepend`}

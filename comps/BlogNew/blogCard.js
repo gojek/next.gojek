@@ -37,7 +37,7 @@ function BlogCard(props) {
                 <div className="mt-3 meta">
                   <p className="mb-0 author">{post.author}</p>
                   <p className="date-time">
-                    <Moment format="MMM DD">{post.published_at}</Moment> | 5mins
+                    <Moment format="MMM DD">{post.published_at}</Moment> | 5 min read
                   </p>
                 </div>
               </React.Fragment>
