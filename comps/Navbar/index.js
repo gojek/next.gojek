@@ -165,7 +165,7 @@ function Navbar(props) {
                 </li>
               ))}
               <li className="pb-5 text-white d-block" key="connect-with-us">
-                Connect with Us
+                <p className="text-muted mb-0">Connect with Us</p>
                 <ul className="list-inline pt-5 d-flex justify-content-around">
                   {socialLinks.socialLinks.map((socialMedia, i) => (
                     <li className="list-inline-item " key={i}>
