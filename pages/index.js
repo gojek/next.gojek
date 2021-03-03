@@ -28,7 +28,7 @@ function Home(props) {
       <Navbar />
       <section className={`py-5 d-flex align-items-md-center align-items-start ${styles.home}`}>
         <div className="container">
-          <div className="align-items-md-center align-items-start">
+          <div className={`align-items-md-center align-items-start ${styles.titleContainer}`}>
             <h1 className={`pt-5 ${styles.heading}`} style={{ marginTop: '50px' }}>
               Gojek is a<br /> SuperApp.{' '}
             </h1>
@@ -37,9 +37,9 @@ function Home(props) {
       </section>
 
       {/* Products section */}
-      {/* <section className={`py-5 bg-black text-white ${styles.products}`}>
+      <section className={`py-5 bg-black text-white ${styles.products}`}>
         <ProductSlider />
-      </section> */}
+      </section>
       {/* End Products section */}
 
       {/* Open Source */}
@@ -52,13 +52,13 @@ function Home(props) {
         <div className="container py-lg-5 full-height d-flex flex-column justify-content-start">
           {/* Row for heading */}
           <div className="row justify-content-end">
-            <div className={`col-md-5 col-lg-6`}>
+            <div className={`col-md-5 col-lg-4 col-xl-6`}>
               <h4 className={`pt-0 pt-lg-5 ${styles.subHeading}`}>
                 Once a call-centre <br /> operation in Jakarta, now{' '}
                 <br className="d-none d-lg-block" />
                 <span className="text-green-light">a Decacorn in Southeast Asia.</span>
               </h4>
-              <ul className={`mt-4 mt-lg-5 ${styles.pointers} pl-3`}>
+              <ul className={`mt-4 mt-xl-5 ${styles.pointers} pl-3`}>
                 {scalePointers.map((pointer, i) => (
                   <li className={`${styles.point}`} key={i}>
                     {pointer}
@@ -71,9 +71,7 @@ function Home(props) {
       </section>
 
       <section className={`${styles.gojekBg} d-md-none d-block`}>
-        <div
-          className={`${styles.container} container py-5 h-100 d-flex flex-column justify-content-end`}
-        >
+        <div className="container h-100 d-flex flex-column justify-content-end">
           {/* Row for heading */}
           <div className="row justify-content-end">
             <h4 className={`pt-0 pt-lg-5 col-md-6 ${styles.subHeading}`}>

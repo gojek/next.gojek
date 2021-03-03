@@ -703,7 +703,7 @@ html {
         content: '';
         display: block;
         height: 6rem;
-        width: 6rem;
+        // width: 6rem;
       }
     }
     .slick-prev {
@@ -948,11 +948,15 @@ html {
   }
   .caption {
     h5 {
-      bottom: 5%;
+      bottom: -8px;
       padding-left: inherit;
       padding-right: inherit;
       left: 0;
       right: 0;
+    @media screen and (min-width: $md-break) {
+      bottom: -16px;
+
+    }
     }
   }
 }

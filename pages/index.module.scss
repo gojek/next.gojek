@@ -7,6 +7,8 @@
   background-size: cover;
   @media screen and (max-width: 1440px) {
     background: url('/img/home/banner-lg.jpg') no-repeat center bottom;
+    background-size: cover;
+    background-position-x: right;
   }
   @media screen and (max-width: 768px) {
     height: 50vh;
@@ -19,6 +21,12 @@
     .heading {
       font-size: 1.875rem;
       font-family: $font-extra-bold;
+    }
+  }
+
+  .titleContainer {
+    @media screen and (min-width: 1024px) {
+      min-height: 40vh;
     }
   }
 }
@@ -40,12 +48,7 @@
     background-image: url('/img/home/gojek-bg-mobile.svg');
     background-position-y: 160px;
     background-position-x: center;
-  }
-
-  @media screen and (max-width: 425px) {
-    .container {
-      padding-bottom: 0 !important;
-    }
+    height: 800px;
   }
 
   .full-height {
