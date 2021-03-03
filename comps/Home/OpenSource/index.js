@@ -42,10 +42,10 @@ function Project(props) {
             />
           </a>
         </div>
-        <div className="col-md-7 offset-md-1 opensource pt-2 pt-md-0">
+        <div className="col-md-7 offset-md-1 opensource pt-2 pt-md-0 pr-md-5 pr-xl-0">
           <Slider {...settings}>
             {projects.data.map((data, i) => (
-              <Card data={data} key={i}/>
+              <Card data={data} key={i} />
             ))}
           </Slider>
         </div>
