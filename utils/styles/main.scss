@@ -749,7 +749,7 @@ body {
   .banner {
     height: 50vh;
     @media screen and (max-width: 576px) {
-      height: 50vh;
+      height: 70vh;
       .full-height-one {
         height: 50vh;
       }
@@ -1033,5 +1033,5 @@ a:hover {
 }
 
 .mobile-applied-filters {
-  z-index: 6000
+  z-index: 6000;
 }
