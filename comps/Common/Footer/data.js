@@ -22,11 +22,6 @@ export const data = {
       name: 'Join us',
       link: '/jobs',
     },
-    {
-      id: 6,
-      name: 'Connect with us',
-      link: '/',
-    },
   ],
   links: [
     {
