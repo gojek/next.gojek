@@ -47,7 +47,9 @@ function LifeAtGojek() {
       <Navbar whiteNav />
 
       <section className={`${styles.banner}`}>
-        <div className="container d-flex align-items-center full-height text-white">
+        <div
+          className={`container d-flex align-items-center full-height text-white ${styles.bannerContainer}`}
+        >
           <div className="col-md-6 col-10 px-0 position-relative pt-md-5 mt-md-5 pb-5 pb-md-0 mb-5 mb-md-0">
             <h1 className={`pb-4 pb-md-3 ${styles.heading}`}>Culture </h1>
             <p className="pb-3">

@@ -176,16 +176,16 @@ function Blog(props) {
 
       {/* search results section */}
       <section className="container" id="searchResults">
-        {keyword !== '' ? (
-          loading ? (
-            <h1 className="heading pb-4">Loading search Results for '{keyword}'</h1>
-          ) : (
-            <h1 className="heading pb-4">Search Results for '{keyword}'</h1>
-          )
-        ) : (
-          ''
-        )}
         <div className="py-5">
+          {keyword !== '' ? (
+            loading ? (
+              <h1 className="heading pb-4">Loading search Results for '{keyword}'</h1>
+            ) : (
+              <h1 className="heading pb-4">Search Results for '{keyword}'</h1>
+            )
+          ) : (
+            ''
+          )}
           <div className="row posts">
             {articles.map((post, key) => (
               <div className="col-md-4 mb-md-5" key={key}>

@@ -5,7 +5,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 
 function WhatsAppForm(props) {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors, reset } = useForm();
   const [countryName, setCountryName] = useState('');
   const [phoneNumber, setphoneNumber] = useState('');
   const [loading, setLoading] = useState(false);
@@ -27,8 +27,6 @@ function WhatsAppForm(props) {
   };
 
   const callSubscribe = (name) => {
-    console.log(process.env.whatsAppAddApi);
-
     axios
       .post(
         `${process.env.whatsAppAddApi}${phoneNumber}`,
@@ -62,6 +60,8 @@ function WhatsAppForm(props) {
             sendTemplate(name);
           } else {
             setLoading(false);
+            reset();
+            setphoneNumber('');
           }
         } else {
           setLoading(false);
@@ -106,9 +106,13 @@ function WhatsAppForm(props) {
       .then((response) => {
         console.log('Response', response);
         setLoading(false);
+        reset();
+        setphoneNumber('');
       })
       .catch((err) => {
         setLoading(false);
+        reset();
+        setphoneNumber('');
       });
   };
 
