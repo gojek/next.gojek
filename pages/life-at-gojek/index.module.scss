@@ -6,12 +6,14 @@
   @media screen and (max-width: 768px) {
     background: url('/img/life-at-gojek/banner/mobile-banner.png') center/cover no-repeat;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1440px) {
     background: url('/img/life-at-gojek/banner/tab-banner.jpg') center/cover no-repeat;
   }
+  @media screen and (min-width: 1440px) and (max-width: 1920px) {
+    background: url('/img/life-at-gojek/banner/banner.png') center/cover no-repeat;
+  }
   @media screen and (min-width: 1920px) {
-    background: url('/img/life-at-gojek/banner/Life@Gojek_banner_1920_600.jpg') center/cover
-      no-repeat;
+    background: url('/img/life-at-gojek/banner/xl-banner.jpg') center/cover no-repeat;
   }
 }
 

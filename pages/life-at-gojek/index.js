@@ -58,8 +58,8 @@ function LifeAtGojek() {
               different mindsets, unified in solving problems and learning.
             </p>
             <h5 className={`pb-3 ${styles.subHeading}`}>
-              We ardently believe failing is <br className="d-block d-md-none" /> learning. If we’re
-              not failing, <br className="d-block d-md-none" /> we’re not doing it right.
+              We ardently believe failing is learning. If we’re
+              not failing, we’re not doing it right.
             </h5>
           </div>
         </div>
