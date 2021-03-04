@@ -1,4 +1,5 @@
 import { data } from './data';
+import Link from 'next/link';
 
 function Links(props) {
   const desktopLinks = (
@@ -7,9 +8,9 @@ function Links(props) {
         <ul className="list-unstyled mb-0">
           {data.firstColumn.map((data, i) => (
             <li className="pb-3" key={i}>
-              <a className="text-white" href={data.link}>
-                {data.name}
-              </a>
+              <Link href={data.link}>
+                <a className="text-white">{data.name}</a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -18,9 +19,9 @@ function Links(props) {
         <ul className="list-unstyled mb-0">
           {data.secondColumn.map((data, i) => (
             <li className="pb-3" key={i}>
-              <a className="text-white" href={data.link}>
-                {data.name}
-              </a>
+              <Link href={data.link}>
+                <a className="text-white">{data.name}</a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -48,9 +49,9 @@ function Links(props) {
       <ul className="list-unstyled mb-0 row px-4">
         {data.links.map((data, i) => (
           <li className="pb-4 col-6" key={i}>
-            <a className="text-white" href={data.link}>
-              {data.name}
-            </a>
+            <Link href={data.link}>
+              <a className="text-white">{data.name}</a>
+            </Link>
           </li>
         ))}
         <li className="pb-5 text-white w-100 pl-3" key="connect-with-us">

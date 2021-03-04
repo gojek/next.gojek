@@ -1,17 +1,27 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
+import Router from 'next/router';
 import data from './data.json';
 import { data as socialLinks } from '../Common/Footer/data';
+import Loader from '~/../../comps/Common/Loader';
 
 function Navbar(props) {
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+
+    // To display loader on routing b/w pages
+    Router.events.on('routeChangeStart', (url) => {
+      console.log(`Loading: ${url}`);
+      setLoader(true);
+    });
+    Router.events.on('routeChangeComplete', () => setLoader(false));
+    Router.events.on('routeChangeError', () => setLoader(false));
   }, []);
 
   const handleExpand = () => {
@@ -87,107 +97,110 @@ function Navbar(props) {
   };
 
   return (
-    <nav className="navbar fixed-top navbar-expand-lg bg-transparent pt-3 pt-md-5 main-nav">
-      <div className="container pt-3 pt-md-0">
-        <Link href="/">
-          <a className="navbar-brand">{logo()}</a>
-        </Link>
+    <div>
+      {loader ? <Loader /> : ''}
+      <nav className="navbar fixed-top navbar-expand-lg bg-transparent pt-3 pt-md-5 main-nav">
+        <div className="container pt-3 pt-md-0">
+          <Link href="/">
+            <a className="navbar-brand">{logo()}</a>
+          </Link>
 
-        <button
-          className={`btn d-block d-lg-none ${
-            props.whiteNav ? (scrolled ? 'text-dark' : 'text-white') : 'text-dark'
-          }`}
-          onClick={() => handleExpand()}
-        >
-          <span>
-            <i className="fas fa-bars fa-1x"></i>
-          </span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul
-            className={`navbar-nav ml-auto ${
-              props.whiteNav ? (scrolled ? 'blackNav' : 'whiteNav') : 'blackNav'
+          <button
+            className={`btn d-block d-lg-none ${
+              props.whiteNav ? (scrolled ? 'text-dark' : 'text-white') : 'text-dark'
             }`}
+            onClick={() => handleExpand()}
           >
-            {data.map((item) => (
-              <li
-                className={`nav-item px-3 ${
-                  item.link === router.pathname ||
-                  ((item.link === '/jobs' || item.link === '/blog') &&
-                    router.pathname.includes(item.link))
-                    ? 'active'
-                    : ''
-                }${item.type && item.type === 'button' ? '' : ' '}`}
-                key={item.id}
-              >
-                {item.type && item.type === 'button' ? (
-                  joinUsButton(item)
-                ) : (
-                  <Link href={item.link}>
-                    <a className="nav-link nav-links">
-                      {item.name}{' '}
-                      {item.link === router.pathname ? (
-                        <span className="sr-only">(current)</span>
-                      ) : (
-                        ''
-                      )}
-                    </a>
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      {expanded ? (
-        <div className="text-white bg-black full-height fixed-top pt-3">
-          <div className="container pt-3 d-block" style={{ padding: '.5rem 1rem' }}>
-            <div className="d-flex justify-content-between pb-5">
-              <a className="navbar-brand" href="/">
-                <img
-                  src="/img/gojek-white-logo.svg"
-                  alt="Gojek"
-                  className="img-fluid footer-logo text-left"
-                  style={{ height: '2rem' }}
-                />
-              </a>
-              <button className="btn text-white text-right" onClick={() => setExpanded(false)}>
-                <img src="/img/cross.svg" alt="close button" />
-              </button>
-            </div>
-
-            <ul className="list-unstyled mobile-menu text-center">
-              {data.map((data, i) => (
-                <li className="pb-5" key={i}>
-                  <a className="text-white" href={data.link}>
-                    {data.name}
-                  </a>
+            <span>
+              <i className="fas fa-bars fa-1x"></i>
+            </span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul
+              className={`navbar-nav ml-auto ${
+                props.whiteNav ? (scrolled ? 'blackNav' : 'whiteNav') : 'blackNav'
+              }`}
+            >
+              {data.map((item) => (
+                <li
+                  className={`nav-item px-3 ${
+                    item.link === router.pathname ||
+                    ((item.link === '/jobs' || item.link === '/blog') &&
+                      router.pathname.includes(item.link))
+                      ? 'active'
+                      : ''
+                  }${item.type && item.type === 'button' ? '' : ' '}`}
+                  key={item.id}
+                >
+                  {item.type && item.type === 'button' ? (
+                    joinUsButton(item)
+                  ) : (
+                    <Link href={item.link}>
+                      <a className="nav-link nav-links">
+                        {item.name}{' '}
+                        {item.link === router.pathname ? (
+                          <span className="sr-only">(current)</span>
+                        ) : (
+                          ''
+                        )}
+                      </a>
+                    </Link>
+                  )}
                 </li>
               ))}
-              <li className="pb-5 text-white d-block" key="connect-with-us">
-                <p className="text-muted mb-0">Connect with Us</p>
-                <ul className="list-inline pt-5 d-flex justify-content-around">
-                  {socialLinks.socialLinks.map((socialMedia, i) => (
-                    <li className="list-inline-item " key={i}>
-                      <a
-                        className="text-white social-icon"
-                        href={socialMedia.link}
-                        target="_blank"
-                        title={socialMedia.name}
-                      >
-                        <img src={socialMedia.icon} alt={socialMedia.title} />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </li>
             </ul>
           </div>
         </div>
-      ) : (
-        ''
-      )}
-    </nav>
+        {expanded ? (
+          <div className="text-white bg-black full-height fixed-top pt-3">
+            <div className="container pt-3 d-block" style={{ padding: '.5rem 1rem' }}>
+              <div className="d-flex justify-content-between pb-5">
+                <a className="navbar-brand" href="/">
+                  <img
+                    src="/img/gojek-white-logo.svg"
+                    alt="Gojek"
+                    className="img-fluid footer-logo text-left"
+                    style={{ height: '2rem' }}
+                  />
+                </a>
+                <button className="btn text-white text-right" onClick={() => setExpanded(false)}>
+                  <img src="/img/cross.svg" alt="close button" />
+                </button>
+              </div>
+
+              <ul className="list-unstyled mobile-menu text-center">
+                {data.map((data, i) => (
+                  <li className="pb-5" key={i}>
+                    <Link href={data.link}>
+                      <a className="text-white">{data.name}</a>
+                    </Link>
+                  </li>
+                ))}
+                <li className="pb-5 text-white d-block" key="connect-with-us">
+                  <p className="text-muted mb-0">Connect with Us</p>
+                  <ul className="list-inline pt-5 d-flex justify-content-around">
+                    {socialLinks.socialLinks.map((socialMedia, i) => (
+                      <li className="list-inline-item " key={i}>
+                        <a
+                          className="text-white social-icon"
+                          href={socialMedia.link}
+                          target="_blank"
+                          title={socialMedia.name}
+                        >
+                          <img src={socialMedia.icon} alt={socialMedia.title} />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        ) : (
+          ''
+        )}
+      </nav>
+    </div>
   );
 }
 export default Navbar;
