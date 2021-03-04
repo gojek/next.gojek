@@ -176,7 +176,7 @@ function Blog(props) {
 
       {/* search results section */}
       <section className="container" id="searchResults">
-        <div className="py-5">
+        <div className={keyword !== '' ? 'py-5' : ''}>
           {keyword !== '' ? (
             loading ? (
               <h1 className="heading pb-4">Loading search Results for '{keyword}'</h1>
