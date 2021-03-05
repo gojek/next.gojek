@@ -14,7 +14,7 @@ function Jobs(props) {
 
   function handleChange(val) {
     router.query = {};
-    router.push('/jobs', { shallow: true });
+    router.push('/careers', { shallow: true });
   }
 
   return (

@@ -71,7 +71,7 @@ function MobileSearch(props) {
                 </p>
               </div>
               <div className="col-5 align-self-end px-0">
-                <a href="/jobs/all" className="text-white link">
+                <a href="/careers/all" className="text-white link">
                   View all jobs
                   <i className="ml-2 fas fa-long-arrow-alt-right align-middle"></i>
                 </a>

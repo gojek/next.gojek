@@ -58,8 +58,8 @@ function LifeAtGojek() {
               different mindsets, unified in solving problems and learning.
             </p>
             <h5 className={`pb-3 ${styles.subHeading}`}>
-              We ardently believe failing is learning. If we’re
-              not failing, we’re not doing it right.
+              We ardently believe failing is learning. If we’re not failing, we’re not doing it
+              right.
             </h5>
           </div>
         </div>
@@ -93,7 +93,7 @@ function LifeAtGojek() {
       <section className="bg-white pt-0 mt-0 pb-5 pt-md-5 pb-md-5 mt-md-5 mb-md-5">
         <CTA
           title="We're dedicated to creating (and scaling) positive socio-economic impact for our ecosystem of users. "
-          href="/jobs"
+          href="/careers"
           hrefText="Apply Now"
           font="small"
         />

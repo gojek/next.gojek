@@ -17,7 +17,7 @@ import { auth } from '~/../../utils/auth';
 import ApplyForm from '~/../../comps/Careers/ApplyForm';
 
 function DescriptionPage(props) {
-  const [url, setUrl] = useState('./jobs');
+  const [url, setUrl] = useState('/careers');
   const [expandForm, setExpandForm] = useState(false);
   const title = `Opening for ${props.data.text}`;
   const { data } = props;

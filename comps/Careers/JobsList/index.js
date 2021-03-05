@@ -324,7 +324,7 @@ class JobsList extends Component {
                         </a>
                       )}
                       {filters.length == 0 && this.state.keywordList.length == 0 && (
-                        <a href="/jobs/all" className="text-white link">
+                        <a href="/careers/all" className="text-white link">
                           View all jobs <img src="/img/white-arrow-right.svg" alt="join Us" />
                         </a>
                       )}

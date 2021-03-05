@@ -20,7 +20,7 @@ export const data = {
     {
       id: 5,
       name: 'Join us',
-      link: '/jobs',
+      link: '/careers',
     },
   ],
   links: [
@@ -52,7 +52,7 @@ export const data = {
     {
       id: 6,
       name: 'Join us',
-      link: '/jobs',
+      link: '/careers',
     },
     // {
     //   id: 7,

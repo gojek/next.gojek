@@ -249,7 +249,7 @@ function Blog(props) {
         <div className="pt-5 pb-4">
           <CTA
             title="Build the tech that powers an entire country."
-            href="/jobs"
+            href="/careers"
             hrefText="Apply Now"
           />
         </div>

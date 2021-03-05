@@ -30,6 +30,6 @@ export const ctaData = {
   link: '#',
   linkText: 'Read the article',
   xsTitle: 'Build the tech that powers an entire country.',
-  xsLink: '/jobs',
+  xsLink: '/careers',
   xsLinkText: 'Apply Now',
 };

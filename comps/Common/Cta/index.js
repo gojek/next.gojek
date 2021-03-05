@@ -3,7 +3,7 @@ function CommonCta(props) {
     <section className={`py-md-5 commonFooter ${props.halfBackground ? 'joinus-cta' : 'bg-black'}`}>
       <div className="d-none d-md-block">
         <div className="container">
-          <a href="/jobs">
+          <a href="/careers">
             <div className="cta p-5">
               <div className="col-12 col-lg-7 py-3" style={{ fontFamily: 'Maison Nueue Demi' }}>
                 <p className="text-white">
@@ -27,7 +27,7 @@ function CommonCta(props) {
                 We’re dedicated to creating (and scaling) positive socio-economic impact for our
                 ecosystem of users.{' '}
               </p>
-              <a className="link" href="/jobs">
+              <a className="link" href="/careers">
                 Join Us <img src="/img/arrow-right-yellow.svg" alt="join Us" />
               </a>
             </div>

@@ -22,7 +22,7 @@ function List(props) {
   const getJobLink = (title, id) => {
     let jobTitle = title.toLowerCase();
     jobTitle = jobTitle.replace(/\s/g, '-');
-    return `/jobs/view/${jobTitle}?id=${id}`;
+    return `/careers/view/${jobTitle}?id=${id}`;
   };
 
   return (
@@ -71,7 +71,7 @@ function List(props) {
                     <strong className="py-5 d-block">No Jobs!</strong>
                   </div>
                   <div className="text-center mt-5">
-                    <a href="/jobs/all" className="text-green-light link btn">
+                    <a href="/careers/all" className="text-green-light link btn">
                       View all jobs
                       <img
                         src="/img/right-arrow.svg"
@@ -84,7 +84,7 @@ function List(props) {
               )}
               {!props.showAllJobs && props.showSearchedJobs && (
                 <div className="text-center mt-5">
-                  <a href="/jobs/all" className="text-green-light link btn">
+                  <a href="/careers/all" className="text-green-light link btn">
                     View all jobs
                     <img
                       src="/img/right-arrow.svg"
@@ -153,7 +153,7 @@ function List(props) {
             )} */}
             {!props.showAllJobs && props.showSearchedJobs && (
               <div className="text-center mt-5">
-                <a href="/jobs/all" className="text-green-light link btn">
+                <a href="/careers/all" className="text-green-light link btn">
                   View all jobs
                   <img
                     src="/img/right-arrow.svg"

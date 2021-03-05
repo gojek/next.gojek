@@ -68,7 +68,7 @@ function Navbar(props) {
         <Link href={item.link}>
           <a
             className={
-              router.pathname === '/jobs' || router.pathname === '/jobs/all'
+              router.pathname === '/careers' || router.pathname === '/careers/all'
                 ? 'nav-link nav-links'
                 : 'button rounded-pill px-3 py-2'
             }
@@ -83,7 +83,7 @@ function Navbar(props) {
         <Link href={item.link}>
           <a
             className={
-              router.pathname === '/jobs' || router.pathname === '/jobs/all'
+              router.pathname === '/careers' || router.pathname === '/careers/all'
                 ? 'nav-link nav-links'
                 : 'button rounded-pill px-3 py-2'
             }
@@ -125,7 +125,7 @@ function Navbar(props) {
                 <li
                   className={`nav-item px-3 ${
                     item.link === router.pathname ||
-                    ((item.link === '/jobs' || item.link === '/blog') &&
+                    ((item.link === '/careers' || item.link === '/blog') &&
                       router.pathname.includes(item.link))
                       ? 'active'
                       : ''
