@@ -22,7 +22,7 @@ import 'react-phone-input-2/lib/style.css';
 function MyApp({ Component, pageProps }) {
   const { pathname } = useRouter();
 
-  const [loader, setLoader] = useState(false);
+  const [offline, setOffline] = useState(false);
 
   useEffect(() => {
     if ('serviceWorker' in navigator) {
@@ -38,8 +38,6 @@ function MyApp({ Component, pageProps }) {
     window.addEventListener('offline', function(e) {
       setOffline(true);
     });
-
-  console.log('loading page', loader);
   return (
     <div>
       <Head>
