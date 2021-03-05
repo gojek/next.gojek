@@ -33,8 +33,7 @@ export const milestones = [
     description:
       'Systems were crashing because of a major spike in volumes. <br/> We rewrote a key piece of technology in Golang in under 3 days.',
     linkText: 'Read our story',
-    linkURL:
-      'https://blog.gojekengineering.com/how-go-jek-manages-1-million-drivers-with-12-engineers-part-1-978af9ccfd32',
+    linkURL: `${process.env.domain}blog/how-gojek-manages-1-million-drivers-with-12-engineers-part-1-2`,
   },
   {
     id: 4,
@@ -58,8 +57,7 @@ export const milestones = [
     description:
       'Downtimes were a routine affair and leaky faucets needed to be fixed. <br class="d-none d-md-block"/> "No project has a budget and impact as big as this in Gojek\'s history"<br/> - From Nadiem’s internal mail.',
     linkText: 'Read our story',
-    linkURL:
-      'https://blog.gojekengineering.com/how-go-jek-manages-1-million-drivers-with-12-engineers-part-2-35f6a27a0faf',
+    linkURL: `${process.env.domain}blog/how-gojek-manages-1-million-drivers-with-12-engineers-part-2-2`,
   },
   {
     id: 6,

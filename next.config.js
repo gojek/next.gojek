@@ -28,6 +28,7 @@ const config = {
     jobDetailsApi: process.env.jobDetailsApi,
     ghostBlogsApi: process.env.ghostBlogsApi,
     ghostKey: process.env.ghostKey,
+    domain: process.env.domain,
   },
 };
 
