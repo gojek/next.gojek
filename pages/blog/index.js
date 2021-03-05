@@ -73,7 +73,6 @@ function Blog(props) {
     { name: 'Data', slug: 'data' },
     { name: 'Culture', slug: 'culture' },
     { name: 'Design', slug: 'design' },
-    { name: 'Stories', slug: 'stories' },
     { name: 'News', slug: 'news' },
   ];
 
@@ -295,18 +294,6 @@ function Blog(props) {
       {keyword === '' && (
         <section className="post-feed container mt-5">
           <BlogNew
-            heading="Stories"
-            posts={props.storiesPosts}
-            link="/blog/tag/stories"
-            pageName="blog"
-            id="stories"
-          />
-        </section>
-      )}
-
-      {keyword === '' && (
-        <section className="post-feed container mt-5">
-          <BlogNew
             heading="News"
             posts={props.newsPosts}
             link="/blog/tag/news"
@@ -332,7 +319,6 @@ Blog.getInitialProps = async () => {
   const culturePosts = await getPosts('culture');
   const newsPosts = await getPosts('news');
   const designPosts = await getPosts('design');
-  const storiesPosts = await getPosts('stories');
 
   featuredPosts.forEach((post) => {
     post.featured = false;
@@ -362,11 +348,6 @@ Blog.getInitialProps = async () => {
   });
   designPosts[0].featured = true;
 
-  storiesPosts.forEach((post) => {
-    post.featured = false;
-  });
-  storiesPosts[0].featured = true;
-
   // Featured artticles
 
   return {
@@ -378,7 +359,6 @@ Blog.getInitialProps = async () => {
     newsPosts,
     culturePosts,
     designPosts,
-    storiesPosts,
   };
 };
 

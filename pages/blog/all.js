@@ -70,7 +70,6 @@ function allPosts(props) {
     { name: 'Data', slug: 'data' },
     { name: 'Culture', slug: 'culture' },
     { name: 'Design', slug: 'design' },
-    { name: 'Stories', slug: 'stories' },
     { name: 'News', slug: 'news' },
   ];
 
