@@ -64,7 +64,7 @@ function DescriptionPage(props) {
             {data.categories.location}
           </h5>
           <a
-            href={`${data.applyUrl}?lever-source[]=null`}
+            href={`${data.applyUrl}?lever-source[]=gojek.io`}
             className="btn btn-success rounded-pill px-5 mt-3 d-md-none"
             role="button"
             target="_blank"
@@ -102,7 +102,7 @@ function DescriptionPage(props) {
             <div className="col-lg-5 pt-3 pt-md-0">
               <div className="apply">
                 <a
-                  href={`${data.applyUrl}?lever-source[]=null`}
+                  href={`${data.applyUrl}?lever-source[]=gojek.io`}
                   className="btn bg-green-light text-white px-5 rounded-pill w-100"
                   role="button"
                   target="_blank"
