@@ -34,7 +34,7 @@ function BlogDetails(props) {
   return (
     <div className="text-center text-md-left blog-page">
       <PageMeta
-        title={post.title}
+        title={`${post.title} - ${post.reading_time} min read`}
         description={post.meta_description}
         img={`${post.feature_image}`}
       />
