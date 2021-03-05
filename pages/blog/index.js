@@ -185,38 +185,42 @@ function Blog(props) {
           ) : (
             ''
           )}
-          <div className="row posts">
-            {articles.map((post, key) => (
-              <div className="col-md-4 mb-md-5" key={key}>
-                <a href={`/blog/${post.slug}`} className="post">
-                  <div className="card border-0 bg-transparent">
-                    <React.Fragment>
-                      <div
-                        className={`thumbnail small`}
-                        style={{ backgroundImage: `url(${post.feature_image})` }}
-                      />
-                    </React.Fragment>
-                    <div className="card-body px-0">
-                      <h5 className={`${post.featured ? 'featured' : ''} title`}>{post.title}</h5>
-                      <p className={`${post.featured ? 'featured' : ''} description`}>
-                        {' '}
-                        {post.excerpt}...
-                      </p>
+          {keyword !== '' ? (
+            <div className="row posts">
+              {articles.map((post, key) => (
+                <div className="col-md-4 mb-md-5" key={key}>
+                  <a href={`/blog/${post.slug}`} className="post">
+                    <div className="card border-0 bg-transparent">
                       <React.Fragment>
-                        <div className="mt-3 meta">
-                          <p className="mb-0 author">{post.author}</p>
-                          <p className="date-time">
-                            <Moment format="MMM DD">{post.published_at}</Moment> |{' '}
-                            {post.reading_time} min read
-                          </p>
-                        </div>
+                        <div
+                          className={`thumbnail small`}
+                          style={{ backgroundImage: `url(${post.feature_image})` }}
+                        />
                       </React.Fragment>
+                      <div className="card-body px-0">
+                        <h5 className={`${post.featured ? 'featured' : ''} title`}>{post.title}</h5>
+                        <p className={`${post.featured ? 'featured' : ''} description`}>
+                          {' '}
+                          {post.excerpt}...
+                        </p>
+                        <React.Fragment>
+                          <div className="mt-3 meta">
+                            <p className="mb-0 author">{post.author}</p>
+                            <p className="date-time">
+                              <Moment format="MMM DD">{post.published_at}</Moment> |{' '}
+                              {post.reading_time} min read
+                            </p>
+                          </div>
+                        </React.Fragment>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </div>
-            ))}
-          </div>
+                  </a>
+                </div>
+              ))}
+            </div>
+          ) : (
+            ''
+          )}
         </div>
       </section>
 
@@ -224,7 +228,7 @@ function Blog(props) {
         <section className={`post-feed container mt-md-5 pt-3`}>
           <BlogNew heading="Latest" posts={props.latestPosts} link="/blog/all" pageName="blog" />
         </section>
-      )}
+      )}  
 
       {keyword === '' && (
         <section className="py-3 py-md-5 px-md-3 px-xl-0" style={{ backgroundColor: '#f2f2f2' }}>
@@ -321,6 +325,10 @@ Blog.getInitialProps = async () => {
   const newsPosts = await getPosts('news');
   const designPosts = await getPosts('design');
 
+  latestPosts.forEach((post) => {
+    post.featured = false;
+  });
+  latestPosts[0].featured = true;
   featuredPosts.forEach((post) => {
     post.featured = false;
   });
