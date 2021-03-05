@@ -22,8 +22,6 @@ import 'react-phone-input-2/lib/style.css';
 function MyApp({ Component, pageProps }) {
   const { pathname } = useRouter();
 
-  const [offline, setOffline] = useState(false);
-
   useEffect(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
@@ -33,11 +31,6 @@ function MyApp({ Component, pageProps }) {
     }
   }, [pathname]);
 
-  // to handle app going offline
-  typeof window !== 'undefined' &&
-    window.addEventListener('offline', function(e) {
-      setOffline(true);
-    });
   return (
     <div>
       <Head>
