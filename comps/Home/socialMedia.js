@@ -21,7 +21,7 @@ const lifeAtGojekSocialAccounts = [
   {
     icon: '/img/icons/linkedin.svg',
     title: 'Linkedin',
-    link: 'https://www.linkedin.com/company/gojek/life/engineering/',
+    link: 'https://www.linkedin.com/company/gojek',
   },
   {
     icon: '/img/icons/youtube.svg',
