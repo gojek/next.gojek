@@ -28,6 +28,7 @@
     "react-moment": "^0.9.7",
     "react-multi-select-component": "^3.0.1",
     "react-phone-input-2": "^2.13.9",
+    "react-responsive-pagination": "^1.1.1",
     "react-router-dom": "^5.2.0",
     "react-scroll": "^1.8.0",
     "react-select": "^3.1.0",

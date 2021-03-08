@@ -12,7 +12,7 @@ const sliderSettings = {
 
 function BlogNew(props) {
   const { heading, posts, id } = props;
-  props.pageName !== 'all-posts' ? (posts[0].featured = true) : '';
+  props.pageName === 'blog' ? (posts[0].featured = true) : '';
 
   const allPosts = props.pageName ? posts : posts.slice(0, 4),
     mobileSliderPosts = allPosts.slice(1, 4);
