@@ -29,6 +29,7 @@ const config = {
     ghostBlogsApi: process.env.ghostBlogsApi,
     ghostKey: process.env.ghostKey,
     domain: process.env.domain,
+    env: process.env.env,
   },
 };
 
