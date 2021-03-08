@@ -36,7 +36,7 @@ export async function getFeaturedPosts() {
 export async function getAllPosts() {
   return await api.posts
     .browse(
-      { order: 'published_at DESC', limit: 'all', include: 'tags,authors' },
+      { order: 'published_at DESC', limit: 25, include: 'tags,authors' },
       { featured: true },
     )
     .catch((err) => {
@@ -90,7 +90,7 @@ export async function getTagPosts(tag) {
     .browse({
       filter: `tag: ${tag}`,
       order: 'published_at DESC',
-      limit: 'all',
+      limit: 25,
       include: 'tags,authors',
     })
     .catch((err) => {
