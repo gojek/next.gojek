@@ -20,7 +20,7 @@ function Tag(tagData) {
     );
   } else {
     return (
-      <Link href={`/blog/tag/${tag.slug}`}>
+      <Link href={`/blog/tag/${tag.slug}?p=1`}>
         <div
           key={tag.name}
           className={

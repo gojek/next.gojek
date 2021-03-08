@@ -23,10 +23,8 @@ function TagPosts(props) {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState('');
   const [page, setPage] = useState(1);
-  const [initial, setInitial] = useState(true);
 
   useEffect(() => {
-    console.log('router.query', router.query);
     if (router.query.p) {
       if (router.query.p != page) {
         setPage(router.query.p);
@@ -35,21 +33,13 @@ function TagPosts(props) {
   }, [router.query]);
 
   useEffect(() => {
-    setLoading(true);
-    // to avoid scroll on first render
-    if (initial) {
-      setInitial(false);
-    } else {
-      scroller.scrollTo(props.slug, {
-        offset: -175,
-        smooth: 'easeOutCubic',
-        duration: 500,
-        delay: 0,
-      });
-      const baseURL = router.asPath.split('?');
-      router.replace({ pathname: baseURL[0], query: { p: page } });
+    if (page > 1) {
+      setPage(1);
     }
+  }, [props.slug]);
 
+  useEffect(() => {
+    setLoading(true);
     axios
       .get(`https://blog.gojek.io/ghost/api/v3/content/posts/?key=${process.env.ghostKey}`, {
         params: {
@@ -71,7 +61,7 @@ function TagPosts(props) {
       .catch((err) => {
         setLoading(false);
       });
-  }, [page]);
+  }, [page, props.slug]);
 
   const changeTag = (tagName) => {
     setTag(tagName);
@@ -122,6 +112,18 @@ function TagPosts(props) {
   ];
 
   const inputRef = useRef(null);
+
+  const handlePageChange = (newPage) => {
+    setPage(newPage);
+    scroller.scrollTo('tagBlogs', {
+      offset: -175,
+      smooth: 'easeOutCubic',
+      duration: 500,
+      delay: 0,
+    });
+    const baseURL = router.asPath.split('?');
+    router.replace({ pathname: baseURL[0], query: { p: newPage } });
+  };
 
   return (
     <div className="text-center text-md-left blog-page">
@@ -268,7 +270,7 @@ function TagPosts(props) {
       {keyword === '' && (
         <section
           className={`post-feed container mt-md-5 pt-3 position-relative ${styles.blogContainer}`}
-          id={props.slug}
+          id="tagBlogs"
         >
           {loading && (
             <div className="row align-items-center w-100 justify-content-center position-absolute">
@@ -283,7 +285,7 @@ function TagPosts(props) {
                   <Pagination
                     current={response.meta.pagination.page}
                     total={response.meta.pagination.pages}
-                    onPageChange={setPage}
+                    onPageChange={handlePageChange}
                   />
                 </div>
               </div>

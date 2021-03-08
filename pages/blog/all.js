@@ -25,7 +25,6 @@ function allPosts() {
   const [initial, setInitial] = useState(true);
 
   useEffect(() => {
-    console.log('router.query', router.query);
     if (router.query.p) {
       if (router.query.p != page) {
         setPage(router.query.p);
