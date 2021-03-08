@@ -33,10 +33,10 @@ export async function getFeaturedPosts() {
 }
 
 // Get featured posts
-export async function getAllPosts() {
+export async function getAllPosts(page) {
   return await api.posts
     .browse(
-      { order: 'published_at DESC', limit: 25, include: 'tags,authors' },
+      { order: 'published_at DESC', limit: 9, page: page, include: 'tags,authors' },
       { featured: true },
     )
     .catch((err) => {

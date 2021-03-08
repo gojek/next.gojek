@@ -19,6 +19,24 @@ function allPosts(props) {
   const [clicked, setclicked] = useState(false);
   const [active, setactive] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [blogs, setBlogs] = useState(props.posts);
+  const [page, setPage] = useState(1);
+
+  console.log('all props', props.posts, blogs);
+
+  useEffect(() => {
+    if (page > 1) {
+      getMorePosts();
+    }
+  }, [page]);
+  async function getMorePosts() {
+    let posts = getAllPosts(page);
+
+    // posts.forEach((post) => {
+    //   post.featured = false;
+    // });
+    setBlogs(posts);
+  }
 
   const changeTag = (tagName) => {
     setTag(tagName);
@@ -227,6 +245,9 @@ function allPosts(props) {
         </div>
       )}
       {/* End All Posts */}
+      <p onClick={() => setPage(page + 1)}>
+        Change page from {page} to {page + 1}
+      </p>
 
       {/* CTA */}
       <CommonCta mobile />
@@ -236,7 +257,7 @@ function allPosts(props) {
 }
 
 allPosts.getInitialProps = async () => {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts(1);
 
   posts.forEach((post) => {
     post.featured = false;
