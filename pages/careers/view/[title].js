@@ -49,7 +49,7 @@ function DescriptionPage(props) {
 
   return (
     <div className="jobDescription">
-      <PageMeta title={name} description={description} img="/img/careers/gojek-careers.png" />
+      <PageMeta title={name} description={description} img="/img/careers/gojek-careers.jpg" />
 
       <Navbar whiteNav />
       <section

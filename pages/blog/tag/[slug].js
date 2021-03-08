@@ -33,12 +33,6 @@ function TagPosts(props) {
   }, [router.query]);
 
   useEffect(() => {
-    if (page > 1) {
-      setPage(1);
-    }
-  }, [props.slug]);
-
-  useEffect(() => {
     setLoading(true);
     axios
       .get(`https://blog.gojek.io/ghost/api/v3/content/posts/?key=${process.env.ghostKey}`, {

@@ -92,7 +92,7 @@ export const milestones = [
     title: 'Going international',
     description: 'Gojek went live in Vietnam 🇻🇳, Singapore 🇸🇬, and Thailand 🇹🇭 in 2018.',
     linkText: 'Read the story',
-    linkURL: 'http://bit.ly/2XTN6WK',
+    linkURL: `${process.env.domain}blog/to-new-frontiers-how-gojek-went-international-2`,
   },
   {
     id: 9,
@@ -104,7 +104,7 @@ export const milestones = [
     description:
       "Gojek became Indonesia's first decacorn. We also underwent a massive rebranding and had a new identity: Solv.",
     linkText: 'Read about Solv',
-    linkURL: 'http://bit.ly/2Sw2tmK',
+    linkURL: `${process.env.domain}blog/a-new-gojek`,
   },
   {
     id: 10,
