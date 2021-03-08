@@ -29,7 +29,7 @@ function BlogNew(props) {
         <h1 className={styles.heading}>{heading}</h1>
         {props.pageName === 'blog' && (
           <p className="text-center">
-            <a href={props.link} target="_blank" className={`text-green-light ${styles.readMore}`}>
+            <a href={props.link} className={`text-green-light ${styles.readMore}`}>
               See All <img src="/img/arrow-right-green.svg" className="pl-2" alt="View Blogs" />
             </a>
           </p>
