@@ -111,7 +111,7 @@ function TagPosts(props) {
           <Tags
             tags={tags}
             onClick={changeTag}
-            activeTag={tag}
+            activeTag={props.slug}
             handlesearchClicked={changeClicked}
             clicked={clicked}
             page="all-blogs"

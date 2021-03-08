@@ -20,7 +20,7 @@ function Tag(tagData) {
     );
   } else {
     return (
-      <a href={`/blog/tag/${tag.slug}`}>
+      <Link href={`/blog/tag/${tag.slug}`}>
         <div
           key={tag.name}
           className={
@@ -30,7 +30,7 @@ function Tag(tagData) {
         >
           <p className="mb-0">{tag.name}</p>
         </div>
-      </a>
+      </Link>
     );
   }
 }
@@ -52,7 +52,10 @@ function Tags(props) {
           <p className="mb-0">All</p>
         </div>
       </a>
-      <span className="my-3 mx-2 d-none d-lg-flex" style={{ lineHeight: '2.25rem', color: '#b5b2b2' }}>
+      <span
+        className="my-3 mx-2 d-none d-lg-flex"
+        style={{ lineHeight: '2.25rem', color: '#b5b2b2' }}
+      >
         |
       </span>
     </div>

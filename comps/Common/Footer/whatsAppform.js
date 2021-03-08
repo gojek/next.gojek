@@ -104,7 +104,6 @@ function WhatsAppForm(props) {
         },
       )
       .then((response) => {
-        console.log('Response', response);
         setLoading(false);
         reset();
         setphoneNumber('');
