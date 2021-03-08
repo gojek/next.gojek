@@ -2,11 +2,11 @@ import { useState, useRef, useEffect } from 'react';
 import { scroller } from 'react-scroll';
 import axios from 'axios';
 import Moment from 'react-moment';
+import DotLoader from 'react-spinners/DotLoader';
+import Pagination from 'react-responsive-pagination';
 import { useRouter } from 'next/router';
-
 import styles from '../index.module.scss';
 import { getTagPosts } from '../../../api/posts';
-
 import Head from 'next/head';
 import Navbar from '../../../comps/Navbar';
 import Tags from '../../..//comps/Blog/Tag';
@@ -21,6 +21,57 @@ function TagPosts(props) {
   const [active, setactive] = useState(false);
   const [clicked, setclicked] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState('');
+  const [page, setPage] = useState(1);
+  const [initial, setInitial] = useState(true);
+
+  useEffect(() => {
+    console.log('router.query', router.query);
+    if (router.query.p) {
+      if (router.query.p != page) {
+        setPage(router.query.p);
+      }
+    }
+  }, [router.query]);
+
+  useEffect(() => {
+    setLoading(true);
+    // to avoid scroll on first render
+    if (initial) {
+      setInitial(false);
+    } else {
+      scroller.scrollTo(props.slug, {
+        offset: -175,
+        smooth: 'easeOutCubic',
+        duration: 500,
+        delay: 0,
+      });
+      const baseURL = router.asPath.split('?');
+      router.replace({ pathname: baseURL[0], query: { p: page } });
+    }
+
+    axios
+      .get(`https://blog.gojek.io/ghost/api/v3/content/posts/?key=${process.env.ghostKey}`, {
+        params: {
+          order: 'published_at DESC',
+          limit: 9,
+          page: page,
+          filter: `tag: ${props.slug}`,
+          include: 'tags,authors',
+        },
+      })
+      .then((res) => {
+        let newData = res.data.posts;
+        for (let i = 0; i < newData.length; i++) {
+          newData[i].featured = false;
+        }
+        setResponse({ meta: res.data.meta, posts: newData });
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+      });
+  }, [page]);
 
   const changeTag = (tagName) => {
     setTag(tagName);
@@ -215,8 +266,29 @@ function TagPosts(props) {
       </section>
 
       {keyword === '' && (
-        <section className="post-feed container mt-5">
-          <BlogNew heading={props.slug} posts={props.posts} link="" pageName="tag" />
+        <section
+          className={`post-feed container mt-md-5 pt-3 position-relative ${styles.blogContainer}`}
+          id={props.slug}
+        >
+          {loading && (
+            <div className="row align-items-center w-100 justify-content-center position-absolute">
+              <DotLoader height={10} width={'100px'} color={'#00aa13'} />
+            </div>
+          )}
+          {response != '' && (
+            <div>
+              <BlogNew heading={props.slug} posts={response.posts} link="" pageName="tag" />
+              <div className="row justify-content-end pb-md-5 pb-4">
+                <div className="col-12 col-md-6 col-lg-4">
+                  <Pagination
+                    current={response.meta.pagination.page}
+                    total={response.meta.pagination.pages}
+                    onPageChange={setPage}
+                  />
+                </div>
+              </div>
+            </div>
+          )}
         </section>
       )}
 
@@ -228,13 +300,7 @@ function TagPosts(props) {
 }
 
 TagPosts.getInitialProps = async (ctx) => {
-  const posts = await getTagPosts(ctx.query.slug);
-
-  posts.forEach((post) => {
-    post.featured = false;
-  });
   return {
-    posts,
     slug: ctx.query.slug,
   };
 };

@@ -6,6 +6,10 @@
   top: 0;
 }
 
+.blogContainer {
+  min-height: 65vh;
+}
+
 .normalWidth {
   width: 15%;
   @media screen and (min-width: 500px) {

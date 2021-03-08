@@ -2,9 +2,9 @@ import { useState, useRef, useEffect } from 'react';
 import { scroller } from 'react-scroll';
 import axios from 'axios';
 import Moment from 'react-moment';
-
-import { getAllPosts } from '../../api/posts';
-
+import { useRouter } from 'next/router';
+import DotLoader from 'react-spinners/DotLoader';
+import Pagination from 'react-responsive-pagination';
 import Navbar from '~/../../comps/Navbar';
 import Tags from '~/../../comps/Blog/Tag';
 import CommonCta from '~/../../comps/Common/Cta';
@@ -12,13 +12,59 @@ import BlogNew from '../../comps/BlogNew';
 import styles from './index.module.scss';
 import PageMeta from '~/../../comps/Common/head';
 
-function allPosts(props) {
+function allPosts() {
+  const router = useRouter();
   const [tag, setTag] = useState('tech');
   const [keyword, setkeyword] = useState('');
   const [articles, setarticles] = useState([]);
   const [clicked, setclicked] = useState(false);
   const [active, setactive] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState('');
+  const [page, setPage] = useState(1);
+  const [initial, setInitial] = useState(true);
+
+  useEffect(() => {
+    console.log('router.query', router.query);
+    if (router.query.p) {
+      if (router.query.p != page) {
+        setPage(router.query.p);
+      }
+    }
+  }, [router.query]);
+
+  useEffect(() => {
+    setLoading(true);
+    // to avoid scroll on first render
+    if (initial) {
+      setInitial(false);
+    } else {
+      scroller.scrollTo('all', {
+        offset: -175,
+        smooth: 'easeOutCubic',
+        duration: 500,
+        delay: 0,
+      });
+      const baseURL = router.asPath.split('?');
+      router.replace({ pathname: baseURL[0], query: { p: page } });
+    }
+
+    axios
+      .get(`https://blog.gojek.io/ghost/api/v3/content/posts/?key=${process.env.ghostKey}`, {
+        params: { order: 'published_at DESC', limit: 9, page: page, include: 'tags,authors' },
+      })
+      .then((res) => {
+        let newData = res.data.posts;
+        for (let i = 0; i < newData.length; i++) {
+          newData[i].featured = false;
+        }
+        setResponse({ meta: res.data.meta, posts: newData });
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+      });
+  }, [page]);
 
   const changeTag = (tagName) => {
     setTag(tagName);
@@ -29,6 +75,7 @@ function allPosts(props) {
       delay: 0,
     });
   };
+
   useEffect(() => {
     if (clicked) {
       inputRef.current.focus();
@@ -139,7 +186,7 @@ function allPosts(props) {
                 className={`input-group-text text-green-light `}
                 style={{ backgroundColor: 'transparent', border: 0, paddingLeft: '1rem' }}
               >
-                <img className="img-fluid" src="/img/blog/search.svg" />
+                <img className="img-fluid pointer" src="/img/blog/search.svg" />
               </span>
             </div>
 
@@ -222,8 +269,29 @@ function allPosts(props) {
 
       {/* All Posts */}
       {keyword === '' && (
-        <div className={`post-feed container mt-md-5 pt-3`}>
-          <BlogNew heading="All blogs" posts={props.posts} pageName="all-posts" />
+        <div
+          className={`post-feed container mt-md-5 pt-3 position-relative ${styles.blogContainer}`}
+          id="all"
+        >
+          {loading && (
+            <div className="row align-items-center w-100 justify-content-center position-absolute">
+              <DotLoader height={10} width={'100px'} color={'#00aa13'} />
+            </div>
+          )}
+          {response != '' && (
+            <div>
+              <BlogNew heading="All blogs" posts={response.posts} pageName="all-posts" />
+              <div className="row justify-content-end pb-md-5 pb-4">
+                <div className="col-12 col-md-6 col-lg-4">
+                  <Pagination
+                    current={response.meta.pagination.page}
+                    total={response.meta.pagination.pages}
+                    onPageChange={setPage}
+                  />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       )}
       {/* End All Posts */}
@@ -234,15 +302,5 @@ function allPosts(props) {
     </div>
   );
 }
-
-allPosts.getInitialProps = async () => {
-  const posts = await getAllPosts();
-
-  posts.forEach((post) => {
-    post.featured = false;
-  });
-
-  return { posts };
-};
 
 export default allPosts;

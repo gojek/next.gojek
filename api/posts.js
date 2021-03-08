@@ -1,4 +1,5 @@
 import GhostContentAPI from '@tryghost/content-api';
+import axios from 'axios';
 
 //Ghost API instance with site credentials
 const api = new GhostContentAPI({
@@ -32,13 +33,10 @@ export async function getFeaturedPosts() {
     });
 }
 
-// Get featured posts
-export async function getAllPosts() {
+// Get all posts
+export async function getAllPosts(page) {
   return await api.posts
-    .browse(
-      { order: 'published_at DESC', limit: 25, include: 'tags,authors' },
-      { featured: true },
-    )
+    .browse({ order: 'published_at DESC', limit: 9, page: page, include: 'tags,authors' })
     .catch((err) => {
       console.error(err);
     });

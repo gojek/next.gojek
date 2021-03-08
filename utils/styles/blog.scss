@@ -633,3 +633,17 @@
     max-width: 100% !important;
   }
 }
+
+// pagination customization
+.pagination {
+  .page-link {
+    color: #00aa13!important;
+  }
+  .active {
+    .page-link {
+      background-color: #00aa13!important;
+    color: #fff!important;
+
+  }
+  }
+}
