@@ -19,7 +19,7 @@ export const data = {
   secondColumn: [
     {
       id: 5,
-      name: 'Join us',
+      name: 'join us',
       link: '/careers',
     },
   ],
@@ -31,14 +31,9 @@ export const data = {
     },
     {
       id: 3,
-      name: 'About Us',
+      name: 'about us',
       link: '/about',
     },
-    // {
-    //   id: 4,
-    //   name: 'Events',
-    //   link: '#',
-    // },
     {
       id: 5,
       name: 'Life@Gojek',
@@ -51,19 +46,9 @@ export const data = {
     },
     {
       id: 6,
-      name: 'Join us',
+      name: 'join us',
       link: '/careers',
     },
-    // {
-    //   id: 7,
-    //   name: 'Contact us',
-    //   link: '/',
-    // },
-    // {
-    //   id: 8,
-    //   name: 'Connect with us',
-    //   link: '/',
-    // },
   ],
   socialLinks: [
     {
@@ -84,12 +69,6 @@ export const data = {
       title: 'Instagram',
       link: 'https://www.instagram.com/gojek.tech/',
     },
-    // {
-    //   id: 4,
-    //   icon: 'fab fa-facebook-f',
-    //   name: 'facebook',
-    //   link: 'https://www.facebook.com/gojektech',
-    // },
     {
       id: 5,
       icon: '/img/icons/youtube.svg',

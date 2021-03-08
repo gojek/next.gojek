@@ -211,19 +211,19 @@ class JobsList extends Component {
                 <p className="job-results-text">
                   <strong>
                     {this.searchJobs().length}{' '}
-                    {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '}
+                    {this.searchJobs().length === 1 ? 'opportunity' : 'opportunities'}{' '}
                   </strong>{' '}
                   found across{' '}
                   <strong>
                     {selctedFilters.department.length > 0
                       ? selctedFilters.department.length
                       : 'all'}{' '}
-                    {selctedFilters.department.length === 1 ? 'Department' : 'Departments'}
+                    {selctedFilters.department.length === 1 ? 'department' : 'departments'}
                   </strong>{' '}
                   and{' '}
                   <strong>
                     {selctedFilters.location.length > 0 ? selctedFilters.location.length : 'all'}{' '}
-                    {selctedFilters.location.length === 1 ? 'Location' : 'Locations'}
+                    {selctedFilters.location.length === 1 ? 'location' : 'locations'}
                   </strong>{' '}
                 </p>
               </div>
@@ -300,21 +300,21 @@ class JobsList extends Component {
                       <p className="mb-0 job-results-text mobile">
                         <strong>
                           {this.searchJobs().length}{' '}
-                          {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '}
+                          {this.searchJobs().length === 1 ? 'opportunity' : 'opportunities'}{' '}
                         </strong>{' '}
                         found across{' '}
                         <strong>
                           {selctedFilters.department.length > 0
                             ? selctedFilters.department.length
                             : 'all'}{' '}
-                          {selctedFilters.department.length === 1 ? 'Department' : 'Departments'}
+                          {selctedFilters.department.length === 1 ? 'department' : 'departments'}
                         </strong>{' '}
                         and{' '}
                         <strong>
                           {selctedFilters.location.length > 0
                             ? selctedFilters.location.length
                             : 'all'}{' '}
-                          {selctedFilters.location.length === 1 ? 'Location' : 'Locations'}
+                          {selctedFilters.location.length === 1 ? 'location' : 'locations'}
                         </strong>{' '}
                       </p>
 
@@ -340,21 +340,21 @@ class JobsList extends Component {
                     <p className="mb-0 job-results-text mobile">
                       <strong>
                         {this.searchJobs().length}{' '}
-                        {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '}
+                        {this.searchJobs().length === 1 ? 'opportunity' : 'opportunities'}{' '}
                       </strong>{' '}
                       found across{' '}
                       <strong>
                         {selctedFilters.department.length > 0
                           ? selctedFilters.department.length
                           : 'all'}{' '}
-                        {selctedFilters.department.length === 1 ? 'Department' : 'Departments'}
+                        {selctedFilters.department.length === 1 ? 'department' : 'departments'}
                       </strong>{' '}
                       and{' '}
                       <strong>
                         {selctedFilters.location.length > 0
                           ? selctedFilters.location.length
                           : 'all'}{' '}
-                        {selctedFilters.location.length === 1 ? 'Location' : 'Locations'}
+                        {selctedFilters.location.length === 1 ? 'location' : 'locations'}
                       </strong>{' '}
                     </p>
 

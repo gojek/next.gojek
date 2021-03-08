@@ -26,7 +26,7 @@ function Links(props) {
           ))}
         </ul>
         <ul className="list-inline">
-          <p>Connect with Us</p>
+          <p>connect with us 👇</p>
           {data.socialLinks.map((socialMedia, key) => (
             <li className="list-inline-item" key={key}>
               <a
@@ -55,7 +55,7 @@ function Links(props) {
           </li>
         ))}
         <li className="pb-5 text-white w-100 pl-3" key="connect-with-us">
-          <p className="text-center mb-0">Connect with Us</p>
+          <p className="text-center mb-0">connect with us 👇</p>
           <ul className="list-inline pt-4 d-flex justify-content-between">
             {data.socialLinks.map((socialMedia, i) => (
               <li className="list-inline-item " key={i}>

@@ -11,7 +11,7 @@ function CareersPage(props) {
     <div className="text-center text-md-left">
       <PageMeta
         title="Gojek: Departments"
-        description="Gojek is a Super App. It’s one app for ordering food, commuting, digital payments, shopping, hyper-local delivery, getting a massage and two dozen services. It is Indonesia’s first and fastest growing unicorn building an on-demand empire."
+        description="Gojek is a Super App. It’s one app for ordering food, commuting, digital payments, shopping, hyper-local delivery, and over a dozen services. It is Indonesia’s first and fastest growing decacorn building an on-demand empire."
       />
       <Navbar bg="#f7ce55" careers />
 
