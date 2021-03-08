@@ -453,7 +453,7 @@ export const values = [
   },
   {
     id: 10,
-    heading: 'hoot <br /> for greatness',
+    heading: 'Shoot <br /> for greatness',
     img: '../img/life-at-gojek/values/shoot-for-greatness.svg',
     alt: 'Shoot for greatness',
     content: ['Go the extra mile', 'Think big', 'Love challenges'],
