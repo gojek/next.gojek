@@ -17,7 +17,6 @@ function Navbar(props) {
 
     // To display loader on routing b/w pages
     Router.events.on('routeChangeStart', (url) => {
-      console.log(`Loading: ${url}`);
       setLoader(true);
     });
     Router.events.on('routeChangeComplete', () => setLoader(false));
