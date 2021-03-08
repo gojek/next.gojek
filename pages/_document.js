@@ -14,6 +14,7 @@ class MyDocument extends Document {
         <Head>
           {/* here \ is replaced with \\ to overcome html escape character */}
           <script
+            type="text"
             dangerouslySetInnerHTML={{
               __html: ` 
      __        __                      _     _      _
@@ -26,7 +27,7 @@ class MyDocument extends Document {
     We have no dearth of Hard Technical Problems™, work with us https://gojek.io/careers/
     `,
             }}
-          />
+          ></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

@@ -23,12 +23,12 @@ function MyApp({ Component, pageProps }) {
   const { pathname } = useRouter();
 
   useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/sw.js')
-        .catch((err) => console.error('Service worker registration failed', err));
-    } else {
-    }
+    // if ('serviceWorker' in navigator) {
+    //   navigator.serviceWorker
+    //     .register('/sw.js')
+    //     .catch((err) => console.error('Service worker registration failed', err));
+    // } else {
+    // }
   }, [pathname]);
 
   return (
