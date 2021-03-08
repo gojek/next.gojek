@@ -36,7 +36,7 @@ function TechFacts() {
       <div className="d-md-none">
         <Swiper spaceBetween={32} slidesPerView={1} navigation>
           {techFacts.map((data, i) => (
-            <SwiperSlide>
+            <SwiperSlide key={i}>
               <div
                 className={`card text-white border-0 shadow mx-md-0  ${styles.factCard}`}
                 style={{ backgroundColor: data.bgColor }}

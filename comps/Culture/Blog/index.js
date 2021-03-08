@@ -23,15 +23,15 @@ function Blog() {
       {/* For Desktop */}
       <div className="d-none d-md-block">
         <div className="row pt-4">
-          {posts.map((post) => {
-            return <Card data={post} />;
+          {posts.map((post, i) => {
+            return <Card data={post} key={i} />;
           })}
         </div>
       </div>
       <div className="pt-4 px-0 d-md-none">
         <Slider {...sliderSettings}>
-          {posts.map((post) => {
-            return <Card data={post} />;
+          {posts.map((post, i) => {
+            return <Card data={post} key={i} />;
           })}
         </Slider>
       </div>

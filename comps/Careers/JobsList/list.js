@@ -46,8 +46,13 @@ function List(props) {
             <div className="pb-3">
               {openPositions.length > 0 ? (
                 openPositions.map((data, key) => (
-                  <a href={getJobLink(data.text, data.id)} target="_blank" className="table-row">
-                    <div className="job-row row py-3" key={key} id={key}>
+                  <a
+                    href={getJobLink(data.text, data.id)}
+                    target="_blank"
+                    className="table-row"
+                    key={key}
+                  >
+                    <div className="job-row row py-3" id={key}>
                       <div className="col-md-6">
                         <p className="mb-0">{data.text}</p>
                       </div>

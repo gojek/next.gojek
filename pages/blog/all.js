@@ -183,8 +183,8 @@ function allPosts(props) {
           )}
           {keyword !== '' ? (
             <div className="row posts">
-              {articles.map((post) => (
-                <div className="col-md-4 mb-md-5">
+              {articles.map((post, i) => (
+                <div className="col-md-4 mb-md-5" key={i}>
                   <a href={`/blog/${post.slug}`} className="post">
                     <div className="card border-0 bg-transparent">
                       <React.Fragment>

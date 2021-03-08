@@ -7,8 +7,8 @@ function Articles(props) {
     <>
       <h1 className="my-5">{props.title}</h1>
       <div className="row">
-        {posts.map((post) => (
-          <Post data={post} type={props.type} />
+        {posts.map((post, i) => (
+          <Post data={post} type={props.type} key={i} />
         ))}
       </div>
     </>

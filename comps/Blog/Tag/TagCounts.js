@@ -50,6 +50,7 @@ function TagCounts(props) {
                 className={`p-5 mt-2 mb-4 pointer ${i == 0 || i == 5 ? 'col-md-5' : 'col-md-3'} ${
                   styles.tile
                 }`}
+                key={i}
               >
                 <Link href={`//blog.gojekengineering.com/${tag.URL}/home`} passHref={true}>
                   <a target="_blank" className="text-white">

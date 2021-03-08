@@ -24,7 +24,7 @@ function SlickSlider(props) {
       <Slider {...temsSliderSettings} className="values-slider">
         {teams.map((team, i) => {
           return (
-            <div className={`bg-yellow card`}>
+            <div className={`bg-yellow card`} key={i}>
               <div className="text-white">
                 <p>{team.count} Openings</p>
               </div>

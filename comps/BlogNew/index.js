@@ -44,8 +44,8 @@ function BlogNew(props) {
         <div className="d-md-none">
           <BlogCard post={allPosts[0]} tag={heading} />
           <Slider {...sliderSettings}>
-            {mobileSliderPosts.map((post) => {
-              return <BlogCard post={post} tag={heading} />;
+            {mobileSliderPosts.map((post, i) => {
+              return <BlogCard post={post} tag={heading} key={i} />;
             })}
           </Slider>
         </div>

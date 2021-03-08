@@ -31,8 +31,8 @@ function HomeSlider(props) {
       //     .addClass('full-height d-flex align-items-center ' + departments[nextSlide].bgClass);
       // }}
     >
-      {departments.map((department) => (
-        <div>
+      {departments.map((department, i) => (
+        <div key={i}>
           <div className="card shadow mb-5 mx-3">
             <div className="card shadowCard" />
             <h5 className={`card-title subhead my-4 ${department.class}`}>{department.name}</h5>
