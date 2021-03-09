@@ -275,11 +275,11 @@ function Blog(props) {
       {keyword === '' && (
         <section className="post-feed container mt-5">
           <BlogNew
-            heading="Culture"
-            posts={props.culturePosts}
-            link="/blog/tag/culture"
+            heading="Design"
+            posts={props.designPosts}
+            link="/blog/tag/design"
             pageName="blog"
-            id="culture"
+            id="design"
           />
         </section>
       )}
@@ -287,11 +287,11 @@ function Blog(props) {
       {keyword === '' && (
         <section className="post-feed container mt-5">
           <BlogNew
-            heading="Design"
-            posts={props.designPosts}
-            link="/blog/tag/design"
+            heading="Culture"
+            posts={props.culturePosts}
+            link="/blog/tag/culture"
             pageName="blog"
-            id="design"
+            id="culture"
           />
         </section>
       )}
