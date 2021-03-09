@@ -73,7 +73,7 @@ class MySelect extends Component {
                 onChange={(e) => onChange(e.target.value, e.target.name)}
                 onKeyDown={(e) => onKeyDown(e)}
                 className="form-control search pl-0"
-                placeholder="Keyword Search"
+                placeholder="Search by role (Eg. Engineer, Designer...)"
                 name="keyword"
                 value={this.props.keyword}
               />
