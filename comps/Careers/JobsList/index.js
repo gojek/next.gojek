@@ -211,9 +211,10 @@ class JobsList extends Component {
                 <p className="job-results-text">
                   <strong>
                     {this.searchJobs().length}{' '}
-                    {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '}
+                    {/* {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '} */}
                   </strong>{' '}
-                  found across{' '}
+                  open job positions found
+                  {/* {' '}
                   <strong>
                     {selctedFilters.department.length > 0
                       ? selctedFilters.department.length
@@ -224,7 +225,7 @@ class JobsList extends Component {
                   <strong>
                     {selctedFilters.location.length > 0 ? selctedFilters.location.length : 'all'}{' '}
                     {selctedFilters.location.length === 1 ? 'Location' : 'Locations'}
-                  </strong>{' '}
+                  </strong>{' '} */}
                 </p>
               </div>
             </div>
@@ -300,9 +301,10 @@ class JobsList extends Component {
                       <p className="mb-0 job-results-text mobile">
                         <strong>
                           {this.searchJobs().length}{' '}
-                          {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '}
+                          {/* {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '} */}
                         </strong>{' '}
-                        found across{' '}
+                        open job positions found
+                        {/* {' '}
                         <strong>
                           {selctedFilters.department.length > 0
                             ? selctedFilters.department.length
@@ -315,7 +317,7 @@ class JobsList extends Component {
                             ? selctedFilters.location.length
                             : 'all'}{' '}
                           {selctedFilters.location.length === 1 ? 'Location' : 'Locations'}
-                        </strong>{' '}
+                        </strong>{' '} */}
                       </p>
 
                       {(filters.length > 0 || this.state.keywordList.length > 0) && (
@@ -340,9 +342,10 @@ class JobsList extends Component {
                     <p className="mb-0 job-results-text mobile">
                       <strong>
                         {this.searchJobs().length}{' '}
-                        {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '}
+                        {/* {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '} */}
                       </strong>{' '}
-                      found across{' '}
+                      open job positions found
+                      {/* {' '}
                       <strong>
                         {selctedFilters.department.length > 0
                           ? selctedFilters.department.length
@@ -355,7 +358,7 @@ class JobsList extends Component {
                           ? selctedFilters.location.length
                           : 'all'}{' '}
                         {selctedFilters.location.length === 1 ? 'Location' : 'Locations'}
-                      </strong>{' '}
+                      </strong>{' '} */}
                     </p>
 
                     {(filters.length > 0 || this.state.keywordList.length > 0) && (
