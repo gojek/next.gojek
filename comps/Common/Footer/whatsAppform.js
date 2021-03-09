@@ -12,18 +12,8 @@ function WhatsAppForm(props) {
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    if (phoneNumber.length != 12) {
-      swal({
-        title: '',
-        text: 'Please enter a valid phone number',
-        icon: 'error',
-        timer: 4000,
-        button: false,
-      });
-    } else {
-      setLoading(true);
-      callSubscribe(data.name);
-    }
+    setLoading(true);
+    callSubscribe(data.name);
   };
 
   const callSubscribe = (name) => {
