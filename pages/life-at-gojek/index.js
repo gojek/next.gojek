@@ -41,7 +41,7 @@ function LifeAtGojek() {
     <div>
       <PageMeta
         title="Life@Gojek Tech"
-        description="Gojek is a Super App. It’s one app for ordering food, commuting, digital payments, shopping, hyper-local delivery, getting a massage and two dozen services. It is Indonesia’s first and fastest growing unicorn building an on-demand empire."
+        description="Gojek is a Super App. It’s one app for ordering food, commuting, digital payments, shopping, hyper-local delivery, and over a dozen services. It is Indonesia’s first and fastest growing decacorn building an on-demand empire."
       />
 
       <Navbar whiteNav />

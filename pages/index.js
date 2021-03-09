@@ -22,15 +22,18 @@ function Home(props) {
   return (
     <div>
       <PageMeta
-        title="Gojek: On-Demand Services for Transport, Payment, Food Delivery, etc."
-        description="Gojek is a Super App. It's one app for ordering food, commuting, digital payments, shopping, hyper-local delivery, getting a massage and two dozen services. It is Indonesia's first and fastest growing unicorn building an on-demand empire."
+        title="Gojek: A SuperApp with Transport, Payments, Food Delivery and more"
+        description="Gojek is a Super App. It’s one app for ordering food, commuting, digital payments, shopping, hyper-local delivery, and over a dozen services. It is Indonesia’s first and fastest growing decacorn building an on-demand empire."
       />
       <Navbar />
       <section className={`py-5 d-flex align-items-md-center align-items-start ${styles.home}`}>
         <div className="container">
           <div className={`align-items-md-center align-items-start ${styles.titleContainer}`}>
             <h1 className={`pt-5 ${styles.heading}`} style={{ marginTop: '50px' }}>
-              Gojek is a<br /> SuperApp.{' '}
+              Welcome to the <br />
+              home of the
+              <br />
+              #SuperApp{' '}
             </h1>
           </div>
         </div>

@@ -219,7 +219,7 @@ class JobsList extends Component {
                     {selctedFilters.department.length > 0
                       ? selctedFilters.department.length
                       : 'all'}{' '}
-                    {selctedFilters.department.length === 1 ? 'Department' : 'Departments'}
+                    {selctedFilters.department.length === 1 ? 'department' : 'departments'}
                   </strong>{' '}
                   and{' '}
                   <strong>
@@ -309,7 +309,7 @@ class JobsList extends Component {
                           {selctedFilters.department.length > 0
                             ? selctedFilters.department.length
                             : 'all'}{' '}
-                          {selctedFilters.department.length === 1 ? 'Department' : 'Departments'}
+                          {selctedFilters.department.length === 1 ? 'department' : 'departments'}
                         </strong>{' '}
                         and{' '}
                         <strong>
@@ -350,7 +350,7 @@ class JobsList extends Component {
                         {selctedFilters.department.length > 0
                           ? selctedFilters.department.length
                           : 'all'}{' '}
-                        {selctedFilters.department.length === 1 ? 'Department' : 'Departments'}
+                        {selctedFilters.department.length === 1 ? 'department' : 'departments'}
                       </strong>{' '}
                       and{' '}
                       <strong>

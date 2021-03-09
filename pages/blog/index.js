@@ -71,8 +71,8 @@ function Blog(props) {
   const tags = [
     { name: 'Tech', slug: 'tech' },
     { name: 'Data', slug: 'data' },
-    { name: 'Culture', slug: 'culture' },
     { name: 'Design', slug: 'design' },
+    { name: 'Culture', slug: 'culture' },
     { name: 'News', slug: 'news' },
   ];
 
@@ -228,7 +228,7 @@ function Blog(props) {
         <section className={`post-feed container mt-md-5 pt-3`}>
           <BlogNew heading="Latest" posts={props.latestPosts} link="/blog/all" pageName="blog" />
         </section>
-      )}  
+      )}
 
       {keyword === '' && (
         <section className="py-3 py-md-5 px-md-3 px-xl-0" style={{ backgroundColor: '#f2f2f2' }}>

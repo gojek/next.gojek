@@ -114,8 +114,8 @@ function allPosts() {
   const tags = [
     { name: 'Tech', slug: 'tech' },
     { name: 'Data', slug: 'data' },
-    { name: 'Culture', slug: 'culture' },
     { name: 'Design', slug: 'design' },
+    { name: 'Culture', slug: 'culture' },
     { name: 'News', slug: 'news' },
   ];
 
