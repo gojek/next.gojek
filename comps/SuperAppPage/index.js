@@ -1,5 +1,5 @@
 import { Link } from 'react-scroll';
-import { departments } from '~/../../comps/careers/data.js';
+import { departments } from '~/../../comps/Careers/data.js';
 import DepartmentCard from './departmentCard';
 
 function SuperAppPage(props) {
