@@ -213,7 +213,7 @@ class JobsList extends Component {
                     {this.searchJobs().length}{' '}
                     {/* {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '} */}
                   </strong>{' '}
-                  open job positions found
+                  open jobs found
                   {/* {' '}
                   <strong>
                     {selctedFilters.department.length > 0
@@ -303,7 +303,7 @@ class JobsList extends Component {
                           {this.searchJobs().length}{' '}
                           {/* {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '} */}
                         </strong>{' '}
-                        open job positions found
+                        open jobs found
                         {/* {' '}
                         <strong>
                           {selctedFilters.department.length > 0
@@ -344,7 +344,7 @@ class JobsList extends Component {
                         {this.searchJobs().length}{' '}
                         {/* {this.searchJobs().length === 1 ? 'Opportunity' : 'Opportunities'}{' '} */}
                       </strong>{' '}
-                      open job positions found
+                      open jobs found
                       {/* {' '}
                       <strong>
                         {selctedFilters.department.length > 0
