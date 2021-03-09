@@ -5,7 +5,7 @@ function DepartmentCard(props) {
   const { slug, bg, label } = props;
 
   return (
-    <div className="col-12 col-md-4 mb-2">
+    <div className="col-12 col-md-6 col-lg-4 mb-3">
       <Link href={`/careers/all?d=${label}`} passHref>
         <a
           className={`card text-white department rounded-pill`}

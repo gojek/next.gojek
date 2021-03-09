@@ -464,7 +464,7 @@ function SuperAppPage(props) {
           We have no dearth of Hard Technical Problems™, jobs below:
         </h2>
         <div className="container text-center">
-          <h1 className="mb-5 tex-white">Choose a department</h1>
+          <h1 className="mb-5 text-white">Choose a department</h1>
           <div className="pb-5 row">
             {/* <CareerDepartment props={this.props} color="text-white" /> */}
             {departments.map((department, i) => {

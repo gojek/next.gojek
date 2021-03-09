@@ -86,6 +86,10 @@
     margin-top: 2rem;
     padding: 0.5rem 0;
     width: 26rem;
+    @media screen and (min-width: 576px) and (max-width: 1024px) {
+      width: auto;
+    padding: 0.5rem 1rem;
+    }
   }
 
   .btn-cta.btn-outline-light:hover {
