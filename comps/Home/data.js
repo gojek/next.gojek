@@ -52,7 +52,7 @@ export const departments = [
     ],
   },
   {
-    name: 'Food & Shoping',
+    name: 'Food & Shopping',
     class: 'text-red',
     bgClass: 'bg-red',
     borderColor: '#ff7f32',
@@ -69,7 +69,7 @@ export const departments = [
         id: 2,
         img: '/img/home/food-and-shopping/gomall.svg',
         title: 'Gomall',
-        description: 'Shop from <br class="d-none d-lg-block" /> online marketplace',
+        description: 'Shop from <br class="d-none d-lg-block" /> an online marketplace',
         class: 'pb-md-5',
       },
       {
