@@ -26,7 +26,7 @@ function Links(props) {
           ))}
         </ul>
         <ul className="list-inline">
-          <p>connect with us 👇</p>
+          <p>Connect with us 👇</p>
           {data.socialLinks.map((socialMedia, key) => (
             <li className="list-inline-item" key={key}>
               <a

@@ -19,7 +19,7 @@ export const data = {
   secondColumn: [
     {
       id: 5,
-      name: 'join us',
+      name: 'Join us',
       link: '/careers',
     },
   ],
@@ -31,7 +31,7 @@ export const data = {
     },
     {
       id: 3,
-      name: 'about us',
+      name: 'About us',
       link: '/about',
     },
     {
@@ -46,7 +46,7 @@ export const data = {
     },
     {
       id: 6,
-      name: 'join us',
+      name: 'Join us',
       link: '/careers',
     },
   ],

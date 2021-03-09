@@ -6,7 +6,7 @@
   },
   {
     "id": 2,
-    "name": "about us",
+    "name": "About us",
     "link": "/about"
   },
   {
@@ -21,7 +21,7 @@
   },
   {
     "id": 5,
-    "name": "join us",
+    "name": "Join us",
     "link": "/careers",
     "type": "button"
   }
