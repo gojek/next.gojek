@@ -11,11 +11,13 @@ import '../utils/styles/blog.scss';
 import '../utils/styles/style.scss';
 import '../utils/styles/custom.scss';
 import '../utils/styles/form.scss';
+import '../utils/styles/SuperAppPage.scss';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 import 'react-phone-input-2/lib/style.css';
+
 // import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
 
