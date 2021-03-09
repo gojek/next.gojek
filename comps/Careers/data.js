@@ -2,7 +2,7 @@ export const departments = [
   {
     value: 'engineering',
     label: 'Engineering',
-    bgColor: '#00acd1',
+    bgColor: '#fa727e',
     bgImg: 'img/careers/engineering.svg',
   },
   {
@@ -26,7 +26,7 @@ export const departments = [
   {
     value: 'product',
     label: 'Product',
-    bgColor: '#ff808b',
+    bgColor: '#32b4d3',
     bgImg: 'img/careers/product.svg',
   },
   {

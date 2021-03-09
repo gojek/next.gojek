@@ -28,8 +28,8 @@ function Departments(props) {
       <div className="card-columns text-left pt-5">
         <Card
           slug={sortedDepartments[0].value}
-          bg={sortedDepartments[0].bgImg}
-          bgType="img"
+          bg={sortedDepartments[0].bgColor}
+          bgType="color"
           label={sortedDepartments[0].label}
           openings={sortedDepartments[0].count}
           index={1}
@@ -52,8 +52,8 @@ function Departments(props) {
         {/* NEEDS OPTIMIZATION */}
         <Card
           slug={sortedDepartments[1].value}
-          bg={sortedDepartments[1].bgImg}
-          bgType="img"
+          bg={sortedDepartments[1].bgColor}
+          bgType="color"
           label={sortedDepartments[1].label}
           openings={sortedDepartments[1].count}
           index={1}
